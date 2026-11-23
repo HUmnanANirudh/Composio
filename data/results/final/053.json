@@ -1,0 +1,192 @@
+{
+  "id": 53,
+  "app": "Ahrefs",
+  "category": "Data, SEO and Scraping",
+  "hint": "ahrefs.com/api",
+  "docs_url": "https://docs.ahrefs.com/api/docs/introduction.md",
+  "one_liner": {
+    "value": "SEO toolset for backlinks, keywords, rank tracking and site audits",
+    "evidence": [
+      {
+        "url": "https://docs.ahrefs.com/api/docs/introduction.md",
+        "quote": "**Site Explorer**: Overview stats and historical charts, Backlinks, Organic and paid traffic reports",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.ahrefs.com/api/docs/api-keys-creation-and-management.md",
+        "quote": "Provide it in the Authorization header when making requests: `Authorization: Bearer YOUR_API_KEY`.",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://docs.ahrefs.com/ahrefs-connect/docs/oauth-guide.md",
+        "quote": "Ahrefs Connect uses **OAuth 2.0 Authorization Code Flow with Proof Key for Code Exchange (PKCE)**.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "access": {
+    "value": "PAID_PLAN",
+    "evidence": [
+      {
+        "url": "https://docs.ahrefs.com/api/docs/introduction.md",
+        "quote": "Ahrefs API is available on [eligible paid plans](https://ahrefs.com/pricing).",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.ahrefs.com/api/docs/introduction.md",
+        "quote": "To send requests to Ahrefs API, you'll need an API key.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://docs.ahrefs.com/api/docs/introduction.md",
+        "quote": "**Keywords Explorer**: Metrics for a single keyword or a list of keywords",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://docs.ahrefs.com/mcp/docs/introduction.md",
+        "quote": "Ahrefs provides a hosted MCP server",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "sandbox": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://docs.ahrefs.com/api/docs/introduction.md",
+        "quote": "you'll still have access to a [limited set of free test queries]",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.6,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY_WITH_CAVEATS",
+    "evidence": [
+      {
+        "url": "https://docs.ahrefs.com/api/docs/introduction.md",
+        "quote": "Ahrefs API is available on [eligible paid plans](https://ahrefs.com/pricing).",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "API needs an eligible paid plan; Ahrefs Connect OAuth apps go through an approval process.",
+    "evidence": [
+      {
+        "url": "https://docs.ahrefs.com/ahrefs-connect/docs/oauth-guide.md",
+        "quote": "You will need to demonstrate secure token handling as part of the [Approval process]",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "AHREFS",
+    "name": "Ahrefs",
+    "tools": 46,
+    "triggers": 0,
+    "auth": [
+      "API_KEY",
+      "OAUTH2"
+    ],
+    "managed_app": "No",
+    "url": "https://docs.composio.dev/toolkits/ahrefs.md",
+    "mcp_variant": "AHREFS_MCP",
+    "mcp_variant_auth": [
+      "DCR_OAUTH"
+    ]
+  },
+  "sources": [
+    "https://docs.ahrefs.com/api/docs/introduction.md",
+    "https://ahrefs.com/seo-mcp",
+    "https://docs.ahrefs.com/api/docs/api-keys-creation-and-management.md",
+    "https://help.ahrefs.com/en/articles/13913559-getting-started-with-ahrefs-mcp",
+    "https://docs.ahrefs.com/mcp/docs/introduction.md",
+    "https://ahrefs.com/pricing",
+    "https://docs.ahrefs.com/mcp/docs/chatgpt-web.md",
+    "https://docs.ahrefs.com/ahrefs-connect/docs/oauth-guide.md"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "webhooks": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "webhooks": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": []
+}

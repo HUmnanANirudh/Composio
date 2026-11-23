@@ -1,0 +1,179 @@
+{
+  "id": 73,
+  "app": "Linear",
+  "category": "Productivity and Project Management",
+  "hint": "developers.linear.app",
+  "docs_url": "https://linear.app/developers/graphql",
+  "one_liner": {
+    "value": "Issue tracking and project planning for software teams",
+    "evidence": [
+      {
+        "url": "https://linear.app/docs/mcp",
+        "quote": "read and change issues, projects, and documents",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://linear.app/developers/graphql",
+        "quote": "The Linear API supports personal API keys and OAuth2 authentication.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://linear.app/pricing",
+        "quote": "API and webhook access | Included | Included | Included | Included",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "GRAPHQL"
+    ],
+    "evidence": [
+      {
+        "url": "https://linear.app/developers/graphql",
+        "quote": "Linear's public API is built using GraphQL.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://linear.app/docs/api-and-webhooks",
+        "quote": "Linear has full support for mutating all entities.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://linear.app/docs/ai-at-linear",
+        "quote": "Through our official **MCP**, you can connect Linear directly to the AI tools you already use",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://linear.app/docs/api-and-webhooks",
+        "quote": "Linear's webhooks allow you to receive HTTP(S) push notifications whenever data is created or updated.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://linear.app/pricing",
+        "quote": "API and webhook access | Included | Included | Included | Included",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.4,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "LINEAR",
+    "name": "Linear",
+    "tools": 48,
+    "triggers": 12,
+    "auth": [
+      "OAUTH2",
+      "API_KEY"
+    ],
+    "managed_app": "Yes",
+    "url": "https://docs.composio.dev/toolkits/linear.md",
+    "mcp_variant": "LINEAR_MCP",
+    "mcp_variant_auth": [
+      "DCR_OAUTH"
+    ]
+  },
+  "sources": [
+    "https://linear.app/developers/graphql",
+    "https://linear.app/pricing",
+    "https://linear.app/docs/mcp",
+    "https://linear.app/developers/webhooks.md",
+    "https://linear.app/developers/oauth-2-0-authentication",
+    "https://linear.app/docs/ai-at-linear",
+    "https://linear.app/docs/api-and-webhooks",
+    "https://linear.app/developers/rate-limiting"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "sandbox": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": []
+}

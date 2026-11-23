@@ -1,0 +1,192 @@
+{
+  "id": 17,
+  "app": "Plain",
+  "category": "Support and Helpdesk",
+  "hint": "plain.com",
+  "docs_url": "https://www.plain.com/docs/graphql/introduction",
+  "one_liner": {
+    "value": "AI-first B2B customer support platform",
+    "evidence": [
+      {
+        "url": "https://www.plain.com/blog/mcp-server",
+        "quote": "Plain now has an MCP server.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://www.plain.com/docs/graphql/authentication",
+        "quote": "A machine user can have several API keys",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://www.plain.com/docs/graphql/authentication",
+        "quote": "To call the API as a user in your workspace, use an OAuth app.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_TRIAL",
+    "evidence": [
+      {
+        "url": "https://www.plain.com/docs/product/billing/pricing",
+        "quote": "Every plan starts with a free 7-day trial, and the trial doesn’t need a credit card.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "GRAPHQL"
+    ],
+    "evidence": [
+      {
+        "url": "https://www.plain.com/docs/graphql/introduction",
+        "quote": "Plain itself is built on this same GraphQL API.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://www.plain.com/docs/graphql/introduction",
+        "quote": "there are no limitations in what can be done via the API vs the UI.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://www.plain.com/docs/integrations/mcp-server",
+        "quote": "The Plain MCP server at",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "READY_WITH_CAVEATS",
+    "evidence": [
+      {
+        "url": "https://www.plain.com/docs/product/billing/pricing",
+        "quote": "Every plan starts with a free 7-day trial, and the trial doesn’t need a credit card.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "No free plan: API access after the 7-day trial needs a paid seat.",
+    "evidence": [
+      {
+        "url": "https://www.plain.com/docs/product/billing/pricing",
+        "quote": "Every plan starts with a free 7-day trial",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.75,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "PLAIN",
+    "name": "Plain",
+    "tools": 120,
+    "triggers": 11,
+    "auth": [
+      "API_KEY"
+    ],
+    "managed_app": null,
+    "url": "https://docs.composio.dev/toolkits/plain.md",
+    "mcp_variant": "PLAIN_MCP",
+    "mcp_variant_auth": [
+      "DCR_OAUTH"
+    ]
+  },
+  "sources": [
+    "https://www.plain.com/docs/graphql/authentication",
+    "https://www.plain.com/docs/graphql/introduction",
+    "https://www.plain.com/docs/integrations/mcp-server",
+    "https://www.plain.com/docs/graphql-reference/queries/account",
+    "https://www.plain.com/docs/graphql/oauth",
+    "https://www.plain.com/pricing",
+    "https://www.plain.com/blog/mcp-server",
+    "https://www.plain.com/docs/product/billing/pricing"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "webhooks": [
+            "ungrounded"
+          ],
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "webhooks": [
+        "ungrounded"
+      ],
+      "sandbox": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": []
+}

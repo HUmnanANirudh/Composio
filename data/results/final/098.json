@@ -1,0 +1,204 @@
+{
+  "id": 98,
+  "app": "Mermaid CLI",
+  "category": "AI, Research and Media-native",
+  "hint": "github.com/mermaid-js/mermaid-cli",
+  "docs_url": "https://github.com/mermaid-js/mermaid-cli",
+  "one_liner": {
+    "value": "Open-source command-line renderer for Mermaid diagrams",
+    "evidence": [
+      {
+        "url": "https://github.com/mermaid-js/mermaid-cli",
+        "quote": "This example shows how to use a heredoc to send a diagram as stdin to mermaid-cli (mmdc).",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "NONE"
+    ],
+    "evidence": [
+      {
+        "url": "https://github.com/mermaid-js/mermaid-cli",
+        "quote": "You can easily pipe input from stdin.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "access": {
+    "value": "NO_PUBLIC_API",
+    "evidence": [
+      {
+        "url": "https://github.com/mermaid-js/mermaid-cli",
+        "quote": "docker pull minlag/mermaid-cli",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "CLI"
+    ],
+    "evidence": [
+      {
+        "url": "https://github.com/mermaid-js/mermaid-cli",
+        "quote": "send a diagram as stdin to mermaid-cli (mmdc)",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "NARROW",
+    "evidence": [
+      {
+        "url": "https://github.com/mermaid-js/mermaid-cli",
+        "quote": "you can use\nthe container to generate an SVG file as follows:",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.25,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "webhooks": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.25,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.25,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "BLOCKED",
+    "evidence": [
+      {
+        "url": "https://github.com/mermaid-js/mermaid-cli",
+        "quote": "docker pull minlag/mermaid-cli",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "No hosted API: mermaid-cli is a local Node/Puppeteer renderer, so a toolkit would have to run it itself.",
+    "evidence": [
+      {
+        "url": "https://github.com/mermaid-js/mermaid-cli/blob/master/docs/linux-sandbox-issue.md",
+        "quote": "Failed to launch chrome!",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "composio": {
+    "found": false,
+    "slug": null,
+    "name": null,
+    "tools": null,
+    "triggers": null,
+    "auth": [],
+    "managed_app": null,
+    "url": null,
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://github.com/mermaid-js/mermaid-cli",
+    "https://github.com/mermaid-js/mermaid-cli/blob/master/docs/linux-sandbox-issue.md",
+    "https://github.com/noahsabaj/mermaid-cli",
+    "https://raw.githubusercontent.com/noahsabaj/mermaid-cli/main/docs/cli-reference.md",
+    "https://mermaid.ai/docs/ai/mcp-server",
+    "https://www.npmjs.com/package/@mermaidchart/cli",
+    "https://mermaid.ai/docs/guides/mermaid-api-skill",
+    "https://api.mermaid.ai/v1/llms.txt",
+    "https://github.com/mermaid-js/mermaid-cli/blob/master/README.md",
+    "https://github.com/hustcc/mcp-mermaid",
+    "https://github.com/fay-i/mermaid-mcp",
+    "https://github.com/rtuin/mcp-mermaid-validator",
+    "https://mermaid-25331.zendesk.com/hc/en-us/articles/51112817195923-Mermaid-MCP-Server"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "official_mcp": [
+            "ungrounded"
+          ],
+          "webhooks": [
+            "ungrounded"
+          ],
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      },
+      {
+        "round": 1,
+        "grounding": {
+          "official_mcp": [
+            "ungrounded"
+          ],
+          "webhooks": [
+            "ungrounded"
+          ],
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "official_mcp": [
+        "ungrounded"
+      ],
+      "webhooks": [
+        "ungrounded"
+      ],
+      "sandbox": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": [
+    "fetch https://api.mermaid.ai/v1/docs: 200 too little text (JS-rendered?)"
+  ]
+}

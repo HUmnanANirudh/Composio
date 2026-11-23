@@ -1,0 +1,182 @@
+{
+  "id": 18,
+  "app": "Help Scout",
+  "category": "Support and Helpdesk",
+  "hint": "helpscout.com",
+  "docs_url": "https://developer.helpscout.com/mailbox-api/overview/authentication",
+  "one_liner": {
+    "value": "Shared inbox, help center and live chat for support teams",
+    "evidence": [
+      {
+        "url": "https://docs.helpscout.com/article/1140-mailbox-api",
+        "quote": "Help Scout offers many integrations right out of the box",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://developer.helpscout.com/mailbox-api/overview/authentication",
+        "quote": "This is an HTTPS-only API and it uses OAuth 2.0 authorization, implementing Authorization Code and Client Credential flows.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "access": {
+    "value": "PAID_PLAN",
+    "evidence": [
+      {
+        "url": "https://docs.helpscout.com/article/1140-mailbox-api",
+        "quote": "The Free plan does not include access to the API or integrations.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://developer.helpscout.com/mailbox-api/overview/authentication",
+        "quote": "https://api.helpscout.net/v2/users/me",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://docs.helpscout.com/article/1140-mailbox-api",
+        "quote": "All endpoints available",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://articles.helpscout.com/blog/introducing-help-scout-mcp",
+        "quote": "we're bringing Help Scout's Model Context Protocol (MCP) server out of beta",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developer.helpscout.com/webhooks",
+        "quote": "Webhooks enable Help Scout to call a script on your server when one or more events have happened.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "READY_WITH_CAVEATS",
+    "evidence": [
+      {
+        "url": "https://docs.helpscout.com/article/1140-mailbox-api",
+        "quote": "The Free plan does not include access to the API or integrations.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "The free plan has no API access; a paid plan is required.",
+    "evidence": [
+      {
+        "url": "https://docs.helpscout.com/article/1140-mailbox-api",
+        "quote": "The Free plan does not include access to the API or integrations.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "HELP_SCOUT",
+    "name": "Help Scout",
+    "tools": 129,
+    "triggers": 0,
+    "auth": [
+      "OAUTH2"
+    ],
+    "managed_app": "No",
+    "url": "https://docs.composio.dev/toolkits/help_scout.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://developer.helpscout.com/mailbox-api/overview/authentication",
+    "https://docs.helpscout.com/article/1140-mailbox-api",
+    "https://docs.helpscout.com/article/1779-connect-your-ai-agent-with-help-scout-to-search-conversations-and-pull-reports",
+    "https://developer.helpscout.com/webhooks",
+    "https://developer.helpscout.com/docs-api",
+    "https://www.helpscout.com/pricing",
+    "https://articles.helpscout.com/blog/introducing-help-scout-mcp",
+    "https://docs.helpscout.com/category/1556-payment-and-billing"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "sandbox": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": []
+}

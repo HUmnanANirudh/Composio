@@ -1,0 +1,192 @@
+{
+  "id": 45,
+  "app": "Magento (Adobe Commerce)",
+  "category": "Ecommerce",
+  "hint": "developer.adobe.com/commerce",
+  "docs_url": "https://experienceleague.adobe.com/en/docs/commerce-admin/systems/integrations",
+  "one_liner": {
+    "value": "Adobe's ecommerce platform (open source Magento and Adobe Commerce)",
+    "evidence": [
+      {
+        "url": "https://github.com/magento/devdocs/blob/master/src/guides/v2.4/get-started/create-integration.md",
+        "quote": "An integration enables third-party services to call the Magento web APIs.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "BEARER_TOKEN",
+      "OTHER"
+    ],
+    "evidence": [
+      {
+        "url": "https://github.com/magento/devdocs/blob/master/src/guides/v2.4/get-started/create-integration.md",
+        "quote": "[OAuth-based authentication]",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://experienceleague.adobe.com/en/docs/commerce-admin/systems/integrations",
+        "quote": "After setting up an integration and receiving the credentials, it is no longer necessary to make calls to access or request tokens.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.75,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://github.com/magento/devdocs/blob/master/src/guides/v2.4/get-started/create-integration.md",
+        "quote": "make sure that you have a working installation of Magento 2.0",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.65,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST",
+      "SOAP"
+    ],
+    "evidence": [
+      {
+        "url": "https://github.com/magento/devdocs/blob/master/src/guides/v2.4/get-started/create-integration.md",
+        "quote": "[Magento REST or SOAP Web APIs]",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://github.com/magento/devdocs/blob/master/src/guides/v2.4/get-started/create-integration.md",
+        "quote": "The Magento APIs currently supports Accounting, Enterprise Resource Planning (ERP), Customer Relationship Management (CRM)",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developer.adobe.com/commerce/extensibility/developer-agent/coding-tools",
+        "quote": "Commerce Developer MCP Server",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "webhooks": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "sandbox": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://partners.adobe.com/digitalexperience/articles/support/commerce-sandbox-access-and-testing",
+        "quote": "will provide an Adobe Commerce sandbox to build and test your integration",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY_WITH_CAVEATS",
+    "evidence": [
+      {
+        "url": "https://partners.adobe.com/digitalexperience/articles/support/commerce-sandbox-access-and-testing",
+        "quote": "Join the Adobe Technology Partner Program partner program by registering here.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.75,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "Each store is self-hosted; an Adobe Commerce sandbox requires joining the Technology Partner Program.",
+    "evidence": [
+      {
+        "url": "https://partners.adobe.com/digitalexperience/articles/support/commerce-sandbox-access-and-testing",
+        "quote": "To qualify for a sandbox you must meet the below criteria:",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "composio": {
+    "found": false,
+    "slug": null,
+    "name": null,
+    "tools": null,
+    "triggers": null,
+    "auth": [],
+    "managed_app": null,
+    "url": null,
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://developer.adobe.com/commerce/extensibility/developer-agent/coding-tools",
+    "https://developer.adobe.com/commerce/extensibility/starter-kit/integration",
+    "https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/auth",
+    "https://experienceleague.adobe.com/en/docs/commerce-learn/ai-and-agentic-commerce/commerce-mcp/commerce-mcp-overview",
+    "https://partners.adobe.com/digitalexperience",
+    "https://github.com/magento/devdocs/blob/master/src/guides/v2.4/get-started/create-integration.md",
+    "https://partners.adobe.com/digitalexperience/articles/support/commerce-sandbox-access-and-testing",
+    "https://experienceleague.adobe.com/en/docs/commerce-admin/systems/integrations"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "webhooks": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "webhooks": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": [
+    "fetch https://developer.adobe.com/commerce/webapi/get-started/authentication: 404 unsupported content-type ",
+    "fetch https://developer.adobe.com/commerce/webapi/get-started: 404 unsupported content-type ",
+    "fetch https://business.adobe.com/products/commerce.html: 0 ReadTimeout: The read operation timed out"
+  ]
+}

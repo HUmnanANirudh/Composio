@@ -1,0 +1,187 @@
+{
+  "id": 39,
+  "app": "Threads (Meta)",
+  "category": "Marketing, Ads, Email and Social",
+  "hint": "developers.facebook.com/docs/threads",
+  "docs_url": "https://developers.facebook.com/documentation/threads/get-started",
+  "one_liner": {
+    "value": "Meta's text-based social app with a publishing API",
+    "evidence": [
+      {
+        "url": "https://developers.facebook.com/documentation/threads",
+        "quote": "Use the Threads API to create and publish posts, retrieve media and profiles, moderate replies, and access insights.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.facebook.com/documentation/threads/get-started",
+        "quote": "API authentication is handled by Threads user access tokens that conform to the OAuth 2.0 protocol.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://postgate.studio/blog/threads-api",
+        "quote": "publishing for users other than your testers needs App Review",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.facebook.com/documentation/threads",
+        "quote": "Use the Threads API to create and publish posts, retrieve media and profiles, moderate replies, and access insights.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "MODERATE",
+    "evidence": [
+      {
+        "url": "https://developers.facebook.com/documentation/threads",
+        "quote": "Use the Threads API to create and publish posts, retrieve media and profiles, moderate replies, and access insights.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": false,
+    "evidence": [
+      {
+        "url": "https://developers.facebook.com/documentation/mcp",
+        "quote": "Meta Social Technologies MCP: `https://mcp.facebook.com/devtools`",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developers.facebook.com/documentation/threads",
+        "quote": "Webhooks](https://developers.facebook.com/documentation/threads/webhooks)",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "READY_WITH_CAVEATS",
+    "evidence": [
+      {
+        "url": "https://postgate.studio/blog/threads-api",
+        "quote": "publishing for users other than your testers needs App Review",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "Publishing for users beyond your app's testers needs Meta App Review.",
+    "evidence": [
+      {
+        "url": "https://postgate.studio/blog/threads-api",
+        "quote": "publishing for users other than your testers needs App Review",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.75,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "THREADS",
+    "name": "Threads",
+    "tools": 24,
+    "triggers": 0,
+    "auth": [
+      "OAUTH2"
+    ],
+    "managed_app": "No",
+    "url": "https://docs.composio.dev/toolkits/threads.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://developers.facebook.com/documentation/threads/get-started",
+    "https://developers.facebook.com/documentation/mcp",
+    "https://developers.facebook.com/documentation/threads/get-started/get-access-tokens-and-permissions",
+    "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-overview",
+    "https://developers.facebook.com/documentation/threads",
+    "https://developers.facebook.com/documentation/mcp/devtools-mcp",
+    "https://developers.facebook.com/documentation/threads/overview",
+    "https://postgate.studio/blog/threads-api"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "sandbox": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": [
+    "fetch https://developers.facebook.com/docs/threads/get-started/long-lived-tokens: 400 too little text (JS-rendered?)",
+    "fetch https://developers.facebook.com/docs/threads/overview: 400 too little text (JS-rendered?)",
+    "fetch https://developers.facebook.com/docs/threads: 400 too little text (JS-rendered?)",
+    "fetch https://developers.facebook.com/docs/development/create-an-app/threads-use-case: 400 too little text (JS-rendered?)"
+  ]
+}

@@ -1,0 +1,188 @@
+{
+  "id": 12,
+  "app": "Intercom",
+  "category": "Support and Helpdesk",
+  "hint": "intercom.com",
+  "docs_url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication",
+  "one_liner": {
+    "value": "Customer service platform with AI agent, messenger and helpdesk",
+    "evidence": [
+      {
+        "url": "https://www.intercom.com/integrations/connectors/intercom-mcp-server",
+        "quote": "Query conversations, contacts, companies, and Help Center articles",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "BEARER_TOKEN",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication",
+        "quote": "An [Access Token](#access-tokens) is for if you're using the API to access data in **your own** Intercom workspace",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication",
+        "quote": "[OAuth](#oauth) is for if you're building a public app that accesses **other people's** Intercom data.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication",
+        "quote": "To set up and test the OAuth installation flow in your development workspace",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.65,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://www.intercom.com/help/en/articles/9071694-intercom-developer-faqs",
+        "quote": "POST https://api.intercom.io/contacts",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://www.intercom.com/help/en/articles/9071694-intercom-developer-faqs",
+        "quote": "Use /contacts. In the current API, users and leads are both contacts",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://www.intercom.com/integrations/connectors/intercom-mcp-server",
+        "quote": "Intercom's MCP server lets AI tools and CLIs",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developers.intercom.com/docs/references/1.2/webhooks/webhook-models.md",
+        "quote": "Each webhook topic is associated with one or more permission scopes.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "sandbox": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication",
+        "quote": "your development workspace",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY_WITH_CAVEATS",
+    "evidence": [
+      {
+        "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/oauth-scopes.md",
+        "quote": "these will be reviewed when you [submit your app for approval]",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.75,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "Public OAuth apps go through Intercom's app review before other workspaces can install them.",
+    "evidence": [
+      {
+        "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/oauth-scopes.md",
+        "quote": "these will be reviewed when you [submit your app for approval]",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "INTERCOM",
+    "name": "Intercom",
+    "tools": 138,
+    "triggers": 0,
+    "auth": [
+      "OAUTH2"
+    ],
+    "managed_app": "Yes",
+    "url": "https://docs.composio.dev/toolkits/intercom.md",
+    "mcp_variant": "INTERCOM_MCP",
+    "mcp_variant_auth": [
+      "API_KEY"
+    ]
+  },
+  "sources": [
+    "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication",
+    "https://www.intercom.com/help/en/articles/9071694-intercom-developer-faqs",
+    "https://www.intercom.com/integrations/connectors/intercom-mcp-server",
+    "https://developers.intercom.com/docs/references/1.2/webhooks/webhook-models.md",
+    "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/setting-up-oauth",
+    "https://www.intercom.com/technology-partner-program",
+    "https://developers.intercom.com/docs/guides/mcp",
+    "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication/oauth-scopes.md"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {},
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {}
+  },
+  "errors": []
+}

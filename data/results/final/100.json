@@ -1,0 +1,189 @@
+{
+  "id": 100,
+  "app": "Grain",
+  "category": "AI, Research and Media-native",
+  "hint": "grain.com (meeting notes)",
+  "docs_url": "https://developers.grain.com",
+  "one_liner": {
+    "value": "AI meeting recorder and notes for sales and customer teams",
+    "evidence": [
+      {
+        "url": "https://support.grain.com/en/articles/15507288-grain-api",
+        "quote": "The Grain API lets developers read meeting data, manage recordings, and receive real-time events from Grain programmatically.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "BEARER_TOKEN",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.grain.com/authentication.html",
+        "quote": "Personal Access Token ( PAT) | personal | Generated manually from the integrations page.",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://developers.grain.com/authentication.html",
+        "quote": "OAuth Token | personal, workspace | Issued through the OAuth2 Flow.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://developers.grain.com",
+        "quote": "A Personal Access Token (PAT) authenticates requests as you, with the same access you have in Grain.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.grain.com/endpoints.html",
+        "quote": "API Domain is: https://api.grain.com",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "MODERATE",
+    "evidence": [
+      {
+        "url": "https://support.grain.com/en/articles/15507288-grain-api",
+        "quote": "retrieve recordings, transcripts, AI notes and action items, participants, tags, teams, and meeting types",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://grain.com/release-note/06-18-2025",
+        "quote": "Grain's official MCP server is available now for all users!",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://support.grain.com/en/articles/15507288-grain-api",
+        "quote": "register webhooks to receive a payload whenever a new recording is processed in your workspace",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "READY_WITH_CAVEATS",
+    "evidence": [
+      {
+        "url": "https://developers.grain.com/authentication.html",
+        "quote": "Request Client ID & Secret (manually)",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.75,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "OAuth client credentials are issued manually by Grain, and workspace-wide API scope is not on all plans.",
+    "evidence": [
+      {
+        "url": "https://developers.grain.com/authentication.html",
+        "quote": "NOTE: The workspace scope is not available on all plans.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.75,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "GRAIN",
+    "name": "Grain",
+    "tools": 17,
+    "triggers": 0,
+    "auth": [
+      "API_KEY"
+    ],
+    "managed_app": null,
+    "url": "https://docs.composio.dev/toolkits/grain.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://support.grain.com/en/articles/15507288-grain-api",
+    "https://developers.grain.com/mcp",
+    "https://developers.grain.com/endpoints.html",
+    "https://developers.grain.com",
+    "https://support.grain.com/en/articles/14811968-grain-mcp",
+    "https://developers.grain.com/authentication.html",
+    "https://grain.com/pricing",
+    "https://grain.com/release-note/06-18-2025"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "sandbox": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": []
+}

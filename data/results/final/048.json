@@ -1,0 +1,191 @@
+{
+  "id": 48,
+  "app": "Gumroad",
+  "category": "Ecommerce",
+  "hint": "gumroad.com/api",
+  "docs_url": "https://gumroad.com/api",
+  "one_liner": {
+    "value": "Marketplace and storefront for creators selling digital products",
+    "evidence": [
+      {
+        "url": "https://gumroad.com/llms.txt",
+        "quote": "Gumroad is an e-commerce marketplace where independent creators sell digital products",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "BEARER_TOKEN",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://gumroad.com/help/article/280-create-application-api",
+        "quote": "if you only want to use the API on your own Gumroad account, you can manually generate an access token",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://gumroad.com/help/article/280-create-application-api",
+        "quote": "you'll need to build a Redirect URI handler to generate access tokens for each of your users",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://gumroad.com/llms.txt",
+        "quote": "no monthly fee",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://gumroad.com/help/article/280-create-application-api",
+        "quote": "First, sign in to your Gumroad account. Then, go to advanced settings.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://gumroad.com/llms.txt",
+        "quote": "public REST API for products, sales, subscribers, and licenses",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "MODERATE",
+    "evidence": [
+      {
+        "url": "https://gumroad.com/llms.txt",
+        "quote": "public REST API for products, sales, subscribers, and licenses",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://gumroad.com/help/article/355-connect-ai-assistants-to-gumroad",
+        "quote": "Gumroad runs a server that speaks MCP (Model Context Protocol)",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://gumroad.com/help/article/280-create-application-api",
+        "quote": "you can manually generate an access token, which is a simpler process.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.4,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "GUMROAD",
+    "name": "Gumroad",
+    "tools": 13,
+    "triggers": 0,
+    "auth": [
+      "OAUTH2"
+    ],
+    "managed_app": "Yes",
+    "url": "https://docs.composio.dev/toolkits/gumroad.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://gumroad.com/pricing",
+    "https://gumroad.com/help/article/280-create-application-api",
+    "https://gumroad.com/mcp",
+    "https://gumroad.com/help/article/355-connect-ai-assistants-to-gumroad",
+    "https://gumroad.com/llms.txt",
+    "https://gumroad.com/chatgpt",
+    "https://gumroad.com/claude",
+    "https://gumroad.com/muse"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "webhooks": [
+            "ungrounded"
+          ],
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "webhooks": [
+        "ungrounded"
+      ],
+      "sandbox": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": [
+    "fetch https://gumroad.com/api: 200 too little text (JS-rendered?)"
+  ]
+}

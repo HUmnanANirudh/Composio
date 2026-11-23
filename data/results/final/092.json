@@ -1,0 +1,185 @@
+{
+  "id": 92,
+  "app": "Otter AI",
+  "category": "AI, Research and Media-native",
+  "hint": "help.otter.ai (MCP server)",
+  "docs_url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+  "one_liner": {
+    "value": "AI meeting notetaker with transcripts, summaries and action items",
+    "evidence": [
+      {
+        "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+        "quote": "retrieve channels, conversations, transcripts, audio, action items, insights, outlines, and workspace details",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "BEARER_TOKEN"
+    ],
+    "evidence": [
+      {
+        "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+        "quote": "All API requests require authentication using Bearer token authentication.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "access": {
+    "value": "PARTNERSHIP",
+    "evidence": [
+      {
+        "url": "https://help.otter.ai/hc/en-us/articles/4412365535895-Does-Otter-offer-an-open-API",
+        "quote": "Otter offers a public API for Enterprise customers. To get started, contact your Otter account manager to enable access.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+        "quote": "Otter.ai’s Public API provides programmatic access",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "MODERATE",
+    "evidence": [
+      {
+        "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+        "quote": "retrieve channels, conversations, transcripts, audio, action items, insights, outlines, and workspace details",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server",
+        "quote": "With Otter’s MCP Server, these AI\nassistants can:",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "NEEDS_OUTREACH",
+    "evidence": [
+      {
+        "url": "https://help.otter.ai/hc/en-us/articles/4412365535895-Does-Otter-offer-an-open-API",
+        "quote": "contact your Otter account manager to enable access",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "The public API is Enterprise-only and enabled through an Otter account manager.",
+    "evidence": [
+      {
+        "url": "https://help.otter.ai/hc/en-us/articles/4412365535895-Does-Otter-offer-an-open-API",
+        "quote": "Otter offers a public API for Enterprise customers.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "OTTER_AI_MCP",
+    "name": "Otter.ai MCP",
+    "tools": 3,
+    "triggers": 0,
+    "auth": [
+      "DCR_OAUTH"
+    ],
+    "managed_app": "No",
+    "url": "https://docs.composio.dev/toolkits/otter_ai_mcp.md",
+    "mcp_variant": "OTTER_AI_MCP",
+    "mcp_variant_auth": [
+      "DCR_OAUTH"
+    ]
+  },
+  "sources": [
+    "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+    "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server",
+    "https://help.otter.ai/hc/en-us/categories/360002285334-Getting-started",
+    "https://otter.ai/pricing",
+    "https://otter.ai/blog/otter-for-enterprise-connect-ai-to-ai-with-otters-mcp",
+    "https://help.otter.ai/hc/en-us/categories/360003570313-Account-settings-billing",
+    "https://help.otter.ai/hc/en-us/articles/27616131311127-Connect-Otter-to-Zapier",
+    "https://help.otter.ai/hc/en-us/articles/4412365535895-Does-Otter-offer-an-open-API"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "webhooks": [
+            "ungrounded"
+          ],
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "webhooks": [
+        "ungrounded"
+      ],
+      "sandbox": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": []
+}

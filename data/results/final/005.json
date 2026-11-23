@@ -1,0 +1,190 @@
+{
+  "id": 5,
+  "app": "Twenty",
+  "category": "CRM and Sales",
+  "hint": "twenty.com (open-source CRM)",
+  "docs_url": "https://docs.twenty.com/developers/extend/api",
+  "one_liner": {
+    "value": "Open-source CRM with a schema-generated REST and GraphQL API",
+    "evidence": [
+      {
+        "url": "https://twenty.com/llms.txt",
+        "quote": "Twenty is an open-source CRM.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://twenty.com/llms.txt",
+        "quote": "auth: OAuth 2.1 or an API-key Bearer token",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://docs.twenty.com/developers/extend/oauth",
+        "quote": "Twenty implements OAuth 2.0 with authorization code + PKCE for user-facing apps",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://twenty.com/llms.txt",
+        "quote": "Twenty is an open-source CRM.",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://docs.twenty.com/getting-started/quickstart",
+        "quote": "Pick 30 days (with card) or 7 days (without card). Both include full access",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.65,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "GRAPHQL",
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.twenty.com/developers/extend/api",
+        "quote": "Both are available as REST and GraphQL.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://docs.twenty.com/developers/extend/api",
+        "quote": "CRUD on records: People, Companies, Opportunities, your custom objects.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://docs.twenty.com/user-guide/ai/capabilities/mcp",
+        "quote": "Twenty exposes an MCP server so that AI assistants",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://docs.twenty.com/developers/extend/api",
+        "quote": "Your workspace-specific API documentation is available under Settings → Developers → API after creating an API key.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.4,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "TWENTY",
+    "name": "Twenty",
+    "tools": 23,
+    "triggers": 0,
+    "auth": [
+      "API_KEY"
+    ],
+    "managed_app": null,
+    "url": "https://docs.composio.dev/toolkits/twenty.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://docs.twenty.com/developers/extend/oauth",
+    "https://docs.twenty.com/developers/extend/api",
+    "https://docs.twenty.com/user-guide/ai/capabilities/mcp",
+    "https://docs.twenty.com/getting-started/quickstart",
+    "https://twenty.com/pricing",
+    "https://twenty.com/llms.txt",
+    "https://twenty.com/partners/integrators",
+    "https://docs.twenty.com/developers/self-host/capabilities/security"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "webhooks": [
+            "ungrounded"
+          ],
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "webhooks": [
+        "ungrounded"
+      ],
+      "sandbox": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": []
+}

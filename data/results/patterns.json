@@ -1,0 +1,617 @@
+{
+ "n": 100,
+ "headlines": [
+  {
+   "fig": "75%",
+   "text": "of apps (75 of 100) let a developer get working credentials alone; 25 are gated by a paid plan, an approval step, or sales."
+  },
+  {
+   "fig": "82%",
+   "text": "accept a static API key or token, the most common scheme; 68% accept OAuth 2.0, and 53 offer both."
+  },
+  {
+   "fig": "Communications and Messaging",
+   "text": "is the most open category (100% self-serve); Support and Helpdesk is the most gated (50% self-serve)."
+  },
+  {
+   "fig": "29",
+   "text": "apps are held back by the most common blocker: paid plan required."
+  },
+  {
+   "fig": "10",
+   "text": "easy wins: self-serve and buildable today, with no Composio toolkit yet. 7 need outreach or a partnership."
+  },
+  {
+   "fig": "87",
+   "text": "of 100 vendors already ship an official MCP server."
+  }
+ ],
+ "auth_any": {
+  "OAUTH2": 68,
+  "API_KEY": 48,
+  "BEARER_TOKEN": 37,
+  "BASIC": 14,
+  "JWT": 7,
+  "OTHER": 5,
+  "NONE": 2
+ },
+ "auth_primary": {
+  "OAUTH2": 68,
+  "API_KEY/TOKEN": 29,
+  "NONE": 2,
+  "BASIC": 1
+ },
+ "access": {
+  "SELF_SERVE_FREE": 63,
+  "SELF_SERVE_TRIAL": 12,
+  "PAID_PLAN": 10,
+  "APPROVAL": 7,
+  "PARTNERSHIP": 6,
+  "NO_PUBLIC_API": 2
+ },
+ "buildability": {
+  "READY": 49,
+  "READY_WITH_CAVEATS": 42,
+  "NEEDS_OUTREACH": 7,
+  "BLOCKED": 2
+ },
+ "blockers": {
+  "Paid plan required": 29,
+  "Partnership / sales gate": 9,
+  "App review / approval": 8,
+  "Other": 6,
+  "No public API": 2,
+  "Auth complexity": 1,
+  "Narrow / limited API": 1
+ },
+ "categories": [
+  {
+   "category": "Communications and Messaging",
+   "n": 10,
+   "self_serve": 10,
+   "gated": 0,
+   "self_serve_pct": 100,
+   "access": {
+    "SELF_SERVE_FREE": 9,
+    "SELF_SERVE_TRIAL": 1
+   },
+   "build": {
+    "READY": 8,
+    "READY_WITH_CAVEATS": 2
+   },
+   "auth": {
+    "BEARER_TOKEN": 5,
+    "OAUTH2": 7,
+    "API_KEY": 4,
+    "BASIC": 3,
+    "OTHER": 1,
+    "JWT": 1
+   }
+  },
+  {
+   "category": "CRM and Sales",
+   "n": 10,
+   "self_serve": 9,
+   "gated": 1,
+   "self_serve_pct": 90,
+   "access": {
+    "SELF_SERVE_FREE": 7,
+    "SELF_SERVE_TRIAL": 2,
+    "PARTNERSHIP": 1
+   },
+   "build": {
+    "READY": 7,
+    "READY_WITH_CAVEATS": 2,
+    "NEEDS_OUTREACH": 1
+   },
+   "auth": {
+    "OAUTH2": 10,
+    "BEARER_TOKEN": 1,
+    "API_KEY": 6,
+    "BASIC": 1
+   }
+  },
+  {
+   "category": "Developer, Infra and Data platforms",
+   "n": 10,
+   "self_serve": 9,
+   "gated": 1,
+   "self_serve_pct": 90,
+   "access": {
+    "SELF_SERVE_FREE": 7,
+    "SELF_SERVE_TRIAL": 2,
+    "PAID_PLAN": 1
+   },
+   "build": {
+    "READY": 7,
+    "READY_WITH_CAVEATS": 3
+   },
+   "auth": {
+    "BEARER_TOKEN": 7,
+    "JWT": 2,
+    "OAUTH2": 9,
+    "API_KEY": 5,
+    "BASIC": 1,
+    "OTHER": 1
+   }
+  },
+  {
+   "category": "Productivity and Project Management",
+   "n": 10,
+   "self_serve": 9,
+   "gated": 1,
+   "self_serve_pct": 90,
+   "access": {
+    "SELF_SERVE_FREE": 9,
+    "PAID_PLAN": 1
+   },
+   "build": {
+    "READY": 8,
+    "READY_WITH_CAVEATS": 2
+   },
+   "auth": {
+    "BEARER_TOKEN": 8,
+    "OAUTH2": 9,
+    "API_KEY": 2,
+    "BASIC": 1,
+    "JWT": 1
+   }
+  },
+  {
+   "category": "Marketing, Ads, Email and Social",
+   "n": 10,
+   "self_serve": 7,
+   "gated": 3,
+   "self_serve_pct": 70,
+   "access": {
+    "APPROVAL": 3,
+    "SELF_SERVE_FREE": 5,
+    "SELF_SERVE_TRIAL": 2
+   },
+   "build": {
+    "READY_WITH_CAVEATS": 7,
+    "READY": 3
+   },
+   "auth": {
+    "JWT": 1,
+    "OAUTH2": 8,
+    "BEARER_TOKEN": 2,
+    "API_KEY": 4,
+    "BASIC": 1
+   }
+  },
+  {
+   "category": "Data, SEO and Scraping",
+   "n": 10,
+   "self_serve": 7,
+   "gated": 3,
+   "self_serve_pct": 70,
+   "access": {
+    "SELF_SERVE_FREE": 6,
+    "SELF_SERVE_TRIAL": 1,
+    "PAID_PLAN": 1,
+    "NO_PUBLIC_API": 1,
+    "APPROVAL": 1
+   },
+   "build": {
+    "READY": 5,
+    "READY_WITH_CAVEATS": 3,
+    "BLOCKED": 1,
+    "NEEDS_OUTREACH": 1
+   },
+   "auth": {
+    "BASIC": 2,
+    "API_KEY": 8,
+    "OAUTH2": 3,
+    "NONE": 1
+   }
+  },
+  {
+   "category": "AI, Research and Media-native",
+   "n": 10,
+   "self_serve": 7,
+   "gated": 3,
+   "self_serve_pct": 70,
+   "access": {
+    "SELF_SERVE_FREE": 7,
+    "PARTNERSHIP": 1,
+    "PAID_PLAN": 1,
+    "NO_PUBLIC_API": 1
+   },
+   "build": {
+    "READY_WITH_CAVEATS": 3,
+    "NEEDS_OUTREACH": 1,
+    "READY": 5,
+    "BLOCKED": 1
+   },
+   "auth": {
+    "OAUTH2": 3,
+    "BEARER_TOKEN": 3,
+    "API_KEY": 6,
+    "JWT": 1,
+    "NONE": 1
+   }
+  },
+  {
+   "category": "Ecommerce",
+   "n": 10,
+   "self_serve": 6,
+   "gated": 4,
+   "self_serve_pct": 60,
+   "access": {
+    "SELF_SERVE_FREE": 5,
+    "SELF_SERVE_TRIAL": 1,
+    "PARTNERSHIP": 1,
+    "PAID_PLAN": 2,
+    "APPROVAL": 1
+   },
+   "build": {
+    "READY": 4,
+    "READY_WITH_CAVEATS": 5,
+    "NEEDS_OUTREACH": 1
+   },
+   "auth": {
+    "BEARER_TOKEN": 5,
+    "OAUTH2": 7,
+    "API_KEY": 3,
+    "BASIC": 1,
+    "OTHER": 2,
+    "JWT": 1
+   }
+  },
+  {
+   "category": "Finance and Fintech",
+   "n": 10,
+   "self_serve": 6,
+   "gated": 4,
+   "self_serve_pct": 60,
+   "access": {
+    "SELF_SERVE_FREE": 6,
+    "PARTNERSHIP": 2,
+    "APPROVAL": 2
+   },
+   "build": {
+    "READY": 1,
+    "READY_WITH_CAVEATS": 7,
+    "NEEDS_OUTREACH": 2
+   },
+   "auth": {
+    "API_KEY": 4,
+    "OAUTH2": 5,
+    "OTHER": 1,
+    "BEARER_TOKEN": 3
+   }
+  },
+  {
+   "category": "Support and Helpdesk",
+   "n": 10,
+   "self_serve": 5,
+   "gated": 5,
+   "self_serve_pct": 50,
+   "access": {
+    "SELF_SERVE_TRIAL": 3,
+    "SELF_SERVE_FREE": 2,
+    "PAID_PLAN": 4,
+    "PARTNERSHIP": 1
+   },
+   "build": {
+    "READY_WITH_CAVEATS": 8,
+    "READY": 1,
+    "NEEDS_OUTREACH": 1
+   },
+   "auth": {
+    "API_KEY": 6,
+    "BASIC": 4,
+    "OAUTH2": 7,
+    "BEARER_TOKEN": 3
+   }
+  }
+ ],
+ "official_mcp": 87,
+ "composio_coverage": 80,
+ "easy_wins": [
+  {
+   "id": 16,
+   "app": "LiveAgent",
+   "category": "Support and Helpdesk",
+   "access": "SELF_SERVE_TRIAL",
+   "build": "READY_WITH_CAVEATS",
+   "blocker": "API access beyond the 30-day trial requires a paid plan.",
+   "composio": null
+  },
+  {
+   "id": 30,
+   "app": "Vonage",
+   "category": "Communications and Messaging",
+   "access": "SELF_SERVE_FREE",
+   "build": "READY",
+   "blocker": null,
+   "composio": null
+  },
+  {
+   "id": 37,
+   "app": "systeme.io",
+   "category": "Marketing, Ads, Email and Social",
+   "access": "SELF_SERVE_FREE",
+   "build": "READY",
+   "blocker": null,
+   "composio": null
+  },
+  {
+   "id": 42,
+   "app": "WooCommerce",
+   "category": "Ecommerce",
+   "access": "SELF_SERVE_FREE",
+   "build": "READY",
+   "blocker": "Each store is self-hosted, so credentials and the base URL are per merchant site.",
+   "composio": null
+  },
+  {
+   "id": 45,
+   "app": "Magento (Adobe Commerce)",
+   "category": "Ecommerce",
+   "access": "SELF_SERVE_FREE",
+   "build": "READY_WITH_CAVEATS",
+   "blocker": "Each store is self-hosted; an Adobe Commerce sandbox requires joining the Technology Partner Program.",
+   "composio": null
+  },
+  {
+   "id": 50,
+   "app": "fanbasis",
+   "category": "Ecommerce",
+   "access": "SELF_SERVE_FREE",
+   "build": "READY",
+   "blocker": "Official developer docs are thin; API details come mostly from SDKs and third-party integrations.",
+   "composio": null
+  },
+  {
+   "id": 52,
+   "app": "SE Ranking",
+   "category": "Data, SEO and Scraping",
+   "access": "SELF_SERVE_TRIAL",
+   "build": "READY_WITH_CAVEATS",
+   "blocker": "After the 14-day trial, API use draws on paid credits or a subscription.",
+   "composio": null
+  },
+  {
+   "id": 83,
+   "app": "Binance",
+   "category": "Finance and Fintech",
+   "access": "SELF_SERVE_FREE",
+   "build": "READY_WITH_CAVEATS",
+   "blocker": "OAuth is limited to close ecosystem partners, so each user must supply API keys from a verified Binance account.",
+   "composio": null
+  },
+  {
+   "id": 85,
+   "app": "iPayX",
+   "category": "Finance and Fintech",
+   "access": "SELF_SERVE_FREE",
+   "build": "READY_WITH_CAVEATS",
+   "blocker": "Narrow API (three FX-audit endpoints), and the free tier is capped at 10 audits a day.",
+   "composio": null
+  },
+  {
+   "id": 95,
+   "app": "Reducto",
+   "category": "AI, Research and Media-native",
+   "access": "SELF_SERVE_FREE",
+   "build": "READY",
+   "blocker": null,
+   "composio": null
+  }
+ ],
+ "outreach": [
+  {
+   "id": 10,
+   "app": "DealCloud",
+   "category": "CRM and Sales",
+   "access": "PARTNERSHIP",
+   "build": "NEEDS_OUTREACH",
+   "blocker": "Enterprise-only product: API access needs a DealCloud customer site and admin-granted permissions.",
+   "composio": null
+  },
+  {
+   "id": 20,
+   "app": "Gladly",
+   "category": "Support and Helpdesk",
+   "access": "PARTNERSHIP",
+   "build": "NEEDS_OUTREACH",
+   "blocker": "Sales-led product: API access needs a Gladly customer organization; sandboxes are bought through a CSM.",
+   "composio": null
+  },
+  {
+   "id": 44,
+   "app": "Salesforce Commerce Cloud",
+   "category": "Ecommerce",
+   "access": "PARTNERSHIP",
+   "build": "NEEDS_OUTREACH",
+   "blocker": "Enterprise-only: API clients come with a Commerce Cloud customer org bought through sales.",
+   "composio": null
+  },
+  {
+   "id": 59,
+   "app": "Waterfall.io",
+   "category": "Data, SEO and Scraping",
+   "access": "APPROVAL",
+   "build": "NEEDS_OUTREACH",
+   "blocker": "API keys are issued only after Waterfall reviews an access request; pricing is by contact.",
+   "composio": null
+  },
+  {
+   "id": 84,
+   "app": "Paygent Connect",
+   "category": "Finance and Fintech",
+   "access": "PARTNERSHIP",
+   "build": "NEEDS_OUTREACH",
+   "blocker": "The sources describe several unrelated 'Paygent' products and none NMI-powered; the right API could not be identified.",
+   "composio": null
+  },
+  {
+   "id": 90,
+   "app": "PitchBook",
+   "category": "Finance and Fintech",
+   "access": "PARTNERSHIP",
+   "build": "NEEDS_OUTREACH",
+   "blocker": "API access is arranged through PitchBook's Direct Data team on top of a PitchBook subscription.",
+   "composio": "PITCHBOOK"
+  },
+  {
+   "id": 92,
+   "app": "Otter AI",
+   "category": "AI, Research and Media-native",
+   "access": "PARTNERSHIP",
+   "build": "NEEDS_OUTREACH",
+   "blocker": "The public API is Enterprise-only and enabled through an Otter account manager.",
+   "composio": "OTTER_AI_MCP"
+  }
+ ],
+ "blocked": [
+  {
+   "id": 58,
+   "app": "Sherlock",
+   "category": "Data, SEO and Scraping",
+   "access": "NO_PUBLIC_API",
+   "build": "BLOCKED",
+   "blocker": "No hosted API: Sherlock is a local open-source CLI, so a toolkit would have to run it itself.",
+   "composio": null
+  },
+  {
+   "id": 98,
+   "app": "Mermaid CLI",
+   "category": "AI, Research and Media-native",
+   "access": "NO_PUBLIC_API",
+   "build": "BLOCKED",
+   "blocker": "No hosted API: mermaid-cli is a local Node/Puppeteer renderer, so a toolkit would have to run it itself.",
+   "composio": null
+  }
+ ],
+ "mcp_but_api_gated": [
+  {
+   "id": 10,
+   "app": "DealCloud",
+   "category": "CRM and Sales",
+   "access": "PARTNERSHIP",
+   "build": "NEEDS_OUTREACH",
+   "blocker": "Enterprise-only product: API access needs a DealCloud customer site and admin-granted permissions.",
+   "composio": null
+  },
+  {
+   "id": 13,
+   "app": "Freshdesk",
+   "category": "Support and Helpdesk",
+   "access": "PAID_PLAN",
+   "build": "READY_WITH_CAVEATS",
+   "blocker": "The free plan has no API access; a paid plan (or trial) is required.",
+   "composio": "FRESHDESK"
+  },
+  {
+   "id": 15,
+   "app": "Pylon",
+   "category": "Support and Helpdesk",
+   "access": "PAID_PLAN",
+   "build": "READY_WITH_CAVEATS",
+   "blocker": "API needs a paid seat on an annual contract; no free tier.",
+   "composio": "PYLON_MCP"
+  },
+  {
+   "id": 18,
+   "app": "Help Scout",
+   "category": "Support and Helpdesk",
+   "access": "PAID_PLAN",
+   "build": "READY_WITH_CAVEATS",
+   "blocker": "The free plan has no API access; a paid plan is required.",
+   "composio": "HELP_SCOUT"
+  },
+  {
+   "id": 19,
+   "app": "Gorgias",
+   "category": "Support and Helpdesk",
+   "access": "PAID_PLAN",
+   "build": "READY_WITH_CAVEATS",
+   "blocker": "API keys come with a paid Helpdesk plan; public OAuth apps need Gorgias approval.",
+   "composio": "GORGIAS"
+  },
+  {
+   "id": 20,
+   "app": "Gladly",
+   "category": "Support and Helpdesk",
+   "access": "PARTNERSHIP",
+   "build": "NEEDS_OUTREACH",
+   "blocker": "Sales-led product: API access needs a Gladly customer organization; sandboxes are bought through a CSM.",
+   "composio": null
+  },
+  {
+   "id": 44,
+   "app": "Salesforce Commerce Cloud",
+   "category": "Ecommerce",
+   "access": "PARTNERSHIP",
+   "build": "NEEDS_OUTREACH",
+   "blocker": "Enterprise-only: API clients come with a Commerce Cloud customer org bought through sales.",
+   "composio": null
+  },
+  {
+   "id": 46,
+   "app": "Squarespace",
+   "category": "Ecommerce",
+   "access": "PAID_PLAN",
+   "build": "READY_WITH_CAVEATS",
+   "blocker": "Commerce APIs need a paid plan; OAuth apps need a review to leave Demo Mode.",
+   "composio": null
+  },
+  {
+   "id": 53,
+   "app": "Ahrefs",
+   "category": "Data, SEO and Scraping",
+   "access": "PAID_PLAN",
+   "build": "READY_WITH_CAVEATS",
+   "blocker": "API needs an eligible paid plan; Ahrefs Connect OAuth apps go through an approval process.",
+   "composio": "AHREFS"
+  },
+  {
+   "id": 70,
+   "app": "Sentry",
+   "category": "Developer, Infra and Data platforms",
+   "access": "PAID_PLAN",
+   "build": "READY_WITH_CAVEATS",
+   "blocker": "Public OAuth apps must be registered by Sentry's partnership team; API integrations are a Team-plan feature.",
+   "composio": "SENTRY"
+  },
+  {
+   "id": 79,
+   "app": "Smartsheet",
+   "category": "Productivity and Project Management",
+   "access": "PAID_PLAN",
+   "build": "READY_WITH_CAVEATS",
+   "blocker": "API access (and Developer Tools registration) requires a Business plan or higher.",
+   "composio": "SMARTSHEET"
+  },
+  {
+   "id": 90,
+   "app": "PitchBook",
+   "category": "Finance and Fintech",
+   "access": "PARTNERSHIP",
+   "build": "NEEDS_OUTREACH",
+   "blocker": "API access is arranged through PitchBook's Direct Data team on top of a PitchBook subscription.",
+   "composio": "PITCHBOOK"
+  },
+  {
+   "id": 92,
+   "app": "Otter AI",
+   "category": "AI, Research and Media-native",
+   "access": "PARTNERSHIP",
+   "build": "NEEDS_OUTREACH",
+   "blocker": "The public API is Enterprise-only and enabled through an Otter account manager.",
+   "composio": "OTTER_AI_MCP"
+  },
+  {
+   "id": 97,
+   "app": "higgsfield",
+   "category": "AI, Research and Media-native",
+   "access": "PAID_PLAN",
+   "build": "READY_WITH_CAVEATS",
+   "blocker": "API calls are paid per generation from a prepaid USD balance; there is no free API tier.",
+   "composio": "HIGGSFIELD"
+  }
+ ]
+}

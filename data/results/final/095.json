@@ -1,0 +1,183 @@
+{
+  "id": 95,
+  "app": "Reducto",
+  "category": "AI, Research and Media-native",
+  "hint": "reducto.ai (document parsing)",
+  "docs_url": "https://docs.reducto.ai/quickstart",
+  "one_liner": {
+    "value": "Document parsing and extraction API for AI pipelines",
+    "evidence": [
+      {
+        "url": "https://reducto.ai/developers",
+        "quote": "Parse, extract, classify, split, and edit 30+ file types.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY",
+      "JWT"
+    ],
+    "evidence": [
+      {
+        "url": "https://reducto.ai/developers",
+        "quote": "Sign up at studio.reducto.ai and create an API key.",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://docs.reducto.ai/security/workload-identity-federation",
+        "quote": "Workload identity federation lets a workload call the Reducto API without a long-lived API key.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://reducto.ai/auth.md",
+        "quote": "It grants the standard 15,000 free credits and an API key.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://reducto.ai/pricing",
+        "quote": "Parse API",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "MODERATE",
+    "evidence": [
+      {
+        "url": "https://reducto.ai/developers",
+        "quote": "Parse, extract, classify, split, and edit 30+ file types.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://docs.reducto.ai/mcp-server",
+        "quote": "The Reducto MCP server connects AI agents directly to Reducto.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://reducto.ai/auth.md",
+        "quote": "It grants the standard 15,000 free credits and an API key.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.4,
+    "flags": []
+  },
+  "composio": {
+    "found": false,
+    "slug": null,
+    "name": null,
+    "tools": null,
+    "triggers": null,
+    "auth": [],
+    "managed_app": null,
+    "url": null,
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://docs.reducto.ai/security/workload-identity-federation",
+    "https://reducto.ai/pricing",
+    "https://docs.reducto.ai/mcp-server",
+    "https://docs.reducto.ai/security/workload-identity-federation/reference",
+    "https://reducto.ai/developers",
+    "https://reducto.ai/SKILL.md",
+    "https://reducto.ai/auth.md",
+    "https://docs.reducto.ai/quickstart"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "webhooks": [
+            "ungrounded"
+          ],
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "webhooks": [
+        "ungrounded"
+      ],
+      "sandbox": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": [
+    "fetch https://docs.reducto.ai/api-reference/llms.txt: 200 too little text (JS-rendered?)"
+  ]
+}

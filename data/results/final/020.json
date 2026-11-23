@@ -1,0 +1,178 @@
+{
+  "id": 20,
+  "app": "Gladly",
+  "category": "Support and Helpdesk",
+  "hint": "gladly.com",
+  "docs_url": "https://developer.gladly.com/rest",
+  "one_liner": {
+    "value": "Customer service platform built around a per-customer conversation timeline",
+    "evidence": [
+      {
+        "url": "https://developer.gladly.com/rest",
+        "quote": "providing agents with the rich customer context they need",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY",
+      "BASIC"
+    ],
+    "evidence": [
+      {
+        "url": "https://help.gladly.com/developer-tutorials/docs/setup-and-testing",
+        "quote": "Gladly API uses token-based Basic Authentication.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "access": {
+    "value": "PARTNERSHIP",
+    "evidence": [
+      {
+        "url": "https://help.gladly.com/developer-tutorials/docs/setup-and-testing",
+        "quote": "If you do not have a sandbox environment and are interested in purchasing one, please contact your Gladly CSM or Gladly Support team.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://developer.gladly.com/rest",
+        "quote": "You can integrate easily with Gladly by calling Gladly's REST API",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://developer.gladly.com/rest",
+        "quote": "managing customer profile data, interacting with a customer's timeline, providing the latest information about a customer's orders",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://help.gladly.com/docs/set-up-the-gladly-mcp-for-claude",
+        "quote": "Connect Claude to your Gladly organization",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://help.gladly.com/docs/generate-api-tokens-and-create-webhooks",
+        "quote": "Click **Create Webhook**.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "sandbox": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://help.gladly.com/developer-tutorials/docs/setup-and-testing",
+        "quote": "Sandbox environments are a great way to test your code without impacting your production environment.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "buildability": {
+    "value": "NEEDS_OUTREACH",
+    "evidence": [
+      {
+        "url": "https://help.gladly.com/developer-tutorials/docs/setup-and-testing",
+        "quote": "please contact your Gladly CSM or Gladly Support team",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "Sales-led product: API access needs a Gladly customer organization; sandboxes are bought through a CSM.",
+    "evidence": [
+      {
+        "url": "https://help.gladly.com/developer-tutorials/docs/setup-and-testing",
+        "quote": "please contact your Gladly CSM or Gladly Support team",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.75,
+    "flags": []
+  },
+  "composio": {
+    "found": false,
+    "slug": null,
+    "name": null,
+    "tools": null,
+    "triggers": null,
+    "auth": [],
+    "managed_app": null,
+    "url": null,
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://developer.gladly.com/rest",
+    "https://help.gladly.com/docs/set-up-the-gladly-mcp-for-claude",
+    "https://github.com/gladly/rest-api-examples",
+    "https://help.gladly.com/developer-tutorials/docs/setup-and-testing",
+    "https://help.gladly.com/docs/generate-api-tokens-and-create-webhooks",
+    "https://github.com/gladly/claude-plugin",
+    "https://www.gladly.ai/partner",
+    "https://help.gladly.com/docs/managing-users-and-roles"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {},
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {}
+  },
+  "errors": []
+}

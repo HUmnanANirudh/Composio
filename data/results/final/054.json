@@ -1,0 +1,175 @@
+{
+  "id": 54,
+  "app": "MrScraper",
+  "category": "Data, SEO and Scraping",
+  "hint": "docs.mrscraper.com",
+  "docs_url": "https://docs.mrscraper.com/docs/api/authentication",
+  "one_liner": {
+    "value": "AI web scraping platform and API",
+    "evidence": [
+      {
+        "url": "https://mrscraper.com/pricing",
+        "quote": "Extract structured web data with intelligent scraping workflows.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.mrscraper.com/docs/api/authentication",
+        "quote": "Include your API token in the x-api-token HTTP header on every request:",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://docs.mrscraper.com/docs/getting-started/billing",
+        "quote": "The Free plan includes 100 tokens per month with no credit card required.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.mrscraper.com/docs/guides/programmatically",
+        "quote": "use it programmatically through the API",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "MODERATE",
+    "evidence": [
+      {
+        "url": "https://github.com/mrscraper-com/mrscraper-mcp",
+        "quote": "An MCP server exposing the seven MrScraper services",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://docs.mrscraper.com/docs/getting-started/mcp-server",
+        "quote": "MrScraper MCP is the official Model Context Protocol server for MrScraper.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://docs.mrscraper.com/docs/integrations/webhook",
+        "quote": "Webhooks let you automatically send HTTP requests to another API when specific events happen in your scraper",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://docs.mrscraper.com/docs/getting-started/billing",
+        "quote": "The Free plan includes 100 tokens per month with no credit card required.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.4,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "MRSCRAPER",
+    "name": "MrScraper",
+    "tools": 11,
+    "triggers": 0,
+    "auth": [
+      "API_KEY"
+    ],
+    "managed_app": null,
+    "url": "https://docs.composio.dev/toolkits/mrscraper.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://docs.mrscraper.com/docs/api/authentication",
+    "https://mrscraper.com/pricing",
+    "https://docs.mrscraper.com/docs/getting-started/mcp-server",
+    "https://docs.mrscraper.com/docs/integrations/webhook",
+    "https://github.com/mrscraper-com/mrscraper-mcp",
+    "https://mrscraper.com/blog/ai-agent-api-authentication",
+    "https://docs.mrscraper.com/docs/getting-started/billing",
+    "https://docs.mrscraper.com/docs/guides/programmatically"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "sandbox": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": []
+}

@@ -1,0 +1,178 @@
+{
+  "id": 99,
+  "app": "YouTube Transcript",
+  "category": "AI, Research and Media-native",
+  "hint": "transcriptapi.com",
+  "docs_url": "https://transcriptapi.com/docs/api",
+  "one_liner": {
+    "value": "Hosted API for YouTube transcripts, search and channel data",
+    "evidence": [
+      {
+        "url": "https://transcriptapi.com/docs/api",
+        "quote": "The YouTube Transcript API provides a simple and reliable way to extract transcripts from YouTube videos programmatically.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY"
+    ],
+    "evidence": [
+      {
+        "url": "https://transcriptapi.com/docs/getting-started/curl",
+        "quote": "Sign up to get 100 free credits (no card required), then copy a key from the API Keys dashboard.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://transcriptapi.com/docs/getting-started/curl",
+        "quote": "Sign up to get 100 free credits (no card required)",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://transcriptapi.com/docs/api",
+        "quote": "GET /youtube/transcript",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "MODERATE",
+    "evidence": [
+      {
+        "url": "https://transcriptapi.com/docs/api",
+        "quote": "GET /youtube/search",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://transcriptapi.com/docs/mcp",
+        "quote": "TranscriptAPI runs a hosted (remote) MCP server at https://transcriptapi.com/mcp.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://transcriptapi.com/docs/getting-started/curl",
+        "quote": "Sign up to get 100 free credits (no card required)",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.4,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "YOUTUBE_TRANSCRIPT",
+    "name": "YouTube Transcript",
+    "tools": 9,
+    "triggers": 0,
+    "auth": [
+      "API_KEY"
+    ],
+    "managed_app": null,
+    "url": "https://docs.composio.dev/toolkits/youtube_transcript.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://transcriptapi.io/pricing",
+    "https://transcripthook.com/integrations/mcp",
+    "https://transcriptapi.com/docs/getting-started/curl",
+    "https://youtubescribe.com/docs",
+    "https://getyoutubetranscript.com/docs",
+    "https://transcriptapi.com/docs/mcp",
+    "https://transcriptapi.com/docs/mcp/claude",
+    "https://transcriptapi.com/docs/api"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "webhooks": [
+            "ungrounded"
+          ],
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "webhooks": [
+        "ungrounded"
+      ],
+      "sandbox": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": [
+    "fetch https://youtubevideotranscript.io/docs/mcp: 0 ConnectError: [Errno -3] Temporary failure in name resolution"
+  ]
+}

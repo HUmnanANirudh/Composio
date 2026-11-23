@@ -1,0 +1,189 @@
+{
+  "id": 78,
+  "app": "Coda",
+  "category": "Productivity and Project Management",
+  "hint": "coda.io/developers",
+  "docs_url": "https://coda.io/apis/v1/openapi.yaml",
+  "one_liner": {
+    "value": "Doc-as-app platform (now Superhuman Docs) with tables and automations",
+    "evidence": [
+      {
+        "url": "https://docs.superhuman.com/@oleg/getting-started-guide-coda-api",
+        "quote": "The Superhuman Docs API enables you to read and write data to your Superhuman Docs document using code.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "BEARER_TOKEN"
+    ],
+    "evidence": [
+      {
+        "url": "https://connect.superhuman.com/t/accessing-coda-api-from-a-3rd-party-software/47539",
+        "quote": "The Coda API uses API tokens for authentication",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://connect.superhuman.com/t/accessing-coda-api-from-a-3rd-party-software/47539",
+        "quote": "We don’t support OAuth2 currently",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://coda.io/apis/v1/openapi.yaml",
+        "quote": "We make the Superhuman Docs API available to all of our users free of\n    charge, in both free and paid workspaces.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://help.coda.io/hc/en-us/articles/39555941038349-Does-Coda-have-an-API",
+        "quote": "The Coda API is a RESTful API that lets you programmatically interact with Coda Docs",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "MODERATE",
+    "evidence": [
+      {
+        "url": "https://help.coda.io/hc/en-us/articles/39555941038349-Does-Coda-have-an-API",
+        "quote": "The API allows you to get data in and out of tables in Coda as well as access computed values from formulas",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://help.coda.io/hc/en-us/articles/44722661982989-Connect-to-the-Coda-MCP",
+        "quote": "The Coda MCP is in beta.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "webhooks": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "READY_WITH_CAVEATS",
+    "evidence": [
+      {
+        "url": "https://connect.superhuman.com/t/accessing-coda-api-from-a-3rd-party-software/47539",
+        "quote": "We don’t support OAuth2 currently",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "No OAuth for the public API: each user must supply a personal API token.",
+    "evidence": [
+      {
+        "url": "https://connect.superhuman.com/t/accessing-coda-api-from-a-3rd-party-software/47539",
+        "quote": "Your application would be to collect those tokens from your users and store them to later use.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "CODA",
+    "name": "Coda",
+    "tools": 110,
+    "triggers": 4,
+    "auth": [
+      "API_KEY"
+    ],
+    "managed_app": null,
+    "url": "https://docs.composio.dev/toolkits/coda.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://connect.superhuman.com/t/accessing-coda-api-from-a-3rd-party-software/47539",
+    "https://coda.io/apis/v1/openapi.yaml",
+    "https://help.coda.io/hc/en-us/articles/44722661982989-Connect-to-the-Coda-MCP",
+    "https://docs.superhuman.com/@oleg/getting-started-guide-coda-api",
+    "https://help.coda.io/hc/en-us/articles/39555941038349-Does-Coda-have-an-API",
+    "https://help.coda.io/hc/en-us/articles/44722769665549-Security-recommendations-for-the-Coda-MCP",
+    "https://coda.io/resources/guides/getting_started_with_coda_mcp",
+    "https://github.com/coda/packs-sdk/blob/main/docs/samples/topic/authentication.md"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "webhooks": [
+            "ungrounded"
+          ],
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "webhooks": [
+        "ungrounded"
+      ],
+      "sandbox": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": []
+}

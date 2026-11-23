@@ -1,0 +1,185 @@
+{
+  "id": 64,
+  "app": "Cloudflare",
+  "category": "Developer, Infra and Data platforms",
+  "hint": "developers.cloudflare.com/api",
+  "docs_url": "https://developers.cloudflare.com/api/overview",
+  "one_liner": {
+    "value": "Connectivity cloud for CDN, DNS, security and serverless compute",
+    "evidence": [
+      {
+        "url": "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare",
+        "quote": "over 2,500 endpoints across DNS, Workers, R2, Zero Trust, and every other product",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY",
+      "BEARER_TOKEN",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.cloudflare.com/api/overview",
+        "quote": "Create an API token to grant access to the API to perform actions. You can also authenticate with API keys",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://developers.cloudflare.com/api/resources/iam/subresources/oauth_clients/methods/create",
+        "quote": "Create a new OAuth client for an account.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://developers.cloudflare.com/api/overview",
+        "quote": "To create an API token, from the Cloudflare dashboard, go to My Profile → API Tokens and select Create Token.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.cloudflare.com/api/terraform",
+        "quote": "convenient access to the Cloudflare REST API from Terraform.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare",
+        "quote": "It provides access to the entire Cloudflare API — over 2,500 endpoints",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare",
+        "quote": "Cloudflare runs a catalog of managed remote MCP servers",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developers.cloudflare.com/api/resources/alerting/subresources/destinations/subresources/webhooks",
+        "quote": "Create a webhook",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://developers.cloudflare.com/api/overview",
+        "quote": "Create an API token to grant access to the API to perform actions.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.4,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "CLOUDFLARE",
+    "name": "Cloudflare",
+    "tools": 171,
+    "triggers": 0,
+    "auth": [
+      "API_KEY"
+    ],
+    "managed_app": null,
+    "url": "https://docs.composio.dev/toolkits/cloudflare.md",
+    "mcp_variant": "CLOUDFLARE_MCP",
+    "mcp_variant_auth": [
+      "DCR_OAUTH"
+    ]
+  },
+  "sources": [
+    "https://developers.cloudflare.com/api/overview",
+    "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare",
+    "https://developers.cloudflare.com/api/resources/alerting/subresources/destinations/subresources/webhooks",
+    "https://developers.cloudflare.com/api/terraform",
+    "https://developers.cloudflare.com/api",
+    "https://github.com/cloudflare/mcp",
+    "https://developers.cloudflare.com/api/resources/origin_tls_client_auth",
+    "https://developers.cloudflare.com/api/resources/iam/subresources/oauth_clients/methods/create"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "sandbox": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": []
+}

@@ -1,0 +1,200 @@
+{
+  "id": 9,
+  "app": "Copper",
+  "category": "CRM and Sales",
+  "hint": "copper.com",
+  "docs_url": "https://developer.copper.com/introduction/authentication.html",
+  "one_liner": {
+    "value": "CRM built for Google Workspace users",
+    "evidence": [
+      {
+        "url": "https://www.copper.com/partners",
+        "quote": "the only CRM that’s a Recommended for Google Workspace app",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://developer.copper.com/introduction/authentication.html",
+        "quote": "There are two ways to access the Copper Developer API: API keys and OAuth2.0.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_TRIAL",
+    "evidence": [
+      {
+        "url": "https://www.copper.com/pricing",
+        "quote": "Start free, no credit card required.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.4,
+    "flags": [
+      "low_confidence"
+    ]
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://developer.copper.com/introduction/requests.html",
+        "quote": "the request parameters must be provided as JSON in the request body.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://developer.copper.com/introduction/authentication.html",
+        "quote": "There are two ways to access the Copper Developer API",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.65,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": false,
+    "evidence": [
+      {
+        "url": "https://www.copper.com/mcp",
+        "quote": "MCP - COMING SOON",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://www.copper.com/mcp",
+        "quote": "Request early access to the beta, or join the waitlist",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.6,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developer.copper.com/webhooks/notification-example.html",
+        "quote": "This example shows the notification request your endpoint will receive",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "READY_WITH_CAVEATS",
+    "evidence": [
+      {
+        "url": "https://developer.copper.com/introduction/oauth/index.html",
+        "quote": "To register your application, contact us.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "OAuth apps must be registered by contacting Copper; API keys are admin-generated.",
+    "evidence": [
+      {
+        "url": "https://developer.copper.com/introduction/oauth/index.html",
+        "quote": "To register your application, contact us.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "COPPER",
+    "name": "Copper",
+    "tools": 65,
+    "triggers": 0,
+    "auth": [
+      "API_KEY"
+    ],
+    "managed_app": null,
+    "url": "https://docs.composio.dev/toolkits/copper.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://developer.copper.com/introduction/authentication.html",
+    "https://www.copper.com/pricing",
+    "https://www.copper.com/mcp",
+    "https://developer.copper.com/webhooks/notification-example.html",
+    "https://developer.copper.com/introduction/requests.html",
+    "https://developer.copper.com/introduction/oauth/flow.html",
+    "https://developer.copper.com/introduction/oauth/index.html",
+    "https://www.copper.com/partners"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {
+          "access": [
+            "low_confidence"
+          ]
+        }
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "sandbox": [
+        "ungrounded"
+      ],
+      "access": [
+        "low_confidence"
+      ]
+    }
+  },
+  "errors": [
+    "fetch https://getcopper.io/docs/mcp: 200 too little text (JS-rendered?)"
+  ]
+}

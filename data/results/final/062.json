@@ -1,0 +1,187 @@
+{
+  "id": 62,
+  "app": "Vercel",
+  "category": "Developer, Infra and Data platforms",
+  "hint": "vercel.com/docs/rest-api",
+  "docs_url": "https://vercel.com/docs/rest-api",
+  "one_liner": {
+    "value": "Frontend cloud for deploying web apps and serverless functions",
+    "evidence": [
+      {
+        "url": "https://vercel.com/docs/rest-api",
+        "quote": "You can deploy new versions of web applications, manage custom domains",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "BEARER_TOKEN"
+    ],
+    "evidence": [
+      {
+        "url": "https://vercel.com/docs/rest-api",
+        "quote": "Vercel Access Tokens are required to authenticate and use the Vercel API.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": [
+      "maybe_incomplete_vs_composio:['OAUTH2']"
+    ]
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://vercel.com/docs/rest-api",
+        "quote": "Create and manage Access Tokens in your account settings.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://vercel.com/docs/rest-api",
+        "quote": "All endpoints live under the URL https://api.vercel.com and follow the REST architecture.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://vercel.com/docs/rest-api",
+        "quote": "deploy new versions of web applications, manage custom domains, retrieve information about deployments, and manage secrets and environment variables",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://vercel.com/docs/cli/mcp",
+        "quote": "Vercel's hosted Model Context Protocol endpoint at https://mcp.vercel.com",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://vercel.com/docs/rest-api/webhooks/get-a-list-of-webhooks",
+        "quote": "Get a list of webhooks",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://vercel.com/docs/rest-api",
+        "quote": "Create and manage Access Tokens in your account settings.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.4,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "VERCEL",
+    "name": "Vercel",
+    "tools": 414,
+    "triggers": 0,
+    "auth": [
+      "OAUTH2",
+      "API_KEY"
+    ],
+    "managed_app": "No",
+    "url": "https://docs.composio.dev/toolkits/vercel.md",
+    "mcp_variant": "VERCEL_MCP",
+    "mcp_variant_auth": [
+      "DCR_OAUTH"
+    ]
+  },
+  "sources": [
+    "https://vercel.com/docs/rest-api",
+    "https://vercel.com/docs/rest-api/getting-started",
+    "https://vercel.com/docs/agent-resources/vercel-mcp",
+    "https://vercel.com/docs/rest-api/webhooks/get-a-list-of-webhooks",
+    "https://vercel.com/docs/rest-api?query=api",
+    "https://vercel.com/docs/cli/mcp",
+    "https://vercel.com/docs/rest-api/sandboxes/list-sandboxes",
+    "https://vercel.com/docs/accounts/access-tokens"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {
+          "auth_methods": [
+            "maybe_incomplete_vs_composio:['OAUTH2']"
+          ]
+        }
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "sandbox": [
+        "ungrounded"
+      ],
+      "auth_methods": [
+        "maybe_incomplete_vs_composio:['OAUTH2']"
+      ]
+    }
+  },
+  "errors": []
+}

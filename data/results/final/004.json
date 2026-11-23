@@ -1,0 +1,188 @@
+{
+  "id": 4,
+  "app": "Attio",
+  "category": "CRM and Sales",
+  "hint": "attio.com",
+  "docs_url": "https://docs.attio.com/rest-api/guides/authentication",
+  "one_liner": {
+    "value": "AI-native CRM with customizable objects and workflows",
+    "evidence": [
+      {
+        "url": "https://docs.attio.com/mcp/overview",
+        "quote": "lets AI assistants interact with your Attio CRM workspace",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.attio.com/rest-api/guides/authentication",
+        "quote": "By implementing an OAuth 2.0 flow",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://docs.attio.com/rest-api/guides/authentication",
+        "quote": "By generating an API key for your workspace",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://attio.com/help/reference/apps/generating-an-api-key",
+        "quote": "Available on all plans.",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://attio.com/pricing",
+        "quote": "Start for free with plans for every stage of growth",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.attio.com/rest-api/guides/authentication",
+        "quote": "In order to make requests to the Attio REST API, you need to generate an access token.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://docs.attio.com/mcp/overview",
+        "quote": "search, read, create, and update records across your CRM—people, companies, deals, tasks, and notes",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://docs.attio.com/mcp/overview",
+        "quote": "Attio MCP is Attio’s hosted MCP server that gives AI tools secure access to your Attio workspace.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://docs.attio.com/rest-api/endpoint-reference/webhooks/list-webhooks.md",
+        "quote": "Get all of the webhooks in your workspace.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://attio.com/help/reference/apps/generating-an-api-key",
+        "quote": "Available on all plans.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.4,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "ATTIO",
+    "name": "Attio",
+    "tools": 114,
+    "triggers": 0,
+    "auth": [
+      "OAUTH2"
+    ],
+    "managed_app": "Yes",
+    "url": "https://docs.composio.dev/toolkits/attio.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://docs.attio.com/rest-api/guides/authentication",
+    "https://attio.com/pricing",
+    "https://docs.attio.com/mcp/overview",
+    "https://docs.attio.com/rest-api/endpoint-reference/webhooks/list-webhooks.md",
+    "https://attio.com/help/reference/apps/generating-an-api-key",
+    "https://attio.com/partners/app-partners",
+    "https://attio.com/platform/mcp",
+    "https://docs.attio.com/docs/oauth/authorize.md"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "sandbox": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": []
+}

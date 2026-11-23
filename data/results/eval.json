@@ -1,39 +1,39 @@
 {
  "pass1": {
   "overall": {
-   "correct": 4,
-   "total": 6,
-   "accuracy": 0.667
+   "correct": 112,
+   "total": 115,
+   "accuracy": 0.974
   },
   "per_field": {
    "auth_methods": {
-    "correct": 0,
-    "total": 1,
-    "accuracy": 0.0
+    "correct": 19,
+    "total": 19,
+    "accuracy": 1.0
    },
    "access": {
-    "correct": 0,
-    "total": 1,
-    "accuracy": 0.0
+    "correct": 18,
+    "total": 20,
+    "accuracy": 0.9
    },
    "api_style": {
-    "correct": 1,
-    "total": 1,
+    "correct": 19,
+    "total": 19,
     "accuracy": 1.0
    },
    "api_breadth": {
-    "correct": 1,
-    "total": 1,
+    "correct": 19,
+    "total": 19,
     "accuracy": 1.0
    },
    "official_mcp": {
-    "correct": 1,
-    "total": 1,
-    "accuracy": 1.0
+    "correct": 17,
+    "total": 18,
+    "accuracy": 0.944
    },
    "buildability": {
-    "correct": 1,
-    "total": 1,
+    "correct": 20,
+    "total": 20,
     "accuracy": 1.0
    }
   },
@@ -42,81 +42,175 @@
     "id": 2,
     "app": "HubSpot",
     "field": "auth_methods",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "BEARER_TOKEN",
+     "OAUTH2"
+    ],
+    "truth": {
+     "core": [
+      "OAUTH2",
+      "BEARER_TOKEN"
+     ],
+     "optional": [
+      "API_KEY",
+      "JWT"
+     ]
+    },
+    "accept": null,
+    "confidence": 0.92,
+    "flags": []
    },
    {
     "id": 2,
     "app": "HubSpot",
     "field": "access",
-    "status": "missing"
+    "status": "hit",
+    "agent": "SELF_SERVE_FREE",
+    "truth": "SELF_SERVE_FREE",
+    "accept": null,
+    "confidence": 0.75,
+    "flags": []
    },
    {
     "id": 2,
     "app": "HubSpot",
     "field": "api_style",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "REST"
+    ],
+    "truth": {
+     "core": [
+      "REST"
+     ],
+     "optional": []
+    },
+    "accept": null,
+    "confidence": 0.9,
+    "flags": []
    },
    {
     "id": 2,
     "app": "HubSpot",
     "field": "api_breadth",
-    "status": "missing"
+    "status": "hit",
+    "agent": "BROAD",
+    "truth": "BROAD",
+    "accept": null,
+    "confidence": 0.8,
+    "flags": []
    },
    {
     "id": 2,
     "app": "HubSpot",
     "field": "official_mcp",
-    "status": "missing"
+    "status": "hit",
+    "agent": true,
+    "truth": true,
+    "accept": null,
+    "confidence": 0.97,
+    "flags": []
    },
    {
     "id": 2,
     "app": "HubSpot",
     "field": "buildability",
-    "status": "missing"
+    "status": "hit",
+    "agent": "READY",
+    "truth": "READY",
+    "accept": null,
+    "confidence": 0.85,
+    "flags": []
    },
    {
     "id": 6,
     "app": "Podio",
     "field": "auth_methods",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "OAUTH2"
+    ],
+    "truth": {
+     "core": [
+      "OAUTH2"
+     ],
+     "optional": []
+    },
+    "accept": null,
+    "confidence": 0.9,
+    "flags": []
    },
    {
     "id": 6,
     "app": "Podio",
     "field": "access",
-    "status": "missing"
+    "status": "hit",
+    "agent": "SELF_SERVE_FREE",
+    "truth": "SELF_SERVE_FREE",
+    "accept": null,
+    "confidence": 0.9,
+    "flags": []
    },
    {
     "id": 6,
     "app": "Podio",
     "field": "api_style",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "REST"
+    ],
+    "truth": {
+     "core": [
+      "REST"
+     ],
+     "optional": []
+    },
+    "accept": null,
+    "confidence": 0.8,
+    "flags": []
    },
    {
     "id": 6,
     "app": "Podio",
     "field": "api_breadth",
-    "status": "missing"
+    "status": "hit",
+    "agent": "BROAD",
+    "truth": "BROAD",
+    "accept": null,
+    "confidence": 0.85,
+    "flags": []
    },
    {
     "id": 6,
     "app": "Podio",
     "field": "official_mcp",
-    "status": "missing"
+    "status": "hit",
+    "agent": false,
+    "truth": false,
+    "accept": null,
+    "confidence": 0.5,
+    "flags": []
    },
    {
     "id": 6,
     "app": "Podio",
     "field": "buildability",
-    "status": "missing"
+    "status": "hit",
+    "agent": "READY",
+    "truth": "READY",
+    "accept": null,
+    "confidence": 0.85,
+    "flags": []
    },
    {
     "id": 19,
     "app": "Gorgias",
     "field": "auth_methods",
-    "status": "miss",
+    "status": "hit",
     "agent": [
      "API_KEY",
+     "BASIC",
      "OAUTH2"
     ],
     "truth": {
@@ -129,7 +223,7 @@
      ]
     },
     "accept": null,
-    "confidence": 1.0,
+    "confidence": 0.92,
     "flags": []
    },
    {
@@ -137,12 +231,12 @@
     "app": "Gorgias",
     "field": "access",
     "status": "miss",
-    "agent": "SELF_SERVE_FREE",
+    "agent": "PAID_PLAN",
     "truth": "SELF_SERVE_TRIAL",
     "accept": [
      "APPROVAL"
     ],
-    "confidence": 1.0,
+    "confidence": 0.5,
     "flags": []
    },
    {
@@ -160,7 +254,7 @@
      "optional": []
     },
     "accept": null,
-    "confidence": 1.0,
+    "confidence": 0.95,
     "flags": []
    },
    {
@@ -173,7 +267,7 @@
     "accept": [
      "MODERATE"
     ],
-    "confidence": 0.6,
+    "confidence": 0.8,
     "flags": []
    },
    {
@@ -184,7 +278,7 @@
     "agent": true,
     "truth": true,
     "accept": null,
-    "confidence": 1.0,
+    "confidence": 0.97,
     "flags": []
    },
    {
@@ -195,176 +289,420 @@
     "agent": "READY_WITH_CAVEATS",
     "truth": "READY_WITH_CAVEATS",
     "accept": null,
-    "confidence": 0.9,
+    "confidence": 0.75,
     "flags": []
    },
    {
     "id": 20,
     "app": "Gladly",
     "field": "auth_methods",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "API_KEY",
+     "BASIC"
+    ],
+    "truth": {
+     "core": [
+      "BASIC"
+     ],
+     "optional": [
+      "API_KEY"
+     ]
+    },
+    "accept": null,
+    "confidence": 0.9,
+    "flags": []
    },
    {
     "id": 20,
     "app": "Gladly",
     "field": "access",
-    "status": "missing"
+    "status": "hit",
+    "agent": "PARTNERSHIP",
+    "truth": "PARTNERSHIP",
+    "accept": null,
+    "confidence": 0.7,
+    "flags": []
    },
    {
     "id": 20,
     "app": "Gladly",
     "field": "api_style",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "REST"
+    ],
+    "truth": {
+     "core": [
+      "REST"
+     ],
+     "optional": []
+    },
+    "accept": null,
+    "confidence": 0.95,
+    "flags": []
    },
    {
     "id": 20,
     "app": "Gladly",
     "field": "api_breadth",
-    "status": "missing"
+    "status": "hit",
+    "agent": "BROAD",
+    "truth": "BROAD",
+    "accept": [
+     "MODERATE"
+    ],
+    "confidence": 0.6,
+    "flags": []
    },
    {
     "id": 20,
     "app": "Gladly",
     "field": "official_mcp",
-    "status": "missing"
+    "status": "hit",
+    "agent": true,
+    "truth": true,
+    "accept": null,
+    "confidence": 0.9,
+    "flags": []
    },
    {
     "id": 20,
     "app": "Gladly",
     "field": "buildability",
-    "status": "missing"
+    "status": "hit",
+    "agent": "NEEDS_OUTREACH",
+    "truth": "NEEDS_OUTREACH",
+    "accept": null,
+    "confidence": 0.7,
+    "flags": []
    },
    {
     "id": 22,
     "app": "Twilio",
     "field": "auth_methods",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "API_KEY",
+     "BASIC",
+     "OAUTH2"
+    ],
+    "truth": {
+     "core": [
+      "BASIC"
+     ],
+     "optional": [
+      "API_KEY",
+      "OAUTH2",
+      "JWT"
+     ]
+    },
+    "accept": null,
+    "confidence": 0.85,
+    "flags": []
    },
    {
     "id": 22,
     "app": "Twilio",
     "field": "access",
-    "status": "missing"
+    "status": "miss",
+    "agent": "SELF_SERVE_FREE",
+    "truth": "SELF_SERVE_TRIAL",
+    "accept": null,
+    "confidence": 0.7,
+    "flags": []
    },
    {
     "id": 22,
     "app": "Twilio",
     "field": "api_style",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "REST"
+    ],
+    "truth": {
+     "core": [
+      "REST"
+     ],
+     "optional": []
+    },
+    "accept": null,
+    "confidence": 0.95,
+    "flags": []
    },
    {
     "id": 22,
     "app": "Twilio",
     "field": "api_breadth",
-    "status": "missing"
+    "status": "hit",
+    "agent": "BROAD",
+    "truth": "BROAD",
+    "accept": null,
+    "confidence": 0.95,
+    "flags": []
    },
    {
     "id": 22,
     "app": "Twilio",
     "field": "official_mcp",
-    "status": "missing"
+    "status": "hit",
+    "agent": true,
+    "truth": true,
+    "accept": null,
+    "confidence": 0.75,
+    "flags": []
    },
    {
     "id": 22,
     "app": "Twilio",
     "field": "buildability",
-    "status": "missing"
+    "status": "hit",
+    "agent": "READY",
+    "truth": "READY_WITH_CAVEATS",
+    "accept": [
+     "READY"
+    ],
+    "confidence": 0.85,
+    "flags": []
    },
    {
     "id": 24,
     "app": "Lark (Larksuite)",
     "field": "auth_methods",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "BEARER_TOKEN",
+     "OAUTH2"
+    ],
+    "truth": {
+     "core": [
+      "OAUTH2"
+     ],
+     "optional": [
+      "JWT",
+      "BEARER_TOKEN",
+      "API_KEY",
+      "OTHER"
+     ]
+    },
+    "accept": null,
+    "confidence": 0.7,
+    "flags": []
    },
    {
     "id": 24,
     "app": "Lark (Larksuite)",
     "field": "access",
-    "status": "missing"
+    "status": "hit",
+    "agent": "SELF_SERVE_FREE",
+    "truth": "SELF_SERVE_FREE",
+    "accept": null,
+    "confidence": 0.6,
+    "flags": []
    },
    {
     "id": 24,
     "app": "Lark (Larksuite)",
     "field": "api_style",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "REST"
+    ],
+    "truth": {
+     "core": [
+      "REST"
+     ],
+     "optional": []
+    },
+    "accept": null,
+    "confidence": 0.85,
+    "flags": []
    },
    {
     "id": 24,
     "app": "Lark (Larksuite)",
     "field": "api_breadth",
-    "status": "missing"
+    "status": "hit",
+    "agent": "BROAD",
+    "truth": "BROAD",
+    "accept": null,
+    "confidence": 0.9,
+    "flags": []
    },
    {
     "id": 24,
     "app": "Lark (Larksuite)",
     "field": "official_mcp",
-    "status": "missing"
+    "status": "hit",
+    "agent": true,
+    "truth": true,
+    "accept": null,
+    "confidence": 0.9,
+    "flags": []
    },
    {
     "id": 24,
     "app": "Lark (Larksuite)",
     "field": "buildability",
-    "status": "missing"
+    "status": "hit",
+    "agent": "READY",
+    "truth": "READY",
+    "accept": null,
+    "confidence": 0.7,
+    "flags": []
    },
    {
     "id": 39,
     "app": "Threads (Meta)",
     "field": "auth_methods",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "OAUTH2"
+    ],
+    "truth": {
+     "core": [
+      "OAUTH2"
+     ],
+     "optional": [
+      "BEARER_TOKEN"
+     ]
+    },
+    "accept": null,
+    "confidence": 0.95,
+    "flags": []
    },
    {
     "id": 39,
     "app": "Threads (Meta)",
     "field": "access",
-    "status": "missing"
+    "status": "hit",
+    "agent": "SELF_SERVE_FREE",
+    "truth": "SELF_SERVE_FREE",
+    "accept": [
+     "APPROVAL"
+    ],
+    "confidence": 0.6,
+    "flags": []
    },
    {
     "id": 39,
     "app": "Threads (Meta)",
     "field": "api_style",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "REST"
+    ],
+    "truth": {
+     "core": [
+      "REST"
+     ],
+     "optional": [
+      "GRAPHQL"
+     ]
+    },
+    "accept": null,
+    "confidence": 0.85,
+    "flags": []
    },
    {
     "id": 39,
     "app": "Threads (Meta)",
     "field": "api_breadth",
-    "status": "missing"
+    "status": "hit",
+    "agent": "MODERATE",
+    "truth": "MODERATE",
+    "accept": [
+     "NARROW"
+    ],
+    "confidence": 0.7,
+    "flags": []
    },
    {
     "id": 39,
     "app": "Threads (Meta)",
     "field": "official_mcp",
-    "status": "missing"
+    "status": "miss",
+    "agent": false,
+    "truth": true,
+    "accept": null,
+    "confidence": 0.6,
+    "flags": []
    },
    {
     "id": 39,
     "app": "Threads (Meta)",
     "field": "buildability",
-    "status": "missing"
+    "status": "hit",
+    "agent": "READY_WITH_CAVEATS",
+    "truth": "READY_WITH_CAVEATS",
+    "accept": [
+     "READY"
+    ],
+    "confidence": 0.7,
+    "flags": []
    },
    {
     "id": 40,
     "app": "SendGrid",
     "field": "auth_methods",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "API_KEY",
+     "BASIC"
+    ],
+    "truth": {
+     "core": [
+      "API_KEY"
+     ],
+     "optional": [
+      "BASIC"
+     ]
+    },
+    "accept": null,
+    "confidence": 0.9,
+    "flags": []
    },
    {
     "id": 40,
     "app": "SendGrid",
     "field": "access",
-    "status": "missing"
+    "status": "hit",
+    "agent": "SELF_SERVE_TRIAL",
+    "truth": "SELF_SERVE_FREE",
+    "accept": [
+     "SELF_SERVE_TRIAL"
+    ],
+    "confidence": 0.7,
+    "flags": []
    },
    {
     "id": 40,
     "app": "SendGrid",
     "field": "api_style",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "REST"
+    ],
+    "truth": {
+     "core": [
+      "REST"
+     ],
+     "optional": []
+    },
+    "accept": null,
+    "confidence": 0.95,
+    "flags": []
    },
    {
     "id": 40,
     "app": "SendGrid",
     "field": "api_breadth",
-    "status": "missing"
+    "status": "hit",
+    "agent": "BROAD",
+    "truth": "BROAD",
+    "accept": null,
+    "confidence": 0.85,
+    "flags": []
    },
    {
     "id": 40,
@@ -376,67 +714,161 @@
     "id": 40,
     "app": "SendGrid",
     "field": "buildability",
-    "status": "missing"
+    "status": "hit",
+    "agent": "READY_WITH_CAVEATS",
+    "truth": "READY",
+    "accept": [
+     "READY_WITH_CAVEATS"
+    ],
+    "confidence": 0.65,
+    "flags": []
    },
    {
     "id": 47,
     "app": "Ecwid",
     "field": "auth_methods",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "BEARER_TOKEN",
+     "OAUTH2"
+    ],
+    "truth": {
+     "core": [
+      "BEARER_TOKEN"
+     ],
+     "optional": [
+      "OAUTH2"
+     ]
+    },
+    "accept": null,
+    "confidence": 0.9,
+    "flags": []
    },
    {
     "id": 47,
     "app": "Ecwid",
     "field": "access",
-    "status": "missing"
+    "status": "hit",
+    "agent": "PAID_PLAN",
+    "truth": "PAID_PLAN",
+    "accept": null,
+    "confidence": 0.7,
+    "flags": []
    },
    {
     "id": 47,
     "app": "Ecwid",
     "field": "api_style",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "REST"
+    ],
+    "truth": {
+     "core": [
+      "REST"
+     ],
+     "optional": []
+    },
+    "accept": null,
+    "confidence": 0.95,
+    "flags": []
    },
    {
     "id": 47,
     "app": "Ecwid",
     "field": "api_breadth",
-    "status": "missing"
+    "status": "hit",
+    "agent": "BROAD",
+    "truth": "BROAD",
+    "accept": [
+     "MODERATE"
+    ],
+    "confidence": 0.85,
+    "flags": []
    },
    {
     "id": 47,
     "app": "Ecwid",
     "field": "official_mcp",
-    "status": "missing"
+    "status": "hit",
+    "agent": false,
+    "truth": false,
+    "accept": null,
+    "confidence": 0.5,
+    "flags": []
    },
    {
     "id": 47,
     "app": "Ecwid",
     "field": "buildability",
-    "status": "missing"
+    "status": "hit",
+    "agent": "READY_WITH_CAVEATS",
+    "truth": "READY_WITH_CAVEATS",
+    "accept": null,
+    "confidence": 0.75,
+    "flags": []
    },
    {
     "id": 49,
     "app": "Amazon Selling Partner",
     "field": "auth_methods",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "OAUTH2"
+    ],
+    "truth": {
+     "core": [
+      "OAUTH2"
+     ],
+     "optional": [
+      "OTHER"
+     ]
+    },
+    "accept": null,
+    "confidence": 0.9,
+    "flags": []
    },
    {
     "id": 49,
     "app": "Amazon Selling Partner",
     "field": "access",
-    "status": "missing"
+    "status": "hit",
+    "agent": "APPROVAL",
+    "truth": "APPROVAL",
+    "accept": [
+     "PAID_PLAN"
+    ],
+    "confidence": 0.7,
+    "flags": []
    },
    {
     "id": 49,
     "app": "Amazon Selling Partner",
     "field": "api_style",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "REST"
+    ],
+    "truth": {
+     "core": [
+      "REST"
+     ],
+     "optional": []
+    },
+    "accept": null,
+    "confidence": 0.9,
+    "flags": []
    },
    {
     "id": 49,
     "app": "Amazon Selling Partner",
     "field": "api_breadth",
-    "status": "missing"
+    "status": "hit",
+    "agent": "BROAD",
+    "truth": "BROAD",
+    "accept": null,
+    "confidence": 0.95,
+    "flags": []
    },
    {
     "id": 49,
@@ -448,295 +880,704 @@
     "id": 49,
     "app": "Amazon Selling Partner",
     "field": "buildability",
-    "status": "missing"
+    "status": "hit",
+    "agent": "READY_WITH_CAVEATS",
+    "truth": "READY_WITH_CAVEATS",
+    "accept": [
+     "NEEDS_OUTREACH"
+    ],
+    "confidence": 0.65,
+    "flags": []
    },
    {
     "id": 58,
     "app": "Sherlock",
     "field": "auth_methods",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "NONE"
+    ],
+    "truth": {
+     "core": [
+      "NONE"
+     ],
+     "optional": []
+    },
+    "accept": null,
+    "confidence": 0.85,
+    "flags": []
    },
    {
     "id": 58,
     "app": "Sherlock",
     "field": "access",
-    "status": "missing"
+    "status": "hit",
+    "agent": "NO_PUBLIC_API",
+    "truth": "NO_PUBLIC_API",
+    "accept": null,
+    "confidence": 0.9,
+    "flags": []
    },
    {
     "id": 58,
     "app": "Sherlock",
     "field": "api_style",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "CLI"
+    ],
+    "truth": {
+     "core": [
+      "CLI"
+     ],
+     "optional": [
+      "SDK_ONLY"
+     ]
+    },
+    "accept": null,
+    "confidence": 0.95,
+    "flags": []
    },
    {
     "id": 58,
     "app": "Sherlock",
     "field": "api_breadth",
-    "status": "missing"
+    "status": "hit",
+    "agent": "NARROW",
+    "truth": "NONE",
+    "accept": [
+     "NARROW"
+    ],
+    "confidence": 0.5,
+    "flags": []
    },
    {
     "id": 58,
     "app": "Sherlock",
     "field": "official_mcp",
-    "status": "missing"
+    "status": "hit",
+    "agent": false,
+    "truth": false,
+    "accept": null,
+    "confidence": 0.6,
+    "flags": []
    },
    {
     "id": 58,
     "app": "Sherlock",
     "field": "buildability",
-    "status": "missing"
+    "status": "hit",
+    "agent": "BLOCKED",
+    "truth": "READY_WITH_CAVEATS",
+    "accept": [
+     "BLOCKED"
+    ],
+    "confidence": 0.8,
+    "flags": []
    },
    {
     "id": 60,
     "app": "Clay",
     "field": "auth_methods",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "API_KEY"
+    ],
+    "truth": {
+     "core": [
+      "API_KEY"
+     ],
+     "optional": [
+      "OAUTH2"
+     ]
+    },
+    "accept": null,
+    "confidence": 0.95,
+    "flags": []
    },
    {
     "id": 60,
     "app": "Clay",
     "field": "access",
-    "status": "missing"
+    "status": "hit",
+    "agent": "SELF_SERVE_FREE",
+    "truth": "SELF_SERVE_FREE",
+    "accept": [
+     "PAID_PLAN",
+     "SELF_SERVE_TRIAL"
+    ],
+    "confidence": 0.55,
+    "flags": []
    },
    {
     "id": 60,
     "app": "Clay",
     "field": "api_style",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "REST"
+    ],
+    "truth": {
+     "core": [
+      "REST"
+     ],
+     "optional": [
+      "CLI"
+     ]
+    },
+    "accept": null,
+    "confidence": 0.85,
+    "flags": []
    },
    {
     "id": 60,
     "app": "Clay",
     "field": "api_breadth",
-    "status": "missing"
+    "status": "hit",
+    "agent": "MODERATE",
+    "truth": "MODERATE",
+    "accept": [
+     "NARROW"
+    ],
+    "confidence": 0.65,
+    "flags": []
    },
    {
     "id": 60,
     "app": "Clay",
     "field": "official_mcp",
-    "status": "missing"
+    "status": "hit",
+    "agent": true,
+    "truth": true,
+    "accept": null,
+    "confidence": 0.95,
+    "flags": []
    },
    {
     "id": 60,
     "app": "Clay",
     "field": "buildability",
-    "status": "missing"
+    "status": "hit",
+    "agent": "READY_WITH_CAVEATS",
+    "truth": "READY_WITH_CAVEATS",
+    "accept": [
+     "READY"
+    ],
+    "confidence": 0.6,
+    "flags": []
    },
    {
     "id": 61,
     "app": "GitHub",
     "field": "auth_methods",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "BEARER_TOKEN",
+     "JWT",
+     "OAUTH2"
+    ],
+    "truth": {
+     "core": [
+      "BEARER_TOKEN",
+      "OAUTH2"
+     ],
+     "optional": [
+      "JWT",
+      "BASIC"
+     ]
+    },
+    "accept": null,
+    "confidence": 0.9,
+    "flags": []
    },
    {
     "id": 61,
     "app": "GitHub",
     "field": "access",
-    "status": "missing"
+    "status": "hit",
+    "agent": "SELF_SERVE_FREE",
+    "truth": "SELF_SERVE_FREE",
+    "accept": null,
+    "confidence": 0.95,
+    "flags": []
    },
    {
     "id": 61,
     "app": "GitHub",
     "field": "api_style",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "GRAPHQL",
+     "REST"
+    ],
+    "truth": {
+     "core": [
+      "REST",
+      "GRAPHQL"
+     ],
+     "optional": []
+    },
+    "accept": null,
+    "confidence": 0.95,
+    "flags": []
    },
    {
     "id": 61,
     "app": "GitHub",
     "field": "api_breadth",
-    "status": "missing"
+    "status": "hit",
+    "agent": "BROAD",
+    "truth": "BROAD",
+    "accept": null,
+    "confidence": 0.95,
+    "flags": []
    },
    {
     "id": 61,
     "app": "GitHub",
     "field": "official_mcp",
-    "status": "missing"
+    "status": "hit",
+    "agent": true,
+    "truth": true,
+    "accept": null,
+    "confidence": 0.97,
+    "flags": []
    },
    {
     "id": 61,
     "app": "GitHub",
     "field": "buildability",
-    "status": "missing"
+    "status": "hit",
+    "agent": "READY",
+    "truth": "READY",
+    "accept": null,
+    "confidence": 0.95,
+    "flags": []
    },
    {
     "id": 64,
     "app": "Cloudflare",
     "field": "auth_methods",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "API_KEY",
+     "BEARER_TOKEN",
+     "OAUTH2"
+    ],
+    "truth": {
+     "core": [
+      "BEARER_TOKEN"
+     ],
+     "optional": [
+      "API_KEY",
+      "OAUTH2"
+     ]
+    },
+    "accept": null,
+    "confidence": 0.8,
+    "flags": []
    },
    {
     "id": 64,
     "app": "Cloudflare",
     "field": "access",
-    "status": "missing"
+    "status": "hit",
+    "agent": "SELF_SERVE_FREE",
+    "truth": "SELF_SERVE_FREE",
+    "accept": null,
+    "confidence": 0.9,
+    "flags": []
    },
    {
     "id": 64,
     "app": "Cloudflare",
     "field": "api_style",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "REST"
+    ],
+    "truth": {
+     "core": [
+      "REST"
+     ],
+     "optional": [
+      "GRAPHQL"
+     ]
+    },
+    "accept": null,
+    "confidence": 0.95,
+    "flags": []
    },
    {
     "id": 64,
     "app": "Cloudflare",
     "field": "api_breadth",
-    "status": "missing"
+    "status": "hit",
+    "agent": "BROAD",
+    "truth": "BROAD",
+    "accept": null,
+    "confidence": 0.97,
+    "flags": []
    },
    {
     "id": 64,
     "app": "Cloudflare",
     "field": "official_mcp",
-    "status": "missing"
+    "status": "hit",
+    "agent": true,
+    "truth": true,
+    "accept": null,
+    "confidence": 0.97,
+    "flags": []
    },
    {
     "id": 64,
     "app": "Cloudflare",
     "field": "buildability",
-    "status": "missing"
+    "status": "hit",
+    "agent": "READY",
+    "truth": "READY",
+    "accept": null,
+    "confidence": 0.9,
+    "flags": []
    },
    {
     "id": 72,
     "app": "Airtable",
     "field": "auth_methods",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "BEARER_TOKEN",
+     "OAUTH2"
+    ],
+    "truth": {
+     "core": [
+      "BEARER_TOKEN",
+      "OAUTH2"
+     ],
+     "optional": []
+    },
+    "accept": null,
+    "confidence": 0.8,
+    "flags": []
    },
    {
     "id": 72,
     "app": "Airtable",
     "field": "access",
-    "status": "missing"
+    "status": "hit",
+    "agent": "SELF_SERVE_FREE",
+    "truth": "SELF_SERVE_FREE",
+    "accept": null,
+    "confidence": 0.9,
+    "flags": []
    },
    {
     "id": 72,
     "app": "Airtable",
     "field": "api_style",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "REST"
+    ],
+    "truth": {
+     "core": [
+      "REST"
+     ],
+     "optional": []
+    },
+    "accept": null,
+    "confidence": 0.9,
+    "flags": []
    },
    {
     "id": 72,
     "app": "Airtable",
     "field": "api_breadth",
-    "status": "missing"
+    "status": "hit",
+    "agent": "BROAD",
+    "truth": "MODERATE",
+    "accept": [
+     "BROAD"
+    ],
+    "confidence": 0.85,
+    "flags": []
    },
    {
     "id": 72,
     "app": "Airtable",
     "field": "official_mcp",
-    "status": "missing"
+    "status": "hit",
+    "agent": true,
+    "truth": true,
+    "accept": null,
+    "confidence": 0.97,
+    "flags": []
    },
    {
     "id": 72,
     "app": "Airtable",
     "field": "buildability",
-    "status": "missing"
+    "status": "hit",
+    "agent": "READY",
+    "truth": "READY",
+    "accept": null,
+    "confidence": 0.9,
+    "flags": []
    },
    {
     "id": 80,
     "app": "Harvest",
     "field": "auth_methods",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "BEARER_TOKEN",
+     "OAUTH2"
+    ],
+    "truth": {
+     "core": [
+      "BEARER_TOKEN",
+      "OAUTH2"
+     ],
+     "optional": []
+    },
+    "accept": null,
+    "confidence": 0.95,
+    "flags": []
    },
    {
     "id": 80,
     "app": "Harvest",
     "field": "access",
-    "status": "missing"
+    "status": "hit",
+    "agent": "SELF_SERVE_FREE",
+    "truth": "SELF_SERVE_TRIAL",
+    "accept": [
+     "SELF_SERVE_FREE"
+    ],
+    "confidence": 0.9,
+    "flags": []
    },
    {
     "id": 80,
     "app": "Harvest",
     "field": "api_style",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "REST"
+    ],
+    "truth": {
+     "core": [
+      "REST"
+     ],
+     "optional": []
+    },
+    "accept": null,
+    "confidence": 0.95,
+    "flags": []
    },
    {
     "id": 80,
     "app": "Harvest",
     "field": "api_breadth",
-    "status": "missing"
+    "status": "hit",
+    "agent": "BROAD",
+    "truth": "BROAD",
+    "accept": [
+     "MODERATE"
+    ],
+    "confidence": 0.7,
+    "flags": []
    },
    {
     "id": 80,
     "app": "Harvest",
     "field": "official_mcp",
-    "status": "missing"
+    "status": "hit",
+    "agent": true,
+    "truth": true,
+    "accept": null,
+    "confidence": 0.95,
+    "flags": []
    },
    {
     "id": 80,
     "app": "Harvest",
     "field": "buildability",
-    "status": "missing"
+    "status": "hit",
+    "agent": "READY",
+    "truth": "READY_WITH_CAVEATS",
+    "accept": [
+     "READY"
+    ],
+    "confidence": 0.9,
+    "flags": []
    },
    {
     "id": 82,
     "app": "Plaid",
     "field": "auth_methods",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "API_KEY"
+    ],
+    "truth": {
+     "core": [
+      "API_KEY"
+     ],
+     "optional": [
+      "OTHER"
+     ]
+    },
+    "accept": null,
+    "confidence": 0.85,
+    "flags": []
    },
    {
     "id": 82,
     "app": "Plaid",
     "field": "access",
-    "status": "missing"
+    "status": "hit",
+    "agent": "SELF_SERVE_FREE",
+    "truth": "SELF_SERVE_FREE",
+    "accept": null,
+    "confidence": 0.65,
+    "flags": []
    },
    {
     "id": 82,
     "app": "Plaid",
     "field": "api_style",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "REST"
+    ],
+    "truth": {
+     "core": [
+      "REST"
+     ],
+     "optional": []
+    },
+    "accept": null,
+    "confidence": 0.9,
+    "flags": []
    },
    {
     "id": 82,
     "app": "Plaid",
     "field": "api_breadth",
-    "status": "missing"
+    "status": "hit",
+    "agent": "BROAD",
+    "truth": "BROAD",
+    "accept": null,
+    "confidence": 0.9,
+    "flags": []
    },
    {
     "id": 82,
     "app": "Plaid",
     "field": "official_mcp",
-    "status": "missing"
+    "status": "hit",
+    "agent": true,
+    "truth": true,
+    "accept": null,
+    "confidence": 0.9,
+    "flags": []
    },
    {
     "id": 82,
     "app": "Plaid",
     "field": "buildability",
-    "status": "missing"
+    "status": "hit",
+    "agent": "READY_WITH_CAVEATS",
+    "truth": "READY_WITH_CAVEATS",
+    "accept": [
+     "READY"
+    ],
+    "confidence": 0.7,
+    "flags": []
    },
    {
     "id": 85,
     "app": "iPayX",
     "field": "auth_methods",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "BEARER_TOKEN"
+    ],
+    "truth": {
+     "core": [
+      "BEARER_TOKEN"
+     ],
+     "optional": []
+    },
+    "accept": null,
+    "confidence": 0.95,
+    "flags": []
    },
    {
     "id": 85,
     "app": "iPayX",
     "field": "access",
-    "status": "missing"
+    "status": "hit",
+    "agent": "SELF_SERVE_FREE",
+    "truth": "PAID_PLAN",
+    "accept": [
+     "SELF_SERVE_FREE"
+    ],
+    "confidence": 0.7,
+    "flags": []
    },
    {
     "id": 85,
     "app": "iPayX",
     "field": "api_style",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "REST"
+    ],
+    "truth": {
+     "core": [
+      "REST"
+     ],
+     "optional": []
+    },
+    "accept": null,
+    "confidence": 0.95,
+    "flags": []
    },
    {
     "id": 85,
     "app": "iPayX",
     "field": "api_breadth",
-    "status": "missing"
+    "status": "hit",
+    "agent": "NARROW",
+    "truth": "NARROW",
+    "accept": null,
+    "confidence": 0.9,
+    "flags": []
    },
    {
     "id": 85,
     "app": "iPayX",
     "field": "official_mcp",
-    "status": "missing"
+    "status": "hit",
+    "agent": true,
+    "truth": true,
+    "accept": null,
+    "confidence": 0.95,
+    "flags": []
    },
    {
     "id": 85,
     "app": "iPayX",
     "field": "buildability",
-    "status": "missing"
+    "status": "hit",
+    "agent": "READY_WITH_CAVEATS",
+    "truth": "READY_WITH_CAVEATS",
+    "accept": null,
+    "confidence": 0.7,
+    "flags": []
    },
    {
     "id": 92,
@@ -748,7 +1589,12 @@
     "id": 92,
     "app": "Otter AI",
     "field": "access",
-    "status": "missing"
+    "status": "hit",
+    "agent": "PARTNERSHIP",
+    "truth": "PARTNERSHIP",
+    "accept": null,
+    "confidence": 0.75,
+    "flags": []
    },
    {
     "id": 92,
@@ -766,102 +1612,162 @@
     "id": 92,
     "app": "Otter AI",
     "field": "official_mcp",
-    "status": "missing"
+    "status": "hit",
+    "agent": true,
+    "truth": true,
+    "accept": null,
+    "confidence": 0.95,
+    "flags": []
    },
    {
     "id": 92,
     "app": "Otter AI",
     "field": "buildability",
-    "status": "missing"
+    "status": "hit",
+    "agent": "NEEDS_OUTREACH",
+    "truth": "NEEDS_OUTREACH",
+    "accept": null,
+    "confidence": 0.75,
+    "flags": []
    },
    {
     "id": 98,
     "app": "Mermaid CLI",
     "field": "auth_methods",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "NONE"
+    ],
+    "truth": {
+     "core": [
+      "NONE"
+     ],
+     "optional": []
+    },
+    "accept": null,
+    "confidence": 0.85,
+    "flags": []
    },
    {
     "id": 98,
     "app": "Mermaid CLI",
     "field": "access",
-    "status": "missing"
+    "status": "hit",
+    "agent": "NO_PUBLIC_API",
+    "truth": "NO_PUBLIC_API",
+    "accept": null,
+    "confidence": 0.85,
+    "flags": []
    },
    {
     "id": 98,
     "app": "Mermaid CLI",
     "field": "api_style",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "CLI"
+    ],
+    "truth": {
+     "core": [
+      "CLI"
+     ],
+     "optional": [
+      "SDK_ONLY"
+     ]
+    },
+    "accept": null,
+    "confidence": 0.95,
+    "flags": []
    },
    {
     "id": 98,
     "app": "Mermaid CLI",
     "field": "api_breadth",
-    "status": "missing"
+    "status": "hit",
+    "agent": "NARROW",
+    "truth": "NONE",
+    "accept": [
+     "NARROW"
+    ],
+    "confidence": 0.6,
+    "flags": []
    },
    {
     "id": 98,
     "app": "Mermaid CLI",
     "field": "official_mcp",
-    "status": "missing"
+    "status": "hit",
+    "agent": false,
+    "truth": false,
+    "accept": null,
+    "confidence": 0.55,
+    "flags": []
    },
    {
     "id": 98,
     "app": "Mermaid CLI",
     "field": "buildability",
-    "status": "missing"
+    "status": "hit",
+    "agent": "BLOCKED",
+    "truth": "READY_WITH_CAVEATS",
+    "accept": [
+     "BLOCKED"
+    ],
+    "confidence": 0.75,
+    "flags": []
    }
   ],
   "calibration": [
    {
     "bucket": "high (>=0.75)",
-    "correct": 3,
-    "total": 5,
-    "accuracy": 0.6
+    "correct": 84,
+    "total": 84,
+    "accuracy": 1.0
    },
    {
     "bucket": "medium (0.5-0.75)",
-    "correct": 1,
-    "total": 1,
-    "accuracy": 1.0
+    "correct": 28,
+    "total": 31,
+    "accuracy": 0.903
    }
   ],
-  "apps_scored": 1
+  "apps_scored": 20
  },
  "final": {
   "overall": {
-   "correct": 5,
-   "total": 6,
-   "accuracy": 0.833
+   "correct": 112,
+   "total": 115,
+   "accuracy": 0.974
   },
   "per_field": {
    "auth_methods": {
-    "correct": 1,
-    "total": 1,
+    "correct": 19,
+    "total": 19,
     "accuracy": 1.0
    },
    "access": {
-    "correct": 0,
-    "total": 1,
-    "accuracy": 0.0
+    "correct": 18,
+    "total": 20,
+    "accuracy": 0.9
    },
    "api_style": {
-    "correct": 1,
-    "total": 1,
+    "correct": 19,
+    "total": 19,
     "accuracy": 1.0
    },
    "api_breadth": {
-    "correct": 1,
-    "total": 1,
+    "correct": 19,
+    "total": 19,
     "accuracy": 1.0
    },
    "official_mcp": {
-    "correct": 1,
-    "total": 1,
-    "accuracy": 1.0
+    "correct": 17,
+    "total": 18,
+    "accuracy": 0.944
    },
    "buildability": {
-    "correct": 1,
-    "total": 1,
+    "correct": 20,
+    "total": 20,
     "accuracy": 1.0
    }
   },
@@ -870,73 +1776,168 @@
     "id": 2,
     "app": "HubSpot",
     "field": "auth_methods",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "BEARER_TOKEN",
+     "OAUTH2"
+    ],
+    "truth": {
+     "core": [
+      "OAUTH2",
+      "BEARER_TOKEN"
+     ],
+     "optional": [
+      "API_KEY",
+      "JWT"
+     ]
+    },
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 2,
     "app": "HubSpot",
     "field": "access",
-    "status": "missing"
+    "status": "hit",
+    "agent": "SELF_SERVE_FREE",
+    "truth": "SELF_SERVE_FREE",
+    "accept": null,
+    "confidence": 0.85,
+    "flags": []
    },
    {
     "id": 2,
     "app": "HubSpot",
     "field": "api_style",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "REST"
+    ],
+    "truth": {
+     "core": [
+      "REST"
+     ],
+     "optional": []
+    },
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 2,
     "app": "HubSpot",
     "field": "api_breadth",
-    "status": "missing"
+    "status": "hit",
+    "agent": "BROAD",
+    "truth": "BROAD",
+    "accept": null,
+    "confidence": 0.9,
+    "flags": []
    },
    {
     "id": 2,
     "app": "HubSpot",
     "field": "official_mcp",
-    "status": "missing"
+    "status": "hit",
+    "agent": true,
+    "truth": true,
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 2,
     "app": "HubSpot",
     "field": "buildability",
-    "status": "missing"
+    "status": "hit",
+    "agent": "READY",
+    "truth": "READY",
+    "accept": null,
+    "confidence": 0.95,
+    "flags": []
    },
    {
     "id": 6,
     "app": "Podio",
     "field": "auth_methods",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "OAUTH2"
+    ],
+    "truth": {
+     "core": [
+      "OAUTH2"
+     ],
+     "optional": []
+    },
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 6,
     "app": "Podio",
     "field": "access",
-    "status": "missing"
+    "status": "hit",
+    "agent": "SELF_SERVE_FREE",
+    "truth": "SELF_SERVE_FREE",
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 6,
     "app": "Podio",
     "field": "api_style",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "REST"
+    ],
+    "truth": {
+     "core": [
+      "REST"
+     ],
+     "optional": []
+    },
+    "accept": null,
+    "confidence": 0.9,
+    "flags": []
    },
    {
     "id": 6,
     "app": "Podio",
     "field": "api_breadth",
-    "status": "missing"
+    "status": "hit",
+    "agent": "BROAD",
+    "truth": "BROAD",
+    "accept": null,
+    "confidence": 0.95,
+    "flags": []
    },
    {
     "id": 6,
     "app": "Podio",
     "field": "official_mcp",
-    "status": "missing"
+    "status": "hit",
+    "agent": false,
+    "truth": false,
+    "accept": null,
+    "confidence": 0.25,
+    "flags": [
+     "ungrounded"
+    ]
    },
    {
     "id": 6,
     "app": "Podio",
     "field": "buildability",
-    "status": "missing"
+    "status": "hit",
+    "agent": "READY",
+    "truth": "READY",
+    "accept": null,
+    "confidence": 0.95,
+    "flags": []
    },
    {
     "id": 19,
@@ -966,12 +1967,12 @@
     "app": "Gorgias",
     "field": "access",
     "status": "miss",
-    "agent": "SELF_SERVE_FREE",
+    "agent": "PAID_PLAN",
     "truth": "SELF_SERVE_TRIAL",
     "accept": [
      "APPROVAL"
     ],
-    "confidence": 1.0,
+    "confidence": 0.6,
     "flags": []
    },
    {
@@ -1002,7 +2003,7 @@
     "accept": [
      "MODERATE"
     ],
-    "confidence": 1.0,
+    "confidence": 0.9,
     "flags": []
    },
    {
@@ -1024,176 +2025,420 @@
     "agent": "READY_WITH_CAVEATS",
     "truth": "READY_WITH_CAVEATS",
     "accept": null,
-    "confidence": 1.0,
+    "confidence": 0.85,
     "flags": []
    },
    {
     "id": 20,
     "app": "Gladly",
     "field": "auth_methods",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "API_KEY",
+     "BASIC"
+    ],
+    "truth": {
+     "core": [
+      "BASIC"
+     ],
+     "optional": [
+      "API_KEY"
+     ]
+    },
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 20,
     "app": "Gladly",
     "field": "access",
-    "status": "missing"
+    "status": "hit",
+    "agent": "PARTNERSHIP",
+    "truth": "PARTNERSHIP",
+    "accept": null,
+    "confidence": 0.8,
+    "flags": []
    },
    {
     "id": 20,
     "app": "Gladly",
     "field": "api_style",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "REST"
+    ],
+    "truth": {
+     "core": [
+      "REST"
+     ],
+     "optional": []
+    },
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 20,
     "app": "Gladly",
     "field": "api_breadth",
-    "status": "missing"
+    "status": "hit",
+    "agent": "BROAD",
+    "truth": "BROAD",
+    "accept": [
+     "MODERATE"
+    ],
+    "confidence": 0.7,
+    "flags": []
    },
    {
     "id": 20,
     "app": "Gladly",
     "field": "official_mcp",
-    "status": "missing"
+    "status": "hit",
+    "agent": true,
+    "truth": true,
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 20,
     "app": "Gladly",
     "field": "buildability",
-    "status": "missing"
+    "status": "hit",
+    "agent": "NEEDS_OUTREACH",
+    "truth": "NEEDS_OUTREACH",
+    "accept": null,
+    "confidence": 0.8,
+    "flags": []
    },
    {
     "id": 22,
     "app": "Twilio",
     "field": "auth_methods",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "API_KEY",
+     "BASIC",
+     "OAUTH2"
+    ],
+    "truth": {
+     "core": [
+      "BASIC"
+     ],
+     "optional": [
+      "API_KEY",
+      "OAUTH2",
+      "JWT"
+     ]
+    },
+    "accept": null,
+    "confidence": 0.95,
+    "flags": []
    },
    {
     "id": 22,
     "app": "Twilio",
     "field": "access",
-    "status": "missing"
+    "status": "miss",
+    "agent": "SELF_SERVE_FREE",
+    "truth": "SELF_SERVE_TRIAL",
+    "accept": null,
+    "confidence": 0.8,
+    "flags": []
    },
    {
     "id": 22,
     "app": "Twilio",
     "field": "api_style",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "REST"
+    ],
+    "truth": {
+     "core": [
+      "REST"
+     ],
+     "optional": []
+    },
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 22,
     "app": "Twilio",
     "field": "api_breadth",
-    "status": "missing"
+    "status": "hit",
+    "agent": "BROAD",
+    "truth": "BROAD",
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 22,
     "app": "Twilio",
     "field": "official_mcp",
-    "status": "missing"
+    "status": "hit",
+    "agent": true,
+    "truth": true,
+    "accept": null,
+    "confidence": 0.85,
+    "flags": []
    },
    {
     "id": 22,
     "app": "Twilio",
     "field": "buildability",
-    "status": "missing"
+    "status": "hit",
+    "agent": "READY",
+    "truth": "READY_WITH_CAVEATS",
+    "accept": [
+     "READY"
+    ],
+    "confidence": 0.95,
+    "flags": []
    },
    {
     "id": 24,
     "app": "Lark (Larksuite)",
     "field": "auth_methods",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "BEARER_TOKEN",
+     "OAUTH2"
+    ],
+    "truth": {
+     "core": [
+      "OAUTH2"
+     ],
+     "optional": [
+      "JWT",
+      "BEARER_TOKEN",
+      "API_KEY",
+      "OTHER"
+     ]
+    },
+    "accept": null,
+    "confidence": 0.8,
+    "flags": []
    },
    {
     "id": 24,
     "app": "Lark (Larksuite)",
     "field": "access",
-    "status": "missing"
+    "status": "hit",
+    "agent": "SELF_SERVE_FREE",
+    "truth": "SELF_SERVE_FREE",
+    "accept": null,
+    "confidence": 0.7,
+    "flags": []
    },
    {
     "id": 24,
     "app": "Lark (Larksuite)",
     "field": "api_style",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "REST"
+    ],
+    "truth": {
+     "core": [
+      "REST"
+     ],
+     "optional": []
+    },
+    "accept": null,
+    "confidence": 0.95,
+    "flags": []
    },
    {
     "id": 24,
     "app": "Lark (Larksuite)",
     "field": "api_breadth",
-    "status": "missing"
+    "status": "hit",
+    "agent": "BROAD",
+    "truth": "BROAD",
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 24,
     "app": "Lark (Larksuite)",
     "field": "official_mcp",
-    "status": "missing"
+    "status": "hit",
+    "agent": true,
+    "truth": true,
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 24,
     "app": "Lark (Larksuite)",
     "field": "buildability",
-    "status": "missing"
+    "status": "hit",
+    "agent": "READY",
+    "truth": "READY",
+    "accept": null,
+    "confidence": 0.8,
+    "flags": []
    },
    {
     "id": 39,
     "app": "Threads (Meta)",
     "field": "auth_methods",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "OAUTH2"
+    ],
+    "truth": {
+     "core": [
+      "OAUTH2"
+     ],
+     "optional": [
+      "BEARER_TOKEN"
+     ]
+    },
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 39,
     "app": "Threads (Meta)",
     "field": "access",
-    "status": "missing"
+    "status": "hit",
+    "agent": "SELF_SERVE_FREE",
+    "truth": "SELF_SERVE_FREE",
+    "accept": [
+     "APPROVAL"
+    ],
+    "confidence": 0.7,
+    "flags": []
    },
    {
     "id": 39,
     "app": "Threads (Meta)",
     "field": "api_style",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "REST"
+    ],
+    "truth": {
+     "core": [
+      "REST"
+     ],
+     "optional": [
+      "GRAPHQL"
+     ]
+    },
+    "accept": null,
+    "confidence": 0.95,
+    "flags": []
    },
    {
     "id": 39,
     "app": "Threads (Meta)",
     "field": "api_breadth",
-    "status": "missing"
+    "status": "hit",
+    "agent": "MODERATE",
+    "truth": "MODERATE",
+    "accept": [
+     "NARROW"
+    ],
+    "confidence": 0.8,
+    "flags": []
    },
    {
     "id": 39,
     "app": "Threads (Meta)",
     "field": "official_mcp",
-    "status": "missing"
+    "status": "miss",
+    "agent": false,
+    "truth": true,
+    "accept": null,
+    "confidence": 0.7,
+    "flags": []
    },
    {
     "id": 39,
     "app": "Threads (Meta)",
     "field": "buildability",
-    "status": "missing"
+    "status": "hit",
+    "agent": "READY_WITH_CAVEATS",
+    "truth": "READY_WITH_CAVEATS",
+    "accept": [
+     "READY"
+    ],
+    "confidence": 0.8,
+    "flags": []
    },
    {
     "id": 40,
     "app": "SendGrid",
     "field": "auth_methods",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "API_KEY",
+     "BASIC"
+    ],
+    "truth": {
+     "core": [
+      "API_KEY"
+     ],
+     "optional": [
+      "BASIC"
+     ]
+    },
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 40,
     "app": "SendGrid",
     "field": "access",
-    "status": "missing"
+    "status": "hit",
+    "agent": "SELF_SERVE_TRIAL",
+    "truth": "SELF_SERVE_FREE",
+    "accept": [
+     "SELF_SERVE_TRIAL"
+    ],
+    "confidence": 0.8,
+    "flags": []
    },
    {
     "id": 40,
     "app": "SendGrid",
     "field": "api_style",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "REST"
+    ],
+    "truth": {
+     "core": [
+      "REST"
+     ],
+     "optional": []
+    },
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 40,
     "app": "SendGrid",
     "field": "api_breadth",
-    "status": "missing"
+    "status": "hit",
+    "agent": "BROAD",
+    "truth": "BROAD",
+    "accept": null,
+    "confidence": 0.95,
+    "flags": []
    },
    {
     "id": 40,
@@ -1205,67 +2450,161 @@
     "id": 40,
     "app": "SendGrid",
     "field": "buildability",
-    "status": "missing"
+    "status": "hit",
+    "agent": "READY_WITH_CAVEATS",
+    "truth": "READY",
+    "accept": [
+     "READY_WITH_CAVEATS"
+    ],
+    "confidence": 0.75,
+    "flags": []
    },
    {
     "id": 47,
     "app": "Ecwid",
     "field": "auth_methods",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "BEARER_TOKEN",
+     "OAUTH2"
+    ],
+    "truth": {
+     "core": [
+      "BEARER_TOKEN"
+     ],
+     "optional": [
+      "OAUTH2"
+     ]
+    },
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 47,
     "app": "Ecwid",
     "field": "access",
-    "status": "missing"
+    "status": "hit",
+    "agent": "PAID_PLAN",
+    "truth": "PAID_PLAN",
+    "accept": null,
+    "confidence": 0.8,
+    "flags": []
    },
    {
     "id": 47,
     "app": "Ecwid",
     "field": "api_style",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "REST"
+    ],
+    "truth": {
+     "core": [
+      "REST"
+     ],
+     "optional": []
+    },
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 47,
     "app": "Ecwid",
     "field": "api_breadth",
-    "status": "missing"
+    "status": "hit",
+    "agent": "BROAD",
+    "truth": "BROAD",
+    "accept": [
+     "MODERATE"
+    ],
+    "confidence": 0.95,
+    "flags": []
    },
    {
     "id": 47,
     "app": "Ecwid",
     "field": "official_mcp",
-    "status": "missing"
+    "status": "hit",
+    "agent": false,
+    "truth": false,
+    "accept": null,
+    "confidence": 0.7,
+    "flags": []
    },
    {
     "id": 47,
     "app": "Ecwid",
     "field": "buildability",
-    "status": "missing"
+    "status": "hit",
+    "agent": "READY_WITH_CAVEATS",
+    "truth": "READY_WITH_CAVEATS",
+    "accept": null,
+    "confidence": 0.85,
+    "flags": []
    },
    {
     "id": 49,
     "app": "Amazon Selling Partner",
     "field": "auth_methods",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "OAUTH2"
+    ],
+    "truth": {
+     "core": [
+      "OAUTH2"
+     ],
+     "optional": [
+      "OTHER"
+     ]
+    },
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 49,
     "app": "Amazon Selling Partner",
     "field": "access",
-    "status": "missing"
+    "status": "hit",
+    "agent": "APPROVAL",
+    "truth": "APPROVAL",
+    "accept": [
+     "PAID_PLAN"
+    ],
+    "confidence": 0.8,
+    "flags": []
    },
    {
     "id": 49,
     "app": "Amazon Selling Partner",
     "field": "api_style",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "REST"
+    ],
+    "truth": {
+     "core": [
+      "REST"
+     ],
+     "optional": []
+    },
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 49,
     "app": "Amazon Selling Partner",
     "field": "api_breadth",
-    "status": "missing"
+    "status": "hit",
+    "agent": "BROAD",
+    "truth": "BROAD",
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 49,
@@ -1277,295 +2616,704 @@
     "id": 49,
     "app": "Amazon Selling Partner",
     "field": "buildability",
-    "status": "missing"
+    "status": "hit",
+    "agent": "READY_WITH_CAVEATS",
+    "truth": "READY_WITH_CAVEATS",
+    "accept": [
+     "NEEDS_OUTREACH"
+    ],
+    "confidence": 0.75,
+    "flags": []
    },
    {
     "id": 58,
     "app": "Sherlock",
     "field": "auth_methods",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "NONE"
+    ],
+    "truth": {
+     "core": [
+      "NONE"
+     ],
+     "optional": []
+    },
+    "accept": null,
+    "confidence": 0.95,
+    "flags": []
    },
    {
     "id": 58,
     "app": "Sherlock",
     "field": "access",
-    "status": "missing"
+    "status": "hit",
+    "agent": "NO_PUBLIC_API",
+    "truth": "NO_PUBLIC_API",
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 58,
     "app": "Sherlock",
     "field": "api_style",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "CLI"
+    ],
+    "truth": {
+     "core": [
+      "CLI"
+     ],
+     "optional": [
+      "SDK_ONLY"
+     ]
+    },
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 58,
     "app": "Sherlock",
     "field": "api_breadth",
-    "status": "missing"
+    "status": "hit",
+    "agent": "NARROW",
+    "truth": "NONE",
+    "accept": [
+     "NARROW"
+    ],
+    "confidence": 0.6,
+    "flags": []
    },
    {
     "id": 58,
     "app": "Sherlock",
     "field": "official_mcp",
-    "status": "missing"
+    "status": "hit",
+    "agent": false,
+    "truth": false,
+    "accept": null,
+    "confidence": 0.85,
+    "flags": []
    },
    {
     "id": 58,
     "app": "Sherlock",
     "field": "buildability",
-    "status": "missing"
+    "status": "hit",
+    "agent": "BLOCKED",
+    "truth": "READY_WITH_CAVEATS",
+    "accept": [
+     "BLOCKED"
+    ],
+    "confidence": 0.9,
+    "flags": []
    },
    {
     "id": 60,
     "app": "Clay",
     "field": "auth_methods",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "API_KEY"
+    ],
+    "truth": {
+     "core": [
+      "API_KEY"
+     ],
+     "optional": [
+      "OAUTH2"
+     ]
+    },
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 60,
     "app": "Clay",
     "field": "access",
-    "status": "missing"
+    "status": "hit",
+    "agent": "SELF_SERVE_FREE",
+    "truth": "SELF_SERVE_FREE",
+    "accept": [
+     "PAID_PLAN",
+     "SELF_SERVE_TRIAL"
+    ],
+    "confidence": 0.65,
+    "flags": []
    },
    {
     "id": 60,
     "app": "Clay",
     "field": "api_style",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "REST"
+    ],
+    "truth": {
+     "core": [
+      "REST"
+     ],
+     "optional": [
+      "CLI"
+     ]
+    },
+    "accept": null,
+    "confidence": 0.95,
+    "flags": []
    },
    {
     "id": 60,
     "app": "Clay",
     "field": "api_breadth",
-    "status": "missing"
+    "status": "hit",
+    "agent": "MODERATE",
+    "truth": "MODERATE",
+    "accept": [
+     "NARROW"
+    ],
+    "confidence": 0.75,
+    "flags": []
    },
    {
     "id": 60,
     "app": "Clay",
     "field": "official_mcp",
-    "status": "missing"
+    "status": "hit",
+    "agent": true,
+    "truth": true,
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 60,
     "app": "Clay",
     "field": "buildability",
-    "status": "missing"
+    "status": "hit",
+    "agent": "READY_WITH_CAVEATS",
+    "truth": "READY_WITH_CAVEATS",
+    "accept": [
+     "READY"
+    ],
+    "confidence": 0.7,
+    "flags": []
    },
    {
     "id": 61,
     "app": "GitHub",
     "field": "auth_methods",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "BEARER_TOKEN",
+     "JWT",
+     "OAUTH2"
+    ],
+    "truth": {
+     "core": [
+      "BEARER_TOKEN",
+      "OAUTH2"
+     ],
+     "optional": [
+      "JWT",
+      "BASIC"
+     ]
+    },
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 61,
     "app": "GitHub",
     "field": "access",
-    "status": "missing"
+    "status": "hit",
+    "agent": "SELF_SERVE_FREE",
+    "truth": "SELF_SERVE_FREE",
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 61,
     "app": "GitHub",
     "field": "api_style",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "GRAPHQL",
+     "REST"
+    ],
+    "truth": {
+     "core": [
+      "REST",
+      "GRAPHQL"
+     ],
+     "optional": []
+    },
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 61,
     "app": "GitHub",
     "field": "api_breadth",
-    "status": "missing"
+    "status": "hit",
+    "agent": "BROAD",
+    "truth": "BROAD",
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 61,
     "app": "GitHub",
     "field": "official_mcp",
-    "status": "missing"
+    "status": "hit",
+    "agent": true,
+    "truth": true,
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 61,
     "app": "GitHub",
     "field": "buildability",
-    "status": "missing"
+    "status": "hit",
+    "agent": "READY",
+    "truth": "READY",
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 64,
     "app": "Cloudflare",
     "field": "auth_methods",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "API_KEY",
+     "BEARER_TOKEN",
+     "OAUTH2"
+    ],
+    "truth": {
+     "core": [
+      "BEARER_TOKEN"
+     ],
+     "optional": [
+      "API_KEY",
+      "OAUTH2"
+     ]
+    },
+    "accept": null,
+    "confidence": 0.9,
+    "flags": []
    },
    {
     "id": 64,
     "app": "Cloudflare",
     "field": "access",
-    "status": "missing"
+    "status": "hit",
+    "agent": "SELF_SERVE_FREE",
+    "truth": "SELF_SERVE_FREE",
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 64,
     "app": "Cloudflare",
     "field": "api_style",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "REST"
+    ],
+    "truth": {
+     "core": [
+      "REST"
+     ],
+     "optional": [
+      "GRAPHQL"
+     ]
+    },
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 64,
     "app": "Cloudflare",
     "field": "api_breadth",
-    "status": "missing"
+    "status": "hit",
+    "agent": "BROAD",
+    "truth": "BROAD",
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 64,
     "app": "Cloudflare",
     "field": "official_mcp",
-    "status": "missing"
+    "status": "hit",
+    "agent": true,
+    "truth": true,
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 64,
     "app": "Cloudflare",
     "field": "buildability",
-    "status": "missing"
+    "status": "hit",
+    "agent": "READY",
+    "truth": "READY",
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 72,
     "app": "Airtable",
     "field": "auth_methods",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "BEARER_TOKEN",
+     "OAUTH2"
+    ],
+    "truth": {
+     "core": [
+      "BEARER_TOKEN",
+      "OAUTH2"
+     ],
+     "optional": []
+    },
+    "accept": null,
+    "confidence": 0.9,
+    "flags": []
    },
    {
     "id": 72,
     "app": "Airtable",
     "field": "access",
-    "status": "missing"
+    "status": "hit",
+    "agent": "SELF_SERVE_FREE",
+    "truth": "SELF_SERVE_FREE",
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 72,
     "app": "Airtable",
     "field": "api_style",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "REST"
+    ],
+    "truth": {
+     "core": [
+      "REST"
+     ],
+     "optional": []
+    },
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 72,
     "app": "Airtable",
     "field": "api_breadth",
-    "status": "missing"
+    "status": "hit",
+    "agent": "BROAD",
+    "truth": "MODERATE",
+    "accept": [
+     "BROAD"
+    ],
+    "confidence": 0.95,
+    "flags": []
    },
    {
     "id": 72,
     "app": "Airtable",
     "field": "official_mcp",
-    "status": "missing"
+    "status": "hit",
+    "agent": true,
+    "truth": true,
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 72,
     "app": "Airtable",
     "field": "buildability",
-    "status": "missing"
+    "status": "hit",
+    "agent": "READY",
+    "truth": "READY",
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 80,
     "app": "Harvest",
     "field": "auth_methods",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "BEARER_TOKEN",
+     "OAUTH2"
+    ],
+    "truth": {
+     "core": [
+      "BEARER_TOKEN",
+      "OAUTH2"
+     ],
+     "optional": []
+    },
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 80,
     "app": "Harvest",
     "field": "access",
-    "status": "missing"
+    "status": "hit",
+    "agent": "SELF_SERVE_FREE",
+    "truth": "SELF_SERVE_TRIAL",
+    "accept": [
+     "SELF_SERVE_FREE"
+    ],
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 80,
     "app": "Harvest",
     "field": "api_style",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "REST"
+    ],
+    "truth": {
+     "core": [
+      "REST"
+     ],
+     "optional": []
+    },
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 80,
     "app": "Harvest",
     "field": "api_breadth",
-    "status": "missing"
+    "status": "hit",
+    "agent": "BROAD",
+    "truth": "BROAD",
+    "accept": [
+     "MODERATE"
+    ],
+    "confidence": 0.8,
+    "flags": []
    },
    {
     "id": 80,
     "app": "Harvest",
     "field": "official_mcp",
-    "status": "missing"
+    "status": "hit",
+    "agent": true,
+    "truth": true,
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 80,
     "app": "Harvest",
     "field": "buildability",
-    "status": "missing"
+    "status": "hit",
+    "agent": "READY",
+    "truth": "READY_WITH_CAVEATS",
+    "accept": [
+     "READY"
+    ],
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 82,
     "app": "Plaid",
     "field": "auth_methods",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "API_KEY"
+    ],
+    "truth": {
+     "core": [
+      "API_KEY"
+     ],
+     "optional": [
+      "OTHER"
+     ]
+    },
+    "accept": null,
+    "confidence": 0.95,
+    "flags": []
    },
    {
     "id": 82,
     "app": "Plaid",
     "field": "access",
-    "status": "missing"
+    "status": "hit",
+    "agent": "SELF_SERVE_FREE",
+    "truth": "SELF_SERVE_FREE",
+    "accept": null,
+    "confidence": 0.75,
+    "flags": []
    },
    {
     "id": 82,
     "app": "Plaid",
     "field": "api_style",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "REST"
+    ],
+    "truth": {
+     "core": [
+      "REST"
+     ],
+     "optional": []
+    },
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 82,
     "app": "Plaid",
     "field": "api_breadth",
-    "status": "missing"
+    "status": "hit",
+    "agent": "BROAD",
+    "truth": "BROAD",
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 82,
     "app": "Plaid",
     "field": "official_mcp",
-    "status": "missing"
+    "status": "hit",
+    "agent": true,
+    "truth": true,
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 82,
     "app": "Plaid",
     "field": "buildability",
-    "status": "missing"
+    "status": "hit",
+    "agent": "READY_WITH_CAVEATS",
+    "truth": "READY_WITH_CAVEATS",
+    "accept": [
+     "READY"
+    ],
+    "confidence": 0.8,
+    "flags": []
    },
    {
     "id": 85,
     "app": "iPayX",
     "field": "auth_methods",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "BEARER_TOKEN"
+    ],
+    "truth": {
+     "core": [
+      "BEARER_TOKEN"
+     ],
+     "optional": []
+    },
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 85,
     "app": "iPayX",
     "field": "access",
-    "status": "missing"
+    "status": "hit",
+    "agent": "SELF_SERVE_FREE",
+    "truth": "PAID_PLAN",
+    "accept": [
+     "SELF_SERVE_FREE"
+    ],
+    "confidence": 0.8,
+    "flags": []
    },
    {
     "id": 85,
     "app": "iPayX",
     "field": "api_style",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "REST"
+    ],
+    "truth": {
+     "core": [
+      "REST"
+     ],
+     "optional": []
+    },
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 85,
     "app": "iPayX",
     "field": "api_breadth",
-    "status": "missing"
+    "status": "hit",
+    "agent": "NARROW",
+    "truth": "NARROW",
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 85,
     "app": "iPayX",
     "field": "official_mcp",
-    "status": "missing"
+    "status": "hit",
+    "agent": true,
+    "truth": true,
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 85,
     "app": "iPayX",
     "field": "buildability",
-    "status": "missing"
+    "status": "hit",
+    "agent": "READY_WITH_CAVEATS",
+    "truth": "READY_WITH_CAVEATS",
+    "accept": null,
+    "confidence": 0.8,
+    "flags": []
    },
    {
     "id": 92,
@@ -1577,7 +3325,12 @@
     "id": 92,
     "app": "Otter AI",
     "field": "access",
-    "status": "missing"
+    "status": "hit",
+    "agent": "PARTNERSHIP",
+    "truth": "PARTNERSHIP",
+    "accept": null,
+    "confidence": 0.85,
+    "flags": []
    },
    {
     "id": 92,
@@ -1595,59 +3348,133 @@
     "id": 92,
     "app": "Otter AI",
     "field": "official_mcp",
-    "status": "missing"
+    "status": "hit",
+    "agent": true,
+    "truth": true,
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 92,
     "app": "Otter AI",
     "field": "buildability",
-    "status": "missing"
+    "status": "hit",
+    "agent": "NEEDS_OUTREACH",
+    "truth": "NEEDS_OUTREACH",
+    "accept": null,
+    "confidence": 0.85,
+    "flags": []
    },
    {
     "id": 98,
     "app": "Mermaid CLI",
     "field": "auth_methods",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "NONE"
+    ],
+    "truth": {
+     "core": [
+      "NONE"
+     ],
+     "optional": []
+    },
+    "accept": null,
+    "confidence": 0.95,
+    "flags": []
    },
    {
     "id": 98,
     "app": "Mermaid CLI",
     "field": "access",
-    "status": "missing"
+    "status": "hit",
+    "agent": "NO_PUBLIC_API",
+    "truth": "NO_PUBLIC_API",
+    "accept": null,
+    "confidence": 0.95,
+    "flags": []
    },
    {
     "id": 98,
     "app": "Mermaid CLI",
     "field": "api_style",
-    "status": "missing"
+    "status": "hit",
+    "agent": [
+     "CLI"
+    ],
+    "truth": {
+     "core": [
+      "CLI"
+     ],
+     "optional": [
+      "SDK_ONLY"
+     ]
+    },
+    "accept": null,
+    "confidence": 1.0,
+    "flags": []
    },
    {
     "id": 98,
     "app": "Mermaid CLI",
     "field": "api_breadth",
-    "status": "missing"
+    "status": "hit",
+    "agent": "NARROW",
+    "truth": "NONE",
+    "accept": [
+     "NARROW"
+    ],
+    "confidence": 0.7,
+    "flags": []
    },
    {
     "id": 98,
     "app": "Mermaid CLI",
     "field": "official_mcp",
-    "status": "missing"
+    "status": "hit",
+    "agent": false,
+    "truth": false,
+    "accept": null,
+    "confidence": 0.25,
+    "flags": [
+     "ungrounded"
+    ]
    },
    {
     "id": 98,
     "app": "Mermaid CLI",
     "field": "buildability",
-    "status": "missing"
+    "status": "hit",
+    "agent": "BLOCKED",
+    "truth": "READY_WITH_CAVEATS",
+    "accept": [
+     "BLOCKED"
+    ],
+    "confidence": 0.85,
+    "flags": []
    }
   ],
   "calibration": [
    {
     "bucket": "high (>=0.75)",
-    "correct": 5,
-    "total": 6,
-    "accuracy": 0.833
+    "correct": 102,
+    "total": 103,
+    "accuracy": 0.99
+   },
+   {
+    "bucket": "low (<0.5)",
+    "correct": 2,
+    "total": 2,
+    "accuracy": 1.0
+   },
+   {
+    "bucket": "medium (0.5-0.75)",
+    "correct": 8,
+    "total": 10,
+    "accuracy": 0.8
    }
   ],
-  "apps_scored": 1
+  "apps_scored": 20
  }
 }

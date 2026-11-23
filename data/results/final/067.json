@@ -1,0 +1,231 @@
+{
+  "id": 67,
+  "app": "Snowflake",
+  "category": "Developer, Infra and Data platforms",
+  "hint": "docs.snowflake.com",
+  "docs_url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/snowflake-rest-api",
+  "one_liner": {
+    "value": "Cloud data platform for warehousing, analytics and AI",
+    "evidence": [
+      {
+        "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/snowflake-rest-api",
+        "quote": "programmatically interact with and control various resources within the Snowflake Data Cloud",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "BEARER_TOKEN",
+      "JWT",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.snowflake.com/en/developer-guide/sql-api/authenticating",
+        "quote": "KEYPAIR_JWT (for key-pair authentication)",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://docs.snowflake.com/en/developer-guide/sql-api/authenticating",
+        "quote": "PROGRAMMATIC_ACCESS_TOKEN (for programmatic access tokens)",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://docs.snowflake.com/en/developer-guide/sql-api/authenticating",
+        "quote": "Set up OAuth for authentication.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_TRIAL",
+    "evidence": [
+      {
+        "url": "https://www.snowflake.com/en/developers/guides/getting-started-with-snowflake",
+        "quote": "Sign up for a free 30-day trial of Snowflake and follow along with this lab.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.snowflake.com/en/developer-guide/sql-api/intro",
+        "quote": "The Snowflake SQL API is a REST API that you can use to access and update data in a Snowflake database.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/snowflake-rest-api",
+        "quote": "Working with users, roles, and privileges",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+        "quote": "The Snowflake-managed MCP server lets AI agents securely retrieve data from Snowflake accounts",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "READY_WITH_CAVEATS",
+    "evidence": [
+      {
+        "url": "https://www.snowflake.com/en/pricing-options",
+        "quote": "We keep pricing simple with a consumption-based pricing model.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "No permanent free tier: after the trial, compute is billed per use.",
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "composio": {
+    "found": true,
+    "slug": "SNOWFLAKE",
+    "name": "Snowflake",
+    "tools": 17,
+    "triggers": 0,
+    "auth": [
+      "OAUTH2"
+    ],
+    "managed_app": "No",
+    "url": "https://docs.composio.dev/toolkits/snowflake.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://docs.snowflake.com/en/user-guide/oauth-custom",
+    "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/snowflake-rest-api",
+    "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+    "https://docs.snowflake.com/en/api-reference.md",
+    "https://docs.snowflake.com/en/developer-guide/sql-api/authenticating",
+    "https://docs.snowflake.com/en/developer-guide/sql-api/intro",
+    "https://www.snowflake.com/en/developers/guides/getting-started-with-snowflake-mcp-server",
+    "https://docs.snowflake.com/en/user-guide-getting-started",
+    "https://www.snowflake.com/en/pricing-options",
+    "https://www.snowflake.com/en/why-snowflake/partners",
+    "https://www.snowflake.com/en/developers/guides/getting-started-with-snowflake",
+    "https://docs.snowflake.com/en/user-guide/intro-editions",
+    "https://www.snowflake.com/en/why-snowflake/partners/product-partners"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "access": [
+            "ungrounded"
+          ],
+          "webhooks": [
+            "ungrounded"
+          ],
+          "sandbox": [
+            "ungrounded"
+          ],
+          "buildability": [
+            "ungrounded"
+          ],
+          "main_blocker": [
+            "ungrounded"
+          ]
+        },
+        "rules": {
+          "access": [
+            "low_confidence"
+          ],
+          "buildability": [
+            "low_confidence"
+          ]
+        }
+      },
+      {
+        "round": 1,
+        "grounding": {
+          "webhooks": [
+            "ungrounded"
+          ],
+          "sandbox": [
+            "ungrounded"
+          ],
+          "main_blocker": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "webhooks": [
+        "ungrounded"
+      ],
+      "sandbox": [
+        "ungrounded"
+      ],
+      "main_blocker": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": []
+}

@@ -1,0 +1,181 @@
+{
+  "id": 76,
+  "app": "Monday.com",
+  "category": "Productivity and Project Management",
+  "hint": "developer.monday.com",
+  "docs_url": "https://developer.monday.com/api-reference/docs/basics",
+  "one_liner": {
+    "value": "Work OS for boards, workflows, CRM and dev teams",
+    "evidence": [
+      {
+        "url": "https://developer.monday.com/api-reference/docs/basics",
+        "quote": "It supports operations boards, items, column values, users, workspaces, and more.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "BEARER_TOKEN",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://developer.monday.com/api-reference/docs/authentication",
+        "quote": "The monday.com platform API utilizes personal V2 API tokens to authenticate requests",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://developer.monday.com/apps/docs/oauth.md",
+        "quote": "Authenticating monday apps with OAuth2 and defining permission scopes.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://developer.monday.com/api-reference/docs/authentication",
+        "quote": "create a free developer account to get an API token and start testing.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "GRAPHQL"
+    ],
+    "evidence": [
+      {
+        "url": "https://developer.monday.com/api-reference/docs/basics",
+        "quote": "The monday.com API is built with GraphQL",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://developer.monday.com/api-reference/docs/basics",
+        "quote": "It supports operations boards, items, column values, users, workspaces, and more.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developer.monday.com/api-reference/docs/mondaycom-mcp",
+        "quote": "The Platform MCP is monday.com's hosted MCP (Model Context Protocol) server",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developer.monday.com/api-reference/reference/webhooks",
+        "quote": "Requests sent through our webhook integration will retry once a minute for 30 minutes.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "sandbox": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developer.monday.com/api-reference/docs/developer-sandbox",
+        "quote": "A developer account (also called a sandbox account) is a free monday.com account",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://developer.monday.com/api-reference/docs/authentication",
+        "quote": "create a free developer account to get an API token and start testing.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.4,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "MONDAY",
+    "name": "Monday",
+    "tools": 126,
+    "triggers": 17,
+    "auth": [
+      "OAUTH2"
+    ],
+    "managed_app": "Yes",
+    "url": "https://docs.composio.dev/toolkits/monday.md",
+    "mcp_variant": "MONDAY_MCP",
+    "mcp_variant_auth": [
+      "DCR_OAUTH"
+    ]
+  },
+  "sources": [
+    "https://developer.monday.com/api-reference/docs/authentication",
+    "https://developer.monday.com/api-reference/docs/developer-sandbox",
+    "https://developer.monday.com/api-reference/docs/mondaycom-mcp",
+    "https://developer.monday.com/api-reference/reference/webhooks",
+    "https://developer.monday.com/apps/docs/choosing-auth",
+    "https://developer.monday.com/api-reference/docs/basics",
+    "https://support.monday.com/hc/en-us/articles/28588158981266-Get-started-with-monday-MCP",
+    "https://developer.monday.com/apps/docs/oauth.md"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {},
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {}
+  },
+  "errors": []
+}

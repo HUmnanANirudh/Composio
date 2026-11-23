@@ -1,0 +1,190 @@
+{
+  "id": 13,
+  "app": "Freshdesk",
+  "category": "Support and Helpdesk",
+  "hint": "freshdesk.com",
+  "docs_url": "https://developers.freshdesk.com/api",
+  "one_liner": {
+    "value": "Cloud customer support and ticketing software",
+    "evidence": [
+      {
+        "url": "https://developers.freshdesk.com/api",
+        "quote": "Freshdesk is a cloud-based customer support platform",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY",
+      "BASIC",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://support.freshdesk.com/support/solutions/articles/225435-where-can-i-find-my-api-key-",
+        "quote": "you will need to provide either your username and password combination or your API key",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://developers.freshdesk.com/api",
+        "quote": "OAuth 2.0 Scope",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "access": {
+    "value": "PAID_PLAN",
+    "evidence": [
+      {
+        "url": "https://support.freshdesk.com/support/solutions/articles/225435-where-can-i-find-my-api-key-",
+        "quote": "If your account is on the Sprout plan, the API key and the API functionality will NOT be available.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.freshdesk.com/api",
+        "quote": "Freshdesk's APIs belong to the Representational State Transfer (REST) category.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://developers.freshdesk.com/api",
+        "quote": "reading, modifying, adding or deleting data from your helpdesk",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://support.freshdesk.com/support/solutions/articles/50000012670-model-context-protocol-mcp-integration-in-freshdesk",
+        "quote": "The Freshworks Model Context Protocol (MCP) server enables AI tools like Cursor and Claude to securely connect and interact with Freshdesk.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://support.freshdesk.com/support/solutions/articles/225435-where-can-i-find-my-api-key-",
+        "quote": "when making API calls by triggering webhooks",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.6,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "READY_WITH_CAVEATS",
+    "evidence": [
+      {
+        "url": "https://support.freshdesk.com/support/solutions/articles/225435-where-can-i-find-my-api-key-",
+        "quote": "If your account is on the Sprout plan, the API key and the API functionality will NOT be available.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "The free plan has no API access; a paid plan (or trial) is required.",
+    "evidence": [
+      {
+        "url": "https://support.freshdesk.com/support/solutions/articles/225435-where-can-i-find-my-api-key-",
+        "quote": "If your account is on the Sprout plan, the API key and the API functionality will NOT be available.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.75,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "FRESHDESK",
+    "name": "Freshdesk",
+    "tools": 184,
+    "triggers": 0,
+    "auth": [
+      "API_KEY"
+    ],
+    "managed_app": null,
+    "url": "https://docs.composio.dev/toolkits/freshdesk.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://developers.freshdesk.com/api",
+    "https://support.freshdesk.com/support/solutions/articles/50000012670-model-context-protocol-mcp-integration-in-freshdesk",
+    "https://www.freshworks.com/partners",
+    "https://support.freshdesk.com/support/solutions/articles/215517-how-to-find-your-api-key",
+    "https://support.freshdesk.com/support/solutions/articles/225435-where-can-i-find-my-api-key-",
+    "https://partnerimplementationsupport.freshdesk.com/support/solutions/articles/50000014407-mcp-integration-frequently-asked-questions-faq-",
+    "https://www.freshworks.com/freshdesk/omni/mcp",
+    "https://developers.freshworks.com/freshdesk-sdk"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "sandbox": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": []
+}

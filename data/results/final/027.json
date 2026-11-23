@@ -1,0 +1,196 @@
+{
+  "id": 27,
+  "app": "Telegram",
+  "category": "Communications and Messaging",
+  "hint": "core.telegram.org",
+  "docs_url": "https://core.telegram.org/api",
+  "one_liner": {
+    "value": "Cloud messaging app with an open Bot API",
+    "evidence": [
+      {
+        "url": "https://core.telegram.org/api",
+        "quote": "The Bot API allows you to easily create programs that use Telegram messages for an interface.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "BEARER_TOKEN",
+      "OTHER"
+    ],
+    "evidence": [
+      {
+        "url": "https://core.telegram.org/api",
+        "quote": "This API allows you to connect bots to our system.",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://core.telegram.org/api/obtaining_api_id",
+        "quote": "You will get basic addresses as well as the api_id and api_hash parameters required for user authorization.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://core.telegram.org/api",
+        "quote": "You are welcome to use both APIs free of charge.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://core.telegram.org/api",
+        "quote": "You communicate with this server via a simple HTTPS interface",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://core.telegram.org/bots/api.md",
+        "quote": "forward messages of any kind.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.25,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://core.telegram.org/bots/api.md",
+        "quote": "specify a URL and receive incoming updates via an outgoing webhook.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://core.telegram.org/api",
+        "quote": "You are welcome to use both APIs free of charge.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.4,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "TELEGRAM",
+    "name": "Telegram",
+    "tools": 18,
+    "triggers": 0,
+    "auth": [
+      "API_KEY"
+    ],
+    "managed_app": null,
+    "url": "https://docs.composio.dev/toolkits/telegram.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://core.telegram.org/api/obtaining_api_id",
+    "https://core.telegram.org/api",
+    "https://core.telegram.org/bots/api.md",
+    "https://core.telegram.org/api/auth",
+    "https://telegram.org/tos/bot-developers",
+    "https://core.telegram.org/gateway",
+    "https://core.telegram.org/bots/telegram-login",
+    "https://core.telegram.org/api/srp",
+    "https://documentation.telegramd.com/docs/mcp"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "official_mcp": [
+            "ungrounded"
+          ],
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      },
+      {
+        "round": 1,
+        "grounding": {
+          "official_mcp": [
+            "ungrounded"
+          ],
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "official_mcp": [
+        "ungrounded"
+      ],
+      "sandbox": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": []
+}

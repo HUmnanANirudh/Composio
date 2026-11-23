@@ -1,0 +1,196 @@
+{
+  "id": 47,
+  "app": "Ecwid",
+  "category": "Ecommerce",
+  "hint": "api-docs.ecwid.com",
+  "docs_url": "https://docs.ecwid.com/api-reference",
+  "one_liner": {
+    "value": "Ecommerce store builder that embeds into existing sites",
+    "evidence": [
+      {
+        "url": "https://docs.ecwid.com/api-reference",
+        "quote": "Ecwid REST API allows you to access and manage any store data",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "BEARER_TOKEN",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.ecwid.com/get-started/make-your-first-api-request",
+        "quote": "Ecwid uses OAuth 2.0 to provide secure access to the store data for public apps.",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://docs.ecwid.com/get-started/make-your-first-api-request",
+        "quote": "If you customize your own store, however, you can skip OAuth and easily get an access token for your store.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "access": {
+    "value": "PAID_PLAN",
+    "evidence": [
+      {
+        "url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
+        "quote": "Only stores on paid plans can access API.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.ecwid.com/api-reference",
+        "quote": "Ecwid REST API allows you to access and manage any store data",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://docs.ecwid.com/api-reference",
+        "quote": "Ecwid REST API allows you to access and manage any store data, payment and shipping methods, and storefront settings.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": false,
+    "evidence": [
+      {
+        "url": "https://docs.ecwid.com/webhook-automations/setup-webhooks/how-to-process-webhooks.md",
+        "quote": "Agents can also search and read this documentation through its [MCP server]",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://github.com/Ecwid/ecwid-api-docs/blob/master/includes/_overview.md",
+        "quote": "Webhooks allow you to get an instant notification after an event ocurred in an Ecwid store.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [
+      {
+        "url": "https://docs.ecwid.com/get-started/make-your-first-api-request",
+        "quote": "There is no test mode in Ecwid API",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY_WITH_CAVEATS",
+    "evidence": [
+      {
+        "url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
+        "quote": "Only stores on paid plans can access API.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "API access requires a paid Ecwid plan; test stores get a free upgrade on request by email.",
+    "evidence": [
+      {
+        "url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
+        "quote": "Email us to get a free plan upgrade for your test store.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "composio": {
+    "found": false,
+    "slug": null,
+    "name": null,
+    "tools": null,
+    "triggers": null,
+    "auth": [],
+    "managed_app": null,
+    "url": null,
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://docs.ecwid.com/get-started/make-your-first-api-request",
+    "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
+    "https://docs.ecwid.com",
+    "https://docs.ecwid.com/api-reference/rest-api/rest-api-overview.md",
+    "https://docs.ecwid.com/develop-apps/app-settings",
+    "https://github.com/Ecwid/ecwid-api-docs/blob/master/includes/_overview.md",
+    "https://docs.ecwid.com/api-reference",
+    "https://docs.ecwid.com/launch-apps/native-and-external-apps",
+    "https://docs.ecwid.com/api-reference/rest-api/rest-api-error-codes.md",
+    "https://docs.ecwid.com/webhook-automations/setup-webhooks/how-to-process-webhooks.md",
+    "https://docs.ecwid.com/storefronts/get-started/quickstart-customize-storefront-with-ecwid-js-api.md"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "official_mcp": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      },
+      {
+        "round": 1,
+        "grounding": {},
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {}
+  },
+  "errors": []
+}

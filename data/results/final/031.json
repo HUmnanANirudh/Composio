@@ -1,0 +1,192 @@
+{
+  "id": 31,
+  "app": "Google Ads",
+  "category": "Marketing, Ads, Email and Social",
+  "hint": "developers.google.com/google-ads",
+  "docs_url": "https://developers.google.com/google-ads/api/docs/oauth/overview",
+  "one_liner": {
+    "value": "Google's search and display advertising platform",
+    "evidence": [
+      {
+        "url": "https://github.com/googleads/google-ads-mcp",
+        "quote": "enables LLMs and AI agents to query and manage Google Ads accounts",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "JWT",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.google.com/google-ads/api/rest/auth",
+        "quote": "The Google Ads API uses OAuth 2.0 for authorizing API requests.",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://developers.google.com/google-ads/api/rest/auth",
+        "quote": "service account flow",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "access": {
+    "value": "APPROVAL",
+    "evidence": [
+      {
+        "url": "https://developers.google.com/google-ads/api/docs/api-policy/developer-token",
+        "quote": "apply for Explorer access",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://developers.google.com/google-ads/api/docs/productionize/access-levels",
+        "quote": "uses an application review process to grant various access levels.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.75,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.google.com/google-ads/api/rest/auth",
+        "quote": "The Google Ads API uses OAuth 2.0 for authorizing API requests.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://github.com/googleads/google-ads-mcp",
+        "quote": "query and manage Google Ads accounts",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://github.com/googleads/google-ads-mcp",
+        "quote": "An MCP (Model Context Protocol) server that enables LLMs and AI agents to query and manage Google Ads accounts.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developers.google.com/google-ads/webhook/docs/overview",
+        "quote": "leverage the\nwebhook solution to receive leads",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.6,
+    "flags": []
+  },
+  "sandbox": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developers.google.com/google-ads/api/docs/api-policy/developer-token",
+        "quote": "Test access",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY_WITH_CAVEATS",
+    "evidence": [
+      {
+        "url": "https://developers.google.com/google-ads/api/docs/productionize/access-levels",
+        "quote": "uses an application review process to grant various access levels.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "A developer token with an approved access level is required; Standard access needs a manual review.",
+    "evidence": [
+      {
+        "url": "https://developers.google.com/google-ads/api/docs/api-policy/developer-token",
+        "quote": "If you need Standard access, you need a manual review.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "GOOGLEADS",
+    "name": "Google Ads",
+    "tools": 78,
+    "triggers": 0,
+    "auth": [
+      "OAUTH2"
+    ],
+    "managed_app": "Yes",
+    "url": "https://docs.composio.dev/toolkits/googleads.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://developers.google.com/google-ads/api/docs/oauth/overview",
+    "https://developers.google.com/google-ads/api/docs/productionize/access-levels",
+    "https://developers.google.com/google-ads/api/docs/developer-toolkit/mcp-server",
+    "https://developers.google.com/google-ads/webhook/docs/overview",
+    "https://developers.google.com/google-ads/api/rest/auth",
+    "https://developers.google.com/google-ads/api/docs/api-policy/developer-token",
+    "https://github.com/googleads/google-ads-mcp",
+    "https://developers.google.com/program"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {},
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {}
+  },
+  "errors": []
+}

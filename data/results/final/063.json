@@ -1,0 +1,187 @@
+{
+  "id": 63,
+  "app": "Netlify",
+  "category": "Developer, Infra and Data platforms",
+  "hint": "docs.netlify.com/api",
+  "docs_url": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api",
+  "one_liner": {
+    "value": "Web hosting and deployment platform for sites and apps",
+    "evidence": [
+      {
+        "url": "https://open-api.netlify.com",
+        "quote": "Netlify is a hosting service for the programmable web.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "BEARER_TOKEN",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://open-api.netlify.com",
+        "quote": "This is a REST-style API that uses JSON for serialization and OAuth 2 for authentication.",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://developers.netlify.com/guides/generating-personal-access-tokens-with-netlify-oauth",
+        "quote": "Personal Access Tokens (PATs) provide additional benefits",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://answers.netlify.com/t/support-guide-understanding-and-using-netlifys-api/160",
+        "quote": "you’re welcome to use it to create and configure your site(s) and perform most other operations on your account.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://open-api.netlify.com",
+        "quote": "This is a REST-style API that uses JSON for serialization and OAuth 2 for authentication.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://answers.netlify.com/t/support-guide-understanding-and-using-netlifys-api/160",
+        "quote": "Anything that you configure in our Admin UI at https://app.netlify.com is managed using this same API",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://github.com/netlify/netlify-mcp",
+        "quote": "Netlify MCP Server follows the Model Context Protocol (MCP) to enable code agents to use the Netlify API and CLI",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://answers.netlify.com/t/support-guide-understanding-and-using-netlifys-api/160",
+        "quote": "you’re welcome to use it to create and configure your site(s)",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.4,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "NETLIFY_MCP",
+    "name": "Netlify MCP",
+    "tools": 9,
+    "triggers": 0,
+    "auth": [
+      "DCR_OAUTH"
+    ],
+    "managed_app": "No",
+    "url": "https://docs.composio.dev/toolkits/netlify_mcp.md",
+    "mcp_variant": "NETLIFY_MCP",
+    "mcp_variant_auth": [
+      "DCR_OAUTH"
+    ]
+  },
+  "sources": [
+    "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api",
+    "https://docs.netlify.com/build/build-with-ai/agent-setup-guides/agent-setup-overview",
+    "https://docs.netlify.com/build/data-and-storage/netlify-database/api.md",
+    "https://developers.netlify.com/guides/generating-personal-access-tokens-with-netlify-oauth",
+    "https://answers.netlify.com/t/support-guide-understanding-and-using-netlifys-api/160",
+    "https://github.com/netlify/netlify-mcp",
+    "https://open-api.netlify.com",
+    "https://www.netlify.com/partners"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "webhooks": [
+            "ungrounded"
+          ],
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "webhooks": [
+        "ungrounded"
+      ],
+      "sandbox": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": [
+    "fetch https://app.netlify.com/applications: 200 too little text (JS-rendered?)"
+  ]
+}

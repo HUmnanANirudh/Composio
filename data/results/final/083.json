@@ -1,0 +1,206 @@
+{
+  "id": 83,
+  "app": "Binance",
+  "category": "Finance and Fintech",
+  "hint": "binance-docs.github.io",
+  "docs_url": "https://developers.binance.com/en/docs/llms-full.txt",
+  "one_liner": {
+    "value": "Cryptocurrency exchange with trading, market data and wallet APIs",
+    "evidence": [
+      {
+        "url": "https://developers.binance.com/en/docs/llms-full.txt",
+        "quote": "New order (TRADE)",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY",
+      "OTHER"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.binance.com/en/docs/llms-full.txt",
+        "quote": "Secure endpoints require a valid API key to be specified and authenticated.",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://developers.binance.com/en/docs/llms-full.txt",
+        "quote": "all endpoints with a security type are considered `SIGNED` requests",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://developers.binance.com/en/docs/llms-full.txt",
+        "quote": "API keys can be created on the\n    [API Management](https://www.binance.com/en/support/faq/360002502072) page of your Binance\n    account.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.75,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.binance.com/en/docs/llms-full.txt",
+        "quote": "Endpoints related to `/sapi/*`:",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://apis.io/plans/binance/binance-plans-pricing",
+        "quote": "Spot Trading API",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://www.anchorterminal.com/tools/binance",
+        "quote": "Official remote MCP server with OAuth scopes",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://www.prnewswire.com/news-releases/binance-introduces-agent-os-to-connect-ai-applications-to-financial-infrastructure-302856306.html",
+        "quote": "Binance today introduced Agent OS",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.65,
+    "flags": []
+  },
+  "webhooks": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.25,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "sandbox": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://www.anchorterminal.com/tools/binance",
+        "quote": "Spot testnet with REST, WebSocket and FIX endpoints",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY_WITH_CAVEATS",
+    "evidence": [
+      {
+        "url": "https://dev.binance.vision/t/binance-login-oauth2-0-web-integration-with-binance-spot-trading-api/19597",
+        "quote": "I’m afraid not, that’s only used for the API endpoints listed at OAuth 2.0 APIs",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "OAuth is limited to close ecosystem partners, so each user must supply API keys from a verified Binance account.",
+    "evidence": [
+      {
+        "url": "https://www.beelaa.com/binance/binance-login-app-onboarding",
+        "quote": "Binance OAuth 2.0 login is currently only open to \"close ecosystem partners\".",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "composio": {
+    "found": false,
+    "slug": null,
+    "name": null,
+    "tools": null,
+    "triggers": null,
+    "auth": [],
+    "managed_app": null,
+    "url": null,
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://developers.binance.com/en/docs/llms-full.txt",
+    "https://github.com/binance/binance-spot-api-docs/blob/refs/heads/master/rest-api.md",
+    "https://dev.binance.vision/t/binance-login-oauth2-0-web-integration-with-binance-spot-trading-api/19597",
+    "https://apis.io/plans/binance/binance-plans-pricing",
+    "https://www.beelaa.com/binance/binance-login-app-onboarding",
+    "https://www.prnewswire.com/news-releases/binance-introduces-agent-os-to-connect-ai-applications-to-financial-infrastructure-302856306.html",
+    "https://www.anchorterminal.com/tools/binance"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "webhooks": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "webhooks": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": [
+    "fetch https://developers.binance.com/en/landingpage/oauth: 200 too little text (JS-rendered?)",
+    "fetch https://www.binance.com/en/binance-api: 202 too little text (JS-rendered?)",
+    "fetch https://developers.binance.com/en/docs/agent-native/mcp-server/agentic: 202 too little text (JS-rendered?)",
+    "fetch https://developers.binance.com/docs/binance_link/link-and-trade: 202 too little text (JS-rendered?)",
+    "fetch https://www.binance.com/en/support/faq/how-to-create-api-keys-on-binance-360002502072: 202 too little text (JS-rendered?)",
+    "fetch https://www.binance.com/en/agent-os: 202 too little text (JS-rendered?)",
+    "fetch https://www.binance.com/en/academy/articles/what-are-api-keys-and-security-types: 202 too little text (JS-rendered?)",
+    "fetch https://developers.binance.com/en/docs/agent-native/mcp-server: 202 too little text (JS-rendered?)",
+    "fetch https://developers.binance.com/en: 200 too little text (JS-rendered?)",
+    "fetch https://www.binance.com/en-PH/support/faq/detail/7a6e676e36fb455d96478932cb12d9f3: 202 too little text (JS-rendered?)",
+    "fetch https://www.binance.com/en-IN/research/analysis/binance-intelligence-a-first-look-at-next-gen-finance: 202 too little text (JS-rendered?)",
+    "fetch https://developers.binance.com/docs/binance_connect/quick-start: 202 too little text (JS-rendered?)",
+    "fetch https://www.binance.com/en-IA/research/analysis/binance-intelligence-a-first-look-at-next-gen-finance: 202 too little text (JS-rendered?)"
+  ]
+}

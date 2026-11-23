@@ -1,0 +1,191 @@
+{
+  "id": 94,
+  "app": "Consensus",
+  "category": "AI, Research and Media-native",
+  "hint": "consensus.app (OAuth requested)",
+  "docs_url": "https://docs.consensus.app/api-plans-and-access",
+  "one_liner": {
+    "value": "AI search engine over peer-reviewed research papers",
+    "evidence": [
+      {
+        "url": "https://docs.consensus.app/consensus-mcp",
+        "quote": "One hosted server covers every field of science",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.consensus.app/enterprise/security",
+        "quote": "REST API (https://api.consensus.app/v1/search): an API key, sent in the x-api-key header.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://docs.consensus.app/api-plans-and-access",
+        "quote": "The API is self-serve on every Consensus plan.",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://docs.consensus.app/api-reference/search.md",
+        "quote": "Free plans include 30 calls per month",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.consensus.app/enterprise/security",
+        "quote": "a web app, an MCP server, and a REST API",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "NARROW",
+    "evidence": [
+      {
+        "url": "https://docs.consensus.app/api-reference/search.md",
+        "quote": "The supported endpoint for searching academic papers.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://docs.consensus.app/enterprise/security",
+        "quote": "MCP server (https://mcp.consensus.app/mcp): an API key or a per-user OAuth token",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://docs.consensus.app/api-plans-and-access",
+        "quote": "The API is self-serve on every Consensus plan.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "Narrow search-focused API; OAuth exists only on the MCP server, so REST calls need a per-user API key.",
+    "evidence": [
+      {
+        "url": "https://docs.consensus.app/enterprise/security",
+        "quote": "an API key, sent in the x-api-key header.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.65,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "CONSENSUS",
+    "name": "Consensus",
+    "tools": 1,
+    "triggers": 0,
+    "auth": [
+      "API_KEY"
+    ],
+    "managed_app": null,
+    "url": "https://docs.composio.dev/toolkits/consensus.md",
+    "mcp_variant": "CONSENSUS_MCP",
+    "mcp_variant_auth": [
+      "DCR_OAUTH"
+    ]
+  },
+  "sources": [
+    "https://docs.consensus.app/enterprise/security",
+    "https://docs.consensus.app/api-plans-and-access",
+    "https://docs.consensus.app/consensus-mcp",
+    "https://docs.consensus.app/api-reference/search.md",
+    "https://help.consensus.app/en/articles/16516328-the-consensus-api",
+    "https://consensus.app/home/mcp",
+    "https://docs.consensus.app/search-basics/research-an-author",
+    "https://docs.consensus.app/enterprise/connection-reference"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "webhooks": [
+            "ungrounded"
+          ],
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "webhooks": [
+        "ungrounded"
+      ],
+      "sandbox": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": []
+}

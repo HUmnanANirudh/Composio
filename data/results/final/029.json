@@ -1,0 +1,197 @@
+{
+  "id": 29,
+  "app": "Aircall",
+  "category": "Communications and Messaging",
+  "hint": "aircall.io",
+  "docs_url": "https://developer.aircall.io/docs/authentication",
+  "one_liner": {
+    "value": "Cloud phone system and AI voice platform for business teams",
+    "evidence": [
+      {
+        "url": "https://developer.aircall.io/docs/quickstart/llms.txt",
+        "quote": "Build the next generation of AI communication.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY",
+      "BASIC",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://developer.aircall.io/docs/authentication",
+        "quote": "Aircall supports two ways to authenticate with the REST API: Basic Authentication and OAuth.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_TRIAL",
+    "evidence": [
+      {
+        "url": "https://aircall.io/pricing",
+        "quote": "Get free access",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://developer.aircall.io/docs/basic-authentication",
+        "quote": "You must have an Aircall account.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.6,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://developer.aircall.io/docs/authentication",
+        "quote": "Aircall supports two ways to authenticate with the REST API",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://developers.aircall.io/api-references",
+        "quote": "Calls and Contacts are limited to 10,000 items, even with pagination on.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://support.aircall.io/en-gb/articles/39677926959517",
+        "quote": "Aircall MCP gives an AI assistant, like Claude or ChatGPT, read-only access",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://support.aircall.io/en-gb/articles/39677926959517",
+        "quote": "Aircall MCP is currently in beta. To join the beta, contact your Account Manager.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [
+      {
+        "url": "https://developer.aircall.io/docs/plan-your-integration",
+        "quote": "If approved, you'll receive your developer account and OAuth credentials to start building",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.5,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY_WITH_CAVEATS",
+    "evidence": [
+      {
+        "url": "https://developer.aircall.io/docs/authentication",
+        "quote": "You’re building a public integration and are an approved tech partner",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "OAuth for multi-customer apps requires an approved tech-partner application and a reviewed integration plan.",
+    "evidence": [
+      {
+        "url": "https://developer.aircall.io/docs/plan-your-integration",
+        "quote": "Once we've replied to your partner application, we will request the plan.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "AIRCALL",
+    "name": "Aircall",
+    "tools": 48,
+    "triggers": 0,
+    "auth": [
+      "OAUTH2",
+      "BASIC"
+    ],
+    "managed_app": "Yes",
+    "url": "https://docs.composio.dev/toolkits/aircall.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://developer.aircall.io/docs/authentication",
+    "https://aircall.io/pricing",
+    "https://support.aircall.io/en-gb/articles/39677926959517",
+    "https://developers.aircall.io/api-references",
+    "https://developer.aircall.io/docs/basic-authentication",
+    "https://developer.aircall.io/docs/plan-your-integration",
+    "https://support.aircall.io/en-gb/articles/40439224263069",
+    "https://developer.aircall.io/docs/quickstart/llms.txt"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "webhooks": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "webhooks": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": []
+}

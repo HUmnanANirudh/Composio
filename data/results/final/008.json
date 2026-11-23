@@ -1,0 +1,198 @@
+{
+  "id": 8,
+  "app": "Close",
+  "category": "CRM and Sales",
+  "hint": "close.com",
+  "docs_url": "https://developer.close.com/integrations",
+  "one_liner": {
+    "value": "Sales CRM with built-in calling, email and SMS",
+    "evidence": [
+      {
+        "url": "https://close.com/llms.txt",
+        "quote": "Close offers a 14-day free trial with no credit card required.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY",
+      "BASIC",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://developer.close.com/api/overview/api-key-authentication",
+        "quote": "API keys use HTTP Basic client side authentication.",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://developer.close.com/integrations",
+        "quote": "OAuth 2.0 — Lets each user authorize your app to act on their behalf.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_TRIAL",
+    "evidence": [
+      {
+        "url": "https://close.com/llms.txt",
+        "quote": "Close offers a 14-day free trial with no credit card required.",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://help.close.com/account-management/plans-and-billing",
+        "quote": "All paid plans (including Scale) are billed per user (per seat)",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://developer.close.com/integrations",
+        "quote": "Close’s REST API supports everything from a simple internal script to a full product integration",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://developer.close.com/integrations",
+        "quote": "Close’s REST API supports everything from a simple internal script to a full product integration",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developer.close.com/mcp",
+        "quote": "The MCP server URL is https://mcp.close.com/mcp",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developer.close.com/api/resources/webhooks/webhook-filters.md",
+        "quote": "creating/modifying a webhook subscription",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "READY_WITH_CAVEATS",
+    "evidence": [
+      {
+        "url": "https://close.com/llms.txt",
+        "quote": "Close offers a 14-day free trial with no credit card required.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "No free plan: after the 14-day trial, API access needs a paid seat.",
+    "evidence": [
+      {
+        "url": "https://help.close.com/account-management/plans-and-billing",
+        "quote": "All paid plans (including Scale) are billed per user (per seat)",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "CLOSE",
+    "name": "Close",
+    "tools": 75,
+    "triggers": 45,
+    "auth": [
+      "API_KEY"
+    ],
+    "managed_app": null,
+    "url": "https://docs.composio.dev/toolkits/close.md",
+    "mcp_variant": "CLOSE_MCP",
+    "mcp_variant_auth": [
+      "DCR_OAUTH"
+    ]
+  },
+  "sources": [
+    "https://developer.close.com/api/overview/api-key-authentication",
+    "https://developer.close.com/integrations",
+    "https://developer.close.com/mcp",
+    "https://developer.close.com/api/resources/webhooks/webhook-filters.md",
+    "https://developer.close.com/api/overview/oauth-authentication",
+    "https://help.close.com/account-management/plans-and-billing",
+    "https://close.com/llms.txt",
+    "https://developer.close.com/mcp/tools"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "sandbox": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": []
+}

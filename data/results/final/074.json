@@ -1,0 +1,192 @@
+{
+  "id": 74,
+  "app": "Jira",
+  "category": "Productivity and Project Management",
+  "hint": "developer.atlassian.com",
+  "docs_url": "https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro",
+  "one_liner": {
+    "value": "Atlassian's issue and project tracking for software and business teams",
+    "evidence": [
+      {
+        "url": "https://developer.atlassian.com/cloud/rovo-mcp",
+        "quote": "read, create, and update work across Jira, Confluence, Jira Service Management, Bitbucket, Loom",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY",
+      "BASIC",
+      "JWT",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://developer.atlassian.com/cloud/jira/software/basic-auth-for-rest-apis",
+        "quote": "authenticate themselves using basic authentication with an Atlassian account email address and API token",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://developer.atlassian.com/cloud/jira/platform/security-for-other-integrations",
+        "quote": "OAuth 2.0 authorization code grants (3LO): This is the recommended method.",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://developer.atlassian.com/cloud/jira/software/basic-auth-for-rest-apis",
+        "quote": "Forge apps and Connect apps use more secure methods for authentication: OAuth 2.0 and JWT respectively.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://developer.atlassian.com/platform/marketplace/getting-started",
+        "quote": "we'll give you a free developer instance to make it easier than ever to develop and test",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro",
+        "quote": "REST API v3",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro",
+        "quote": "Issue bulk operations",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developer.atlassian.com/cloud/rovo-mcp",
+        "quote": "The Atlassian Rovo MCP Server is a cloud-hosted Model Context Protocol (MCP) server",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "sandbox": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developer.atlassian.com/platform/marketplace/getting-started",
+        "quote": "Developer instances should only be used for development and testing.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://developer.atlassian.com/platform/marketplace/getting-started",
+        "quote": "No request forms needed here... get started with your development instance today!",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.4,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "JIRA",
+    "name": "Jira",
+    "tools": 171,
+    "triggers": 17,
+    "auth": [
+      "OAUTH2",
+      "S2S_OAUTH2",
+      "API_KEY"
+    ],
+    "managed_app": "Yes",
+    "url": "https://docs.composio.dev/toolkits/jira.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://developer.atlassian.com/cloud/jira/platform/security-for-other-integrations",
+    "https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro",
+    "https://developer.atlassian.com/cloud/rovo-mcp",
+    "https://developer.atlassian.com/cloud/jira/software/basic-auth-for-rest-apis",
+    "https://developer.atlassian.com/developer-guide/cloud-and-data-center-for-developers",
+    "https://www.atlassian.com/platform/mcp",
+    "https://developer.atlassian.com/cloud/jira/software/rest/intro",
+    "https://developer.atlassian.com/platform/marketplace/getting-started"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "webhooks": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "webhooks": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": []
+}

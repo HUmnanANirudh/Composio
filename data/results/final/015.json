@@ -1,0 +1,190 @@
+{
+  "id": 15,
+  "app": "Pylon",
+  "category": "Support and Helpdesk",
+  "hint": "usepylon.com",
+  "docs_url": "https://docs.usepylon.com/pylon-docs/developer/api",
+  "one_liner": {
+    "value": "B2B support platform for Slack, Teams, email and chat",
+    "evidence": [
+      {
+        "url": "https://www.usepylon.com/pricing",
+        "quote": "Pylon brings every channel into one queue",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "BEARER_TOKEN"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+        "quote": "The Pylon API uses Bearer authentication.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "access": {
+    "value": "PAID_PLAN",
+    "evidence": [
+      {
+        "url": "https://www.usepylon.com/pricing",
+        "quote": "on an annual contract",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://docs.usepylon.com/pylon-docs/developer/api",
+        "quote": "Only Admin users can create API tokens.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.usepylon.com/pylon-docs/developer/api",
+        "quote": "Check out our API Reference for specifications on all endpoints.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://www.usepylon.com/integrations/api-webhooks",
+        "quote": "The API spans the full range of Pylon objects",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://docs.usepylon.com/pylon-docs/integrations/pylon-mcp",
+        "quote": "The Pylon MCP Server exposes Pylon data to AI tools that support the Model Context Protocol",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://docs.usepylon.com/pylon-docs/developer/webhooks",
+        "quote": "Receive webhooks for various events happening in Pylon.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "READY_WITH_CAVEATS",
+    "evidence": [
+      {
+        "url": "https://www.usepylon.com/pricing",
+        "quote": "on an annual contract",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.75,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "API needs a paid seat on an annual contract; no free tier.",
+    "evidence": [
+      {
+        "url": "https://www.usepylon.com/pricing",
+        "quote": "on an annual contract",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "PYLON_MCP",
+    "name": "Pylon MCP",
+    "tools": 12,
+    "triggers": 0,
+    "auth": [
+      "DCR_OAUTH"
+    ],
+    "managed_app": "No",
+    "url": "https://docs.composio.dev/toolkits/pylon_mcp.md",
+    "mcp_variant": "PYLON_MCP",
+    "mcp_variant_auth": [
+      "DCR_OAUTH"
+    ]
+  },
+  "sources": [
+    "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+    "https://www.usepylon.com/pricing",
+    "https://docs.usepylon.com/pylon-docs/integrations/pylon-mcp",
+    "https://docs.usepylon.com/pylon-docs/developer/webhooks",
+    "https://support.usepylon.com/articles/4735104435-how-do-i-create-an-api-token",
+    "https://docs.usepylon.com/pylon-docs/developer/api",
+    "https://www.usepylon.com/integrations/mcp",
+    "https://www.usepylon.com/integrations/api-webhooks"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "sandbox": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": []
+}

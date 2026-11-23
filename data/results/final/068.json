@@ -1,0 +1,202 @@
+{
+  "id": 68,
+  "app": "MongoDB Atlas",
+  "category": "Developer, Infra and Data platforms",
+  "hint": "mongodb.com/docs/atlas/api",
+  "docs_url": "https://www.mongodb.com/docs/atlas/api",
+  "one_liner": {
+    "value": "MongoDB's managed cloud database service",
+    "evidence": [
+      {
+        "url": "https://www.mongodb.com/docs/atlas/api",
+        "quote": "manage your deployments using the following resources",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY",
+      "OAUTH2",
+      "OTHER"
+    ],
+    "evidence": [
+      {
+        "url": "https://www.mongodb.com/docs/atlas/api/api-authentication",
+        "quote": "Service account access tokens (OAuth 2.0)",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://www.mongodb.com/docs/atlas/api/api-authentication",
+        "quote": "API keys (HTTP Digest Authentication)",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://www.mongodb.com/docs/get-started",
+        "quote": "you will learn how to create a MongoDB Atlas deployment locally or in the cloud",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.4,
+    "flags": [
+      "low_confidence"
+    ]
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://www.mongodb.com/docs/atlas/configure-api-access",
+        "quote": "The Atlas Administration API follows the principles of the REST architectural style",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://www.mongodb.com/docs/atlas/api",
+        "quote": "add, edit, or delete administrative objects within Atlas, including projects, users, and clusters.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://www.mongodb.com/products/tools/mcp-server",
+        "quote": "The MongoDB MCP Server gives AI agents the tools they need to explore, query, and manage MongoDB deployments.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "READY_WITH_CAVEATS",
+    "evidence": [
+      {
+        "url": "https://www.mongodb.com/docs/atlas/configure-api-access",
+        "quote": "The Atlas Administration API doesn't provide access to the data stored in your clusters.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "The Admin API manages clusters but not data; reading or writing data needs database-user credentials and a driver.",
+    "evidence": [
+      {
+        "url": "https://www.mongodb.com/docs/atlas/api/api-authentication",
+        "quote": "To read or write data in a database, you must authenticate to your cluster using the credentials for a database user",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.75,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "MONGODB",
+    "name": "MongoDB",
+    "tools": 496,
+    "triggers": 0,
+    "auth": [
+      "S2S_OAUTH2"
+    ],
+    "managed_app": "No",
+    "url": "https://docs.composio.dev/toolkits/mongodb.md",
+    "mcp_variant": "MONGODB_MCP",
+    "mcp_variant_auth": [
+      "S2S_OAUTH2"
+    ]
+  },
+  "sources": [
+    "https://www.mongodb.com/docs/atlas/api/api-authentication",
+    "https://www.mongodb.com/docs/atlas/api",
+    "https://www.mongodb.com/products/tools/mcp-server",
+    "https://www.mongodb.com/docs/atlas/graphql-api",
+    "https://www.mongodb.com/docs/atlas/api/service-accounts/generate-oauth2-token",
+    "https://www.mongodb.com/docs/atlas/configure-api-access",
+    "https://www.mongodb.com/docs/mcp-server/get-started",
+    "https://www.mongodb.com/docs/get-started"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "webhooks": [
+            "ungrounded"
+          ],
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {
+          "access": [
+            "low_confidence"
+          ]
+        }
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "webhooks": [
+        "ungrounded"
+      ],
+      "sandbox": [
+        "ungrounded"
+      ],
+      "access": [
+        "low_confidence"
+      ]
+    }
+  },
+  "errors": []
+}

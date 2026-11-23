@@ -1,0 +1,177 @@
+{
+  "id": 14,
+  "app": "Front",
+  "category": "Support and Helpdesk",
+  "hint": "front.com",
+  "docs_url": "https://dev.frontapp.com/docs/core-api-getting-started",
+  "one_liner": {
+    "value": "Shared-inbox customer operations platform",
+    "evidence": [
+      {
+        "url": "https://dev.frontapp.com/docs/partnering-with-front",
+        "quote": "our mission is to be the hub for customer communication and customer operations",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "BEARER_TOKEN",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://dev.frontapp.com/docs/authentication",
+        "quote": "There are two ways to get a Bearer token — through API tokens in your settings or through an OAuth implementation.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://dev.frontapp.com/docs/core-api-getting-started",
+        "quote": "If you don’t already have access to a Front account, create a developer account.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://dev.frontapp.com/docs/core-api-getting-started",
+        "quote": "build your own integration using the Core API endpoints",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://dev.frontapp.com/docs/core-api-getting-started",
+        "quote": "build your own integration using the Core API endpoints",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://dev.frontapp.com/docs/mcp-server",
+        "quote": "Front's MCP server (mcp.frontapp.com/mcp) lets AI agents act on Front conversation data",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "sandbox": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://dev.frontapp.com/docs/core-api-getting-started",
+        "quote": "create a developer account",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://dev.frontapp.com/docs/core-api-getting-started",
+        "quote": "If you don’t already have access to a Front account, create a developer account.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.4,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "FRONT",
+    "name": "Front",
+    "tools": 180,
+    "triggers": 0,
+    "auth": [
+      "API_KEY",
+      "OAUTH2"
+    ],
+    "managed_app": "No",
+    "url": "https://docs.composio.dev/toolkits/front.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://dev.frontapp.com/docs/authentication",
+    "https://dev.frontapp.com/docs/partnering-with-front",
+    "https://help.front.com/en/articles/4883136",
+    "https://front.com/pricing",
+    "https://dev.frontapp.com/docs/oauth",
+    "https://dev.frontapp.com/docs/core-api-getting-started",
+    "https://dev.frontapp.com/docs/mcp-server",
+    "https://front.com/product/compass-ai-agent-performance-monitoring"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "webhooks": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "webhooks": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": []
+}

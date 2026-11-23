@@ -1,0 +1,176 @@
+{
+  "id": 23,
+  "app": "Zoho Cliq",
+  "category": "Communications and Messaging",
+  "hint": "zoho.com/cliq",
+  "docs_url": "https://www.zoho.com/cliq/help/restapi/v3/oauth",
+  "one_liner": {
+    "value": "Zoho's team chat and collaboration app",
+    "evidence": [
+      {
+        "url": "https://www.zoho.com/cliq/mcp-server.html",
+        "quote": "Bring AI to where your work lives.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://www.zoho.com/cliq/help/restapi/v3/oauth",
+        "quote": "The first step in using OAuth authentication is registering your app with the Zoho API console.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://www.zoho.com/cliq/help/restapi/v3/registerclient",
+        "quote": "Go to the Zoho API Console, then click GET STARTED.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://www.zoho.com/cliq/help/restapi/v3/registerclient",
+        "quote": "These credentials are used to obtain an access token, which is required to make API calls to Zoho Cliq.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://www.zoho.com/cliq/mcp-server.html",
+        "quote": "Cliq MCP gives AI access to channels, threads, users, roles, and past conversations",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://www.zoho.com/cliq/mcp-server.html",
+        "quote": "The Cliq MCP Server exposes Cliq's core capabilities as standardized tools",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://www.zoho.com/cliq/help/restapi/v3/registerclient",
+        "quote": "Upon successful registration of your application, you will receive a Client ID and Client Secret.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.4,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "ZOHO_CLIQ",
+    "name": "Zoho Cliq",
+    "tools": 162,
+    "triggers": 0,
+    "auth": [
+      "OAUTH2"
+    ],
+    "managed_app": "No",
+    "url": "https://docs.composio.dev/toolkits/zoho_cliq.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://www.zoho.com/cliq/help/restapi/v3/oauth",
+    "https://www.zoho.com/cliq/help/restapi/v3/registerclient",
+    "https://www.zoho.com/cliq/mcp-server.html",
+    "https://www.zoho.com/mcp/llms.txt",
+    "https://www.zoho.com/cliq/help/restapi/v2/registerclient",
+    "https://www.zoho.com/cliq/pricing.html",
+    "https://www.zoho.com/cliq/help/platform/configure-zoho-cliq-mcp.html",
+    "https://www.zoho.com/cliq/help/platform/faq.html"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "webhooks": [
+            "ungrounded"
+          ],
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "webhooks": [
+        "ungrounded"
+      ],
+      "sandbox": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": []
+}

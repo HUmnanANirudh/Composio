@@ -1,0 +1,185 @@
+{
+  "id": 90,
+  "app": "PitchBook",
+  "category": "Finance and Fintech",
+  "hint": "pitchbook.com (research API)",
+  "docs_url": "https://pitchbook.com/help/PitchBook-api",
+  "one_liner": {
+    "value": "Private capital market data and research platform",
+    "evidence": [
+      {
+        "url": "https://pitchbook.com/products/direct-access-data/api",
+        "quote": "Call data on all PitchBook entity types including deals, investors, funds, people, limited partners and service providers.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY"
+    ],
+    "evidence": [
+      {
+        "url": "https://pitchbook.com/help/PitchBook-api",
+        "quote": "help you establish the API connection through an API key or authentication token",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "access": {
+    "value": "PARTNERSHIP",
+    "evidence": [
+      {
+        "url": "https://pitchbook.com/help/PitchBook-api",
+        "quote": "To start your API connection, you will need to send a request directly to our Direct Data team through this link.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://pitchbook.com/help/PitchBook-api",
+        "quote": "The PitchBook API is a RESTful implementation",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://pitchbook.com/products/direct-access-data/api",
+        "quote": "Call data on all PitchBook entity types including deals, investors, funds, people, limited partners and service providers.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://pitchbook.com/products/pitchbooks-ai-capabilities",
+        "quote": "PitchBook Data MCP gives your team secure, native access to select company, deal, investor, and fund data",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "webhooks": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "NEEDS_OUTREACH",
+    "evidence": [
+      {
+        "url": "https://pitchbook.com/help/PitchBook-api",
+        "quote": "you will need to send a request directly to our Direct Data team",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "API access is arranged through PitchBook's Direct Data team on top of a PitchBook subscription.",
+    "evidence": [
+      {
+        "url": "https://pitchbook.com/help/PitchBook-api",
+        "quote": "Our team will work with you to understand the insights and data you’re looking for",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "PITCHBOOK",
+    "name": "PitchBook",
+    "tools": 130,
+    "triggers": 0,
+    "auth": [
+      "API_KEY"
+    ],
+    "managed_app": null,
+    "url": "https://docs.composio.dev/toolkits/pitchbook.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://pitchbook.com/help/PitchBook-api",
+    "https://pitchbook.com/products/premium-connectors",
+    "https://pitchbook.com/pricing",
+    "https://pitchbook.com/products/direct-access-data/api",
+    "https://pitchbook.com/help/getting-started-with-pitchbook-premium-connector",
+    "https://pitchbook.com/partners",
+    "https://pitchbook.com/products/pitchbooks-ai-capabilities",
+    "https://pitchbook.com/free-trial"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "webhooks": [
+            "ungrounded"
+          ],
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "webhooks": [
+        "ungrounded"
+      ],
+      "sandbox": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": [
+    "fetch https://pitchbook.com/products/direct-access-data: 403 too little text (JS-rendered?)"
+  ]
+}

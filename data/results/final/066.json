@@ -1,0 +1,206 @@
+{
+  "id": 66,
+  "app": "Neo4j",
+  "category": "Developer, Infra and Data platforms",
+  "hint": "neo4j.com/docs/api",
+  "docs_url": "https://neo4j.com/docs/aura/api/authentication",
+  "one_liner": {
+    "value": "Graph database (AuraDB cloud and self-managed)",
+    "evidence": [
+      {
+        "url": "https://neo4j.com/docs/query-api/current",
+        "quote": "The Query API allows to execute Cypher statements against a Neo4j server through HTTP requests.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY",
+      "BASIC",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://neo4j.com/docs/aura/api/authentication",
+        "quote": "The Aura API uses OAuth 2.0 for API authentication.",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://neo4j.com/docs/graphql/7/aura-graphql/api-usage",
+        "quote": "Add x-api-key: YOUR_API_KEY to the header of the request.",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://github.com/neo4j/mcp",
+        "quote": "\"NEO4J_MCP_PASSWORD\": \"password\"",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://neo4j.com/docs/aura/api/authentication",
+        "quote": "All tiers can create Aura API credentials.",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://neo4j.com/pricing",
+        "quote": "**Free**: Start with a free plan to learn and explore graph data.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "GRAPHQL",
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://neo4j.com/docs/query-api/current",
+        "quote": "The Query API allows to execute Cypher statements against a Neo4j server through HTTP requests.",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://neo4j.com/docs/graphql/7/aura-graphql/api-usage",
+        "quote": "When the status for the GraphQL API is \"Ready\" you can send GraphQL requests to it.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://neo4j.com/docs/query-api/current",
+        "quote": "The Query API allows to execute Cypher statements against a Neo4j server through HTTP requests.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.65,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://neo4j.com/docs/mcp/current",
+        "quote": "Neo4j MCP implements the Model Context Protocol (MCP)",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://neo4j.com/docs/aura/api/authentication",
+        "quote": "All tiers can create Aura API credentials.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.4,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "NEO4J",
+    "name": "Neo4J",
+    "tools": 21,
+    "triggers": 0,
+    "auth": [
+      "OAUTH2",
+      "BASIC",
+      "API_KEY",
+      "S2S_OAUTH2"
+    ],
+    "managed_app": "No",
+    "url": "https://docs.composio.dev/toolkits/neo4j.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://neo4j.com/docs/aura/api/authentication",
+    "https://neo4j.com/pricing",
+    "https://github.com/neo4j/mcp",
+    "https://neo4j.com/docs/getting-started",
+    "https://neo4j.com/docs/graphql/7/aura-graphql/api-usage",
+    "https://neo4j.com/docs/query-api/current",
+    "https://neo4j.com/docs/mcp/current",
+    "https://neo4j.com/developer/genai-ecosystem/model-context-protocol-mcp"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "webhooks": [
+            "ungrounded"
+          ],
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "webhooks": [
+        "ungrounded"
+      ],
+      "sandbox": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": []
+}

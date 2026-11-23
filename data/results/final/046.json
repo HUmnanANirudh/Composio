@@ -1,0 +1,181 @@
+{
+  "id": 46,
+  "app": "Squarespace",
+  "category": "Ecommerce",
+  "hint": "developers.squarespace.com",
+  "docs_url": "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+  "one_liner": {
+    "value": "Website builder with commerce, domains and scheduling",
+    "evidence": [
+      {
+        "url": "https://developers.squarespace.com/mcp/overview",
+        "quote": "someone can describe a new business and leave the chat with a domain ready to buy",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+        "quote": "authenticate requests by using an API key or OAuth access token.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "access": {
+    "value": "PAID_PLAN",
+    "evidence": [
+      {
+        "url": "https://support.squarespace.com/hc/en-us/articles/236297987-Squarespace-API-keys",
+        "quote": "Orders API is available in the Core, Plus, Advanced, and Commerce Advanced plan.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.squarespace.com/commerce-apis/making-requests",
+        "quote": "In three steps, you can send a successful request to any Commerce API",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "MODERATE",
+    "evidence": [
+      {
+        "url": "https://developers.squarespace.com/commerce-apis/making-requests",
+        "quote": "Webhook Subscriptions API: Subscribe to notifications from a site",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developers.squarespace.com/mcp/overview",
+        "quote": "The Squarespace MCP server connects AI assistants to Squarespace.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developers.squarespace.com/commerce-apis/making-requests",
+        "quote": "Webhook Subscriptions API: Subscribe to notifications from a site, like when an order was created",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "READY_WITH_CAVEATS",
+    "evidence": [
+      {
+        "url": "https://developers.squarespace.com/changes/self-service-oauth-credential-management",
+        "quote": "all new applications created via the self-service tool will enter Demo Mode by default.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "Commerce APIs need a paid plan; OAuth apps need a review to leave Demo Mode.",
+    "evidence": [
+      {
+        "url": "https://developers.squarespace.com/changes/self-service-oauth-credential-management",
+        "quote": "When you are ready to take your integration live, simply request a review",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "composio": {
+    "found": false,
+    "slug": null,
+    "name": null,
+    "tools": null,
+    "triggers": null,
+    "auth": [],
+    "managed_app": null,
+    "url": null,
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+    "https://support.squarespace.com/hc/en-us/articles/236297987-Squarespace-API-keys",
+    "https://developers.squarespace.com/mcp/overview",
+    "https://developers.squarespace.com/changes/self-service-oauth-credential-management",
+    "https://developers.squarespace.com/commerce-apis/making-requests",
+    "https://developers.squarespace.com/mcp/connect-a-client",
+    "https://developers.squarespace.com/reseller/products-and-pricing",
+    "https://developers.squarespace.com/commerce-apis/oauth"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "sandbox": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": []
+}

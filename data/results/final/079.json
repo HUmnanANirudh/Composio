@@ -1,0 +1,190 @@
+{
+  "id": 79,
+  "app": "Smartsheet",
+  "category": "Productivity and Project Management",
+  "hint": "smartsheet.com/developers",
+  "docs_url": "https://developers.smartsheet.com/api/smartsheet/introduction",
+  "one_liner": {
+    "value": "Spreadsheet-style work management and project platform",
+    "evidence": [
+      {
+        "url": "https://developers.smartsheet.com/api/smartsheet/introduction",
+        "quote": "use 30+ tools to manage your sheets, rows, columns, and more",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "BEARER_TOKEN",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.smartsheet.com/api/smartsheet/guides/basics/authentication",
+        "quote": "The API authenticates using access tokens (API keys).",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://developers.smartsheet.com/api/smartsheet/guides/basics/authentication",
+        "quote": "it's typically best to use OAuth with Smartsheet",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "access": {
+    "value": "PAID_PLAN",
+    "evidence": [
+      {
+        "url": "https://developers.smartsheet.com/api/smartsheet/guides/getting-started",
+        "quote": "**Required plan:** Business, Enterprise, or Advanced Work Management",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.smartsheet.com/api/smartsheet/guides/getting-started",
+        "quote": "Browse the REST API operations",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://developers.smartsheet.com/api/smartsheet/introduction",
+        "quote": "including [Sheets](/api/smartsheet/openapi/sheets), [Cells](/api/smartsheet/openapi/cells), [Folders](/api/smartsheet/openapi/folders), and more",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developers.smartsheet.com/ai-mcp/smartsheet/install-the-smartsheet-mcp-server",
+        "quote": "You can connect various AI assistants to the Smartsheet Model Context Protocol (MCP) server.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developers.smartsheet.com/api/smartsheet/openapi",
+        "quote": "Webhooks overview",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "READY_WITH_CAVEATS",
+    "evidence": [
+      {
+        "url": "https://developers.smartsheet.com/api/smartsheet/guides/getting-started",
+        "quote": "**Required plan:** Business, Enterprise, or Advanced Work Management",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "API access (and Developer Tools registration) requires a Business plan or higher.",
+    "evidence": [
+      {
+        "url": "https://developers.smartsheet.com/register",
+        "quote": "The email address used to register for Developer Tools must belong to an existing licensed Smartsheet user on a Business plan or higher.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "SMARTSHEET",
+    "name": "Smartsheet",
+    "tools": 185,
+    "triggers": 0,
+    "auth": [
+      "OAUTH2",
+      "BEARER_TOKEN"
+    ],
+    "managed_app": "No",
+    "url": "https://docs.composio.dev/toolkits/smartsheet.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://developers.smartsheet.com/api/smartsheet/guides/basics/authentication",
+    "https://developers.smartsheet.com/api/smartsheet/introduction",
+    "https://developers.smartsheet.com/ai-mcp/smartsheet/install-the-smartsheet-mcp-server",
+    "https://developers.smartsheet.com/api/smartsheet/openapi",
+    "https://developers.smartsheet.com/api/smartsheet/guides/advanced-topics/oauth",
+    "https://developers.smartsheet.com/api/smartsheet/guides/getting-started",
+    "https://developers.smartsheet.com/ai-mcp/smartsheet/mcp-server",
+    "https://developers.smartsheet.com/register"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "sandbox": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": []
+}

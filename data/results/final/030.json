@@ -1,0 +1,181 @@
+{
+  "id": 30,
+  "app": "Vonage",
+  "category": "Communications and Messaging",
+  "hint": "developer.vonage.com",
+  "docs_url": "https://developer.vonage.com/en/getting-started/overview",
+  "one_liner": {
+    "value": "Communications APIs for voice, SMS, messaging, video and verification",
+    "evidence": [
+      {
+        "url": "https://developer.vonage.com/en/getting-started/overview",
+        "quote": "Vonage provides a suite of APIs that enable you to communicate with your customers using your preferred channels.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY",
+      "BASIC",
+      "JWT"
+    ],
+    "evidence": [
+      {
+        "url": "https://developer.vonage.com/en/getting-started/concepts/authentication",
+        "quote": "Messages supports both JWT and Basic authentication",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://developer.vonage.com/en/getting-started/overview",
+        "quote": "This will give you an API key and secret that you can use to access our APIs.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://developer.vonage.com/en/getting-started/overview",
+        "quote": "We’ll give you some free credit when you first open your account",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://developer.vonage.com/en/getting-started/overview",
+        "quote": "Vonage provides a suite of APIs",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://developer.vonage.com/en/getting-started/overview",
+        "quote": "Vonage provides a suite of APIs that enable you to communicate with your customers using your preferred channels.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developer.vonage.com/en/mcp-server/overview",
+        "quote": "The Vonage MCP Server enables AI agents and developer tools to discover, describe, and use Vonage capabilities",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developer.vonage.com/en/voice/voice-api/webhook-reference",
+        "quote": "Vonage uses webhooks alongside its Voice API to enable your application to interact with the call.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "sandbox": {
+    "value": true,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://developer.vonage.com/en/getting-started/overview",
+        "quote": "To work with our APIs, you will need to sign up for an account. This will give you an API key and secret",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.4,
+    "flags": []
+  },
+  "composio": {
+    "found": false,
+    "slug": null,
+    "name": null,
+    "tools": null,
+    "triggers": null,
+    "auth": [],
+    "managed_app": null,
+    "url": null,
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://developer.vonage.com/en/getting-started/concepts/authentication",
+    "https://www.vonage.com/communications-apis/pricing",
+    "https://developer.vonage.com/en/mcp-server/overview",
+    "https://developer.vonage.com/en/voice/voice-api/webhook-reference",
+    "https://developer.vonage.com/en/getting-started/overview",
+    "https://www.vonage.com/pricing",
+    "https://developer.vonage.com/en/mcp-server/conceptual-guides/introduction-to-vonage-mcp?_sp=a84e2595-0835-4be6-bc82-d85e27041979",
+    "https://developer.vonage.com/en/tutorials/silent-authentication/introduction"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "sandbox": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": []
+}

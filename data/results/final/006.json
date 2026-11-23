@@ -1,0 +1,189 @@
+{
+  "id": 6,
+  "app": "Podio",
+  "category": "CRM and Sales",
+  "hint": "podio.com",
+  "docs_url": "https://developers.podio.com/doc",
+  "one_liner": {
+    "value": "Customizable work-management and collaboration platform",
+    "evidence": [
+      {
+        "url": "https://developers.podio.com/doc",
+        "quote": "Items are entries in an app.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.podio.com/authentication",
+        "quote": "The Podio API uses the OAuth2 protocol for authentication.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://developers.podio.com/index/faq",
+        "quote": "The Podio API is available to use for both paid and free Podio accounts.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.podio.com/authentication/server_side",
+        "quote": "You use the access token for all API requests",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://developers.podio.com/doc",
+        "quote": "Our API is split up into different areas, that each contains a subset of methods grouped by functionality.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.25,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developers.podio.com/examples/webhooks",
+        "quote": "Webhooks allow a URL to be called when an item is created, updated or deleted in an app.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://developers.podio.com/api-key",
+        "quote": "You just have to sign in or sign up with Podio, and go to the API key tab in your settings.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.4,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "PODIO",
+    "name": "Podio",
+    "tools": 143,
+    "triggers": 0,
+    "auth": [
+      "OAUTH2"
+    ],
+    "managed_app": "No",
+    "url": "https://docs.composio.dev/toolkits/podio.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://developers.podio.com/authentication",
+    "https://developers.podio.com/index/faq",
+    "https://developers.podio.com/doc",
+    "https://developers.podio.com/examples/webhooks",
+    "https://developers.podio.com/authentication/server_side",
+    "https://developers.podio.com/api-key",
+    "https://developers.podio.com/index/limits",
+    "https://developers.podio.com/authentication/app_auth",
+    "https://developers.podio.com"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "official_mcp": [
+            "ungrounded"
+          ],
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      },
+      {
+        "round": 1,
+        "grounding": {
+          "official_mcp": [
+            "ungrounded"
+          ],
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "official_mcp": [
+        "ungrounded"
+      ],
+      "sandbox": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": []
+}

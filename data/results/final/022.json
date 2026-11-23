@@ -1,0 +1,188 @@
+{
+  "id": 22,
+  "app": "Twilio",
+  "category": "Communications and Messaging",
+  "hint": "twilio.com",
+  "docs_url": "https://www.twilio.com/docs/iam/api-keys",
+  "one_liner": {
+    "value": "Cloud communications APIs for SMS, voice, email and messaging",
+    "evidence": [
+      {
+        "url": "https://www.twilio.com/en-us/pricing",
+        "quote": "Send and receive SMS and MMS messages.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY",
+      "BASIC",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://www.twilio.com/docs/iam/api-keys",
+        "quote": "API keys are the preferred way to authenticate with Twilio's REST APIs.",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://www.twilio.com/docs/iam/oauth-apps/overview",
+        "quote": "Twilio supports two OAuth 2.0 grant types: Client Credentials and Authorization Code.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://www.twilio.com/en-us/pricing",
+        "quote": "Sign up for a free trial—no credit card required",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://www.twilio.com/en-us/pricing",
+        "quote": "Start for free. Then pay as you go.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://www.twilio.com/docs/iam/api-keys",
+        "quote": "API keys are the preferred way to authenticate with Twilio's REST APIs.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://www.twilio.com/docs/ai/mcp",
+        "quote": "over 1,800 endpoints across 30+ products",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://www.twilio.com/docs/ai/mcp",
+        "quote": "The Twilio Model Context Protocol (MCP) server gives AI coding agents direct, structured access",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://www.twilio.com/docs/usage/webhooks/webhooks-faq.md",
+        "quote": "Each type of event (such as an incoming text message, or a phone call status change) sends a webhook",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "sandbox": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://www.twilio.com/en-us/pricing",
+        "quote": "Sign up for a free trial—no credit card required",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://www.twilio.com/en-us/pricing",
+        "quote": "Start for free. Then pay as you go.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.4,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "TWILIO",
+    "name": "Twilio",
+    "tools": 454,
+    "triggers": 45,
+    "auth": [
+      "API_KEY",
+      "BASIC",
+      "S2S_OAUTH2"
+    ],
+    "managed_app": "No",
+    "url": "https://docs.composio.dev/toolkits/twilio.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://www.twilio.com/docs/iam/api-keys",
+    "https://www.twilio.com/en-us/pricing",
+    "https://www.twilio.com/docs/ai/mcp",
+    "https://www.twilio.com/docs/usage/webhooks/webhooks-faq.md",
+    "https://www.twilio.com/docs/iam/oauth-apps/overview",
+    "https://www.twilio.com/en-us/partners",
+    "https://www.twilio.com/en-us/blog/developers/introducing-twilio-mcp-skills",
+    "https://www.twilio.com/docs/usage/webhooks/webhook-auth-profiles.md"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {},
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {}
+  },
+  "errors": []
+}

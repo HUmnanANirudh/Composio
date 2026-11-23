@@ -1,0 +1,211 @@
+{
+  "id": 86,
+  "app": "QuickBooks",
+  "category": "Finance and Fintech",
+  "hint": "developer.intuit.com",
+  "docs_url": "https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0",
+  "one_liner": {
+    "value": "Intuit's small-business accounting software (QuickBooks Online API)",
+    "evidence": [
+      {
+        "url": "https://developers.apideck.com/apis/accounting/quickbooks/overview",
+        "quote": "QuickBooks is an accounting software package developed and marketed by Intuit.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://www.apideck.com/blog/how-to-get-your-quickbooks-api-key",
+        "quote": "QuickBooks doesn't use traditional API keys. Instead, it uses OAuth 2.0 authentication",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://www.apideck.com/blog/how-to-get-your-quickbooks-api-key",
+        "quote": "Intuit Developer account (free but annoying)",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://www.apideck.com/blog/how-to-get-your-quickbooks-api-key",
+        "quote": "Use the sandbox company Intuit created with your developer account",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://www.apideck.com/blog/quickbooks-api-pricing-and-the-intuit-app-partner-program",
+        "quote": "**QuickBooks Online API** (REST API)",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://www.apideck.com/blog/quickbooks-api-pricing-and-the-intuit-app-partner-program",
+        "quote": "POST requests to create/update invoices, bills, customers, vendors, accounts, payments",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://github.com/intuit/quickbooks-online-mcp-server",
+        "quote": "Add to your Claude Code MCP configuration:",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://www.apideck.com/blog/how-to-get-your-quickbooks-api-key",
+        "quote": "If using webhooks, verify the `intuit-signature` header on every notification",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "sandbox": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://www.apideck.com/blog/how-to-get-your-quickbooks-api-key",
+        "quote": "Use the sandbox company Intuit created with your developer account",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY_WITH_CAVEATS",
+    "evidence": [
+      {
+        "url": "https://developers.apideck.com/apis/accounting/quickbooks/overview",
+        "quote": "Production keys are issued after app approval.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "Production keys need Intuit's app assessment, and read calls are metered beyond the free Builder tier.",
+    "evidence": [
+      {
+        "url": "https://developers.apideck.com/apis/accounting/quickbooks/overview",
+        "quote": "Builder is free with 500K CorePlus calls/month then blocks",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "QUICKBOOKS",
+    "name": "QuickBooks",
+    "tools": 119,
+    "triggers": 0,
+    "auth": [
+      "OAUTH2"
+    ],
+    "managed_app": "Yes",
+    "url": "https://docs.composio.dev/toolkits/quickbooks.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://github.com/intuit/quickbooks-online-mcp-server",
+    "https://medium.com/intuitdev/introducing-the-intuit-app-partner-program-63bfbcf3b386",
+    "https://www.apideck.com/blog/how-to-get-your-quickbooks-api-key",
+    "https://intuit.github.io/QuickBooks-V3-PHP-SDK/configuration.html",
+    "https://docs.aws.amazon.com/quick/latest/userguide/quickbooks-integration.html",
+    "https://docs.cloud-elements.com/home/quickbooks-api-provider-setup",
+    "https://developers.apideck.com/apis/accounting/quickbooks/overview",
+    "https://www.apideck.com/blog/quickbooks-api-pricing-and-the-intuit-app-partner-program"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {},
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {}
+  },
+  "errors": [
+    "fetch https://help.developer.intuit.com/s/article/Why-do-I-need-to-use-OAuth-2: 200 too little text (JS-rendered?)",
+    "fetch https://help.developer.intuit.com/s/article/platform-service-fees: 200 too little text (JS-rendered?)",
+    "fetch https://quickbooks.intuit.com/llms.txt: 0 ReadTimeout: The read operation timed out",
+    "fetch https://developer.intuit.com/quickbooks-online/docs/develop/webhooks/configure-webhooks: 404 too little text (JS-rendered?)",
+    "fetch https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0: 200 too little text (JS-rendered?)",
+    "fetch https://static.developer.intuit.com/resources/Intuit_App_Partner_Program_Guide.pdf: 200 unsupported content-type application/pdf",
+    "fetch https://developer.intuit.com/quickbooks-online/docs/develop/authentication-and-authorization/oauth-2.0-playground: 404 too little text (JS-rendered?)",
+    "fetch https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization: 200 too little text (JS-rendered?)",
+    "fetch https://quickbooks.intuit.com/learn-support/en-us/help-article/accounting-bookkeeping/use-quickbooks-connector-claude/L3YBlo6Ht_US_en_US: 0 ReadTimeout: The read operation timed out",
+    "fetch https://developer.intuit.com/quickbooks-online/docs/get-started/partner-faq: 404 too little text (JS-rendered?)",
+    "fetch https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/faq: 200 too little text (JS-rendered?)",
+    "fetch https://help.developer.intuit.com/s/article/API-classification-for-the-Intuit-App-Partner-Program: 200 too little text (JS-rendered?)",
+    "fetch https://help.developer.intuit.com/s/question/0D5TR00001M7S950AF/is-there-any-mcp-available-for-quickbooks-online: 200 too little text (JS-rendered?)",
+    "fetch https://developer.intuit.com/quickbooks-online/docs/get-started/mcp-connector/what-mcp-can-do: 404 too little text (JS-rendered?)",
+    "fetch https://quickbooks.intuit.com/r/news/app-partner-program-drives-growth: 0 ReadTimeout: The read operation timed out",
+    "fetch https://quickbooks.intuit.com/r/product-update/quickbooks-google-gemini-mcp-connector: 0 ReadTimeout: The read operation timed out",
+    "fetch https://developer.intuit.com/quickbooks-online/docs/learn/learn-about-graphql/graphql-basics: 404 too little text (JS-rendered?)",
+    "fetch https://developer.intuit.com/quickbooks-online/docs/develop/authentication-and-authorization: 404 too little text (JS-rendered?)",
+    "fetch https://developer.intuit.com/quickbooks-online/docs/develop/sandboxes/sandbox-faqs: 404 too little text (JS-rendered?)",
+    "fetch https://developer.intuit.com/quickbooks-online/docs/get-started/mcp-connector/mcp-plugin-setup: 404 too little text (JS-rendered?)",
+    "fetch https://developer.intuit.com/quickbooks-online/docs/develop/develop-with-graphql/graphql-api: 404 too little text (JS-rendered?)",
+    "fetch https://developer.intuit.com/quickbooks-online/docs/develop/authentication-and-authorization/oauth-2.0: 404 too little text (JS-rendered?)",
+    "fetch https://developer.intuit.com/quickbooks-online/docs/develop/sandboxes/manage-your-sandboxes: 404 too little text (JS-rendered?)",
+    "fetch https://developer.intuit.com/quickbooks-online/docs/get-started/mcp-connector/mcp-capabilities: 404 too little text (JS-rendered?)",
+    "fetch https://www.trycaddi.com/integrations/quickbooks/api: 404 too little text (JS-rendered?)"
+  ]
+}

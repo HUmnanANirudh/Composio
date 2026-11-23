@@ -1,0 +1,208 @@
+{
+  "id": 50,
+  "app": "fanbasis",
+  "category": "Ecommerce",
+  "hint": "fanbasis.com",
+  "docs_url": "https://www.npmjs.com/package/@fanbasis/checkout-sdk",
+  "one_liner": {
+    "value": "Creator storefront and payments platform (now branded Commas)",
+    "evidence": [
+      {
+        "url": "https://commas.com/terms",
+        "quote": "FanBasis, Inc., which does business under both the “FanBasis” and “Commas” names",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY"
+    ],
+    "evidence": [
+      {
+        "url": "https://www.npmjs.com/package/@fanbasis/checkout-sdk",
+        "quote": "apiKey: process.env['FANBASIS_CHECKOUT_API_KEY']",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://www.trysignl.app/docs/integrations/fanbasis",
+        "quote": "In Commas, open Account, API Keys and create a live key",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://www.trysignl.app/docs/integrations/fanbasis",
+        "quote": "In Commas, open Account, API Keys and create a live key (the default scopes are enough).",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.4,
+    "flags": [
+      "low_confidence"
+    ]
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://www.npmjs.com/package/@fanbasis/checkout-sdk",
+        "quote": "This library provides convenient access to the Fanbasis Checkout REST API",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "MODERATE",
+    "evidence": [
+      {
+        "url": "https://www.npmjs.com/package/commas-cli",
+        "quote": "commas webhooks create --url https://example.com/hook --events payment.succeeded,refund.created",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.6,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://www.npmjs.com/package/commas-cli",
+        "quote": "The server tracks production vs sandbox per MCP session",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.35,
+    "flags": [
+      "low_confidence"
+    ]
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://www.npmjs.com/package/commas-cli",
+        "quote": "commas webhooks create --url https://example.com/hook --events payment.succeeded,refund.created",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "sandbox": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://www.npmjs.com/package/commas-cli",
+        "quote": "The sandbox\nis https://api-sandbox.commas.net and needs its own API key",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://www.trysignl.app/docs/integrations/fanbasis",
+        "quote": "In Commas, open Account, API Keys and create a live key",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.6,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "Official developer docs are thin; API details come mostly from SDKs and third-party integrations.",
+    "evidence": [],
+    "confidence": 0.25,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "composio": {
+    "found": false,
+    "slug": null,
+    "name": null,
+    "tools": null,
+    "triggers": null,
+    "auth": [],
+    "managed_app": null,
+    "url": null,
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://commas.com/terms",
+    "https://commas.com/charge",
+    "https://actionist.ai/app-store/apps/fanbasis",
+    "https://www.npmjs.com/package/commas-cli",
+    "https://www.trysignl.app/docs/integrations/fanbasis",
+    "https://www.npmjs.com/package/@fanbasis/checkout-sdk",
+    "https://docs.themochi.app/api-reference/fanbasis",
+    "https://emergent.sh/integrations/fanbasis"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "main_blocker": [
+            "ungrounded"
+          ]
+        },
+        "rules": {
+          "access": [
+            "low_confidence"
+          ],
+          "official_mcp": [
+            "low_confidence"
+          ]
+        }
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "main_blocker": [
+        "ungrounded"
+      ],
+      "access": [
+        "low_confidence"
+      ],
+      "official_mcp": [
+        "low_confidence"
+      ]
+    }
+  },
+  "errors": [
+    "fetch https://support.fanbasis.com: 0 ConnectError: [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] ssl/tls alert handshake failure (_ssl.c:1010)",
+    "fetch https://dev-docs.fanbasis.com: 200 too little text (JS-rendered?)",
+    "fetch https://commasdocs.com: 200 too little text (JS-rendered?)",
+    "fetch https://github.com/subtain-haider/laravel-payments/blob/main/docs/gateways/fanbasis.md: 503 too little text (JS-rendered?)"
+  ]
+}

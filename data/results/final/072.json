@@ -1,0 +1,183 @@
+{
+  "id": 72,
+  "app": "Airtable",
+  "category": "Productivity and Project Management",
+  "hint": "airtable.com/developers",
+  "docs_url": "https://airtable.com/developers/web/guides/oauth-integrations.md",
+  "one_liner": {
+    "value": "Low-code platform for building apps on relational databases",
+    "evidence": [
+      {
+        "url": "https://airtable.com/developers/agents.md",
+        "quote": "Airtable's structured field types, relational links, and built-in automations make it a rich data layer for AI agents.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "BEARER_TOKEN",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://airtable.com/developers/web/guides/oauth-integrations.md",
+        "quote": "The OAuth access tokens you receive should be passed with your API requests as a `Authorization: Bearer header`.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://support.airtable.com/articles/6292134965-getting-started-with-airtable-s-web-api",
+        "quote": "All plan types with varying call limitations",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://support.airtable.com/articles/6292134965-getting-started-with-airtable-s-web-api",
+        "quote": "When you list records with Airtable's API, you won't necessarily get all of them at once.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://airtable.com/developers/web/guides/oauth-integrations.md",
+        "quote": "OAuth access tokens can be used to make requests to most public Airtable API endpoints",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://airtable.com/developers/agents/mcp/getting-started",
+        "quote": "Airtable's MCP server lets you connect AI tools directly to your Airtable bases.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://support.airtable.com/articles/6292134965-getting-started-with-airtable-s-web-api",
+        "quote": "All plan types with varying call limitations",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.4,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "AIRTABLE",
+    "name": "Airtable",
+    "tools": 28,
+    "triggers": 6,
+    "auth": [
+      "OAUTH2",
+      "API_KEY"
+    ],
+    "managed_app": "Yes",
+    "url": "https://docs.composio.dev/toolkits/airtable.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://airtable.com/developers/agents/mcp/getting-started",
+    "https://airtable.com/developers/agents/intro/quickstart",
+    "https://airtable.com/developers/web/guides/oauth-integrations.md",
+    "https://airtable.com/developers/agents/mcp/claude-code",
+    "https://airtable.com/developers/agents/mcp/chatgpt",
+    "https://airtable.com/developers/agents/skills-and-plugins/getting-started",
+    "https://support.airtable.com/articles/6292134965-getting-started-with-airtable-s-web-api",
+    "https://airtable.com/developers/agents.md"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "webhooks": [
+            "ungrounded"
+          ],
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "webhooks": [
+        "ungrounded"
+      ],
+      "sandbox": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": [
+    "fetch https://airtable.com/developers/web/api/authentication: 200 too little text (JS-rendered?)",
+    "fetch https://airtable.com/developers/web/api/billing-plans: 200 too little text (JS-rendered?)",
+    "fetch https://airtable.com/developers/web/api/oauth-reference: 200 too little text (JS-rendered?)",
+    "fetch https://airtable.com/developers/web/api/scopes: 200 too little text (JS-rendered?)"
+  ]
+}

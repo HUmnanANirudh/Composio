@@ -1,0 +1,52 @@
+{
+"1": {
+ "access": ["SELF_SERVE_FREE", 0.35, []],
+ "official_mcp": [true, 0.55, [["R2", "The Salesforce DX MCP Server is a specialized Model Context Protocol (MCP) implementation designed to facilitate seamless interaction between large language models (LLMs) and Salesforce orgs."], ["R2", "The Salesforce DX local MCP server (@salesforce/mcp) reaches end of life on November 2nd, 2026."]]],
+ "buildability": ["READY", 0.4, []]
+},
+"6": {
+ "official_mcp": [false, 0.5, []]
+},
+"7": {
+ "auth_methods": [["OAUTH2"], 0.95, [["R2", "The Zoho CRM API uses the OAuth 2.0 protocol for authentication."]]]
+},
+"26": {
+ "official_mcp": [false, 0.5, []]
+},
+"27": {
+ "official_mcp": [false, 0.55, []]
+},
+"33": {
+ "official_mcp": [false, 0.5, []]
+},
+"40": {
+ "official_mcp": [false, 0.65, [["R1", "In this article, you’ll build a local MCP server that gives your AI workflows the ability to use SendGrid for email automation."]]]
+},
+"47": {
+ "official_mcp": [false, 0.6, [["R2", "Agents can also search and read this documentation through its [MCP server]"]]]
+},
+"58": {
+ "official_mcp": [false, 0.75, [["R1", "This version has been enhanced with a Model Context Protocol (MCP) Server"]]]
+},
+"59": {
+ "official_mcp": [false, 0.5, []]
+},
+"67": {
+ "access": ["SELF_SERVE_TRIAL", 0.85, [["R3", "Sign up for a free 30-day trial of Snowflake and follow along with this lab."]]],
+ "buildability": ["READY_WITH_CAVEATS", 0.75, [["R1", "We keep pricing simple with a consumption-based pricing model."]]]
+},
+"69": {
+ "access": ["SELF_SERVE_TRIAL", 0.55, [["R2", "If you are already a member of a Datadog organization (including a trial org)"]]]
+},
+"84": {
+ "auth_methods": [["BEARER_TOKEN"], 0.3, []],
+ "access": ["PARTNERSHIP", 0.3, []],
+ "api_style": [["REST"], 0.3, []],
+ "api_breadth": ["NARROW", 0.3, []],
+ "official_mcp": [false, 0.3, []],
+ "buildability": ["NEEDS_OUTREACH", 0.3, []]
+},
+"98": {
+ "official_mcp": [false, 0.7, []]
+}
+}

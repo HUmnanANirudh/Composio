@@ -1,0 +1,3207 @@
+{
+ "_about": {
+  "what": "Field-level audit of the 20-app answer key (20 apps x 6 scored fields).",
+  "verdicts": {
+   "agent_correct": "final value read against its source and holds up",
+   "agent_wrong": "final value is wrong; note says why",
+   "key_wrong": "answer key was wrong and was corrected (ground_truth.json revisions)",
+   "ambiguous": "docs support more than one reading; field left unscored"
+  },
+  "regenerate": "uv run research audit (keeps existing reviews)"
+ },
+ "summary": {
+  "cells": 120,
+  "final_status": {
+   "hit": 112,
+   "miss": 3,
+   "unscored": 5
+  },
+  "misses_reviewed": 3,
+  "misses": 3,
+  "hits_reviewed": 3,
+  "fixed_by_verification": 0,
+  "broken_by_verification": 0,
+  "verdicts": {
+   "agent_wrong": 3,
+   "key_wrong": 2,
+   "ambiguous": 1
+  }
+ },
+ "cells": [
+  {
+   "id": 2,
+   "app": "HubSpot",
+   "field": "auth_methods",
+   "truth": {
+    "core": [
+     "OAUTH2",
+     "BEARER_TOKEN"
+    ],
+    "optional": [
+     "API_KEY",
+     "JWT"
+    ]
+   },
+   "accept": null,
+   "pass1": [
+    "BEARER_TOKEN",
+    "OAUTH2"
+   ],
+   "pass1_status": "hit",
+   "final": [
+    "BEARER_TOKEN",
+    "OAUTH2"
+   ],
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://developers.hubspot.com/docs/apps/legacy-apps/authentication/intro-to-auth",
+    "quote": "There are two ways to authenticate calls to HubSpot\u2019s APIs: OAuth, and private app access tokens.",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/account-service-keys.md",
+    "quote": "You can then include your service key as a Bearer token"
+   },
+   "review": null
+  },
+  {
+   "id": 2,
+   "app": "HubSpot",
+   "field": "access",
+   "truth": "SELF_SERVE_FREE",
+   "accept": null,
+   "pass1": "SELF_SERVE_FREE",
+   "pass1_status": "hit",
+   "final": "SELF_SERVE_FREE",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.85,
+   "agent_source": {
+    "url": "https://developers.hubspot.com/docs/developer-tooling/platform/apis-by-tier",
+    "quote": "subscription tier (Free, Starter, Professional, Enterprise)",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://developers.hubspot.com/docs/getting-started/account-types.md",
+    "quote": "It can be free or paid, and is used as your production environment."
+   },
+   "review": null
+  },
+  {
+   "id": 2,
+   "app": "HubSpot",
+   "field": "api_style",
+   "truth": {
+    "core": [
+     "REST"
+    ],
+    "optional": []
+   },
+   "accept": null,
+   "pass1": [
+    "REST"
+   ],
+   "pass1_status": "hit",
+   "final": [
+    "REST"
+   ],
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://developers.hubspot.com/docs/api-reference/latest/overview",
+    "quote": "All endpoints in this section follow the pattern:",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 2,
+   "app": "HubSpot",
+   "field": "api_breadth",
+   "truth": "BROAD",
+   "accept": null,
+   "pass1": "BROAD",
+   "pass1_status": "hit",
+   "final": "BROAD",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.9,
+   "agent_source": {
+    "url": "https://developers.hubspot.com/ai-tools/mcp",
+    "quote": "secure read and write access to your HubSpot CRM data \u2014 contacts, deals, engagements, and more",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 2,
+   "app": "HubSpot",
+   "field": "official_mcp",
+   "truth": true,
+   "accept": null,
+   "pass1": true,
+   "pass1_status": "hit",
+   "final": true,
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://developers.hubspot.com/ai-tools/mcp",
+    "quote": "HubSpot offers two distinct MCP (Model Context Protocol) servers",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://developers.hubspot.com/docs/build-with-ai/remote-mcp-server.md",
+    "quote": "The remote HubSpot MCP server is a publicly hosted endpoint"
+   },
+   "review": null
+  },
+  {
+   "id": 2,
+   "app": "HubSpot",
+   "field": "buildability",
+   "truth": "READY",
+   "accept": null,
+   "pass1": "READY",
+   "pass1_status": "hit",
+   "final": "READY",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.95,
+   "agent_source": {
+    "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview",
+    "quote": "static auth access tokens are used for installing in a single account at a time",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 6,
+   "app": "Podio",
+   "field": "auth_methods",
+   "truth": {
+    "core": [
+     "OAUTH2"
+    ],
+    "optional": []
+   },
+   "accept": null,
+   "pass1": [
+    "OAUTH2"
+   ],
+   "pass1_status": "hit",
+   "final": [
+    "OAUTH2"
+   ],
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://developers.podio.com/authentication",
+    "quote": "The Podio API uses the OAuth2 protocol for authentication.",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://developers.podio.com/authentication",
+    "quote": "The Podio API uses the OAuth2 protocol for authentication."
+   },
+   "review": null
+  },
+  {
+   "id": 6,
+   "app": "Podio",
+   "field": "access",
+   "truth": "SELF_SERVE_FREE",
+   "accept": null,
+   "pass1": "SELF_SERVE_FREE",
+   "pass1_status": "hit",
+   "final": "SELF_SERVE_FREE",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://developers.podio.com/index/faq",
+    "quote": "The Podio API is available to use for both paid and free Podio accounts.",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://developers.podio.com/authentication",
+    "quote": "Before you can use the Podio API you must register your application."
+   },
+   "review": null
+  },
+  {
+   "id": 6,
+   "app": "Podio",
+   "field": "api_style",
+   "truth": {
+    "core": [
+     "REST"
+    ],
+    "optional": []
+   },
+   "accept": null,
+   "pass1": [
+    "REST"
+   ],
+   "pass1_status": "hit",
+   "final": [
+    "REST"
+   ],
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.9,
+   "agent_source": {
+    "url": "https://developers.podio.com/authentication/server_side",
+    "quote": "You use the access token for all API requests",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 6,
+   "app": "Podio",
+   "field": "api_breadth",
+   "truth": "BROAD",
+   "accept": null,
+   "pass1": "BROAD",
+   "pass1_status": "hit",
+   "final": "BROAD",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.95,
+   "agent_source": {
+    "url": "https://developers.podio.com/doc",
+    "quote": "Our API is split up into different areas, that each contains a subset of methods grouped by functionality.",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 6,
+   "app": "Podio",
+   "field": "official_mcp",
+   "truth": false,
+   "accept": null,
+   "pass1": false,
+   "pass1_status": "hit",
+   "final": false,
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.25,
+   "agent_source": null,
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 6,
+   "app": "Podio",
+   "field": "buildability",
+   "truth": "READY",
+   "accept": null,
+   "pass1": "READY",
+   "pass1_status": "hit",
+   "final": "READY",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.95,
+   "agent_source": {
+    "url": "https://developers.podio.com/api-key",
+    "quote": "You just have to sign in or sign up with Podio, and go to the API key tab in your settings.",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 19,
+   "app": "Gorgias",
+   "field": "auth_methods",
+   "truth": {
+    "core": [
+     "OAUTH2",
+     "BASIC"
+    ],
+    "optional": [
+     "API_KEY"
+    ]
+   },
+   "accept": null,
+   "pass1": [
+    "API_KEY",
+    "BASIC",
+    "OAUTH2"
+   ],
+   "pass1_status": "hit",
+   "final": [
+    "API_KEY",
+    "BASIC",
+    "OAUTH2"
+   ],
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://docs.gorgias.com/en-US/rest-api-208286",
+    "quote": "Gorgias uses HTTP Basic Authentication with three pieces of information: your base API URL, your email address, and an API key.",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://developers.gorgias.com/reference/authentication",
+    "quote": "Use your email (username) and your API key"
+   },
+   "review": null
+  },
+  {
+   "id": 19,
+   "app": "Gorgias",
+   "field": "access",
+   "truth": "SELF_SERVE_TRIAL",
+   "accept": [
+    "APPROVAL"
+   ],
+   "pass1": "PAID_PLAN",
+   "pass1_status": "miss",
+   "final": "PAID_PLAN",
+   "final_status": "miss",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.6,
+   "agent_source": {
+    "url": "https://www.gorgias.com/llm-info",
+    "quote": "Plans range from 50 to 5,000 tickets a month",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://www.gorgias.com/pricing",
+    "quote": "The Gorgias trial period lasts 7 days."
+   },
+   "review": {
+    "verdict": "agent_wrong",
+    "note": "Key's source (gorgias.com/pricing): 'The Gorgias trial period lasts 7 days.' The agent never reached the pricing page and inferred PAID_PLAN from 'Plans range from 50 to 5,000 tickets a month'.",
+    "by": "Claude (claude-opus-5-5), sources re-read 2026-11-24",
+    "final_value": "PAID_PLAN"
+   }
+  },
+  {
+   "id": 19,
+   "app": "Gorgias",
+   "field": "api_style",
+   "truth": {
+    "core": [
+     "REST"
+    ],
+    "optional": []
+   },
+   "accept": null,
+   "pass1": [
+    "REST"
+   ],
+   "pass1_status": "hit",
+   "final": [
+    "REST"
+   ],
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://developers.gorgias.com/reference/introduction",
+    "quote": "The Gorgias API is structured with REST in mind.",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 19,
+   "app": "Gorgias",
+   "field": "api_breadth",
+   "truth": "BROAD",
+   "accept": [
+    "MODERATE"
+   ],
+   "pass1": "BROAD",
+   "pass1_status": "hit",
+   "final": "BROAD",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.9,
+   "agent_source": {
+    "url": "https://developers.gorgias.com/reference/introduction",
+    "quote": "you'll find the complete REST API reference",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 19,
+   "app": "Gorgias",
+   "field": "official_mcp",
+   "truth": true,
+   "accept": null,
+   "pass1": true,
+   "pass1_status": "hit",
+   "final": true,
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://www.gorgias.com/llm-info",
+    "quote": "add https://mcp.gorgias.com/mcp as an HTTP MCP server",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://github.com/gorgias/mcp-cookbook",
+    "quote": "The Gorgias MCP is a first-party connector"
+   },
+   "review": null
+  },
+  {
+   "id": 19,
+   "app": "Gorgias",
+   "field": "buildability",
+   "truth": "READY_WITH_CAVEATS",
+   "accept": null,
+   "pass1": "READY_WITH_CAVEATS",
+   "pass1_status": "hit",
+   "final": "READY_WITH_CAVEATS",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.85,
+   "agent_source": {
+    "url": "https://developers.gorgias.com/docs/oauth2-bearer-token",
+    "quote": "Please remember that OAuth2 is required for all public apps to be approved.",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 20,
+   "app": "Gladly",
+   "field": "auth_methods",
+   "truth": {
+    "core": [
+     "BASIC"
+    ],
+    "optional": [
+     "API_KEY"
+    ]
+   },
+   "accept": null,
+   "pass1": [
+    "API_KEY",
+    "BASIC"
+   ],
+   "pass1_status": "hit",
+   "final": [
+    "API_KEY",
+    "BASIC"
+   ],
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://help.gladly.com/developer-tutorials/docs/setup-and-testing",
+    "quote": "Gladly API uses token-based Basic Authentication.",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://developer.gladly.com/rest/",
+    "quote": "Gladly API uses token-based Basic Authentication."
+   },
+   "review": null
+  },
+  {
+   "id": 20,
+   "app": "Gladly",
+   "field": "access",
+   "truth": "PARTNERSHIP",
+   "accept": null,
+   "pass1": "PARTNERSHIP",
+   "pass1_status": "hit",
+   "final": "PARTNERSHIP",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.8,
+   "agent_source": {
+    "url": "https://help.gladly.com/developer-tutorials/docs/setup-and-testing",
+    "quote": "If you do not have a sandbox environment and are interested in purchasing one, please contact your Gladly CSM or Gladly Support team.",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://developer.gladly.com/rest/",
+    "quote": "First, you'll need to set up an account with the necessary API permissions"
+   },
+   "review": null
+  },
+  {
+   "id": 20,
+   "app": "Gladly",
+   "field": "api_style",
+   "truth": {
+    "core": [
+     "REST"
+    ],
+    "optional": []
+   },
+   "accept": null,
+   "pass1": [
+    "REST"
+   ],
+   "pass1_status": "hit",
+   "final": [
+    "REST"
+   ],
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://developer.gladly.com/rest",
+    "quote": "You can integrate easily with Gladly by calling Gladly's REST API",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 20,
+   "app": "Gladly",
+   "field": "api_breadth",
+   "truth": "BROAD",
+   "accept": [
+    "MODERATE"
+   ],
+   "pass1": "BROAD",
+   "pass1_status": "hit",
+   "final": "BROAD",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.7,
+   "agent_source": {
+    "url": "https://developer.gladly.com/rest",
+    "quote": "managing customer profile data, interacting with a customer's timeline, providing the latest information about a customer's orders",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 20,
+   "app": "Gladly",
+   "field": "official_mcp",
+   "truth": true,
+   "accept": null,
+   "pass1": true,
+   "pass1_status": "hit",
+   "final": true,
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://help.gladly.com/docs/set-up-the-gladly-mcp-for-claude",
+    "quote": "Connect Claude to your Gladly organization",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://github.com/gladly/claude-plugin",
+    "quote": "Gladly needs to have turned on the Gladly MCP for your organization."
+   },
+   "review": null
+  },
+  {
+   "id": 20,
+   "app": "Gladly",
+   "field": "buildability",
+   "truth": "NEEDS_OUTREACH",
+   "accept": null,
+   "pass1": "NEEDS_OUTREACH",
+   "pass1_status": "hit",
+   "final": "NEEDS_OUTREACH",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.8,
+   "agent_source": {
+    "url": "https://help.gladly.com/developer-tutorials/docs/setup-and-testing",
+    "quote": "please contact your Gladly CSM or Gladly Support team",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 22,
+   "app": "Twilio",
+   "field": "auth_methods",
+   "truth": {
+    "core": [
+     "BASIC"
+    ],
+    "optional": [
+     "API_KEY",
+     "OAUTH2",
+     "JWT"
+    ]
+   },
+   "accept": null,
+   "pass1": [
+    "API_KEY",
+    "BASIC",
+    "OAUTH2"
+   ],
+   "pass1_status": "hit",
+   "final": [
+    "API_KEY",
+    "BASIC",
+    "OAUTH2"
+   ],
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.95,
+   "agent_source": {
+    "url": "https://www.twilio.com/docs/iam/api-keys",
+    "quote": "API keys are the preferred way to authenticate with Twilio's REST APIs.",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://www.twilio.com/docs/usage/requests-to-twilio",
+    "quote": "To authenticate requests to the Twilio APIs, use HTTP Basic authentication."
+   },
+   "review": null
+  },
+  {
+   "id": 22,
+   "app": "Twilio",
+   "field": "access",
+   "truth": "SELF_SERVE_TRIAL",
+   "accept": null,
+   "pass1": "SELF_SERVE_FREE",
+   "pass1_status": "miss",
+   "final": "SELF_SERVE_FREE",
+   "final_status": "miss",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.8,
+   "agent_source": {
+    "url": "https://www.twilio.com/en-us/pricing",
+    "quote": "Sign up for a free trial\u2014no credit card required",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://www.twilio.com/docs/usage/trials.md",
+    "quote": "You can sign up for a Twilio free trial account without a credit card."
+   },
+   "review": {
+    "verdict": "agent_wrong",
+    "note": "twilio.com/docs/usage/trials: 'Trial accounts expire after 30 days.' The agent read 'Sign up for a free trial' as a free account; it is a time-limited trial.",
+    "by": "Claude (claude-opus-5-5), sources re-read 2026-11-24",
+    "final_value": "SELF_SERVE_FREE"
+   }
+  },
+  {
+   "id": 22,
+   "app": "Twilio",
+   "field": "api_style",
+   "truth": {
+    "core": [
+     "REST"
+    ],
+    "optional": []
+   },
+   "accept": null,
+   "pass1": [
+    "REST"
+   ],
+   "pass1_status": "hit",
+   "final": [
+    "REST"
+   ],
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://www.twilio.com/docs/iam/api-keys",
+    "quote": "API keys are the preferred way to authenticate with Twilio's REST APIs.",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 22,
+   "app": "Twilio",
+   "field": "api_breadth",
+   "truth": "BROAD",
+   "accept": null,
+   "pass1": "BROAD",
+   "pass1_status": "hit",
+   "final": "BROAD",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://www.twilio.com/docs/ai/mcp",
+    "quote": "over 1,800 endpoints across 30+ products",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 22,
+   "app": "Twilio",
+   "field": "official_mcp",
+   "truth": true,
+   "accept": null,
+   "pass1": true,
+   "pass1_status": "hit",
+   "final": true,
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.85,
+   "agent_source": {
+    "url": "https://www.twilio.com/docs/ai/mcp",
+    "quote": "The Twilio Model Context Protocol (MCP) server gives AI coding agents direct, structured access",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://www.twilio.com/docs/ai/mcp.md",
+    "quote": "it does not connect to a Twilio account or execute any API calls"
+   },
+   "review": null
+  },
+  {
+   "id": 22,
+   "app": "Twilio",
+   "field": "buildability",
+   "truth": "READY_WITH_CAVEATS",
+   "accept": [
+    "READY"
+   ],
+   "pass1": "READY",
+   "pass1_status": "hit",
+   "final": "READY",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.95,
+   "agent_source": {
+    "url": "https://www.twilio.com/en-us/pricing",
+    "quote": "Start for free. Then pay as you go.",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 24,
+   "app": "Lark (Larksuite)",
+   "field": "auth_methods",
+   "truth": {
+    "core": [
+     "OAUTH2"
+    ],
+    "optional": [
+     "JWT",
+     "BEARER_TOKEN",
+     "API_KEY",
+     "OTHER"
+    ]
+   },
+   "accept": null,
+   "pass1": [
+    "BEARER_TOKEN",
+    "OAUTH2"
+   ],
+   "pass1_status": "hit",
+   "final": [
+    "BEARER_TOKEN",
+    "OAUTH2"
+   ],
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.8,
+   "agent_source": {
+    "url": "https://open.larksuite.com/llms.txt",
+    "quote": "\u83b7\u53d6 user_access_token \u662f\u6807\u51c6\u7684 OAuth 2.0",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://github.com/larksuite/lark-openapi-mcp",
+    "quote": "Obtain the App ID and App Secret, which will be used for API authentication"
+   },
+   "review": null
+  },
+  {
+   "id": 24,
+   "app": "Lark (Larksuite)",
+   "field": "access",
+   "truth": "SELF_SERVE_FREE",
+   "accept": null,
+   "pass1": "SELF_SERVE_FREE",
+   "pass1_status": "hit",
+   "final": "SELF_SERVE_FREE",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.7,
+   "agent_source": {
+    "url": "https://www.mcpbundles.com/skills/larksuite-mcp-205e7de773",
+    "quote": "Get chat, docs, meetings, workflow automations & AI for free all in one place.",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 24,
+   "app": "Lark (Larksuite)",
+   "field": "api_style",
+   "truth": {
+    "core": [
+     "REST"
+    ],
+    "optional": []
+   },
+   "accept": null,
+   "pass1": [
+    "REST"
+   ],
+   "pass1_status": "hit",
+   "final": [
+    "REST"
+   ],
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.95,
+   "agent_source": {
+    "url": "https://github.com/larksuite/oapi-sdk-python",
+    "quote": "The Feishu Open Platform provides server-side APIs for messaging, contacts, approval, sheets, Base",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 24,
+   "app": "Lark (Larksuite)",
+   "field": "api_breadth",
+   "truth": "BROAD",
+   "accept": null,
+   "pass1": "BROAD",
+   "pass1_status": "hit",
+   "final": "BROAD",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://github.com/larksuite/oapi-sdk-python",
+    "quote": "server-side APIs for messaging, contacts, approval, sheets, Base, and many other product capabilities",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 24,
+   "app": "Lark (Larksuite)",
+   "field": "official_mcp",
+   "truth": true,
+   "accept": null,
+   "pass1": true,
+   "pass1_status": "hit",
+   "final": true,
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://github.com/larksuite/lark-openapi-mcp",
+    "quote": "npx -y @larksuiteoapi/lark-mcp login -a cli_xxxx -s yyyyy",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://github.com/larksuite/lark-openapi-mcp",
+    "quote": "This is the Feishu/Lark official OpenAPI MCP"
+   },
+   "review": null
+  },
+  {
+   "id": 24,
+   "app": "Lark (Larksuite)",
+   "field": "buildability",
+   "truth": "READY",
+   "accept": null,
+   "pass1": "READY",
+   "pass1_status": "hit",
+   "final": "READY",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.8,
+   "agent_source": {
+    "url": "https://github.com/larksuite/oapi-sdk-python",
+    "quote": "The Feishu Open Platform provides server-side APIs",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 39,
+   "app": "Threads (Meta)",
+   "field": "auth_methods",
+   "truth": {
+    "core": [
+     "OAUTH2"
+    ],
+    "optional": [
+     "BEARER_TOKEN"
+    ]
+   },
+   "accept": null,
+   "pass1": [
+    "OAUTH2"
+   ],
+   "pass1_status": "hit",
+   "final": [
+    "OAUTH2"
+   ],
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://developers.facebook.com/documentation/threads/get-started",
+    "quote": "API authentication is handled by Threads user access tokens that conform to the OAuth 2.0 protocol.",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://developers.facebook.com/documentation/threads/get-started",
+    "quote": "API authentication is handled by Threads user access tokens that conform to the OAuth 2.0 protocol."
+   },
+   "review": null
+  },
+  {
+   "id": 39,
+   "app": "Threads (Meta)",
+   "field": "access",
+   "truth": "SELF_SERVE_FREE",
+   "accept": [
+    "APPROVAL"
+   ],
+   "pass1": "SELF_SERVE_FREE",
+   "pass1_status": "hit",
+   "final": "SELF_SERVE_FREE",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.7,
+   "agent_source": {
+    "url": "https://postgate.studio/blog/threads-api",
+    "quote": "publishing for users other than your testers needs App Review",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://developers.facebook.com/documentation/threads/get-started",
+    "quote": "To access the Threads API, create an app and pick the Threads use case."
+   },
+   "review": null
+  },
+  {
+   "id": 39,
+   "app": "Threads (Meta)",
+   "field": "api_style",
+   "truth": {
+    "core": [
+     "REST"
+    ],
+    "optional": [
+     "GRAPHQL"
+    ]
+   },
+   "accept": null,
+   "pass1": [
+    "REST"
+   ],
+   "pass1_status": "hit",
+   "final": [
+    "REST"
+   ],
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.95,
+   "agent_source": {
+    "url": "https://developers.facebook.com/documentation/threads",
+    "quote": "Use the Threads API to create and publish posts, retrieve media and profiles, moderate replies, and access insights.",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 39,
+   "app": "Threads (Meta)",
+   "field": "api_breadth",
+   "truth": "MODERATE",
+   "accept": [
+    "NARROW"
+   ],
+   "pass1": "MODERATE",
+   "pass1_status": "hit",
+   "final": "MODERATE",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.8,
+   "agent_source": {
+    "url": "https://developers.facebook.com/documentation/threads",
+    "quote": "Use the Threads API to create and publish posts, retrieve media and profiles, moderate replies, and access insights.",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 39,
+   "app": "Threads (Meta)",
+   "field": "official_mcp",
+   "truth": true,
+   "accept": null,
+   "pass1": false,
+   "pass1_status": "miss",
+   "final": false,
+   "final_status": "miss",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.7,
+   "agent_source": {
+    "url": "https://developers.facebook.com/documentation/mcp",
+    "quote": "Meta Social Technologies MCP: `https://mcp.facebook.com/devtools`",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://developers.facebook.com/documentation/threads/llms.txt",
+    "quote": "Connect your Threads account to an AI assistant with the Threads MCP server"
+   },
+   "review": {
+    "verdict": "agent_wrong",
+    "note": "threads/llms.txt lists 'Threads MCP server ... Connect your Threads account to an AI assistant'. The agent relied on Meta's MCP index page, which lists only Ads, Social Technologies and WhatsApp servers.",
+    "by": "Claude (claude-opus-5-5), sources re-read 2026-11-24",
+    "final_value": false
+   }
+  },
+  {
+   "id": 39,
+   "app": "Threads (Meta)",
+   "field": "buildability",
+   "truth": "READY_WITH_CAVEATS",
+   "accept": [
+    "READY"
+   ],
+   "pass1": "READY_WITH_CAVEATS",
+   "pass1_status": "hit",
+   "final": "READY_WITH_CAVEATS",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.8,
+   "agent_source": {
+    "url": "https://postgate.studio/blog/threads-api",
+    "quote": "publishing for users other than your testers needs App Review",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 40,
+   "app": "SendGrid",
+   "field": "auth_methods",
+   "truth": {
+    "core": [
+     "API_KEY"
+    ],
+    "optional": [
+     "BASIC"
+    ]
+   },
+   "accept": null,
+   "pass1": [
+    "API_KEY",
+    "BASIC"
+   ],
+   "pass1_status": "hit",
+   "final": [
+    "API_KEY",
+    "BASIC"
+   ],
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://www.twilio.com/docs/sendgrid/for-developers/sending-email/authentication",
+    "quote": "Twilio SendGrid supports API keys delivered via Bearer token or Basic authentication",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
+    "quote": "include an Authorization header with the value Bearer <YOUR_API_KEY_HERE>"
+   },
+   "review": {
+    "verdict": "key_wrong",
+    "note": "SendGrid authentication page: 'supports API keys delivered via Bearer token or Basic authentication'. Key corrected (BASIC optional); see revisions.",
+    "by": "Claude (claude-opus-5-5), sources re-read 2026-11-24",
+    "final_value": [
+     "API_KEY",
+     "BASIC"
+    ]
+   }
+  },
+  {
+   "id": 40,
+   "app": "SendGrid",
+   "field": "access",
+   "truth": "SELF_SERVE_FREE",
+   "accept": [
+    "SELF_SERVE_TRIAL"
+   ],
+   "pass1": "SELF_SERVE_TRIAL",
+   "pass1_status": "hit",
+   "final": "SELF_SERVE_TRIAL",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.8,
+   "agent_source": {
+    "url": "https://www.twilio.com/en-us/products/email-api/pricing",
+    "quote": "Start sending with a free SendGrid Email API trial",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://www.twilio.com/en-us/products/email-api/pricing",
+    "quote": "Sign up for our free plan (no credit card required)"
+   },
+   "review": null
+  },
+  {
+   "id": 40,
+   "app": "SendGrid",
+   "field": "api_style",
+   "truth": {
+    "core": [
+     "REST"
+    ],
+    "optional": []
+   },
+   "accept": null,
+   "pass1": [
+    "REST"
+   ],
+   "pass1_status": "hit",
+   "final": [
+    "REST"
+   ],
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://www.twilio.com/docs/sendgrid/api-reference",
+    "quote": "The SendGrid v3 Web API provides a REST interface to send email at scale",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 40,
+   "app": "SendGrid",
+   "field": "api_breadth",
+   "truth": "BROAD",
+   "accept": null,
+   "pass1": "BROAD",
+   "pass1_status": "hit",
+   "final": "BROAD",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.95,
+   "agent_source": {
+    "url": "https://www.twilio.com/docs/sendgrid/api-reference",
+    "quote": "send transactional emails, create marketing campaigns, manage your contacts, and monitor the health of your email statistics.",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 40,
+   "app": "SendGrid",
+   "field": "official_mcp",
+   "truth": null,
+   "accept": null,
+   "pass1": false,
+   "pass1_status": "unscored",
+   "final": false,
+   "final_status": "unscored",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.75,
+   "agent_source": {
+    "url": "https://www.twilio.com/en-us/blog/developers/community/build-a-sendgrid-mcp-server-for-ai-email-workflows",
+    "quote": "In this article, you\u2019ll build a local MCP server that gives your AI workflows the ability to use SendGrid for email automation.",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 40,
+   "app": "SendGrid",
+   "field": "buildability",
+   "truth": "READY",
+   "accept": [
+    "READY_WITH_CAVEATS"
+   ],
+   "pass1": "READY_WITH_CAVEATS",
+   "pass1_status": "hit",
+   "final": "READY_WITH_CAVEATS",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.75,
+   "agent_source": {
+    "url": "https://www.twilio.com/en-us/products/email-api/pricing",
+    "quote": "Start sending with a free SendGrid Email API trial",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": {
+    "verdict": "ambiguous",
+    "note": "Current pricing offers a free trial, not a free plan, so READY and READY_WITH_CAVEATS are both defensible; key now accepts both.",
+    "by": "Claude (claude-opus-5-5), sources re-read 2026-11-24",
+    "final_value": "READY_WITH_CAVEATS"
+   }
+  },
+  {
+   "id": 47,
+   "app": "Ecwid",
+   "field": "auth_methods",
+   "truth": {
+    "core": [
+     "BEARER_TOKEN"
+    ],
+    "optional": [
+     "OAUTH2"
+    ]
+   },
+   "accept": null,
+   "pass1": [
+    "BEARER_TOKEN",
+    "OAUTH2"
+   ],
+   "pass1_status": "hit",
+   "final": [
+    "BEARER_TOKEN",
+    "OAUTH2"
+   ],
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://docs.ecwid.com/get-started/make-your-first-api-request",
+    "quote": "Ecwid uses OAuth 2.0 to provide secure access to the store data for public apps.",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid.md",
+    "quote": "start making API requests with its access tokens"
+   },
+   "review": null
+  },
+  {
+   "id": 47,
+   "app": "Ecwid",
+   "field": "access",
+   "truth": "PAID_PLAN",
+   "accept": null,
+   "pass1": "PAID_PLAN",
+   "pass1_status": "hit",
+   "final": "PAID_PLAN",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.8,
+   "agent_source": {
+    "url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
+    "quote": "Only stores on paid plans can access API.",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid.md",
+    "quote": "Only stores on paid plans can access API."
+   },
+   "review": null
+  },
+  {
+   "id": 47,
+   "app": "Ecwid",
+   "field": "api_style",
+   "truth": {
+    "core": [
+     "REST"
+    ],
+    "optional": []
+   },
+   "accept": null,
+   "pass1": [
+    "REST"
+   ],
+   "pass1_status": "hit",
+   "final": [
+    "REST"
+   ],
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://docs.ecwid.com/api-reference",
+    "quote": "Ecwid REST API allows you to access and manage any store data",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 47,
+   "app": "Ecwid",
+   "field": "api_breadth",
+   "truth": "BROAD",
+   "accept": [
+    "MODERATE"
+   ],
+   "pass1": "BROAD",
+   "pass1_status": "hit",
+   "final": "BROAD",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.95,
+   "agent_source": {
+    "url": "https://docs.ecwid.com/api-reference",
+    "quote": "Ecwid REST API allows you to access and manage any store data, payment and shipping methods, and storefront settings.",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 47,
+   "app": "Ecwid",
+   "field": "official_mcp",
+   "truth": false,
+   "accept": null,
+   "pass1": false,
+   "pass1_status": "hit",
+   "final": false,
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.7,
+   "agent_source": {
+    "url": "https://docs.ecwid.com/webhook-automations/setup-webhooks/how-to-process-webhooks.md",
+    "quote": "Agents can also search and read this documentation through its [MCP server]",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 47,
+   "app": "Ecwid",
+   "field": "buildability",
+   "truth": "READY_WITH_CAVEATS",
+   "accept": null,
+   "pass1": "READY_WITH_CAVEATS",
+   "pass1_status": "hit",
+   "final": "READY_WITH_CAVEATS",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.85,
+   "agent_source": {
+    "url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid",
+    "quote": "Only stores on paid plans can access API.",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 49,
+   "app": "Amazon Selling Partner",
+   "field": "auth_methods",
+   "truth": {
+    "core": [
+     "OAUTH2"
+    ],
+    "optional": [
+     "OTHER"
+    ]
+   },
+   "accept": null,
+   "pass1": [
+    "OAUTH2"
+   ],
+   "pass1_status": "hit",
+   "final": [
+    "OAUTH2"
+   ],
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://developer-docs.amazon/sp-api/docs/onboarding-step-6-set-up-the-authorization-workflow",
+    "quote": "Public applications: Must use OAuth 2.0 through Login with Amazon (LWA).",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://developer-docs.amazon.com/sp-api/docs/connecting-to-the-selling-partner-api",
+    "quote": "A Login with Amazon (LWA) access token authorizes your application"
+   },
+   "review": null
+  },
+  {
+   "id": 49,
+   "app": "Amazon Selling Partner",
+   "field": "access",
+   "truth": "APPROVAL",
+   "accept": [
+    "PAID_PLAN"
+   ],
+   "pass1": "APPROVAL",
+   "pass1_status": "hit",
+   "final": "APPROVAL",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.8,
+   "agent_source": {
+    "url": "https://developer-docs.amazon/sp-api/docs/connecting-to-the-selling-partner-api",
+    "quote": "Register the application. For details, refer to Registering your application.",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://developer-docs.amazon.com/sp-api/docs/sp-api-registration-overview",
+    "quote": "You must register as a Selling Partner API (SP-API) developer before you can register your Selling Partner API application."
+   },
+   "review": null
+  },
+  {
+   "id": 49,
+   "app": "Amazon Selling Partner",
+   "field": "api_style",
+   "truth": {
+    "core": [
+     "REST"
+    ],
+    "optional": []
+   },
+   "accept": null,
+   "pass1": [
+    "REST"
+   ],
+   "pass1_status": "hit",
+   "final": [
+    "REST"
+   ],
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://developer-docs.amazon/sp-api/docs/onboarding-step-8-call-the-sp-api-in-production",
+    "quote": "GET https://sellingpartnerapi-na.amazon.com/sellers/v1/marketplaceParticipations",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 49,
+   "app": "Amazon Selling Partner",
+   "field": "api_breadth",
+   "truth": "BROAD",
+   "accept": null,
+   "pass1": "BROAD",
+   "pass1_status": "hit",
+   "final": "BROAD",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://developer-docs.amazon/sp-api/reference/welcome-to-api-references",
+    "quote": "Welcome to the Selling Partner API reference.",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 49,
+   "app": "Amazon Selling Partner",
+   "field": "official_mcp",
+   "truth": null,
+   "accept": null,
+   "pass1": true,
+   "pass1_status": "unscored",
+   "final": true,
+   "final_status": "unscored",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.7,
+   "agent_source": {
+    "url": "https://developer.amazonservices.com/amazon-selling-partner-plugin",
+    "quote": "The Selling Partner plugin connects your Amazon data directly to your preferred AI agent",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 49,
+   "app": "Amazon Selling Partner",
+   "field": "buildability",
+   "truth": "READY_WITH_CAVEATS",
+   "accept": [
+    "NEEDS_OUTREACH"
+   ],
+   "pass1": "READY_WITH_CAVEATS",
+   "pass1_status": "hit",
+   "final": "READY_WITH_CAVEATS",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.75,
+   "agent_source": {
+    "url": "https://developer-docs.amazon/sp-api/docs/connecting-to-the-selling-partner-api",
+    "quote": "Get the application authorized by a selling partner or, if you're a private developer, authorize it yourself.",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 58,
+   "app": "Sherlock",
+   "field": "auth_methods",
+   "truth": {
+    "core": [
+     "NONE"
+    ],
+    "optional": []
+   },
+   "accept": null,
+   "pass1": [
+    "NONE"
+   ],
+   "pass1_status": "hit",
+   "final": [
+    "NONE"
+   ],
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.95,
+   "agent_source": {
+    "url": "https://github.com/sherlock-project/sherlock",
+    "quote": "To search for only one user:",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 58,
+   "app": "Sherlock",
+   "field": "access",
+   "truth": "NO_PUBLIC_API",
+   "accept": null,
+   "pass1": "NO_PUBLIC_API",
+   "pass1_status": "hit",
+   "final": "NO_PUBLIC_API",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://github.com/sherlock-project/sherlock",
+    "quote": "pipx install sherlock-project",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://github.com/sherlock-project/sherlock",
+    "quote": "pipx install sherlock-project"
+   },
+   "review": null
+  },
+  {
+   "id": 58,
+   "app": "Sherlock",
+   "field": "api_style",
+   "truth": {
+    "core": [
+     "CLI"
+    ],
+    "optional": [
+     "SDK_ONLY"
+    ]
+   },
+   "accept": null,
+   "pass1": [
+    "CLI"
+   ],
+   "pass1_status": "hit",
+   "final": [
+    "CLI"
+   ],
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://github.com/sherlock-project/sherlock",
+    "quote": "$ sherlock --help",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 58,
+   "app": "Sherlock",
+   "field": "api_breadth",
+   "truth": "NONE",
+   "accept": [
+    "NARROW"
+   ],
+   "pass1": "NARROW",
+   "pass1_status": "hit",
+   "final": "NARROW",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.6,
+   "agent_source": {
+    "url": "https://github.com/sherlock-project/sherlock",
+    "quote": "To search for more than one user:",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 58,
+   "app": "Sherlock",
+   "field": "official_mcp",
+   "truth": false,
+   "accept": null,
+   "pass1": false,
+   "pass1_status": "hit",
+   "final": false,
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.85,
+   "agent_source": {
+    "url": "https://github.com/adeze/sherlock",
+    "quote": "This version has been enhanced with a Model Context Protocol (MCP) Server",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 58,
+   "app": "Sherlock",
+   "field": "buildability",
+   "truth": "READY_WITH_CAVEATS",
+   "accept": [
+    "BLOCKED"
+   ],
+   "pass1": "BLOCKED",
+   "pass1_status": "hit",
+   "final": "BLOCKED",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.9,
+   "agent_source": {
+    "url": "https://github.com/sherlock-project/sherlock",
+    "quote": "pipx install sherlock-project",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 60,
+   "app": "Clay",
+   "field": "auth_methods",
+   "truth": {
+    "core": [
+     "API_KEY"
+    ],
+    "optional": [
+     "OAUTH2"
+    ]
+   },
+   "accept": null,
+   "pass1": [
+    "API_KEY"
+   ],
+   "pass1_status": "hit",
+   "final": [
+    "API_KEY"
+   ],
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://developers.clay.com/public-api/authentication",
+    "quote": "Every request to the Clay Public API must include a Clay API key in the\nclay-api-key header.",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://developers.clay.com/public-api/authentication.md",
+    "quote": "Every request to the Clay Public API must include a Clay API key in the `clay-api-key` header."
+   },
+   "review": null
+  },
+  {
+   "id": 60,
+   "app": "Clay",
+   "field": "access",
+   "truth": "SELF_SERVE_FREE",
+   "accept": [
+    "PAID_PLAN",
+    "SELF_SERVE_TRIAL"
+   ],
+   "pass1": "SELF_SERVE_FREE",
+   "pass1_status": "hit",
+   "final": "SELF_SERVE_FREE",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.65,
+   "agent_source": {
+    "url": "https://www.clay.com/pricing",
+    "quote": "Free \u2014 A low risk way to learn and experiment with Clay.",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://www.clay.com/pricing",
+    "quote": "Build with Clay via CLI / API (Free plan: 100 search results / 30 days)"
+   },
+   "review": null
+  },
+  {
+   "id": 60,
+   "app": "Clay",
+   "field": "api_style",
+   "truth": {
+    "core": [
+     "REST"
+    ],
+    "optional": [
+     "CLI"
+    ]
+   },
+   "accept": null,
+   "pass1": [
+    "REST"
+   ],
+   "pass1_status": "hit",
+   "final": [
+    "REST"
+   ],
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.95,
+   "agent_source": {
+    "url": "https://developers.clay.com/quickstart",
+    "quote": "Use the Public API to call Clay from your own applications and services",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 60,
+   "app": "Clay",
+   "field": "api_breadth",
+   "truth": "MODERATE",
+   "accept": [
+    "NARROW"
+   ],
+   "pass1": "MODERATE",
+   "pass1_status": "hit",
+   "final": "MODERATE",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.75,
+   "agent_source": {
+    "url": "https://university.clay.com/docs/clay-api-cli?dub_id=DHFbP3TR3TaCG4pm",
+    "quote": "run searches over Clay's GTM dataset, call enrichment functions, and build Workflows",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 60,
+   "app": "Clay",
+   "field": "official_mcp",
+   "truth": true,
+   "accept": null,
+   "pass1": true,
+   "pass1_status": "hit",
+   "final": true,
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://university.clay.com/docs/connect-to-clay-mcp",
+    "quote": "Clay exposes a Model Context Protocol (MCP) server",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://university.clay.com/courses/clay-mcps-for-reps",
+    "quote": "Learn how to use Clay directly inside of AI chat tools like ChatGPT, Claude, and more"
+   },
+   "review": null
+  },
+  {
+   "id": 60,
+   "app": "Clay",
+   "field": "buildability",
+   "truth": "READY_WITH_CAVEATS",
+   "accept": [
+    "READY"
+   ],
+   "pass1": "READY_WITH_CAVEATS",
+   "pass1_status": "hit",
+   "final": "READY_WITH_CAVEATS",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.7,
+   "agent_source": {
+    "url": "https://university.clay.com/docs/clay-api-cli?dub_id=DHFbP3TR3TaCG4pm",
+    "quote": "see what the API and CLI can do on your plan.",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 61,
+   "app": "GitHub",
+   "field": "auth_methods",
+   "truth": {
+    "core": [
+     "BEARER_TOKEN",
+     "OAUTH2"
+    ],
+    "optional": [
+     "JWT",
+     "BASIC"
+    ]
+   },
+   "accept": null,
+   "pass1": [
+    "BEARER_TOKEN",
+    "JWT",
+    "OAUTH2"
+   ],
+   "pass1_status": "hit",
+   "final": [
+    "BEARER_TOKEN",
+    "JWT",
+    "OAUTH2"
+   ],
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+    "quote": "You can create a personal access token, generate a token with a GitHub App, or use the built-in GITHUB_TOKEN",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+    "quote": "You can also create an OAuth token with an OAuth app to access the REST API."
+   },
+   "review": null
+  },
+  {
+   "id": 61,
+   "app": "GitHub",
+   "field": "access",
+   "truth": "SELF_SERVE_FREE",
+   "accept": null,
+   "pass1": "SELF_SERVE_FREE",
+   "pass1_status": "hit",
+   "final": "SELF_SERVE_FREE",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+    "quote": "You can create a personal access token",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+    "quote": "If you want to use the GitHub REST API for personal use, you can create a personal access token."
+   },
+   "review": null
+  },
+  {
+   "id": 61,
+   "app": "GitHub",
+   "field": "api_style",
+   "truth": {
+    "core": [
+     "REST",
+     "GRAPHQL"
+    ],
+    "optional": []
+   },
+   "accept": null,
+   "pass1": [
+    "GRAPHQL",
+    "REST"
+   ],
+   "pass1_status": "hit",
+   "final": [
+    "GRAPHQL",
+    "REST"
+   ],
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://docs.github.com/en/integrations/concepts/github-developer-program",
+    "quote": "Comparing GitHub's REST API and GraphQL API.",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 61,
+   "app": "GitHub",
+   "field": "api_breadth",
+   "truth": "BROAD",
+   "accept": null,
+   "pass1": "BROAD",
+   "pass1_status": "hit",
+   "final": "BROAD",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://docs.github.com/en/rest/about-the-rest-api/about-the-rest-api",
+    "quote": "the endpoints are categorized by the resource that they primarily affect",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 61,
+   "app": "GitHub",
+   "field": "official_mcp",
+   "truth": true,
+   "accept": null,
+   "pass1": true,
+   "pass1_status": "hit",
+   "final": true,
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/copilot-for-common-tasks/use-the-github-mcp-server",
+    "quote": "The GitHub MCP server is a Model Context Protocol (MCP) server provided and maintained by GitHub.",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://github.com/github/github-mcp-server",
+    "quote": "GitHub's official MCP Server"
+   },
+   "review": null
+  },
+  {
+   "id": 61,
+   "app": "GitHub",
+   "field": "buildability",
+   "truth": "READY",
+   "accept": null,
+   "pass1": "READY",
+   "pass1_status": "hit",
+   "final": "READY",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+    "quote": "You can create a personal access token",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 64,
+   "app": "Cloudflare",
+   "field": "auth_methods",
+   "truth": {
+    "core": [
+     "BEARER_TOKEN"
+    ],
+    "optional": [
+     "API_KEY",
+     "OAUTH2"
+    ]
+   },
+   "accept": null,
+   "pass1": [
+    "API_KEY",
+    "BEARER_TOKEN",
+    "OAUTH2"
+   ],
+   "pass1_status": "hit",
+   "final": [
+    "API_KEY",
+    "BEARER_TOKEN",
+    "OAUTH2"
+   ],
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.9,
+   "agent_source": {
+    "url": "https://developers.cloudflare.com/api/overview",
+    "quote": "Create an API token to grant access to the API to perform actions. You can also authenticate with API keys",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://developers.cloudflare.com/fundamentals/api/get-started/keys/",
+    "quote": "Global API key is the previous authorization scheme"
+   },
+   "review": null
+  },
+  {
+   "id": 64,
+   "app": "Cloudflare",
+   "field": "access",
+   "truth": "SELF_SERVE_FREE",
+   "accept": null,
+   "pass1": "SELF_SERVE_FREE",
+   "pass1_status": "hit",
+   "final": "SELF_SERVE_FREE",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://developers.cloudflare.com/api/overview",
+    "quote": "To create an API token, from the Cloudflare dashboard, go to My Profile \u2192 API Tokens and select Create Token.",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://developers.cloudflare.com/fundamentals/api/get-started/",
+    "quote": "Create an API token to grant access to the API to perform actions."
+   },
+   "review": null
+  },
+  {
+   "id": 64,
+   "app": "Cloudflare",
+   "field": "api_style",
+   "truth": {
+    "core": [
+     "REST"
+    ],
+    "optional": [
+     "GRAPHQL"
+    ]
+   },
+   "accept": null,
+   "pass1": [
+    "REST"
+   ],
+   "pass1_status": "hit",
+   "final": [
+    "REST"
+   ],
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://developers.cloudflare.com/api/terraform",
+    "quote": "convenient access to the Cloudflare REST API from Terraform.",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 64,
+   "app": "Cloudflare",
+   "field": "api_breadth",
+   "truth": "BROAD",
+   "accept": null,
+   "pass1": "BROAD",
+   "pass1_status": "hit",
+   "final": "BROAD",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare",
+    "quote": "It provides access to the entire Cloudflare API \u2014 over 2,500 endpoints",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 64,
+   "app": "Cloudflare",
+   "field": "official_mcp",
+   "truth": true,
+   "accept": null,
+   "pass1": true,
+   "pass1_status": "hit",
+   "final": true,
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://developers.cloudflare.com/agents/model-context-protocol/cloudflare/servers-for-cloudflare",
+    "quote": "Cloudflare runs a catalog of managed remote MCP servers",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://github.com/cloudflare/mcp",
+    "quote": "MCP server for the Cloudflare API"
+   },
+   "review": null
+  },
+  {
+   "id": 64,
+   "app": "Cloudflare",
+   "field": "buildability",
+   "truth": "READY",
+   "accept": null,
+   "pass1": "READY",
+   "pass1_status": "hit",
+   "final": "READY",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://developers.cloudflare.com/api/overview",
+    "quote": "Create an API token to grant access to the API to perform actions.",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 72,
+   "app": "Airtable",
+   "field": "auth_methods",
+   "truth": {
+    "core": [
+     "BEARER_TOKEN",
+     "OAUTH2"
+    ],
+    "optional": []
+   },
+   "accept": null,
+   "pass1": [
+    "BEARER_TOKEN",
+    "OAUTH2"
+   ],
+   "pass1_status": "hit",
+   "final": [
+    "BEARER_TOKEN",
+    "OAUTH2"
+   ],
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.9,
+   "agent_source": {
+    "url": "https://airtable.com/developers/web/guides/oauth-integrations.md",
+    "quote": "The OAuth access tokens you receive should be passed with your API requests as a `Authorization: Bearer header`.",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://airtable.com/developers/web/api/authentication",
+    "quote": "We currently support using personal access tokens and OAuth access tokens"
+   },
+   "review": null
+  },
+  {
+   "id": 72,
+   "app": "Airtable",
+   "field": "access",
+   "truth": "SELF_SERVE_FREE",
+   "accept": null,
+   "pass1": "SELF_SERVE_FREE",
+   "pass1_status": "hit",
+   "final": "SELF_SERVE_FREE",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://support.airtable.com/articles/6292134965-getting-started-with-airtable-s-web-api",
+    "quote": "All plan types with varying call limitations",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 72,
+   "app": "Airtable",
+   "field": "api_style",
+   "truth": {
+    "core": [
+     "REST"
+    ],
+    "optional": []
+   },
+   "accept": null,
+   "pass1": [
+    "REST"
+   ],
+   "pass1_status": "hit",
+   "final": [
+    "REST"
+   ],
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://support.airtable.com/articles/6292134965-getting-started-with-airtable-s-web-api",
+    "quote": "When you list records with Airtable's API, you won't necessarily get all of them at once.",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 72,
+   "app": "Airtable",
+   "field": "api_breadth",
+   "truth": "MODERATE",
+   "accept": [
+    "BROAD"
+   ],
+   "pass1": "BROAD",
+   "pass1_status": "hit",
+   "final": "BROAD",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.95,
+   "agent_source": {
+    "url": "https://airtable.com/developers/web/guides/oauth-integrations.md",
+    "quote": "OAuth access tokens can be used to make requests to most public Airtable API endpoints",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 72,
+   "app": "Airtable",
+   "field": "official_mcp",
+   "truth": true,
+   "accept": null,
+   "pass1": true,
+   "pass1_status": "hit",
+   "final": true,
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://airtable.com/developers/agents/mcp/getting-started",
+    "quote": "Airtable's MCP server lets you connect AI tools directly to your Airtable bases.",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://airtable.com/developers",
+    "quote": "The Airtable MCP server gives agents your base's full structure"
+   },
+   "review": null
+  },
+  {
+   "id": 72,
+   "app": "Airtable",
+   "field": "buildability",
+   "truth": "READY",
+   "accept": null,
+   "pass1": "READY",
+   "pass1_status": "hit",
+   "final": "READY",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://support.airtable.com/articles/6292134965-getting-started-with-airtable-s-web-api",
+    "quote": "All plan types with varying call limitations",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 80,
+   "app": "Harvest",
+   "field": "auth_methods",
+   "truth": {
+    "core": [
+     "BEARER_TOKEN",
+     "OAUTH2"
+    ],
+    "optional": []
+   },
+   "accept": null,
+   "pass1": [
+    "BEARER_TOKEN",
+    "OAUTH2"
+   ],
+   "pass1_status": "hit",
+   "final": [
+    "BEARER_TOKEN",
+    "OAUTH2"
+   ],
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication",
+    "quote": "A Personal Access Token which is tied directly to you",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://help.getharvest.com/api-v2/introduction/overview/general/",
+    "quote": "Harvest requires applications to authenticate all requests with OAuth2 or Personal Access Tokens."
+   },
+   "review": null
+  },
+  {
+   "id": 80,
+   "app": "Harvest",
+   "field": "access",
+   "truth": "SELF_SERVE_TRIAL",
+   "accept": [
+    "SELF_SERVE_FREE"
+   ],
+   "pass1": "SELF_SERVE_FREE",
+   "pass1_status": "hit",
+   "final": "SELF_SERVE_FREE",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://support.getharvest.com/hc/en-us/articles/360048180732-The-Harvest-API",
+    "quote": "Your Harvest subscription includes API access for all accounts (including free and trial accounts)",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://www.getharvest.com/pricing",
+    "quote": "Get started on any plan with a free trial. No credit card required."
+   },
+   "review": null
+  },
+  {
+   "id": 80,
+   "app": "Harvest",
+   "field": "api_style",
+   "truth": {
+    "core": [
+     "REST"
+    ],
+    "optional": []
+   },
+   "accept": null,
+   "pass1": [
+    "REST"
+   ],
+   "pass1_status": "hit",
+   "final": [
+    "REST"
+   ],
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://help.getharvest.com/api-v2/introduction/overview/general",
+    "quote": "The Harvest V2 API is a REST API",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 80,
+   "app": "Harvest",
+   "field": "api_breadth",
+   "truth": "BROAD",
+   "accept": [
+    "MODERATE"
+   ],
+   "pass1": "BROAD",
+   "pass1_status": "hit",
+   "final": "BROAD",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.8,
+   "agent_source": {
+    "url": "https://help.getharvest.com/api-v2/introduction/overview/general",
+    "quote": "You can track time, log expenses, create projects, and more.",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 80,
+   "app": "Harvest",
+   "field": "official_mcp",
+   "truth": true,
+   "accept": null,
+   "pass1": true,
+   "pass1_status": "hit",
+   "final": true,
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://support.getharvest.com/hc/en-us/articles/46293697226381-Harvest-MCP",
+    "quote": "The Harvest MCP is the connection that gives an MCP-compatible assistant \u2014 such as Claude \u2014 controlled access to your Harvest account",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://support.getharvest.com/hc/en-us/articles/46293697226381-Harvest-MCP",
+    "quote": "The Harvest MCP is the connection that gives an MCP-compatible assistant \u2014 such as Claude \u2014 controlled access to your Harvest account"
+   },
+   "review": {
+    "verdict": "key_wrong",
+    "note": "support.getharvest.com 'Harvest MCP' article documents an official Harvest MCP connection; key corrected to true.",
+    "by": "Claude (claude-opus-5-5), sources re-read 2026-11-24",
+    "final_value": true
+   }
+  },
+  {
+   "id": 80,
+   "app": "Harvest",
+   "field": "buildability",
+   "truth": "READY_WITH_CAVEATS",
+   "accept": [
+    "READY"
+   ],
+   "pass1": "READY",
+   "pass1_status": "hit",
+   "final": "READY",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://support.getharvest.com/hc/en-us/articles/360048180732-The-Harvest-API",
+    "quote": "All Harvest accounts are able to access the Harvest API.",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 82,
+   "app": "Plaid",
+   "field": "auth_methods",
+   "truth": {
+    "core": [
+     "API_KEY"
+    ],
+    "optional": [
+     "OTHER"
+    ]
+   },
+   "accept": null,
+   "pass1": [
+    "API_KEY"
+   ],
+   "pass1_status": "hit",
+   "final": [
+    "API_KEY"
+   ],
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.95,
+   "agent_source": {
+    "url": "https://plaid.com/docs/api",
+    "quote": "Almost all Plaid API endpoints require a `client_id` and `secret`.",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://plaid.com/docs/api/",
+    "quote": "Almost all Plaid API endpoints require a client_id and secret."
+   },
+   "review": null
+  },
+  {
+   "id": 82,
+   "app": "Plaid",
+   "field": "access",
+   "truth": "SELF_SERVE_FREE",
+   "accept": null,
+   "pass1": "SELF_SERVE_FREE",
+   "pass1_status": "hit",
+   "final": "SELF_SERVE_FREE",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.75,
+   "agent_source": {
+    "url": "https://plaid.com/docs/account/billing",
+    "quote": "**Trial** \u2013 Best for exploring Plaid or building a hobby project. Free access, with a limit of 10 Production Items.",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://plaid.com/pricing/",
+    "quote": "Sandbox is always free."
+   },
+   "review": null
+  },
+  {
+   "id": 82,
+   "app": "Plaid",
+   "field": "api_style",
+   "truth": {
+    "core": [
+     "REST"
+    ],
+    "optional": []
+   },
+   "accept": null,
+   "pass1": [
+    "REST"
+   ],
+   "pass1_status": "hit",
+   "final": [
+    "REST"
+   ],
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://plaid.com/docs/api",
+    "quote": "OpenAPI is a standard format for describing RESTful APIs",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 82,
+   "app": "Plaid",
+   "field": "api_breadth",
+   "truth": "BROAD",
+   "accept": null,
+   "pass1": "BROAD",
+   "pass1_status": "hit",
+   "final": "BROAD",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://plaid.com/docs/api",
+    "quote": "Comprehensive reference for integrating with Plaid API endpoints",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 82,
+   "app": "Plaid",
+   "field": "official_mcp",
+   "truth": true,
+   "accept": null,
+   "pass1": true,
+   "pass1_status": "hit",
+   "final": true,
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://plaid.com/docs/resources/mcp",
+    "quote": "The **Dashboard MCP server** is a remote MCP server hosted by Plaid.",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://plaid.com/docs/resources/",
+    "quote": "Plaid's Dashboard MCP server allows you to access Plaid's diagnostics and analytics tools"
+   },
+   "review": null
+  },
+  {
+   "id": 82,
+   "app": "Plaid",
+   "field": "buildability",
+   "truth": "READY_WITH_CAVEATS",
+   "accept": [
+    "READY"
+   ],
+   "pass1": "READY_WITH_CAVEATS",
+   "pass1_status": "hit",
+   "final": "READY_WITH_CAVEATS",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.8,
+   "agent_source": {
+    "url": "https://plaid.com/docs/api",
+    "quote": "You can [request Production API access](https://dashboard.plaid.com/overview/production) via the Dashboard.",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 85,
+   "app": "iPayX",
+   "field": "auth_methods",
+   "truth": {
+    "core": [
+     "BEARER_TOKEN"
+    ],
+    "optional": []
+   },
+   "accept": null,
+   "pass1": [
+    "BEARER_TOKEN"
+   ],
+   "pass1_status": "hit",
+   "final": [
+    "BEARER_TOKEN"
+   ],
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://www.ipayx.ai/docs/api?lang=en",
+    "quote": "Every request requires a Bearer token in the `Authorization` header. Keys start with `ipx_live_`.",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://www.ipayx.ai/docs/api",
+    "quote": "Every request requires a Bearer token in the Authorization header."
+   },
+   "review": null
+  },
+  {
+   "id": 85,
+   "app": "iPayX",
+   "field": "access",
+   "truth": "PAID_PLAN",
+   "accept": [
+    "SELF_SERVE_FREE"
+   ],
+   "pass1": "SELF_SERVE_FREE",
+   "pass1_status": "hit",
+   "final": "SELF_SERVE_FREE",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.8,
+   "agent_source": {
+    "url": "https://www.ipayx.ai/docs/mcp-server",
+    "quote": "**Free tier:** 10 audits / day per API key.",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://www.ipayx.ai/",
+    "quote": "Upgrade to the 100-audit Credit Pack or Unlimited for API access"
+   },
+   "review": null
+  },
+  {
+   "id": 85,
+   "app": "iPayX",
+   "field": "api_style",
+   "truth": {
+    "core": [
+     "REST"
+    ],
+    "optional": []
+   },
+   "accept": null,
+   "pass1": [
+    "REST"
+   ],
+   "pass1_status": "hit",
+   "final": [
+    "REST"
+   ],
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://www.ipayx.ai/docs/api?lang=en",
+    "quote": "REST API \u00b7 v1",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 85,
+   "app": "iPayX",
+   "field": "api_breadth",
+   "truth": "NARROW",
+   "accept": null,
+   "pass1": "NARROW",
+   "pass1_status": "hit",
+   "final": "NARROW",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://www.ipayx.ai/docs/api?lang=en",
+    "quote": "3 endpoints",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 85,
+   "app": "iPayX",
+   "field": "official_mcp",
+   "truth": true,
+   "accept": null,
+   "pass1": true,
+   "pass1_status": "hit",
+   "final": true,
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://www.ipayx.ai/mcp",
+    "quote": "Server URL: https://mcp.ipayx.ai/mcp",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://www.ipayx.ai/docs/mcp-server",
+    "quote": "Connect your AI agent to real-time FX audit verdicts."
+   },
+   "review": null
+  },
+  {
+   "id": 85,
+   "app": "iPayX",
+   "field": "buildability",
+   "truth": "READY_WITH_CAVEATS",
+   "accept": null,
+   "pass1": "READY_WITH_CAVEATS",
+   "pass1_status": "hit",
+   "final": "READY_WITH_CAVEATS",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.8,
+   "agent_source": {
+    "url": "https://www.ipayx.ai/docs/api?lang=en",
+    "quote": "3 endpoints",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 92,
+   "app": "Otter AI",
+   "field": "auth_methods",
+   "truth": null,
+   "accept": null,
+   "pass1": [
+    "BEARER_TOKEN"
+   ],
+   "pass1_status": "unscored",
+   "final": [
+    "BEARER_TOKEN"
+   ],
+   "final_status": "unscored",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+    "quote": "All API requests require authentication using Bearer token authentication.",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 92,
+   "app": "Otter AI",
+   "field": "access",
+   "truth": "PARTNERSHIP",
+   "accept": null,
+   "pass1": "PARTNERSHIP",
+   "pass1_status": "hit",
+   "final": "PARTNERSHIP",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.85,
+   "agent_source": {
+    "url": "https://help.otter.ai/hc/en-us/articles/4412365535895-Does-Otter-offer-an-open-API",
+    "quote": "Otter offers a public API for Enterprise customers. To get started, contact your Otter account manager to enable access.",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://help.otter.ai/hc/en-us/articles/4412365535895-Does-Otter-offer-an-open-API",
+    "quote": "Yes, Otter offers a public API for Enterprise customers. To get started, contact your Otter account manager"
+   },
+   "review": null
+  },
+  {
+   "id": 92,
+   "app": "Otter AI",
+   "field": "api_style",
+   "truth": null,
+   "accept": null,
+   "pass1": [
+    "REST"
+   ],
+   "pass1_status": "unscored",
+   "final": [
+    "REST"
+   ],
+   "final_status": "unscored",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.9,
+   "agent_source": {
+    "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+    "quote": "Otter.ai\u2019s Public API provides programmatic access",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 92,
+   "app": "Otter AI",
+   "field": "api_breadth",
+   "truth": null,
+   "accept": null,
+   "pass1": "MODERATE",
+   "pass1_status": "unscored",
+   "final": "MODERATE",
+   "final_status": "unscored",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.8,
+   "agent_source": {
+    "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+    "quote": "retrieve channels, conversations, transcripts, audio, action items, insights, outlines, and workspace details",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 92,
+   "app": "Otter AI",
+   "field": "official_mcp",
+   "truth": true,
+   "accept": null,
+   "pass1": true,
+   "pass1_status": "hit",
+   "final": true,
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server",
+    "quote": "With Otter\u2019s MCP Server, these AI\nassistants can:",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://otter.ai/",
+    "quote": "access your meeting knowledge through Otter's MCP Server"
+   },
+   "review": null
+  },
+  {
+   "id": 92,
+   "app": "Otter AI",
+   "field": "buildability",
+   "truth": "NEEDS_OUTREACH",
+   "accept": null,
+   "pass1": "NEEDS_OUTREACH",
+   "pass1_status": "hit",
+   "final": "NEEDS_OUTREACH",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.85,
+   "agent_source": {
+    "url": "https://help.otter.ai/hc/en-us/articles/4412365535895-Does-Otter-offer-an-open-API",
+    "quote": "contact your Otter account manager to enable access",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 98,
+   "app": "Mermaid CLI",
+   "field": "auth_methods",
+   "truth": {
+    "core": [
+     "NONE"
+    ],
+    "optional": []
+   },
+   "accept": null,
+   "pass1": [
+    "NONE"
+   ],
+   "pass1_status": "hit",
+   "final": [
+    "NONE"
+   ],
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.95,
+   "agent_source": {
+    "url": "https://github.com/mermaid-js/mermaid-cli",
+    "quote": "You can easily pipe input from stdin.",
+    "grounded": true
+   },
+   "key_source": {
+    "url": "https://github.com/mermaid-js/mermaid-cli",
+    "quote": "This is a command-line interface (CLI) for mermaid."
+   },
+   "review": null
+  },
+  {
+   "id": 98,
+   "app": "Mermaid CLI",
+   "field": "access",
+   "truth": "NO_PUBLIC_API",
+   "accept": null,
+   "pass1": "NO_PUBLIC_API",
+   "pass1_status": "hit",
+   "final": "NO_PUBLIC_API",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.95,
+   "agent_source": {
+    "url": "https://github.com/mermaid-js/mermaid-cli",
+    "quote": "docker pull minlag/mermaid-cli",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 98,
+   "app": "Mermaid CLI",
+   "field": "api_style",
+   "truth": {
+    "core": [
+     "CLI"
+    ],
+    "optional": [
+     "SDK_ONLY"
+    ]
+   },
+   "accept": null,
+   "pass1": [
+    "CLI"
+   ],
+   "pass1_status": "hit",
+   "final": [
+    "CLI"
+   ],
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 1.0,
+   "agent_source": {
+    "url": "https://github.com/mermaid-js/mermaid-cli",
+    "quote": "send a diagram as stdin to mermaid-cli (mmdc)",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 98,
+   "app": "Mermaid CLI",
+   "field": "api_breadth",
+   "truth": "NONE",
+   "accept": [
+    "NARROW"
+   ],
+   "pass1": "NARROW",
+   "pass1_status": "hit",
+   "final": "NARROW",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.7,
+   "agent_source": {
+    "url": "https://github.com/mermaid-js/mermaid-cli",
+    "quote": "you can use\nthe container to generate an SVG file as follows:",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 98,
+   "app": "Mermaid CLI",
+   "field": "official_mcp",
+   "truth": false,
+   "accept": null,
+   "pass1": false,
+   "pass1_status": "hit",
+   "final": false,
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.25,
+   "agent_source": null,
+   "key_source": null,
+   "review": null
+  },
+  {
+   "id": 98,
+   "app": "Mermaid CLI",
+   "field": "buildability",
+   "truth": "READY_WITH_CAVEATS",
+   "accept": [
+    "BLOCKED"
+   ],
+   "pass1": "BLOCKED",
+   "pass1_status": "hit",
+   "final": "BLOCKED",
+   "final_status": "hit",
+   "fixed_by_verification": false,
+   "broken_by_verification": false,
+   "confidence": 0.85,
+   "agent_source": {
+    "url": "https://github.com/mermaid-js/mermaid-cli",
+    "quote": "docker pull minlag/mermaid-cli",
+    "grounded": true
+   },
+   "key_source": null,
+   "review": null
+  }
+ ]
+}

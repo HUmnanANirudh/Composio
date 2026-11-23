@@ -1,0 +1,196 @@
+{
+  "id": 32,
+  "app": "Meta Ads",
+  "category": "Marketing, Ads, Email and Social",
+  "hint": "developers.facebook.com/docs/marketing-apis",
+  "docs_url": "https://developers.facebook.com/documentation/ads-commerce/marketing-api",
+  "one_liner": {
+    "value": "Meta's advertising APIs for Facebook, Instagram, Messenger and WhatsApp",
+    "evidence": [
+      {
+        "url": "https://developers.facebook.com/documentation/ads-commerce/marketing-api",
+        "quote": "help you advertise across Meta technologies",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "BEARER_TOKEN",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/authentication",
+        "quote": "A system user access token is a type of access token that is associated with a system user account",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/authentication",
+        "quote": "If you follow the server-side authentication flow, you get a persistent token.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/authorization",
+        "quote": "Business apps are automatically approved for standard access for all permissions and features available to the Business app type.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.facebook.com/documentation/ads-commerce/marketing-api",
+        "quote": "The Marketing API is a collection of Graph API endpoints",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://developers.facebook.com/documentation/ads-commerce/marketing-api",
+        "quote": "The Marketing API is a collection of Graph API endpoints and other features",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-overview",
+        "quote": "The ads MCP server is a Meta-hosted [Model Context Protocol]",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "sandbox": {
+    "value": true,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "READY_WITH_CAVEATS",
+    "evidence": [
+      {
+        "url": "https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/authorization",
+        "quote": "Advanced access must be approved through the [App Review]",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "Managing other businesses' ad accounts needs Advanced access through Meta App Review.",
+    "evidence": [
+      {
+        "url": "https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/authorization",
+        "quote": "Advanced access must be approved through the [App Review]",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "METAADS",
+    "name": "Meta Ads",
+    "tools": 101,
+    "triggers": 0,
+    "auth": [
+      "OAUTH2",
+      "API_KEY"
+    ],
+    "managed_app": "Yes",
+    "url": "https://docs.composio.dev/toolkits/metaads.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/authentication",
+    "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-overview",
+    "https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/authorization",
+    "https://developers.facebook.com/documentation/ads-commerce/marketing-api",
+    "https://developers.facebook.com/documentation/mcp",
+    "https://developers.facebook.com/documentation/ads-commerce/marketing-api/error-reference.md",
+    "https://www.tryadeli.com/blog/meta-ads-api-access-token",
+    "https://info.mammouth.ai/docs/connectors/guides/meta-ads"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "webhooks": [
+            "ungrounded"
+          ],
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "webhooks": [
+        "ungrounded"
+      ],
+      "sandbox": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": [
+    "fetch https://developers.facebook.com/docs/marketing-api/brand-safety-and-suitability/brand-safety-partners: 400 too little text (JS-rendered?)",
+    "fetch https://developers.facebook.com/docs/business-sdk/faq: 400 too little text (JS-rendered?)",
+    "fetch https://business.meta.com/news/meta-ads-ai-connectors: 400 too little text (JS-rendered?)",
+    "fetch https://developers.facebook.com/blog/post/2026/07/16/meta-ads-mcp-server: 400 too little text (JS-rendered?)"
+  ]
+}

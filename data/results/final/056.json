@@ -1,0 +1,182 @@
+{
+  "id": 56,
+  "app": "Firecrawl",
+  "category": "Data, SEO and Scraping",
+  "hint": "firecrawl.dev",
+  "docs_url": "https://docs.firecrawl.dev/authentication",
+  "one_liner": {
+    "value": "Web scraping, crawling and search API for AI agents",
+    "evidence": [
+      {
+        "url": "https://github.com/firecrawl/firecrawl-mcp-server",
+        "quote": "Firecrawl, the context API for AI agents",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.firecrawl.dev/authentication",
+        "quote": "Create a key in the dashboard and send it on every request asAuthorization: Bearer fc-YOUR-API-KEY.",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://docs.firecrawl.dev/oauth",
+        "quote": "Firecrawl runs an OAuth 2.1 authorization server.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://www.firecrawl.dev/pricing",
+        "quote": "A lightweight way to get started. No cost, no card, no hassle.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.firecrawl.dev/authentication",
+        "quote": "A few REST endpoints also work with no credential at all",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "MODERATE",
+    "evidence": [
+      {
+        "url": "https://github.com/firecrawl/firecrawl-mcp-server",
+        "quote": "Crawl a site for content from many pages, or map it to discover its URLs",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://github.com/firecrawl/firecrawl-mcp-server",
+        "quote": "A Model Context Protocol (MCP) server that brings Firecrawl",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://docs.firecrawl.dev/api-reference/webhooks-openapi.json",
+        "quote": "\"title\": \"Firecrawl Webhooks\"",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://docs.firecrawl.dev/oauth",
+        "quote": "There are two ways to get one, and neither needs approval from Firecrawl.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.4,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "FIRECRAWL",
+    "name": "Firecrawl",
+    "tools": 246,
+    "triggers": 0,
+    "auth": [
+      "API_KEY"
+    ],
+    "managed_app": null,
+    "url": "https://docs.composio.dev/toolkits/firecrawl.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://docs.firecrawl.dev/authentication",
+    "https://www.firecrawl.dev/pricing",
+    "https://github.com/firecrawl/firecrawl-mcp-server",
+    "https://docs.firecrawl.dev/api-reference/webhooks-openapi.json",
+    "https://docs.firecrawl.dev/oauth",
+    "https://docs.firecrawl.dev/mcp-server",
+    "https://www.firecrawl.dev/signin?redirect=%2Fapp%2Fapi-keys",
+    "https://github.com/firecrawl/firecrawl/pull/3234"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "sandbox": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": []
+}

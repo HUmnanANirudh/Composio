@@ -1,0 +1,181 @@
+{
+  "id": 21,
+  "app": "Slack",
+  "category": "Communications and Messaging",
+  "hint": "slack.com",
+  "docs_url": "https://docs.slack.dev/authentication/installing-with-oauth",
+  "one_liner": {
+    "value": "Team messaging platform with channels, apps and workflows",
+    "evidence": [
+      {
+        "url": "https://docs.slack.dev/apis/web-api/using-web-api-with-postman",
+        "quote": "The Slack Web API is a set of methods (200+ of them)",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "BEARER_TOKEN",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.slack.dev/authentication/installing-with-oauth",
+        "quote": "Slack apps are installed with a v2 OAuth 2.0 flow.",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://docs.slack.dev/authentication/installing-with-oauth",
+        "quote": "At the end of the OAuth flow, your app gains an access token.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://docs.slack.dev/tools/developer-sandboxes",
+        "quote": "Every developer enrolled in the Slack Developer Program is eligible to provision a basic sandbox.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.slack.dev/apis/web-api/using-web-api-with-postman",
+        "quote": "The Slack Web API is a set of methods (200+ of them)",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://docs.slack.dev/apis/web-api/using-web-api-with-postman",
+        "quote": "The Slack Web API is a set of methods (200+ of them)",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://docs.slack.dev/ai/slack-mcp-server",
+        "quote": "With the Slack MCP server, your integrated apps can search channels, send messages",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://docs.slack.dev/app-management/quickstart-app-settings",
+        "quote": "you'll create a basic Slack app that can send messages using webhooks.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "sandbox": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://docs.slack.dev/tools/developer-sandboxes",
+        "quote": "A developer sandbox is an Enterprise org environment",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://docs.slack.dev/tools/developer-sandboxes",
+        "quote": "Every developer enrolled in the Slack Developer Program is eligible to provision a basic sandbox.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.4,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "SLACK",
+    "name": "Slack",
+    "tools": 174,
+    "triggers": 9,
+    "auth": [
+      "OAUTH2"
+    ],
+    "managed_app": "Yes",
+    "url": "https://docs.composio.dev/toolkits/slack.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://docs.slack.dev/authentication/installing-with-oauth",
+    "https://docs.slack.dev/tools/developer-sandboxes",
+    "https://docs.slack.dev/ai/slack-mcp-server",
+    "https://slack.com/intl/en-in/pricing/paid-vs-free",
+    "https://docs.slack.dev/app-management/quickstart-app-settings",
+    "https://docs.slack.dev/ai/slack-mcp-server/developing",
+    "https://slack.com/intl/en-in/ai-agents",
+    "https://docs.slack.dev/apis/web-api/using-web-api-with-postman"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {},
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {}
+  },
+  "errors": [
+    "fetch https://slack.com/partners: 404 too little text (JS-rendered?)"
+  ]
+}

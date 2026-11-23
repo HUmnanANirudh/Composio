@@ -1,0 +1,284 @@
+{
+  "id": 84,
+  "app": "Paygent Connect",
+  "category": "Finance and Fintech",
+  "hint": "paygent (NMI-powered)",
+  "docs_url": null,
+  "one_liner": {
+    "value": "Payment product named Paygent (NMI-powered); identity unconfirmed in sources",
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "auth_methods": {
+    "value": [
+      "BEARER_TOKEN"
+    ],
+    "evidence": [],
+    "confidence": 0.05,
+    "flags": [
+      "ungrounded",
+      "low_confidence"
+    ]
+  },
+  "access": {
+    "value": "PARTNERSHIP",
+    "evidence": [],
+    "confidence": 0.05,
+    "flags": [
+      "ungrounded",
+      "low_confidence"
+    ]
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [],
+    "confidence": 0.05,
+    "flags": [
+      "ungrounded",
+      "low_confidence"
+    ]
+  },
+  "api_breadth": {
+    "value": "NARROW",
+    "evidence": [],
+    "confidence": 0.05,
+    "flags": [
+      "ungrounded",
+      "low_confidence"
+    ]
+  },
+  "official_mcp": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.05,
+    "flags": [
+      "ungrounded",
+      "low_confidence"
+    ]
+  },
+  "webhooks": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "NEEDS_OUTREACH",
+    "evidence": [],
+    "confidence": 0.05,
+    "flags": [
+      "ungrounded",
+      "low_confidence"
+    ]
+  },
+  "main_blocker": {
+    "value": "The sources describe several unrelated 'Paygent' products and none NMI-powered; the right API could not be identified.",
+    "evidence": [],
+    "confidence": 0.25,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "composio": {
+    "found": false,
+    "slug": null,
+    "name": null,
+    "tools": null,
+    "triggers": null,
+    "auth": [],
+    "managed_app": null,
+    "url": null,
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://paygenthq.ai/help",
+    "https://docs.paygent.to/reference/api-reference",
+    "https://paygenthq.ai/support",
+    "https://docs.paygent.to/reference/sdk-reference",
+    "https://docs.withpaygent.com/documentation/introduction/what-is-paygent.md",
+    "https://docs.withpaygent.com/documentation/getting-started/quick-start",
+    "https://paygentlabs.com/developers",
+    "https://www.withpaygent.com/pricing",
+    "https://docs.paygent.to/reference/sdk-reference-js",
+    "https://402intelligence.paygent.net/llms.txt",
+    "https://github.com/usepaygent/paygent-plugin"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "one_liner": [
+            "ungrounded"
+          ],
+          "auth_methods": [
+            "ungrounded"
+          ],
+          "access": [
+            "ungrounded"
+          ],
+          "api_style": [
+            "ungrounded"
+          ],
+          "api_breadth": [
+            "ungrounded"
+          ],
+          "official_mcp": [
+            "ungrounded"
+          ],
+          "webhooks": [
+            "ungrounded"
+          ],
+          "sandbox": [
+            "ungrounded"
+          ],
+          "buildability": [
+            "ungrounded"
+          ],
+          "main_blocker": [
+            "ungrounded"
+          ]
+        },
+        "rules": {
+          "auth_methods": [
+            "low_confidence"
+          ],
+          "access": [
+            "low_confidence"
+          ],
+          "api_style": [
+            "low_confidence"
+          ],
+          "api_breadth": [
+            "low_confidence"
+          ],
+          "official_mcp": [
+            "low_confidence"
+          ],
+          "buildability": [
+            "low_confidence"
+          ]
+        }
+      },
+      {
+        "round": 1,
+        "grounding": {
+          "one_liner": [
+            "ungrounded"
+          ],
+          "auth_methods": [
+            "ungrounded"
+          ],
+          "access": [
+            "ungrounded"
+          ],
+          "api_style": [
+            "ungrounded"
+          ],
+          "api_breadth": [
+            "ungrounded"
+          ],
+          "official_mcp": [
+            "ungrounded"
+          ],
+          "webhooks": [
+            "ungrounded"
+          ],
+          "sandbox": [
+            "ungrounded"
+          ],
+          "buildability": [
+            "ungrounded"
+          ],
+          "main_blocker": [
+            "ungrounded"
+          ]
+        },
+        "rules": {
+          "auth_methods": [
+            "low_confidence"
+          ],
+          "access": [
+            "low_confidence"
+          ],
+          "api_style": [
+            "low_confidence"
+          ],
+          "api_breadth": [
+            "low_confidence"
+          ],
+          "official_mcp": [
+            "low_confidence"
+          ],
+          "buildability": [
+            "low_confidence"
+          ]
+        }
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "one_liner": [
+        "ungrounded"
+      ],
+      "auth_methods": [
+        "ungrounded",
+        "low_confidence"
+      ],
+      "access": [
+        "ungrounded",
+        "low_confidence"
+      ],
+      "api_style": [
+        "ungrounded",
+        "low_confidence"
+      ],
+      "api_breadth": [
+        "ungrounded",
+        "low_confidence"
+      ],
+      "official_mcp": [
+        "ungrounded",
+        "low_confidence"
+      ],
+      "webhooks": [
+        "ungrounded"
+      ],
+      "sandbox": [
+        "ungrounded"
+      ],
+      "buildability": [
+        "ungrounded",
+        "low_confidence"
+      ],
+      "main_blocker": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": [
+    "fetch https://api.paygent.tech/docs: 0 ConnectTimeout: timed out",
+    "fetch https://www.gopaygent.com/pricing: 0 ConnectError: [Errno -3] Temporary failure in name resolution",
+    "fetch https://www.gopaygent.com/products/connect: 0 ConnectError: [Errno -3] Temporary failure in name resolution",
+    "fetch https://www.gopaygent.com/developers/docs: 0 ConnectError: [Errno -3] Temporary failure in name resolution",
+    "fetch https://www.gopaygent.com: 0 ConnectError: [Errno -3] Temporary failure in name resolution"
+  ]
+}

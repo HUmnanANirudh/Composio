@@ -1,0 +1,190 @@
+{
+  "id": 60,
+  "app": "Clay",
+  "category": "Data, SEO and Scraping",
+  "hint": "clay.com",
+  "docs_url": "https://developers.clay.com/public-api/authentication",
+  "one_liner": {
+    "value": "GTM data platform for prospecting and multi-vendor enrichment",
+    "evidence": [
+      {
+        "url": "https://www.clay.com/mcp",
+        "quote": "Every contact is enriched through a waterfall across Clay's 200+ data vendors",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.clay.com/public-api/authentication",
+        "quote": "Every request to the Clay Public API must include a Clay API key in the\nclay-api-key header.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://www.clay.com/pricing",
+        "quote": "Free — A low risk way to learn and experiment with Clay.",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://developers.clay.com/quickstart",
+        "quote": "Create one yourself in Clay under API and CLI → API keys.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.65,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.clay.com/quickstart",
+        "quote": "Use the Public API to call Clay from your own applications and services",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "MODERATE",
+    "evidence": [
+      {
+        "url": "https://university.clay.com/docs/clay-api-cli?dub_id=DHFbP3TR3TaCG4pm",
+        "quote": "run searches over Clay's GTM dataset, call enrichment functions, and build Workflows",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.75,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://university.clay.com/docs/connect-to-clay-mcp",
+        "quote": "Clay exposes a Model Context Protocol (MCP) server",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developers.clay.com/public-api/webhooks.md",
+        "quote": "Webhooks let Clay notify your service when a routine run finishes",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "READY_WITH_CAVEATS",
+    "evidence": [
+      {
+        "url": "https://university.clay.com/docs/clay-api-cli?dub_id=DHFbP3TR3TaCG4pm",
+        "quote": "see what the API and CLI can do on your plan.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "API capabilities depend on the workspace plan, and usage consumes Data Credits and Actions.",
+    "evidence": [
+      {
+        "url": "https://www.clay.com/pricing",
+        "quote": "Comes with 100 Data Credits and 500 Actions/mo.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.65,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "CLAY",
+    "name": "Clay",
+    "tools": 15,
+    "triggers": 0,
+    "auth": [
+      "API_KEY"
+    ],
+    "managed_app": null,
+    "url": "https://docs.composio.dev/toolkits/clay.md",
+    "mcp_variant": "CLAY_MCP",
+    "mcp_variant_auth": [
+      "DCR_OAUTH"
+    ]
+  },
+  "sources": [
+    "https://developers.clay.com/public-api/authentication",
+    "https://www.clay.com/pricing",
+    "https://university.clay.com/docs/connect-to-clay-mcp",
+    "https://developers.clay.com/public-api/webhooks.md",
+    "https://developers.clay.com/quickstart",
+    "https://university.clay.com/docs/clay-api-cli?dub_id=DHFbP3TR3TaCG4pm",
+    "https://www.clay.com/mcp",
+    "https://developers.clay.com/api-reference/me/get-the-authenticated-user"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "sandbox": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": []
+}

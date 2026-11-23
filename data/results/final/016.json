@@ -1,0 +1,181 @@
+{
+  "id": 16,
+  "app": "LiveAgent",
+  "category": "Support and Helpdesk",
+  "hint": "liveagent.com",
+  "docs_url": "https://support.liveagent.com/741982-API-key",
+  "one_liner": {
+    "value": "Help desk software with ticketing, live chat and call center",
+    "evidence": [
+      {
+        "url": "https://www.liveagent.com/features/help-desk-integrations",
+        "quote": "LiveAgent is a customer service software that helps your customer service team work in one interface.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY"
+    ],
+    "evidence": [
+      {
+        "url": "https://support.liveagent.com/741982-API-key",
+        "quote": "Your API key has to be set in header of your requests:",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_TRIAL",
+    "evidence": [
+      {
+        "url": "https://www.liveagent.com/features/help-desk-integrations",
+        "quote": "Try free for 30 days—no credit card needed!",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.75,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://faq.liveagent.com/916372-API-v1-vs-API-v3-in-LiveAgent-Key-Differences-Authentication-and-Resolving-ApiKey-Errors",
+        "quote": "API v3 (current, actively developed)",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://www.liveagent.com/features/api",
+        "quote": "supporting actions like company retrieval and conversation creation",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://support.liveagent.com/647358-MCP-Integration-for-agents",
+        "quote": "LiveAgent exposes a built-in MCP server (Model Context Protocol)",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "READY_WITH_CAVEATS",
+    "evidence": [
+      {
+        "url": "https://www.liveagent.com/features/help-desk-integrations",
+        "quote": "Try free for 30 days—no credit card needed!",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "API access beyond the 30-day trial requires a paid plan.",
+    "evidence": [
+      {
+        "url": "https://www.liveagent.com/features/help-desk-integrations",
+        "quote": "Try free for 30 days—no credit card needed!",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.65,
+    "flags": []
+  },
+  "composio": {
+    "found": false,
+    "slug": null,
+    "name": null,
+    "tools": null,
+    "triggers": null,
+    "auth": [],
+    "managed_app": null,
+    "url": null,
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://support.liveagent.com/741982-API-key",
+    "https://www.liveagent.com/pricing",
+    "https://support.liveagent.com/647358-MCP-Integration-for-agents",
+    "https://www.liveagent.com/features/api",
+    "https://www.liveagent.com/features/mcp-server",
+    "https://faq.liveagent.com/916372-API-v1-vs-API-v3-in-LiveAgent-Key-Differences-Authentication-and-Resolving-ApiKey-Errors",
+    "https://www.liveagent.com/features/help-desk-integrations",
+    "https://support.liveagent.com/578762-MCP-tools-reference"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "webhooks": [
+            "ungrounded"
+          ],
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "webhooks": [
+        "ungrounded"
+      ],
+      "sandbox": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": []
+}

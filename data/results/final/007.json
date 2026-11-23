@@ -1,0 +1,189 @@
+{
+  "id": 7,
+  "app": "Zoho CRM",
+  "category": "CRM and Sales",
+  "hint": "zoho.com/crm",
+  "docs_url": "https://www.zoho.com/crm/developer/docs/api/v8",
+  "one_liner": {
+    "value": "Zoho's CRM for sales pipelines, automation and analytics",
+    "evidence": [
+      {
+        "url": "https://www.zoho.com/crm/developer/docs/api/v8",
+        "quote": "Perform CRUD operations on CRM module entities",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html",
+        "quote": "The Zoho CRM API uses the OAuth 2.0 protocol for authentication.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://www.zoho.com/crm/developer/docs/api/api-limits.html",
+        "quote": "Free Edition | 5000 credits | 5000 credits",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://www.zoho.com/crm/developer/docs/api/v8",
+        "quote": "integrate with any third party application through flexible RESTful endpoints.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://www.zoho.com/crm/developer/docs/api/v8",
+        "quote": "Fetch the metadata of modules, fields, layouts, custom views, and related lists.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://www.zoho.com/crm/developer/docs/mcp/overview.html",
+        "quote": "Zoho CRM provides these as pre-built MCP servers",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://www.zoho.com/crm/developer/docs/api/v8",
+        "quote": "Get notified whenever a data change occurs inside your CRM.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "sandbox": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://www.zoho.com/crm/developer/docs/functions/security.html",
+        "quote": "Sandbox Development",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://www.zoho.com/crm/developer/docs/api/api-limits.html",
+        "quote": "Free Edition | 5000 credits | 5000 credits",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.4,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "ZOHO",
+    "name": "Zoho",
+    "tools": 115,
+    "triggers": 0,
+    "auth": [
+      "OAUTH2"
+    ],
+    "managed_app": "Yes",
+    "url": "https://docs.composio.dev/toolkits/zoho.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://www.zoho.com/crm/developer/docs/functions/serverless.html",
+    "https://www.zoho.com/crm/developer/docs/api/api-limits.html",
+    "https://www.zoho.com/crm/developer/mcp.html",
+    "https://www.zoho.com/crm/zohocrm-pricing.html?source_from=crm_home",
+    "https://www.zoho.com/crm/developer/docs/functions/security.html",
+    "https://www.zoho.com/crm/developer/docs/api/v8",
+    "https://www.zoho.com/crm/developer/docs/mcp/overview.html",
+    "https://www.zoho.com/mcp/llms.txt",
+    "https://www.zoho.com/crm/developer/docs/api/v8/register-client.html",
+    "https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html",
+    "https://www.zoho.com/crm/developer/docs/connectors/set-up.html",
+    "https://www.zoho.com/crm/developer/docs/api/v8/auth-request.html"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "auth_methods": [
+            "ungrounded"
+          ]
+        },
+        "rules": {
+          "auth_methods": [
+            "low_confidence"
+          ]
+        }
+      },
+      {
+        "round": 1,
+        "grounding": {},
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {}
+  },
+  "errors": []
+}

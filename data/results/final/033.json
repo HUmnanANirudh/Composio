@@ -1,0 +1,196 @@
+{
+  "id": 33,
+  "app": "LinkedIn Ads",
+  "category": "Marketing, Ads, Email and Social",
+  "hint": "learn.microsoft.com/linkedin/marketing",
+  "docs_url": "https://learn.microsoft.com/en-us/linkedin/marketing/quick-start",
+  "one_liner": {
+    "value": "LinkedIn's Advertising API for B2B campaign management and reporting",
+    "evidence": [
+      {
+        "url": "https://developer.linkedin.com/product-catalog/marketing/advertising-api",
+        "quote": "Build functionality for scalable ads management with Ad Campaigns and Creatives APIs",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started?view=li-lms-2026-10",
+        "quote": "OAuth 2.0 Scopes are a part of the authentication process",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "access": {
+    "value": "APPROVAL",
+    "evidence": [
+      {
+        "url": "https://developer.linkedin.com/product-catalog/marketing/advertising-api",
+        "quote": "LinkedIn will review your application",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://learn.microsoft.com/en-us/linkedin/marketing/quick-start?view=li-lms-2026-05",
+        "quote": "Use this quick start guide to begin working with the LinkedIn APIs.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://developer.linkedin.com/product-catalog/marketing/advertising-api",
+        "quote": "Build functionality for scalable ads management with Ad Campaigns and Creatives APIs",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.25,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "webhooks": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [
+      {
+        "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers?view=li-lms-2026-10",
+        "quote": "Please note that all API Calls at all access levels are made on production data.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY_WITH_CAVEATS",
+    "evidence": [
+      {
+        "url": "https://developer.linkedin.com/product-catalog/marketing/advertising-api",
+        "quote": "LinkedIn will review your application",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "Advertising API access requires an application approved by LinkedIn for a supported use case.",
+    "evidence": [
+      {
+        "url": "https://developer.linkedin.com/product-catalog/marketing/advertising-api",
+        "quote": "Apply for Development tier access:",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "LINKEDIN_ADS",
+    "name": "Linkedin Ads",
+    "tools": 28,
+    "triggers": 0,
+    "auth": [
+      "OAUTH2"
+    ],
+    "managed_app": "No",
+    "url": "https://docs.composio.dev/toolkits/linkedin_ads.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://developer.linkedin.com/product-catalog/marketing/advertising-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow?view=li-lms-2026-11&amp;toc=/linkedin/marketing/toc.json&amp;bc=/linkedin/breadcrumb/toc.json",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started?view=li-lms-2026-10",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers?view=li-lms-2026-10",
+    "https://developer.linkedin.com/product-catalog/marketing",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/quick-start?view=li-lms-2026-05",
+    "https://www.linkedin.com/help/linkedin/answer/a527289",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-plan?view=li-lms-2026-11",
+    "https://learn.microsoft.com/en-us/linkedin/shared/linkedin-api-partner-support-guide?view=li-lms-2026-11&amp;toc=/linkedin/marketing/toc.json&amp;bc=/linkedin/breadcrumb/toc.json"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "official_mcp": [
+            "ungrounded"
+          ],
+          "webhooks": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      },
+      {
+        "round": 1,
+        "grounding": {
+          "official_mcp": [
+            "ungrounded"
+          ],
+          "webhooks": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "official_mcp": [
+        "ungrounded"
+      ],
+      "webhooks": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": []
+}

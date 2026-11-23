@@ -1,0 +1,215 @@
+{
+  "id": 24,
+  "app": "Lark (Larksuite)",
+  "category": "Communications and Messaging",
+  "hint": "open.larksuite.com",
+  "docs_url": "https://open.larksuite.com/llms.txt",
+  "one_liner": {
+    "value": "All-in-one work suite with chat, docs, meetings and Base",
+    "evidence": [
+      {
+        "url": "https://github.com/larksuite/oapi-sdk-python",
+        "quote": "server-side APIs for messaging, contacts, approval, sheets, Base, and many other product capabilities",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "BEARER_TOKEN",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://open.larksuite.com/llms.txt",
+        "quote": "获取 user_access_token 是标准的 OAuth 2.0",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://open.larksuite.com/llms.txt",
+        "quote": "tenant_access_token : 以应用身份调用 API 时需要使用的凭证",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://www.mcpbundles.com/skills/larksuite-mcp-205e7de773",
+        "quote": "Get chat, docs, meetings, workflow automations & AI for free all in one place.",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://github.com/larksuite/lark-openapi-mcp/blob/main/docs/troubleshooting/faq.md",
+        "quote": "Enable corresponding API permissions for the application in the developer console and wait for approval.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://github.com/larksuite/oapi-sdk-python",
+        "quote": "The Feishu Open Platform provides server-side APIs for messaging, contacts, approval, sheets, Base",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://github.com/larksuite/oapi-sdk-python",
+        "quote": "server-side APIs for messaging, contacts, approval, sheets, Base, and many other product capabilities",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://github.com/larksuite/lark-openapi-mcp",
+        "quote": "npx -y @larksuiteoapi/lark-mcp login -a cli_xxxx -s yyyyy",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://open.larksuite.com/llms.txt",
+        "quote": "事件与回调",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://github.com/larksuite/oapi-sdk-python",
+        "quote": "The Feishu Open Platform provides server-side APIs",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "App permissions must be approved by the tenant admin before API calls succeed.",
+    "evidence": [
+      {
+        "url": "https://github.com/larksuite/lark-openapi-mcp/blob/main/docs/troubleshooting/faq.md",
+        "quote": "Enable corresponding API permissions for the application in the developer console and wait for approval.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.6,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "LARK",
+    "name": "Lark",
+    "tools": 451,
+    "triggers": 0,
+    "auth": [
+      "OAUTH2"
+    ],
+    "managed_app": "No",
+    "url": "https://docs.composio.dev/toolkits/lark.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://github.com/larksuite/lark-openapi-mcp",
+    "https://github.com/larksuite/lark-openapi-mcp/blob/main/docs/reference/cli/cli.md",
+    "https://open.larksuite.com/llms-docs/zh-CN/llms-authenticate-and-authorize.txt",
+    "https://github.com/larksuite/oapi-sdk-python",
+    "https://github.com/larksuite/lark-openapi-mcp/blob/main/docs/troubleshooting/faq.md",
+    "https://open.larksuite.com/llms.txt",
+    "https://www.mcpbundles.com/skills/larksuite-mcp-205e7de773"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "sandbox": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": [
+    "fetch https://open.larksuite.com/document/server-docs/getting-started/api-access-token/app-access-token-development-guide: 200 too little text (JS-rendered?)",
+    "fetch https://open.larksuite.com/document/server-docs/getting-started/server-api-list: 200 too little text (JS-rendered?)",
+    "fetch https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/bitable-overview: 200 too little text (JS-rendered?)",
+    "fetch https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/authentication-management/access-token/get-user-access-token: 200 too little text (JS-rendered?)",
+    "fetch https://open.larksuite.com/document/server-docs/getting-started/overview-of-app-scopes?lang=en-US: 200 too little text (JS-rendered?)",
+    "fetch https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/mcp_integration/advanced-configuration: 200 too little text (JS-rendered?)",
+    "fetch https://open.larksuite.com/document/server-docs/getting-started/api-access-token/auth-v3/tenant_access_token_internal: 200 too little text (JS-rendered?)",
+    "fetch https://open.larksuite.com/document/common-capabilities/sso/api/obtain-oauth-code: 200 too little text (JS-rendered?)",
+    "fetch https://www.larksuite.com/hc/en-US/articles/497171699982-overview-of-lark-plans: 200 too little text (JS-rendered?)",
+    "fetch https://open.larksuite.com/document/server-docs/getting-started/api-access-token/get-: 200 too little text (JS-rendered?)",
+    "fetch https://open.larksuite.com/document/server-docs/getting-started/api-access-token/auth-v3/app_access_token: 200 too little text (JS-rendered?)",
+    "fetch https://www.larksuite.com/en_us/partnerform: 200 too little text (JS-rendered?)",
+    "fetch https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/mcp_integration/use_cases: 200 too little text (JS-rendered?)",
+    "fetch https://open.larksuite.com/document/home/introduction-to-custom-app-development/self-built-application-development-process?lang=en-US: 200 too little text (JS-rendered?)",
+    "fetch https://open.larksuite.com/document/server-docs/getting-started/overview-of-app-scopes: 200 too little text (JS-rendered?)",
+    "fetch https://open.larksuite.com/document/tools-and-resources/api-explorer-guide: 200 too little text (JS-rendered?)",
+    "fetch https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/mcp_integration/mcp_introduction: 200 too little text (JS-rendered?)",
+    "fetch https://open.larksuite.com/document/server-docs/getting-started/api-access-token/get-access-token: 200 too little text (JS-rendered?)",
+    "fetch https://www.larksuite.com/en_sg/?from=topics_content-marketing_content-marketing-resource-management: 200 too little text (JS-rendered?)",
+    "fetch https://open.larksuite.com/page/mcp: 200 too little text (JS-rendered?)"
+  ]
+}

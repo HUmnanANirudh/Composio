@@ -1,0 +1,198 @@
+{
+  "id": 61,
+  "app": "GitHub",
+  "category": "Developer, Infra and Data platforms",
+  "hint": "docs.github.com/rest",
+  "docs_url": "https://docs.github.com/en/rest/about-the-rest-api/about-the-rest-api",
+  "one_liner": {
+    "value": "Code hosting and collaboration platform with REST and GraphQL APIs",
+    "evidence": [
+      {
+        "url": "https://docs.github.com/en/rest/about-the-rest-api/about-the-rest-api",
+        "quote": "You can use GitHub's API to build scripts and applications that automate processes, integrate with GitHub, and extend GitHub.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "BEARER_TOKEN",
+      "JWT",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+        "quote": "You can create a personal access token, generate a token with a GitHub App, or use the built-in GITHUB_TOKEN",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+        "quote": "if you are passing a JSON web token (JWT), you must use Authorization: Bearer.",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://docs.github.com/en/apps/oauth-apps/using-oauth-apps/authorizing-oauth-apps",
+        "quote": "OAuth apps can have read or write access to your GitHub data.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+        "quote": "You can create a personal access token",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/copilot-for-common-tasks/use-the-github-mcp-server",
+        "quote": "The GitHub MCP server is available to all GitHub users regardless of plan type.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "GRAPHQL",
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.github.com/en/integrations/concepts/github-developer-program",
+        "quote": "Comparing GitHub's REST API and GraphQL API.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://docs.github.com/en/rest/about-the-rest-api/about-the-rest-api",
+        "quote": "the endpoints are categorized by the resource that they primarily affect",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/copilot-for-common-tasks/use-the-github-mcp-server",
+        "quote": "The GitHub MCP server is a Model Context Protocol (MCP) server provided and maintained by GitHub.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://docs.github.com/en/rest/about-the-rest-api/about-the-rest-api",
+        "quote": "using webhooks to get notified about events",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+        "quote": "You can create a personal access token",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.4,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "GITHUB",
+    "name": "GitHub",
+    "tools": 905,
+    "triggers": 46,
+    "auth": [
+      "OAUTH2"
+    ],
+    "managed_app": "Yes",
+    "url": "https://docs.composio.dev/toolkits/github.md",
+    "mcp_variant": "GITHUB_MCP",
+    "mcp_variant_auth": [
+      "API_KEY"
+    ]
+  },
+  "sources": [
+    "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+    "https://docs.github.com/en/site-policy/github-terms/github-registered-developer-agreement",
+    "https://github.com/github/github-mcp-server",
+    "https://docs.github.com/en/rest/about-the-rest-api/about-the-rest-api",
+    "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authentication-to-github",
+    "https://docs.github.com/en/integrations/concepts/github-developer-program",
+    "https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/copilot-for-common-tasks/use-the-github-mcp-server",
+    "https://docs.github.com/en/apps/oauth-apps/using-oauth-apps/authorizing-oauth-apps"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "sandbox": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "sandbox": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": []
+}

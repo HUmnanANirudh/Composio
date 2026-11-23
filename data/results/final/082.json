@@ -1,0 +1,187 @@
+{
+  "id": 82,
+  "app": "Plaid",
+  "category": "Finance and Fintech",
+  "hint": "plaid.com/docs",
+  "docs_url": "https://plaid.com/docs/api",
+  "one_liner": {
+    "value": "Financial data network connecting apps to bank accounts",
+    "evidence": [
+      {
+        "url": "https://plaid.com/docs/api",
+        "quote": "Comprehensive reference for integrating with Plaid API endpoints",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY"
+    ],
+    "evidence": [
+      {
+        "url": "https://plaid.com/docs/api",
+        "quote": "Almost all Plaid API endpoints require a `client_id` and `secret`.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://plaid.com/docs/account/billing",
+        "quote": "**Trial** – Best for exploring Plaid or building a hobby project. Free access, with a limit of 10 Production Items.",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://plaid.com/docs/quickstart/glossary",
+        "quote": "Sandbox is a free test environment that uses test data rather than real financial accounts.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.75,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://plaid.com/docs/api",
+        "quote": "OpenAPI is a standard format for describing RESTful APIs",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://plaid.com/docs/api",
+        "quote": "Comprehensive reference for integrating with Plaid API endpoints",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://plaid.com/docs/resources/mcp",
+        "quote": "The **Dashboard MCP server** is a remote MCP server hosted by Plaid.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://plaid.com/docs/api/webhooks/webhook-events/index.html.md",
+        "quote": "returns the webhooks Plaid sent to your account in the last 7 days",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "sandbox": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://plaid.com/docs/quickstart/glossary",
+        "quote": "Sandbox is a free test environment that uses test data rather than real financial accounts.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY_WITH_CAVEATS",
+    "evidence": [
+      {
+        "url": "https://plaid.com/docs/api",
+        "quote": "You can [request Production API access](https://dashboard.plaid.com/overview/production) via the Dashboard.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "Full Production access beyond the free trial's 10 Items must be requested, and products are billed per use.",
+    "evidence": [
+      {
+        "url": "https://plaid.com/docs/account/billing",
+        "quote": "Free access, with a limit of 10 Production Items.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "PLAID",
+    "name": "Plaid",
+    "tools": 70,
+    "triggers": 0,
+    "auth": [
+      "API_KEY"
+    ],
+    "managed_app": null,
+    "url": "https://docs.composio.dev/toolkits/plaid.md",
+    "mcp_variant": "PLAID_MCP",
+    "mcp_variant_auth": [
+      "DCR_OAUTH"
+    ]
+  },
+  "sources": [
+    "https://plaid.com/docs/api",
+    "https://plaid.com/docs/account/billing",
+    "https://plaid.com/docs/resources/mcp",
+    "https://plaid.com/docs/api/webhooks/webhook-events/index.html.md",
+    "https://plaid.com/docs/api/oauth",
+    "https://support.plaid.com/hc/en-us/articles/16148264475287-What-implementation-resources-are-available",
+    "https://plaid.com/docs/auth/coverage/database-auth/index.html.md",
+    "https://plaid.com/docs/quickstart/glossary"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {},
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {}
+  },
+  "errors": []
+}

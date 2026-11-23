@@ -1,0 +1,184 @@
+{
+  "id": 41,
+  "app": "Shopify",
+  "category": "Ecommerce",
+  "hint": "shopify.dev",
+  "docs_url": "https://shopify.dev/docs/api/usage/authentication",
+  "one_liner": {
+    "value": "Commerce platform for online stores and point of sale",
+    "evidence": [
+      {
+        "url": "https://www.shopify.com/in/pricing",
+        "quote": "Sell online, in person, and in AI chats",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "BEARER_TOKEN",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://shopify.dev/docs/apps/build/authentication-authorization/manage-credentials",
+        "quote": "the client secret authorizes it to make OAuth calls",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://shopify.dev/docs/apps/build/authentication-authorization/access-tokens",
+        "quote": "authenticates requests with a token sent in the X-Shopify-Access-Token header",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://community.shopify.com/t/can-i-use-shopify-apis-in-my-private-apps/246521",
+        "quote": "you can test out the APIs for free using a partner account that gives you access to development stores",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "GRAPHQL",
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://community.shopify.com/t/can-i-use-shopify-apis-in-my-private-apps/246521",
+        "quote": "Both the REST and GraphQL APIs have specific call limits",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://shopify.dev/docs/api/usage/authentication",
+        "quote": "To call a Shopify API, your code sends an access token in a request header",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://shopify.dev/docs/apps/build/shop-mcp",
+        "quote": "Shop MCP is a remote Model Context Protocol (MCP) server",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "sandbox": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://community.shopify.com/t/can-i-use-shopify-apis-in-my-private-apps/246521",
+        "quote": "development stores that you can use as a sandbox",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://community.shopify.com/t/can-i-use-shopify-apis-in-my-private-apps/246521",
+        "quote": "you can test out the APIs for free using a partner account that gives you access to development stores",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.4,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "SHOPIFY",
+    "name": "Shopify",
+    "tools": 478,
+    "triggers": 45,
+    "auth": [
+      "OAUTH2",
+      "S2S_OAUTH2"
+    ],
+    "managed_app": "No",
+    "url": "https://docs.composio.dev/toolkits/shopify.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://shopify.dev/docs/api/usage/authentication",
+    "https://www.shopify.com/in/pricing",
+    "https://shopify.dev/docs/apps/build/shop-mcp",
+    "https://shopify.dev/docs/apps/build/authentication-authorization/manage-credentials",
+    "https://www.shopify.com/in/legal/api-terms",
+    "https://shopify.dev/changelog/posts/add-shopping-and-shop-pay-checkout-to-any-agent-with-shop-mcp",
+    "https://shopify.dev/docs/apps/build/authentication-authorization/access-tokens",
+    "https://community.shopify.com/t/can-i-use-shopify-apis-in-my-private-apps/246521"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session",
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "webhooks": [
+            "ungrounded"
+          ]
+        },
+        "rules": {}
+      }
+    ],
+    "changes": [],
+    "open_flags": {
+      "webhooks": [
+        "ungrounded"
+      ]
+    }
+  },
+  "errors": []
+}
