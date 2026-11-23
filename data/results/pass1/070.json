@@ -1,0 +1,172 @@
+{
+  "id": 70,
+  "app": "Sentry",
+  "category": "Developer, Infra and Data platforms",
+  "hint": "docs.sentry.io/api",
+  "docs_url": "https://docs.sentry.io/api",
+  "one_liner": {
+    "value": "Application error monitoring and performance tracing",
+    "evidence": [
+      {
+        "url": "https://mcp.sentry.dev",
+        "quote": "searching errors, analyzing performance, triaging issues",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "BEARER_TOKEN",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.sentry.io/api/auth",
+        "quote": "Authentication tokens are passed using an auth header",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://docs.sentry.io/product/partnership-platform/oauth-integration",
+        "quote": "Sentry's OAuth integration allows third-party platforms to connect with existing Sentry customers.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "access": {
+    "value": "PAID_PLAN",
+    "evidence": [
+      {
+        "url": "https://sentry.io/pricing/?",
+        "quote": "API & third-party integrations",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.5,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.sentry.io/api",
+        "quote": "The Sentry web API is used to access the Sentry platform programmatically.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://docs.sentry.io/api",
+        "quote": "manage account-level resources, like organizations and teams, as well as manage and export data.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://mcp.sentry.dev",
+        "quote": "Connects AI assistants to Sentry for searching errors, analyzing performance, triaging issues",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.97,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://docs.sentry.io/api/ratelimits",
+        "quote": "We recommend using our webhooks, if possible.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY_WITH_CAVEATS",
+    "evidence": [
+      {
+        "url": "https://docs.sentry.io/product/partnership-platform/oauth-integration",
+        "quote": "Before implementing OAuth, Sentry must register your application.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.6,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "Public OAuth apps must be registered by Sentry's partnership team; API integrations are a Team-plan feature.",
+    "evidence": [
+      {
+        "url": "https://docs.sentry.io/product/partnership-platform/oauth-integration",
+        "quote": "Before implementing OAuth, Sentry must register your application.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.6,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "SENTRY",
+    "name": "Sentry",
+    "tools": 212,
+    "triggers": 0,
+    "auth": [
+      "OAUTH2"
+    ],
+    "managed_app": "Yes",
+    "url": "https://docs.composio.dev/toolkits/sentry.md",
+    "mcp_variant": "SENTRY_MCP",
+    "mcp_variant_auth": [
+      "DCR_OAUTH"
+    ]
+  },
+  "sources": [
+    "https://docs.sentry.io/api/auth",
+    "https://docs.sentry.io/api",
+    "https://mcp.sentry.dev",
+    "https://docs.sentry.io/api/permissions",
+    "https://blog.sentry.io/yes-sentry-has-an-mcp-server-and-its-pretty-good",
+    "https://docs.sentry.io/api/ratelimits",
+    "https://docs.sentry.io/product/partnership-platform/oauth-integration",
+    "https://sentry.io/pricing/?"
+  ],
+  "pass_name": "pass1",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session"
+  },
+  "errors": []
+}

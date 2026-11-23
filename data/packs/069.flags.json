@@ -1,0 +1,23 @@
+{
+ "round0": {
+  "grounding": {
+   "access": [
+    "ungrounded"
+   ],
+   "sandbox": [
+    "ungrounded"
+   ]
+  },
+  "rules": {
+   "access": [
+    "low_confidence"
+   ]
+  }
+ },
+ "todo": {
+  "access": [
+   "ungrounded",
+   "low_confidence"
+  ]
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "round0": {
+  "grounding": {
+   "sandbox": [
+    "ungrounded"
+   ]
+  },
+  "rules": {
+   "auth_methods": [
+    "maybe_incomplete_vs_composio:['OAUTH2']"
+   ]
+  }
+ },
+ "todo": {}
+}

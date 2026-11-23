@@ -1,0 +1,160 @@
+{
+  "id": 69,
+  "app": "Datadog",
+  "category": "Developer, Infra and Data platforms",
+  "hint": "docs.datadoghq.com/api",
+  "docs_url": "https://docs.datadoghq.com/api/latest",
+  "one_liner": {
+    "value": "Observability platform for metrics, logs, traces and security",
+    "evidence": [
+      {
+        "url": "https://www.datadoghq.com/product/ai/mcp-server",
+        "quote": "real-time access to unified observability data",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.datadoghq.com/api/latest",
+        "quote": "Authenticate to the API with an API key using the header DD-API-KEY.",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://docs.datadoghq.com/api/latest/scopes",
+        "quote": "You can use authorization scopes with OAuth2 clients for your Datadog Apps.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.datadoghq.com/api/latest",
+        "quote": "The Datadog API is an HTTP REST API.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://docs.datadoghq.com/api/latest",
+        "quote": "Use the Datadog API to access the Datadog platform programmatically.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://www.datadoghq.com/product/ai/mcp-server",
+        "quote": "Datadog MCP Server and Pup CLI give AI agents secure, real-time access",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.97,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://docs.datadoghq.com/api/latest/webhooks-integration",
+        "quote": "Configure your Datadog-Webhooks integration directly through the Datadog API.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://docs.datadoghq.com/api/latest",
+        "quote": "Authenticate to the API with an API key using the header DD-API-KEY.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.5,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "DATADOG",
+    "name": "Datadog",
+    "tools": 256,
+    "triggers": 0,
+    "auth": [
+      "OAUTH2",
+      "API_KEY",
+      "BEARER_TOKEN"
+    ],
+    "managed_app": "No",
+    "url": "https://docs.composio.dev/toolkits/datadog.md",
+    "mcp_variant": "DATADOG_MCP",
+    "mcp_variant_auth": [
+      "DCR_OAUTH"
+    ]
+  },
+  "sources": [
+    "https://docs.datadoghq.com/api/latest/authentication",
+    "https://docs.datadoghq.com/mcp_server.md",
+    "https://docs.datadoghq.com/api/latest/webhooks-integration",
+    "https://docs.datadoghq.com/api/latest/scopes",
+    "https://docs.datadoghq.com/api/latest",
+    "https://www.datadoghq.com/product/ai/mcp-server",
+    "https://docs.datadoghq.com/extend/integrations/api_integration.md",
+    "https://docs.datadoghq.com/mcp_server/setup.md"
+  ],
+  "pass_name": "pass1",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session"
+  },
+  "errors": []
+}

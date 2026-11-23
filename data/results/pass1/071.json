@@ -1,0 +1,160 @@
+{
+  "id": 71,
+  "app": "Notion",
+  "category": "Productivity and Project Management",
+  "hint": "developers.notion.com",
+  "docs_url": "https://developers.notion.com/guides/authorization/overview",
+  "one_liner": {
+    "value": "Connected workspace for docs, wikis, projects and databases",
+    "evidence": [
+      {
+        "url": "https://developers.notion.com/guides/mcp/overview",
+        "quote": "search your workspace, create and edit pages, and manage databases",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "BEARER_TOKEN",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.notion.com/guides/authorization/overview",
+        "quote": "Internal connections use a static credential called an internal connection API token, personal access tokens use a user-scoped static token, and OAuth integrations and public integrations use the OAuth 2.0 protocol.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://developers.notion.com/guides/authorization/overview",
+        "quote": "start by creating your connection in the Developer portal",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.notion.com/guides/authorization/overview",
+        "quote": "The API token will be used to authenticate REST API requests.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://developers.notion.com/guides/mcp/overview",
+        "quote": "Notion MCP lets your AI assistant search your workspace, create and edit pages, and manage databases.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developers.notion.com/guides/mcp/get-started-with-mcp",
+        "quote": "The remote server URL ishttps://mcp.notion.com/mcp.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.97,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developers.notion.com/reference/webhooks.md",
+        "quote": "Webhooks let your connection receive real-time updates from Notion.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://developers.notion.com/guides/authorization/overview",
+        "quote": "start by creating your connection in the Developer portal",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "NOTION",
+    "name": "Notion",
+    "tools": 60,
+    "triggers": 8,
+    "auth": [
+      "OAUTH2",
+      "API_KEY"
+    ],
+    "managed_app": "Yes",
+    "url": "https://docs.composio.dev/toolkits/notion.md",
+    "mcp_variant": "NOTION_MCP",
+    "mcp_variant_auth": [
+      "DCR_OAUTH"
+    ]
+  },
+  "sources": [
+    "https://developers.notion.com/guides/authorization/overview",
+    "https://www.notion.com/help/what-is-the-notion-developer-platform",
+    "https://developers.notion.com/guides/mcp/get-started-with-mcp",
+    "https://developers.notion.com/reference/webhooks.md",
+    "https://developers.notion.com/guides/connections-and-tokens/oauth-integrations/overview",
+    "https://www.notion.com/pricing",
+    "https://developers.notion.com/guides/mcp/overview",
+    "https://developers.notion.com/guides/authorization/credential-security.md"
+  ],
+  "pass_name": "pass1",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session"
+  },
+  "errors": []
+}

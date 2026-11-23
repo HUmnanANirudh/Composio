@@ -1,0 +1,39 @@
+{
+ "round0": {
+  "grounding": {
+   "access": [
+    "ungrounded"
+   ],
+   "webhooks": [
+    "ungrounded"
+   ],
+   "sandbox": [
+    "ungrounded"
+   ],
+   "buildability": [
+    "ungrounded"
+   ],
+   "main_blocker": [
+    "ungrounded"
+   ]
+  },
+  "rules": {
+   "access": [
+    "low_confidence"
+   ],
+   "buildability": [
+    "low_confidence"
+   ]
+  }
+ },
+ "todo": {
+  "access": [
+   "ungrounded",
+   "low_confidence"
+  ],
+  "buildability": [
+   "ungrounded",
+   "low_confidence"
+  ]
+ }
+}
