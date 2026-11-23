@@ -1,0 +1,30 @@
+[project]
+name = "app-research-agent"
+version = "0.1.0"
+description = "Agent that researches 100 apps for auth, access gating, API surface and agent-toolkit buildability"
+authors = [
+    { name = "HUmnanANirudh", email = "tanirudhganesh@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "composio>=0.34.0",
+    "groq>=1.7.0",
+    "httpx>=0.28.1",
+    "pydantic>=2.14.4",
+    "python-dotenv>=1.2.4",
+    "rich>=15.0.0",
+    "trafilatura>=2.3.1",
+]
+
+[project.scripts]
+research = "app_research_agent:main"
+
+[build-system]
+requires = ["uv_build>=0.9.17,<0.10.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+    "ruff>=0.17.6",
+]
