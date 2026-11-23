@@ -23,6 +23,7 @@ def main() -> None:
     with_apps(sub.add_parser("catalog", help="show Composio catalog match per app"))
     sh = with_apps(sub.add_parser("show", help="print final records"))
     sh.add_argument("--md", action="store_true", help="markdown table (for CI job summaries)")
+    sub.add_parser("connect-search", help="connect the search toolkit (Exa) via Composio")
     sub.add_parser("export", help="bundle results into data/results/results.json")
     sub.add_parser("evaluate", help="score pass 1 and final against the hand-checked sample")
     sub.add_parser("patterns", help="compute cross-app patterns")
@@ -50,6 +51,10 @@ def main() -> None:
         run(apps, verify_only=True, use_critic=not args.no_critic)
     elif args.cmd == "show":
         show(apps, args.md)
+    elif args.cmd == "connect-search":
+        from .connect import connect_search_toolkit
+
+        print(connect_search_toolkit())
     elif args.cmd == "export":
         from .pipeline import export
 

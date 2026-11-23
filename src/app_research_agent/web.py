@@ -244,15 +244,14 @@ class ComposioSearch:
                 f"{tk} is not connected for this Composio user; connect it at {link}"
             )
         tools = composio.tools.get_raw_composio_tools(toolkits=[tk], limit=200)
-        cands = [
-            t
-            for t in tools
-            if t.slug == f"{tk.upper()}_SEARCH"
-            or (
-                t.slug.endswith("_SEARCH")
-                and "query" in ((t.input_parameters or {}).get("required") or [])
-            )
-        ]
+
+        def required(t) -> set[str]:
+            return set((t.input_parameters or {}).get("required") or [])
+
+        # prefer <TK>_SEARCH; otherwise any *_SEARCH tool whose only required arg is `query`
+        exact = [t for t in tools if t.slug == f"{tk.upper()}_SEARCH"]
+        loose = [t for t in tools if t.slug.endswith("_SEARCH") and required(t) == {"query"}]
+        cands = exact + loose
         if not cands:
             raise RuntimeError(f"no search tool found in toolkit {tk}")
         self.tool = cands[0]

@@ -160,6 +160,7 @@ def critic(rec: AppRecord, sources: list[Source]) -> tuple[dict[str, list[str]],
         settings.critic_model,
         CRITIC.format(rubric=RUBRIC.split("Field definitions")[1]),
         user,
+        purpose="critic",
     )
     flags: dict[str, list[str]] = {}
     for f, v in (data.get("fields") or {}).items():
