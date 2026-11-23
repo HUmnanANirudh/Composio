@@ -8,3 +8,4 @@ data/cache/
 *.log
 data/results/usage.jsonl
 data/results/errors/
+.impeccable/review/

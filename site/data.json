@@ -1,0 +1,3785 @@
+{
+ "generated": "2026-11-23 18:18 UTC",
+ "repo": "https://github.com/HUmnanANirudh/Composio",
+ "page": "https://humnananirudh.github.io/Composio/",
+ "models": {
+  "extract": "openai/gpt-oss-120b",
+  "critic": "qwen/qwen3.8-27b",
+  "search": "composio session -> EXA_SEARCH"
+ },
+ "counts": {
+  "apps": 100,
+  "researched": 2
+ },
+ "patterns": {
+  "n": 2,
+  "headlines": [
+   {
+    "fig": "50%",
+    "text": "of apps (1 of 2) let a developer get working credentials alone; 1 is gated by a paid plan, an approval step, or sales."
+   },
+   {
+    "fig": "100%",
+    "text": "support OAuth 2.0, the dominant scheme; 1 accept a static API key or token, and most of those offer both."
+   },
+   {
+    "fig": "CRM and Sales",
+    "text": "is the most open category (100% self-serve); Support and Helpdesk is the most gated (0%)."
+   },
+   {
+    "fig": "0",
+    "text": "apps name '-' as the main blocker, the most common one."
+   },
+   {
+    "fig": "0",
+    "text": "easy wins: self-serve and buildable today, with no Composio toolkit yet. 1 needs outreach or a partnership."
+   },
+   {
+    "fig": "1",
+    "text": "of 2 vendors already ship an official MCP server."
+   }
+  ],
+  "auth_any": {
+   "OAUTH2": 2,
+   "BEARER_TOKEN": 1
+  },
+  "auth_primary": {
+   "OAUTH2": 2
+  },
+  "access": {
+   "SELF_SERVE_FREE": 1,
+   "APPROVAL": 1
+  },
+  "buildability": {
+   "READY": 1,
+   "NEEDS_OUTREACH": 1
+  },
+  "blockers": {},
+  "categories": [
+   {
+    "category": "CRM and Sales",
+    "n": 1,
+    "self_serve": 1,
+    "gated": 0,
+    "self_serve_pct": 100,
+    "access": {
+     "SELF_SERVE_FREE": 1
+    },
+    "build": {
+     "READY": 1
+    },
+    "auth": {
+     "BEARER_TOKEN": 1,
+     "OAUTH2": 1
+    }
+   },
+   {
+    "category": "Support and Helpdesk",
+    "n": 1,
+    "self_serve": 0,
+    "gated": 1,
+    "self_serve_pct": 0,
+    "access": {
+     "APPROVAL": 1
+    },
+    "build": {
+     "NEEDS_OUTREACH": 1
+    },
+    "auth": {
+     "OAUTH2": 1
+    }
+   }
+  ],
+  "official_mcp": 1,
+  "composio_coverage": 2,
+  "easy_wins": [],
+  "outreach": [
+   {
+    "id": 19,
+    "app": "Gorgias",
+    "category": "Support and Helpdesk",
+    "access": "APPROVAL",
+    "build": "NEEDS_OUTREACH",
+    "blocker": null,
+    "composio": "GORGIAS"
+   }
+  ],
+  "blocked": [],
+  "mcp_but_api_gated": []
+ },
+ "eval": {
+  "pass1": {
+   "overall": {
+    "correct": 13,
+    "total": 115,
+    "accuracy": 0.113
+   },
+   "per_field": {
+    "auth_methods": {
+     "correct": 1,
+     "total": 19,
+     "accuracy": 0.053
+    },
+    "access": {
+     "correct": 2,
+     "total": 20,
+     "accuracy": 0.1
+    },
+    "api_style": {
+     "correct": 3,
+     "total": 19,
+     "accuracy": 0.158
+    },
+    "api_breadth": {
+     "correct": 3,
+     "total": 19,
+     "accuracy": 0.158
+    },
+    "official_mcp": {
+     "correct": 2,
+     "total": 18,
+     "accuracy": 0.111
+    },
+    "buildability": {
+     "correct": 2,
+     "total": 20,
+     "accuracy": 0.1
+    }
+   },
+   "rows": [
+    {
+     "id": 2,
+     "app": "HubSpot",
+     "field": "auth_methods",
+     "status": "hit",
+     "agent": [
+      "BEARER_TOKEN",
+      "OAUTH2"
+     ],
+     "truth": {
+      "core": [
+       "OAUTH2",
+       "BEARER_TOKEN"
+      ],
+      "optional": [
+       "API_KEY",
+       "JWT"
+      ]
+     },
+     "accept": null,
+     "confidence": 1.0,
+     "flags": []
+    },
+    {
+     "id": 2,
+     "app": "HubSpot",
+     "field": "access",
+     "status": "hit",
+     "agent": "SELF_SERVE_FREE",
+     "truth": "SELF_SERVE_FREE",
+     "accept": null,
+     "confidence": 0.9,
+     "flags": []
+    },
+    {
+     "id": 2,
+     "app": "HubSpot",
+     "field": "api_style",
+     "status": "hit",
+     "agent": [
+      "REST"
+     ],
+     "truth": {
+      "core": [
+       "REST"
+      ],
+      "optional": []
+     },
+     "accept": null,
+     "confidence": 1.0,
+     "flags": []
+    },
+    {
+     "id": 2,
+     "app": "HubSpot",
+     "field": "api_breadth",
+     "status": "hit",
+     "agent": "BROAD",
+     "truth": "BROAD",
+     "accept": null,
+     "confidence": 0.8,
+     "flags": []
+    },
+    {
+     "id": 2,
+     "app": "HubSpot",
+     "field": "official_mcp",
+     "status": "hit",
+     "agent": true,
+     "truth": true,
+     "accept": null,
+     "confidence": 1.0,
+     "flags": []
+    },
+    {
+     "id": 2,
+     "app": "HubSpot",
+     "field": "buildability",
+     "status": "hit",
+     "agent": "READY",
+     "truth": "READY",
+     "accept": null,
+     "confidence": 1.0,
+     "flags": []
+    },
+    {
+     "id": 6,
+     "app": "Podio",
+     "field": "auth_methods",
+     "status": "miss",
+     "agent": [
+      "BASIC",
+      "OAUTH2"
+     ],
+     "truth": {
+      "core": [
+       "OAUTH2"
+      ],
+      "optional": []
+     },
+     "accept": null,
+     "confidence": 1.0,
+     "flags": []
+    },
+    {
+     "id": 6,
+     "app": "Podio",
+     "field": "access",
+     "status": "hit",
+     "agent": "SELF_SERVE_FREE",
+     "truth": "SELF_SERVE_FREE",
+     "accept": null,
+     "confidence": 1.0,
+     "flags": []
+    },
+    {
+     "id": 6,
+     "app": "Podio",
+     "field": "api_style",
+     "status": "hit",
+     "agent": [
+      "REST"
+     ],
+     "truth": {
+      "core": [
+       "REST"
+      ],
+      "optional": []
+     },
+     "accept": null,
+     "confidence": 1.0,
+     "flags": []
+    },
+    {
+     "id": 6,
+     "app": "Podio",
+     "field": "api_breadth",
+     "status": "hit",
+     "agent": "BROAD",
+     "truth": "BROAD",
+     "accept": null,
+     "confidence": 1.0,
+     "flags": []
+    },
+    {
+     "id": 6,
+     "app": "Podio",
+     "field": "official_mcp",
+     "status": "hit",
+     "agent": false,
+     "truth": false,
+     "accept": null,
+     "confidence": 1.0,
+     "flags": []
+    },
+    {
+     "id": 6,
+     "app": "Podio",
+     "field": "buildability",
+     "status": "hit",
+     "agent": "READY",
+     "truth": "READY",
+     "accept": null,
+     "confidence": 1.0,
+     "flags": []
+    },
+    {
+     "id": 19,
+     "app": "Gorgias",
+     "field": "auth_methods",
+     "status": "miss",
+     "agent": [
+      "OAUTH2"
+     ],
+     "truth": {
+      "core": [
+       "OAUTH2",
+       "BASIC"
+      ],
+      "optional": [
+       "API_KEY"
+      ]
+     },
+     "accept": null,
+     "confidence": 0.97,
+     "flags": []
+    },
+    {
+     "id": 19,
+     "app": "Gorgias",
+     "field": "access",
+     "status": "miss",
+     "agent": "SELF_SERVE_FREE",
+     "truth": "SELF_SERVE_TRIAL",
+     "accept": [
+      "APPROVAL"
+     ],
+     "confidence": 0.94,
+     "flags": []
+    },
+    {
+     "id": 19,
+     "app": "Gorgias",
+     "field": "api_style",
+     "status": "hit",
+     "agent": [
+      "REST"
+     ],
+     "truth": {
+      "core": [
+       "REST"
+      ],
+      "optional": []
+     },
+     "accept": null,
+     "confidence": 0.96,
+     "flags": []
+    },
+    {
+     "id": 19,
+     "app": "Gorgias",
+     "field": "api_breadth",
+     "status": "hit",
+     "agent": "BROAD",
+     "truth": "BROAD",
+     "accept": [
+      "MODERATE"
+     ],
+     "confidence": 0.2,
+     "flags": []
+    },
+    {
+     "id": 19,
+     "app": "Gorgias",
+     "field": "official_mcp",
+     "status": "miss",
+     "agent": false,
+     "truth": true,
+     "accept": null,
+     "confidence": 0.2,
+     "flags": []
+    },
+    {
+     "id": 19,
+     "app": "Gorgias",
+     "field": "buildability",
+     "status": "miss",
+     "agent": "READY",
+     "truth": "READY_WITH_CAVEATS",
+     "accept": null,
+     "confidence": 0.9,
+     "flags": []
+    },
+    {
+     "id": 20,
+     "app": "Gladly",
+     "field": "auth_methods",
+     "status": "missing"
+    },
+    {
+     "id": 20,
+     "app": "Gladly",
+     "field": "access",
+     "status": "missing"
+    },
+    {
+     "id": 20,
+     "app": "Gladly",
+     "field": "api_style",
+     "status": "missing"
+    },
+    {
+     "id": 20,
+     "app": "Gladly",
+     "field": "api_breadth",
+     "status": "missing"
+    },
+    {
+     "id": 20,
+     "app": "Gladly",
+     "field": "official_mcp",
+     "status": "missing"
+    },
+    {
+     "id": 20,
+     "app": "Gladly",
+     "field": "buildability",
+     "status": "missing"
+    },
+    {
+     "id": 22,
+     "app": "Twilio",
+     "field": "auth_methods",
+     "status": "missing"
+    },
+    {
+     "id": 22,
+     "app": "Twilio",
+     "field": "access",
+     "status": "missing"
+    },
+    {
+     "id": 22,
+     "app": "Twilio",
+     "field": "api_style",
+     "status": "missing"
+    },
+    {
+     "id": 22,
+     "app": "Twilio",
+     "field": "api_breadth",
+     "status": "missing"
+    },
+    {
+     "id": 22,
+     "app": "Twilio",
+     "field": "official_mcp",
+     "status": "missing"
+    },
+    {
+     "id": 22,
+     "app": "Twilio",
+     "field": "buildability",
+     "status": "missing"
+    },
+    {
+     "id": 24,
+     "app": "Lark (Larksuite)",
+     "field": "auth_methods",
+     "status": "missing"
+    },
+    {
+     "id": 24,
+     "app": "Lark (Larksuite)",
+     "field": "access",
+     "status": "missing"
+    },
+    {
+     "id": 24,
+     "app": "Lark (Larksuite)",
+     "field": "api_style",
+     "status": "missing"
+    },
+    {
+     "id": 24,
+     "app": "Lark (Larksuite)",
+     "field": "api_breadth",
+     "status": "missing"
+    },
+    {
+     "id": 24,
+     "app": "Lark (Larksuite)",
+     "field": "official_mcp",
+     "status": "missing"
+    },
+    {
+     "id": 24,
+     "app": "Lark (Larksuite)",
+     "field": "buildability",
+     "status": "missing"
+    },
+    {
+     "id": 39,
+     "app": "Threads (Meta)",
+     "field": "auth_methods",
+     "status": "missing"
+    },
+    {
+     "id": 39,
+     "app": "Threads (Meta)",
+     "field": "access",
+     "status": "missing"
+    },
+    {
+     "id": 39,
+     "app": "Threads (Meta)",
+     "field": "api_style",
+     "status": "missing"
+    },
+    {
+     "id": 39,
+     "app": "Threads (Meta)",
+     "field": "api_breadth",
+     "status": "missing"
+    },
+    {
+     "id": 39,
+     "app": "Threads (Meta)",
+     "field": "official_mcp",
+     "status": "missing"
+    },
+    {
+     "id": 39,
+     "app": "Threads (Meta)",
+     "field": "buildability",
+     "status": "missing"
+    },
+    {
+     "id": 40,
+     "app": "SendGrid",
+     "field": "auth_methods",
+     "status": "missing"
+    },
+    {
+     "id": 40,
+     "app": "SendGrid",
+     "field": "access",
+     "status": "missing"
+    },
+    {
+     "id": 40,
+     "app": "SendGrid",
+     "field": "api_style",
+     "status": "missing"
+    },
+    {
+     "id": 40,
+     "app": "SendGrid",
+     "field": "api_breadth",
+     "status": "missing"
+    },
+    {
+     "id": 40,
+     "app": "SendGrid",
+     "field": "official_mcp",
+     "status": "unscored"
+    },
+    {
+     "id": 40,
+     "app": "SendGrid",
+     "field": "buildability",
+     "status": "missing"
+    },
+    {
+     "id": 47,
+     "app": "Ecwid",
+     "field": "auth_methods",
+     "status": "missing"
+    },
+    {
+     "id": 47,
+     "app": "Ecwid",
+     "field": "access",
+     "status": "missing"
+    },
+    {
+     "id": 47,
+     "app": "Ecwid",
+     "field": "api_style",
+     "status": "missing"
+    },
+    {
+     "id": 47,
+     "app": "Ecwid",
+     "field": "api_breadth",
+     "status": "missing"
+    },
+    {
+     "id": 47,
+     "app": "Ecwid",
+     "field": "official_mcp",
+     "status": "missing"
+    },
+    {
+     "id": 47,
+     "app": "Ecwid",
+     "field": "buildability",
+     "status": "missing"
+    },
+    {
+     "id": 49,
+     "app": "Amazon Selling Partner",
+     "field": "auth_methods",
+     "status": "missing"
+    },
+    {
+     "id": 49,
+     "app": "Amazon Selling Partner",
+     "field": "access",
+     "status": "missing"
+    },
+    {
+     "id": 49,
+     "app": "Amazon Selling Partner",
+     "field": "api_style",
+     "status": "missing"
+    },
+    {
+     "id": 49,
+     "app": "Amazon Selling Partner",
+     "field": "api_breadth",
+     "status": "missing"
+    },
+    {
+     "id": 49,
+     "app": "Amazon Selling Partner",
+     "field": "official_mcp",
+     "status": "unscored"
+    },
+    {
+     "id": 49,
+     "app": "Amazon Selling Partner",
+     "field": "buildability",
+     "status": "missing"
+    },
+    {
+     "id": 58,
+     "app": "Sherlock",
+     "field": "auth_methods",
+     "status": "missing"
+    },
+    {
+     "id": 58,
+     "app": "Sherlock",
+     "field": "access",
+     "status": "missing"
+    },
+    {
+     "id": 58,
+     "app": "Sherlock",
+     "field": "api_style",
+     "status": "missing"
+    },
+    {
+     "id": 58,
+     "app": "Sherlock",
+     "field": "api_breadth",
+     "status": "missing"
+    },
+    {
+     "id": 58,
+     "app": "Sherlock",
+     "field": "official_mcp",
+     "status": "missing"
+    },
+    {
+     "id": 58,
+     "app": "Sherlock",
+     "field": "buildability",
+     "status": "missing"
+    },
+    {
+     "id": 60,
+     "app": "Clay",
+     "field": "auth_methods",
+     "status": "missing"
+    },
+    {
+     "id": 60,
+     "app": "Clay",
+     "field": "access",
+     "status": "missing"
+    },
+    {
+     "id": 60,
+     "app": "Clay",
+     "field": "api_style",
+     "status": "missing"
+    },
+    {
+     "id": 60,
+     "app": "Clay",
+     "field": "api_breadth",
+     "status": "missing"
+    },
+    {
+     "id": 60,
+     "app": "Clay",
+     "field": "official_mcp",
+     "status": "missing"
+    },
+    {
+     "id": 60,
+     "app": "Clay",
+     "field": "buildability",
+     "status": "missing"
+    },
+    {
+     "id": 61,
+     "app": "GitHub",
+     "field": "auth_methods",
+     "status": "missing"
+    },
+    {
+     "id": 61,
+     "app": "GitHub",
+     "field": "access",
+     "status": "missing"
+    },
+    {
+     "id": 61,
+     "app": "GitHub",
+     "field": "api_style",
+     "status": "missing"
+    },
+    {
+     "id": 61,
+     "app": "GitHub",
+     "field": "api_breadth",
+     "status": "missing"
+    },
+    {
+     "id": 61,
+     "app": "GitHub",
+     "field": "official_mcp",
+     "status": "missing"
+    },
+    {
+     "id": 61,
+     "app": "GitHub",
+     "field": "buildability",
+     "status": "missing"
+    },
+    {
+     "id": 64,
+     "app": "Cloudflare",
+     "field": "auth_methods",
+     "status": "missing"
+    },
+    {
+     "id": 64,
+     "app": "Cloudflare",
+     "field": "access",
+     "status": "missing"
+    },
+    {
+     "id": 64,
+     "app": "Cloudflare",
+     "field": "api_style",
+     "status": "missing"
+    },
+    {
+     "id": 64,
+     "app": "Cloudflare",
+     "field": "api_breadth",
+     "status": "missing"
+    },
+    {
+     "id": 64,
+     "app": "Cloudflare",
+     "field": "official_mcp",
+     "status": "missing"
+    },
+    {
+     "id": 64,
+     "app": "Cloudflare",
+     "field": "buildability",
+     "status": "missing"
+    },
+    {
+     "id": 72,
+     "app": "Airtable",
+     "field": "auth_methods",
+     "status": "missing"
+    },
+    {
+     "id": 72,
+     "app": "Airtable",
+     "field": "access",
+     "status": "missing"
+    },
+    {
+     "id": 72,
+     "app": "Airtable",
+     "field": "api_style",
+     "status": "missing"
+    },
+    {
+     "id": 72,
+     "app": "Airtable",
+     "field": "api_breadth",
+     "status": "missing"
+    },
+    {
+     "id": 72,
+     "app": "Airtable",
+     "field": "official_mcp",
+     "status": "missing"
+    },
+    {
+     "id": 72,
+     "app": "Airtable",
+     "field": "buildability",
+     "status": "missing"
+    },
+    {
+     "id": 80,
+     "app": "Harvest",
+     "field": "auth_methods",
+     "status": "missing"
+    },
+    {
+     "id": 80,
+     "app": "Harvest",
+     "field": "access",
+     "status": "missing"
+    },
+    {
+     "id": 80,
+     "app": "Harvest",
+     "field": "api_style",
+     "status": "missing"
+    },
+    {
+     "id": 80,
+     "app": "Harvest",
+     "field": "api_breadth",
+     "status": "missing"
+    },
+    {
+     "id": 80,
+     "app": "Harvest",
+     "field": "official_mcp",
+     "status": "missing"
+    },
+    {
+     "id": 80,
+     "app": "Harvest",
+     "field": "buildability",
+     "status": "missing"
+    },
+    {
+     "id": 82,
+     "app": "Plaid",
+     "field": "auth_methods",
+     "status": "missing"
+    },
+    {
+     "id": 82,
+     "app": "Plaid",
+     "field": "access",
+     "status": "missing"
+    },
+    {
+     "id": 82,
+     "app": "Plaid",
+     "field": "api_style",
+     "status": "missing"
+    },
+    {
+     "id": 82,
+     "app": "Plaid",
+     "field": "api_breadth",
+     "status": "missing"
+    },
+    {
+     "id": 82,
+     "app": "Plaid",
+     "field": "official_mcp",
+     "status": "missing"
+    },
+    {
+     "id": 82,
+     "app": "Plaid",
+     "field": "buildability",
+     "status": "missing"
+    },
+    {
+     "id": 85,
+     "app": "iPayX",
+     "field": "auth_methods",
+     "status": "missing"
+    },
+    {
+     "id": 85,
+     "app": "iPayX",
+     "field": "access",
+     "status": "missing"
+    },
+    {
+     "id": 85,
+     "app": "iPayX",
+     "field": "api_style",
+     "status": "missing"
+    },
+    {
+     "id": 85,
+     "app": "iPayX",
+     "field": "api_breadth",
+     "status": "missing"
+    },
+    {
+     "id": 85,
+     "app": "iPayX",
+     "field": "official_mcp",
+     "status": "missing"
+    },
+    {
+     "id": 85,
+     "app": "iPayX",
+     "field": "buildability",
+     "status": "missing"
+    },
+    {
+     "id": 92,
+     "app": "Otter AI",
+     "field": "auth_methods",
+     "status": "unscored"
+    },
+    {
+     "id": 92,
+     "app": "Otter AI",
+     "field": "access",
+     "status": "missing"
+    },
+    {
+     "id": 92,
+     "app": "Otter AI",
+     "field": "api_style",
+     "status": "unscored"
+    },
+    {
+     "id": 92,
+     "app": "Otter AI",
+     "field": "api_breadth",
+     "status": "unscored"
+    },
+    {
+     "id": 92,
+     "app": "Otter AI",
+     "field": "official_mcp",
+     "status": "missing"
+    },
+    {
+     "id": 92,
+     "app": "Otter AI",
+     "field": "buildability",
+     "status": "missing"
+    },
+    {
+     "id": 98,
+     "app": "Mermaid CLI",
+     "field": "auth_methods",
+     "status": "missing"
+    },
+    {
+     "id": 98,
+     "app": "Mermaid CLI",
+     "field": "access",
+     "status": "missing"
+    },
+    {
+     "id": 98,
+     "app": "Mermaid CLI",
+     "field": "api_style",
+     "status": "missing"
+    },
+    {
+     "id": 98,
+     "app": "Mermaid CLI",
+     "field": "api_breadth",
+     "status": "missing"
+    },
+    {
+     "id": 98,
+     "app": "Mermaid CLI",
+     "field": "official_mcp",
+     "status": "missing"
+    },
+    {
+     "id": 98,
+     "app": "Mermaid CLI",
+     "field": "buildability",
+     "status": "missing"
+    }
+   ],
+   "calibration": [
+    {
+     "bucket": "high (>=0.75)",
+     "correct": 12,
+     "total": 16,
+     "accuracy": 0.75
+    },
+    {
+     "bucket": "low (<0.5)",
+     "correct": 1,
+     "total": 2,
+     "accuracy": 0.5
+    }
+   ]
+  },
+  "final": {
+   "overall": {
+    "correct": 9,
+    "total": 115,
+    "accuracy": 0.078
+   },
+   "per_field": {
+    "auth_methods": {
+     "correct": 1,
+     "total": 19,
+     "accuracy": 0.053
+    },
+    "access": {
+     "correct": 2,
+     "total": 20,
+     "accuracy": 0.1
+    },
+    "api_style": {
+     "correct": 2,
+     "total": 19,
+     "accuracy": 0.105
+    },
+    "api_breadth": {
+     "correct": 2,
+     "total": 19,
+     "accuracy": 0.105
+    },
+    "official_mcp": {
+     "correct": 1,
+     "total": 18,
+     "accuracy": 0.056
+    },
+    "buildability": {
+     "correct": 1,
+     "total": 20,
+     "accuracy": 0.05
+    }
+   },
+   "rows": [
+    {
+     "id": 2,
+     "app": "HubSpot",
+     "field": "auth_methods",
+     "status": "hit",
+     "agent": [
+      "BEARER_TOKEN",
+      "OAUTH2"
+     ],
+     "truth": {
+      "core": [
+       "OAUTH2",
+       "BEARER_TOKEN"
+      ],
+      "optional": [
+       "API_KEY",
+       "JWT"
+      ]
+     },
+     "accept": null,
+     "confidence": 1.0,
+     "flags": []
+    },
+    {
+     "id": 2,
+     "app": "HubSpot",
+     "field": "access",
+     "status": "hit",
+     "agent": "SELF_SERVE_FREE",
+     "truth": "SELF_SERVE_FREE",
+     "accept": null,
+     "confidence": 1.0,
+     "flags": []
+    },
+    {
+     "id": 2,
+     "app": "HubSpot",
+     "field": "api_style",
+     "status": "hit",
+     "agent": [
+      "REST"
+     ],
+     "truth": {
+      "core": [
+       "REST"
+      ],
+      "optional": []
+     },
+     "accept": null,
+     "confidence": 1.0,
+     "flags": []
+    },
+    {
+     "id": 2,
+     "app": "HubSpot",
+     "field": "api_breadth",
+     "status": "hit",
+     "agent": "BROAD",
+     "truth": "BROAD",
+     "accept": null,
+     "confidence": 0.9,
+     "flags": []
+    },
+    {
+     "id": 2,
+     "app": "HubSpot",
+     "field": "official_mcp",
+     "status": "hit",
+     "agent": true,
+     "truth": true,
+     "accept": null,
+     "confidence": 1.0,
+     "flags": []
+    },
+    {
+     "id": 2,
+     "app": "HubSpot",
+     "field": "buildability",
+     "status": "hit",
+     "agent": "READY",
+     "truth": "READY",
+     "accept": null,
+     "confidence": 1.0,
+     "flags": []
+    },
+    {
+     "id": 6,
+     "app": "Podio",
+     "field": "auth_methods",
+     "status": "missing"
+    },
+    {
+     "id": 6,
+     "app": "Podio",
+     "field": "access",
+     "status": "missing"
+    },
+    {
+     "id": 6,
+     "app": "Podio",
+     "field": "api_style",
+     "status": "missing"
+    },
+    {
+     "id": 6,
+     "app": "Podio",
+     "field": "api_breadth",
+     "status": "missing"
+    },
+    {
+     "id": 6,
+     "app": "Podio",
+     "field": "official_mcp",
+     "status": "missing"
+    },
+    {
+     "id": 6,
+     "app": "Podio",
+     "field": "buildability",
+     "status": "missing"
+    },
+    {
+     "id": 19,
+     "app": "Gorgias",
+     "field": "auth_methods",
+     "status": "miss",
+     "agent": [
+      "OAUTH2"
+     ],
+     "truth": {
+      "core": [
+       "OAUTH2",
+       "BASIC"
+      ],
+      "optional": [
+       "API_KEY"
+      ]
+     },
+     "accept": null,
+     "confidence": 1.0,
+     "flags": [
+      "maybe_incomplete_vs_composio:['API_KEY', 'BEARER_TOKEN']"
+     ]
+    },
+    {
+     "id": 19,
+     "app": "Gorgias",
+     "field": "access",
+     "status": "hit",
+     "agent": "APPROVAL",
+     "truth": "SELF_SERVE_TRIAL",
+     "accept": [
+      "APPROVAL"
+     ],
+     "confidence": 0.85,
+     "flags": [
+      "critic_wrong:PARTNERSHIP (S8 requires contacting techpartners@gorgias.com to convert a trial to a developer account, indicating a partnership gate.)"
+     ]
+    },
+    {
+     "id": 19,
+     "app": "Gorgias",
+     "field": "api_style",
+     "status": "hit",
+     "agent": [
+      "REST"
+     ],
+     "truth": {
+      "core": [
+       "REST"
+      ],
+      "optional": []
+     },
+     "accept": null,
+     "confidence": 1.0,
+     "flags": []
+    },
+    {
+     "id": 19,
+     "app": "Gorgias",
+     "field": "api_breadth",
+     "status": "hit",
+     "agent": "MODERATE",
+     "truth": "BROAD",
+     "accept": [
+      "MODERATE"
+     ],
+     "confidence": 0.05,
+     "flags": [
+      "ungrounded",
+      "low_confidence"
+     ]
+    },
+    {
+     "id": 19,
+     "app": "Gorgias",
+     "field": "official_mcp",
+     "status": "miss",
+     "agent": false,
+     "truth": true,
+     "accept": null,
+     "confidence": 0.05,
+     "flags": [
+      "ungrounded",
+      "low_confidence"
+     ]
+    },
+    {
+     "id": 19,
+     "app": "Gorgias",
+     "field": "buildability",
+     "status": "miss",
+     "agent": "NEEDS_OUTREACH",
+     "truth": "READY_WITH_CAVEATS",
+     "accept": null,
+     "confidence": 0.25,
+     "flags": [
+      "ungrounded"
+     ]
+    },
+    {
+     "id": 20,
+     "app": "Gladly",
+     "field": "auth_methods",
+     "status": "missing"
+    },
+    {
+     "id": 20,
+     "app": "Gladly",
+     "field": "access",
+     "status": "missing"
+    },
+    {
+     "id": 20,
+     "app": "Gladly",
+     "field": "api_style",
+     "status": "missing"
+    },
+    {
+     "id": 20,
+     "app": "Gladly",
+     "field": "api_breadth",
+     "status": "missing"
+    },
+    {
+     "id": 20,
+     "app": "Gladly",
+     "field": "official_mcp",
+     "status": "missing"
+    },
+    {
+     "id": 20,
+     "app": "Gladly",
+     "field": "buildability",
+     "status": "missing"
+    },
+    {
+     "id": 22,
+     "app": "Twilio",
+     "field": "auth_methods",
+     "status": "missing"
+    },
+    {
+     "id": 22,
+     "app": "Twilio",
+     "field": "access",
+     "status": "missing"
+    },
+    {
+     "id": 22,
+     "app": "Twilio",
+     "field": "api_style",
+     "status": "missing"
+    },
+    {
+     "id": 22,
+     "app": "Twilio",
+     "field": "api_breadth",
+     "status": "missing"
+    },
+    {
+     "id": 22,
+     "app": "Twilio",
+     "field": "official_mcp",
+     "status": "missing"
+    },
+    {
+     "id": 22,
+     "app": "Twilio",
+     "field": "buildability",
+     "status": "missing"
+    },
+    {
+     "id": 24,
+     "app": "Lark (Larksuite)",
+     "field": "auth_methods",
+     "status": "missing"
+    },
+    {
+     "id": 24,
+     "app": "Lark (Larksuite)",
+     "field": "access",
+     "status": "missing"
+    },
+    {
+     "id": 24,
+     "app": "Lark (Larksuite)",
+     "field": "api_style",
+     "status": "missing"
+    },
+    {
+     "id": 24,
+     "app": "Lark (Larksuite)",
+     "field": "api_breadth",
+     "status": "missing"
+    },
+    {
+     "id": 24,
+     "app": "Lark (Larksuite)",
+     "field": "official_mcp",
+     "status": "missing"
+    },
+    {
+     "id": 24,
+     "app": "Lark (Larksuite)",
+     "field": "buildability",
+     "status": "missing"
+    },
+    {
+     "id": 39,
+     "app": "Threads (Meta)",
+     "field": "auth_methods",
+     "status": "missing"
+    },
+    {
+     "id": 39,
+     "app": "Threads (Meta)",
+     "field": "access",
+     "status": "missing"
+    },
+    {
+     "id": 39,
+     "app": "Threads (Meta)",
+     "field": "api_style",
+     "status": "missing"
+    },
+    {
+     "id": 39,
+     "app": "Threads (Meta)",
+     "field": "api_breadth",
+     "status": "missing"
+    },
+    {
+     "id": 39,
+     "app": "Threads (Meta)",
+     "field": "official_mcp",
+     "status": "missing"
+    },
+    {
+     "id": 39,
+     "app": "Threads (Meta)",
+     "field": "buildability",
+     "status": "missing"
+    },
+    {
+     "id": 40,
+     "app": "SendGrid",
+     "field": "auth_methods",
+     "status": "missing"
+    },
+    {
+     "id": 40,
+     "app": "SendGrid",
+     "field": "access",
+     "status": "missing"
+    },
+    {
+     "id": 40,
+     "app": "SendGrid",
+     "field": "api_style",
+     "status": "missing"
+    },
+    {
+     "id": 40,
+     "app": "SendGrid",
+     "field": "api_breadth",
+     "status": "missing"
+    },
+    {
+     "id": 40,
+     "app": "SendGrid",
+     "field": "official_mcp",
+     "status": "unscored"
+    },
+    {
+     "id": 40,
+     "app": "SendGrid",
+     "field": "buildability",
+     "status": "missing"
+    },
+    {
+     "id": 47,
+     "app": "Ecwid",
+     "field": "auth_methods",
+     "status": "missing"
+    },
+    {
+     "id": 47,
+     "app": "Ecwid",
+     "field": "access",
+     "status": "missing"
+    },
+    {
+     "id": 47,
+     "app": "Ecwid",
+     "field": "api_style",
+     "status": "missing"
+    },
+    {
+     "id": 47,
+     "app": "Ecwid",
+     "field": "api_breadth",
+     "status": "missing"
+    },
+    {
+     "id": 47,
+     "app": "Ecwid",
+     "field": "official_mcp",
+     "status": "missing"
+    },
+    {
+     "id": 47,
+     "app": "Ecwid",
+     "field": "buildability",
+     "status": "missing"
+    },
+    {
+     "id": 49,
+     "app": "Amazon Selling Partner",
+     "field": "auth_methods",
+     "status": "missing"
+    },
+    {
+     "id": 49,
+     "app": "Amazon Selling Partner",
+     "field": "access",
+     "status": "missing"
+    },
+    {
+     "id": 49,
+     "app": "Amazon Selling Partner",
+     "field": "api_style",
+     "status": "missing"
+    },
+    {
+     "id": 49,
+     "app": "Amazon Selling Partner",
+     "field": "api_breadth",
+     "status": "missing"
+    },
+    {
+     "id": 49,
+     "app": "Amazon Selling Partner",
+     "field": "official_mcp",
+     "status": "unscored"
+    },
+    {
+     "id": 49,
+     "app": "Amazon Selling Partner",
+     "field": "buildability",
+     "status": "missing"
+    },
+    {
+     "id": 58,
+     "app": "Sherlock",
+     "field": "auth_methods",
+     "status": "missing"
+    },
+    {
+     "id": 58,
+     "app": "Sherlock",
+     "field": "access",
+     "status": "missing"
+    },
+    {
+     "id": 58,
+     "app": "Sherlock",
+     "field": "api_style",
+     "status": "missing"
+    },
+    {
+     "id": 58,
+     "app": "Sherlock",
+     "field": "api_breadth",
+     "status": "missing"
+    },
+    {
+     "id": 58,
+     "app": "Sherlock",
+     "field": "official_mcp",
+     "status": "missing"
+    },
+    {
+     "id": 58,
+     "app": "Sherlock",
+     "field": "buildability",
+     "status": "missing"
+    },
+    {
+     "id": 60,
+     "app": "Clay",
+     "field": "auth_methods",
+     "status": "missing"
+    },
+    {
+     "id": 60,
+     "app": "Clay",
+     "field": "access",
+     "status": "missing"
+    },
+    {
+     "id": 60,
+     "app": "Clay",
+     "field": "api_style",
+     "status": "missing"
+    },
+    {
+     "id": 60,
+     "app": "Clay",
+     "field": "api_breadth",
+     "status": "missing"
+    },
+    {
+     "id": 60,
+     "app": "Clay",
+     "field": "official_mcp",
+     "status": "missing"
+    },
+    {
+     "id": 60,
+     "app": "Clay",
+     "field": "buildability",
+     "status": "missing"
+    },
+    {
+     "id": 61,
+     "app": "GitHub",
+     "field": "auth_methods",
+     "status": "missing"
+    },
+    {
+     "id": 61,
+     "app": "GitHub",
+     "field": "access",
+     "status": "missing"
+    },
+    {
+     "id": 61,
+     "app": "GitHub",
+     "field": "api_style",
+     "status": "missing"
+    },
+    {
+     "id": 61,
+     "app": "GitHub",
+     "field": "api_breadth",
+     "status": "missing"
+    },
+    {
+     "id": 61,
+     "app": "GitHub",
+     "field": "official_mcp",
+     "status": "missing"
+    },
+    {
+     "id": 61,
+     "app": "GitHub",
+     "field": "buildability",
+     "status": "missing"
+    },
+    {
+     "id": 64,
+     "app": "Cloudflare",
+     "field": "auth_methods",
+     "status": "missing"
+    },
+    {
+     "id": 64,
+     "app": "Cloudflare",
+     "field": "access",
+     "status": "missing"
+    },
+    {
+     "id": 64,
+     "app": "Cloudflare",
+     "field": "api_style",
+     "status": "missing"
+    },
+    {
+     "id": 64,
+     "app": "Cloudflare",
+     "field": "api_breadth",
+     "status": "missing"
+    },
+    {
+     "id": 64,
+     "app": "Cloudflare",
+     "field": "official_mcp",
+     "status": "missing"
+    },
+    {
+     "id": 64,
+     "app": "Cloudflare",
+     "field": "buildability",
+     "status": "missing"
+    },
+    {
+     "id": 72,
+     "app": "Airtable",
+     "field": "auth_methods",
+     "status": "missing"
+    },
+    {
+     "id": 72,
+     "app": "Airtable",
+     "field": "access",
+     "status": "missing"
+    },
+    {
+     "id": 72,
+     "app": "Airtable",
+     "field": "api_style",
+     "status": "missing"
+    },
+    {
+     "id": 72,
+     "app": "Airtable",
+     "field": "api_breadth",
+     "status": "missing"
+    },
+    {
+     "id": 72,
+     "app": "Airtable",
+     "field": "official_mcp",
+     "status": "missing"
+    },
+    {
+     "id": 72,
+     "app": "Airtable",
+     "field": "buildability",
+     "status": "missing"
+    },
+    {
+     "id": 80,
+     "app": "Harvest",
+     "field": "auth_methods",
+     "status": "missing"
+    },
+    {
+     "id": 80,
+     "app": "Harvest",
+     "field": "access",
+     "status": "missing"
+    },
+    {
+     "id": 80,
+     "app": "Harvest",
+     "field": "api_style",
+     "status": "missing"
+    },
+    {
+     "id": 80,
+     "app": "Harvest",
+     "field": "api_breadth",
+     "status": "missing"
+    },
+    {
+     "id": 80,
+     "app": "Harvest",
+     "field": "official_mcp",
+     "status": "missing"
+    },
+    {
+     "id": 80,
+     "app": "Harvest",
+     "field": "buildability",
+     "status": "missing"
+    },
+    {
+     "id": 82,
+     "app": "Plaid",
+     "field": "auth_methods",
+     "status": "missing"
+    },
+    {
+     "id": 82,
+     "app": "Plaid",
+     "field": "access",
+     "status": "missing"
+    },
+    {
+     "id": 82,
+     "app": "Plaid",
+     "field": "api_style",
+     "status": "missing"
+    },
+    {
+     "id": 82,
+     "app": "Plaid",
+     "field": "api_breadth",
+     "status": "missing"
+    },
+    {
+     "id": 82,
+     "app": "Plaid",
+     "field": "official_mcp",
+     "status": "missing"
+    },
+    {
+     "id": 82,
+     "app": "Plaid",
+     "field": "buildability",
+     "status": "missing"
+    },
+    {
+     "id": 85,
+     "app": "iPayX",
+     "field": "auth_methods",
+     "status": "missing"
+    },
+    {
+     "id": 85,
+     "app": "iPayX",
+     "field": "access",
+     "status": "missing"
+    },
+    {
+     "id": 85,
+     "app": "iPayX",
+     "field": "api_style",
+     "status": "missing"
+    },
+    {
+     "id": 85,
+     "app": "iPayX",
+     "field": "api_breadth",
+     "status": "missing"
+    },
+    {
+     "id": 85,
+     "app": "iPayX",
+     "field": "official_mcp",
+     "status": "missing"
+    },
+    {
+     "id": 85,
+     "app": "iPayX",
+     "field": "buildability",
+     "status": "missing"
+    },
+    {
+     "id": 92,
+     "app": "Otter AI",
+     "field": "auth_methods",
+     "status": "unscored"
+    },
+    {
+     "id": 92,
+     "app": "Otter AI",
+     "field": "access",
+     "status": "missing"
+    },
+    {
+     "id": 92,
+     "app": "Otter AI",
+     "field": "api_style",
+     "status": "unscored"
+    },
+    {
+     "id": 92,
+     "app": "Otter AI",
+     "field": "api_breadth",
+     "status": "unscored"
+    },
+    {
+     "id": 92,
+     "app": "Otter AI",
+     "field": "official_mcp",
+     "status": "missing"
+    },
+    {
+     "id": 92,
+     "app": "Otter AI",
+     "field": "buildability",
+     "status": "missing"
+    },
+    {
+     "id": 98,
+     "app": "Mermaid CLI",
+     "field": "auth_methods",
+     "status": "missing"
+    },
+    {
+     "id": 98,
+     "app": "Mermaid CLI",
+     "field": "access",
+     "status": "missing"
+    },
+    {
+     "id": 98,
+     "app": "Mermaid CLI",
+     "field": "api_style",
+     "status": "missing"
+    },
+    {
+     "id": 98,
+     "app": "Mermaid CLI",
+     "field": "api_breadth",
+     "status": "missing"
+    },
+    {
+     "id": 98,
+     "app": "Mermaid CLI",
+     "field": "official_mcp",
+     "status": "missing"
+    },
+    {
+     "id": 98,
+     "app": "Mermaid CLI",
+     "field": "buildability",
+     "status": "missing"
+    }
+   ],
+   "calibration": [
+    {
+     "bucket": "high (>=0.75)",
+     "correct": 8,
+     "total": 9,
+     "accuracy": 0.889
+    },
+    {
+     "bucket": "low (<0.5)",
+     "correct": 1,
+     "total": 3,
+     "accuracy": 0.333
+    }
+   ]
+  }
+ },
+ "ground_truth": {
+  "about": {
+   "sampling": "Stratified random: 2 apps per category, random.Random(2026), drawn BEFORE any agent run.",
+   "method": "Each field read from official docs/pricing pages (URLs + verbatim quotes below). Fields marked null are unscored because the docs were contested or unreadable.",
+   "checked_by": "Claude (claude-opus-5-5) reading official docs via web fetch on 2026-11-23; human spot-check pending (see human_review)",
+   "auth_rule": "auth_methods/api_style are scored correct when core <= agent <= core|optional, treating API_KEY and BEARER_TOKEN as equivalent.",
+   "revisions": [
+    {
+     "date": "2026-11-23",
+     "app": "Clay",
+     "change": "was unscored (CONTESTED) -> scored",
+     "why": "The hand check only read university.clay.com and clay.com. The agent's docs crawler probed developers.clay.com and found the Public API docs, which a re-check confirmed. Logged as a case where the agent corrected the answer key."
+    }
+   ]
+  },
+  "apps": [
+   {
+    "id": 2,
+    "app": "HubSpot",
+    "notes": "",
+    "truth": {
+     "auth_methods": {
+      "core": [
+       "OAUTH2",
+       "BEARER_TOKEN"
+      ],
+      "optional": [
+       "API_KEY",
+       "JWT"
+      ]
+     },
+     "access": "SELF_SERVE_FREE",
+     "api_style": {
+      "core": [
+       "REST"
+      ],
+      "optional": []
+     },
+     "api_breadth": "BROAD",
+     "official_mcp": true,
+     "buildability": "READY"
+    },
+    "accept": {},
+    "evidence": {
+     "auth_methods": {
+      "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/account-service-keys.md",
+      "quote": "You can then include your service key as a Bearer token"
+     },
+     "access": {
+      "url": "https://developers.hubspot.com/docs/getting-started/account-types.md",
+      "quote": "It can be free or paid, and is used as your production environment."
+     },
+     "official_mcp": {
+      "url": "https://developers.hubspot.com/docs/build-with-ai/remote-mcp-server.md",
+      "quote": "The remote HubSpot MCP server is a publicly hosted endpoint"
+     }
+    }
+   },
+   {
+    "id": 6,
+    "app": "Podio",
+    "notes": "Free plan lists API integrations at 1000 calls/hour.",
+    "truth": {
+     "auth_methods": {
+      "core": [
+       "OAUTH2"
+      ],
+      "optional": []
+     },
+     "access": "SELF_SERVE_FREE",
+     "api_style": {
+      "core": [
+       "REST"
+      ],
+      "optional": []
+     },
+     "api_breadth": "BROAD",
+     "official_mcp": false,
+     "buildability": "READY"
+    },
+    "accept": {},
+    "evidence": {
+     "auth_methods": {
+      "url": "https://developers.podio.com/authentication",
+      "quote": "The Podio API uses the OAuth2 protocol for authentication."
+     },
+     "access": {
+      "url": "https://developers.podio.com/authentication",
+      "quote": "Before you can use the Podio API you must register your application."
+     }
+    }
+   },
+   {
+    "id": 19,
+    "app": "Gorgias",
+    "notes": "Developer sandbox needs a draft app to be approved.",
+    "truth": {
+     "auth_methods": {
+      "core": [
+       "OAUTH2",
+       "BASIC"
+      ],
+      "optional": [
+       "API_KEY"
+      ]
+     },
+     "access": "SELF_SERVE_TRIAL",
+     "api_style": {
+      "core": [
+       "REST"
+      ],
+      "optional": []
+     },
+     "api_breadth": "BROAD",
+     "official_mcp": true,
+     "buildability": "READY_WITH_CAVEATS"
+    },
+    "accept": {
+     "api_breadth": [
+      "MODERATE"
+     ],
+     "access": [
+      "APPROVAL"
+     ]
+    },
+    "evidence": {
+     "auth_methods": {
+      "url": "https://developers.gorgias.com/reference/authentication",
+      "quote": "Use your email (username) and your API key"
+     },
+     "access": {
+      "url": "https://www.gorgias.com/pricing",
+      "quote": "The Gorgias trial period lasts 7 days."
+     },
+     "official_mcp": {
+      "url": "https://github.com/gorgias/mcp-cookbook",
+      "quote": "The Gorgias MCP is a first-party connector"
+     }
+    }
+   },
+   {
+    "id": 20,
+    "app": "Gladly",
+    "notes": "Requires an existing Gladly customer org; no free tier or trial found.",
+    "truth": {
+     "auth_methods": {
+      "core": [
+       "BASIC"
+      ],
+      "optional": [
+       "API_KEY"
+      ]
+     },
+     "access": "PARTNERSHIP",
+     "api_style": {
+      "core": [
+       "REST"
+      ],
+      "optional": []
+     },
+     "api_breadth": "BROAD",
+     "official_mcp": true,
+     "buildability": "NEEDS_OUTREACH"
+    },
+    "accept": {
+     "api_breadth": [
+      "MODERATE"
+     ]
+    },
+    "evidence": {
+     "auth_methods": {
+      "url": "https://developer.gladly.com/rest/",
+      "quote": "Gladly API uses token-based Basic Authentication."
+     },
+     "access": {
+      "url": "https://developer.gladly.com/rest/",
+      "quote": "First, you'll need to set up an account with the necessary API permissions"
+     },
+     "official_mcp": {
+      "url": "https://github.com/gladly/claude-plugin",
+      "quote": "Gladly needs to have turned on the Gladly MCP for your organization."
+     }
+    }
+   },
+   {
+    "id": 22,
+    "app": "Twilio",
+    "notes": "Twilio's MCP is a docs-search server, not an action server.",
+    "truth": {
+     "auth_methods": {
+      "core": [
+       "BASIC"
+      ],
+      "optional": [
+       "API_KEY",
+       "OAUTH2",
+       "JWT"
+      ]
+     },
+     "access": "SELF_SERVE_TRIAL",
+     "api_style": {
+      "core": [
+       "REST"
+      ],
+      "optional": []
+     },
+     "api_breadth": "BROAD",
+     "official_mcp": true,
+     "buildability": "READY_WITH_CAVEATS"
+    },
+    "accept": {
+     "buildability": [
+      "READY"
+     ]
+    },
+    "evidence": {
+     "auth_methods": {
+      "url": "https://www.twilio.com/docs/usage/requests-to-twilio",
+      "quote": "To authenticate requests to the Twilio APIs, use HTTP Basic authentication."
+     },
+     "access": {
+      "url": "https://www.twilio.com/docs/usage/trials.md",
+      "quote": "You can sign up for a Twilio free trial account without a credit card."
+     },
+     "official_mcp": {
+      "url": "https://www.twilio.com/docs/ai/mcp.md",
+      "quote": "it does not connect to a Twilio account or execute any API calls"
+     }
+    }
+   },
+   {
+    "id": 24,
+    "app": "Lark (Larksuite)",
+    "notes": "App id/secret -> tenant_access_token has no clean enum; any of JWT/BEARER/API_KEY/OTHER accepted alongside OAuth.",
+    "truth": {
+     "auth_methods": {
+      "core": [
+       "OAUTH2"
+      ],
+      "optional": [
+       "JWT",
+       "BEARER_TOKEN",
+       "API_KEY",
+       "OTHER"
+      ]
+     },
+     "access": "SELF_SERVE_FREE",
+     "api_style": {
+      "core": [
+       "REST"
+      ],
+      "optional": []
+     },
+     "api_breadth": "BROAD",
+     "official_mcp": true,
+     "buildability": "READY"
+    },
+    "accept": {},
+    "evidence": {
+     "auth_methods": {
+      "url": "https://github.com/larksuite/lark-openapi-mcp",
+      "quote": "Obtain the App ID and App Secret, which will be used for API authentication"
+     },
+     "official_mcp": {
+      "url": "https://github.com/larksuite/lark-openapi-mcp",
+      "quote": "This is the Feishu/Lark official OpenAPI MCP"
+     }
+    }
+   },
+   {
+    "id": 39,
+    "app": "Threads (Meta)",
+    "notes": "App Review needed before non-tester users can authorize.",
+    "truth": {
+     "auth_methods": {
+      "core": [
+       "OAUTH2"
+      ],
+      "optional": [
+       "BEARER_TOKEN"
+      ]
+     },
+     "access": "SELF_SERVE_FREE",
+     "api_style": {
+      "core": [
+       "REST"
+      ],
+      "optional": [
+       "GRAPHQL"
+      ]
+     },
+     "api_breadth": "MODERATE",
+     "official_mcp": true,
+     "buildability": "READY_WITH_CAVEATS"
+    },
+    "accept": {
+     "api_breadth": [
+      "NARROW"
+     ],
+     "buildability": [
+      "READY"
+     ],
+     "access": [
+      "APPROVAL"
+     ]
+    },
+    "evidence": {
+     "auth_methods": {
+      "url": "https://developers.facebook.com/documentation/threads/get-started",
+      "quote": "API authentication is handled by Threads user access tokens that conform to the OAuth 2.0 protocol."
+     },
+     "access": {
+      "url": "https://developers.facebook.com/documentation/threads/get-started",
+      "quote": "To access the Threads API, create an app and pick the Threads use case."
+     },
+     "official_mcp": {
+      "url": "https://developers.facebook.com/documentation/threads/llms.txt",
+      "quote": "Connect your Threads account to an AI assistant with the Threads MCP server"
+     }
+    }
+   },
+   {
+    "id": 40,
+    "app": "SendGrid",
+    "notes": "official_mcp unscored: no MCP found but search was not exhaustive.",
+    "truth": {
+     "auth_methods": {
+      "core": [
+       "API_KEY"
+      ],
+      "optional": []
+     },
+     "access": "SELF_SERVE_FREE",
+     "api_style": {
+      "core": [
+       "REST"
+      ],
+      "optional": []
+     },
+     "api_breadth": "BROAD",
+     "official_mcp": null,
+     "buildability": "READY"
+    },
+    "accept": {
+     "access": [
+      "SELF_SERVE_TRIAL"
+     ]
+    },
+    "evidence": {
+     "auth_methods": {
+      "url": "https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
+      "quote": "include an Authorization header with the value Bearer <YOUR_API_KEY_HERE>"
+     },
+     "access": {
+      "url": "https://www.twilio.com/en-us/products/email-api/pricing",
+      "quote": "Sign up for our free plan (no credit card required)"
+     }
+    }
+   },
+   {
+    "id": 47,
+    "app": "Ecwid",
+    "notes": "Free test-store upgrade available by emailing Ecwid.",
+    "truth": {
+     "auth_methods": {
+      "core": [
+       "BEARER_TOKEN"
+      ],
+      "optional": [
+       "OAUTH2"
+      ]
+     },
+     "access": "PAID_PLAN",
+     "api_style": {
+      "core": [
+       "REST"
+      ],
+      "optional": []
+     },
+     "api_breadth": "BROAD",
+     "official_mcp": false,
+     "buildability": "READY_WITH_CAVEATS"
+    },
+    "accept": {
+     "api_breadth": [
+      "MODERATE"
+     ]
+    },
+    "evidence": {
+     "auth_methods": {
+      "url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid.md",
+      "quote": "start making API requests with its access tokens"
+     },
+     "access": {
+      "url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid.md",
+      "quote": "Only stores on paid plans can access API."
+     }
+    }
+   },
+   {
+    "id": 49,
+    "app": "Amazon Selling Partner",
+    "notes": "Developer profile application with security questionnaire; private seller apps need a paid Professional selling account.",
+    "truth": {
+     "auth_methods": {
+      "core": [
+       "OAUTH2"
+      ],
+      "optional": [
+       "OTHER"
+      ]
+     },
+     "access": "APPROVAL",
+     "api_style": {
+      "core": [
+       "REST"
+      ],
+      "optional": []
+     },
+     "api_breadth": "BROAD",
+     "official_mcp": null,
+     "buildability": "READY_WITH_CAVEATS"
+    },
+    "accept": {
+     "access": [
+      "PAID_PLAN"
+     ],
+     "buildability": [
+      "NEEDS_OUTREACH"
+     ]
+    },
+    "evidence": {
+     "auth_methods": {
+      "url": "https://developer-docs.amazon.com/sp-api/docs/connecting-to-the-selling-partner-api",
+      "quote": "A Login with Amazon (LWA) access token authorizes your application"
+     },
+     "access": {
+      "url": "https://developer-docs.amazon.com/sp-api/docs/sp-api-registration-overview",
+      "quote": "You must register as a Selling Partner API (SP-API) developer before you can register your Selling Partner API application."
+     }
+    }
+   },
+   {
+    "id": 58,
+    "app": "Sherlock",
+    "notes": "Open-source CLI; toolkit means wrapping the CLI.",
+    "truth": {
+     "auth_methods": {
+      "core": [
+       "NONE"
+      ],
+      "optional": []
+     },
+     "access": "NO_PUBLIC_API",
+     "api_style": {
+      "core": [
+       "CLI"
+      ],
+      "optional": [
+       "SDK_ONLY"
+      ]
+     },
+     "api_breadth": "NONE",
+     "official_mcp": false,
+     "buildability": "READY_WITH_CAVEATS"
+    },
+    "accept": {
+     "api_breadth": [
+      "NARROW"
+     ],
+     "buildability": [
+      "BLOCKED"
+     ]
+    },
+    "evidence": {
+     "access": {
+      "url": "https://github.com/sherlock-project/sherlock",
+      "quote": "pipx install sherlock-project"
+     }
+    }
+   },
+   {
+    "id": 60,
+    "app": "Clay",
+    "notes": "Public API (api.clay.com/public/v0) + CLI + agent plugin, documented at developers.clay.com. Free plan has a small CLI/API quota; Tables API is Enterprise-only, so PAID_PLAN also accepted.",
+    "truth": {
+     "auth_methods": {
+      "core": [
+       "API_KEY"
+      ],
+      "optional": [
+       "OAUTH2"
+      ]
+     },
+     "access": "SELF_SERVE_FREE",
+     "api_style": {
+      "core": [
+       "REST"
+      ],
+      "optional": [
+       "CLI"
+      ]
+     },
+     "api_breadth": "MODERATE",
+     "official_mcp": true,
+     "buildability": "READY_WITH_CAVEATS"
+    },
+    "accept": {
+     "access": [
+      "PAID_PLAN",
+      "SELF_SERVE_TRIAL"
+     ],
+     "api_breadth": [
+      "NARROW"
+     ],
+     "buildability": [
+      "READY"
+     ]
+    },
+    "evidence": {
+     "official_mcp": {
+      "url": "https://university.clay.com/courses/clay-mcps-for-reps",
+      "quote": "Learn how to use Clay directly inside of AI chat tools like ChatGPT, Claude, and more"
+     },
+     "auth_methods": {
+      "url": "https://developers.clay.com/public-api/authentication.md",
+      "quote": "Every request to the Clay Public API must include a Clay API key in the `clay-api-key` header."
+     },
+     "access": {
+      "url": "https://www.clay.com/pricing",
+      "quote": "Build with Clay via CLI / API (Free plan: 100 search results / 30 days)"
+     }
+    }
+   },
+   {
+    "id": 61,
+    "app": "GitHub",
+    "notes": "",
+    "truth": {
+     "auth_methods": {
+      "core": [
+       "BEARER_TOKEN",
+       "OAUTH2"
+      ],
+      "optional": [
+       "JWT",
+       "BASIC"
+      ]
+     },
+     "access": "SELF_SERVE_FREE",
+     "api_style": {
+      "core": [
+       "REST",
+       "GRAPHQL"
+      ],
+      "optional": []
+     },
+     "api_breadth": "BROAD",
+     "official_mcp": true,
+     "buildability": "READY"
+    },
+    "accept": {},
+    "evidence": {
+     "auth_methods": {
+      "url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+      "quote": "You can also create an OAuth token with an OAuth app to access the REST API."
+     },
+     "access": {
+      "url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+      "quote": "If you want to use the GitHub REST API for personal use, you can create a personal access token."
+     },
+     "official_mcp": {
+      "url": "https://github.com/github/github-mcp-server",
+      "quote": "GitHub's official MCP Server"
+     }
+    }
+   },
+   {
+    "id": 64,
+    "app": "Cloudflare",
+    "notes": "",
+    "truth": {
+     "auth_methods": {
+      "core": [
+       "BEARER_TOKEN"
+      ],
+      "optional": [
+       "API_KEY",
+       "OAUTH2"
+      ]
+     },
+     "access": "SELF_SERVE_FREE",
+     "api_style": {
+      "core": [
+       "REST"
+      ],
+      "optional": [
+       "GRAPHQL"
+      ]
+     },
+     "api_breadth": "BROAD",
+     "official_mcp": true,
+     "buildability": "READY"
+    },
+    "accept": {},
+    "evidence": {
+     "auth_methods": {
+      "url": "https://developers.cloudflare.com/fundamentals/api/get-started/keys/",
+      "quote": "Global API key is the previous authorization scheme"
+     },
+     "access": {
+      "url": "https://developers.cloudflare.com/fundamentals/api/get-started/",
+      "quote": "Create an API token to grant access to the API to perform actions."
+     },
+     "official_mcp": {
+      "url": "https://github.com/cloudflare/mcp",
+      "quote": "MCP server for the Cloudflare API"
+     }
+    }
+   },
+   {
+    "id": 72,
+    "app": "Airtable",
+    "notes": "Legacy API keys ended Feb 2024.",
+    "truth": {
+     "auth_methods": {
+      "core": [
+       "BEARER_TOKEN",
+       "OAUTH2"
+      ],
+      "optional": []
+     },
+     "access": "SELF_SERVE_FREE",
+     "api_style": {
+      "core": [
+       "REST"
+      ],
+      "optional": []
+     },
+     "api_breadth": "MODERATE",
+     "official_mcp": true,
+     "buildability": "READY"
+    },
+    "accept": {
+     "api_breadth": [
+      "BROAD"
+     ]
+    },
+    "evidence": {
+     "auth_methods": {
+      "url": "https://airtable.com/developers/web/api/authentication",
+      "quote": "We currently support using personal access tokens and OAuth access tokens"
+     },
+     "official_mcp": {
+      "url": "https://airtable.com/developers",
+      "quote": "The Airtable MCP server gives agents your base's full structure"
+     }
+    }
+   },
+   {
+    "id": 80,
+    "app": "Harvest",
+    "notes": "Free plan exists (1 seat, 2 projects); API on free plan unconfirmed, so TRIAL and FREE both accepted.",
+    "truth": {
+     "auth_methods": {
+      "core": [
+       "BEARER_TOKEN",
+       "OAUTH2"
+      ],
+      "optional": []
+     },
+     "access": "SELF_SERVE_TRIAL",
+     "api_style": {
+      "core": [
+       "REST"
+      ],
+      "optional": []
+     },
+     "api_breadth": "BROAD",
+     "official_mcp": false,
+     "buildability": "READY_WITH_CAVEATS"
+    },
+    "accept": {
+     "access": [
+      "SELF_SERVE_FREE"
+     ],
+     "buildability": [
+      "READY"
+     ],
+     "api_breadth": [
+      "MODERATE"
+     ]
+    },
+    "evidence": {
+     "auth_methods": {
+      "url": "https://help.getharvest.com/api-v2/introduction/overview/general/",
+      "quote": "Harvest requires applications to authenticate all requests with OAuth2 or Personal Access Tokens."
+     },
+     "access": {
+      "url": "https://www.getharvest.com/pricing",
+      "quote": "Get started on any plan with a free trial. No credit card required."
+     }
+    }
+   },
+   {
+    "id": 82,
+    "app": "Plaid",
+    "notes": "Production access requested via Dashboard.",
+    "truth": {
+     "auth_methods": {
+      "core": [
+       "API_KEY"
+      ],
+      "optional": [
+       "OTHER"
+      ]
+     },
+     "access": "SELF_SERVE_FREE",
+     "api_style": {
+      "core": [
+       "REST"
+      ],
+      "optional": []
+     },
+     "api_breadth": "BROAD",
+     "official_mcp": true,
+     "buildability": "READY_WITH_CAVEATS"
+    },
+    "accept": {
+     "buildability": [
+      "READY"
+     ]
+    },
+    "evidence": {
+     "auth_methods": {
+      "url": "https://plaid.com/docs/api/",
+      "quote": "Almost all Plaid API endpoints require a client_id and secret."
+     },
+     "access": {
+      "url": "https://plaid.com/pricing/",
+      "quote": "Sandbox is always free."
+     },
+     "official_mcp": {
+      "url": "https://plaid.com/docs/resources/",
+      "quote": "Plaid's Dashboard MCP server allows you to access Plaid's diagnostics and analytics tools"
+     }
+    }
+   },
+   {
+    "id": 85,
+    "app": "iPayX",
+    "notes": "Not a payments product: an FX-rate audit API. Hint URL ipayx.ai/docs 404s; docs live at www.ipayx.ai/docs/api.",
+    "truth": {
+     "auth_methods": {
+      "core": [
+       "BEARER_TOKEN"
+      ],
+      "optional": []
+     },
+     "access": "PAID_PLAN",
+     "api_style": {
+      "core": [
+       "REST"
+      ],
+      "optional": []
+     },
+     "api_breadth": "NARROW",
+     "official_mcp": true,
+     "buildability": "READY_WITH_CAVEATS"
+    },
+    "accept": {
+     "access": [
+      "SELF_SERVE_FREE"
+     ]
+    },
+    "evidence": {
+     "auth_methods": {
+      "url": "https://www.ipayx.ai/docs/api",
+      "quote": "Every request requires a Bearer token in the Authorization header."
+     },
+     "access": {
+      "url": "https://www.ipayx.ai/",
+      "quote": "Upgrade to the 100-audit Credit Pack or Unlimited for API access"
+     },
+     "official_mcp": {
+      "url": "https://www.ipayx.ai/docs/mcp-server",
+      "quote": "Connect your AI agent to real-time FX audit verdicts."
+     }
+    }
+   },
+   {
+    "id": 92,
+    "app": "Otter AI",
+    "notes": "API docs behind enterprise; auth/style unscored. MCP is self-serve on the free tier.",
+    "truth": {
+     "auth_methods": null,
+     "access": "PARTNERSHIP",
+     "api_style": null,
+     "api_breadth": null,
+     "official_mcp": true,
+     "buildability": "NEEDS_OUTREACH"
+    },
+    "accept": {},
+    "evidence": {
+     "access": {
+      "url": "https://help.otter.ai/hc/en-us/articles/4412365535895-Does-Otter-offer-an-open-API",
+      "quote": "Yes, Otter offers a public API for Enterprise customers. To get started, contact your Otter account manager"
+     },
+     "official_mcp": {
+      "url": "https://otter.ai/",
+      "quote": "access your meeting knowledge through Otter's MCP Server"
+     }
+    }
+   },
+   {
+    "id": 98,
+    "app": "Mermaid CLI",
+    "notes": "Local CLI/Node library; no hosted API.",
+    "truth": {
+     "auth_methods": {
+      "core": [
+       "NONE"
+      ],
+      "optional": []
+     },
+     "access": "NO_PUBLIC_API",
+     "api_style": {
+      "core": [
+       "CLI"
+      ],
+      "optional": [
+       "SDK_ONLY"
+      ]
+     },
+     "api_breadth": "NONE",
+     "official_mcp": false,
+     "buildability": "READY_WITH_CAVEATS"
+    },
+    "accept": {
+     "api_breadth": [
+      "NARROW"
+     ],
+     "buildability": [
+      "BLOCKED"
+     ]
+    },
+    "evidence": {
+     "auth_methods": {
+      "url": "https://github.com/mermaid-js/mermaid-cli",
+      "quote": "This is a command-line interface (CLI) for mermaid."
+     }
+    }
+   }
+  ]
+ },
+ "loops": {
+  "flags_round0": {
+   "grounding": 3,
+   "rules": 3,
+   "critic": 1
+  },
+  "flags_by_field": {
+   "grounding": {
+    "api_breadth": 1,
+    "official_mcp": 1,
+    "webhooks": 1
+   },
+   "rules": {
+    "auth_methods": 1,
+    "api_breadth": 1,
+    "official_mcp": 1
+   },
+   "critic": {
+    "auth_methods": 1
+   }
+  },
+  "fields_changed": 3,
+  "apps_changed": 1,
+  "rounds_used": {
+   "1": 1,
+   "3": 1
+  }
+ },
+ "usage": {
+  "openai/gpt-oss-120b|extract": {
+   "calls": 3,
+   "in": 6755,
+   "out": 2450
+  },
+  "qwen/qwen3.8-27b|critic": {
+   "calls": 6,
+   "in": 16946,
+   "out": 1992
+  },
+  "openai/gpt-oss-120b|reresearch": {
+   "calls": 3,
+   "in": 9744,
+   "out": 1303
+  }
+ },
+ "roster": [
+  {
+   "id": 1,
+   "app": "Salesforce",
+   "category": "CRM and Sales"
+  },
+  {
+   "id": 2,
+   "app": "HubSpot",
+   "category": "CRM and Sales"
+  },
+  {
+   "id": 3,
+   "app": "Pipedrive",
+   "category": "CRM and Sales"
+  },
+  {
+   "id": 4,
+   "app": "Attio",
+   "category": "CRM and Sales"
+  },
+  {
+   "id": 5,
+   "app": "Twenty",
+   "category": "CRM and Sales"
+  },
+  {
+   "id": 6,
+   "app": "Podio",
+   "category": "CRM and Sales"
+  },
+  {
+   "id": 7,
+   "app": "Zoho CRM",
+   "category": "CRM and Sales"
+  },
+  {
+   "id": 8,
+   "app": "Close",
+   "category": "CRM and Sales"
+  },
+  {
+   "id": 9,
+   "app": "Copper",
+   "category": "CRM and Sales"
+  },
+  {
+   "id": 10,
+   "app": "DealCloud",
+   "category": "CRM and Sales"
+  },
+  {
+   "id": 11,
+   "app": "Zendesk",
+   "category": "Support and Helpdesk"
+  },
+  {
+   "id": 12,
+   "app": "Intercom",
+   "category": "Support and Helpdesk"
+  },
+  {
+   "id": 13,
+   "app": "Freshdesk",
+   "category": "Support and Helpdesk"
+  },
+  {
+   "id": 14,
+   "app": "Front",
+   "category": "Support and Helpdesk"
+  },
+  {
+   "id": 15,
+   "app": "Pylon",
+   "category": "Support and Helpdesk"
+  },
+  {
+   "id": 16,
+   "app": "LiveAgent",
+   "category": "Support and Helpdesk"
+  },
+  {
+   "id": 17,
+   "app": "Plain",
+   "category": "Support and Helpdesk"
+  },
+  {
+   "id": 18,
+   "app": "Help Scout",
+   "category": "Support and Helpdesk"
+  },
+  {
+   "id": 19,
+   "app": "Gorgias",
+   "category": "Support and Helpdesk"
+  },
+  {
+   "id": 20,
+   "app": "Gladly",
+   "category": "Support and Helpdesk"
+  },
+  {
+   "id": 21,
+   "app": "Slack",
+   "category": "Communications and Messaging"
+  },
+  {
+   "id": 22,
+   "app": "Twilio",
+   "category": "Communications and Messaging"
+  },
+  {
+   "id": 23,
+   "app": "Zoho Cliq",
+   "category": "Communications and Messaging"
+  },
+  {
+   "id": 24,
+   "app": "Lark (Larksuite)",
+   "category": "Communications and Messaging"
+  },
+  {
+   "id": 25,
+   "app": "Pumble",
+   "category": "Communications and Messaging"
+  },
+  {
+   "id": 26,
+   "app": "Discord",
+   "category": "Communications and Messaging"
+  },
+  {
+   "id": 27,
+   "app": "Telegram",
+   "category": "Communications and Messaging"
+  },
+  {
+   "id": 28,
+   "app": "WhatsApp Business",
+   "category": "Communications and Messaging"
+  },
+  {
+   "id": 29,
+   "app": "Aircall",
+   "category": "Communications and Messaging"
+  },
+  {
+   "id": 30,
+   "app": "Vonage",
+   "category": "Communications and Messaging"
+  },
+  {
+   "id": 31,
+   "app": "Google Ads",
+   "category": "Marketing, Ads, Email and Social"
+  },
+  {
+   "id": 32,
+   "app": "Meta Ads",
+   "category": "Marketing, Ads, Email and Social"
+  },
+  {
+   "id": 33,
+   "app": "LinkedIn Ads",
+   "category": "Marketing, Ads, Email and Social"
+  },
+  {
+   "id": 34,
+   "app": "GoHighLevel",
+   "category": "Marketing, Ads, Email and Social"
+  },
+  {
+   "id": 35,
+   "app": "Mailchimp",
+   "category": "Marketing, Ads, Email and Social"
+  },
+  {
+   "id": 36,
+   "app": "Klaviyo",
+   "category": "Marketing, Ads, Email and Social"
+  },
+  {
+   "id": 37,
+   "app": "systeme.io",
+   "category": "Marketing, Ads, Email and Social"
+  },
+  {
+   "id": 38,
+   "app": "Pinterest",
+   "category": "Marketing, Ads, Email and Social"
+  },
+  {
+   "id": 39,
+   "app": "Threads (Meta)",
+   "category": "Marketing, Ads, Email and Social"
+  },
+  {
+   "id": 40,
+   "app": "SendGrid",
+   "category": "Marketing, Ads, Email and Social"
+  },
+  {
+   "id": 41,
+   "app": "Shopify",
+   "category": "Ecommerce"
+  },
+  {
+   "id": 42,
+   "app": "WooCommerce",
+   "category": "Ecommerce"
+  },
+  {
+   "id": 43,
+   "app": "BigCommerce",
+   "category": "Ecommerce"
+  },
+  {
+   "id": 44,
+   "app": "Salesforce Commerce Cloud",
+   "category": "Ecommerce"
+  },
+  {
+   "id": 45,
+   "app": "Magento (Adobe Commerce)",
+   "category": "Ecommerce"
+  },
+  {
+   "id": 46,
+   "app": "Squarespace",
+   "category": "Ecommerce"
+  },
+  {
+   "id": 47,
+   "app": "Ecwid",
+   "category": "Ecommerce"
+  },
+  {
+   "id": 48,
+   "app": "Gumroad",
+   "category": "Ecommerce"
+  },
+  {
+   "id": 49,
+   "app": "Amazon Selling Partner",
+   "category": "Ecommerce"
+  },
+  {
+   "id": 50,
+   "app": "fanbasis",
+   "category": "Ecommerce"
+  },
+  {
+   "id": 51,
+   "app": "DataForSEO",
+   "category": "Data, SEO and Scraping"
+  },
+  {
+   "id": 52,
+   "app": "SE Ranking",
+   "category": "Data, SEO and Scraping"
+  },
+  {
+   "id": 53,
+   "app": "Ahrefs",
+   "category": "Data, SEO and Scraping"
+  },
+  {
+   "id": 54,
+   "app": "MrScraper",
+   "category": "Data, SEO and Scraping"
+  },
+  {
+   "id": 55,
+   "app": "Apify",
+   "category": "Data, SEO and Scraping"
+  },
+  {
+   "id": 56,
+   "app": "Firecrawl",
+   "category": "Data, SEO and Scraping"
+  },
+  {
+   "id": 57,
+   "app": "Bright Data",
+   "category": "Data, SEO and Scraping"
+  },
+  {
+   "id": 58,
+   "app": "Sherlock",
+   "category": "Data, SEO and Scraping"
+  },
+  {
+   "id": 59,
+   "app": "Waterfall.io",
+   "category": "Data, SEO and Scraping"
+  },
+  {
+   "id": 60,
+   "app": "Clay",
+   "category": "Data, SEO and Scraping"
+  },
+  {
+   "id": 61,
+   "app": "GitHub",
+   "category": "Developer, Infra and Data platforms"
+  },
+  {
+   "id": 62,
+   "app": "Vercel",
+   "category": "Developer, Infra and Data platforms"
+  },
+  {
+   "id": 63,
+   "app": "Netlify",
+   "category": "Developer, Infra and Data platforms"
+  },
+  {
+   "id": 64,
+   "app": "Cloudflare",
+   "category": "Developer, Infra and Data platforms"
+  },
+  {
+   "id": 65,
+   "app": "Supabase",
+   "category": "Developer, Infra and Data platforms"
+  },
+  {
+   "id": 66,
+   "app": "Neo4j",
+   "category": "Developer, Infra and Data platforms"
+  },
+  {
+   "id": 67,
+   "app": "Snowflake",
+   "category": "Developer, Infra and Data platforms"
+  },
+  {
+   "id": 68,
+   "app": "MongoDB Atlas",
+   "category": "Developer, Infra and Data platforms"
+  },
+  {
+   "id": 69,
+   "app": "Datadog",
+   "category": "Developer, Infra and Data platforms"
+  },
+  {
+   "id": 70,
+   "app": "Sentry",
+   "category": "Developer, Infra and Data platforms"
+  },
+  {
+   "id": 71,
+   "app": "Notion",
+   "category": "Productivity and Project Management"
+  },
+  {
+   "id": 72,
+   "app": "Airtable",
+   "category": "Productivity and Project Management"
+  },
+  {
+   "id": 73,
+   "app": "Linear",
+   "category": "Productivity and Project Management"
+  },
+  {
+   "id": 74,
+   "app": "Jira",
+   "category": "Productivity and Project Management"
+  },
+  {
+   "id": 75,
+   "app": "Asana",
+   "category": "Productivity and Project Management"
+  },
+  {
+   "id": 76,
+   "app": "Monday.com",
+   "category": "Productivity and Project Management"
+  },
+  {
+   "id": 77,
+   "app": "ClickUp",
+   "category": "Productivity and Project Management"
+  },
+  {
+   "id": 78,
+   "app": "Coda",
+   "category": "Productivity and Project Management"
+  },
+  {
+   "id": 79,
+   "app": "Smartsheet",
+   "category": "Productivity and Project Management"
+  },
+  {
+   "id": 80,
+   "app": "Harvest",
+   "category": "Productivity and Project Management"
+  },
+  {
+   "id": 81,
+   "app": "Stripe",
+   "category": "Finance and Fintech"
+  },
+  {
+   "id": 82,
+   "app": "Plaid",
+   "category": "Finance and Fintech"
+  },
+  {
+   "id": 83,
+   "app": "Binance",
+   "category": "Finance and Fintech"
+  },
+  {
+   "id": 84,
+   "app": "Paygent Connect",
+   "category": "Finance and Fintech"
+  },
+  {
+   "id": 85,
+   "app": "iPayX",
+   "category": "Finance and Fintech"
+  },
+  {
+   "id": 86,
+   "app": "QuickBooks",
+   "category": "Finance and Fintech"
+  },
+  {
+   "id": 87,
+   "app": "Xero",
+   "category": "Finance and Fintech"
+  },
+  {
+   "id": 88,
+   "app": "Brex",
+   "category": "Finance and Fintech"
+  },
+  {
+   "id": 89,
+   "app": "Ramp",
+   "category": "Finance and Fintech"
+  },
+  {
+   "id": 90,
+   "app": "PitchBook",
+   "category": "Finance and Fintech"
+  },
+  {
+   "id": 91,
+   "app": "NotebookLM",
+   "category": "AI, Research and Media-native"
+  },
+  {
+   "id": 92,
+   "app": "Otter AI",
+   "category": "AI, Research and Media-native"
+  },
+  {
+   "id": 93,
+   "app": "Fathom",
+   "category": "AI, Research and Media-native"
+  },
+  {
+   "id": 94,
+   "app": "Consensus",
+   "category": "AI, Research and Media-native"
+  },
+  {
+   "id": 95,
+   "app": "Reducto",
+   "category": "AI, Research and Media-native"
+  },
+  {
+   "id": 96,
+   "app": "Devin",
+   "category": "AI, Research and Media-native"
+  },
+  {
+   "id": 97,
+   "app": "higgsfield",
+   "category": "AI, Research and Media-native"
+  },
+  {
+   "id": 98,
+   "app": "Mermaid CLI",
+   "category": "AI, Research and Media-native"
+  },
+  {
+   "id": 99,
+   "app": "YouTube Transcript",
+   "category": "AI, Research and Media-native"
+  },
+  {
+   "id": 100,
+   "app": "Grain",
+   "category": "AI, Research and Media-native"
+  }
+ ],
+ "apps": [
+  {
+   "id": 2,
+   "app": "HubSpot",
+   "category": "CRM and Sales",
+   "hint": "hubspot.com",
+   "docs_url": "https://developers.hubspot.com/docs/api-reference/latest/overview",
+   "composio": {
+    "slug": "HUBSPOT",
+    "tools": 355,
+    "auth": [
+     "OAUTH2",
+     "API_KEY"
+    ],
+    "mcp_variant": null,
+    "url": "https://docs.composio.dev/toolkits/hubspot.md"
+   },
+   "fields": {
+    "one_liner": {
+     "value": "Create tomorrow's solutions today on HubSpot's Developer Platform.",
+     "confidence": 1.0,
+     "flags": [],
+     "evidence": [
+      {
+       "url": "https://developers.hubspot.com",
+       "quote": "Create tomorrow's solutions today on HubSpot's Developer Platform.",
+       "grounded": true
+      }
+     ]
+    },
+    "auth_methods": {
+     "value": [
+      "BEARER_TOKEN",
+      "OAUTH2"
+     ],
+     "confidence": 1.0,
+     "flags": [],
+     "evidence": [
+      {
+       "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview",
+       "quote": "OAuth is required for multiple accounts",
+       "grounded": true
+      },
+      {
+       "url": "https://developers.hubspot.com/docs/apps/legacy-apps/authentication/intro-to-auth",
+       "quote": "private app access tokens",
+       "grounded": true
+      }
+     ]
+    },
+    "access": {
+     "value": "SELF_SERVE_FREE",
+     "confidence": 1.0,
+     "flags": [],
+     "evidence": [
+      {
+       "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview",
+       "quote": "static auth access tokens are used for installing in a single account",
+       "grounded": true
+      }
+     ]
+    },
+    "api_style": {
+     "value": [
+      "REST"
+     ],
+     "confidence": 1.0,
+     "flags": [],
+     "evidence": [
+      {
+       "url": "https://developers.hubspot.com/docs/api-reference/latest/overview",
+       "quote": "All endpoints in this section follow the pattern: https://api.hubapi.com/.",
+       "grounded": true
+      }
+     ]
+    },
+    "api_breadth": {
+     "value": "BROAD",
+     "confidence": 0.9,
+     "flags": [],
+     "evidence": [
+      {
+       "url": "https://developers.hubspot.com",
+       "quote": "Add dashboards, app cards, and custom interfaces to your solutions with HubSpot\u2019s APIs",
+       "grounded": true
+      }
+     ]
+    },
+    "official_mcp": {
+     "value": true,
+     "confidence": 1.0,
+     "flags": [],
+     "evidence": [
+      {
+       "url": "https://developers.hubspot.com/ai-tools",
+       "quote": "The Developer MCP Server gives you the power to create HubSpot apps",
+       "grounded": true
+      }
+     ]
+    },
+    "webhooks": {
+     "value": true,
+     "confidence": 1.0,
+     "flags": [],
+     "evidence": [
+      {
+       "url": "https://developers.hubspot.com",
+       "quote": "Use workflows, webhooks, and custom actions",
+       "grounded": true
+      }
+     ]
+    },
+    "sandbox": {
+     "value": true,
+     "confidence": 1.0,
+     "flags": [],
+     "evidence": [
+      {
+       "url": "https://developers.hubspot.com",
+       "quote": "HubSpot's Developer Platform",
+       "grounded": true
+      }
+     ]
+    },
+    "buildability": {
+     "value": "READY",
+     "confidence": 1.0,
+     "flags": [],
+     "evidence": [
+      {
+       "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview",
+       "quote": "OAuth is required for multiple accounts",
+       "grounded": true
+      }
+     ]
+    },
+    "main_blocker": {
+     "value": null,
+     "confidence": 0.4,
+     "flags": [],
+     "evidence": []
+    }
+   },
+   "pass1": {
+    "one_liner": "Create tomorrow's solutions today on HubSpot's Developer Platform.",
+    "auth_methods": [
+     "BEARER_TOKEN",
+     "OAUTH2"
+    ],
+    "access": "SELF_SERVE_FREE",
+    "api_style": [
+     "REST"
+    ],
+    "api_breadth": "BROAD",
+    "official_mcp": true,
+    "webhooks": true,
+    "sandbox": true,
+    "buildability": "READY",
+    "main_blocker": null
+   },
+   "changes": [],
+   "sources": [
+    "https://developers.hubspot.com",
+    "https://developers.hubspot.com/ai-tools",
+    "https://developers.hubspot.com/docs/api-reference/latest/overview",
+    "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview",
+    "https://developers.hubspot.com/docs/apps/legacy-apps/authentication/intro-to-auth",
+    "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/oauth/working-with-oauth"
+   ],
+   "errors": 0
+  },
+  {
+   "id": 19,
+   "app": "Gorgias",
+   "category": "Support and Helpdesk",
+   "hint": "gorgias.com",
+   "docs_url": "https://developers.gorgias.com",
+   "composio": {
+    "slug": "GORGIAS",
+    "tools": 51,
+    "auth": [
+     "API_KEY",
+     "OAUTH2"
+    ],
+    "mcp_variant": null,
+    "url": "https://docs.composio.dev/toolkits/gorgias.md"
+   },
+   "fields": {
+    "one_liner": {
+     "value": "Customer support platform for ecommerce brands",
+     "confidence": 1.0,
+     "flags": [],
+     "evidence": [
+      {
+       "url": "https://docs.gorgias.com/llms.txt",
+       "quote": "Gorgias is a customer support platform for ecommerce brands",
+       "grounded": true
+      }
+     ]
+    },
+    "auth_methods": {
+     "value": [
+      "OAUTH2"
+     ],
+     "confidence": 1.0,
+     "flags": [
+      "maybe_incomplete_vs_composio:['API_KEY', 'BEARER_TOKEN']"
+     ],
+     "evidence": [
+      {
+       "url": "https://developers.gorgias.com/docs/oauth2-authentication-for-creating-apps-with-gorgias.md",
+       "quote": "In order to be able to have an approved public app with Gorgias, it is required that the app is using OAuth2 for authentication.",
+       "grounded": true
+      }
+     ]
+    },
+    "access": {
+     "value": "APPROVAL",
+     "confidence": 0.85,
+     "flags": [
+      "critic_wrong:PARTNERSHIP (S8 requires contacting techpartners@gorgias.com to convert a trial to a developer account, indicating a partnership gate.)"
+     ],
+     "evidence": [
+      {
+       "url": "https://developers.gorgias.com/docs/1-register-on-developer-portal.md",
+       "quote": "You will need to have a draft app to get approved for the Sandbox Account",
+       "grounded": true
+      },
+      {
+       "url": "https://developers.gorgias.com/docs/1-register-on-developer-portal.md",
+       "quote": "reach out to <techpartners@gorgias.com> to transform it into a developer account",
+       "grounded": true
+      }
+     ]
+    },
+    "api_style": {
+     "value": [
+      "REST"
+     ],
+     "confidence": 1.0,
+     "flags": [],
+     "evidence": [
+      {
+       "url": "https://developers.gorgias.com/llms.txt",
+       "quote": "Gorgias Developer Portal. REST API reference and Guides.",
+       "grounded": true
+      }
+     ]
+    },
+    "api_breadth": {
+     "value": "MODERATE",
+     "confidence": 0.05,
+     "flags": [
+      "ungrounded",
+      "low_confidence"
+     ],
+     "evidence": []
+    },
+    "official_mcp": {
+     "value": false,
+     "confidence": 0.05,
+     "flags": [
+      "ungrounded",
+      "low_confidence"
+     ],
+     "evidence": []
+    },
+    "webhooks": {
+     "value": false,
+     "confidence": 0.05,
+     "flags": [
+      "ungrounded"
+     ],
+     "evidence": []
+    },
+    "sandbox": {
+     "value": true,
+     "confidence": 1.0,
+     "flags": [],
+     "evidence": [
+      {
+       "url": "https://developers.gorgias.com/llms.txt",
+       "quote": "1. Register on Developer Portal & Get Gorgias Sandbox Account",
+       "grounded": true
+      }
+     ]
+    },
+    "buildability": {
+     "value": "NEEDS_OUTREACH",
+     "confidence": 0.25,
+     "flags": [
+      "ungrounded"
+     ],
+     "evidence": [
+      {
+       "url": "https://developers.gorgias.com/docs/1-register-on-developer-portal.md",
+       "quote": "reach out to <techpartners@gorgias.com> with your account URL to switch it to a Developer plan",
+       "grounded": false
+      }
+     ]
+    },
+    "main_blocker": {
+     "value": null,
+     "confidence": 0.4,
+     "flags": [],
+     "evidence": []
+    }
+   },
+   "pass1": {
+    "one_liner": "Customer support platform for ecommerce brands",
+    "auth_methods": [
+     "OAUTH2"
+    ],
+    "access": "SELF_SERVE_FREE",
+    "api_style": [
+     "REST"
+    ],
+    "api_breadth": "BROAD",
+    "official_mcp": false,
+    "webhooks": false,
+    "sandbox": true,
+    "buildability": "READY",
+    "main_blocker": null
+   },
+   "changes": [
+    {
+     "field": "api_breadth",
+     "from": "BROAD",
+     "to": "MODERATE",
+     "why": [
+      "ungrounded",
+      "low_confidence"
+     ]
+    },
+    {
+     "field": "access",
+     "from": "SELF_SERVE_FREE",
+     "to": "APPROVAL",
+     "why": [
+      "critic_wrong:APPROVAL (Sandbox accounts require reaching out to techpartners and having a draft app approved; not self-serve.)"
+     ]
+    },
+    {
+     "field": "buildability",
+     "from": "READY",
+     "to": "NEEDS_OUTREACH",
+     "why": [
+      "critic_wrong:NEEDS_OUTREACH (Access to sandbox/developer account requires contacting techpartners@gorgias.com, indicating outreach is needed.)"
+     ]
+    }
+   ],
+   "sources": [
+    "https://developers.gorgias.com/llms.txt",
+    "https://developers.gorgias.com",
+    "https://docs.gorgias.com/llms.txt",
+    "https://docs.gorgias.com/en-US",
+    "https://developers.gorgias.com/docs/oauth2-authentication-for-creating-apps-with-gorgias.md",
+    "https://developers.gorgias.com/docs/oauth2-scopes.md",
+    "https://docs.gorgias.com/en-US/change-your-billing-frequency-or-billing-date-1006760.md",
+    "https://developers.gorgias.com/docs/1-register-on-developer-portal.md"
+   ],
+   "errors": 0
+  }
+ ],
+ "pending": [
+  "Salesforce",
+  "Pipedrive",
+  "Attio",
+  "Twenty",
+  "Podio",
+  "Zoho CRM",
+  "Close",
+  "Copper",
+  "DealCloud",
+  "Zendesk",
+  "Intercom",
+  "Freshdesk",
+  "Front",
+  "Pylon",
+  "LiveAgent",
+  "Plain",
+  "Help Scout",
+  "Gladly",
+  "Slack",
+  "Twilio",
+  "Zoho Cliq",
+  "Lark (Larksuite)",
+  "Pumble",
+  "Discord",
+  "Telegram",
+  "WhatsApp Business",
+  "Aircall",
+  "Vonage",
+  "Google Ads",
+  "Meta Ads",
+  "LinkedIn Ads",
+  "GoHighLevel",
+  "Mailchimp",
+  "Klaviyo",
+  "systeme.io",
+  "Pinterest",
+  "Threads (Meta)",
+  "SendGrid",
+  "Shopify",
+  "WooCommerce",
+  "BigCommerce",
+  "Salesforce Commerce Cloud",
+  "Magento (Adobe Commerce)",
+  "Squarespace",
+  "Ecwid",
+  "Gumroad",
+  "Amazon Selling Partner",
+  "fanbasis",
+  "DataForSEO",
+  "SE Ranking",
+  "Ahrefs",
+  "MrScraper",
+  "Apify",
+  "Firecrawl",
+  "Bright Data",
+  "Sherlock",
+  "Waterfall.io",
+  "Clay",
+  "GitHub",
+  "Vercel",
+  "Netlify",
+  "Cloudflare",
+  "Supabase",
+  "Neo4j",
+  "Snowflake",
+  "MongoDB Atlas",
+  "Datadog",
+  "Sentry",
+  "Notion",
+  "Airtable",
+  "Linear",
+  "Jira",
+  "Asana",
+  "Monday.com",
+  "ClickUp",
+  "Coda",
+  "Smartsheet",
+  "Harvest",
+  "Stripe",
+  "Plaid",
+  "Binance",
+  "Paygent Connect",
+  "iPayX",
+  "QuickBooks",
+  "Xero",
+  "Brex",
+  "Ramp",
+  "PitchBook",
+  "NotebookLM",
+  "Otter AI",
+  "Fathom",
+  "Consensus",
+  "Reducto",
+  "Devin",
+  "higgsfield",
+  "Mermaid CLI",
+  "YouTube Transcript",
+  "Grain"
+ ]
+}

@@ -24,6 +24,7 @@ def main() -> None:
     sh = with_apps(sub.add_parser("show", help="print final records"))
     sh.add_argument("--md", action="store_true", help="markdown table (for CI job summaries)")
     sub.add_parser("connect-search", help="connect the search toolkit (Exa) via Composio")
+    sub.add_parser("build-site", help="write site/data.json, results.csv, llms.txt")
     sub.add_parser("export", help="bundle results into data/results/results.json")
     sub.add_parser("evaluate", help="score pass 1 and final against the hand-checked sample")
     sub.add_parser("patterns", help="compute cross-app patterns")
@@ -55,6 +56,10 @@ def main() -> None:
         from .connect import connect_search_toolkit
 
         print(connect_search_toolkit())
+    elif args.cmd == "build-site":
+        from .site_build import main as site_main
+
+        site_main()
     elif args.cmd == "export":
         from .pipeline import export
 

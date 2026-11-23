@@ -1,0 +1,177 @@
+{
+  "id": 2,
+  "app": "HubSpot",
+  "category": "CRM and Sales",
+  "hint": "hubspot.com",
+  "docs_url": "https://developers.hubspot.com/docs/api-reference/latest/overview",
+  "one_liner": {
+    "value": "Create tomorrow's solutions today on HubSpot's Developer Platform.",
+    "evidence": [
+      {
+        "url": "https://developers.hubspot.com",
+        "quote": "Create tomorrow's solutions today on HubSpot's Developer Platform.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "BEARER_TOKEN",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview",
+        "quote": "OAuth is required for multiple accounts",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://developers.hubspot.com/docs/apps/legacy-apps/authentication/intro-to-auth",
+        "quote": "private app access tokens",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview",
+        "quote": "static auth access tokens are used for installing in a single account",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.hubspot.com/docs/api-reference/latest/overview",
+        "quote": "All endpoints in this section follow the pattern: https://api.hubapi.com/.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://developers.hubspot.com",
+        "quote": "Add dashboards, app cards, and custom interfaces to your solutions with HubSpot’s APIs",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developers.hubspot.com/ai-tools",
+        "quote": "The Developer MCP Server gives you the power to create HubSpot apps",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developers.hubspot.com",
+        "quote": "Use workflows, webhooks, and custom actions",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "sandbox": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developers.hubspot.com",
+        "quote": "HubSpot's Developer Platform",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview",
+        "quote": "OAuth is required for multiple accounts",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.4,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "HUBSPOT",
+    "name": "HubSpot",
+    "tools": 355,
+    "triggers": 2,
+    "auth": [
+      "OAUTH2",
+      "API_KEY"
+    ],
+    "managed_app": "Yes",
+    "url": "https://docs.composio.dev/toolkits/hubspot.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://developers.hubspot.com",
+    "https://developers.hubspot.com/ai-tools",
+    "https://developers.hubspot.com/docs/api-reference/latest/overview",
+    "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview",
+    "https://developers.hubspot.com/docs/apps/legacy-apps/authentication/intro-to-auth",
+    "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/oauth/working-with-oauth"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {},
+        "rules": {},
+        "critic": {}
+      }
+    ],
+    "open_flags": {}
+  },
+  "errors": []
+}

@@ -1,0 +1,23 @@
+# Entry Requirements for 100 APIs
+
+> An agent researched 100 SaaS apps for AI-agent-toolkit buildability: auth methods, self-serve vs gated access, API surface, official MCP, blockers. Every field cites a source URL and a verbatim quote that was re-checked on the page.
+
+Accuracy on a 20-app hand-checked random sample: pass 1 0.113, after verification loops 0.078 (fields: auth_methods, access, api_style, api_breadth, official_mcp, buildability).
+
+## Findings
+- 50% of apps (1 of 2) let a developer get working credentials alone; 1 is gated by a paid plan, an approval step, or sales.
+- 100% support OAuth 2.0, the dominant scheme; 1 accept a static API key or token, and most of those offer both.
+- CRM and Sales is the most open category (100% self-serve); Support and Helpdesk is the most gated (0%).
+- 0 apps name '-' as the main blocker, the most common one.
+- 0 easy wins: self-serve and buildable today, with no Composio toolkit yet. 1 needs outreach or a partnership.
+- 1 of 2 vendors already ship an official MCP server.
+
+## Data
+- [data.json](https://humnananirudh.github.io/Composio/data.json): every record with values, confidence, verifier flags, evidence (url + quote + grounded), pass-1 values, plus patterns and eval
+- [results.csv](https://humnananirudh.github.io/Composio/results.csv): one row per app, final values
+- [Source and agent](https://github.com/HUmnanANirudh/Composio): README explains how to run it
+
+## Enums
+- auth_methods: OAUTH2, API_KEY, BEARER_TOKEN, BASIC, JWT, OTHER, NONE
+- access: SELF_SERVE_FREE, SELF_SERVE_TRIAL, PAID_PLAN, APPROVAL, PARTNERSHIP, NO_PUBLIC_API
+- buildability: READY, READY_WITH_CAVEATS, NEEDS_OUTREACH, BLOCKED

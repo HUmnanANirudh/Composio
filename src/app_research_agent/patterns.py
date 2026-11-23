@@ -105,26 +105,40 @@ def compute(recs: list[AppRecord]) -> dict:
 
     self_serve_total = access["SELF_SERVE_FREE"] + access["SELF_SERVE_TRIAL"]
     top_block = blockers.most_common(1)[0] if blockers else ("-", 0)
+    oauth = auth_any["OAUTH2"]
+    static = sum(1 for r in recs if set(r.auth_methods.value or []) & {"API_KEY", "BEARER_TOKEN"})
+    gated = n - self_serve_total
+    easiest = [c["category"] for c in cats[:2]]
+    hardest = [c["category"] for c in cats[-2:]][::-1]
+    # Each headline: a figure the eye lands on, then the plain sentence it belongs to.
     headlines = [
-        (
-            f"OAuth2 is the dominant auth: {auth_any['OAUTH2']} of {n} apps support it; "
-            f"{auth_any['API_KEY'] + auth_any['BEARER_TOKEN']} accept a static key/token "
-            f"(many offer both)."
-        ),
-        (
-            f"{self_serve_total} of {n} apps ({_pct(self_serve_total, n)}%) let a developer get "
-            f"credentials self-serve; {n - self_serve_total} are gated by a paid plan, approval, or sales."
-        ),
-        (
-            f"Most self-serve categories: {', '.join(c['category'] for c in cats[:2])}. "
-            f"Most gated: {', '.join(c['category'] for c in cats[-2:])}."
-        ),
-        f"The most common blocker is '{top_block[0]}' ({top_block[1]} apps).",
-        (
-            f"{len(easy_wins)} easy wins: buildable self-serve today and not yet in Composio's catalog. "
-            f"{len(outreach)} need outreach/partnership."
-        ),
-        f"{mcp} of {n} vendors already ship an official MCP server.",
+        {
+            "fig": f"{_pct(self_serve_total, n)}%",
+            "text": f"of apps ({self_serve_total} of {n}) let a developer get working credentials alone; "
+            f"{gated} {'is' if gated == 1 else 'are'} gated by a paid plan, an approval step, or sales.",
+        },
+        {
+            "fig": f"{_pct(oauth, n)}%",
+            "text": f"support OAuth 2.0, the dominant scheme; {static} accept a static API key or token, "
+            f"and most of those offer both.",
+        },
+        {
+            "fig": easiest[0] if easiest else "-",
+            "text": f"is the most open category ({cats[0]['self_serve_pct']}% self-serve); "
+            f"{hardest[0] if hardest else '-'} is the most gated ({cats[-1]['self_serve_pct']}%)."
+            if cats
+            else "",
+        },
+        {
+            "fig": str(top_block[1]),
+            "text": f"apps name '{top_block[0]}' as the main blocker, the most common one.",
+        },
+        {
+            "fig": str(len(easy_wins)),
+            "text": f"easy wins: self-serve and buildable today, with no Composio toolkit yet. "
+            f"{len(outreach)} {'needs' if len(outreach) == 1 else 'need'} outreach or a partnership.",
+        },
+        {"fig": str(mcp), "text": f"of {n} vendors already ship an official MCP server."},
     ]
 
     def row(r: AppRecord) -> dict:
@@ -161,4 +175,4 @@ def main() -> None:
     out = compute(recs)
     (RESULTS / "patterns.json").write_text(json.dumps(out, indent=1))
     for h in out["headlines"]:
-        print("-", h)
+        print("-", h["fig"], h["text"])

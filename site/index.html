@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Entry Requirements for 100 APIs</title>
+<meta name="description" content="An agent researched 100 SaaS apps for AI-agent toolkit buildability: auth, self-serve vs gated access, API surface, MCP and blockers, with every field cited and accuracy measured against a hand-checked sample.">
+<link rel="alternate" type="text/plain" href="llms.txt" title="llms.txt">
+<link rel="alternate" type="application/json" href="data.json" title="All records as JSON">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Atkinson+Hyperlegible+Next:wght@400;500;700&family=Red+Hat+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f3f4f1; --sheet:#fbfbf9; --ink:#132030; --ink-2:#3d4a59; --ink-3:#5b6775;
+  --rule:#cfd3cf; --rule-2:#e3e5e1; --band:#132030; --band-ink:#f3f4f1; --band-ink-2:#b9c2cc;
+  --act:#1d4ed8; --act-ink:#ffffff; --act-soft:#e4ebfd;
+  /* entry-regime legend: used for regime and nothing else */
+  --r-free:#8fd0a4; --r-trial:#c9e39d; --r-paid:#f0cf6e; --r-approval:#f3a774; --r-partner:#c6a3e0; --r-none:#4b515a;
+  --r-free-ink:#0f2a19; --r-trial-ink:#23300c; --r-paid-ink:#352806; --r-approval-ink:#3a1906; --r-partner-ink:#26103a; --r-none-ink:#f2f3f4;
+  --hit:#1f6b3f; --miss:#a2311f; --unscored:#5b6775;
+  --stamp:#1f6b3f;
+  --display:"Archivo",system-ui,sans-serif; --body:"Atkinson Hyperlegible Next",system-ui,sans-serif; --mono:"Red Hat Mono",ui-monospace,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0f1620; --sheet:#141d29; --ink:#e8ecf0; --ink-2:#b9c3cd; --ink-3:#97a2ae;
+    --rule:#2c3846; --rule-2:#202b37; --band:#070b11; --band-ink:#e8ecf0; --band-ink-2:#9aa6b3;
+    --act:#8db0ff; --act-ink:#0b1220; --act-soft:#1a2740;
+    --r-free:#5fae7c; --r-trial:#a3c46a; --r-paid:#d6b14a; --r-approval:#df8a55; --r-partner:#a685c4; --r-none:#59606a;
+    --r-free-ink:#06180c; --r-trial-ink:#141c05; --r-paid-ink:#1f1602; --r-approval-ink:#220c02; --r-partner-ink:#14061f; --r-none-ink:#f2f3f4;
+    --hit:#6fcf97; --miss:#ff8a75; --unscored:#97a2ae; --stamp:#6fcf97;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0f1620; --sheet:#141d29; --ink:#e8ecf0; --ink-2:#b9c3cd; --ink-3:#97a2ae;
+  --rule:#2c3846; --rule-2:#202b37; --band:#070b11; --band-ink:#e8ecf0; --band-ink-2:#9aa6b3;
+  --act:#8db0ff; --act-ink:#0b1220; --act-soft:#1a2740;
+  --r-free:#5fae7c; --r-trial:#a3c46a; --r-paid:#d6b14a; --r-approval:#df8a55; --r-partner:#a685c4; --r-none:#59606a;
+  --r-free-ink:#06180c; --r-trial-ink:#141c05; --r-paid-ink:#1f1602; --r-approval-ink:#220c02; --r-partner-ink:#14061f; --r-none-ink:#f2f3f4;
+  --hit:#6fcf97; --miss:#ff8a75; --unscored:#97a2ae; --stamp:#6fcf97;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{background:var(--band);scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.55 var(--body);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+::selection{background:var(--act);color:var(--act-ink)}
+a{color:var(--act);text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:2px solid var(--act);outline-offset:2px;border-radius:2px}
+html{scrollbar-color:var(--ink-3) var(--paper)}
+.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,40px)}
+.num{font-variant-numeric:tabular-nums}
+code,.mono{font-family:var(--mono);font-size:.86em;letter-spacing:0}
+
+/* ---------- masthead ---------- */
+.mast{background:var(--band);color:var(--band-ink)}
+.mast .bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid #ffffff22;font-size:14px}
+.mast .bar nav{display:flex;flex-wrap:wrap;gap:4px 18px}
+.mast .bar a{color:var(--band-ink);text-decoration:none}
+.mast .bar a:hover{text-decoration:underline}
+.mast .ed{font-family:var(--mono);font-size:12.5px;color:var(--band-ink-2)}
+.mast .head{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(20px,4vw,56px);align-items:end;padding:clamp(22px,3vw,36px) 0 clamp(22px,3vw,32px)}
+.mast h1{font-family:var(--display);font-variation-settings:"wdth" 68;font-weight:800;font-size:clamp(44px,6.6vw,92px);line-height:.9;letter-spacing:-.02em;margin:0;text-wrap:balance}
+.mast h1 span{display:block}
+.mast .sub{color:var(--band-ink-2);font-size:clamp(15.5px,1.3vw,17px);margin:0 0 16px}
+.mast .sub b{color:var(--band-ink);font-weight:500}
+.mast .runline{display:flex;flex-wrap:wrap;gap:10px 10px;font-size:14.5px}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--act);color:var(--act-ink);border:0;border-radius:6px;padding:10px 16px;font:600 15px/1 var(--body);text-decoration:none;cursor:pointer}
+.btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent;color:var(--band-ink);box-shadow:inset 0 0 0 1px #ffffff55}
+.btn svg{width:16px;height:16px}
+
+/* ---------- first viewport: findings + matrix ---------- */
+.lead{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,56px);padding:clamp(28px,4vw,48px) 0 8px}
+.lead h2,.sec h2{font-family:var(--display);font-variation-settings:"wdth" 75;font-weight:750;font-size:clamp(26px,3vw,36px);line-height:1.05;letter-spacing:-.01em;margin:0 0 14px;text-wrap:balance}
+.findings{list-style:none;margin:0;padding:0;counter-reset:f}
+.findings li{display:grid;grid-template-columns:92px 1fr;gap:4px 14px;align-items:baseline;padding:11px 0;border-top:1px solid var(--rule);font-size:16.5px;line-height:1.42}
+.findings li:first-child{border-top:0;padding-top:2px}
+.findings li.plain{display:block}
+.findings .fig{font-family:var(--display);font-variation-settings:"wdth" 72;font-weight:800;font-size:28px;line-height:1;letter-spacing:-.01em;white-space:nowrap}
+.findings .fig.word{font-size:17px;line-height:1.1;white-space:normal}
+.matrix-wrap{position:relative}
+.matrix{display:grid;grid-template-columns:minmax(92px,auto) repeat(10,minmax(0,1fr));gap:3px;align-items:stretch}
+.matrix .cat{font-size:12.5px;line-height:1.15;color:var(--ink-2);display:flex;align-items:center;padding-right:8px}
+.cell{appearance:none;border:0;margin:0;padding:5px 4px 4px;min-height:46px;border-radius:3px;display:flex;flex-direction:column;justify-content:space-between;text-align:left;cursor:pointer;font:500 10.5px/1.1 var(--body);overflow:hidden;position:relative;transition:transform .18s cubic-bezier(.2,.8,.2,1),box-shadow .18s}
+.cell .code{font:600 11px/1 var(--mono);opacity:.9}
+.cell .nm{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cell:hover,.cell:focus-visible,.cell[aria-pressed="true"]{transform:translateY(-2px);box-shadow:0 4px 10px -4px #13203066;z-index:2}
+.cell[aria-pressed="true"]{outline:2px solid var(--ink);outline-offset:1px}
+.cell.pending{background:repeating-linear-gradient(135deg,var(--rule-2) 0 4px,transparent 4px 8px);color:var(--ink-3);cursor:default}
+.cell.lowconf::after{content:"";position:absolute;right:4px;top:5px;width:6px;height:6px;border-radius:50%;border:1.5px solid currentColor}
+.rg-SELF_SERVE_FREE{background:var(--r-free);color:var(--r-free-ink)}
+.rg-SELF_SERVE_TRIAL{background:var(--r-trial);color:var(--r-trial-ink)}
+.rg-PAID_PLAN{background:var(--r-paid);color:var(--r-paid-ink)}
+.rg-APPROVAL{background:var(--r-approval);color:var(--r-approval-ink)}
+.rg-PARTNERSHIP{background:var(--r-partner);color:var(--r-partner-ink)}
+.rg-NO_PUBLIC_API{background:var(--r-none);color:var(--r-none-ink)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin:14px 0 0;padding:0;list-style:none;font-size:13.5px;color:var(--ink-2)}
+.legend li{display:flex;align-items:center;gap:7px}
+.chip{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:20px;padding:0 5px;border-radius:3px;font:600 11px/1 var(--mono)}
+.matrix-note{font-size:13px;color:var(--ink-3);margin:8px 0 0}
+.record{margin-top:16px;background:var(--sheet);border:1px solid var(--rule);border-radius:8px;padding:16px 18px;min-height:178px}
+.record h3{margin:0 0 2px;font:750 22px/1.1 var(--display);font-variation-settings:"wdth" 80}
+.record .meta{font-size:13px;color:var(--ink-3);margin-bottom:10px}
+.record dl{display:grid;grid-template-columns:max-content 1fr;gap:5px 14px;margin:0;font-size:14.5px}
+.record dt{color:var(--ink-3)}
+.record dd{margin:0}
+.record .q{font-size:13.5px;color:var(--ink-2);margin:10px 0 0}
+
+/* ---------- sections ---------- */
+.sec{padding:clamp(44px,6vw,80px) 0 0}
+.sec > .wrap > p.intro,.sec p.intro{max-width:70ch;color:var(--ink-2);margin:0 0 22px;font-size:17px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,40px)}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,36px)}
+h3.h{font:700 18px/1.2 var(--body);margin:0 0 10px}
+.small{font-size:13.5px;color:var(--ink-3)}
+/* category bars */
+.catbars{display:grid;gap:8px}
+.catbar{display:grid;grid-template-columns:minmax(150px,220px) 1fr 44px;gap:12px;align-items:center;font-size:14.5px}
+.catbar .track{display:flex;height:22px;border-radius:3px;overflow:hidden;background:var(--rule-2)}
+.catbar .track span{display:block;height:100%}
+.catbar .pct{text-align:right;font-family:var(--mono);font-size:13px}
+/* simple tables */
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--rule-2);vertical-align:top}
+th{font-weight:700;color:var(--ink-2);font-size:13px;border-bottom:1px solid var(--rule)}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.bar-inline{display:inline-block;height:8px;border-radius:2px;background:var(--ink-2);vertical-align:middle;margin-left:8px}
+.list-tight{list-style:none;margin:0;padding:0}
+.list-tight li{padding:7px 0;border-top:1px solid var(--rule-2);font-size:14.5px}
+.list-tight li:first-child{border-top:0}
+/* register */
+.filters{display:flex;flex-wrap:wrap;gap:10px 12px;align-items:end;margin:0 0 14px}
+.filters label{display:grid;gap:4px;font-size:12.5px;color:var(--ink-3)}
+.filters select,.filters input{font:500 14.5px/1 var(--body);color:var(--ink);background:var(--sheet);border:1px solid var(--rule);border-radius:6px;padding:9px 32px 9px 10px;min-width:150px;appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--ink-3) 50%),linear-gradient(135deg,var(--ink-3) 50%,transparent 50%);background-position:calc(100% - 15px) 52%,calc(100% - 10px) 52%;background-size:5px 5px;background-repeat:no-repeat}
+.filters input{background-image:none;padding-right:10px;min-width:200px}
+.filters .count{font-size:14px;color:var(--ink-2);margin-left:auto}
+.reg{overflow-x:auto;border:1px solid var(--rule);border-radius:8px;background:var(--sheet)}
+.reg table{min-width:1040px}
+.reg th{position:sticky;top:0;background:var(--sheet);z-index:1}
+.reg td{font-size:14px}
+.reg td.app b{display:block;font-weight:700}
+.reg td.app span{color:var(--ink-3);font-size:12.5px}
+.enum{font:500 12.5px/1.3 var(--mono)}
+.tag{display:inline-block;padding:2px 6px;border-radius:3px;font:600 11.5px/1.3 var(--mono);margin:0 3px 3px 0;background:var(--rule-2);color:var(--ink)}
+.b-READY{color:var(--hit)} .b-READY_WITH_CAVEATS{color:var(--ink)} .b-NEEDS_OUTREACH{color:var(--miss)} .b-BLOCKED{color:var(--miss)}
+.conf{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
+details.ev summary{cursor:pointer;color:var(--act);font-size:13px}
+details.ev blockquote{margin:6px 0 0;padding:0 0 0 10px;border-left:1px solid var(--rule);font-size:13px;color:var(--ink-2)}
+.reg tr.flagged td.app b::after{content:" · flagged";font-weight:500;color:var(--miss);font-size:12px}
+/* route */
+.route{display:grid;grid-template-columns:repeat(6,1fr);gap:0;position:relative;margin:8px 0 0}
+.stn{position:relative;padding:34px 14px 0 0}
+.stn::before{content:"";position:absolute;left:0;right:0;top:11px;height:3px;background:var(--ink)}
+.stn:last-child::before{right:auto;width:14px}
+.stn .dot{position:absolute;left:0;top:3px;width:19px;height:19px;border-radius:50%;background:var(--paper);border:3px solid var(--ink)}
+.stn.human .dot{border-radius:3px;background:var(--r-paid);border-color:var(--ink)}
+.stn h4{margin:0 0 4px;font:700 15.5px/1.2 var(--body)}
+.stn p{margin:0;font-size:13.5px;color:var(--ink-2)}
+.stn .who{display:block;font:600 11.5px/1.4 var(--mono);color:var(--ink-3);margin-bottom:4px}
+.humans{margin-top:28px}
+.humans li{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start}
+.humans svg{width:22px;height:22px;margin-top:1px}
+/* document check */
+.verdict{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,56px);align-items:start}
+.acc{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin:6px 0 12px}
+.acc .v{font-family:var(--display);font-variation-settings:"wdth" 75;font-weight:800;font-size:clamp(40px,5vw,64px);line-height:1}
+.acc .arrow{font-size:28px;color:var(--ink-3)}
+.acc .lab{display:block;font:500 13px/1.3 var(--body);color:var(--ink-3)}
+.stampmark{display:inline-block;transform:rotate(-2.5deg);border:1.5px solid var(--stamp);color:var(--stamp);border-radius:4px;padding:2px 7px;font:700 11px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.stampmark.bad{border-color:var(--miss);color:var(--miss)}
+.stampmark.grey{border-color:var(--unscored);color:var(--unscored)}
+.struck{text-decoration:line-through;text-decoration-thickness:1.5px;text-decoration-color:var(--miss)}
+.missrow td{font-size:13.5px}
+.delta-up{color:var(--hit);font-weight:700}.delta-down{color:var(--miss);font-weight:700}
+.callout{background:var(--sheet);border:1px solid var(--rule);border-radius:8px;padding:16px 18px}
+pre{background:var(--band);color:var(--band-ink);padding:14px 16px;border-radius:8px;overflow:auto;font:500 13px/1.6 var(--mono)}
+/* close */
+.close{background:var(--band);color:var(--band-ink);margin-top:clamp(48px,7vw,96px);padding:clamp(36px,5vw,64px) 0}
+.close h2{font-family:var(--display);font-variation-settings:"wdth" 70;font-weight:800;font-size:clamp(34px,5vw,60px);line-height:.95;margin:0 0 14px}
+.close p,.close li{color:var(--band-ink-2)}
+.close a{color:#9db8ff}
+.close .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px)}
+.close pre{background:#ffffff10;color:var(--band-ink)}
+.foot{color:var(--band-ink-2);font-size:13px;border-top:1px solid #ffffff22;margin-top:32px;padding-top:16px}
+.loading{padding:40px 0;color:var(--ink-3)}
+@media (max-width: 980px){
+  .mast .head{grid-template-columns:1fr}
+  .lead,.verdict,.two,.close .grid{grid-template-columns:1fr}
+  .three{grid-template-columns:1fr}
+  .route{grid-template-columns:1fr}
+  .stn{padding:0 0 18px 34px}
+  .stn::before{left:8px;right:auto;top:0;bottom:0;width:3px;height:auto}
+  .stn:last-child::before{bottom:auto;height:14px;width:3px}
+  .stn .dot{top:0}
+}
+@media (max-width: 640px){
+  .matrix{grid-template-columns:repeat(10,minmax(0,1fr));gap:2px}
+  .matrix .cat{grid-column:1/-1;padding:8px 0 2px}
+  .cell{min-height:34px;padding:3px}
+  .cell .nm{display:none}
+  .mast .bar nav{display:none}
+  .catbar{grid-template-columns:1fr 40px}
+  .catbar .label{grid-column:1/-1}
+  .filters .count{margin-left:0;width:100%}
+}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="mast">
+  <div class="wrap">
+    <div class="bar">
+      <span class="ed" id="edition">Edition 2026-11</span>
+      <nav aria-label="Sections">
+        <a href="#findings">Findings</a><a href="#patterns">Patterns</a><a href="#register">Register</a><a href="#agent">The agent</a><a href="#check">Document check</a><a href="#run">Run it</a>
+      </nav>
+    </div>
+    <div class="head">
+    <h1><span>Entry requirements</span><span>for 100 APIs</span></h1>
+    <div>
+    <p class="sub">Which SaaS apps can an AI-agent toolkit be built for today, and what stands at the border: <b>auth method, whether a developer can get credentials alone, what the API covers, whether an MCP server exists</b>. Compiled by a research agent, with every field cited to a vendor page and checked against a hand-verified random sample.</p>
+    <div class="runline">
+      <a class="btn" id="run-trigger" href="https://github.com/HUmnanANirudh/Composio/actions/workflows/research.yml"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg>Run the agent on any app</a>
+      <a class="btn ghost" href="https://github.com/HUmnanANirudh/Composio">Source and README</a>
+      <a class="btn ghost" href="data.json">data.json</a>
+      <a class="btn ghost" href="llms.txt">llms.txt</a>
+    </div>
+    </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="wrap lead" id="findings" aria-labelledby="h-findings">
+    <div>
+      <h2 id="h-findings">What the 100 apps show</h2>
+      <ol class="findings" id="findings-list"><li class="loading">Loading findings…</li></ol>
+    </div>
+    <div class="matrix-wrap">
+      <h2>Entry regime, app by app</h2>
+      <div class="matrix" id="matrix" role="group" aria-label="Entry regime of each app, grouped by category"></div>
+      <ul class="legend" id="legend"></ul>
+      <p class="matrix-note">Point at or tab to a cell to read its entry record; select it to find it in the register. A ring marks a regime the agent holds with low confidence.</p>
+      <div class="record" id="record" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="sec" id="patterns" aria-labelledby="h-patterns">
+    <div class="wrap">
+      <h2 id="h-patterns">Patterns across the set</h2>
+      <p class="intro">Counts over the final records; nothing here is model-written. Each bar shares the regime legend above.</p>
+      <div class="two">
+        <div>
+          <h3 class="h">Who lets you in alone, by category</h3>
+          <div class="catbars" id="catbars"></div>
+          <p class="small" style="margin-top:10px">Percentage = apps where credentials are self-serve (free or trial).</p>
+        </div>
+        <div>
+          <h3 class="h">How apps authenticate</h3>
+          <table id="auth-table"></table>
+          <p class="small" style="margin-top:10px">An app counts once per method it accepts, so rows sum past 100.</p>
+        </div>
+      </div>
+      <div class="three" style="margin-top:40px">
+        <div><h3 class="h">Most common blockers</h3><ul class="list-tight" id="blockers"></ul></div>
+        <div><h3 class="h">Easy wins: self-serve, no Composio toolkit yet</h3><ul class="list-tight" id="easy"></ul></div>
+        <div><h3 class="h">Needs outreach or partnership</h3><ul class="list-tight" id="outreach"></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="register" aria-labelledby="h-register">
+    <div class="wrap">
+      <h2 id="h-register">The register</h2>
+      <p class="intro">All 100 records. Open <em>evidence</em> on a row to see the quotes; a stamp means the verifier found the quote on the cited page.</p>
+      <div class="filters" role="search">
+        <label>Category<select id="f-cat"><option value="">All categories</option></select></label>
+        <label>Entry regime<select id="f-access"><option value="">All regimes</option></select></label>
+        <label>Buildability<select id="f-build"><option value="">Any</option></select></label>
+        <label>Search<input id="f-q" type="search" placeholder="App name or blocker"></label>
+        <span class="count num" id="f-count" aria-live="polite"></span>
+      </div>
+      <div class="reg"><table id="reg-table"><thead><tr>
+        <th scope="col">App</th><th scope="col">Auth</th><th scope="col">Entry regime</th><th scope="col">API</th><th scope="col">MCP</th><th scope="col">Composio toolkit</th><th scope="col">Buildable?</th><th scope="col">Main blocker</th><th scope="col">Evidence</th>
+      </tr></thead><tbody id="reg-body"></tbody></table></div>
+    </div>
+  </section>
+
+  <section class="sec" id="agent" aria-labelledby="h-agent">
+    <div class="wrap">
+      <h2 id="h-agent">The agent's route</h2>
+      <p class="intro">A Python pipeline (<code>uv run research run</code>). Composio provides the catalog cross-check and web search, through a Platform SDK session to Exa. Groq models extract and audit the fields. Square stations are where a human had to step in.</p>
+      <div class="route" id="route">
+        <div class="stn"><span class="dot"></span><span class="who">deterministic</span><h4>Composio catalog</h4><p>Match each app to Composio's public 1,841-toolkit catalog: existing toolkit, tool count, auth schemes, vendor MCP proxy.</p></div>
+        <div class="stn"><span class="dot"></span><span class="who">crawler + Composio → Exa</span><h4>Discover sources</h4><p>Crawl the official docs host and its llms.txt, follow auth, pricing and MCP links, then search with <code>EXA_SEARCH</code> through a Composio session.</p></div>
+        <div class="stn"><span class="dot"></span><span class="who" id="m-extract">gpt-oss-120b</span><h4>Extract, pass 1</h4><p>Fill a rubric of fixed enums. Every field must cite a source and a verbatim quote. The catalog is withheld so it stays independent.</p></div>
+        <div class="stn"><span class="dot"></span><span class="who">deterministic + <span id="m-critic">qwen3.8-27b</span></span><h4>Verify, four loops</h4><p>Grounding: is the quote on the page? Rules: consistency and Composio cross-checks. Critic: a second model family audits. Re-research: flagged fields only.</p></div>
+        <div class="stn human"><span class="dot"></span><span class="who">human</span><h4>Answer key</h4><p>20 apps drawn at random (2 per category, fixed seed) before any run, checked by hand against official docs.</p></div>
+        <div class="stn"><span class="dot"></span><span class="who">deterministic</span><h4>Score + patterns</h4><p>Pass 1 vs final, field by field, against the key. Patterns are plain counts over the final records.</p></div>
+      </div>
+      <div class="two humans">
+        <div>
+          <h3 class="h">Where a human was needed</h3>
+          <ul class="list-tight" id="humans">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/></svg><span><b>Catalog matching.</b> Fuzzy name matching mapped 80 of 100 apps cleanly; 20 ambiguous ones (Zoho CRM → <code>ZOHO</code>, GoHighLevel → <code>HIGHLEVEL_LOCATION</code>, Mermaid CLI → none) are pinned in a reviewed override file.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/></svg><span><b>Search credentials.</b> Composio's built-in search toolkit is retired (HTTP 410), so a human created an Exa key; <code>research connect-search</code> registers it on the agent's Composio user. Without it the agent prints a Connect Link and runs crawler-only.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/></svg><span><b>The answer key.</b> 20 apps × 6 fields read from vendor docs, with URLs and quotes. Contested fields are left unscored rather than guessed.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/></svg><span><b>Reviewing misses.</b> Every miss below was read against the source to decide whether the agent or the key was wrong. Once, the key was wrong (Clay).</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="h">What it cost</h3>
+          <table id="usage-table"></table>
+          <p class="small" style="margin-top:10px">Groq free tier (8K tokens per minute per model): the agent paces itself with a token budget and pauses cleanly at daily caps, then resumes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="check" aria-labelledby="h-check">
+    <div class="wrap">
+      <h2 id="h-check">Document check: is it right?</h2>
+      <p class="intro" id="check-intro">Scored against the hand-checked sample. Pass 1 is the extractor alone; final is after the four verification loops.</p>
+      <div class="verdict">
+        <div>
+          <div class="acc" id="acc"></div>
+          <table id="field-table"></table>
+          <h3 class="h" style="margin-top:28px">What each loop caught on pass 1</h3>
+          <table id="loop-table"></table>
+          <h3 class="h" style="margin-top:28px">Does confidence mean anything?</h3>
+          <table id="calib-table"></table>
+        </div>
+        <div>
+          <h3 class="h">Every miss in the final records</h3>
+          <div class="reg"><table id="miss-table"></table></div>
+          <h3 class="h" style="margin-top:28px">Fixed by verification</h3>
+          <div class="reg"><table id="fixed-table"></table></div>
+          <div class="callout" style="margin-top:28px" id="key-revisions"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="close" id="run" aria-labelledby="h-run">
+    <div class="wrap">
+      <div class="grid">
+        <div>
+          <h2 id="h-run">Run it yourself</h2>
+          <p>From GitHub: <a href="https://github.com/HUmnanANirudh/Composio/actions/workflows/research.yml">Actions → Run research agent → Run workflow</a>, type any app from the list. The job summary prints the cited record and uploads the JSON. Or locally:</p>
+          <pre>uv sync && cp .env.example .env   # GROQ, COMPOSIO, EXA keys
+uv run research connect-search      # Exa → Composio user
+uv run research run --apps Attio    # pass 1 + verification
+uv run research show --apps Attio --md
+uv run research evaluate            # score vs answer key
+uv run research build-site          # this page's data</pre>
+        </div>
+        <div>
+          <h2>Where it fell short</h2>
+          <ul id="limits">
+            <li>Groq's free tier caps throughput; a full run spans hours and pauses at daily limits.</li>
+            <li>JavaScript-rendered docs (e.g. GoHighLevel's Stoplight portal) return almost no text to a plain fetch.</li>
+            <li>“Access” is the hardest field: pricing pages rarely say plainly whether the API is on the free plan.</li>
+            <li>The answer key covers 20 of 100 apps; the other 80 rely on the loops and confidence alone.</li>
+          </ul>
+          <p class="small" style="color:var(--band-ink-2)">For agents: <a href="llms.txt">llms.txt</a> · <a href="data.json">data.json</a> (records, evidence, flags, pass-1 values, eval) · <a href="results.csv">results.csv</a></p>
+        </div>
+      </div>
+      <p class="foot" id="foot">Data generated —. Apps are referred to by name for research purposes; no affiliation with any vendor, including Composio.</p>
+    </div>
+  </section>
+</main>
+
+<script>
+const REG = {
+  SELF_SERVE_FREE:{code:"F",label:"Self-serve, free"},
+  SELF_SERVE_TRIAL:{code:"T",label:"Self-serve, trial only"},
+  PAID_PLAN:{code:"P",label:"Paid plan required"},
+  APPROVAL:{code:"A",label:"Application / approval"},
+  PARTNERSHIP:{code:"S",label:"Partnership or sales"},
+  NO_PUBLIC_API:{code:"X",label:"No hosted API"},
+};
+const BUILD = {READY:"Ready",READY_WITH_CAVEATS:"Ready, with caveats",NEEDS_OUTREACH:"Needs outreach",BLOCKED:"Blocked"};
+const FIELD_LABEL = {auth_methods:"Auth methods",access:"Entry regime",api_style:"API style",api_breadth:"API breadth",official_mcp:"Official MCP",buildability:"Buildability"};
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt = v => v === null || v === undefined ? "—" : Array.isArray(v) ? (v.length ? v.join(", ") : "—") : typeof v === "boolean" ? (v ? "yes" : "no") : String(v);
+const pct = x => x == null ? "—" : Math.round(x * 100) + "%";
+const short = n => n.replace(/\s*\(.*?\)/, "");
+const truthText = t => t && typeof t === "object" && !Array.isArray(t) ? t.core.join(" + ") + (t.optional && t.optional.length ? ` (optional: ${t.optional.join(", ")})` : "") : fmt(t);
+const host = u => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return u; } };
+
+fetch("data.json").then(r => r.json()).then(render).catch(err => {
+  $("#findings-list").innerHTML = `<li>Could not load data.json (${esc(err.message)}). The raw data is in the <a href="https://github.com/HUmnanANirudh/Composio">repository</a>.</li>`;
+});
+
+function render(d){
+  const apps = d.apps, byId = Object.fromEntries(apps.map(a => [a.id, a]));
+  const P = d.patterns || {}, E = d.eval || {};
+  $("#edition").textContent = `Edition ${d.generated.slice(0,7)} · ${d.counts.researched} of ${d.counts.apps} apps researched · data ${d.generated}`;
+  $("#foot").textContent = `Data generated ${d.generated}. Extraction ${d.models.extract}; critic ${d.models.critic}; search ${d.models.search}. Apps are named for research purposes; no affiliation with any vendor, including Composio.`;
+  $("#m-extract").textContent = d.models.extract.replace("openai/","");
+  $("#m-critic").textContent = d.models.critic.replace("qwen/","");
+
+  // findings
+  const acc1 = E.pass1?.overall?.accuracy, accF = E.final?.overall?.accuracy;
+  const items = (P.headlines || []).map(h => `<li><span class="fig num${/^[\d%]+$/.test(h.fig) ? "" : " word"}">${esc(h.fig)}</span><span>${esc(h.text)}</span></li>`);
+  if (acc1 != null && accF != null) items.push(`<li><span class="fig num">${pct(accF)}</span><span>accuracy on the hand-checked sample after verification, up from ${pct(acc1)} on the first pass. <a href="#check">See every miss</a>.</span></li>`);
+  if (d.pending.length) items.push(`<li class="plain small">${d.pending.length} apps were still being researched when this page was built; they show as hatched cells.</li>`);
+  $("#findings-list").innerHTML = items.join("");
+
+  // legend
+  $("#legend").innerHTML = Object.entries(REG).map(([k,v]) => `<li><span class="chip rg-${k}">${v.code}</span>${v.label}</li>`).join("");
+
+  // matrix
+  const catOrder = []; const catApps = {};
+  (d.roster || apps).forEach(a => { if (!catApps[a.category]) { catApps[a.category] = []; catOrder.push(a.category); } catApps[a.category].push(a); });
+  const m = $("#matrix"); m.innerHTML = "";
+  catOrder.forEach(c => {
+    const lab = document.createElement("div"); lab.className = "cat"; lab.textContent = c; m.appendChild(lab);
+    catApps[c].sort((x,y) => x.id - y.id).forEach(r => {
+      const a = byId[r.id]; const b = document.createElement("button"); b.type = "button";
+      if (!a) { b.className = "cell pending"; b.disabled = true; b.innerHTML = `<span class="code">…</span><span class="nm">${esc(short(r.app))}</span>`; b.setAttribute("aria-label", `${r.app}: not yet researched`); m.appendChild(b); return; }
+      const acc = a.fields.access.value, reg = REG[acc] || {code:"?",label:"unknown"};
+      b.className = `cell rg-${acc}` + (a.fields.access.confidence < 0.5 ? " lowconf" : "");
+      b.innerHTML = `<span class="code">${reg.code}</span><span class="nm">${esc(short(a.app))}</span>`;
+      b.setAttribute("aria-label", `${a.app}: ${reg.label}; ${BUILD[a.fields.buildability.value] || "unknown"}`);
+      b.setAttribute("aria-pressed","false");
+      const show = () => showRecord(a);
+      b.addEventListener("mouseenter", show); b.addEventListener("focus", show);
+      b.addEventListener("click", () => { document.querySelectorAll(".cell[aria-pressed=true]").forEach(x => x.setAttribute("aria-pressed","false")); b.setAttribute("aria-pressed","true"); $("#f-q").value = a.app; filter(); document.getElementById("register").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"}); });
+      m.appendChild(b);
+    });
+  });
+  const first = apps.find(a => a.app === "Attio") || apps[0];
+  if (first) showRecord(first, true);
+
+  // patterns
+  const order = Object.keys(REG);
+  $("#catbars").innerHTML = (P.categories || []).map(c => {
+    const segs = order.map(k => c.access[k] ? `<span class="rg-${k}" style="width:${100*c.access[k]/c.n}%" title="${REG[k].label}: ${c.access[k]}"></span>` : "").join("");
+    return `<div class="catbar"><span class="label">${esc(c.category)} <span class="small num">(${c.n})</span></span><span class="track" role="img" aria-label="${esc(c.category)}: ${order.filter(k=>c.access[k]).map(k=>`${c.access[k]} ${REG[k].label}`).join(", ")}">${segs}</span><span class="pct num">${c.self_serve_pct}%</span></div>`;
+  }).join("");
+  const n = P.n || 1, AUTHN = {OAUTH2:"OAuth 2.0",API_KEY:"API key",BEARER_TOKEN:"Static / personal token",BASIC:"HTTP Basic",JWT:"JWT / service account",OTHER:"Other (signing, session)",NONE:"None (local tool)"};
+  $("#auth-table").innerHTML = `<thead><tr><th>Method</th><th class="n">Apps</th></tr></thead><tbody>` + Object.entries(P.auth_any || {}).map(([k,v]) => `<tr><td>${AUTHN[k]||k}</td><td class="n">${v}<span class="bar-inline" style="width:${Math.round(120*v/n)}px"></span></td></tr>`).join("") + `</tbody>`;
+  $("#blockers").innerHTML = Object.entries(P.blockers || {}).map(([k,v]) => `<li><b class="num">${v}</b> ${esc(k)}</li>`).join("") || "<li>—</li>";
+  const rowLi = r => `<li><b>${esc(r.app)}</b> <span class="small">${esc(r.category)}</span>${r.blocker ? `<br><span class="small">${esc(r.blocker)}</span>` : ""}</li>`;
+  $("#easy").innerHTML = (P.easy_wins || []).map(rowLi).join("") || "<li>None in the researched set yet.</li>";
+  $("#outreach").innerHTML = (P.outreach || []).map(rowLi).join("") || "<li>None in the researched set yet.</li>";
+
+  // register filters
+  const fc = $("#f-cat"), fa = $("#f-access"), fb = $("#f-build");
+  catOrder.forEach(c => fc.insertAdjacentHTML("beforeend", `<option>${esc(c)}</option>`));
+  Object.entries(REG).forEach(([k,v]) => fa.insertAdjacentHTML("beforeend", `<option value="${k}">${v.label}</option>`));
+  Object.entries(BUILD).forEach(([k,v]) => fb.insertAdjacentHTML("beforeend", `<option value="${k}">${v}</option>`));
+  window._apps = apps;
+  [fc,fa,fb].forEach(el => el.addEventListener("change", filter)); $("#f-q").addEventListener("input", filter);
+  filter();
+
+  // usage
+  const U = d.usage || {}; let tin = 0, tout = 0;
+  $("#usage-table").innerHTML = `<thead><tr><th>Model · step</th><th class="n">Calls</th><th class="n">Tokens</th></tr></thead><tbody>` + Object.entries(U).map(([k,v]) => { tin += v.in; tout += v.out; const [mod,purp] = k.split("|"); return `<tr><td><span class="mono">${esc(mod.split("/").pop())}</span> · ${esc(purp)}</td><td class="n">${v.calls}</td><td class="n">${(v.in+v.out).toLocaleString()}</td></tr>`; }).join("") + `<tr><td><b>Total</b></td><td></td><td class="n"><b>${(tin+tout).toLocaleString()}</b></td></tr></tbody>`;
+
+  renderCheck(d, byId);
+}
+
+function showRecord(a){
+  const f = a.fields, reg = REG[f.access.value] || {label:"unknown"};
+  const ev = [f.access, f.auth_methods].flatMap(c => c.evidence).find(e => e.grounded) || f.access.evidence[0];
+  $("#record").innerHTML = `<h3>${esc(a.app)}</h3><div class="meta">${esc(a.category)} · ${esc(f.one_liner.value || "")}</div>
+  <dl><dt>Entry regime</dt><dd><span class="chip rg-${f.access.value}">${reg.code||"?"}</span> ${reg.label} <span class="conf">conf ${f.access.confidence}</span></dd>
+  <dt>Auth</dt><dd class="enum">${esc(fmt(f.auth_methods.value))}</dd>
+  <dt>Buildable</dt><dd>${BUILD[f.buildability.value] || "—"}${f.main_blocker.value ? ` · ${esc(f.main_blocker.value)}` : ""}</dd>
+  <dt>Composio</dt><dd>${a.composio.slug ? `<span class="mono">${esc(a.composio.slug)}</span> · ${a.composio.tools} tools` : "no toolkit yet"}${f.official_mcp.value ? " · vendor MCP: yes" : ""}</dd></dl>
+  ${ev ? `<p class="q">“${esc(ev.quote.slice(0,180))}” <a href="${esc(ev.url)}">${esc(host(ev.url))}</a> ${ev.grounded ? '<span class="stampmark">on page</span>' : '<span class="stampmark grey">not re-found</span>'}</p>` : ""}`;
+}
+
+function filter(){
+  const c = $("#f-cat").value, ac = $("#f-access").value, b = $("#f-build").value, q = $("#f-q").value.trim().toLowerCase();
+  const rows = window._apps.filter(a => (!c || a.category === c) && (!ac || a.fields.access.value === ac) && (!b || a.fields.buildability.value === b) && (!q || (a.app + " " + (a.fields.main_blocker.value||"") + " " + (a.fields.one_liner.value||"")).toLowerCase().includes(q)));
+  $("#f-count").textContent = `${rows.length} of ${window._apps.length} apps`;
+  $("#reg-body").innerHTML = rows.sort((x,y)=>x.id-y.id).map(a => {
+    const f = a.fields, reg = REG[f.access.value] || {code:"?",label:"unknown"};
+    const flagged = Object.values(f).some(c => c.flags && c.flags.some(x => !x.startsWith("maybe_")));
+    const evs = ["auth_methods","access","official_mcp"].flatMap(k => f[k].evidence.slice(0,1).map(e => ({k,...e})));
+    return `<tr class="${flagged ? "flagged" : ""}">
+      <td class="app"><b>${esc(a.app)}</b><span>${esc(a.category)}</span></td>
+      <td>${(f.auth_methods.value||[]).map(x=>`<span class="tag">${esc(x)}</span>`).join("") || "—"}</td>
+      <td><span class="chip rg-${f.access.value}">${reg.code}</span> ${reg.label}<br><span class="conf">conf ${f.access.confidence}</span></td>
+      <td class="enum">${esc(fmt(f.api_style.value))}<br><span class="conf">${esc(fmt(f.api_breadth.value)).toLowerCase()}</span></td>
+      <td>${f.official_mcp.value ? "yes" : "no"}</td>
+      <td>${a.composio.slug ? `<a class="mono" href="${esc(a.composio.url)}">${esc(a.composio.slug)}</a><br><span class="conf">${a.composio.tools} tools</span>` : '<span class="small">none</span>'}</td>
+      <td class="b-${f.buildability.value}">${BUILD[f.buildability.value] || "—"}</td>
+      <td>${esc(f.main_blocker.value || "—")}</td>
+      <td><details class="ev"><summary>${evs.filter(e=>e.grounded).length}/${evs.length} on page</summary>${evs.map(e => `<blockquote><b>${FIELD_LABEL[e.k]}</b>: “${esc(e.quote.slice(0,200))}” <a href="${esc(e.url)}">${esc(host(e.url))}</a> ${e.grounded ? '<span class="stampmark">on page</span>' : '<span class="stampmark grey">not re-found</span>'}</blockquote>`).join("")}${a.docs_url ? `<blockquote>Docs: <a href="${esc(a.docs_url)}">${esc(host(a.docs_url))}</a></blockquote>` : ""}</details></td>
+    </tr>`;
+  }).join("") || `<tr><td colspan="9">No app matches these filters. <a href="#register" onclick="document.querySelectorAll('.filters select').forEach(s=>s.value='');document.getElementById('f-q').value='';filter();return false">Clear filters</a></td></tr>`;
+}
+
+function renderCheck(d, byId){
+  const E = d.eval || {}, p1 = E.pass1, fin = E.final;
+  if (!p1 || !fin) { $("#acc").textContent = "Evaluation pending."; return; }
+  const scored = fin.rows.filter(r => r.status !== "unscored" && r.status !== "missing");
+  const nApps = new Set(scored.map(r => r.id)).size;
+  $("#check-intro").innerHTML = `Scored against the hand-checked sample: <b>${nApps} apps × 6 fields = ${fin.overall.total} checks</b> (fields with contested or unreadable docs are left unscored). Pass 1 is the extractor alone; final is after the four verification loops.`;
+  $("#acc").innerHTML = `<div><span class="v num">${pct(p1.overall.accuracy)}</span><span class="lab">pass 1 · ${p1.overall.correct}/${p1.overall.total}</span></div><span class="arrow" aria-hidden="true">→</span><div><span class="v num">${pct(fin.overall.accuracy)}</span><span class="lab">after verification · ${fin.overall.correct}/${fin.overall.total}</span></div>`;
+  $("#field-table").innerHTML = `<thead><tr><th>Field</th><th class="n">Pass 1</th><th class="n">Final</th><th class="n">Change</th></tr></thead><tbody>` + Object.keys(FIELD_LABEL).map(f => {
+    const a = p1.per_field[f] || {}, b = fin.per_field[f] || {}; const dlt = (b.correct||0) - (a.correct||0);
+    return `<tr><td>${FIELD_LABEL[f]}</td><td class="n">${a.correct}/${a.total}</td><td class="n">${b.correct}/${b.total}</td><td class="n ${dlt>0?"delta-up":dlt<0?"delta-down":""}">${dlt>0?"+":""}${dlt}</td></tr>`;
+  }).join("") + `</tbody>`;
+  const L = d.loops || {}, F = L.flags_round0 || {};
+  $("#loop-table").innerHTML = `<thead><tr><th>Loop</th><th class="n">Fields flagged</th></tr></thead><tbody>
+    <tr><td>Grounding: quote not on the cited page</td><td class="n">${F.grounding||0}</td></tr>
+    <tr><td>Rules: consistency, Composio cross-check</td><td class="n">${F.rules||0}</td></tr>
+    <tr><td>Critic model: wrong or unsupported</td><td class="n">${F.critic||0}</td></tr>
+    <tr><td><b>Re-research changed</b></td><td class="n"><b>${L.fields_changed||0}</b> fields in ${L.apps_changed||0} apps</td></tr></tbody>`;
+  $("#calib-table").innerHTML = `<thead><tr><th>Final confidence</th><th class="n">Checks</th><th class="n">Correct</th></tr></thead><tbody>` + (fin.calibration||[]).sort((a,b)=>a.bucket<b.bucket?-1:1).map(c => `<tr><td>${esc(c.bucket)}</td><td class="n">${c.total}</td><td class="n">${pct(c.accuracy)}</td></tr>`).join("") + `</tbody>`;
+
+  const gtBy = Object.fromEntries((d.ground_truth?.apps||[]).map(a => [a.id, a]));
+  const misses = fin.rows.filter(r => r.status === "miss");
+  $("#miss-table").innerHTML = `<thead><tr><th>App · field</th><th>Agent said</th><th>Answer key</th></tr></thead><tbody>` + (misses.map(r => {
+    const g = gtBy[r.id], ev = g?.evidence?.[r.field];
+    return `<tr class="missrow"><td><b>${esc(r.app)}</b><br>${FIELD_LABEL[r.field]} <span class="conf">conf ${r.confidence}</span></td><td><span class="struck">${esc(fmt(r.agent))}</span></td><td>${esc(truthText(r.truth))}${r.accept && r.accept.length ? `<br><span class="small">also accepted: ${esc(r.accept.join(", "))}</span>` : ""}${ev ? `<br><a class="small" href="${esc(ev.url)}">${esc(host(ev.url))}</a>` : ""}</td></tr>`;
+  }).join("") || `<tr><td colspan="3"><span class="stampmark">no misses</span></td></tr>`) + `</tbody>`;
+
+  const p1map = Object.fromEntries(p1.rows.map(r => [r.id+"|"+r.field, r]));
+  const fixed = fin.rows.filter(r => r.status === "hit" && p1map[r.id+"|"+r.field]?.status === "miss");
+  const broke = fin.rows.filter(r => r.status === "miss" && p1map[r.id+"|"+r.field]?.status === "hit");
+  $("#fixed-table").innerHTML = `<thead><tr><th>App · field</th><th>Pass 1</th><th>Final</th></tr></thead><tbody>` + fixed.map(r => `<tr><td><b>${esc(r.app)}</b> · ${FIELD_LABEL[r.field]}</td><td><span class="struck">${esc(fmt(p1map[r.id+"|"+r.field].agent))}</span></td><td>${esc(fmt(r.agent))} <span class="stampmark">fixed</span></td></tr>`).join("") + broke.map(r => `<tr><td><b>${esc(r.app)}</b> · ${FIELD_LABEL[r.field]}</td><td>${esc(fmt(p1map[r.id+"|"+r.field].agent))}</td><td><span class="struck">${esc(fmt(r.agent))}</span> <span class="stampmark bad">broken by loop</span></td></tr>`).join("") + (fixed.length + broke.length ? "" : `<tr><td colspan="3">No field changed outcome.</td></tr>`) + `</tbody>`;
+
+  const rev = d.ground_truth?.about?.revisions || [];
+  $("#key-revisions").innerHTML = `<h3 class="h">When the answer key was wrong</h3>` + (rev.map(r => `<p style="margin:0 0 8px"><b>${esc(r.app)}</b>: ${esc(r.why)}</p>`).join("") || "<p>No revisions.</p>") + `<p class="small" style="margin:0">Key method: ${esc(d.ground_truth?.about?.sampling || "")} ${esc(d.ground_truth?.about?.checked_by || "")}</p>`;
+}
+</script>
+</body>
+</html>
