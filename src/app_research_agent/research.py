@@ -106,10 +106,13 @@ def docs_seeds(app: App) -> list[str]:
     seeds: list[str] = []
     if app.hint_url:
         seeds.append(app.hint_url)
+        if _is_code_host(app):  # an open-source repo: the repo is the documentation
+            return seeds
         reg = web.registrable(web.host(app.hint_url))
-        hosts = [web.host(app.hint_url)] + [
-            f"{p}.{reg}" for p in ("developers", "developer", "docs")
-        ]
+        hosts = [web.host(app.hint_url)]
+        bare = urlparse(app.hint_url).path.strip("/") == ""
+        if bare:  # a marketing domain: also probe the usual developer-docs hosts
+            hosts += [f"{p}.{reg}" for p in ("developers", "developer", "docs")]
         for h in dict.fromkeys(hosts):
             seeds += [f"https://{h}/llms.txt"]
             if h != web.host(app.hint_url):
