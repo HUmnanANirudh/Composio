@@ -1,0 +1,167 @@
+{
+  "id": 87,
+  "app": "Xero",
+  "category": "Finance and Fintech",
+  "hint": "developer.xero.com",
+  "docs_url": "https://developer.xero.com/faq/getting-started",
+  "one_liner": {
+    "value": "Cloud accounting software for small businesses",
+    "evidence": [
+      {
+        "url": "https://devblog.xero.com/the-xero-remote-mcp-is-now-generally-available-06008f6ab2a7?gi=7610392ecdcb",
+        "quote": "list invoices, create contacts or run a profit and loss report",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://developer.xero.com/faq/getting-started",
+        "quote": "Our API uses OAuth 2.0 which means you need to register your app to get a client id and client secret",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.97,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://developer.xero.com/faq/getting-started",
+        "quote": "The first step is to sign up for a free Xero account.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://developer.xero.com/faq/getting-started",
+        "quote": "You can also use our OpenAPI spec to generate your own SDK.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://devblog.xero.com/the-xero-remote-mcp-is-now-generally-available-06008f6ab2a7?gi=7610392ecdcb",
+        "quote": "list invoices, create contacts or run a profit and loss report",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://devblog.xero.com/the-xero-remote-mcp-is-now-generally-available-06008f6ab2a7?gi=7610392ecdcb",
+        "quote": "Remote MCP is now generally available. It’s the same Xero MCP server, hosted and maintained by Xero.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.97,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "sandbox": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developer.xero.com/faq/getting-started",
+        "quote": "Use the demo company (recommended)",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY_WITH_CAVEATS",
+    "evidence": [
+      {
+        "url": "https://developer.xero.com/pricing",
+        "quote": "Connections (maximum) | 5 | 50 | 1000 | 10,000 | No Limit",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.75,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "The free Starter app plan is capped at 5 connections; scaling needs a paid plan and higher tiers need certification.",
+    "evidence": [
+      {
+        "url": "https://developer.xero.com/pricing",
+        "quote": "Prerequisites | | | App Certification | App Certification | App Certification",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "XERO",
+    "name": "Xero",
+    "tools": 109,
+    "triggers": 0,
+    "auth": [
+      "OAUTH2"
+    ],
+    "managed_app": "No",
+    "url": "https://docs.composio.dev/toolkits/xero.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://developer.xero.com/faq/getting-started",
+    "https://developer.xero.com/pricing",
+    "https://developer.xero.com/faq/remote-mcp",
+    "https://developer.xero.com/partner/developer-partner",
+    "https://devblog.xero.com/the-xero-remote-mcp-is-now-generally-available-06008f6ab2a7?gi=7610392ecdcb",
+    "https://developer.xero.com/faq/pricing-and-policy-updates",
+    "https://developer.xero.com/ai",
+    "https://github.com/XeroAPI/xero-postman-oauth2/blob/master/README.md"
+  ],
+  "pass_name": "pass1",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session"
+  },
+  "errors": [
+    "fetch https://developer.xero.com/documentation/guides/webhooks/overview: 200 too little text (JS-rendered?)",
+    "fetch https://developer.xero.com/documentation/guides/oauth2/overview: 200 too little text (JS-rendered?)",
+    "fetch https://developer.xero.com/documentation/guides/oauth2/auth-flow: 200 too little text (JS-rendered?)"
+  ]
+}

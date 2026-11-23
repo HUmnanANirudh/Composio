@@ -1,0 +1,156 @@
+{
+  "id": 80,
+  "app": "Harvest",
+  "category": "Productivity and Project Management",
+  "hint": "harvestapp.com (help.getharvest.com/api-v2)",
+  "docs_url": "https://help.getharvest.com/api-v2/introduction/overview/general",
+  "one_liner": {
+    "value": "Time tracking, invoicing and project budgeting software",
+    "evidence": [
+      {
+        "url": "https://help.getharvest.com/api-v2/introduction/overview/general",
+        "quote": "You can track time, log expenses, create projects, and more.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "BEARER_TOKEN",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication",
+        "quote": "A Personal Access Token which is tied directly to you",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication",
+        "quote": "Implementing a full OAuth2 Authentication flow which allows other people to use your Harvest integrations.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://support.getharvest.com/hc/en-us/articles/360048180732-The-Harvest-API",
+        "quote": "Your Harvest subscription includes API access for all accounts (including free and trial accounts)",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://help.getharvest.com/api-v2/introduction/overview/general",
+        "quote": "The Harvest V2 API is a REST API",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://help.getharvest.com/api-v2/introduction/overview/general",
+        "quote": "You can track time, log expenses, create projects, and more.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://support.getharvest.com/hc/en-us/articles/46293697226381-Harvest-MCP",
+        "quote": "The Harvest MCP is the connection that gives an MCP-compatible assistant — such as Claude — controlled access to your Harvest account",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "webhooks": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://support.getharvest.com/hc/en-us/articles/360048180732-The-Harvest-API",
+        "quote": "All Harvest accounts are able to access the Harvest API.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "HARVEST",
+    "name": "Harvest",
+    "tools": 57,
+    "triggers": 0,
+    "auth": [
+      "OAUTH2"
+    ],
+    "managed_app": "Yes",
+    "url": "https://docs.composio.dev/toolkits/harvest.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication",
+    "https://support.getharvest.com/hc/en-us/articles/360048180732-The-Harvest-API",
+    "https://support.getharvest.com/hc/en-us/articles/46293697226381-Harvest-MCP",
+    "https://www.getharvest.com/pricing",
+    "https://help.getharvest.com/api-v2/introduction/overview/general",
+    "https://support.getharvest.com/hc/en-us/articles/31447072608397-Information-about-pricing-plans",
+    "https://www.getharvest.com/terms-of-service/2025-12-31",
+    "https://harvestdocs.greenhouse.io/docs/authentication"
+  ],
+  "pass_name": "pass1",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session"
+  },
+  "errors": []
+}

@@ -1,0 +1,178 @@
+{
+  "id": 88,
+  "app": "Brex",
+  "category": "Finance and Fintech",
+  "hint": "developer.brex.com",
+  "docs_url": "https://developer.brex.com/guides/authentication",
+  "one_liner": {
+    "value": "Corporate cards, spend management and business banking",
+    "evidence": [
+      {
+        "url": "https://www.brex.com/pricing",
+        "quote": "Corporate cards, spend management, and startup banking—all in one platform.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "BEARER_TOKEN",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://developer.brex.com/docs/faq",
+        "quote": "The [user token](/guides/authentication/) is used to authenticate your own Brex account. The [OAuth token](/guides/partner_authentication/) is used when building partner applications",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "access": {
+    "value": "APPROVAL",
+    "evidence": [
+      {
+        "url": "https://developer.brex.com/docs/partner_onboarding",
+        "quote": "Once your application is approved, you'll receive credentials for the staging environment",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://developer.brex.com/guides/authentication",
+        "quote": "These must be accepted to use the developer API.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.6,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://developer.brex.com/docs/faq",
+        "quote": "You can use the [List Cash Accounts endpoint]",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://www.brex.com/journal/brex-mcp-connect-brex-to-ai-tools",
+        "quote": "Query expenses across your team or company",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developer.brex.com/docs/mcp",
+        "quote": "Any client that supports MCP HTTP transport can connect to `https://api.brex.com/mcp`.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.97,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developer.brex.com/guides/webhooks.md",
+        "quote": "Brex APIs offer webhooks to notify you in real-time when certain events happen in your account.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "sandbox": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developer.brex.com/docs/partner_onboarding",
+        "quote": "you'll receive credentials for the staging environment",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY_WITH_CAVEATS",
+    "evidence": [
+      {
+        "url": "https://developer.brex.com/docs/partner_onboarding",
+        "quote": "Once you've built your demo, share it with us in a video and we'll generate production credentials for you.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "Partner OAuth apps need Brex approval, a signed API agreement and a demo before production credentials.",
+    "evidence": [
+      {
+        "url": "https://developer.brex.com/docs/partner_onboarding",
+        "quote": "you'll receive a Unilateral API Access Agreement from Brex.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "BREX",
+    "name": "Brex",
+    "tools": 84,
+    "triggers": 0,
+    "auth": [
+      "OAUTH2",
+      "API_KEY"
+    ],
+    "managed_app": "No",
+    "url": "https://docs.composio.dev/toolkits/brex.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://developer.brex.com/guides/authentication",
+    "https://www.brex.com/pricing",
+    "https://developer.brex.com/docs/mcp",
+    "https://developer.brex.com/guides/webhooks.md",
+    "https://developer.brex.com/docs/partner_onboarding",
+    "https://www.brex.com/journal/brex-mcp-connect-brex-to-ai-tools",
+    "https://developer.brex.com/docs/faq",
+    "https://www.brex.com/legal/developer-portal"
+  ],
+  "pass_name": "pass1",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session"
+  },
+  "errors": []
+}

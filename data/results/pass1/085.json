@@ -1,0 +1,168 @@
+{
+  "id": 85,
+  "app": "iPayX",
+  "category": "Finance and Fintech",
+  "hint": "ipayx.ai/docs",
+  "docs_url": "https://www.ipayx.ai/docs/api",
+  "one_liner": {
+    "value": "FX audit API that measures hidden bank spreads against mid-market",
+    "evidence": [
+      {
+        "url": "https://www.ipayx.ai/docs/api?lang=en",
+        "quote": "Detect hidden bank spreads vs mid-market benchmark on any currency transaction.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "BEARER_TOKEN"
+    ],
+    "evidence": [
+      {
+        "url": "https://www.ipayx.ai/docs/api?lang=en",
+        "quote": "Every request requires a Bearer token in the `Authorization` header. Keys start with `ipx_live_`.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://www.ipayx.ai/docs/mcp-server",
+        "quote": "**Free tier:** 10 audits / day per API key.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://www.ipayx.ai/docs/api?lang=en",
+        "quote": "REST API · v1",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "NARROW",
+    "evidence": [
+      {
+        "url": "https://www.ipayx.ai/docs/api?lang=en",
+        "quote": "3 endpoints",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://www.ipayx.ai/mcp",
+        "quote": "Server URL: https://mcp.ipayx.ai/mcp",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://www.ipayx.ai/docs/api?lang=en",
+        "quote": "Signed webhooks",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "sandbox": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://www.ipayx.ai/docs/mcp-server",
+        "quote": "`ipx_test_xxxxx` (sandbox)",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY_WITH_CAVEATS",
+    "evidence": [
+      {
+        "url": "https://www.ipayx.ai/docs/api?lang=en",
+        "quote": "3 endpoints",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "Narrow API (three FX-audit endpoints), and the free tier is capped at 10 audits a day.",
+    "evidence": [
+      {
+        "url": "https://www.ipayx.ai/docs/mcp-server",
+        "quote": "**Free tier:** 10 audits / day per API key.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.65,
+    "flags": []
+  },
+  "composio": {
+    "found": false,
+    "slug": null,
+    "name": null,
+    "tools": null,
+    "triggers": null,
+    "auth": [],
+    "managed_app": null,
+    "url": null,
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://www.ipayx.ai/docs/mcp-server",
+    "https://www.ipayx.ai/docs/api?lang=en",
+    "https://www.ipayx.ai/pricing",
+    "https://www.ipayx.ai/docs/api",
+    "https://www.ipayx.ai/mcp",
+    "https://www.ipayx.ai/partners",
+    "https://www.ipayx.ai/developers",
+    "https://www.ipayx.ai/integrations/microsoft-foundry"
+  ],
+  "pass_name": "pass1",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session"
+  },
+  "errors": []
+}

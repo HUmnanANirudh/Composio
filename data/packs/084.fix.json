@@ -1,0 +1,55 @@
+{
+ "sources": [
+  {
+   "sid": "R1",
+   "url": "https://docs.paygent.to/reference/sdk-reference-js",
+   "official": true,
+   "excerpt": "TypeScript SDK Reference\nReference for every public symbol exported from @paygentjs/sdk. Anything not on this page (modules with a leading _, internal helpers) is implementation detail and may change between minor versions.\nimport {\n Paygent,\n paygentContext,\n track,\n getCurrentContext,\n instrument,\n wrap,\n customProvider,\n PaygentLimitExceeded,\n checkGuard,\n createDefaultRegistry,\n ProviderRegistry,\n OPENAI_PROVIDER,\n ANTHROPIC_PROVIDER,\n} from \"@paygentjs/sdk\";\nimport type {\n PaygentOptions,\n WrapOptions,\n PlanConfig,\n ModelCostRate,\n ModelLimitConfig,\n CurrentUsage,\n BillingPeriod,\n UserState,\n GuardResult,\n GateStatus,\n GateEvent,\n UsageEvent,\n TokenInfo,\n UsageSnapshot,\n MaxTokensAdvice,\n} from \"@paygentjs/sdk\";\n// Framework integrations (subpath exports):\nimport { PaygentCallbackHandler } from \"@paygentjs/sdk/integrations/langchain\";\n// pg.aiMiddleware() \u2014 Vercel AI SDK \u2014 is a method on the Paygent instance.\nRequires Node 18+ (global fetch + AsyncLocalStorage). Ships dual ESM + CJS with types.\nLifecycle\nPaygent.init(options?)\nstatic init(options?: PaygentOptions): Promise<Paygent>\nCreates and initializes the Paygent singleton, bootstrapping the backend connection and backgrou"
+  },
+  {
+   "sid": "R2",
+   "url": "https://402intelligence.paygent.net/llms.txt",
+   "official": true,
+   "excerpt": "# 402intelligence \u2014 ecosystem analytics for the agent payment web\n\nHourly x402 settlement volume and transaction counts across the agent payment web, broken down by\nfacilitator, protocol, network, and currency. Public and free.\n\n## Explore the dataset (public, free)\n- GET  https://discover-api.paygent.net/v1/analytics             dimensional time series (dimension=all|facilitator|protocol|chain|currency, grain=hour|day)\n- GET  https://discover-api.paygent.net/v1/stats                 ecosystem totals (services, payments, USDC settled)\n- GET  https://discover-api.paygent.net/v1/facilitators/metrics  per-facilitator scoreboard (endpoints, 30d volume/tx, wallet counts)\n- GET  https://discover-api.paygent.net/v1/chains/metrics        per-chain scoreboard (30d volume/tx, wallet counts)\n- GET  https://discover-api.paygent.net/v1/coverage              directory coverage: payout wallets observed on-chain vs listed in a directory, per chain\n- GET  https://discover-api.paygent.net/v1/services              the full service catalog  \u00b7  GET https://discover-api.paygent.net/v1/services/{id}\n- GET  https://discover-api.paygent.net/v1/services/{id}/activity  per-endpoint settled payments: totals, daily series, payout wallets (incl. former), payTo change history\n- /llms-full.txt                       reputation-ranked dump of the catalog with key fields\n\n## Explorer & intelligence (public, free)\n- GET  https://discover-api.paygent.net/v1/tx/{hash}             settlement legs of a transaction, enriched with facilitator + merchant\n- GET  https://discover-api.paygent.net/v1/address/{addr}        wallet profile: received/sent totals, daily series, every endpoint paid at it (current + former payTos)\n- GET  https://discover-api.paygent.net/v1/operators/{domain}    per-operator profile: endpoints, payout wallets, 30d settled activity\n- GET  https://discover-api.paygent.net/v1/wallets/shared        wallets advertised across multiple operator domains (endpoint-farm signature)\n\n## To find and pay a service\nUse Paygent Discover: https://discover.paygent.net  (search + per-service detail + payment).\n\n## Notes\n- Settlement figures are sampled from on-chain stablecoin transfers attributed to known facilitators\n  (x402) or provable MPP markers on Tempo; protocol=mpp counts only marker-bearing payments, while\n  protocol=tempo-transfer is bare Tempo transfer traffic."
+  },
+  {
+   "sid": "R3",
+   "url": "https://github.com/usepaygent/paygent-plugin",
+   "official": true,
+   "excerpt": "Payment infrastructure for AI agents. Gives your agent a real, spendable card, funded by crypto \u2014 no human needs to type in card details.\nFrom the Cursor Marketplace: search \"Paygent\", click Add. You'll be prompted for your Paygent API key during install.\nFrom Grok Bot: sidebar account \u2192 Settings \u2192 Plugins \u2192 search \"Paygent\" \u2192 Add.\nManual (mcp.json):\n{\n \"mcpServers\": {\n \"paygent\": {\n \"url\": \"https://mcp.paygent.tech/sse?api_key=YOUR_PAYGENT_API_KEY\"\n }\n }\n}\nYou'll need a Paygent API key. Get one from your dashboard at api.paygent.tech. The key is passed as a URL query parameter (?api_key=...), not an Authorization header \u2014 this matches Paygent's existing MCP auth pattern used by Claude Code and other agents.\n- create_card \u2014 get a crypto deposit address ($1\u2013$2000 in USDG or ETH on Robinhood Chain). A real card is issued automatically once the deposit confirms.\n- card_details \u2014 full card details (number, CVV, expiry, status, live balance) once ready.\n- card_balance \u2014 lighter balance-only check.\n- Additional tools for closing a card and reviewing deposit/transaction history.\n- \"Get me a Paygent deposit address so I can fund a card.\"\n- \"Check my Paygent card balance.\"\n- \"Use my Paygent card to sign up for this API service.\"\nIssues or questions: see the docs at api.paygent.tech/docs."
+  }
+ ],
+ "errors": [
+  "fetch https://www.gopaygent.com/pricing: 0 ConnectError: [Errno -3] Temporary failure in name resolution",
+  "fetch https://www.gopaygent.com/products/connect: 0 ConnectError: [Errno -3] Temporary failure in name resolution",
+  "fetch https://api.paygent.tech/docs: 0 ConnectTimeout: timed out",
+  "fetch https://www.gopaygent.com/developers/docs: 0 ConnectError: [Errno -3] Temporary failure in name resolution",
+  "fetch https://www.gopaygent.com: 0 ConnectError: [Errno -3] Temporary failure in name resolution"
+ ],
+ "todo": {
+  "auth_methods": [
+   "ungrounded",
+   "low_confidence"
+  ],
+  "access": [
+   "ungrounded",
+   "low_confidence"
+  ],
+  "api_style": [
+   "ungrounded",
+   "low_confidence"
+  ],
+  "api_breadth": [
+   "ungrounded",
+   "low_confidence"
+  ],
+  "official_mcp": [
+   "ungrounded",
+   "low_confidence"
+  ],
+  "buildability": [
+   "ungrounded",
+   "low_confidence"
+  ]
+ }
+}

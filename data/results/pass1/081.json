@@ -1,0 +1,172 @@
+{
+  "id": 81,
+  "app": "Stripe",
+  "category": "Finance and Fintech",
+  "hint": "stripe.com/docs/api",
+  "docs_url": "https://docs.stripe.com/api",
+  "one_liner": {
+    "value": "Payments, billing and financial infrastructure APIs",
+    "evidence": [
+      {
+        "url": "https://docs.stripe.com/api.md",
+        "quote": "The Stripe API is organized around [REST]",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.stripe.com/api/authentication",
+        "quote": "The Stripe API uses API keys to authenticate requests.",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://docs.stripe.com/stripe-apps/api-authentication",
+        "quote": "Use industry standard OAuth 2.0 to generate access tokens to interact with the Stripe API.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://docs.stripe.com/partners",
+        "quote": "Create and activate a free Stripe account.",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://docs.stripe.com/keys",
+        "quote": "Create or select a sandbox and use its test keys.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.stripe.com/api.md",
+        "quote": "The Stripe API is organized around [REST]",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.97,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://docs.stripe.com/api.md",
+        "quote": "Our API has predictable resource-oriented URLs",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.97,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://docs.stripe.com/mcp",
+        "quote": "The Stripe Model Context Protocol (MCP) server provides tools that AI agents can use to interact with the Stripe API",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.97,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "sandbox": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://docs.stripe.com/api.md",
+        "quote": "You can use the Stripe API in [sandboxes]",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://docs.stripe.com/api/authentication",
+        "quote": "You can view and manage your API keys in the Stripe Dashboard.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "STRIPE",
+    "name": "Stripe",
+    "tools": 435,
+    "triggers": 40,
+    "auth": [
+      "API_KEY",
+      "OAUTH2"
+    ],
+    "managed_app": "Yes",
+    "url": "https://docs.composio.dev/toolkits/stripe.md",
+    "mcp_variant": "STRIPE_MCP",
+    "mcp_variant_auth": [
+      "DCR_OAUTH"
+    ]
+  },
+  "sources": [
+    "https://docs.stripe.com/api/authentication",
+    "https://docs.stripe.com/partners",
+    "https://docs.stripe.com/mcp",
+    "https://docs.stripe.com/api.md",
+    "https://docs.stripe.com/stripe-apps/api-authentication",
+    "https://stripe.com/in/pricing",
+    "https://docs.stripe.com/agents",
+    "https://docs.stripe.com/keys"
+  ],
+  "pass_name": "pass1",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session"
+  },
+  "errors": []
+}

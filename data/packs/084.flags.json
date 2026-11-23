@@ -1,0 +1,82 @@
+{
+ "round0": {
+  "grounding": {
+   "one_liner": [
+    "ungrounded"
+   ],
+   "auth_methods": [
+    "ungrounded"
+   ],
+   "access": [
+    "ungrounded"
+   ],
+   "api_style": [
+    "ungrounded"
+   ],
+   "api_breadth": [
+    "ungrounded"
+   ],
+   "official_mcp": [
+    "ungrounded"
+   ],
+   "webhooks": [
+    "ungrounded"
+   ],
+   "sandbox": [
+    "ungrounded"
+   ],
+   "buildability": [
+    "ungrounded"
+   ],
+   "main_blocker": [
+    "ungrounded"
+   ]
+  },
+  "rules": {
+   "auth_methods": [
+    "low_confidence"
+   ],
+   "access": [
+    "low_confidence"
+   ],
+   "api_style": [
+    "low_confidence"
+   ],
+   "api_breadth": [
+    "low_confidence"
+   ],
+   "official_mcp": [
+    "low_confidence"
+   ],
+   "buildability": [
+    "low_confidence"
+   ]
+  }
+ },
+ "todo": {
+  "auth_methods": [
+   "ungrounded",
+   "low_confidence"
+  ],
+  "access": [
+   "ungrounded",
+   "low_confidence"
+  ],
+  "api_style": [
+   "ungrounded",
+   "low_confidence"
+  ],
+  "api_breadth": [
+   "ungrounded",
+   "low_confidence"
+  ],
+  "official_mcp": [
+   "ungrounded",
+   "low_confidence"
+  ],
+  "buildability": [
+   "ungrounded",
+   "low_confidence"
+  ]
+ }
+}
