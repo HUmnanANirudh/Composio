@@ -28,6 +28,13 @@ def main() -> None:
     sub.add_parser("export", help="bundle results into data/results/results.json")
     sub.add_parser("evaluate", help="score pass 1 and final against the hand-checked sample")
     sub.add_parser("patterns", help="compute cross-app patterns")
+    sub.add_parser("audit", help="field-level audit of the answer-key apps (data/audit.json)")
+    rv = sub.add_parser("review", help="record a verdict on one audit cell")
+    rv.add_argument("app_id", type=int)
+    rv.add_argument("field")
+    rv.add_argument("verdict", help="agent_correct | agent_wrong | key_wrong | ambiguous")
+    rv.add_argument("note")
+    rv.add_argument("--by", default="human")
     args = p.parse_args()
     apps = select(load_apps(), getattr(args, "apps", None))
 
@@ -73,6 +80,16 @@ def main() -> None:
         from .patterns import main as patterns_main
 
         patterns_main()
+    elif args.cmd in ("audit", "review"):
+        from . import audit
+
+        if args.cmd == "review":
+            audit.review(args.app_id, args.field, args.verdict, args.note, args.by)
+        s = audit.build()["summary"]
+        print(
+            f"{s['cells']} cells: {s['final_status']} | misses reviewed "
+            f"{s['misses_reviewed']}/{s['misses']} | verdicts {s['verdicts']}"
+        )
 
 
 def show(apps, md: bool) -> None:

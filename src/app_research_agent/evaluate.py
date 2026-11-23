@@ -5,6 +5,8 @@ Rules (also stated in data/ground_truth.json):
 * auth_methods / api_style: correct if core <= agent <= core | optional, with
   API_KEY and BEARER_TOKEN treated as the same thing
 * truth == null: field is unscored (docs contested/unreadable) and reported as such
+* pass 1 and final are scored on the same apps (those with a final record);
+  apps not yet researched are reported as missing, not counted as wrong
 """
 
 from __future__ import annotations
@@ -44,9 +46,8 @@ def score(records: dict[int, object], gt: dict) -> dict:
                     {"id": item["id"], "app": item["app"], "field": f, "status": "unscored"}
                 )
                 continue
-            if rec is None:
+            if rec is None:  # not researched yet: reported, not scored as wrong
                 rows.append({"id": item["id"], "app": item["app"], "field": f, "status": "missing"})
-                per_field[f]["total"] += 1
                 continue
             got = getattr(rec, f).value
             ok = field_correct(f, got, truth, item.get("accept", {}).get(f))
@@ -105,11 +106,14 @@ def main() -> None:
     gt = json.loads(GROUND_TRUTH.read_text())
     apps = {a.id: a for a in load_apps()}
     out = {}
+    # score pass 1 and final on the same apps: those that have finished verification
+    done = {i["id"] for i in gt["apps"] if load(FINAL, apps[i["id"]]) is not None}
     for name, d in (("pass1", PASS1), ("final", FINAL)):
-        recs = {i["id"]: load(d, apps[i["id"]]) for i in gt["apps"]}
+        recs = {i: load(d, apps[i]) for i in done}
         recs = {k: v for k, v in recs.items() if v is not None}
         out[name] = score(recs, gt)
         out[name]["calibration"] = calibration(out[name]["rows"])
+        out[name]["apps_scored"] = len(recs)
         o = out[name]["overall"]
         print(
             f"{name:>6}: {o['correct']}/{o['total']} = {o['accuracy']}  ({len(recs)} apps scored)"
