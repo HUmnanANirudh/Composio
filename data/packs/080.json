@@ -1,0 +1,71 @@
+{
+ "id": 80,
+ "app": "Harvest",
+ "category": "Productivity and Project Management",
+ "hint": "harvestapp.com (help.getharvest.com/api-v2)",
+ "composio": {
+  "found": true,
+  "slug": "HARVEST",
+  "name": "Harvest",
+  "tools": 57,
+  "triggers": 0,
+  "auth": [
+   "OAUTH2"
+  ],
+  "managed_app": "Yes",
+  "url": "https://docs.composio.dev/toolkits/harvest.md",
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication",
+   "official": true,
+   "excerpt": "Authentication\nIntroduction\nThe V2 API requires an access token to authenticate requests. There are two options available to you:\n- A Personal Access Token which is tied directly to you and is the quickest way to start playing around with the API.\n- Implementing a full OAuth2 Authentication flow which allows other people to use your Harvest integrations.\nPersonal access tokens\nThe API can be accessed by creating a Personal Access Token from the Developers section of Harvest ID. After creating it you\u2019ll be provided with a random token and a list of your account IDs.\nPersonal Access Tokens are the preferred method when you want to write your own scripts that consume our API. Typical use cases for Personal Access Tokens are scripts that build custom reports, sync data between different accounts, or automate tasks that would otherwise take a long time when done manually.\nPersonal Access Tokens replace the Basic Authentication method that was used in our v1 API, as this is more secure. Within the Developers section you\u2019ll see a list of all your Personal Access Tokens, when they were last used, and you\u2019ll be able to easily revoke them if necessary.\nOnce generated, a Personal Access Token"
+  },
+  {
+   "sid": "S2",
+   "url": "https://support.getharvest.com/hc/en-us/articles/360048180732-The-Harvest-API",
+   "official": true,
+   "excerpt": "The Harvest API\nYour Harvest subscription includes API access for all accounts (including free and trial accounts) which can be used to manage your Harvest account. Our API documentation provides all of the details necessary to get started.\nCommon API questions\nHow do I get access to the API?\nAll Harvest accounts are able to access the Harvest API. API permissions will mirror account permissions; Administrators can access all API calls, Managers can access the projects and people they manage, and Members can only access their own data. Harvest will check your permissions on each request and actions that are not available to you in the UI will return HTTP 401 on the API.\nDo you provide example code?\nWe provide links to Harvest API libraries in our API code samples documentation. Presently, wrappers are offered in Ruby, PHP (including Drupal), Python and Java.\nDoes Harvest throttle API requests?\nYes \u2014 details on throttling (including limits) can be found in our API overview documentation."
+  },
+  {
+   "sid": "S3",
+   "url": "https://support.getharvest.com/hc/en-us/articles/46293697226381-Harvest-MCP",
+   "official": true,
+   "excerpt": "Harvest MCP\nThe Harvest MCP (Model Context Protocol) connection lets you work with your Harvest data through an AI assistant, using plain language instead of clicking through the app. Once it's connected, you can start and stop timers, log hours, review your time, and check on project budgets just by asking \u2014 for example, \"Start a timer on the Acme website project\" or \"How many hours did I track for Acme last week?\"\nThis article explains what the Harvest MCP can do, how to get set up, and what to keep in mind while you use it.\nWhat is the MCP?\nMCP is an open standard that lets AI assistants connect securely to the tools you already use. The Harvest MCP is the connection that gives an MCP-compatible assistant \u2014 such as Claude \u2014 controlled access to your Harvest account, so it can carry out time tracking tasks on your behalf.\nYou stay in charge throughout. The assistant acts as you, sees only what your Harvest role lets you see, and can only do the things your permissions allow.\nBefore you begin\nTo use the Harvest MCP, you'll need:\n- An active Harvest account.\n- An MCP-compatible AI assistant or client (for example, the Claude desktop or web app).\nYou connect the Harvest MCP from wit"
+  },
+  {
+   "sid": "S4",
+   "url": "https://www.getharvest.com/pricing",
+   "official": true,
+   "excerpt": "Simple & flexible pricing\nGet started on any plan with a free trial. No credit card required.\nPricing FAQs\nCompare features\nSeats\n1 seat\nUnlimited\nUnlimited\nWeb, desktop, and mobile apps\nyes\nyes\nyes\nSupports both Time & Materials and Fixed Fee projects\nyes\nyes\nyes\nTime tracking\nyes\nyes\nyes\nExpense tracking\nyes\nyes\nyes\nInvoicing\nyes\nyes\nyes\nProject estimates\nyes\nyes\nyes\nReporting basics\nyes\nyes\nyes\nCustom reports\nUp to 4\nUp to 4\nUnlimited\n50+ core integrations\nyes\nyes\nyes\nForecast integration\nyes\nyes\nyes\nBillable and cost rates for teams\nyes\nyes\nTeam reporting\nyes\nyes\nProject and people import\nyes\nyes\nAccounting and payment integrations\nyes\nyes\nScheduled phone support\nyes\nyes\nProfitability reporting\nyes\nTimesheet approval\nyes\nActivity log\nyes\nSAML-based SSO\nyes\nCustom exports\nyes\nRequire Notes\nyes"
+  },
+  {
+   "sid": "S5",
+   "url": "https://help.getharvest.com/api-v2/introduction/overview/general",
+   "official": true,
+   "excerpt": "Overview\nThe Harvest V2 API is a REST API that allows you to interact with your Harvest account programmatically. You can track time, log expenses, create projects, and more.\nAPI requests\nHarvest requires applications to authenticate all requests with OAuth2 or Personal Access Tokens. The following HTTP methods are supported:\n- GET\n- POST\n- PATCH\n- DELETE\nWhen issuing a GET request, parameters should be included in the URL query string:\ncurl https://api.harvestapp.com/v2/tasks?page=2&per_page=10 \\\n -H \"Authorization: Bearer $ACCESS_TOKEN\" \\\n -H \"Harvest-Account-Id: $ACCOUNT_ID\" \\\n -H \"User-Agent: MyApp ([email\u00a0protected])\"\nWhen issuing a POST or PATCH request, parameters should be included in the request body. Request parameters can either be formatted in JSON or submitted as form data. When submitting request parameters as JSON, you must pass application/json in the Content-Type header.\nWe also require that each request include a User-Agent header with both:\n- The name of your application\n- A link to your application or email address\nWe use this information to get in touch if you\u2019re doing something wrong (so we can warn you before you\u2019re blocked) or something awesome (so we can co"
+  },
+  {
+   "sid": "S6",
+   "url": "https://support.getharvest.com/hc/en-us/articles/31447072608397-Information-about-pricing-plans",
+   "official": true,
+   "excerpt": "Information about pricing plans\nHarvest has two plans \u2014 Teams and Enterprise \u2014 each billed as Flex (usage-based) or Unlimited (fixed price). With Flex you pay a per-seat rate plus usage-based charges calculated on your prior billing period's activity: active projects, active clients, active tasks, and invoicing. Only items with time tracked in the period count \u2014 archived, deleted, or untouched items don't. Each plan includes a free usage allowance, and you're only charged for usage above it. For new accounts, usage-based charges begin at your second paid renewal. You can view current usage and projected charges, and model changes, in Settings \u2192 Billing (My usage billing / Compare subscription options \u2192 Simulate usage changes).\nThis article provides an overview of the available plans and their features, along with information about how to determine which pricing plan you\u2019re on, why you might have different features than you expect, and what happens if you switch to a different pricing plan.\nOverview of Harvest pricing plans\nThis section provides an overview of the available plans. Our pricing page has more details on the different plans, including exact features offered, pricing, av"
+  },
+  {
+   "sid": "S7",
+   "url": "https://www.getharvest.com/terms-of-service/2025-12-31",
+   "official": true,
+   "excerpt": "Archived as of December 31, 2025. View the current version\nTerms of Service\nEffective Date: March 3, 2025\nPLEASE READ THESE TERMS CAREFULLY.\nOur Terms of Service is a contract that governs our customers\u2019 use of our services. By using our Service, you are agreeing to these terms. We update these terms from time to time. If you have an active subscription, we will let you know when we update these terms by email (if you subscribe to receive email updates). Please also see the corresponding Privacy Policy for details on how Harvest manages your Personal Data.\nThis Agreement is effective, and you agree to be bound by this Agreement, as of the date of first use of the Service. If you already signed up for the Service, this updated Agreement is effective on the date you assented to this Agreement.\nIf you are an individual acting on behalf of an entity, you represent and warrant that you have the authority to enter into this Agreement on behalf of that entity and to legally bind that entity. If you do not accept the terms of this Agreement, then you are not permitted to, and you must not, access or otherwise use the Services.\n1. Definitions\n\u201cAffiliate\u201d means any entity which directly or i"
+  },
+  {
+   "sid": "S8",
+   "url": "https://harvestdocs.greenhouse.io/docs/authentication",
+   "official": false,
+   "excerpt": "Authentication\nThis guide explains how to authenticate to the Greenhouse Harvest v3 API.\nQuick start\n- Identify your integration type:\n - Partner integrations: Use the Authorization Code flow (see the partner OAuth guide).\n - Custom integrations: Use the Client Credentials flow (steps below).\n- Generate an access token.\n- Call Harvest v3 endpoints with Authorization: Bearer ACCESS_TOKEN.\nAuthentication methods by integration type\n| Integration type | Auth method | When to use | \n|---|---|---|\n| Partner integrations | OAuth 2.0 Authorization Code Grant | For Greenhouse partners integrating with mutual customers | \n| Custom integrations | OAuth 2.0 Client Credentials | For a customer-built integration used only within their own Greenhouse account | \nNote: During the v1/v2 \u2192 v3 transition period, you may also be able to generate a JWT access token for v3 using existing credentials. See the Transition period: v1/v2 to v3 section below.\nCustom integrations: OAuth 2.0 Client Credentials (step-by-step)\nStep 1: Create Harvest v3 OAuth credentials\n- In Greenhouse, open API Credentials.\n- Click Create new API credentials.\n- Select Harvest V3 (OAuth).\n- Save the credential, then configure the\n\n# v1/v2 (Basic)\nAuthorization: Basic BASE64_ENCODED_CREDENTIALS"
+  }
+ ],
+ "errors": []
+}

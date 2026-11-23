@@ -1,0 +1,73 @@
+{
+ "id": 17,
+ "app": "Plain",
+ "category": "Support and Helpdesk",
+ "hint": "plain.com",
+ "composio": {
+  "found": true,
+  "slug": "PLAIN",
+  "name": "Plain",
+  "tools": 120,
+  "triggers": 11,
+  "auth": [
+   "API_KEY"
+  ],
+  "managed_app": null,
+  "url": "https://docs.composio.dev/toolkits/plain.md",
+  "mcp_variant": "PLAIN_MCP",
+  "mcp_variant_auth": [
+   "DCR_OAUTH"
+  ]
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://www.plain.com/docs/graphql/authentication",
+   "official": true,
+   "excerpt": "A machine user can have several API keys, so you can rotate them without downtime. Each API key carries its own fine-grained permissions. To call the API as a user in your workspace, use an OAuth app.\n1\nCreate a machine user\nGo to Settings \u2192 Machine users & agents and click Add machine user. Pick API User and click Continue. Pick Agent instead if you\u2019re building an agent.A machine user has two fields:\n- Name: visible only to you and could indicate the usage e.g. \u201cAutoresponder\u201d\n- Public name: This is the name visible to customers (if the machine user interacts with customers) e.g. \u201cMr Robot\u201d\n2\nCreate an API Key\nClick \u201cAdd API key\u201d and select the permissions you need. When making API calls, if you have insufficient permissions, the error should tell you which permissions you need.The relevant documentation will tell you which permissions are required for each feature.Once you\u2019ve made an API key you should copy it and put it somewhere safe, as you will not be able to see it again once you navigate away.\n3\nGo build things \ud83d\ude80\nNow that you have an API key, pass it on any API call as a header:"
+  },
+  {
+   "sid": "S2",
+   "url": "https://www.plain.com/docs/graphql/introduction",
+   "official": true,
+   "excerpt": "Plain itself is built on this same GraphQL API. This means that there are no limitations in what can be done via the API vs the UI. These docs cover the most used operations. For anything not documented here, read the schema or get in touch.\nIf you\u2019re looking to access our GraphQL API from an Agent, try our MCP Server instead.\nFor TypeScript, the GraphQL SDK gives you a fully typed client for these operations.\nKey details\nOur API is compatible with all common GraphQL clients with the following details:\n- API URL: https://core-api.uk.plain.com/graphql/v1\n- Allowed method: POST\n- Required headers:\n - Content-Type: application/json\n - Authorization: Bearer YOUR_TOKEN where the token is your API key. See authentication for more details.\n- JSON body:\n - query: the GraphQL query string\n - variables: a JSON object of variables used in the GraphQL query\n - operationName: the name of your GraphQL operation (used for tracking only; it does not affect the call or its result)\nIf you\u2019d like to use the GraphQL schema to generate types for your client code you can fetch the schema from:\nhttps://core-api.uk.plain.com/graphql/v1/schema.graphql\nYour first API call\nIn this example, we\u2019re going to get a customer in your workspace by their email address. You can find a customer\u2019s email on the right-hand side when looking at one of their threads in Plain. You will need an API key with thecustomer:read permission. See authentication for details on how to get an API key\nYou\u2019ll need to set two shell variables:\n- PLAIN_TOKEN: The API key\n- PLAIN_CUSTOMER_EMAIL: The email of the customer you want to fetch"
+  },
+  {
+   "sid": "S3",
+   "url": "https://www.plain.com/docs/integrations/mcp-server",
+   "official": true,
+   "excerpt": "MCP (Model Context Protocol) is an open standard that lets AI tools connect to external platforms. The Plain MCP server at\nhttps://mcp.plain.com/mcp lets tools like Claude, ChatGPT, and Cursor work with your support data directly.\nYou authenticate with your existing Plain account, so the MCP server has the same permissions as your user. No API keys needed.\nSetup\nChatGPT\nIn ChatGPT, add the official Plain plugin:\n- Open the Plain plugin and add it\n- Sign in with your Plain account and choose your workspace\n- In a chat, type @ and pick Plain\nCursor\nYou can add the Plain MCP to Cursor via your Cursor config at~/.cursor/mcp.json\nClaude.ai\n- Go to \u201cCustomize\u201d \u2192 \u201cConnectors\u201d\n- Click the \u2795 icon, then choose \u201cAdd custom connector\u201d\n- Add a custom connector named \u201cPlain\u201d with the Remote MCP server URL https://mcp.plain.com/mcp\n- Click the \u201cConnect\u201d button next to the newly created Plain connector to authenticate.\nClaude Code\nAdding the Plain MCP to claude-code can be done via themcp-remote helper package which involves adding the following to your ~/.claude.json configuration.\nmcp-remote npm package.\nNext time you start Claude Code, it will launch a browser window asking you to authenticate "
+  },
+  {
+   "sid": "S4",
+   "url": "https://www.plain.com/docs/graphql-reference/queries/account",
+   "official": true,
+   "excerpt": "query Account($accountId: ID!) {\n account(accountId: $accountId) {\n id\n name\n externalId\n url\n source\n tier {\n id\n name\n externalId\n color\n isDefault\n defaultPriority\n }\n }\n}{\n \"accountId\": \"id\"\n}{\n \"data\": {\n \"account\": {\n \"id\": \"id\",\n \"name\": \"string\",\n \"externalId\": \"string\",\n \"url\": \"string\",\n \"source\": \"API\",\n \"tier\": {\n \"id\": \"id\",\n \"name\": \"string\",\n \"externalId\": \"string\",\n \"color\": \"string\",\n \"isDefault\": true,\n \"defaultPriority\": 1\n }\n }\n }\n}\naccount\nFetches a single account by its Plain-assigned ID. Returns null if no matching account is found. Requires the tenant:read permission.\naccount(accountId: ID!): Account\nArguments\nReturns\nYour system's identifier for this account, set when the account was created via the API or an integration. Use this to map back to the corresponding record in your own database.\nAn optional URL linking to the account in your own product or admin panel.\nIndicates how this account was created: directly via the API, synced from Salesforce, or synced from HubSpot.\nThe support tier assigned to this account, used to apply SLAs and prioritisation rules to threads belonging to this account.\nSlack (or other channel) associations configured for this account, used to route new threads to the appropriate channel automatically.\nCustom field values stored on this account, corresponding to the workspace's account field schemas.\nThe primary domain name associated with this account (e.g. acme.com).\nAlternate domain names associated with this account.\nURL of the account's logo image. Pass an optional size argument (pixels) to request a resized version. Null if no logo is set.\nWhether customers whose email domain matches this account's primary or alternate domains are automatically added to it.\nquery Account($accountId: ID!) {\n account(accountId: $accountId) {\n id\n name\n externalId\n url\n source\n tier {\n id\n name\n externalId\n color\n isDefault\n defaultPriority\n }\n }\n}{\n \"accountId\": \"id\"\n}{\n \"data\": {\n \"account\": {\n \"id\": \"id\",\n \"name\": \"string\",\n \"externalId\": \"string\",\n \"url\": \"string\",\n \"source\": \"API\",\n \"tier\": {\n \"id\": \"id\",\n \"name\": \"string\",\n \"externalId\": \"string\",\n \"color\": \"string\",\n \"isDefault\": true,\n \"defaultPriority\": 1\n }\n }\n }\n}\nWas this page helpful?"
+  },
+  {
+   "sid": "S5",
+   "url": "https://www.plain.com/docs/graphql/oauth",
+   "official": true,
+   "excerpt": "An OAuth app lets users in your workspace sign in to your app with their Plain account. Your app then calls the API as that user, with the permissions their role already has, and Plain records those actions as that user. To call the API as an integration rather than as a user, create a machine user instead.\nChoose an OAuth app type\nThe OAuth app type determines how your app authenticates when it exchanges an authorization code for an access token. Pick the type before you create the app, because you can\u2019t change it afterwards:\n- Client-side: your app exchanges the code in a browser or a mobile or desktop app, where a secret wouldn\u2019t stay secret. The app has no client secret and must use Proof Key for Code Exchange (PKCE).\n- Server-side: your app exchanges the code from your backend, where you can keep a secret. Plain creates a client secret for the app and shows it once.\nPKCE proves that the token request comes from the app that started the sign-in. Your app generates a random code verifier, sends its SHA-256 hash as the code challenge when the user signs in, then sends the verifier itself with the authorization code. To switch types, create a new OAuth app and move your integratio"
+  },
+  {
+   "sid": "S6",
+   "url": "https://www.plain.com/pricing",
+   "official": true,
+   "excerpt": "Pricing\nSupport for teams that ship. Start today, no credit card required.\nFoundation\nFor small teams getting started with support\n$\n55\n45\nper user per month\nBilled annually\nSave 20%\n1,000 credits / month\nSidekick (internal AI agent)\nAri (customer AI agent)\nAI workflows\nSlack, email, in-app channels\nLinear, Jira integrations\nHelp Center, Knowledge Base\nHorizon\nFor growing teams with more complex workflows\n$99\nper user per month\nBilled annually\n2,500 credits / month\nMicrosoft Teams\nSLAs and Business hours\nEscalation paths\nCRM integrations\nReporting themes\nAI suggested responses\nMost Popular\nFrontier\nFor larger organizations who require advanced governance and control\nCustom\nBilled annually\nCustom credits\nMultiple workspaces\nCustom contracting\nAdvanced security\nSSO and SCIM\nHIPAA\nWhite glove onboarding\nDedicated customer success manager\nFoundation\nFor small teams getting started with support\n$\n55\n45\nper user per month\nBilled annually\nSave 20%\n1,000 credits / month\nSidekick (internal AI agent)\nAri (customer AI agent)\nAI workflows\nSlack, email, in-app channels\nLinear, Jira integrations\nHelp Center, Knowledge Base\nHorizon\nFor growing teams with more complex workflows\n$99\nper user per mo"
+  },
+  {
+   "sid": "S7",
+   "url": "https://www.plain.com/blog/mcp-server",
+   "official": true,
+   "excerpt": "Plain's MCP Server: Connect Any AI Tool to Your Support Data\nPublished On\nUpdate, November 2026: Plain\u2019s MCP server now has 400+ tools. See the MCP server docs for the current list.\nA customer writes in. You open the thread, read through the back-and-forth, check their profile, pull up their company's other threads to see if there's a pattern, then dig through your help center to find the article you half-remember updating last quarter.\nBy the time you've assembled enough context to respond, ten minutes have passed and you haven't actually helped anyone yet.\nThat's the problem MCP solves.\nWhat we shipped\nPlain now has an MCP server. If you use Claude, ChatGPT, Cursor, or any other AI tool that supports the MCP standard, it can talk directly to your Plain workspace. Your threads, your customers, your help center, all accessible from the AI tools you already have open.\nHere's the same scenario with Plain's MCP server connected:\nYou open Claude, type \"What's going on with this customer?\", and it pulls their recent threads, looks up their profile, checks the tenant's other threads, finds the relevant help center article, and drafts a response with the right details. One prompt instead "
+  },
+  {
+   "sid": "S8",
+   "url": "https://www.plain.com/docs/product/billing/pricing",
+   "official": true,
+   "excerpt": "Plain has 3 plans: Foundation, Horizon, and Frontier. Each plan charges a price for every member seat, the seat a user needs to reply to customers, and includes a monthly allowance of credits for your workspace. Viewer seats are free and unlimited on every plan. Every plan starts with a free 7-day trial, and the trial doesn\u2019t need a credit card.\nCompare plans\nEach plan suits a different size of support team, and each one includes everything in the plan before it. The lists below highlight some of the features in each plan, not all of them.\nFoundation\nFoundation is for early-stage companies. It supports up to 5 member seats and includes, among other features:\n- 25 Slack channels and 2 email addresses\n- 1 Help Center, with a knowledge base, Ask AI, and a customer inbox\n- 1 business hours schedule and 7 days of reporting history\n- Connected agents, a headless support portal, and suggested responses\nHorizon\nHorizon is for companies with a dedicated Support or Success function. It supports 3 to 10 member seats and includes everything in Foundation, plus, among other features:\n- Unlimited Slack channels, up to 10 email addresses, and unlimited Help Centers\n- Microsoft Teams\n- Unlimited b"
+  }
+ ],
+ "errors": []
+}

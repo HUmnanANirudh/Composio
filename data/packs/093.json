@@ -1,0 +1,72 @@
+{
+ "id": 93,
+ "app": "Fathom",
+ "category": "AI, Research and Media-native",
+ "hint": "fathom.video",
+ "composio": {
+  "found": true,
+  "slug": "FATHOM",
+  "name": "Fathom",
+  "tools": 10,
+  "triggers": 1,
+  "auth": [
+   "OAUTH2",
+   "API_KEY"
+  ],
+  "managed_app": "Yes",
+  "url": "https://docs.composio.dev/toolkits/fathom.md",
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://developers.fathom.ai/faq",
+   "official": true,
+   "excerpt": "Basics\nI\u2019m new to APIs. How do I get started?\nSee the Quickstart.\nShould I use an API key or build an OAuth app?\nUse an API key if you only need access to your own (or your team\u2019s) meetings\u2014for internal tools or personal automation. Use OAuth if you\u2019re building an app that other Fathom users will install so they can connect their own accounts. Note: OAuth apps can\u2019t useinclude_summary/include_transcript on /meetings\u2014fetch those via the /recordings endpoints instead.\nAccess & Permissions\nDoes my plan include API access?\nYes. API access\u2014keys and webhooks\u2014 are included on all plans. Generate a key in User Settings \u2192 API Access.\nWhat meetings can my API key access?\nMeetings you recorded and meetings shared with you or your team. Not other users\u2019 private, unshared meetings. Whatever a user can view in Fathom, their API key can access.\nCan I access all calls across my org? Do you offer org-level API keys?\nAPI keys are per user, not per org, and there are no org-level keys. For org-wide access, grant one or more Admins view access to all shared calls; that Admin\u2019s key can then read everything shared across teams. Private calls remain visible only to their host, so only the host\u2019s key can "
+  },
+  {
+   "sid": "S2",
+   "url": "https://developers.fathom.ai/mcp-docs",
+   "official": true,
+   "excerpt": "How to Connect the Fathom MCP Server\nFathom now offers an official MCP (Model Context Protocol) server, allowing you to connect your Fathom meeting data to AI assistants like ChatGPT, Claude, and more. This guide walks you through setup on each supported platform.\nChoose your assistant\nChatGPT\nConnect to the Fathom app in ChatGPT\nClaude\nConnect to the Fathom connector in Claude, or add the MCP in Claude Code\nUse with other tools\nConnect Fathom to any MCP-compatible tool using the server URL below, then authenticate to access your meeting data. MCP server URL:https://api.fathom.ai/mcp"
+  },
+  {
+   "sid": "S3",
+   "url": "https://www.fathom.ai/pricing",
+   "official": true,
+   "excerpt": "Features\nPricing to supercharge every meeting\nFree plan\nUnlimited recordings, instant call summaries, integrations with LLMs & more.\n- Unlimited meetings captured & instant AI summaries\n- Shared workspace: folders, comments, mentions & playlists\n- AI generated action items post-call\n- Trackers, search, Ask Fathom across team calls\n- Team security controls & HIPAA compliance with a standard BAA\n- Everything from Team\n- CRM field sync, updating records after meetings automatically\n- Deal View: every call on a deal, summarized in one place\n- Coaching metrics & AI scorecards\n- Advanced call summaries, including custom summaries for your organization (min req)\n- Everything from Business\n- Hands-on implementation via \"Launch Assist\"\n- Custom-built summaries designed for your organization\n- Enhanced security controls with SSO & SCIM provisioning\n- Custom data retention & custom BAA eligibility\n- Priority Support SLAs along with your dedicated Success Manager\n- Unlimited recordings + transcriptions\n- Choice of bot-free (in beta) or bot capture\n- Instant AI call summaries\n- Clips, playlists + search across calls\n- Everything from Free\n- Advanced call summaries\n- AI-generated action items\n- "
+  },
+  {
+   "sid": "S4",
+   "url": "https://developers.fathom.ai/sdks/authentication",
+   "official": true,
+   "excerpt": "Documentation Index Fetch the complete documentation index at: /llms.txt Use this file to discover all available pages before exploring further.\nAuthenticate with the Fathom SDKs using API keys\nimport { Fathom } from 'fathom-typescript'; const fathom = new Fathom({ security: { apiKeyAuth: process.env.FATHOM_API_KEY_AUTH || \"\" } });\nfrom fathom_python import models, Fathom import os fathom = Fathom(security=models.Security( api_key_auth=os.getenv(\"FATHOM_API_KEY_AUTH\", \"\") ))\nimport { Fathom } from 'fathom-typescript'; const fathom = new Fathom({ security: { bearerAuth: \"YOUR_BEARER_TOKEN\" } });\nfrom fathom_python import models, Fathom fathom = Fathom(security=models.Security( bearer_auth=\"YOUR_BEARER_TOKEN\" ))\napiKeyAuth\nFATHOM_API_KEY_AUTH\nbearerAuth\nFATHOM_BEARER_AUTH"
+  },
+  {
+   "sid": "S5",
+   "url": "https://www.fathom.ai/features/api",
+   "official": true,
+   "excerpt": "Fathom syncs meeting insights automatically with the tools your team uses. Zero friction, maximum flexibility.\nFeature: Fathom API\nIt\u2019s your meeting. Put its context to work in any tool you build.\nFathom\u2019s notetaker API and webhooks hand you structured meeting data, from summaries and action items to transcripts and Highlights, as soon as a call is processed, on every plan.\nMeeting data that arrives already sorted.\nAction items come with an assignee, completion status, and a link to the moment they were said. Highlights carry a type and exact timestamps, summaries arrive formatted in markdown, and transcripts are attributed by speaker. You start building on meaning, not text.\nNo polling. Your workflow runs when the meeting\u2019s ready.\nWebhooks fire when a meeting\u2019s content is ready, so you never hammer the API asking if anything\u2019s new. Choose whether each payload includes the transcript, summary, action items, or CRM matches, and verify every delivery with a signed header.\nHack on it today, or build for every Fathom user.\nGenerate an API key yourself, no admin approval needed, and use the TypeScript or Python SDK to handle auth, pagination, and retries. Building something other teams "
+  },
+  {
+   "sid": "S6",
+   "url": "https://www.fathom.ai/features/mcp-server",
+   "official": true,
+   "excerpt": "Fathom syncs meeting insights automatically with the tools your team uses. Zero friction, maximum flexibility.\nFeature: Fathom MCP\nIt\u2019s your meeting. Bring context into Claude, ChatGPT, and the AI tools you use.\nFathom\u2019s AI meeting notetaker MCP server connects your meeting data to Claude, ChatGPT, and other MCP-compatible tools, so your AI assistant can answer questions and draft work from what was actually said.\nAsk your assistant about your meetings.\nAsk Claude what a customer pushed back on last week, or have ChatGPT pull the decisions from Monday\u2019s planning call. Your assistant retrieves the context from Fathom directly, so you\u2019re not hunting for the right summary to paste in.\nTurn meeting context into finished work.\nAsk Fathom answers questions inside Fathom. MCP brings the same meeting context into the assistant where you\u2019re already drafting, so a recap email, QBR narrative, or launch brief starts from what was said, right alongside your docs and other connected tools.\nConnect in a few steps, on the permissions you already have.\nAdd the Fathom app in ChatGPT or the Fathom connector in Claude, or point any MCP-compatible tool at Fathom\u2019s MCP server and sign in. Your assistant"
+  },
+  {
+   "sid": "S7",
+   "url": "https://developers.fathom.ai/quickstart",
+   "official": true,
+   "excerpt": "Generate an API Key\nGet your Fathom API Key\nHead to the API Access section of your User Settings and generate an API key.\nList recent meetings\nList the 10 most recent meetings recorded by you or shared to your team.\nReplace YOUR_API_KEY with the API key you generated above.\nHere's an example response\nExample response\nGet next 10 meetings\nUse thenext_cursor from the previous response to get the next page of meetings.\nIf you\u2019re using our TypeScript or Python SDKs, pagination is handled automatically - no need to manage cursors manually. See SDK Pagination for examples.\nFind specific meetings and get their transcripts\nLet\u2019s say you met withjohn.doe@client.com a couple times during August and want to pull those transcripts. Use filters to return just those meetings.\nYou can also fetch transcripts separately using the /recordings/{recording_id}/transcript endpoint. OAuth apps must use this approach since they can\u2019t use include_transcript or include_summary.\nNext steps\nNow that you you\u2019ve made your first API calls, time to go deeper:\nAPI documentation\nSee all available endpoints and methods\nWebhooks\nSet up a webhook\nSDKs\nUse our Typescript or Python SDK\nOAuth\nBuild a Fathom integration with OAuth"
+  },
+  {
+   "sid": "S8",
+   "url": "https://developers.fathom.ai/mcp-docs/claude",
+   "official": true,
+   "excerpt": "If you\u2019re using Claude in a team or organization, an owner must first enable the connector before it will appear for members.\nClick Connect and complete the authorization prompts.\nThat\u2019s it! You can now ask Claude about your meetings.\nClaude Code\nClaude Code supports adding MCP servers directly from the command line.Run the following command in your terminal:\nclaude mcp add fathom -- npx mcp-remote@latest https://api.fathom.ai/mcp\nThe Fathom MCP server will now be available in your Claude Code sessions.\n{\"docsConfig\":{\"theme\":\"mint\",\"$schema\":\"https://mintlify.com/docs.json\",\"name\":\"Fathom API\",\"colors\":{\"primary\":\"#00BEFF\",\"light\":\"#00BEFF\",\"dark\":\"#00BEFF\"},\"logo\":{\"light\":\"https://mintcdn.com/fathom-e4df0608/fpW1q81hxUkk93dq/logo/blacklogo.png?fit=max\\u0026auto=format\\u0026n=fpW1q81hxUkk93dq\\u0026q=85\\u0026s=0bcb3214b43ee48b36d667838d2ce9d2\",\"dark\":\"https://mintcdn.com/fathom-e4df0608/fpW1q81hxUkk93dq/logo/whitelogo.png?fit=max\\u0026auto=format\\u0026n=fpW1q81hxUkk93dq\\u0026q=85\\u0026s=7ec9aca099533e9b45cbc89f18daf880\"},\"favicon\":\"https://mintcdn.com/fathom-e4df0608/9IGZfG6Ww_atoEHy/favicon.png?fit=max\\u0026auto=format\\u0026n=9IGZfG6Ww_atoEHy\\u0026q=85\\u0026s=eef74accb68fe8a533ee"
+  }
+ ],
+ "errors": []
+}

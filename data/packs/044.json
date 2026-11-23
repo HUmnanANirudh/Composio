@@ -1,0 +1,85 @@
+{
+ "id": 44,
+ "app": "Salesforce Commerce Cloud",
+ "category": "Ecommerce",
+ "hint": "developer.salesforce.com/docs/commerce",
+ "composio": {
+  "found": false,
+  "slug": null,
+  "name": null,
+  "tools": null,
+  "triggers": null,
+  "auth": [],
+  "managed_app": null,
+  "url": null,
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://www.salesforce.com/commerce/pricing/?bc=OTH",
+   "official": true,
+   "excerpt": "Catch what you missed at Dreamforce! Watch the Commerce Keynote and stream dozens of sessions on Salesforce+.\nWatch here\nCommerce Pricing\nExplore commerce pricing and find the right solutions for your business.\nChoose the right Commerce solution for your business needs.\nCommerce Cloud B2C Premium\n- 100 sites and 3,500 Price Books\n- Full Order Management\n- Personalization with Data Cloud Segments & Intelligence Dashboards\nCommerce Cloud B2B Growth Edition\n- 6 B2B Storefronts\n- Order Management Lite\n- Analytics, Automation, & Segmentation\nSalesforce Order Management Growth\n- Complete Order Visibility & Order Support\n- Distributed Order Management\n- Omni-Channel Inventory Up to 50 Locations\nRetail Cloud Point-of-Sale\n- Starting at 25 Stores\n- Modern POS and Clienteling\n- Omni-channel Operations, Endless Aisle and Inventory Management\nSalesforce Payments\n- Express checkout with digital wallets\n- Fraud protection and authorization optimization\n- Bring Your Own Adyen account\nThis page is provided for information purposes only and is not warranted to be error-free, nor is it subject to any other warranties.\nExpert support at every stage\nWith resources, guidance, and technical support, our"
+  },
+  {
+   "sid": "S2",
+   "url": "https://www.salesforce.com/blog/agentforce-commerce-anthropic-agents/?bc=OTH",
+   "official": true,
+   "excerpt": "Anthropic recently launched a blueprint to help build commerce agents on Claude. This new starter kit for developers includes the reference code, guardrails, and best practices needed to build a shopping agent (to help customers browse, compare, and buy) and a merchant agent (to help retailers manage inventory, pricing, and promotions). This cuts weeks of engineering work down to days.\nThis is a serious step forward for the industry, and it tackles many gaps that merchants and shoppers have been asking about. The momentum is also great news for Commerce Cloud customers. Agentic commerce isn\u2019t a future state anymore; it\u2019s here, and it\u2019s moving fast. We\u2019ve been building toward this same vision, and we\u2019re excited to see Anthropic validate the direction with the right capabilities:\n- Merchants can easily expand into new agentic channels, using our turn-key catalog syndication for OpenAI and Google Gemini.\n- A Shopper Agent on the storefront that offers a fully customizable, conversational interface to support not just product discovery, but complete end-to-end transactions.\n- A Merchant Agent in the back office to surface insights, embed agentic actions, and assist with conversational "
+  },
+  {
+   "sid": "S3",
+   "url": "https://www.salesforce.com/commerce/ai/agents/?bc=OTH",
+   "official": true,
+   "excerpt": "Catch what you missed at Dreamforce! Watch the Commerce Keynote and stream dozens of sessions on Salesforce+.\nWatch here\nMeet the agents transforming ecommerce\nFrom product discovery and checkout to merchant operations and B2B reorders, Commerce Cloud AI agents work around the clock on any storefront, with enterprise-grade trust and data protection built in.\nPersonalize every shopping experience with Carter, the Shopper Agent\nCarter knows exactly what you're looking at. By reading page context in real time, like product, category, or cart, Carter gives relevant answers instead of generic chat replies.\nShoppers can compare products side by side right inside the conversation, creating a faster path to the right decision.\nBrands get full control over Carter's look. Re-skin the chat window, buttons, and UI components beyond default branding to match your storefront.\nIncrease basket size by surfacing complementary or higher-value product suggestions at key moments such as PDP and in the cart.\nShow up wherever shoppers are browsing with Commerce Connect\nEnable shoppers to seamlessly discover and buy products directly on surfaces like the Gemini app and Google Search, including AI Mode. W"
+  },
+  {
+   "sid": "S4",
+   "url": "https://sfcclearning.com/infocenter/OCAPI/current/usage/OAuth.php",
+   "official": false,
+   "excerpt": "OCAPI OAuth 2.0 23.2\nThe OAuth 2.0 protocol is used for authentication and authorization where the shopping customer context provided by JWT does not fit. When using the Data API in a server-to-server scenario, OAuth is used to authenticate requests in the context of a client ID, also known as a Client Credentials Grant. When using the Shop API or Data API in a scenario in which a Business Manager user interacts with the system, OAuth is used to authenticate requests in the context of the user.\nThis topic assumes that you are familiar with OAuth 2.0. For more information, see the OAuth 2.0 Authorization Framework IETF specification.\nSupported Grant types\n- In a server-to-server scenario, one system, such as a CRM (Customer Relationship Management) application, interacts directly with the Data API: no end user interaction is required. In this scenario, the system requesting access functions as the OAuth 2.0 client application. This client application must be able to keep its client password secure. The OAuth 2.0 specification describes several authorization grant types. The server-to-server scenario makes use of the client credentials grant, used when the client application needs to\n\n# header\n{\n \"alg\": \"RS256\",\n \"typ\": \"JWT\"\n}"
+  },
+  {
+   "sid": "S5",
+   "url": "https://salesforcecommercecloud.github.io/b2c-developer-tooling/guide/authentication.md",
+   "official": false,
+   "excerpt": "| Operation                                                                                          | Auth Method                                                           | Setup Required                                                                                                       |\n| -------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |\n| [Code](/cli/code) deploy, watch, download; [logs](/cli/logs); [WebDAV](/cli/webdav)                | WebDAV: sign in with your account, access key, or API client          | None ([sign in when asked](#webdav-access))                                                                          |\n| [Code](/cli/code) activate, delete                                                                 | OAuth + SCAPI (`sfcc.scripts` / `sfcc.scripts.rw`), OCAPI fallback    | [API Client](#account-manager-api-client) + [SCAPI Scopes](#scapi-authentication) (or [OCAPI](#ocapi-configuration)) |\n| [Jobs](/cli/jobs)     \n\n1. Log in to [Account Manager](https://account.demandware.com).\n2. Navigate to **API Client** in the left menu.\n3. Click **Add API Client**.\n4. Fill in the required fields:\n   - **Display Name**: A descriptive name (e.g., \"B2C CLI\")\n   - **Password**: A strong client secret (save this securely for Client Credentials auth)\n5. Configure the **Token Endpoint Auth Method**:\n   - `client_secret_basic` for client credentials flow\n   - `private_key_jwt` for JWT Bearer authentication (certificate-based)\n\n### Access key (Basic authentication) {#option-a-basic-authentication-user-access}\n\n### API client (OAuth) {#option-b-oauth-based-webdav-api-client-access}\n\n**Note:** This configuration is only needed when an API client authenticates with its own credentials (client ID and secret, or JWT). It isn\u2019t needed when you sign in with your account or use an access key.\n\n```bash\nb2c code list \\\n  --client-id your-client-id \\\n  --jwt-cert ./cert.pem \\\n  --jwt-key ./key.pem \\\n  --jwt-passphrase \"your-passphrase\"\n\nWith a client secret, the CLI uses client credentials; otherwise it uses JWT when a certificate is configured, then browser sign-in. To force JWT even when a client secret is configured:"
+  },
+  {
+   "sid": "S6",
+   "url": "https://docs.digitsec.com/hc/en-us/articles/4959085683988-How-to-Connect-Salesforce-Commerce-Cloud",
+   "official": false,
+   "excerpt": "DigitSec can analyze the security of Commerce Cloud deployments. The following steps demonstrate how to connect your Commerce Cloud environments to DigitSec:\nGenerate API Credentials in Commerce Cloud Account Manager\n- Login to Account Manager > Click on API Client > Click on Add API Client\n- Add Name, Password in the following screen:\n- Click on Add Organizations to add the Organization you want to connect.\n- Click on Add Roles > Select SandBox API User > Select the appropriate Sandboxes to retrieve the code from\n- For OpenID Connect add the following scopes:\u00a0\nroles\ntenantFilter\nprofile\nusers\n- Put * in Allowed Scopes.\n- Add Redirect URIs. (Can be a link to your sandbox. S4 does not use this field.)\n- The Token Endpoint Auth Method is client_secret_basic\n- For Access Token Format select private_key_jwt.\nTake note of the API Client Id and API Client Password. You will use these values in later steps.\nEnable API Credential in Business Manager\nNow we use the above created API Client Id and grant access to the Business Manager by using the following steps:\n- Log into the Business Manager\n- Navigate to Administration > Site Development > Open Commerce API Settings\n- Make sure, that you"
+  },
+  {
+   "sid": "S7",
+   "url": "https://salesforcecommercecloud.github.io/b2c-developer-tooling/mcp",
+   "official": false,
+   "excerpt": "MCP (Model Context Protocol) \nThe B2C MCP server connects your AI assistant to Salesforce B2C Commerce tools, documentation, and workflow skills. Build and debug storefronts, deploy code, and manage your sites through requests in your assistant.\nYour assistant can find and read guidance from our B2C Commerce, B2C CLI, operations runbooks, and Storefront Next skill collections through the skills_read tool, MCP resources, or the MCP Skills extension in assistants that support it. No separate skills installation is needed. Documentation and skills work without B2C Commerce credentials; connected tasks use your existing B2C configuration.\nSet up your assistant \nChoose your assistant. Plugin installation is recommended where supported; manual setup includes the same tools, documentation, and skills. Our plugins use the open Agent Plugins standard.\nClaude\nUsing Claude Desktop? See Claude Desktop (Cowork) setup.\nInstall the plugin Recommended\nclaude plugin marketplace add SalesforceCommerceCloud/b2c-developer-tooling\nclaude plugin install b2c-dx-mcp@b2c-developer-tooling\nStart a new Claude Code session. To install for the current project only, run it from your project directory with --sco"
+  },
+  {
+   "sid": "S8",
+   "url": "https://help.marker.io/en/articles/14171515-connect-marker-io-mcp-to-salesforce-commerce-cloud",
+   "official": false,
+   "excerpt": "Someone reports a storefront issue on your Salesforce Commerce Cloud site through Marker.io. Instead of switching between tabs, your AI tool reads the issue and helps fix it directly in your project. This guide shows how to connect both Marker.io MCP and Salesforce Commerce Cloud MCP to the same AI tool.\nWhat you can do\nWhen both servers are connected, your AI tool can:\n- Read Marker.io issues, screenshots, properties, and technical context\n- Work with SCAPI schemas, cartridges, and storefront components\n- Deploy cartridges and push MRT bundles\n- Mark issues as resolved in Marker.io when the fix is done\nThe Salesforce Commerce Cloud MCP server is a development tool. It helps your AI understand your storefront project and work with Commerce Cloud APIs. It supports B2C Commerce, PWA Kit, and Storefront Next projects.\nFor a full list of Marker.io MCP tools, see MCP Integration (Model Context Protocol).\nBefore you start\n- A Marker.io account with at least one project\n- Marker.io MCP connected to your AI tool. Follow MCP setup guides if you haven't done this yet.\n- A Salesforce Commerce Cloud project set up locally\n- Node.js 22 or later\n- An MCP-compatible AI tool (Claude Code, Cursor, "
+  }
+ ],
+ "errors": [
+  "fetch https://developer.salesforce.com/docs/commerce/b2c-commerce/references/b2c-commerce-ocapi/oauth.html: 403 too little text (JS-rendered?)",
+  "fetch https://developer.salesforce.com/docs/commerce/commerce-api/guide/scapi-get-started.html: 403 too little text (JS-rendered?)",
+  "fetch https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/mcp-dx-intro.html: 403 too little text (JS-rendered?)",
+  "fetch https://developer.salesforce.com/docs/commerce/b2c-commerce/references/b2c-commerce-ocapi/shopapiresources.html: 403 too little text (JS-rendered?)",
+  "fetch https://developer.salesforce.com/docs/commerce/commerce-solutions/guide/b2c-developer-sandboxes.html: 403 too little text (JS-rendered?)",
+  "fetch https://developer.salesforce.com/docs/commerce/commerce-vibes/guide/b2c-developer-tooling.html: 403 too little text (JS-rendered?)",
+  "fetch https://developer.salesforce.com/docs/commerce/commerce-api/guide/authorization.html: 403 too little text (JS-rendered?)",
+  "fetch https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-d2c-comm-pricing-promotions-apis.html: 403 too little text (JS-rendered?)",
+  "fetch https://developer.salesforce.com/docs/commerce/commerce-solutions/guide/sfnext-mcp-server.html: 403 too little text (JS-rendered?)",
+  "fetch https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/partners/readiness/b2c_commerce_isv_partner_onboarding_guide.pdf: 200 unsupported content-type application/pdf",
+  "fetch https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/agentic-mcp-shopper-tools-quick-start.html: 403 too little text (JS-rendered?)",
+  "fetch https://developer.salesforce.com/blogs/2020/09/commerce-cloud-developer-center: 403 too little text (JS-rendered?)",
+  "fetch https://developer.salesforce.com/podcast/2021/02/episode-69-b2c-commerce-development-with-andrew-lawrence: 403 too little text (JS-rendered?)",
+  "fetch https://www.postman.com/salesforce-developers/salesforce-developers/documentation/1qkzgik/salesforce-commerce-b2c: 200 too little text (JS-rendered?)",
+  "fetch https://c1.sfdcstatic.com/content/dam/web/en_us/www/documents/legal/Agreements/alliance-agreements-and-terms/commerce-cloud-link-partner-integration-agreement.pdf: 200 unsupported content-type application/pdf"
+ ]
+}

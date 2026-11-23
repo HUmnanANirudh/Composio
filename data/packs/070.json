@@ -1,0 +1,73 @@
+{
+ "id": 70,
+ "app": "Sentry",
+ "category": "Developer, Infra and Data platforms",
+ "hint": "docs.sentry.io/api",
+ "composio": {
+  "found": true,
+  "slug": "SENTRY",
+  "name": "Sentry",
+  "tools": 212,
+  "triggers": 0,
+  "auth": [
+   "OAUTH2"
+  ],
+  "managed_app": "Yes",
+  "url": "https://docs.composio.dev/toolkits/sentry.md",
+  "mcp_variant": "SENTRY_MCP",
+  "mcp_variant_auth": [
+   "DCR_OAUTH"
+  ]
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://docs.sentry.io/api/auth",
+   "official": true,
+   "excerpt": "API Authentication\nAuthentication tokens are passed using an auth header, and are used to authenticate as a user or organization account with the API. In our documentation, we have several placeholders that appear between curly braces or chevrons, such as {API_KEY} or <auth_token>, which you will need to replace with one of your authentication tokens in order to use the API call effectively.\nFor the string format of auth tokens, organization tokens, DSNs, and legacy API keys, see Token and Credential Formats.\nFor example, when the documentation says:\ncurl -H 'Authorization: Bearer {TOKEN}' https://sentry.io/api/0/organizations/{organization_slug}/projects/\nIf your authentication token is 1a2b3c, and your organization slug is acme then the command should be:\ncurl -H 'Authorization: Bearer 1a2b3c' https://sentry.io/api/0/organizations/acme/projects/\nYou can create authentication tokens within Sentry by creating an internal integration. This is also available for self-hosted Sentry.\nSome API endpoints require an authentication token that's associated with your user account, rather than an authentication token from an internal integration. These auth tokens can be created within Sentry"
+  },
+  {
+   "sid": "S2",
+   "url": "https://docs.sentry.io/api",
+   "official": true,
+   "excerpt": "API Reference\nThe Sentry web API is used to access the Sentry platform programmatically. You can use the APIs to manage account-level resources, like organizations and teams, as well as manage and export data.\nIf you're looking for information about the API surface for Sentry's SDKs, see the SDK Development docs.\nThe current version of the Sentry's web API is considered v0. Our public endpoints are generally stable, but beta endpoints are subject to change.\nWhile many of Sentry's APIs use sentry.io as the host for API endpoints, if you want to indicate a specific data storage location, you can use your region-specific domain. Using your organization's region-specific domain will generally result in lower latency for most API calls. For example, if you are hosted in the US region, you would use us.sentry.io. You can check which region your organization is in by viewing your organization\u2019s settings page.\n- US region is hosted on us.sentry.io\n- DE region is hosted on de.sentry.io.\nTo find out which API resources are available on region-based domains, see what types of data are stored where for more information."
+  },
+  {
+   "sid": "S3",
+   "url": "https://mcp.sentry.dev",
+   "official": true,
+   "excerpt": "Sentry MCP Server\nConnects AI assistants to Sentry for searching errors, analyzing performance, triaging issues, reading documentation, and managing projects \u2014 all via the Model Context Protocol.\nAll connections use OAuth. The first connection will trigger an authentication flow to connect to your Sentry account.\nConnecting\nThe base MCP server address is: https://mcp.sentry.dev/mcp\nYou can optionally scope the connection to an organization or project:\n- https://mcp.sentry.dev/mcp/{organizationSlug} \u2014 scoped to one organization\n- https://mcp.sentry.dev/mcp/{organizationSlug}/{projectSlug} \u2014 scoped to one project\nWhen scoped, tools automatically default to the constrained org/project and unnecessary discovery tools are hidden. Scoping to a project is recommended when possible.\nQuery Parameters\n- ?experimental=1 \u2014 Enable forward-looking tool variants and experimental features\nParameters can be combined: https://mcp.sentry.dev/mcp/my-org/my-project?experimental=1\nSetup Instructions\nClaude Code\nclaude mcp add --transport http sentry https://mcp.sentry.dev/mcp/{organizationSlug}/{projectSlug}\nCursor\nUse the \"Install MCP Server\" button, or manually add to MCP settings:\n{\n \"mcpServers\": {\n"
+  },
+  {
+   "sid": "S4",
+   "url": "https://docs.sentry.io/api/permissions",
+   "official": true,
+   "excerpt": "Permissions & Scopes\nIf you're building on top of Sentry's API (i.e using Auth Tokens), you'll need certain scopes to access different API endpoints.\nTo set the scopes for an integration token, select the scopes from the dropdown. These can be edited later.\nTo set the scopes for an personal token, select the scopes from the dropdown when creating a personal token. These cannot be edited later.\nIf you're looking for information on membership roles please visit the membership documentation.\n| GET | org:read | \n| PUT/POST | org:write | \n| DELETE | org:admin | \n| CI Workflows | org:ci | \nUse the org:ci scope for CI and deployment workflows, including uploading source maps, creating releases, and managing code mappings.\n| GET | project:read | \n| PUT/POST | project:write | \n| DELETE | project:admin | \nNote\nThe project:releases scope will give you access to both project and organization release endpoints. The available endpoints are listed in the Releases section of the API Documentation.\n| GET | team:read | \n| PUT/POST | team:write | \n| DELETE | team:admin | \n| GET | member:read | \n| PUT/POST | member:write | \n| DELETE | member:admin | \n| GET | event:read | \n| PUT | event:write | \n| DELETE | event:admin | \nNote\nPUT/DELETE methods only apply to updating/deleting issues. Events in Sentry are immutable and can only be deleted by deleting the whole issue.\n| GET/PUT/POST/DELETE | project:releases | \nNote\nBe aware that if you're using sentry-cli to manage your releases, you'll need a token which also has org:read scope.\nProject Access\nA personal token (user auth token) with the project:releases scope can create releases and upload artifact bundles for any project in the organization, even if Open Membership is disabled and the user isn't a member of the project's team. This lets tools like sentry-cli upload to multiple projects with a single token.\nChanges to existing releases (updates, deletes, legacy release file uploads, and deploys) still require that the user has access to all projects associated with the release. If your organization has Open Membership disabled, members can only modify existing releases for projects belonging to teams they're a member of."
+  },
+  {
+   "sid": "S5",
+   "url": "https://blog.sentry.io/yes-sentry-has-an-mcp-server-and-its-pretty-good",
+   "official": true,
+   "excerpt": "Yes, Sentry has an MCP Server (...and it\u2019s pretty good)\nUnless you\u2019ve been living under a rock, \u201cMCP\u201d is probably a term you\u2019ve heard thrown around in the AI space. Each of the editors and LLM providers have been racing to add and enhance their MCP support. Sentry was fortunate enough to be included in Anthropics release announcements for MCP. VS Code and GitHub Copilot recently expanded their MCP options, Cursor just released their 1.0 (congratulations \ud83c\udf89!) which added a lot of love to their MCP, like support for OAuth directly, Streamable HTTP support, and more. Windsurf continues to grow their support for MCP in Cascade, even Raycast jumped on board and added MCP support.\nMCP, or Model Context Protocol, is an open protocol designed to standardize the way context is brought into LLM interactions. We\u2019ll unpack this more later in the post, but jumping ahead - yes, as the title of this post suggests - Sentry has an MCP server. You can learn more about it by visiting the MCP server address directly, or in our product docs.\nThe Sentry MCP has support for all the newest fun bells and whistles, including:\n- Remote hosted (preferred) or local STDIO mode (we strongly recommend the hosted v"
+  },
+  {
+   "sid": "S6",
+   "url": "https://docs.sentry.io/api/ratelimits",
+   "official": true,
+   "excerpt": "Rate Limits\nSentry rate limits every API request made to prevent abuse and resource overuse. The limit is applied to each unique combination of caller and endpoint.\nWe restrict both how frequently a request is made (requests per second rate limit) and how many concurrent requests a caller can make (concurrent rate limit).\nThe requests per second rate limit follows a fixed window approach. Requests are counted into time buckets, determined by the window size. If the number of requests from a caller exceeds the number of allowed requests within a window, then that request will be rejected. Each endpoint has its own maximum number of requests and window size.\nMeanwhile, the concurrent rate limiter will reject requests if the caller has too many requests in progress at the same time.\nYou can track your rate limit usage by looking at special headers in the response.\nEvery API request response includes the following headers:\n- X-Sentry-Rate-Limit-Limit\n - The maximum number of requests allowed within the window\n- X-Sentry-Rate-Limit-Remaining\n - The number of requests this caller has left on this endpoint within the current window\n- X-Sentry-Rate-Limit-Reset\n - The time when the next rate limit window begins and the count resets, measured in UTC seconds from epoch\n- X-Sentry-Rate-Limit-ConcurrentLimit\n - The maximum number of concurrent requests allowed\n- X-Sentry-Rate-Limit-ConcurrentRemaining\n - The number of concurrent requests this caller has left\nThe rate limiter looks at the caller's identity instead of the bearer token or cookie. As such, the rate limit cannot be bypassed by generating multiple tokens.\nPolling the API for updates is likely to quickly trigger rate limiting. We recommend using our webhooks, if possible."
+  },
+  {
+   "sid": "S7",
+   "url": "https://docs.sentry.io/product/partnership-platform/oauth-integration",
+   "official": true,
+   "excerpt": "---\ntitle: \"OAuth Integration\"\ndescription: \"Learn how to integrate Sentry OAuth to allow existing customers to connect their Sentry accounts to your platform.\"\nurl: https://docs.sentry.io/product/partnership-platform/oauth-integration/\n---\n\n# OAuth Integration | Sentry Docs\n\nSentry's OAuth integration allows third-party platforms to connect with existing Sentry customers. This enables users to link their Sentry organizations with your product, providing seamless access to error monitoring and performance data.\n\nFor complete OAuth2 implementation details including endpoints, token management, PKCE, and code examples, see the [Authentication documentation](https://docs.sentry.io/api/auth.md#oauth2).\n\n## [What OAuth Enables](https://docs.sentry.io/product/partnership-platform/oauth-integration.md#what-oauth-enables)\n\n* **Account linking** between your platform and specific Sentry organizations\n* **Permission-based access** with configurable [API scopes](https://docs.sentry.io/api/permissions.md)\n* **User-controlled permissions** with easy revocation\n* **Seamless authentication** without requiring users to share credentials\n\n## [User Experience](https://docs.sentry.io/product/partnership-platform/oauth-integration.md#user-experience)\n\n2. **Sentry Authentication**: Clicking the button opens a Sentry login modal where users authenticate with their Sentry account.\n\n4. **Connection Complete**: Once confirmed, your platform receives an authorization code that can be exchanged for API tokens.\n\n## [Partner Registration](https://docs.sentry.io/product/partnership-platform/oauth-integration.md#partner-registration)\n\nBefore implementing OAuth, Sentry must register your application. Contact our partnership team with:\n\n## [Revoking Access](https://docs.sentry.io/product/partnership-platform/oauth-integration.md#revoking-access)\n\nUsers can revoke your application's access at any time through their Sentry account settings (**Settings \u2192 Account \u2192 Authorized Applications**). Your application should handle 401 responses gracefully and prompt users to reconnect when needed.\n\n## [Support](https://docs.sentry.io/product/partnership-platform/oauth-integration.md#support)\n\nFor questions about OAuth integration or partnership setup, contact:\n\n**Email:** <partnership-platform@sentry.io>"
+  },
+  {
+   "sid": "S8",
+   "url": "https://sentry.io/pricing/?",
+   "official": true,
+   "excerpt": "Pricing plans for dev teams of all sizes\nSave with annual\ndeveloper\nFor solo devs working on small projects\n$0\n- One user\n- Error Monitoring and Tracing\n- Alerts and notifications via email\n- 10 custom dashboards\n- MCP access\nteam\nEverything to monitor your application as it scales\n$26/mo\n- Unlimited users\n- API & third-party integrations\n- 20 custom dashboards\n- Seer: AI debugging agent (subscription required)\n- Additional events (See pricing)\nDeveloper features +\nbusiness\nFor teams that need more powerful debugging\n$80/mo\n- Unlimited custom dashboards\n- Advanced quota management\n- SAML + SCIM support (See pricing)\nTeam features +\ndeveloper\nFor solo devs working on small projects\n$0\n- One user\n- Error Monitoring and Tracing\n- Alerts and notifications via email\n- 10 custom dashboards\n- MCP access\nteam\nEverything to monitor your application as it scales\n$26/mo\n- Unlimited users\n- API & third-party integrations\n- 20 custom dashboards\n- Seer: AI debugging agent (subscription required)\n- Additional events (See pricing)\nDeveloper features +\nbusiness\nFor teams that need more powerful debugging\n$80/mo\n- Unlimited custom dashboards\n- Advanced quota management\n- SAML + SCIM support (See pri"
+  }
+ ],
+ "errors": []
+}

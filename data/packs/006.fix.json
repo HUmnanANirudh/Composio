@@ -1,0 +1,16 @@
+{
+ "sources": [
+  {
+   "sid": "R1",
+   "url": "https://developers.podio.com",
+   "official": true,
+   "excerpt": "Getting started with Podio API\nThe Podio API lets you integrate with other services and build tools and applications on top of Podio\n- \n 1\n\nGet an API Key Get started right away - generate your API key.\n- \n 2\n\nBrowse the documentation Learn how the API works and what it can do.\n- \n 3\n\nGo live! Share your project - get featured in our showcase.\nWhat is the Podio API?\nThe Podio API is a complete programmable interface to all Podio functionality. We currently provide wrappers for PHP, .NET, Ruby, Java, Python, Android and Objective-C which make working with common API operations very simple.\nWhat can you do with it?\nQuite a lot! In fact, the entire Podio frontend is built on the API, and we've exposed it all for you to use too. If you want to build event-driven applications, you have the ability to register webhooks in your Podio apps. There are some sensible rate-limits in place, but if you need us to raise them for your app, get in touch.\nHow do I get started?\nYou'll need a Podio account, first of all. Then you should review our Terms of API use and then grab an API key for each app you want to build from your account settings page.\nWe recommend that you start out by getting to know the concepts and conventions of Podio and its API and learn how to authenticate with us, before you dive into the tutorials and the documentation.\nYou will probably also want to look at our client libraries to see if we have one available for your prefered language or platform.\nIf you need a hand, please post in the API developer forum."
+  }
+ ],
+ "errors": [],
+ "todo": {
+  "official_mcp": [
+   "ungrounded"
+  ]
+ }
+}

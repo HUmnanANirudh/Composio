@@ -1,0 +1,71 @@
+{
+ "id": 98,
+ "app": "Mermaid CLI",
+ "category": "AI, Research and Media-native",
+ "hint": "github.com/mermaid-js/mermaid-cli",
+ "composio": {
+  "found": false,
+  "slug": null,
+  "name": null,
+  "tools": null,
+  "triggers": null,
+  "auth": [],
+  "managed_app": null,
+  "url": null,
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://mermaid.ai/open-source/config/mermaidCLI.html",
+   "official": true,
+   "excerpt": "Skip to content\nMermaid\nSearch\nMeta\nK\nMain Navigation\nHome\nDocs\nTutorials\nIntegrations\nContributing\nLatest News\n12.3.0\nChangelog\n\ud83d\udcbb Open Editor\nAppearance\nMenu\nReturn to top\nOn this page\nmermaid CLI\nmermaid CLI has been moved to\nmermaid-cli\n. Please read its documentation instead.\nOpens in mermaid.ai"
+  },
+  {
+   "sid": "S2",
+   "url": "https://github.com/mermaid-js/mermaid-cli",
+   "official": true,
+   "excerpt": "### Mermaid with custom title/desc\n![My description here](./readme-3.svg \"My title here\")\nYou can easily pipe input from stdin. This example shows how to use a heredoc to send a diagram as stdin to mermaid-cli (mmdc).\ncat << EOF | mmdc --input -\n graph TD\n A[Client] --> B[Load Balancer]\nEOFmmdc -hdocker pull minlag/mermaid-cli\nor pull from Github Container Registry\ndocker pull ghcr.io/mermaid-js/mermaid-cli/mermaid-cli\nor e.g. version 8.8.0\ndocker pull minlag/mermaid-cli:8.8.0\nThe container looks for input files in /data. So for example, if you have a\ndiagram defined on your system in /path/to/diagrams/diagram.mmd, you can use\nthe container to generate an SVG file as follows:\ndocker run --rm -u `id -u`:`id -g` -v /path/to/diagrams:/data minlag/mermaid-cli -i diagram.mmd\nOr, if using Podman, instead do:\npodman run --userns keep-id --user ${UID} --rm -v /path/to/diagrams:/data:z ghcr.io/mermaid-js/mermaid-cli/mermaid-cli -i diagram.mmd\nThe key differences in the podman command versus the docker command are:\n- The addition of the --userns keep-id argument. This allows the container to keep the same UID as the current user's UID in the container namespace instead of mapping to a subuid"
+  },
+  {
+   "sid": "S3",
+   "url": "https://github.com/mermaid-js/mermaid-cli/blob/master/docs/linux-sandbox-issue.md",
+   "official": true,
+   "excerpt": "(node:8281) UnhandledPromiseRejectionWarning: Error: Failed to launch chrome!\n[0416/092218.828861:ERROR:zygote_host_impl_linux.cc(88)] Running as root without --no-sandbox is not supported. See https://crbug.com/638180.\n(node:8191) UnhandledPromiseRejectionWarning: Error: Failed to launch chrome!\n[0416/091938.210735:FATAL:zygote_host_impl_linux.cc(124)] No usable sandbox! Update your kernel or see https://chromium.googlesource.com/chromium/src/+/master/docs/linux_suid_sandbox_development.md for more information on developing with the SUID sandbox. If you want to live dangerously and need an immediate workaround, you can try using --no-sandbox.\nFirst and foremost, you should not run as root and you should upgrade your Linux kernel to latest version.\nBut if you don't want to follow the advice above and just want to disable sandbox, here you go:\nCreate a puppeteer-config.json file:\n{\n \"args\": [\"--no-sandbox\"]\n}\nAnd when you invoke mmdc:\nmmdc -p puppeteer-config.json ..."
+  },
+  {
+   "sid": "S4",
+   "url": "https://mermaid.ai/docs/ai/mcp-server",
+   "official": true,
+   "excerpt": "Mermaid MCP Server\nThe Mermaid MCP Server enables AI assistants to create, validate, and render Mermaid diagrams seamlessly, plus full integration with your Mermaid account for advanced diagram management. When you ask your AI assistant to create a flowchart, sequence diagram, or any other Mermaid diagram, this server handles the entire process automatically - from syntax validation to PNG generation, interactive playground links, and direct integration with your Mermaid projects.\nThe Mermaid MCP Server supports multiple transport modes, and every tool call requires authentication with a Mermaid account. Authentication is free \u2014 you can sign up for a free Mermaid account (the Basic tier) to get started. Authenticate automatically via OAuth 2.1 with Dynamic Client Registration (for clients that support OAuth discovery, such as VS Code, Cursor, and Antigravity via mcp-remote), or manually by pasting a Mermaid token into your client configuration. See Authentication Setup below for details on both options.\nAvailable Transport Types:\n- HTTP: https://mcp.mermaid.ai/mcp with \"type\": \"http\"\n- SSE (Server-Sent Events): https://mcp.mermaid.ai/sse with \"type\": \"sse\"\nAuthentication: Every too"
+  },
+  {
+   "sid": "S5",
+   "url": "https://mermaid.ai/products/mermaid-api",
+   "official": true,
+   "excerpt": "Mermaid API \u00b7 Open beta\nMermaid diagrams for your code, agents and products. One API call.\nSend diagram code or a plain-language description. Get back a verdict, a rendered image, or a working diagram. No headless browser to host, no Mermaid version to track.\nValidate\nCheck diagram code before anyone sees it. If it is broken, you get the line, the column and a stable error code your program can act on.\nRender\nTurn diagram code into SVG, PNG or PDF, with any Mermaid theme, look and layout, including Mermaid's own premium layouts.\nGenerate\nDescribe a diagram in plain language and get valid Mermaid code back. Every result is checked before it reaches you.\nRepair\nSend broken diagram code and get working code back, checked the same way.\nBrowse\nFind your Mermaid Chart projects and diagrams, then fetch a diagram by ID with its code, version and edit URL.\nCreate\nSave valid diagram code in Mermaid Chart, in your default project or a project you choose. Get a diagram ID and edit URL back.\nUpdate\nChange a stored diagram's code or title by ID. The API validates code before saving; the last write wins.\nShare\nInvite someone with a share link. Recipients must log in; links default to View, last 3"
+  },
+  {
+   "sid": "S6",
+   "url": "https://mermaid.ai/docs/guides/mermaid-api-skill",
+   "official": true,
+   "excerpt": "Mermaid API skill\nAsk your coding agent to check or draw a Mermaid diagram, and it does it for you through Mermaid API. With the mermaid-api skill installed, your agent can:\n- Validate diagram code. When the code is invalid, the API reports the line and column where the parser stopped, and the agent fixes the code there and checks again.\n- Render a diagram to an SVG, PNG or PDF file at the path you name.\n- Show a diagram as ASCII text right in your terminal. See below.\n- Repair invalid code with Mermaid AI. Send it a diagram that won\u2019t parse and it returns a fixed version.\n- Generate one or several diagrams from a description with Mermaid AI, optionally with rendered results.\n- Browse and read your Mermaid Chart projects and stored diagrams.\n- Create, update and share stored diagrams, then hand them to a person with an edit link or a sharing invitation.\nBeta. Mermaid API and the skill are in beta. Fields, limits and the latest supported Mermaid version can change. Don\u2019t build a production dependency on them.\nDiagrams right in your terminal\nAsk for a diagram as text and the agent prints it as ASCII art in the chat. You see the diagram where you\u2019re working, with no file to open and n"
+  },
+  {
+   "sid": "S7",
+   "url": "https://api.mermaid.ai/v1/llms.txt",
+   "official": true,
+   "excerpt": "# Mermaid API\n\n> Hosted API that validates and renders Mermaid diagrams for programs: agents, LLM tool calls, CI pipelines and products. Beta: breaking changes are announced in the changelog, not versioned.\n\nEvery `/v1` and `/v2` call except the reference below needs an API key: `Authorization: Bearer <key>`. A missing, unknown, revoked or expired key is 401 with its own code (`ERR_KEY_MISSING`, `ERR_KEY_UNKNOWN`, `ERR_KEY_REVOKED`, `ERR_KEY_EXPIRED`); fix the key, do not retry.\n\nPersonal keys can list their owner's Mermaid Chart projects with `GET /v1/projects`, list stored diagrams with `GET /v1/projects/{projectID}/diagrams`, and read one with `GET /v1/diagrams/{diagramID}`, free. Create with `POST /v1/diagrams`, update with `PUT /v1/diagrams/{diagramID}`, and share with `POST /v1/diagrams/{diagramID}/share`: the `store` class costs 1 API credit initially, charged only on success; invalid stored-diagram code is uncharged. Organisation keys cannot call these endpoints.\n\nEvery response carries an `x-request-id` header to quote when reporting a problem. Every non-2xx response body is `{ \"error\": { \"code\", \"message\", \"details\"? } }` with a stable, group-prefixed code.\n\n## Reference\n\n- [OpenAPI document](https://api.mermaid.ai/v1/openapi.json): the machine-readable contract, OpenAPI 3.1; its description is the guide: authentication, Mermaid config rules, response headers, the render cache, limits with every endpoint's cost in API credits, size and deadline limits, the beta notice, the changelog, curl examples. Each keyed operation carries its cost as `x-cost`; `GET /v1/balance` answers what remains and every cost, free\n- [Reference page](https://api.mermaid.ai/v1/docs): the same document rendered for people\n- [Error reference](https://api.mermaid.ai/v1/errors.json): every stable error code with its HTTP status and meaning, JSON"
+  },
+  {
+   "sid": "S8",
+   "url": "https://mermaid.ai/?sub1=tool-mermaid-chart",
+   "official": true,
+   "excerpt": "Prompt inside the canvas, drop in a doc, or write it in code \u2014 and watch the diagram build itself.\nMade for teams like yours \u2014 trusted by over 5M people and over 200k companies\nEvery diagram you make keeps Mermaid's open-source roots growing.\nBUILT BY\nShape an idea in seconds\nType it, say it, or upload a doc. Mermaid goes from input to diagram before you've finished the thought.\nGet the right diagram, not just a diagram\nFlowchart, timeline, requirement diagram, sequence \u2014 Mermaid AI suggests the shape that fits what you're actually building.\nKeep your data yours\nSecure access controls, trusted encryption, SOC 2 compliance, and SSO that fits your existing setup.\nDiagram where you work\nRender in your IDE, embed in docs and wikis, or generate straight from Claude, VS Code, and Cursor through our MCP server.\nEdit together, in real time\nCo-edit live, share with one link (no login required), and turn a conversation into a decision.\nStay in your flow\nPrompt right inside the code panel or canvas and watch the diagram change around you. No context-switching, no syntax hunting \u2014 just describe it and keep going.\nDescribe it, upload a doc, or paste a transcript \u2014 and get a diagram you can shap"
+  }
+ ],
+ "errors": [
+  "fetch https://api.mermaid.ai/v1/docs: 200 too little text (JS-rendered?)"
+ ]
+}

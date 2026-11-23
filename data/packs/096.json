@@ -1,0 +1,73 @@
+{
+ "id": 96,
+ "app": "Devin",
+ "category": "AI, Research and Media-native",
+ "hint": "docs.devin.ai (MCP)",
+ "composio": {
+  "found": true,
+  "slug": "DEVIN_MCP",
+  "name": "Devin MCP",
+  "tools": 23,
+  "triggers": 0,
+  "auth": [
+   "API_KEY"
+  ],
+  "managed_app": null,
+  "url": "https://docs.composio.dev/toolkits/devin_mcp.md",
+  "mcp_variant": "DEVIN_MCP",
+  "mcp_variant_auth": [
+   "API_KEY"
+  ]
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://docs.devin.ai/api-reference/authentication",
+   "official": true,
+   "excerpt": "The Devin API uses a principal + token model. A principal is who you are (your identity), and a token is how you prove it (your credential). Understanding this distinction is the key to choosing the right authentication method for your use case.\nPrincipals & tokens\nAll API credentials use the \ncog_ prefix format. Include your token in the Authorization header of every request:\n- A Service User API Key authenticates as the service user \u2014 the service user\u2019s identity, permissions, and org memberships apply.\n- A Personal Access Token authenticates as the human user who created it \u2014 that user\u2019s identity, permissions, and org memberships apply.\nPersonal access token or service user?\nRule of thumb: if the integration should keep working after you leave the team or change roles, use a service user. If it should do exactly what you can do, as you, use a PAT.\nService users (recommended for automation)\nService users are non-human accounts designed for API integrations. They can be assigned specific permissions via RBAC and added to organizations independently of human users.\nHow it works\n- Provision a service user in Settings > Devin API (Service users tab) for an organization, or Enterprise "
+  },
+  {
+   "sid": "S2",
+   "url": "https://devin.ai/pricing",
+   "official": true,
+   "excerpt": "Plans and Pricing\nINDIVIDUAL PLANS\nFree\n$0\nDownload\nLight quota to code with agents\nLimited model availability\nUnlimited inline edits\nUnlimited Tab completions\nProPOPULAR\n$20per month\nSelect plan\nEverything in Free, plus:\nIncreased quotas, including access to frontier models from OpenAI, Claude, Gemini, and SpaceXAI, plus leading open source models\nFull model availability\nFree use of SWE-2\nAccess to cloud agents (Devin Cloud)\nPurchase extra usage at API pricing\nUse your ChatGPT plan\nMaxNEW\n$200per month\nSelect plan\nEverything in Pro, plus:\nAccess to Devin Bots\nSignificantly higher quotas\nTEAM PLANS\nTeams\n$80per month\nSelect plan\nUp to 100 users\nShare and collaborate with multiplayer sessions\n2 concurrent sessions in Free mode per user\nSAML/OIDC SSO\nCost controls with 3 usage tiers\nCentralized billing\nSlack channel support\nEnterprise\nLet's talk\nGet a Demo\nBuilt to scale across your organization:\nHighest priority support\nDedicated account management\nSCIM and role-based access control\nCentralized enterprise admin controls\nDedicated deployment option\nDevin Bots\nFirst class support for every major model provider\nFree$0/month\nPro$20/month\nMax$200/month\nTeam$80/month\nEnterpriseLet's talk\n"
+  },
+  {
+   "sid": "S3",
+   "url": "https://docs.devin.ai/work-with-devin/devin-mcp",
+   "official": true,
+   "excerpt": "The Devin MCP server provides programmatic access to Devin\u2019s platform capabilities for both private and public repositories. Beyond repository documentation and search, it gives any MCP-compatible AI agent or IDE full access to session management, playbooks, knowledge, and scheduling.\nAny Devin session or MCP-compatible client can create sessions, manage playbooks and knowledge, set up schedules, and more. See Advanced Capabilities for details on what Devin can do.\nWhat is MCP?\nThe Model Context Protocol (MCP) is an open standard that enables AI apps to securely connect to MCP-compatible data sources and tools. You can think of MCP like a USB-C port for AI applications \u2014 a standardized way to connect AI apps to different services.\nDevin MCP Server\nThe Devin MCP server is an authenticated service that provides access to both public and private repositories, plus full platform management capabilities. Base Server URL:https://mcp.devin.ai/\nAuthentication Required\nTo use the Devin MCP server, you need a Devin API key:\n- Sign up for a Devin account at Devin.ai\n- Generate an API key from your account settings\n- Include the API key in your MCP client configuration\nThe MCP server supports "
+  },
+  {
+   "sid": "S4",
+   "url": "https://docs.devin.ai/api-reference/overview",
+   "official": true,
+   "excerpt": "The Devin API enables you to integrate Devin into your applications, automate workflows, and build powerful tools. Use service users with role-based access control for secure, auditable API access.\nGetting started\nTeams quick start\nFor teams and standard organizations. Create a service user and make your first API call in minutes.\nEnterprise quick start\nFor enterprise customers with RBAC, multi-org support, and advanced permissions.\nAPI structure\nThe API is organized into two scopes:\nOrganization API\nBase URL:https://api.devin.ai/v3/organizations/*\nFor managing resources within a single organization \u2014 sessions, knowledge, playbooks, secrets, and more. This is where most integrations start.\nEnterprise API\nBase URL:https://api.devin.ai/v3/enterprise/*\nFor cross-organization management \u2014 analytics, audit logs, user management, billing, and infrastructure. Available to enterprise customers.\nBoth scopes use service user credentials (cog_ prefix). See Authentication for setup.\nSession attribution\nService users are separate identities from human users, but you can create sessions on behalf of any user in your organization using thecreate_as_user_id parameter. This means sessions appear in that user\u2019s session list and count toward their usage \u2014 just like they created it themselves.\nYou can also authenticate directly as your user with a Personal Access Token \u2014 no service user or create_as_user_id needed. Sessions are automatically attributed to you.\nLegacy APIs (v1 and v2)\nThe v1 and v2 APIs continue to work during the deprecation period but do not receive new features. We recommend migrating to the current API for role-based access control, session attribution, and new capabilities.\n- v1 API documentation \u2014 session management with legacy API keys\n- v2 API documentation \u2014 enterprise management with legacy API keys\n- Migration guide \u2014 step-by-step migration from v1/v2\nError handling\nAll APIs use standard HTTP status codes:\n- 200 OK: Successful request\n- 201 Created: Resource created successfully\n- 400 Bad Request: Invalid request parameters\n- 401 Unauthorized: Missing or invalid API key\n- 403 Forbidden: Insufficient permissions\n- 404 Not Found: Resource not found\n- 429 Too Many Requests: Rate limit exceeded\n- 500 Internal Server Error: Server error"
+  },
+  {
+   "sid": "S5",
+   "url": "https://docs.devin.ai/api-reference/personal-access-tokens",
+   "official": true,
+   "excerpt": "Overview\nPersonal Access Tokens (PATs) allow human users to authenticate programmatically under their own identity. Unlike service user API keys (which authenticate as a non-human service user), a PAT authenticates as you \u2014 the human user who created the token.\nAll API credentials use the \ncog_ prefix format. Both token types are used identically in the Authorization header:\nScope and permissions\nA PAT belongs to you, within your account (your Teams account or your enterprise). It is not tied to one organization, and there is no such thing as an \u201corganization PAT\u201d or an \u201centerprise PAT\u201d. This is different from service users, which are created at either the organization or enterprise level.\nEach request picks the organization. Organization endpoints name it in the URL path (\n/v3/organizations/{org_id}/...), and the request is authorized by your access and role in that organization. A request for an organization you can\u2019t access fails.\nThe token has the same permissions as your user. Anything you can do in the web app, you can do with your PAT, and nothing more.\nTo create, rotate, or revoke PATs you need Manage API keys in the organization whose settings you are viewing, or Manage ac"
+  },
+  {
+   "sid": "S6",
+   "url": "https://mcp.devin.ai",
+   "official": true,
+   "excerpt": ";d;.\n .lc:::c;:\n ':::::::o\n .l:cx,'c:::::::o :xOOdl\n dc::::::::oc::l:,kkkkkkkx Devin MCP Server\n o:::::::x llo ;kkkkkkkO\n cc::::::ddOkkkkOkkkkkkkkx\n .'cl;,l;kkkkkkkk::dOddc Connect to: `https://mcp.devin.ai/mcp`\n .;odc:c;kkkkkkkk::xOOd:\n OoooooookdOkkkk0kkkkkkkkx\n xoooooooO 'oo ;kkkkkkkO Docs: https://docs.devin.ai/work-with-devin/devin-mcp\n Oooooooookxooodldkkkkkkkx\n .dldc:;oooooooox :xkOd:\n ,ooooooox\n .ldooodcl\n :,,\nSetup Instructions:\nFor most clients (Streamable HTTP):\n{\n \"mcpServers\": {\n \"deepwiki\": {\n \"url\": \"https://mcp.devin.ai/mcp\",\n \"headers\": {\n \"Authorization\": \"Bearer <API_KEY>\"\n }\n }\n }\n}\nFor Claude Code:\nclaude mcp add -s user -t http deepwiki https://mcp.devin.ai/mcp -H \"Authorization: Bearer <API_KEY>\"\nFull documentation:\nhttps://docs.devin.ai/work-with-devin/devin-mcp"
+  },
+  {
+   "sid": "S7",
+   "url": "https://docs.devin.ai/work-with-devin/browser-auth",
+   "official": true,
+   "excerpt": "Devin often needs to be logged into web apps \u2014 your staging environment, an admin dashboard, a SaaS tool \u2014 before it can do useful work. Instead of repeating a login every session, log in once and have Devin save the browser profile so all future sessions start authenticated.\nSaving a browser profile writes to the organization-level blueprint, so Devin only offers the save_browser_profile tool in sessions started by a user with the Manage Org Blueprints permission. It is included in the default org_member and org_admin roles; see Custom roles.\nThe workflow\n1\nLog in manually in the Interactive Browser\nOpen the Desktop tab in the session and drive the browser yourself: complete the login, including SSO redirects, MFA prompts, and CAPTCHAs. See Interactive Browser.\n2\nAsk Devin to save the browser profile\nSay \u201csave the browser profile\u201d or \u201cpersist my login sessions\u201d. Devin calls its save_browser_profile tool, which zips the browser data directory (cookies, localStorage, and other Chrome profile data) and attaches it to your organization\u2019s blueprint as a file. Other phrasings work too \u2014 \u201csave browser cookies\u201d, \u201cremember my browser logins\u201d, \u201ckeep my browser state\u201d, \u201csave the browser to my snapshot\u201d.\n3\nApprove the blueprint update\nDevin proposes a one-time update to the organization-level blueprint, adding an initialize step named Initialize browser profile that unzips the saved profile into the browser data directory. Review it in your timeline and approve it.\n4\nFuture sessions start authenticated\nEvery new session in the organization restores that browser state during setup, so Devin\u2019s browser is already logged in when the session starts. No further approvals needed.\ninitialize step, referencing the profile zip through a $FILE_BROWSER_PROFILE file attachment:\nLimitations and security\n- No browser extensions. Only profile data is restored. Extension-based tools (for example, MetaMask) are not loaded, so flows that depend on an extension won\u2019t work.\n- Saved passwords are excluded. Chrome\u2019s password store is skipped, along with caches \u2014 so the profile carries session state, not credentials. Store credentials as Secrets instead.\n- Size limit. The profile zip must be under 200 MB.\n- Sessions still expire. Cookies restored from the profile expire on the app\u2019s normal schedule; re-save the profile when they do."
+  },
+  {
+   "sid": "S8",
+   "url": "https://docs.devin.ai/api-reference/getting-started/migration-guide",
+   "official": true,
+   "excerpt": "This guide helps you migrate existing integrations from API v1 or v2 to the current Organization and Enterprise APIs. The legacy APIs (v1 and v2) will continue to work during the deprecation period, but all new features are only available in the current API.\nWhat\u2019s changing\nStep 1: Create a service user\nReplace your legacy API key with a service user:\n- Go to Settings > Devin API and open the Service users tab\n- Click Provision service user, assign an appropriate role, and choose an expiration (30 days by default)\n- Copy the API key shown after provisioning (starts with cog_)\n- Update your integration to use the new key\nYour legacy API keys will continue to work during the deprecation period. You can migrate incrementally.\nStep 2: Update endpoint URLs\nSession endpoints\nKnowledge endpoints\nPlaybook endpoints\nThe /playbooks endpoints are deprecated in every API version. Playbooks are moving to Skills. Create new instructions as skills on the Customize page. An account created on or after October 24, 2026 with no playbooks gets 410 from these endpoints. See Playbooks are moving to Skills.\nSecret endpoints\nEnterprise-only endpoints (new)\nThese endpoints have no v1/v2 equivalent \u2014 they "
+  }
+ ],
+ "errors": []
+}

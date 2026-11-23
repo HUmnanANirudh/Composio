@@ -1,0 +1,74 @@
+{
+ "id": 62,
+ "app": "Vercel",
+ "category": "Developer, Infra and Data platforms",
+ "hint": "vercel.com/docs/rest-api",
+ "composio": {
+  "found": true,
+  "slug": "VERCEL",
+  "name": "Vercel",
+  "tools": 414,
+  "triggers": 0,
+  "auth": [
+   "OAUTH2",
+   "API_KEY"
+  ],
+  "managed_app": "No",
+  "url": "https://docs.composio.dev/toolkits/vercel.md",
+  "mcp_variant": "VERCEL_MCP",
+  "mcp_variant_auth": [
+   "DCR_OAUTH"
+  ]
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://vercel.com/docs/rest-api",
+   "official": true,
+   "excerpt": "Interact programmatically with your Vercel account using the SDK or direct HTTP requests. You can deploy new versions of web applications, manage custom domains, retrieve information about deployments, and manage secrets and environment variables for projects.\nThe API supports any programming language or framework that can send HTTP requests.\nThe API is exposed as an HTTP/1 and HTTP/2 service over SSL. All endpoints live under the URL https://api.vercel.com and follow the REST architecture.\nVercel Access Tokens are required to authenticate and use the Vercel API. Include the token in the Authorization header:\nAuthorization: Bearer <TOKEN>\nCreate and manage Access Tokens in your account settings.\nBy default, a request with a full-account token targets your default team. To access resources owned by another team, append the Team ID as a query string:\nhttps://api.vercel.com/v6/deployments?teamId=[teamID]\nThe API limits the number of calls you can make over a period of time. Rate limits are specified via response headers: X-RateLimit-Limit, X-RateLimit-Remaining, and X-RateLimit-Reset. See the limits documentation for details.\nBrowse all available REST API endpoints grouped by category."
+  },
+  {
+   "sid": "S2",
+   "url": "https://vercel.com/docs/rest-api/getting-started",
+   "official": true,
+   "excerpt": "const bearerToken = process.env.VERCEL_TOKEN;\n\nif (!bearerToken) {\n throw new Error('VERCEL_TOKEN is not set');\n}\n\nconst vercel = new Vercel({ bearerToken });\nconst result = await vercel.projects.getProjects({ limit: '1' });\nconst projects = Array.isArray(result) ? result : result.projects;\n\nif (projects.length === 0) {\n console.log('Success: no projects in this token scope');\n} else {\n const project = projects[0];\n console.log(`Success: ${project.name} (${project.id})`);\n} In TypeScript, getProjects returns Promise<GetProjectsResponseBody>. The response type can be a project array or a paginated object, so the example normalizes both forms before reading the first project.\n- Run the script from the same terminal where you exported VERCEL_TOKEN:\nterminalnode index.mjs If the token scope contains a project, the script prints a project name and ID: Success: my-project (prj_xxxxxxxxxxxxxxxxxxxxxxxx) If the scope contains no projects, the script still confirms that the request succeeded: Success: no projects in this token scope\nThe token scope determines which projects GET /v10/projects can return:\n| Token scope | Request target | teamId or slug behavior | \n|---|---|---|\n| Full Account | Your default team by default, or another team you belong to | Omit both to target your default team. Pass either value to target another team. | \n| Team | Projects in the token's team | Omit both. Vercel infers the team from the token. | \n| Project | The token's single project | Omit both."
+  },
+  {
+   "sid": "S3",
+   "url": "https://vercel.com/docs/agent-resources/vercel-mcp",
+   "official": true,
+   "excerpt": "# Add Vercel MCP\nclaude mcp add --transport http vercel https://mcp.vercel.com\n\n# Authenticate the MCP tools by typing /mcp\n/mcp\n- Open Settings in the sidebar\n- Navigate to Connectors and select Add custom connector\n- Configure the connector:\n - Name: Vercel\n - URL: https://mcp.vercel.com\nFollow OpenAI's custom MCP server guide to add Vercel as a plugin:\n- In ChatGPT, open Plugins and use the plus button to select Add custom MCP server\n- Name the plugin Vercel and enter https://mcp.vercel.com as the server URL\n- Select OAuth authentication\n- Review the connection warning, select I understand and want to continue, then select Create as a plugin\n- Install the plugin, then type @ in a conversation to select Vercel\nCodex CLI is OpenAI's local coding agent that can run directly from your terminal.\n\n# Add Vercel MCP\ncodex mcp add vercel --url https://mcp.vercel.com\n\n# Start Codex\ncodex\nWhen adding the MCP server, Codex will detect OAuth support and open your browser to authorize the connection.\nAdd to Cursor\nClick the button above to open Cursor and automatically add Vercel MCP. You can\nalso add the snippet below to your project-specific or global .cursor/mcp.json\nfile manually. For more details, see the Cursor\ndocumentation.\n{\n \"mcpServers\": {\n \"vercel\": {\n \"url\": \"https://mcp.vercel.com\"\n }\n }\n}\nOnce the server is added, Cursor will attempt to connect and display a Needs login prompt. Click on this prompt to authorize Cursor to access your Vercel account.\nAdd to VS Code\nUse the one-click installation by clicking the button above to add Vercel MCP, or follow the steps below to do it manually:\n- Open the Command Palette (Ctrl+Shift+P on Windows/Linux or Cmd+Shift+P on macOS)\n- Run MCP: Add Server\n- Select HTTP\n- Enter the following details:\n - URL: https://mcp.vercel.com\n - Name: Vercel\n- Select Global or Workspace depending on your needs\n- Click Add\nNow that you've added Vercel MCP, let's start the server and authorize:\n- Open the Command Palette (Ctrl+Shift+P on Windows/Linux or Cmd+Shift+P on macOS)\n- Run MCP: List Servers\n- Select Vercel\n-"
+  },
+  {
+   "sid": "S4",
+   "url": "https://vercel.com/docs/rest-api/webhooks/get-a-list-of-webhooks",
+   "official": true,
+   "excerpt": "Get a list of webhooks\nGEThttps://api.vercel.com/v1/webhooks\nGet a list of webhooks\nhttps://api.vercel.com/v1/webhooks\nconst response = await fetch('https://api.vercel.com/v1/webhooks?projectId=string&teamId=string&slug=string', { method: 'GET', headers: { 'Authorization': 'Bearer YOUR_ACCESS_TOKEN', 'Content-Type': 'application/json', },});\nconst data = await response.json();console.log(data);\nResponse\n[ { \"alertRuleIds\": [], \"createdAt\": \"1567024758130\", \"events\": [], \"id\": \"account_hook_GflD6EYyo7F4ViYS\", \"ownerId\": \"ZspSRT4ljIEEmMHgoDwKWDei\", \"projectIds\": [], \"projectsMetadata\": [ { \"framework\": \"actix-web\", \"id\": \"icfg_1234567890\", \"latestDeployment\": \"string\", \"name\": \"Example Name\" } ], \"updatedAt\": \"1567024758130\", \"url\": \"https://my-webhook.com\" }]\nAuthorizationbearerToken\nDefault authentication mechanism"
+  },
+  {
+   "sid": "S5",
+   "url": "https://vercel.com/docs/rest-api?query=api",
+   "official": true,
+   "excerpt": "Interact programmatically with your Vercel account using the SDK or direct HTTP requests. You can deploy new versions of web applications, manage custom domains, retrieve information about deployments, and manage secrets and environment variables for projects.\nThe API supports any programming language or framework that can send HTTP requests.\nThe API is exposed as an HTTP/1 and HTTP/2 service over SSL. All endpoints live under the URL https://api.vercel.com and follow the REST architecture.\nVercel Access Tokens are required to authenticate and use the Vercel API. Include the token in the Authorization header:\nAuthorization: Bearer <TOKEN>\nCreate and manage Access Tokens in your account settings.\nBy default, a request with a full-account token targets your default team. To access resources owned by another team, append the Team ID as a query string:\nhttps://api.vercel.com/v6/deployments?teamId=[teamID]\nThe API limits the number of calls you can make over a period of time. Rate limits are specified via response headers: X-RateLimit-Limit, X-RateLimit-Remaining, and X-RateLimit-Reset. See the limits documentation for details.\nBrowse all available REST API endpoints grouped by category."
+  },
+  {
+   "sid": "S6",
+   "url": "https://vercel.com/docs/cli/mcp",
+   "official": true,
+   "excerpt": "vercel mcp\nThe vercel mcp command helps you set up MCP clients (Claude Code, Claude.ai and Claude for desktop, Cursor, and VS Code with Copilot) to use Vercel MCP, Vercel's hosted Model Context Protocol endpoint at https://mcp.vercel.com. For Claude Code, the command adds Vercel MCP to the client. For Cursor and VS Code with Copilot, it opens the client's one-click installer for Vercel MCP, and you follow the prompts there to complete the setup. For Claude.ai and Claude for desktop, it prints manual setup instructions for adding a custom connector. To set up another client, see Vercel MCP setup.\nBy default, clients are pointed at the shared endpoint. With --project, they're pointed at a project-specific URL (https://mcp.vercel.com/<team>/<project>) so the MCP session is scoped to the linked Vercel Project.\nThe command does not deploy any MCP server of your own. It only adjusts the client-side configuration on your machine.\nvercel mcp [options]\nBy default, vercel mcp runs an interactive picker that lets you choose which MCP clients to set up. In non-interactive environments such as CI, you must pass --clients to skip the picker.\nAfter the command finishes, complete any authentication that the client asks for. In Claude Code, run the /mcp command to authenticate.\nvercel mcpvercel mcp --clients \"Cursor,VS Code with Copilot\"vercel mcp --project\nThese are options that only apply to the vercel mcp command.\nThe --clients option accepts a comma-separated list of MCP clients to set up. In interactive mode, it skips the client picker. In non-interactive mode (for example, CI), --clients is required.\nSupported values:\n- Claude Code\n- Claude.ai and Claude for desktop\n- Cursor\n- VS Code with Copilot\nvercel mcp --clients \"Cursor,VS Code with Copilot\"\nThe --project option sets up project-specific MCP access for the currently linked project instead of global configuration. If your directory isn't linked to a project, run vercel link first.\nvercel mcp --project\nThe following global options can be passed when using the vercel mcp command:\nFor more information on global options and their usage, refer to the options section.\nWas this helpful?"
+  },
+  {
+   "sid": "S7",
+   "url": "https://vercel.com/docs/rest-api/sandboxes/list-sandboxes",
+   "official": true,
+   "excerpt": "List sandboxes\nGEThttps://api.vercel.com/v2/sandboxes\nRetrieves a paginated list of named sandboxes belonging to a specific project. Results can be sorted by creation time or name, and optionally filtered by name prefix or status. Overdue sessions for running and stopping sandboxes are recovered before returning the page, so an entry may no longer match its queried status after recovery.\nhttps://api.vercel.com/v2/sandboxes\nconst response = await fetch('https://api.vercel.com/v2/sandboxes?project=string&limit=123&sortBy=string&namePrefix=string&cursor=string&sortOrder=string&status=string&tags=value&teamId=string&slug=string', { method: 'GET', headers: { 'Authorization': 'Bearer YOUR_ACCESS_TOKEN', 'Content-Type': 'application/json', },});\nconst data = await response.json();console.log(data);\nResponse\n{ \"pagination\": { \"count\": \"123\", \"next\": \"string\" }, \"sandboxes\": [ { \"architecture\": \"amd64\", \"createdAt\": \"1750344501629\", \"currentSessionId\": \"example_id\", \"currentSnapshotId\": \"example_id\", \"cwd\": \"/vercel/sandbox\", \"expiresAt\": \"1750344801629\", \"expiryNotificationLeadTime\": \"120000\", \"failoverRegions\": [], \"image\": \"my-team/my-project/my-repo@sha256:2c4e8f9a1b3d5e7f091a2b3c4d5e6f708192a3b4c5d6e7f8091a2b3c4d5e6f708\", \"keepLastSnapshots\": { \"count\": \"5\", \"deleteEvicted\": \"true\", \"expiration\": \"604800000\" }, \"memory\": \"1024\", \"mounts\": \"value\", \"name\": \"my-sandbox\", \"networkId\": \"example_id\", \"networkPolicy\": { \"allowedCIDRs\": [], \"allowedDomains\": [], \"deniedCIDRs\": [], \"mode\": \"allow-all\", \"s3Key\": \"string\" }, \"persistent\": \"true\", \"region\": \"iad1\", \"runtime\": \"node22\", \"snapshotExpiration\": \"604800000\", \"status\": \"running\", \"statusUpdatedAt\": \"1750344501629\", \"tags\": \"[object Object]\", \"timeout\": \"300000\", \"totalActiveCpuDurationMs\": \"5000\", \"totalDurationMs\": \"60000\", \"totalEgressBytes\": \"4096\", \"totalIngressBytes\": \"2048\", \"updatedAt\": \"1750344501629\", \"vcpus\": \"2\", \"workloadType\": \"sandbox\" } ]}\nAuthorizationbearerToken\nDefault authentication mechanism\nMaximum number of named sandboxes to return in the response. Used for pagination.\nFilter named sandboxes whose name starts with this prefix. Only valid when sortBy=name."
+  },
+  {
+   "sid": "S8",
+   "url": "https://vercel.com/docs/accounts/access-tokens",
+   "official": true,
+   "excerpt": "const response = await fetch(url, {\n headers: {\n Authorization: `Bearer ${process.env.VERCEL_ACCESS_TOKEN}`,\n },\n});\n\nconst { deployments } = await response.json();\nconsole.log(deployments);\nThis prints the deployments accessible to the token and selected team. Keep the token in server-side environment variables rather than client-side code.\nIf a request with a token fails, read the error object in the response body to find the cause:\n| Response | Cause | Fix | \n|---|---|---|\n| 403 with \"invalidToken\": true | The token is wrong, expired, or deleted. | Check that the header reads Authorization: Bearer <token> and that the token still appears on the Account Tokens page. If you've lost the token, create a new one. | \n| 403 with \"missingToken\": true | The request has no Authorization header, or the header isn't in the form Bearer <token>. A common cause is an environment variable that's empty in the current shell. | Check that the header reads Authorization: Bearer <token>. Run echo \"${VERCEL_ACCESS_TOKEN:+set}\" to confirm the variable is set, then send the request from the same shell. | \n| A team's resources are missing, or the request is denied, with a full-account token | A full-account token targets your default team unless you specify a team. | Add teamId or slug to the request. | \n| A project-sc"
+  }
+ ],
+ "errors": []
+}

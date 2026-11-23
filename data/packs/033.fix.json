@@ -1,0 +1,16 @@
+{
+ "sources": [
+  {
+   "sid": "R1",
+   "url": "https://learn.microsoft.com/en-us/linkedin/shared/linkedin-api-partner-support-guide?view=li-lms-2026-11&amp;toc=/linkedin/marketing/toc.json&amp;bc=/linkedin/breadcrumb/toc.json",
+   "official": true,
+   "excerpt": "Note\nAccess to this page requires authorization. You can try signing in or changing directories.\nAccess to this page requires authorization. You can try changing directories.\nAs a LinkedIn API partner, use this page to navigate LinkedIn's support ecosystem and build reliable, scalable, and well-governed API integrations across all LinkedIn business lines.\nNote\nFor LinkedIn Talent Solutions partners, refer to the Talent Solution-specific best practices for partner support.\nThis page explains how to:\nRequest API access\nTo access LinkedIn APIs, log in to the LinkedIn Developer Portal with your LinkedIn credentials and create an application.\nWithin the LinkedIn Developer Portal:\n- Navigate to the My Apps section.\n- Click Create App and configure your application details.\n- Once the app is created, go to the Products tab and select the API products you want to request access to.\nDifferent business lines have different requirements and eligibility criteria. Some allow immediate access without approval; others require a vetting process and use-case review before access can be granted.\nFor example, LinkedIn Marketing APIs use a tiered vetting process. Development tier access lets you build"
+  }
+ ],
+ "errors": [],
+ "todo": {
+  "official_mcp": [
+   "ungrounded"
+  ]
+ }
+}

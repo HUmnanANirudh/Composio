@@ -1,0 +1,72 @@
+{
+ "id": 3,
+ "app": "Pipedrive",
+ "category": "CRM and Sales",
+ "hint": "pipedrive.com",
+ "composio": {
+  "found": true,
+  "slug": "PIPEDRIVE",
+  "name": "Pipedrive",
+  "tools": 407,
+  "triggers": 3,
+  "auth": [
+   "OAUTH2",
+   "API_KEY"
+  ],
+  "managed_app": "No",
+  "url": "https://docs.composio.dev/toolkits/pipedrive.md",
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://www.pipedrive.com/en/features/crm-api",
+   "official": true,
+   "excerpt": "Integrate and optimize with Pipedrive\u2019s CRM API\nConnect any software, system, or app in your technology stack with Pipedrive. Our open API (or Application Programming Interface) and Developer Platform give you the opportunity to integrate and optimize the tools you need, share data and automate your sales processes.\nFree API access with every plan\nGrab your API token and unlock a world of possibilities with our RESTful Pipedrive API v1. Access what you need via webhooks, API endpoints, Postman, Insomnia, client libraries, SDKs and more.\nBuild and integrate what you need\nSeamlessly integrate your existing technology stack and optimize your revenue cycle with apps from Pipedrive\u2019s Marketplace, or build your own app using interactive app extensions like app panels and app actions.\nGet started with developer resources and tools\nKick-start your development with our developer resources. Browse our API Reference and Developer Documentation to learn more and use our Developer Community and API clients on Github for help along the way.\nEasily connect Pipedrive with other software\nNot a developer? No problem! With our flexible open platform, you can connect what you need with Pipedrive using"
+  },
+  {
+   "sid": "S2",
+   "url": "https://www.pipedrive.com/en/features/mcp-server",
+   "official": true,
+   "excerpt": "Connect your AI assistant to Pipedrive with MCP\nEmpower AI assistants like ChatGPT and Claude to securely and reliably work with your Pipedrive data. Find deals, update records, get insights, move opportunities through your pipeline and automate workflows, all from your AI assistant.\nPipedrive is an official connector in Claude and ChatGPT. Find it in the connector directory and connect your account. No manual server setup required.\nTrusted by 100,000+ companies in 179 countries\nHow the Pipedrive MCP server works\nThe Model Context Protocol (MCP) is an open standard that lets AI assistants securely connect to external tools and data sources. With Pipedrive MCP, your AI assistant can securely access and act on your CRM data using natural language.\nStep 1: Connect securely\nConnect your AI assistant to Pipedrive in minutes via a secure OAuth login. No coding, APIs, middleware or developer support required.\nStep 2: Ask your AI to act\nSimply tell ChatGPT or Claude what you want to do, using plain language directly from its input box.\nStep 3: Get instant results\nYour AI assistant can find information, update records, create activities and automate workflows using live Pipedrive data.\nBrin"
+  },
+  {
+   "sid": "S3",
+   "url": "https://developers.pipedrive.com/docs/api/v1",
+   "official": true,
+   "excerpt": "This reference helps you implement the RESTful Pipedrive API. This API uses a JSON format for output and is capable of handling CORS (Cross-Origin Resource Sharing) requests. The API is stateless \u2013 all requests are validated against an API token. The API token can be obtained manually from the Pipedrive app.\nYou can click on the \"Run in Postman\" button below to interact with our API. We have a tutorial for using Pipedrive API in Postman or Insomnia, but if you prefer to use a different tool, you can always import our OpenAPI 3 specification files (available for both v1 and v2 APIs) into your tool of choice. See this article to learn more about Pipedrive API v2. Keep in mind that we'll occasionally update our OpenAPI 3 specification files, so you might need to re-import them from time to time. For ready-to-use SDKs, read below under \"Client libraries\".\nNotice!\nPipedrive's API and extension points cover the majority of our core product's functionality. As our product is constantly growing, so is our API. To be up to date with new additions and updates, please check out and subscribe to our Changelog .\nTo test your applications, we recommend creating a new, separate Pipedrive account for sandboxing purposes. Go to the Developer Sandbox Account page to learn more and request your own sandbox account.\nSee Pipedrive Developer Documentation for more information.\nLearn about what types of apps you can create, check out our coding tutorials and start creating your own app.\nWe offer two official Pipedrive API client libraries: Node.js and PHP."
+  },
+  {
+   "sid": "S4",
+   "url": "https://developers.pipedrive.com/docs/api/v1/Oauth",
+   "official": true,
+   "excerpt": "Using OAuth 2.0 is necessary for developing apps that are available in the Pipedrive Marketplace. Authorization via OAuth 2.0 is a well-known and stable way to get fine-grained access to an API. To retrieve OAuth2 tokens you should send requests to the https://oauth.pipedrive.com domain. After registering the app, you must add the necessary server-side logic to your app to establish the OAuth flow. Please read more about authorization step on the Pipedrive Developers page.\nAfter the customer has confirmed the app installation, you will need to exchange the authorization_code to a pair of access and refresh tokens. Using an access token, you can access the user's data through the API.\nPOST\n/oauth/token\nAuthorization\nstring\nrequired\nBase 64 encoded string containing the client_id and client_secret values. The header value should be Basic <base64(client_id:client_secret)>.\napplication/x-www-form-urlencoded\ngrant_type\nSince you are trying to exchange an authorization code for a pair of tokens, you must use the value \"authorization_code\"\nDefault\nauthorization_code\nValues\nrefresh_token\ncode\nThe authorization code that you received after the user confirmed app installation\nredirect_uri\nThe callback URL you provided when you registered your app\n200\nOK\nExpand all\nCopy code\n - \"v1u:AQIBAHj+LzTNK1yuuuaLqifzhWb9crUNKTpk4FlQ9rjnXqp/6AErhI98syaV25RmpLJLIgOkAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMbGNxa4UccVoXAmLNAgEQgDsiQ7cNdoRBJeFr1i3KW84RYyM1Qtwq1oSBJOl/NFQdVjDI2iQH0LBhS28DbL2KDvoVIihea9Ryt/9rIQ==:RIDnTOIXo8QirT3DMYw0Y0s8xBbxz59f5IMq7T7WhSz313e2MXRHB6g+8OTNCSqVO7QsUhluoAmOfBP1FNkPycy9txn7t2Uoz9y/JDVf4Givv4MMiK/Xq3I7hO4N6FeD+2GqDJDBn24OW6b0SRIr4FEROhGo3BpcPRGehv46NLn1n5LrqXrQwO9qrGD4gIZe40oO2IQgGL9QAPDfqvZ+JhUtcpAipRLp7cCDRfYU8+sdOFJ+hLffqC8isFcV6iPsNrmj\"\n - \"Bearer\"\n - 3599\n - \"1:1:2a5496a8bdd0f829dcb09dc8ba82b188f0ea4481\"\n - \"base\"\n - \"https://user-company.pipedrive.com\"\nThe access_token has a lifetime. After a period of time, which was returned to you in expires_in JSON property, the access_token will be invalid, and you can no longer use it to get data from our API. To refresh the access_token, you must use the refresh_token.\nSince you are to refresh your access_token, you must use the value \"refresh_token\"\nThe refresh token that you received after you exchanged the authorization code"
+  },
+  {
+   "sid": "S5",
+   "url": "https://www.pipedrive.com/en/pricing",
+   "official": true,
+   "excerpt": "LeadBooster add-on\nCapture more leads\nStarting from $32.50\nSkip to main content\nPlans built to help you close more deals, faster\nFree 14-day trial. No commitment \u2013 you can make changes anytime.\n(Save up to 26%)\nLite\nFocus on selling and let meeting intelligence handle the admin\nUS$14One payment of US$ 168 per seat/year\nPer seat per month, billed annually\nFree 14-day trial. No credit card required.\nKey features\nView and manage leads, deals, contacts, calendar events and more in one place.\nLead, calendar and pipeline management\nGenerate reports using text input or choose from pre-written prompts\nAI-powered report creation\nEasily import data from a spreadsheet or CRM. Integrate with 500+ apps, including Zapier, Zoom and Lemlist.\n500+ integrations\nGet a brief before every meeting, a transcript of every call and ready-to-approve CRM updates afterward with Pipedrive Nova, our built-in meeting intelligence tool.\nMeeting intelligence\nNew\nGrowth\nAutomate emails and follow-ups so you can focus on closing\nUS$24One payment of US$ 288 per seat/year\nPer seat per month, billed annually\nFree 14-day trial. No credit card required.\nLite plan +\nFully sync Gmail, Outlook or your company email. Send bu"
+  },
+  {
+   "sid": "S6",
+   "url": "https://support.pipedrive.com/en/article/mcp-chatgpt",
+   "official": true,
+   "excerpt": "Pipedrive MCP for ChatGPT\nYou can connect the Pipedrive MCP server to ChatGPT to allow your AI assistant to securely access and interact with your Pipedrive data.\nBefore you begin\nMake sure that you have permission to install apps in your Pipedrive account and that developer mode is enabled in ChatGPT.\nTo enable developer mode in ChatGPT, open \u201dSecurity and login\u201d. Then, scroll down to \u201dDeveloper mode\u201d.\nThen, enable \u201dDeveloper Mode\u201d.\nCreate the Pipedrive MCP app\nOnce developer mode is enabled, go to \u201dPlugins\u201d on the left-hand side of the screen and click \u201d+\u201d to create a new plugin.\nEnter Pipedrive MCP as the app name and in the \u201dConnection\u201d field enter https://mcp.pipedrive.ai/mcp. Then, click \u201dCreate\u201d.\nAfter creating the app, you\u2019ll be redirected to Pipedrive to complete the installation.\nInstall the Pipedrive MCP app\nReview the requested permissions in the Pipedrive pop-up. Click \u201dAllow and install\u201d to complete the installation process.\nOnce the installation is complete, ChatGPT will be authorized to access your Pipedrive account in accordance with your existing user permissions.\nUse Pipedrive MCP in ChatGPT\nBefore starting your conversation, add the plugin \u201dPipedrive MCP\u201d to the conversation.\nYour AI assistant can now access Pipedrive data and perform supported actions based on the permissions granted to your account.\nWas this article helpful?\nYes\nNo"
+  },
+  {
+   "sid": "S7",
+   "url": "https://github.com/pipedrive/client-nodejs",
+   "official": true,
+   "excerpt": "Pipedrive is a sales pipeline software that gets you organized. It's a powerful sales CRM with effortless sales pipeline management. See www.pipedrive.com for details.\nThis is the official Pipedrive API wrapper-client for NodeJS based apps, distributed by Pipedrive Inc freely under the MIT license. It provides convenient access to the Pipedrive API, allowing you to operate with objects such as Deals, Persons, Organizations, Products and much more.\nnpm install pipedrive --save\nThe Pipedrive RESTful API Reference can be found at https://developers.pipedrive.com/docs/api/v1. Pipedrive API\u2019s core concepts for its usage can be found in our Developer documentation\nThis SDK supports two API versions, each with its own namespace:\n- API v1 endpoints: List of endpoints for API version 1.\n- API v2 endpoints: List of endpoints for API version 2.\nNote: Each API version requires separate configuration specific to that version. Ensure you are using the correct namespace and setup for the version you intend to use.\nYou can retrieve the api_token from your existing Pipedrive account\u2019s settings page. A step-by-step guide is available here.\nimport express from 'express';\nimport { Configuration, Deals"
+  },
+  {
+   "sid": "S8",
+   "url": "https://support.pipedrive.com/en/article/mcp-claude",
+   "official": true,
+   "excerpt": "Pipedrive MCP for Claude\nYou can connect the Pipedrive MCP server to Claude to allow your AI assistant to securely access and interact with your Pipedrive data.\nEnable the Pipedrive MCP connector\nTo enable the Pipedrive MCP connector for Claude go to \u201cCustomize\u201d and select \u201cConnectors\u201d.\nThen, in the search bar, browse for \u201cPipedrive\u201d and click \u201cConnect\u201d.\nReview the requested permissions in the Pipedrive pop-up and click \u201dAllow and install\u201d to complete the installation process.\nOnce the installation is complete, Claude will be authorized to access your Pipedrive account in accordance with your existing user permissions.\nUse Pipedrive MCP in Claude\nOnce the connector is enabled, you can start using Pipedrive MCP in your conversations with Claude.\nBefore starting a conversation, open a new chat and verify that Pipedrive is enabled and available.\nYour AI assistant can now securely access Pipedrive data and perform supported actions based on the permissions granted to your account.\nNote: By default, Claude may not load all available MCP tools when starting a conversation. If you need access to all Pipedrive MCP tools, enable the setting that loads all available tools in the connector configuration.\nWas this article helpful?\nYes\nNo"
+  }
+ ],
+ "errors": []
+}

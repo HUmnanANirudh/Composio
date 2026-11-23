@@ -1,0 +1,69 @@
+{
+ "id": 37,
+ "app": "systeme.io",
+ "category": "Marketing, Ads, Email and Social",
+ "hint": "systeme.io (funnel builder)",
+ "composio": {
+  "found": false,
+  "slug": null,
+  "name": null,
+  "tools": null,
+  "triggers": null,
+  "auth": [],
+  "managed_app": null,
+  "url": null,
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://developer.systeme.io/reference/api",
+   "official": true,
+   "excerpt": "Welcome to this comprehensive guide for the Systeme.io Public API. Our API serves as a bridge, enabling developers to interact with Systeme's core functionalities programmatically. It is meticulously designed to offer a seamless integration experience, allowing you to manage contacts, tags, and a variety of other operations integral to our platform. Adhering to RESTful conventions, our API ensures an intuitive and consistent interaction pattern for all users.\nTo begin using the Systeme.io Public API, you must first obtain an authentication key. This key is your ticket to unlocking the API's capabilities. Simply navigate to the profile settings within your Systeme.io dashboard, and generate a new key under the \"Public API keys\" section. Once you have your key, you're all set to embark on your first API request journey!\nImportant security notice\nUsing the API from public pages is not advisable as it exposes the API key. This poses a significant security risk.\nThe proper approach is to make API calls from a server-side environment to keep the API key secure. This way, we can avoid CORS issues and maintain the integrity of our system.\nTo authenticate with the Systeme.io Public API, you"
+  },
+  {
+   "sid": "S2",
+   "url": "https://systeme.io/mcp",
+   "official": true,
+   "excerpt": "Run your business with AI\nConnect your favorite AI tool to systeme.io and let it create, update, and find what you need, right from the chat\nIn 30 seconds\nsysteme.io includes a built-in MCP server that lets you connect AI tools like ChatGPT or Claude directly to your account. Once connected, your AI can access your content to create and manage things like funnels, contacts, courses, and products, and even chain several actions together in a single request. Sensitive actions always require your confirmation first.\nFree\nIncluded, no extra cost\nAny\nMCP-compatible AI tool\n0\nCode required\nConfirm\nBefore every sensitive action\n\nThe gap between prompt and action\nYour AI is great at talking. It can suggest a tag, draft a newsletter, or plan a campaign. But talking isn't doing. Connect it to systeme.io, and it doesn't just describe your next move. it makes it\nIt learns about your business and builds directly inside your account. You just approve it\nConnect your favorite AI tool in a few clicks\nGenerate a secure MCP key from your account settings, then use it to connect your favorite AI tool like ChatGPT or Claude\nGive your AI context before asking it to act. Ask how many email campaigns you have and what's inside a specific one, so it has everything it needs to start creating content for you\nAsk AI to create content inside your account\nOnce your AI has the context it needs, ask it to build things directly inside your account. Create a funnel, draft a newsletter, or set up a new digital product, just by describing what you want\nGo beyond single actions and let your AI handle an entire process in one request. Ask it to create a funnel, tag new leads, build an email campaign, and set up the automation rule connecting them all\nApprove every action before it happens\nBefore your AI creates, changes, or deletes any"
+  },
+  {
+   "sid": "S3",
+   "url": "https://developer.systeme.io/reference/api_webhooks_post-1",
+   "official": true,
+   "excerpt": "Copy Page Creates a Webhook resource. post https://api.systeme.io/api/webhooks Creates a Webhook resource. Body Params The new Webhook resource name string required length \u2264 255 secret string required url uri required subscriptions array required subscriptions* ADD string | object active boolean | null truefalse Responses 201 Webhook resource created 400 Invalid input 422 Unprocessable entity 429 Too many requests Updated 6 months ago Retrieves the collection of Webhook resources. Retrieves a Webhook resource. Did this page help you? Yes No"
+  },
+  {
+   "sid": "S4",
+   "url": "https://systeme.io/dashboard/profile/public-api-settings",
+   "official": true,
+   "excerpt": "Public API keys\nHow to Use Your API Keys:\n- Create and Manage Keys: Here, you can generate new API keys or revoke existing ones. Each key is associated with your account and should be kept secure\n- Make API Requests: Use these keys to authenticate your requests. You can include them in the request header or as a query string parameter in your API calls\nRemember: Keep your API keys confidential. Do not share them publicly or with unauthorized individuals\n| Name | Token | Status | Expiration date | | \n|---|---|---|---|---|"
+  },
+  {
+   "sid": "S5",
+   "url": "https://help.systeme.io/article/11229-how-to-connect-your-systemeio-account-with-chatgpt-using-mcp-keys",
+   "official": true,
+   "excerpt": "In this article, you will learn how to integrate the systeme.io MCP server with ChatGPT so you can interact with your account data using AI.\nWhat you will need:\n- A systeme.io account\n- An MCP key generated from your systeme.io account (How to use the systeme.io MCP server (Model Context Protocol)\n- A ChatGPT account\nTo connect systeme.io to ChatGPT using an MCP key, log in to your ChatGPT account, open the left side menu, and click Plugins (1).\nClick Add (2), and select Add custom MCP server (3).\nIn the setup popup, enter the following details:\n- Name (4): Systeme.io MCP\n- Description (optional) (5): Systeme.io official MCP server\n- Connection (6): Server URL\n- Server URL (7): https://mcp.systeme.io/mcp?mcpKey=YOUR_KEY\nNote: Replace YOUR_KEY with the MCP key you created on your systeme.io account.\n- Authentication (8): No Authentication\nTick the I understand and want to continue box (9), then click Create as a plugin (10).\nIn the \"Add Systeme.io MCP server to ChatGPT\" window, click Connect systeme.io (11).\nOnce connected and set up, start a new chat in ChatGPT and start using commands to interact with your systeme.io account.\nNotes:\n- some actions (like create/update/delete) may be restricted or require additional confirmation. See ChatGPT permissions and action restrictions.\n- If the server fails to connect, ensure that: \n - Your MCP key is valid and not expired, and you correctly provided it to the server.\n - Developer Mode is active in your ChatGPT settings.\nYou can also connect your systeme.io account to ChatGPT using the direct app connection. If you prefer this option over a manual setup with MCP keys, follow this guide: How to connect your systeme.io account to ChatGPT.\nDid this answer your question?\nLast updated on November 9, 2026"
+  },
+  {
+   "sid": "S6",
+   "url": "https://help.systeme.io/article/2323-how-to-create-a-public-api-key-on-systeme-io",
+   "official": true,
+   "excerpt": "How to use the systeme.io public API (Application Programming Interface)\nIn this article, you will learn how to configure and use the systeme.io public API, including how to generate API keys and what actions you can perform.\n1. What is an API?\nThe acronym API stands for \"Application Programming Interface\", a series of instructions by which a platform offers services to other platforms. It's a strategic gateway for external developers, enabling them to access specific functionality or data from a platform in a structured, secure way. It's like a set of ready-to-use tools that make it easy to build new applications, services, or combinations.\nIn short, systeme.io opens up to other platforms to offer its services where it has added value.\n2. How does our public API work?\nOur API exposes a carefully selected set of features, enabling developers to interact with our platform transparently and efficiently. If you'd like to know more about how it works, you can read our official API documentation.\n3. How to generate your API keys\nAPI keys are unique identifiers that authenticate requests to our public API. They enable you to programmatically access and manage various resources on our pla"
+  },
+  {
+   "sid": "S7",
+   "url": "https://systeme.io/pricing",
+   "official": true,
+   "excerpt": "2 months free\nFree migration\nMonthly billingAnnual billing\nNo credit card required\nFor teams\nContacts\nnull: \nTags\nCRM Pipelines\nEmails sent\nEmail campaigns\nEmail newsletters\nAutomation rules\nWorkflows\nSales funnels\nSales funnels steps\nDeadline funnels\nEvergreen webinars\nA/B tests\nCustom domains\nFile storage space\n1-click upsells\nOrder bumps\nTransaction fees\nWebsites\nLanguages per website\nWith systeme.io, every plan allows you to create unlimited sub-accounts. Each sub-account is a fully fledged systeme.io account with its own full set of limits\nThe limits for each sub-account are the same as those of your main account's plan, at no extra cost. For example, if your plan allows for 50 funnels, each sub-account you create can also have 50 funnels\nSub-accounts\nEvents\nBookings\nStripe integration\nApple Pay integration\nPaypal integration\nRazorpay integration\nFlutterwave integration\nMercado Pago integration\nXendit integration\nCash on delivery\nBlogs\nBlog posts\nMobile optimized \"Link-in-bio\" page\nMobile-optimized link in bio page\nPhysical products\nShipping management\nInventory management\nPhysical product variants\nCoupon codes\nCourses\nStudents\nStudent activity history\nCommunities\nCommunity me"
+  },
+  {
+   "sid": "S8",
+   "url": "https://help.systeme.io/article/9489-how-to-use-systeme-ios-mcp",
+   "official": true,
+   "excerpt": "The new MCP server feature gives users, partners, and developers a powerful new way to interact with systeme.io using AI tools.\nMCP (Model Context Protocol) is a standard that enables AI assistants (such as ChatGPT or Claude) to connect securely to external platforms.\nWith MCP, you can use natural language commands to interact with your systeme.io data. For example, you can ask ChatGPT to find a contact or add a tag just by typing a sentence.\nOur MCP feature currently provides direct access to specific contact-management features, allowing you to use AI to manage your contacts, tags, and contact fields.\nThe systeme.io MCP server allows AI applications to access specific contact-management tools within your account.\nIt creates a bridge between:\n- The host: Your AI tool (e.g., ChatGPT, Claude).\n- The server: Your systeme.io account.\nOnce connected, the AI can execute commands to manage your contacts and tags automatically.\nFor technical details, please refer to our official MCP documentation: https://developer.systeme.io/docs/mcp-server\nTo connect an AI tool, you first need to generate a secure MCP key.\nClick Settings (1), then select MCP & API keys (2) under Connections in the left-"
+  }
+ ],
+ "errors": []
+}

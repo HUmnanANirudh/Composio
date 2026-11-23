@@ -1,0 +1,73 @@
+{
+ "id": 22,
+ "app": "Twilio",
+ "category": "Communications and Messaging",
+ "hint": "twilio.com",
+ "composio": {
+  "found": true,
+  "slug": "TWILIO",
+  "name": "Twilio",
+  "tools": 454,
+  "triggers": 45,
+  "auth": [
+   "API_KEY",
+   "BASIC",
+   "S2S_OAUTH2"
+  ],
+  "managed_app": "No",
+  "url": "https://docs.composio.dev/toolkits/twilio.md",
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://www.twilio.com/docs/iam/api-keys",
+   "official": true,
+   "excerpt": "API keys overview\nAPI keys are the preferred way to authenticate with Twilio's REST APIs. With API keys, you control which users and applications have access to your Twilio Account's API resources, and you can revoke access at your discretion.\nIf your Twilio application uses one of the client-side SDKs, then you need to use API keys to create Access Tokens.\nInfo\nTwilio API credentials are a Region-specific resource. If your Account uses Twilio Regions, refer to Manage Regional API Credentials.\nWhen using the Twilio CLI to create regional profiles, you must specify both --region and --edge flags together. See Regional CLI usage for details.\nAPI keys are a powerful and flexible way to manage access to Twilio resources.\nCreate individual API keys for specific purposes and individuals. You have complete control of the lifecycle of the API credentials for your Twilio Account. For example, you can issue separate API keys to different developers or subsystems within your application. If a key is compromised or no longer used, revoke it to prevent unauthorized access.\nYou can further reduce security risks by using Restricted API keys to provide minimum and specific levels of access.\nBest p"
+  },
+  {
+   "sid": "S2",
+   "url": "https://www.twilio.com/en-us/pricing",
+   "official": true,
+   "excerpt": "Twilio pricing\nStart for free. Then pay as you go.\n- Sign up for a free trial\u2014no credit card required\n- Pay as you go with usage-based pricing\nConversations\nConversation Orchestrator\nKeep conversations connected across channels.\nStarts at $0.0002/1k characters for conversation ingestion.\nConversation Intelligence\nExtract context from real-time conversations.\nStarts at $0.005/1k characters for Twilio-authored Operators; $0.002/1k input characters and $0.018/1k output characters for Custom Operators\nConversation Memory\nBuild a persistent memory of customer interactions.\nStarts at $0.0028/1k characters for memory generation - input + output. $0.007/memory recall.\nEnterprise Knowledge\nBuild your policies, documents, and reference materials into your Conversation Memory.\nStarts at $0.018/GB-Hour for knowledge storage and $0.005/retrieval for knowledge retrieval.\nConversation Relay\nIntegrate advanced voice AI for natural conversations.\nStarts at $0.07/min.\nCommunications\nSMS\nSend and receive SMS and MMS messages.\nStarts at $0.0083 to send or receive a message.\nRCS\nSend and receive RCS messages.\nStarts at $0.0083 to send or receive a message.\nWhatsApp Business API\nSend and receive WhatsAp"
+  },
+  {
+   "sid": "S3",
+   "url": "https://www.twilio.com/docs/ai/mcp",
+   "official": true,
+   "excerpt": "Twilio MCP server\nPublic Beta\nTwilio MCP and Twilio Skills are available as Public Beta products, and the information contained in this document is subject to change. This means that some features are not yet implemented and others may be changed before the products are declared as Generally Available. Public Beta products are not covered by the Twilio Support Terms or Twilio Service Level Agreement.\nThe Twilio Model Context Protocol (MCP) server gives AI coding agents direct, structured access to Twilio's full API surface\u2014over 1,800 endpoints across 30+ products\u2014without leaving your IDE.\nInstead of searching docs, copying endpoints, and context-switching between browser tabs, your coding agent queries Twilio's APIs and retrieves exact parameter schemas on demand. This is especially valuable for products like Conversation Memory, Conversation Orchestrator, Twilio Agent Connect, and Conversational Intelligence, where LLM training data may have limited coverage.\nThis server is read-only: it searches and retrieves public API documentation, and it does not connect to a Twilio account or execute any API calls. No Account SID, API key, or other credential is required or accepted.\nThe MCP"
+  },
+  {
+   "sid": "S4",
+   "url": "https://www.twilio.com/docs/usage/webhooks/webhooks-faq.md",
+   "official": true,
+   "excerpt": "# Webhooks FAQ\n\nHere are some commonly asked questions about webhooks and inbound requests.\n\n## What is a webhook?\n\nLearn more on this glossary page: [What is a Webhook?](/docs/glossary/what-is-a-webhook)\n\nEach type of event (such as an incoming text message, or a phone call status change) sends a webhook with a format that corresponds to that type.\n\nYour web application will respond to a Twilio webhook differently, depending on what type of event it is. If you are receiving a webhook for an inbound text message, your application would respond with [TwiML for Programmable SMS](/docs/messaging/twiml). For an inbound voice call, your application would produce [TwiML for Programmable Voice](/docs/voice/twiml).\n\nTwilio signs webhooks and sends the signature in the `X-Twilio-Signature` HTTP header. By default, the signature uses your account's auth token to create a digital signature from the content of the request (the parameters being sent via either the `GET` or `POST` method). With the [Webhooks configuration API](/docs/usage/webhooks/webhook-configuration), you can sign with a [shared key](/docs/usage/webhooks/webhook-shared-keys) instead, which Twilio recommends for production because it's separate from your account credentials. To verify that an inbound request comes from Twilio, use the [Twilio Server-Side SDKs](/docs/libraries) to validate the request for you with the [RequestValidator](/docs/usage/security#validating-requests).\n\nFind more security information and tutorials for validating inbound webhooks, including how to tell which secret signed a request, on the [Webhooks Security](/docs/usage/webhooks/webhooks-security) page.\n\nNext, Twilio provides a [Debugger](https://1console.twilio.com/go?to=/account/__account__/us1/debugger/event-logs) as part of the Twilio Console. The Debugger will list any errors that Twilio finds when it sends a webhook to your application. For more about the Debugger, see this step-by-step guide to [Debugging Webhooks](/docs/usage/troubleshooting/debugging-your-application#debug-webhooks).\n\nTwilio uses a pool of IP addresses to send webhook requests. As such, there is not a specific range of IP addresses that you should allow for Twilio webhooks. Instead, we suggest that you consider placing some servers in a DMZ and proxying the Twilio webhook request through those servers to your application servers."
+  },
+  {
+   "sid": "S5",
+   "url": "https://www.twilio.com/docs/iam/oauth-apps/overview",
+   "official": true,
+   "excerpt": "OAuth 2.0 is an industry-standard authorization protocol that lets applications securely access Twilio APIs on your behalf, without sharing your Account SID and Auth Token or other long-lived API keys. Instead of using static credentials, your application exchanges a Client ID and Client Secret (or a user's approval) for a short-lived access token, which it then uses to make API calls. OAuth apps are how you set this up in Twilio \u2014 they keep your account credentials safe and give you fine-grained control over what each application can do.\nKey benefits of using OAuth apps:\nShort-lived access tokens \u2014 OAuth credentials generate tokens with a limited lifespan, reducing the risk of credential leaks.\nScoped access \u2014 Each token is restricted to a specific set of APIs, so an app only has access to what it needs.\nOAuth apps can be created at both the account level and the organization level. See the links below to learn more about each:\nTwilio supports two OAuth 2.0 grant types: Client Credentials and Authorization Code. Choose the one that fits how your application accesses Twilio APIs.\nClient Credentials\nThe Client Credentials grant (RFC 6749, Section 4.4) is designed for machine-to-mach"
+  },
+  {
+   "sid": "S6",
+   "url": "https://www.twilio.com/en-us/partners",
+   "official": true,
+   "excerpt": "Find a partner and build without roadblocks\nChoose the partner that fills the gaps on your team. We have partners for every project size and budget.\nSaaS communication solution\nPurchase a pre-built SaaS solution. Our partners have already built Twilio-powered solutions natively into their applications\u2014no building required.\nCustomer data technology partners\nChoose one of the 700+ pre-built integrations to activate customer data and create amazing experiences.\nCommunication consulting partners\nCreate a custom communications solution with the Twilio platform. Get design, build, and operational help to reduce risk and speed up timelines.\nCustomer data consulting partners\nGet help collecting, unifying, and activating customer data with a trusted partner who can quickly implement your use case and realize the benefits of first-party data.\nTwilio\u2019s Professional Services\nOur Professional Services team offers product guidance, onboarding help, and developer advisory services to accelerate your build.\nBuilding assistance for small-scale and self-service projects\nBuilding a proof of concept? Starting with a small scale solution or minimal budget? Our community resources can help you get start"
+  },
+  {
+   "sid": "S7",
+   "url": "https://www.twilio.com/en-us/blog/developers/introducing-twilio-mcp-skills",
+   "official": true,
+   "excerpt": "Introducing the Twilio MCP Server and Skills: Give Your Coding Agents Native Access to 1,800+ Twilio APIs\nTime to read:\n- Twilio MCP server and Skills give coding agents native access to 1,800+ Twilio APIs.\n- The MCP server helps agents search and retrieve API specs for accurate code generation.\n- Twilio Skills guide agents in selecting the right products and best practices for optimal integration.\nThis summary was generated by AI.\nAI coding agents are changing how developers build, but they can only work with what they can see. And now, we\u2019re going to help them see more Twilio \u2013 today, we're launching the Twilio MCP server and Twilio Skills in Public Beta.\nTogether, our new MCP server and Skills package will help your coding agent better discover, plan with, and use Twilio Products and APIs, including our latest Conversations products. In this post, you'll learn why we built the new MCP server and Skills, what they do, and \u2013 most importantly \u2013 how to connect your coding agent.\nThe problem: your coding agent doesn't know Twilio well enough\nIf you've used an agent like Claude Code, Cursor, or Codex to build a Twilio integration, you probably recognize this scenario: your agent gener"
+  },
+  {
+   "sid": "S8",
+   "url": "https://www.twilio.com/docs/usage/webhooks/webhook-auth-profiles.md",
+   "official": true,
+   "excerpt": "---\n\"@context\": https://schema.org\n\"@type\": TechArticle\n\"@id\": https://www.twilio.com/docs/usage/webhooks/webhook-auth-profiles#article\nheadline: Authenticate webhooks with OAuth 2.0, Basic, or Digest\ndescription: Let Twilio authenticate itself to your webhook endpoints using OAuth 2.0 client credentials, HTTP Basic, or HTTP Digest.\nurl: https://www.twilio.com/docs/usage/webhooks/webhook-auth-profiles\ninLanguage: en\ndateModified: 2026-11-18T07:56:05.000Z\nauthor:\n  \"@type\": Organization\n  name: Twilio Developer Education Team\npublisher:\n  \"@type\": Organization\n  name: Twilio\n---\n\n# Authenticate webhooks with OAuth 2.0, Basic, or Digest\n\nTo fetch an access token from your authorization server, Twilio uses the [client credentials flow][ccflow]. Twilio then sends the token as a [`Bearer` token][bearer] in the `Authorization` header of each webhook. When a token nears expiry, Twilio requests a replacement.\n\n| Field                         | Necessity | Description                                                                |\n| ----------------------------- | --------- | -------------------------------------------------------------------------- |\n| `scheme` or `type`            | required  | `OAUTH2`. Use `scheme` for inline credentials, `type` for an AuthProfile.  |\n| `tokenUrl`                    | required  | Your authorization server's token endpoint.                                |\n| `clientId`                    | required  | The OAuth 2.0 client identifier.                                           |\n| `clientSecret`                | required  | The OAuth 2.0 client secret. Write-only, and never returned in a response. |\n| `scope`                       | optional  | The scope Twilio requests.                                                 |\n| `audience`                    | optional  | The audience Twilio requests.                                              |\n| `clientCredentialsAuthMethod` | optional  | `CLIENT_SECRET_POST` (default) or `CLIENT_SECRET_BASIC`.                   |\n\n* [Sign webhooks with shared keys][keys], to sign requests as well as authenticate them\n* [Configure webhook settings][settings], to reference these credentials from a Setting\n* [Test webhook delivery][testing], to check the credentials against your endpoint\n* [Configure webhook rules][rules], to apply that Setting to your webhooks\n* [Configuration API FAQs][faq]"
+  }
+ ],
+ "errors": []
+}

@@ -1,0 +1,72 @@
+{
+ "id": 29,
+ "app": "Aircall",
+ "category": "Communications and Messaging",
+ "hint": "aircall.io",
+ "composio": {
+  "found": true,
+  "slug": "AIRCALL",
+  "name": "Aircall",
+  "tools": 48,
+  "triggers": 0,
+  "auth": [
+   "OAUTH2",
+   "BASIC"
+  ],
+  "managed_app": "Yes",
+  "url": "https://docs.composio.dev/toolkits/aircall.md",
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://developer.aircall.io/docs/authentication",
+   "official": true,
+   "excerpt": "Overview\nGetting Started\nAircall supports two ways to authenticate with the REST API: Basic Authentication and OAuth.\nUse Basic Authentication when you are connecting your own internal tools or private integration to Aircall. Use OAuth when your app needs to access Aircall data on behalf of other users or customers.\n| Use case | Basic Authentication | OAuth | \n|---|---|---|\n| Connect your own system and tools to Aircall | \u2705 | \u274c | \n| Build an integration for multiple Aircall users outside your organization | \u274c | \u2705 | \nThis guide explains the two methods in more detail and helps you choose the right authentication method before you start building.\nBasic Authentication\nBasic Authentication lets you authenticate requests with an API ID and token that you generate from your Aircall Dashboard.\nTo connect a tool or service, copy these credentials and paste them into the platform that you want to integrate with. This method does not require an authorization flow. Use Basic Authentication when you want to connect quickly without setting up OAuth.\nWhen to use Basic Authentication\n- You're connecting your own system or tool to Aircall\n- You don't need to access data on behalf of other users\n- You're building a private integration and are not an approved tech partner\nFor full technical details, see the REST API reference > Basic Auth\nOAuth\nOAuth lets your application access Aircall data on behalf of a user after they grant permission. It's more complex to implement than Basic Authentication, but it's the standard approach for integrations that serve multiple customers.\nWhen to use OAuth\n- You're building an integration for multiple Aircall users\n- Users need to authorize access to their own Aircall accounts\n- You\u2019re building a public integration and are an approved tech partner\nFor full technical details, see the REST API reference > OAuth\nUpdated about 8 hours ago\nWhat\u2019s Next\nChoose one of the guides below to continue setting up authentication"
+  },
+  {
+   "sid": "S2",
+   "url": "https://aircall.io/pricing",
+   "official": true,
+   "excerpt": "CountryUnited States![](/b26/pricing/arrow-sort-down.svg)\n\n- ![](/b26/pricing/check-18.svg)Unlimited calls within US & Canada\\*\n- ![](/b26/pricing/check-18.svg)SMS and MMS![](/b26/pricing/info-12.svg)SMS: available in 14 countries across North America, Europe, and Australia. Domestic delivery only, except between the US and Canada. MMS: available for US, Canadian, and Australian numbers only.\n- ![](/b26/pricing/check-18.svg)Shared inbox with your team\n- ![](/b26/pricing/check-18.svg)Call recordings and AI transcripts\n- ![](/b26/pricing/check-18.svg)IVR and basic call flow![](/b26/pricing/info-12.svg)Route incoming calls automatically using a keypad menu (IVR) so callers can reach the right team, combined with business-hours scheduling that sends calls to voicemail outside working hours.\n- ![](/b26/pricing/check-18.svg)Basic dashboards and analytics![](/b26/pricing/info-12.svg)Track inbound and outbound call activity with core KPIs, call history, and network quality. Includes up to six months of data.\n- ![](/b26/pricing/check-18.svg)250+ integrations\n- ![](/b26/pricing/check-18.svg)50 min AI Voice Agents per month\n\n### Enterprise\n\nCompare all plans![](/b26/pricing/arrow-down.svg)\n\n| Features                                              | Essentials$30 per license/month[Get free access](/get-started/)        | Professional$50 per license/month[Get free access](/get-started/)      | EnterpriseCustom pricing[Talk to Sales](/contact-sales/)               |\n| ----------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |\n| Detailed pricing                                      |                                                                        |                                                                        |                                                                        |\n| Minimum number of users                               | 3                                                                      | 3                                                                      | 25                                                                     |\n| Max number of teams                                   | 3                                 "
+  },
+  {
+   "sid": "S3",
+   "url": "https://support.aircall.io/en-gb/articles/39677926959517",
+   "official": true,
+   "excerpt": "Aircall MCP gives an AI assistant, like Claude or ChatGPT, read-only access to your company's calls and conversation intelligence data. Once connected, you can ask your assistant to search calls, pull transcripts and summaries, or check sentiment and action items, without writing any integration code.\nThis article explains what Aircall MCP does, what it doesn't do, and how to connect it to Claude Desktop, Claude Code, or ChatGPT/Codex.\nImportant: Aircall MCP is currently in beta. To join the beta, contact your Account Manager.\nWhat is MCP?\nMCP (Model Context Protocol) is an open standard for connecting AI assistants to external systems. Where an API is written for developers to call, MCP is written for the assistant itself: it can discover what's available and use it without anyone writing integration code.\nA simple way to think about it: it's the difference between handing someone the key to a filing cabinet and handing them a researcher who already knows where everything is filed.\nHow it works\n- You connect Aircall to your AI client once, via OAuth, the same way you'd connect any other app.\n- Aircall's MCP server publishes a catalog of tools it can use, such as \"search calls,\" \"g"
+  },
+  {
+   "sid": "S4",
+   "url": "https://developers.aircall.io/api-references",
+   "official": true,
+   "excerpt": "It is not recommended to authenticate requests passing the api_id and api_token in the URL for security reasons and as some programming languages and platforms do not support it!\nRequestcurl -X GET https://api.aircall.io/v1/ping \\\n -H \"Authorization: Basic {YOUR_ENCODED_STRING}\"\nResponseStatus: 200 OK\n{\n \"ping\": \"pong\"\n}\nRate limiting\nAircall limits the number of requests to its Public API to 120 requests per minute per company. The following headers are available in API headers' responses when the rate limit has been reached, giving more insight on your API usage:\n| header | description | \n|---|---|\n| X-AircallApi-Limit | Limit of requests for the API key used. | \n| X-AircallApi-Remaining | Remaining requests for this API key. | \n| X-AircallApi-Reset | Timestamp when the counter will be reset. | \n Contact us on support.aircall.io if you need to make more requests per minute, we will add a higher rate limit to your API keys!\nPagination\nWhen retrieving a list of objects with a [GET] request, results are being paginated by Aircall.\nPagination information will be presented in the meta object, available in the payload body and described below.\n- \n The meta object\n\n- \n pageIntegerCurrent page.Default is 1.\n- \n per_pageIntegerNumber of results retrieved per pageDefault is 20.\n Calls and Contacts are limited to 10,000 items, even with pagination on.\n To pass over this limit, we encourage you to use the \nfrom param as much as you can!\nResponse{\n \"meta\": {\n \"count\": 20,\n \"total\": 2234,\n \"current_page\": 1,\n \"per_page\": 20,\n \"next_page_link\": \"https://api.aircall.io/v1/calls?page=2&per_page=20\",\n \"previous_page_link\": null\n },\n ...\n}\nErrors\nAircall uses standard HTTP response codes to indicate the success or failure of an API request:\n- 2xx codes indicate success\n- 4xx codes indicate an error that failed given the information provided\n- 5xx codes indicate an error with Aircall's servers\nApplication error responses include an error title and a human-readable troubleshoot description. They also include message, an errors array, and success: false. Requests rejected at the API gateway before they reach an application, such as invalid credentials, can return a shorter gateway error.\nThe Conversation endpoints return only error and troubleshoot.\nFor Outbound Campaigns, message is the machine-readable code to use for specific handling. A recognised domai"
+  },
+  {
+   "sid": "S5",
+   "url": "https://developer.aircall.io/docs/basic-authentication",
+   "official": true,
+   "excerpt": "Authenticate with API Keys\nGetting started\nLearn how to generate your Aircall API keys and use them to authenticate requests to the Aircall Public API. Before you start make sure you have the following:\n- You must have an Aircall account. Sign up here if you don't have one yet.\n- An App or a tool for making API requests, such as curl, Postman, or your preferred HTTP client.\nGet your API credentials\nNever expose your API token in client-side code.\nAnyone who can access it can make requests on your behalf.\nAll requests to the Aircall Public API must usehttps://.\n- Open your Aircall Dashboard > Integrations > API keys.\n- In the top right corner, click Generate API key.\n- Aircall will generate two strings: an API ID and an API token, which act as your username and password.\n- Copy and store both values somewhere safe. You will only be able to see the API token once \u2014 after closing the window it will no longer be accessible. If you lose them, you can always generate a new pair from the same page.\n\ud83c\udfa5 Demo \u2192 Create API Keys\nCreate a Base64 encoded string with your API credentials\nAPI key authentication works by sending your credentials in the\u00a0Authorization\u00a0header of each request, encoded i"
+  },
+  {
+   "sid": "S6",
+   "url": "https://developer.aircall.io/docs/plan-your-integration",
+   "official": true,
+   "excerpt": "Plan your integration\nOverview\nBefore writing a single line of code, it's worth investing time in understanding how your users can get the most value from an Aircall integration \u2014 and designing around that. This are the steps and timelines involved in building an integration with us\nHere's how to get started:\n- Explore the guidelines & features below\nFamiliarise yourself with what Aircall's API and AI capabilities can do, and identify which ones are relevant to your product and users\n- Talk to your customers Validate your assumptions before building. Which Aircall workflows are your users doing manually today? Where are the gaps? What would save them the most time?\n- Write an integration plan\nDocument the use cases you want to support, the features you'll use, and how the integration will work. Use our integration plan template as a starting point\n- Share it with us\nOnce we've replied to your partner application, we will request the plan. You can share it as doc in the cloud, a notion page or similar. We'll review it and get back to you within 1 to 5 business days. If approved, you'll receive your developer account and OAuth credentials to start building\nGuidelines\nBuild an efficie"
+  },
+  {
+   "sid": "S7",
+   "url": "https://support.aircall.io/en-gb/articles/40439224263069",
+   "official": true,
+   "excerpt": "Aircall AI can connect with your tools in two directions. Your AI Voice Agent and AI Messaging Agent can use your content and tools during a conversation. And AI assistants such as Claude or ChatGPT can use your Aircall data. This article is your entry point: it explains your options and points you to the right guide for each one.\nUse this page to:\n- Understand the ways to connect Aircall AI and your tools, in both directions.\n- Choose the right option for what you want to do.\n- Follow the setup order for your AI agent and find the right guide for each step.\nWays to connect your AI agent and your tools\nWhich option you need depends on the direction: your Aircall AI agent can use your content and tools, or an AI assistant can use your Aircall data.\nLet your Aircall AI agent use your content and tools\n- Knowledge sources are the content your agent reads to answer questions, such as your website, help center articles, notes, or files you upload (AI Voice Agent only). Your agent never changes anything in the source.\n- AI Actions are pre-built actions that Aircall builds and maintains. During a conversation, your agent uses them to look up or update information in a connected tool, such"
+  },
+  {
+   "sid": "S8",
+   "url": "https://developer.aircall.io/docs/quickstart/llms.txt",
+   "official": true,
+   "excerpt": "# Aircall for Developers Documentation\n\n> Build the next generation of AI communication. Access all the tools you need to build on the leading communication and intelligence platform.  Your team. AI agents. One platform. From automating post-call workflows to powering AI Virtual Agents, our APIs and tools give you everything you need to create smarter, more connected communication experiences.\n\nThis file lists one part of the documentation. The full index is at https://developer.aircall.io/llms.txt.\n\n## Documentation: Quickstart\n- [Introduction](https://developer.aircall.io/docs/introduction.md)\n- [Public vs Private app](https://developer.aircall.io/docs/public-vs-private-app.md)\n- [Your first API call](https://developer.aircall.io/docs/your-first-api-call.md)\n- [Best practices](https://developer.aircall.io/docs/best-practices.md): Follow these guidelines to build reliable, secure, and AI-ready integrations with Aircall."
+  }
+ ],
+ "errors": []
+}

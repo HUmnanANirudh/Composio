@@ -1,0 +1,73 @@
+{
+ "id": 74,
+ "app": "Jira",
+ "category": "Productivity and Project Management",
+ "hint": "developer.atlassian.com",
+ "composio": {
+  "found": true,
+  "slug": "JIRA",
+  "name": "Jira",
+  "tools": 171,
+  "triggers": 17,
+  "auth": [
+   "OAUTH2",
+   "S2S_OAUTH2",
+   "API_KEY"
+  ],
+  "managed_app": "Yes",
+  "url": "https://docs.composio.dev/toolkits/jira.md",
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://developer.atlassian.com/cloud/jira/platform/security-for-other-integrations",
+   "official": true,
+   "excerpt": "Last updated Nov 23, 2026\nIntegrations with Jira Cloud can be implemented by allowing external applications or services, scripts, or even bots, to access Jira's APIs directly. If you are not doing this and you are using the Connect framework instead, see Security for Connect apps.\nAuthentication and authorization are the two key parts of implementing security. Authentication tells Jira Cloud the identity of your integration, and authorization determines what actions it can take within Jira. If you are building an integration that does not use Atlassian Connect, there are two methods that you can use for authentication and authorization:\n- OAuth 2.0 authorization code grants (3LO): This is the recommended method. You should use this for most cases.\n- Basic authentication: You should only use this method for tools like personal scripts or bots.\nOAuth 2.0 authorization code grants, also known as three-legged OAuth, is a token-based method for authentication and authorization. This method allows your integration to access Atlassian product APIs on a user's behalf. Unlike two-legged OAuth, three-legged OAuth involves the end user in the authorization process by asking them to consent to"
+  },
+  {
+   "sid": "S2",
+   "url": "https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro",
+   "official": true,
+   "excerpt": "Developer\nDocumentation\nResources\nNews and Updates\nGet Support\nSign in\nDeveloper\nGet Support\nSign in\nDOCUMENTATION\nCloud\nData Center\nResources\nNews and Updates\nGet support\nSign in\nDeveloper\nSign in\nDOCUMENTATION\nCloud\nData Center\nResources\nNews and Updates\nGet support\nSign in\nJira Cloud platform\nGuides\nReference\nREST API\nDocument Format\nJira expressions\nEntity properties\nJQL search extensibility\nConnect\nResources\nChangelog\nJira Cloud platform\nGuides\nReference\nResources\nChangelog\nREST API v3\nAbout\nVersion\nAuthentication and authorization\nPermissions\nExpansion, pagination, and ordering\nTimestamps\nSpecial headers\nAnonymous operations\nAsynchronous operations\nExperimental features\nStatus codes\nAgents\nAnnouncement banner\nApp data policies\nApp migration\nApp properties\nApplication roles\nAudit records\nAvatars\nClassification levels\nDashboards\nDynamic modules\nField schemes\nFilter sharing\nFilters\nGroup and user picker\nGroups\nIssue attachments\nIssue bulk operations\nIssue comment properties\nIssue comments\nIssue custom field associations\nIssue custom field configuration (apps)\nIssue custom field contexts\nIssue custom field options\nIssue custom field options (apps)\nIssue custom field values (apps)"
+  },
+  {
+   "sid": "S3",
+   "url": "https://developer.atlassian.com/cloud/rovo-mcp",
+   "official": true,
+   "excerpt": "Last updated Sep 2, 2026\nThe Atlassian Rovo MCP Server is a cloud-hosted Model Context Protocol (MCP) server that connects AI-powered clients to your Atlassian Cloud apps. It provides a standardized interface for AI assistants, IDEs, and automation tools to read, create, and update work across Jira, Confluence, Jira Service Management, Bitbucket, Loom, and the wider Atlassian platform - all secured by OAuth 2.1 authorization and your existing Atlassian permissions.\nWith the Atlassian Rovo MCP Server, AI clients can:\n- Search and summarize Jira work items, Confluence pages, Bitbucket pull requests, and other Atlassian content without context switching.\n- Retrieve Loom recordings, including transcripts, comments, AI briefs, and extracted meeting action items.\n- Create and update work items, pages, and other content using natural language commands.\n- Automate repetitive work, such as generating Jira work items from meeting notes or creating Confluence documentation from specs.\n- Query across apps using Teamwork Graph, such as finding the pull requests, deployments, and documents connected to a work item.\nThe MCP Server acts as a bridge between MCP-compatible clients and Atlassian Clou"
+  },
+  {
+   "sid": "S4",
+   "url": "https://developer.atlassian.com/cloud/jira/software/basic-auth-for-rest-apis",
+   "official": true,
+   "excerpt": "Last updated Nov 23, 2026\nThis page shows you how REST clients can authenticate themselves using basic authentication with an Atlassian account email address and API token. Authentication using passwords has been deprecated.\nBasic authentication is not as secure as other methods. We recommend using it for simple scripts and manual calls to the REST APIs. Otherwise, consider building an app:\n- Forge apps and Connect apps use more secure methods for authentication: OAuth 2.0 and JWT respectively. In addition, authentication is built into the app frameworks, so you don't need to configure it. See Security for Forge apps and Security for Connect apps.\n- OAuth 2.0 apps (integrations) created in the developer console can use OAuth 2.0 authorization code grants (3LO), which is also more secure than basic auth.\nImportant notice for apps using 3LO or API tokens\nApps that collect API tokens or instruct customers to create individual 3LO apps don't comply with our Security requirements for cloud apps and Acceptable use policy.\nFollow these best practices:\n- Build a single, distributable 3LO app for your integration.\n- Clearly identify your app in the Marketplace (recommended).\n- Work with cus"
+  },
+  {
+   "sid": "S5",
+   "url": "https://developer.atlassian.com/developer-guide/cloud-and-data-center-for-developers",
+   "official": true,
+   "excerpt": "Last updated Dec 12, 2024\nIf you'd like to build an extension for our Atlassian apps, we offer two deployment options:\n- Cloud (recommended)\n- Data Center\nServer end of life is February 15, 2024. Check more details on how this impacts Marketplace listings and a timeline of the changes.\nIf you're building your server or Data Center app in cloud, check out our App migration platform. If you're an Atlassian Marketplace Partner, you can also find more information in our dedicated resource hub in the Partner Portal.\nTo get started, sign up online to create an instance of one of our Atlassian cloud apps such as Jira or Confluence. Your instance will be:\n- Hosted on Atlassian's infrastructure, with a default .atlassian.net subdomain\n- Accessed through the public internet\nThen, read the Forge getting started guide to learn how to:\n- Set up your local developer environment\n- Build your first app\nSign up to get a developer license for a cloud developer bundle.\nIf you have an app or customer business requirement that prevents you from building your app on cloud, we recommend moving to Data Center.\nData Center products let customers host on their own infrastructure, and their deployments can r"
+  },
+  {
+   "sid": "S6",
+   "url": "https://www.atlassian.com/platform/mcp",
+   "official": true,
+   "excerpt": "Your AI should know better\nAtlassian's MCP Server connects your AI to your team\u2019s work and knowledge, grounding every answer and action in context.\nThe team agrees\nUse one AI solution that benefits everyone.\n- Founder Governed, secured, and controlled Turn your AI into active, end-to-end business execution grounded in your company\u2019s work and governed across every team.\n- Team\n- Dev\nStay in your workflow\nGet work done without switching apps.\nPrompts with smarter output\nMake decisions with the full picture based on context across people, projects, and code.\nContext when needed\nAccess the right tools and all your Atlassian info, right where you work.\nAlways up-to-date tools\nConnect once and updates sync automatically to your AI apps as they release.\nConnect with the AI clients you use\nWe're building our Remote MCP server with industry leaders who share our commitment to security and innovation.\nRely on secure, governed access\nGive teams the context they need, with the controls to prove it to security.\nPermissions\nChoose what MCP can read, write, and delete.\nData policies\nAllow or block AI access by site, space, or classification.\nManaged authentication\nControl access through your own idP and SSO.\nHundreds more reasons to connect\nGet greater capabilities with more tools and apps added each month.\n- 215+\n- TOOLS\n- 10+\n- ATLASSIAN APPS"
+  },
+  {
+   "sid": "S7",
+   "url": "https://developer.atlassian.com/cloud/jira/software/rest/intro",
+   "official": true,
+   "excerpt": "Developer\nDocumentation\nResources\nNews and Updates\nGet Support\nSign in\nDeveloper\nGet Support\nSign in\nDOCUMENTATION\nCloud\nData Center\nResources\nNews and Updates\nGet support\nSign in\nDeveloper\nSign in\nDOCUMENTATION\nCloud\nData Center\nResources\nNews and Updates\nGet support\nSign in\nJira Software Cloud\nGuides\nReference\nREST API\nJira expressions\nEntity properties\nConnect\nResources\nChangelog\nJira Software Cloud\nGuides\nReference\nResources\nChangelog\nREST API\nIntroduction\nBacklog\nBoard\nEpic\nIssue\nSprint\nDevelopment Information\nFeature Flags\nDeployments\nBuilds\nRemote Links\nSecurity Information\nOperations\nDevOps Components\nRate this page:\nUnusable\nPoor\nOkay\nGood\nExcellent"
+  },
+  {
+   "sid": "S8",
+   "url": "https://developer.atlassian.com/platform/marketplace/getting-started",
+   "official": true,
+   "excerpt": "Last updated Apr 21, 2026\nAt Marketplace, our goal is to equip you with the essential tools to effectively kickstart, manage and expand your Marketplace app business - whether it's by crafting innovative features or delivering exceptional customer support.\nAccess a free developer instance, prepare to become a partner, understand the prerequisites, and decide your pricing to get started.\nIf you're already a developer or are thinking about developing for Atlassian, we'll give you a free developer instance to make it easier than ever to develop and test on our Atlassian apps like Jira and Confluence.\nA developer instance includes Atlassian Cloud licenses for:\n- Jira Software: 5 users\n- Confluence: 5 users\n- Jira Service Management: 1 agent\nDeveloper instances should only be used for development and testing. If you need this for production purposes, see our Support Tools for Partners program.\nNo request forms needed here... get started with your development instance today!\nForge lets you quickly build full-fledged Marketplace apps in hours, including hosting, multiple development setups, and built-in API authentication. Use it to create custom Marketplace apps or integrations, and distribute them through Marketplace.\nLearn about developing with the Forge platform for Atlassian's cloud apps\nBefore listing your Marketplace app on the Atlassian Marketplace:\nFor an overview of taking an initial idea to a successful Marketplace launch, check out How to Launch a New Product on the Marketplace. You can subscribe to our Atlassian Developer YouTube channel for videos from our live events, webinars, and tutorials.\nBy listing a Marketplace app in the Marketplace, you must also comply with our terms of use and branding guidelines.\n- Marketplace Partner Agreement between Atlassian and you as a partner.\n- Atlassian brand guidelines for how you can represent your company and your Marketplace apps in relation to Atlassian.\n- Marketplace Terms of Use between Atlassian and your Marketplace app customers. Your customers agree to the terms when they purchase or use your Marketplace app.\nThere are three Marketplace app payment models you can choose from on Marketplace:\n- Free\n- Paid via Atlassian, or\n- Paid via Vendor\nEach payment model provides different benefits.\nLearn more about pricing and payments on the Atlassian Marketplace\nRate this page:"
+  }
+ ],
+ "errors": []
+}

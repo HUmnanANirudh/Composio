@@ -1,0 +1,71 @@
+{
+ "id": 100,
+ "app": "Grain",
+ "category": "AI, Research and Media-native",
+ "hint": "grain.com (meeting notes)",
+ "composio": {
+  "found": true,
+  "slug": "GRAIN",
+  "name": "Grain",
+  "tools": 17,
+  "triggers": 0,
+  "auth": [
+   "API_KEY"
+  ],
+  "managed_app": null,
+  "url": "https://docs.composio.dev/toolkits/grain.md",
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://support.grain.com/en/articles/15507288-grain-api",
+   "official": true,
+   "excerpt": "The Grain API lets developers read meeting data, manage recordings, and receive real-time events from Grain programmatically. Use it to build custom integrations, sync data to internal systems, or automate workflows that go beyond what Grain's built-in integrations support.\nFor the full technical reference, see developers.grain.com.\nWhat you can do with the API\nRead meeting data: retrieve recordings, transcripts, AI notes and action items, participants, tags, teams, and meeting types from your workspace.\nManage recordings: upload external recordings to Grain, update recording metadata, add or remove tags, and control sharing at the user or team level.\nDownload recordings: export video files and transcripts in multiple formats (JSON, plain text, VTT, SRT) for archiving or processing.\nReceive real-time events: register webhooks to receive a payload whenever a new recording is processed in your workspace, so downstream systems stay in sync without polling.\nAuthentication\nGrain supports three authentication methods depending on your use case.\nPersonal Access Token (PAT): grants access on behalf of a single user. The token has the same permissions as the user who generated it. Best for "
+  },
+  {
+   "sid": "S2",
+   "url": "https://developers.grain.com/mcp",
+   "official": true,
+   "excerpt": "Official Grain MCP Server: Quick Start Guide\nThe Grain MCP (Model Context Protocol) connects Claude.ai (and other AI chat clients) directly to your meeting data in Grain, enabling powerful AI-powered individual workflows as well as customer and team analytics/reporting directly within Claude.ai. While we are working on support for ChatGPT (email mike (at) grain (dot) com if you want to be on the ChatGPT early access list), we encourage users who plan to prioritize MCP in their workflow to use Claude as it's support for MCP is currently meaningfully more mature and robust."
+  },
+  {
+   "sid": "S3",
+   "url": "https://developers.grain.com/endpoints.html",
+   "official": true,
+   "excerpt": "Endpoints\nAPI Domain is: https://api.grain.com\nOAuth2\nGenerate Token\nEndpoint\nPOST /_/public-api/oauth2/token\nParams\n| Param | | \n|---|---|\n| client_id | Obtained separately in Step 1 of the OAuth Flow | \n| client_secret | Obtained separately in Step 1 of the OAuth Flow * Required for server-side applications | \n| grant_type | Must be authorization_code | \n| code | String obtained in Step 4 of the OAuth Flow | \n| code_verifier | String sent as code_challenge in Step 2 of the OAuth Flow | \nResponse\n| Field | | \n|---|---|\n| token_type | Always bearer | \n| access_token | Token to be used in the Authorization header | \n| refresh_token | Token to be used to refresh the access_token. (See Refresh Token) | \n| expires_in | Denotes how many seconds the access_token will live for after its generation. | \nNOTE: Some legacy clients do not return refresh_token nor expires_in.\nFor these cases the access_token does not expire.\nExample Request\ncurl -X POST \\\n -H 'Content-Type: application/json' \\\n --data '{\"grant_type\": \"authorization_code\", \"code\": \"CODE\", \"client_id\": \"CLIENT_ID\", \"client_secret\": \"CLIENT_SECRET\"}' \\\n https://api.grain.com/_/public-api/oauth2/token\nExample Response\n{\n \"token_typ"
+  },
+  {
+   "sid": "S4",
+   "url": "https://developers.grain.com",
+   "official": true,
+   "excerpt": "Overview\nQuick Start\nThe Grain API lets you read and manage recordings, highlights, uploads, and more.\nThis page gets you from zero to your first successful request!\n1. Create a Personal Access Token\nA Personal Access Token (PAT) authenticates requests as you, with the same access you have in Grain. Generate one here:\nhttps://grain.com/app/settings/integrations?tab=api\nSee Authentication for the other ways to authenticate.\n2. Make Your First Request\nEvery request needs a token in the Authorization header and a Public-Api-Version\nheader (see Versions).\nHere's Token Info, using an example token:\ncurl -X GET \\\n -H \"Authorization: Bearer grain_pat_example123\" \\\n -H \"Public-Api-Version: 2026-10-01\" \\\n https://api.grain.com/_/public-api/v2/token-info{\n \"type\": \"personal_access_token\",\n \"scope\": \"personal\",\n \"user_id\": \"7890-abcd-ef01-2222-3456-7890ffff\",\n \"name\": \"Luke Skywalker\",\n \"expires_at\": null\n}\nSwap in your own token and you're set.\nNext Steps\n- Authentication \u2014 authentication methods, use the one that best suits your use case\n- Versions \u2014 Grain's Public-Api-Version header explained\n- Rate Limits \u2014 request limits and the headers returned with each response\n- Endpoints \u2014 the full API reference"
+  },
+  {
+   "sid": "S5",
+   "url": "https://support.grain.com/en/articles/14811968-grain-mcp",
+   "official": true,
+   "excerpt": "Grain's MCP (Model Context Protocol) server gives AI assistants direct access to your meetings, transcripts, AI notes, and workspace data. Ask questions, generate reports, create clips, and organize recordings, all from your AI chat interface.\nFor technical setup and the full tool reference, see the Grain MCP developer docs.\nSet up with Claude\nStep 1: Add the Claude Connector integration\n- In Claude, go to \u2019Customize\u2019 \u2192 \u2018Connectors\u2019\n- Click '+' to search for connectors\n- Search for \u2018Grain\u2019\n- Select & connect Grain\n- You\u2019ll be redirected to Grain to approve the connection\nStep 2: Verify\nFrom a new Claude chat, send this test prompt:\nTell me about my most recent Grain meeting\nIf the MCP doesn\u2019t work as expected, click '+' and confirm 'Grain' appears under 'Connectors' before trying again.\nSet up with ChatGPT\nStep 1: Add the ChatGPT App integration\n- Go to 'Apps' and search for 'Grain'\n- Select 'Grain' and click 'Connect'\n- Sign in and approve ChatGPT access to your Grain account data\nStep 2: Verify\nFrom a new ChatGPT chat, send the following test prompt:\nTell me about my most recent Grain meeting\nIf the MCP doesn\u2019t work properly, click '+' and select Grain as a source before trying a"
+  },
+  {
+   "sid": "S6",
+   "url": "https://developers.grain.com/authentication.html",
+   "official": true,
+   "excerpt": "Authentication\nAuthenticating Calls\nTo authenticate API calls, the client must add the following header:\nAuthorization: Bearer TOKEN\nwhere TOKEN is obtained by one of the methods below.\nToken Types\nThere are three types of tokens which can have one of two access scopes.\n| Type | Scope | | \n|---|---|---|\n| Personal Access Token ( PAT) | personal | Generated manually from the integrations page. Doesn't expire, and can be revoked at any time. | \n| Workspace Access Token ( WAT) | workspace | Generated manually from the integrations page. Doesn't expire, and can be revoked at any time. | \n| OAuth Token | personal, workspace | Issued through the OAuth2 Flow. Expires, must be refreshed. | \n| Scope | | \n|---|---|\n| personal | Provides the same access level as the user who authorized the token. | \n| workspace | Provides FULL DATA ACCESS of the workspace. Can be generated by workspace admins only. | \nNOTE: The workspace scope is not available on all plans.\nCheck https://grain.com/pricing to see if your plan includes Workspace API.\nTokens with the personal scope, including Personal Access Tokens, also authenticate the Grain MCP server at https://api.grain.com/_/mcp.\nTokens with the workspace \n\nNote right of you: Step 1\n you-->>grain: Request Client ID & Secret (manually)\n grain-->>you: Client ID & Secret\n Note right of you: Step 2\n user->>you: Requests OAuth\n you->>user: Open or Redirects to oauth2/authorize\n user->>grain: oauth2/authorize\n\ngrain->>user: Requests Confirm OAuth\n user->>grain: Confirms\n Note left of grain: Step 4 \n grain->>user: Redirects to redirect_uri w/code\n user->>you: redirect_uri w/code\n\nNote right of you: Step 5\n you->>grain: POST oauth2/token w/code\n grain->>you: access_token & refresh_token"
+  },
+  {
+   "sid": "S7",
+   "url": "https://grain.com/pricing",
+   "official": true,
+   "excerpt": "Pricing\nFree\n$0\nbilled annually\nFree\n$0\nbilled annually\nGrain never trains AI with your meeting data on any plan.\nCompare Plans\nGrain has everything you need and nothing you don't, without required annual contracts.\nMeet our customers\nFrequently Asked Questions\nWhat is a \"Workspace\"?\nA workspace is a shared environment where your organization's Grain members can access and collaborate on meeting recordings, notes, and insights. Every workspace has Paid seats and Free viewer seats, and can be organized into Teams for managing how meetings are recorded and shared. Workspaces are on Business and Enterprise.\nWhat are \"Teams\"?\nTeams help you organize how meetings are automatically recorded and shared within your workspace. Admins can configure each team's auto-record and auto-share settings, so the right meetings reach the right people without manual effort. Teams can be open (visible to the whole workspace) or private (restricted to added members). Learn more about Teams.\nWho are \"Members\" in my workspace?\nWorkspace members are individuals from your organization with linked Grain accounts. They can join via email invitation, invite link, or domain authentication. Each member has either"
+  },
+  {
+   "sid": "S8",
+   "url": "https://grain.com/release-note/06-18-2025",
+   "official": true,
+   "excerpt": "Official Grain MCP Server\nAnnounced:\nJune 18, 2025\nGrain's official MCP server is available now for all users! \ud83c\udf89\nWith Grain's new MCP server you can securely access your meetings, notes, transcripts, deals, & coaching scorecard data natively using Anthropic's new Claude Integrations (ChatGPT coming soon), or using mcp-remote in Cursor, Windsurf and other clients.\nIn addition to being able to ask any prompt in Cluade with Grain data, the server includes built-in MCP Prompts to run one-click reports like:\n- \ud83d\udce3 Weekly \"Voice of the Customer\" reports to track sentiment & requests\n- \ud83d\udcca Pipeline IQ analysis to identify high opportunity & at-risk deals\n- \ud83c\udf36\ufe0f SPICED/MEDDICC reports to deeply understand a deal across meetings\n- \ud83d\udde3\ufe0f Sales Skill Scorecards to eval and track our team's performance over time\nCheck the demo and quick-start guide to get set up in less than 60 seconds.\nBest,\nMike\n60 Second Set-up Instructions\nNative Integration Details:\n- Integration Name: Grain\n- Integration URL: https://api.grain.com/_/mcp\nMangual Config via mcp-remote:\n{ \"grain\": { \"command\": \"npx\", \"args\": [\"-y\", \"mcp-remote\", \"https://api.grain.com/_/mcp\"] } }"
+  }
+ ],
+ "errors": []
+}

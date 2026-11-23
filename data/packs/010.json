@@ -1,0 +1,71 @@
+{
+ "id": 10,
+ "app": "DealCloud",
+ "category": "CRM and Sales",
+ "hint": "api.docs.dealcloud.com",
+ "composio": {
+  "found": false,
+  "slug": null,
+  "name": null,
+  "tools": null,
+  "triggers": null,
+  "auth": [],
+  "managed_app": null,
+  "url": null,
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://api.docs.dealcloud.com/docs/apikeys",
+   "official": true,
+   "excerpt": "Obtaining an API Key\nUser Groups and Permissions\nTo enable API access, ensure the intended user is assigned to a user group with the appropriate permissions. Navigate to Admin > User Management, select the relevant user group, go to Capabilities > Site Areas, and enable \"API\". If you do not see the Admin section, contact your organization's admin or DealCloud Customer Success Manager (CSM) for assistance.\nTip: User group permissions control which endpoints and data the user can access via the API. Review and assign permissions carefully to follow the principle of least privilege.\nObtaining an API Key\nOnce user permissions are set, click the User icon at the top-right of your DealCloud screen and select Profile. Scroll down to the API Key section and click Enable. Then click Copy API Key to Clipboard to copy your API key for use in integrations or API requests.\nSecurity Best Practices:\n- Treat your API key like a password: do not share it or expose it in public code repositories.\n- Rotate your API key periodically and immediately if you suspect it has been compromised.\n- Disable API access for users who no longer require it.\nTroubleshooting:\n- If you cannot enable or copy your API key, verify your user group permissions and contact your admin or DealCloud support."
+  },
+  {
+   "sid": "S2",
+   "url": "https://api.docs.dealcloud.com/mcp",
+   "official": true,
+   "excerpt": "DealCloud MCP Server\nThe DealCloud MCP Server helps teams turn their DealCloud data into faster, higher-quality outcomes. AI assistants can surface sharper relationship and pipeline insights, prepare teams for diligence and meetings, then act on what they find: logging notes after a call, advancing a deal after a review, or recording a new opportunity. It all runs on a secure, consistent surface, with site and user-level permissions, governance, and attribution built in.\nHow It Works\n- A compatible AI assistant connects to the DealCloud MCP Server and signs in as the user.\n- The assistant discovers the available tools and capabilities.\n- It calls read tools to retrieve context and surface relevant data.\n- It calls write tools to create or update records, respecting existing rules & validations\n- Every action and response honors individual users permissions.\n- Teams move from insight to action faster, with less manual work and DealCloud kept current."
+  },
+  {
+   "sid": "S3",
+   "url": "https://api.docs.dealcloud.com/docs/token",
+   "official": true,
+   "excerpt": "Requesting an OAuth2 Bearer Token\nDealCloud uses the OAuth2 Client Credentials flow to generate a bearer token, which is then used in the HTTP Authentication header for API requests.\nHow the OAuth2 Client Credentials Flow Works:\n- The client application sends a POST request to the token endpoint, providing its client_id, apiKey, and the required scope(s).\n- The authorization server validates the credentials and scopes.\n- If valid, the server responds with an access_token (bearer token), its type, and expiration time.\n- The client includes this token in the Authorization header for subsequent API requests Authorization: Bearer {{token}}.\n- Tokens expire after 900 seconds (15 minutes) and must be refreshed by repeating the flow.\nSecurity Best Practices\n- Avoid exposing your apiKey in client-side code or public repositories.\n- Only request the scopes necessary for your use case to minimize risk of interruptions.\nScopes\nWhen generating a token, use one or more scopes listed below, separated by a space. It is recommended to include only the scopes needed.\nIf you receive a 403 Forbidden response, the most likely cause is due to a missing scope or user group permissions.\n| Scope | Description | \n|---|---|\n| user_management | Required when accessing the User Management API endpoints (api/rest/v1/management) | \n| data | Required when accessing the Data or Schema API endpoints (api/rest/v4/data or api/rest/v4/schema). | \n| publish | Required when accessing the Publications API endpoints (api/rest/v1/publication). | \n| ri_import | Required when accessing the Relationship Intelligence Import API endpoints (api/rest/v1/ri/import). | \n| backup | Required when accessing the Site Backup API endpoints (api/rest/v4/backups). | \n- Scopes not included here but listed in swagger: provider_sync, api, data_provider, and exchange are either deprecated or specialized and are not required for any of the APIs documented here.\nExamples\nHTTP\nPOST {baseUrl}/api/rest/v1/oauth/token\nContent-Type: application/x-www-form-urlencoded\n\nscope=data user_management\n&grant_type=client_credentials\n&client_id=106\n&client_secret=1356GYNU"
+  },
+  {
+   "sid": "S4",
+   "url": "https://api.docs.dealcloud.com/mcp/getting-started",
+   "official": true,
+   "excerpt": "Getting Started with DealCloud MCP\nPrerequisites\n| Requirement | Details | \n|---|---|\n| Licensing | DealCloud with Celeste license. | \n| User Permissions | Manage MCP Servers capability for admins to configure. Celeste Member user group assignment with MCP Access capability enabled for end-user connection. | \nDefault MCP Server\nDealCloud provides a default MCP Server out-of-the-box without any configuration required. It exposes your site's full schema and is the fastest way to get connected. Copy the MCP endpoint URL from Tools > MCP Servers and connect it to your AI client. The default endpoint follows this format:\nhttps://[tenant].my.intapp.com/mcp/celeste/DealCloud\nCustom MCP Servers\nNeed to scope data access by team, workflow, or AI client? Custom MCP Servers let you control exactly what each client can see by pairing a server with a Schema Contract. See Custom MCP Servers for setup details.\nEnabling Write Tools\nTo let assistants create and update records, go to Tools > MCP Servers, edit the MCP Server, and turn on the Enable Write Tools toggle. See MCP Tools for the full list.\nConnecting to AI Clients\nSee setup steps & compatibility by AI clients."
+  },
+  {
+   "sid": "S5",
+   "url": "https://api.docs.dealcloud.com/docs/errors",
+   "official": true,
+   "excerpt": "Status Codes and Meaning\n401 - Unauthorized\nA 401 Unauthorized error means the request lacks valid authentication credentials. This occurs if the authorization token has expired or if the API client ID or API key is invalid.\nHow to resolve:\n- Check and correct your API key or client ID values.\n- Refresh the authorization token.\n{\n \"error\": \"invalid_client\"\n}\n403 - Forbidden\nA 403 Forbidden error indicates that the server understood the request but refuses to authorize it. This usually happens when required user group permissions or scopes are missing, or if the API endpoint is incorrect.\nHow to resolve:\n- Adjust user group permissions.\n- Include the required Scope in the authentication request.\n- Verify and correct the URL endpoint.\n429 - Rate Limit Exceeded\nA 429 error is received when a rate limit or throttling event has been met. The response may include a 'Retry-After' header specifying the number of seconds to wait before retrying. If not present, wait a short period before retrying the API call.\nNote that rate limits and throttling are applied on an endpoint basis. When a rate limit is exceeded, an HTTP 429 error will be triggered with a message similar to 'API calls quota ex"
+  },
+  {
+   "sid": "S6",
+   "url": "https://api.docs.dealcloud.com/mcp/connections",
+   "official": true,
+   "excerpt": "Connecting AI Clients\nDealCloud MCP can connect with Claude, ChatGPT, Microsoft Copilot Studio, Cursor, local agents such as Claude Code and Codex CLI, and other compatible AI clients. Each connection authenticates via OAuth on behalf of the signed-in user.\nClient Compatibility\nDealCloud MCP is compatible with most AI clients that support the current MCP spec, including hosted platforms and local agents. Connections authenticate via OAuth 2.0. DealCloud MCP advertises its OAuth configuration through standard .well-known discovery endpoints, so clients that support dynamic discovery connect automatically, with no manual OAuth setup.\n| AI Client | Type | Status | \n|---|---|---|\n| Claude.ai / Claude Desktop | Hosted AI platform | Supported | \n| ChatGPT | Hosted AI platform | Supported | \n| Microsoft Copilot Studio | Hosted AI platform | Supported | \n| Cursor Agents | Hosted AI platform | Supported | \n| Claude Code | Local agent | Supported, requires enablement | \n| Codex CLI | Local agent | Supported, requires enablement | \n| Cursor IDE (desktop) | Local agent | Supported, requires enablement | \n| Custom / third-party AI clients | \u2014 | Contact your Account Manager | \nClaude\nBoth claude"
+  },
+  {
+   "sid": "S7",
+   "url": "https://api.docs.dealcloud.com/sdk/python-1.X/configuration/authentication",
+   "official": true,
+   "excerpt": "Authentication\nThe DealCloud SDK uses OAuth2 client credentials for authentication. HTTP calls go through intapp-rest-client (RestClient); advanced options (timeouts, retries, logging) align with that library unless overridden by DealCloudConfig.\nThis page covers all available authentication methods for the DealCloud SDK.\nQuick Start\nUse DealCloudConfig (OAuth2 client credentials) and DealCloud.from_config_object():\nfrom dealcloud_sdk import DealCloud, DealCloudConfig\n\nconfig = DealCloudConfig(\n siteUrl=\"yoursite.dealcloud.com\",\n clientId=12345,\n clientSecret=\"your-client-secret\",\n)\ndc = DealCloud.from_config_object(config)\nFull options (timeouts, retries, query settings) and vault-backed setups are covered in Configuration Files.\nSecurity: Never commit credentials to version control. Load secrets from a vault or environment, or use config files that stay out of git.\nLegacy shortcut: DealCloud(site_url=..., client_id=..., client_secret=...) still works for small scripts and migration from older samples; prefer DealCloudConfig for anything you maintain long term.\nChoose Your Authentication Method\nSelect based on your deployment environment:\n| Deployment Type | Recommended Method | Why | \n|---|---|---|\n| Kubernetes / Containers | Environment Variables | Native secret injection, no file mounting | \n| Azure / AWS / GCP | Environment Variables + Secrets Manager | Cloud-native secret rotation | \n| Enterprise / On-Prem | JSON/YAML Config File | Centralized config management, full settings | \n| Local Development | .env File | Easy to manage, git-ignored | \n| Multi-Environment | JSON/YAML with Nested Configs | Single file, multiple environments | \n| CI/CD"
+  },
+  {
+   "sid": "S8",
+   "url": "https://api.docs.dealcloud.com/sdk/python-1.X",
+   "official": true,
+   "excerpt": "DealCloud SDK - Python (Release 1.X)\n2610 Release\nThe DealCloud Python SDK is a comprehensive wrapper around the DealCloud API, designed to help clients and partners build integrations quickly and efficiently. Documentation targets dealcloud-sdk 1.x. Install from PyPI (opens in a new tab): pip install dealcloud-sdk.\nMajor rewrite: dealcloud-sdk 1.x replaces the legacy SDK and uses HTTPX via intapp-rest-client (not requests directly). See the Migration Guide before upgrading from earlier versions.\nPlease make sure to set your pyproject.toml to \"dealcloud-sdk<1.0.0\" to continue using the legacy SDK until you've completed the migration.\nWhat's New in Release 2610\n| Feature | Description | \n|---|---|\n| HTTP stack | intapp-rest-client on HTTPX (replaces direct requests usage) | \n| Typed Data | Pydantic models for type-safe operations | \n| Streaming | Memory-efficient generators for large datasets | \n| Delta Sync | Incremental data synchronization | \n| Reference Caching | LRU cache for reference resolution | \n| File Export | Bulk image/document export helpers | \n| Full API Coverage | 94+ functions across 11 API categories | \n| Schema Caching | Optional schema cache with TTL; refresh_sche"
+  }
+ ],
+ "errors": [
+  "fetch https://api.docs.dealcloud.com: 200 too little text (JS-rendered?)"
+ ]
+}

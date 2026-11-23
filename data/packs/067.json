@@ -1,0 +1,71 @@
+{
+ "id": 67,
+ "app": "Snowflake",
+ "category": "Developer, Infra and Data platforms",
+ "hint": "docs.snowflake.com",
+ "composio": {
+  "found": true,
+  "slug": "SNOWFLAKE",
+  "name": "Snowflake",
+  "tools": 17,
+  "triggers": 0,
+  "auth": [
+   "OAUTH2"
+  ],
+  "managed_app": "No",
+  "url": "https://docs.composio.dev/toolkits/snowflake.md",
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://docs.snowflake.com/en/user-guide/oauth-custom",
+   "official": true,
+   "excerpt": "Configure Snowflake OAuth for custom clients\u00b6\nThis topic describes how to configure OAuth support for custom clients.\nWorkflow\u00b6\nThe following high-level steps are required to configure OAuth for custom clients:\n- Register your client with Snowflake. To register your client, create an integration. An integration is a Snowflake object that provides an interface between Snowflake and third-party services, such as a client that supports OAuth. The registration process defines a client ID and client secrets.\n- Configure calls to the Snowflake OAuth endpoints to request authorization codes from the Snowflake authorization server and to request and refresh access tokens. The optional \u201cscope\u201d parameters in the initial authorization request limit the role permitted by the access token and can additionally\nbe used to configure the refresh token behavior. Clients can request the session:role-any scope when they need in-session role switching. Activation of secondary roles (USE SECONDARY ROLES) is controlled separately by the\nOAUTH_USE_SECONDARY_ROLES parameter.\nCreate a Snowflake OAuth integration\u00b6\nCreate a Snowflake OAuth integration using the\nCREATE SECURITY INTEGRATION command. Be sure to\n"
+  },
+  {
+   "sid": "S2",
+   "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/snowflake-rest-api",
+   "official": true,
+   "excerpt": "Snowflake REST APIs\u00b6\nSnowflake REST APIs for resource management provide a set of endpoints that lets users programmatically interact with and control various resources within the Snowflake Data Cloud.\nThe Snowflake REST APIs suite of APIs enables developers to build end-to-end automation and integration with Snowflake resources. These REST APIs are compliant with the OpenAPI specification. Snowflake REST APIs enable developers and partners to use the language of their choice to build integrations with Snowflake using the openAPI specifications.\nThe Snowflake REST APIs supports the following resources through the corresponding APIs. The APIs support CREATE OR ALTER operations for applicable resources.\n- Working with accounts\n- Working with users, roles, and privileges\n- Managing virtual warehouses\n- Working with databases and schemas\n- Managing tables and views\n- Loading and unloading data\n- Managing notebooks and Streamlit apps\n- Working with Snowpark Container Services\n- Using functions and procedures\n- Managing security\n- Managing alerts\n- Leveraging AI/ML\n- Managing streams and tasks\n- Managing integrations\n- Managing tags\nFor reference information about the APIs and their endpoints, see Snowflake REST APIs reference.\nYou can access the Snowflake REST APIs OpenAPI specifications in the snowflake-rest-api-specs Git repository.\nNote\nThe Snowflake REST APIs reference documentation reflects the latest version of the Snowflake REST APIs. Note that not all resources in the API currently provide 100% coverage of their equivalent SQL commands, but the Snowflake REST APIs are under active development and are continuously expanding.\nRequirements\u00b6\nThe Snowflake REST APIs has the following requirements:\n- You must have a way to submit REST requests, such as the Postman app, curl, or an HTTP client in the programming language of your choice, installed on your machine."
+  },
+  {
+   "sid": "S3",
+   "url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+   "official": true,
+   "excerpt": "Snowflake-managed MCP server\u00b6\nOverview\u00b6\nModel Context Protocol (MCP) is an open-source standard that lets AI agents securely interact with business applications and external data systems, such as databases and content repositories. MCP lets enterprise businesses reduce integration challenges and quickly deliver outcomes from models. Since its launch, MCP has become foundational for agentic applications, providing a consistent and secure mechanism for invoking tools and retrieving data.\nThe Snowflake-managed MCP server lets AI agents securely retrieve data from Snowflake accounts without needing to deploy separate infrastructure. You can configure the MCP server to serve Cortex Analyst, Cortex Search, and Cortex Agents as tools, along with custom tools and SQL executions on the standards-based interface. MCP clients discover and invoke these tools, and retrieve data required for the application. With managed MCP servers on Snowflake, you can build scalable enterprise-grade applications while maintaining access and privacy controls. The MCP server on Snowflake provides:\n- Standardized integration: Unified interface for tool discovery and invocation, in compliance with the rapidly evo"
+  },
+  {
+   "sid": "S4",
+   "url": "https://docs.snowflake.com/en/api-reference.md",
+   "official": true,
+   "excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://docs.snowflake.com/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# API Reference\n\nThese topics provide reference information for the APIs available in Snowflake.\n\n**APIs for connecting to Snowflake**\n\n<div className=\"colwidths-auto\">\n\n<thead>\n    <tr>\n      <th>Connector / Driver / Client API</th>\n      <th>Resources</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>Go Driver</td>\n      <td>\n\n- [Developer Guide](/developer-guide/golang/go-driver)\n- [API Reference](https://pkg.go.dev/github.com/snowflakedb/gosnowflake#pkg-index)\n\n</td>\n    </tr>\n    <tr>\n      <td>JDBC Driver</td>\n      <td>\n\n- [Developer Guide](/developer-guide/jdbc/jdbc)\n- [JDBC API Support Reference](/developer-guide/jdbc/jdbc-api)\n\n</td>\n    </tr>\n    <tr>\n      <td>.NET Driver</td>\n      <td>\n\n- [Developer Guide](/developer-guide/dotnet/dotnet-driver)\n- [Source code in GitHub](https://github.com/snowflakedb/snowflake-connector-net/)\n\n</td>\n    </tr>\n    <tr>\n      <td>%sf-rest%</td>\n      <td>\n\n- [Developer Guide](/developer-guide/snowflake-rest-api/snowflake-rest-api)\n- [API Reference](/developer-guide/snowflake-rest-api/reference)"
+  },
+  {
+   "sid": "S5",
+   "url": "https://docs.snowflake.com/en/developer-guide/sql-api/authenticating",
+   "official": true,
+   "excerpt": "Authenticating to the server\u00b6\nThis topic describes how to authenticate to the server when using the Snowflake SQL API.\nWhen you send a request, the request must include authentication information. The next sections explain how to add this information to the request:\nUsing OAuth\u00b6\nTo use OAuth, follow these steps:\n- Set up OAuth for authentication. See Introduction to OAuth for details on how to set up OAuth and get an OAuth token.\n- Use Snowflake CLI to verify that you can use a generated OAuth token to connect to Snowflake: \n - For Linux and MacOS systems\n - For Windows systems\n- In each API request you send, set the following headers: \n - Authorization: Bearer oauth_token where oauth_token is the generated OAuth token.\n - (Optional) X-Snowflake-Authorization-Token-Type: OAUTH\nIf you omit the X-Snowflake-Authorization-Token-Type header, Snowflake determines the token type by examining the token.\nEven though this header is optional, you can choose to specify this header. You can set the header to one of the following values: \n - KEYPAIR_JWT (for key-pair authentication)\n - OAUTH (for OAuth)\n - PROGRAMMATIC_ACCESS_TOKEN (for programmatic access tokens)\nUsing key-pair authentication\u00b6\n"
+  },
+  {
+   "sid": "S6",
+   "url": "https://docs.snowflake.com/en/developer-guide/sql-api/intro",
+   "official": true,
+   "excerpt": "Introduction to the SQL API\u00b6\nThe Snowflake SQL API is a REST API that you can use to access and update data in a Snowflake database. You can use this API to develop custom applications and integrations that:\n- Perform queries.\n- Manage your deployment (e.g. provision users and roles, create tables, etc.).\nFor an example request, including the headers and the JSON body, see Example of a request. For an example of the response that Snowflake returns, see Getting the results from the response. To authenticate the request first, see Authenticating to the server.\nCapabilities of the SQL API\u00b6\nThe Snowflake SQL API provides operations that you can use to:\n- Submit SQL statements for execution.\n- Check the status of the execution of a statement.\n- Cancel the execution of a statement.\n- Fetch query results concurrently.\nYou can use this API to execute standard queries and most DDL and DML statements. See Limitations of the SQL API for the types of statements that are not supported.\nFor queries, the SQL API returns data in partitions. Snowflake determines the number of partitions returned and the size of each partition.\nThe endpoint for the SQL API (/api/v2/statements) is protected by the ne"
+  },
+  {
+   "sid": "S7",
+   "url": "https://www.snowflake.com/en/developers/guides/getting-started-with-snowflake-mcp-server",
+   "official": true,
+   "excerpt": "Getting Started with Managed Snowflake MCP Server\nOverview\nThe Snowflake-managed MCP server lets AI agents securely retrieve data from Snowflake accounts without deploying separate infrastructure. MCP clients discover and invoke tools, and retrieve the data their applications need, through a single standards-based interface built on the Model Context Protocol (MCP). The server can expose Cortex Analyst, Cortex Search, Cortex Agents, SQL execution, and your own functions and procedures as tools.\nTop 3 Benefits\n- Governed by design: Enforce the same trusted governance policies, from role-based access to masking, for the MCP server as you do for your data.\n- Reduced integration: With the MCP server, integration happens once. Any compatible agent or client can then connect without new development, accelerating adoption and reducing maintenance costs.\n- Extensible framework: Give agents secure access to structured and unstructured data out of the box, and refine the tools to improve how agents interact with your data.\nWhy It Matters\nThe MCP server on Snowflake simplifies application architecture and eliminates the need for custom integrations. Enterprises can deliver generative AI appli"
+  },
+  {
+   "sid": "S8",
+   "url": "https://docs.snowflake.com/en/user-guide-getting-started",
+   "official": true,
+   "excerpt": "Get started\nTo begin with Snowflake and learn about its key features and benefits, start with the following topics.\nGet started with Snowflake for users\nLearn basic information and follow instructions as a first-time user of Snowflake.\nStart learning Snowflake with interactive lessons\nComplete essential Snowflake tasks through step-by-step tutorials.\nLearn key concepts for Snowflake administrators\nUnderstand the fundamentals of Snowflake administration.\nSample data sets\nSnowflake provides sample data sets, such as the industry-standard TPC-DS and TPC-H benchmarks, for evaluating and testing a broad range of Snowflake\u2019s SQL support."
+  }
+ ],
+ "errors": []
+}

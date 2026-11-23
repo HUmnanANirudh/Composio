@@ -1,0 +1,73 @@
+{
+ "id": 60,
+ "app": "Clay",
+ "category": "Data, SEO and Scraping",
+ "hint": "clay.com",
+ "composio": {
+  "found": true,
+  "slug": "CLAY",
+  "name": "Clay",
+  "tools": 15,
+  "triggers": 0,
+  "auth": [
+   "API_KEY"
+  ],
+  "managed_app": null,
+  "url": "https://docs.composio.dev/toolkits/clay.md",
+  "mcp_variant": "CLAY_MCP",
+  "mcp_variant_auth": [
+   "DCR_OAUTH"
+  ]
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://developers.clay.com/public-api/authentication",
+   "official": true,
+   "excerpt": "Every request to the Clay Public API must include a Clay API key in the\nclay-api-key header. Store your key in an environment variable and pass it in the header:\nclay api-keys create --name \"<key name>\" in the CLI, or by asking your agent after installing the agent plugin. Keep keys server-side and do not expose them in browser code, mobile apps, public repositories, logs, or analytics tools."
+  },
+  {
+   "sid": "S2",
+   "url": "https://www.clay.com/pricing",
+   "official": true,
+   "excerpt": "Customers\nBacked by enterprise-grade security and scale\nSOC 2 Type II\nWe are SOC 2 Type II compliant. Request our SOC 2 in our Trust Center.\nGDPR\nGo to market anywhere in the world \u2014 let us handle compliance with local laws.\nCCPA\nSupport your customer base with opt out and DNC support.\nISO 27001 +\nSecurely connect your CRM and other systems.\nISO 42001\nSecurely connect your CRM and other systems.\nFAQ\nHow do I pick the right plan?\nWe've designed each plan around the features that fit where you are in your GTM journey. The best place to start is matching your needs to the right tier, not trying to predict your exact Data Credits or Action volumes.\nHere's what's included in each plan:\nFree \u2014 A low risk way to learn and experiment with Clay. Includes unlimited seats and tables, multi-provider waterfalls, Claygent enrichment, Clay Sequencer for email, and up to 200 rows per table. Comes with 100 Data Credits and 500 Actions/mo.\nLaunch (starting at $185/mo) \u2014 The best way to start building in Clay. For individuals and small teams automating their first prospecting workflows. Includes everything in Free, plus phone number enrichment, job change and signal tracking, email campaign integrati"
+  },
+  {
+   "sid": "S3",
+   "url": "https://university.clay.com/docs/connect-to-clay-mcp",
+   "official": true,
+   "excerpt": "Connect your platform to Clay MCP\nRegister your platform as an OAuth client and connect it to Clay's MCP server.\nClay exposes a Model Context Protocol (MCP) server that lets an external platform \u2014 an AI assistant, IDE, agent host, or partner product \u2014 run Clay's find-and-enrich tools and custom functions on behalf of a signed-in Clay user. Dynamic Client Registration (DCR) is the self-service path onto that server: your platform registers itself at connect time to obtain OAuth client credentials, with no manual setup on Clay's side.\nHow your platform discovers Clay\nClay advertises its OAuth endpoints through standard metadata documents, so a compliant client can find everything it needs starting from a single unauthenticated request.\n1. Make an unauthenticated POST to https://api.clay.com/v3/mcp.\n2. Clay responds 401 Unauthorized with a WWW-Authenticate header pointing at the protected-resource metadata:\nWWW-Authenticate: Bearer resource_metadata=\"<https://api.clay.com/.well-known/oauth-protected-resource/v3/mcp>\"\n3. Fetch that document to learn the resource and its authorization server:\n{\n\"resource\": \"<https://api.clay.com/v3/mcp>\",\n\"issuer\": \"<https://api.clay.com>\",\n\"authorizati"
+  },
+  {
+   "sid": "S4",
+   "url": "https://developers.clay.com/public-api/webhooks.md",
+   "official": true,
+   "excerpt": "# Webhooks\n\nWebhooks let Clay notify your service when a routine run finishes, so you can react without polling. Register a webhook, pass its id when you start a run, and handle the signed `POST` Clay sends once results are ready.\n\n## Register a webhook\n\nCreate a webhook with the CLI \u2014 run `clay webhooks --help` for the full command surface (create, list, test, delete):\n\n```bash theme={\"theme\":{\"light\":\"github-light\",\"dark\":\"github-dark\"}}\nclay webhooks create https://example.com/hooks/clay\n```\n\nPass the webhook id as `webhook_id` when you start a routine run (see [Routines](https://developers.clay.com/routines/api.md)). Clay sends a signed `POST` to the webhook URL when the run is ready to read.\n\n```json theme={\"theme\":{\"light\":\"github-light\",\"dark\":\"github-dark\"}}\n{\n  \"webhookId\": \"wh_abc123\",\n  \"createdAt\": \"2026-06-16T17:50:00.000Z\",\n  \"data\": {\n    \"routine_run_id\": \"run_abc123\"\n  }\n}\n```\n\nFor test events, `data` is `{}`. The `routine_run_id` can identify an inline or a bulk run. If one webhook handles both, store the run mode when you start the run, or use `clay routines runs get`, which fetches results for either mode.\n\nClay signs the exact request body with your webhook signing secret and sends it in the `X-Clay-Signature` header. Verify the signature before trusting a delivery, then fetch the run's results.\n\nfunction sign(body) {\n  return `sha256=${crypto\n    .createHmac('sha256', process.env.CLAY_WEBHOOK_SIGNING_SECRET)\n    .update(body, 'utf8')\n    .digest('hex')}`;\n}\n\nWebhook delivery is not guaranteed. Use webhooks to react faster, but keep polling the run's results as a fallback."
+  },
+  {
+   "sid": "S5",
+   "url": "https://developers.clay.com/quickstart",
+   "official": true,
+   "excerpt": "There are two ways to use Clay as a developer: install the agent plugin to build with Clay inside your coding agent, or call the Public API directly from your own applications and services.\nAgent plugin\nThe agent plugin gives your coding agent Clay\u2019s skills and theclay CLI \u2014 the fastest way to build with Clay from a coding agent.\nIt requires a coding-agent host with a shell \u2014 Claude Code, Codex, or Cursor \u2014 and doesn\u2019t work in general-purpose chat apps like Claude Desktop, claude.ai, or ChatGPT that can\u2019t run the CLI.\nCopy this into your agent of choice and let it install and set up the plugin for you:\ncli-setup skill, which puts clay on your PATH, signs you in, and verifies the CLI. Sign-in opens a browser to authorize the CLI.\nAgent plugin repository\nManual install and setup instructions for Claude Code, Codex, and Cursor.\nAPI\nUse the Public API to call Clay from your own applications and services \u2014 backend jobs, internal tools, queues, and product features. Requests authenticate with a Clay API key in theclay-api-key header.\nAPI reference\nEndpoint paths, request bodies, response schemas, and an interactive try-it console.\nGet an API key\nYou can create an API key three ways:\n- Ask your agent to generate one for you after installing the agent plugin.\n- Run clay api-keys create --name \"<key name>\" with the clay CLI. The key is returned once, in the apiKey field.\n- Create one yourself in Clay under API and CLI \u2192 API keys.\nKeep keys server-side. Do not expose them in browser code, mobile apps, public repositories, logs, or analytics tools. See Authentication for details."
+  },
+  {
+   "sid": "S6",
+   "url": "https://university.clay.com/docs/clay-api-cli?dub_id=DHFbP3TR3TaCG4pm",
+   "official": true,
+   "excerpt": "Installing Clay Plugin (API & CLI)\nInstall the Clay Agent Plugin, sign in from any environment, and see what the API and CLI can do on your plan.\nThis doc walks you through installing the Clay Plugin and connecting it to your workspace \u2014 on Mac or Windows, in Claude Code or Codex.\nOnce it's set up, you can use Clay from coding agents, terminals, and your own apps to run searches over Clay's GTM dataset, call enrichment functions, and build Workflows, all using Clay's existing integrations and data infrastructure.\nSetup takes about 15 minutes on Mac and 30 on Windows. You'll need:\n- A paid coding agent plan: Claude (Pro, Max, Team, or Enterprise) for Claude Code, or ChatGPT (Plus, Pro, Business, Edu, or Enterprise) for Codex. If your company manages Claude, check that Claude Code is enabled for you.\n- Editor or Admin access in the Clay workspace you'll connect.\n- On Windows, admin rights (or help from IT) for one step.\nQuick setup with any agent\nAlready have a coding agent, like Claude Code, Codex, or Cursor? Give it this prompt:\nSet up the Clay Plugin by following the steps in https://github.com/clay-run/agent-plugins\nYour agent installs the Plugin, sets up the clay command, and si"
+  },
+  {
+   "sid": "S7",
+   "url": "https://www.clay.com/mcp",
+   "official": true,
+   "excerpt": "Reps get the right data faster while Ops keeps control\nStandardize prospecting workflows with centralized first and third party data without losing governance\nGovern the logic, compliance and spend\nGive reps pre-built workflows and trusted outputs while you centrally control CRM write-backs, compliance logic, and enrichment spend.\nDeploy repeatable workflows across every rep\nTurn your best reps' playbooks into Functions the whole team can run, distributed automatically without added Ops overhead.\nData quality you can trust and trace\nEvery email and phone number is validated across Clay's 200+ vendors, so reps get fewer dead ends and more time selling.\nRun your entire prospecting on Clay without living in it\nFind, enrich, and act on the highest-quality contacts without leaving your AI tool.\nTarget the right people\nFind the exact contacts you're looking for by searching Clay's company and people database in natural language\u2014then layer on first-party signals to prioritize leads.\nReach real phones and inboxes with less work\nEvery contact is enriched through a waterfall across Clay's 200+ data vendors, so you reach real people\u2014not dead ends.\nAccess all your data in one place\nPull data and signals from every tool you need in place, then send enriched contacts straight to your sequences or CRM to take action.\nFind the right contacts in your ICP\nReps search Clay's proprietary database for the highest-quality leads matching your criteria without the manual research.\nEnrich leads with data you can trust\nReps call any enrichment or custom-built workflows such as lead scoring or account prep from Clay so your reps can access centrally governed GTM logic in natural language calling verified emails across a 200+ data\nAdd contacts to CRM and sequencer\nCheck against your CRM for duplicates, keep only net-new and validated contacts, then draft outreach and push straight to your sequencer and CRM \u2014 all governed by Ops-defined write rules.\nGet started\nPrompt ChatGPT, Codex or Claude to use Clay Functions, reason across your Audiences, or return up to 1,000 People Search results."
+  },
+  {
+   "sid": "S8",
+   "url": "https://developers.clay.com/api-reference/me/get-the-authenticated-user",
+   "official": true,
+   "excerpt": "{\"docsConfig\":{\"theme\":\"maple\",\"$schema\":\"https://mintlify.com/docs.json\",\"name\":\"Clay docs\",\"description\":\"Developer documentation for using Clay from agents, CLIs, APIs, and internal systems.\",\"colors\":{\"primary\":\"#008BAD\",\"light\":\"#3BD3FD\",\"dark\":\"#002833\"},\"logo\":{\"light\":\"https://mintcdn.com/claydevelopers/E7AZYsThqDl9nWJR/logo/clay-logo-black.png?fit=max\\u0026auto=format\\u0026n=E7AZYsThqDl9nWJR\\u0026q=85\\u0026s=9eb3a472bea12f615c6d3d0e3aa7ae80\",\"dark\":\"https://mintcdn.com/claydevelopers/E7AZYsThqDl9nWJR/logo/clay-logo-dark.png?fit=max\\u0026auto=format\\u0026n=E7AZYsThqDl9nWJR\\u0026q=85\\u0026s=8965222d6054d8de130c32bdf590a415\",\"href\":\"/\"},\"favicon\":\"https://mintcdn.com/claydevelopers/E7AZYsThqDl9nWJR/favicon/favicon.png?fit=max\\u0026auto=format\\u0026n=E7AZYsThqDl9nWJR\\u0026q=85\\u0026s=a72f28ec5f23b47d62eca67d5b6e05a0\",\"api\":{\"openapi\":\"openapi.json\",\"playground\":{\"display\":\"interactive\",\"proxy\":true},\"examples\":{\"defaults\":\"required\",\"languages\":[\"curl\",\"javascript\",\"python\"],\"prefill\":true,\"autogenerate\":true},\"url\":\"full\"},\"appearance\":{\"default\":\"dark\"},\"background\":{\"color\":{\"light\":\"#FEFDFB\",\"dark\":\"#1B1A18\"}},\"fonts\":{\"family\":\"Inter\"},\"icons\":{\"library\":\"lucide\"},\"stylin"
+  }
+ ],
+ "errors": []
+}

@@ -1,0 +1,75 @@
+{
+ "id": 61,
+ "app": "GitHub",
+ "category": "Developer, Infra and Data platforms",
+ "hint": "docs.github.com/rest",
+ "composio": {
+  "found": true,
+  "slug": "GITHUB",
+  "name": "GitHub",
+  "tools": 905,
+  "triggers": 46,
+  "auth": [
+   "OAUTH2"
+  ],
+  "managed_app": "Yes",
+  "url": "https://docs.composio.dev/toolkits/github.md",
+  "mcp_variant": "GITHUB_MCP",
+  "mcp_variant_auth": [
+   "API_KEY"
+  ]
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+   "official": true,
+   "excerpt": "About authentication\nMany REST API endpoints require authentication or return additional information if you are authenticated. Additionally, you can make more requests per hour when you are authenticated.\nTo authenticate your request, you will need to provide an authentication token with the required scopes or permissions. There are a few different ways to get a token: You can create a personal access token, generate a token with a GitHub App, or use the built-in GITHUB_TOKEN in a GitHub Actions workflow.\nAfter creating a token, you can authenticate your request by sending the token in the Authorization header of your request. For example, in the following request, replace YOUR-TOKEN with a reference to your token:\ncurl --request GET \\\n--url \"https://api.github.com/octocat\" \\\n--header \"Authorization: Bearer YOUR-TOKEN\" \\\n--header \"X-GitHub-Api-Version: 2026-03-10\"\nNote\nIn most cases, you can use Authorization: Bearer or Authorization: token to pass a token. However, if you are passing a JSON web token (JWT), you must use Authorization: Bearer.\nFailed login limit\nIf you try to use a REST API endpoint without a token or with a token that has insufficient permissions, you will receive"
+  },
+  {
+   "sid": "S2",
+   "url": "https://github.blog/ai-and-ml/generative-ai/a-practical-guide-on-how-to-use-the-github-mcp-server",
+   "official": true,
+   "excerpt": "A practical guide on how to use the GitHub MCP server\nUpgrade from a local MCP Docker image to GitHub\u2019s hosted server and automate pull requests, continuous integration, and security triage in minutes \u2014 no tokens required.\nRunning the Model Context Protocol (MCP) server locally works, but managing Docker, rotating access tokens, and pulling updates is a hassle. GitHub\u2019s managed MCP endpoint eliminates these infrastructure headaches, letting you focus on what you love \u2014 shipping code.\nIn this 201-level tutorial, we\u2019ll walk through upgrading from the local MCP setup to GitHub\u2019s managed endpoint. You\u2019ll get OAuth authentication, automatic updates, and access to toolsets that open the door to richer AI workflows you simply can\u2019t pull off with a bare\u2011bones local runtime.\nYou\u2019ll also learn how to customize tool access with read-only modes, streamline your AI workflows with dynamic toolsets, and get ready for agent-to-agent collaboration using GitHub Copilot.\nBut first, why switch to our hosted server?\nRunning the open source MCP server locally works, but it carries hidden costs. Here\u2019s what changes when you go remote:\nLocal Docker server\nHosted MCP endpoint\nMaintain a Docker image, upgra"
+  },
+  {
+   "sid": "S3",
+   "url": "https://docs.github.com/en/rest/about-the-rest-api/about-the-rest-api",
+   "official": true,
+   "excerpt": "You can use GitHub's API to build scripts and applications that automate processes, integrate with GitHub, and extend GitHub. For example, you could use the API to triage issues, build an analytics dashboard, or manage releases.\nEach REST API endpoint is documented individually, and the endpoints are categorized by the resource that they primarily affect. For example, you can find endpoints relating to issues in REST API endpoints for issues.\nGetting started with the REST API\nIf you are new to REST APIs, start with the Quickstart or Getting Started guide:\nIf you are familiar with REST APIs but new to GitHub's REST API, see the authentication documentation:\nIf you are building scripts or applications that use the REST API, the following guides can help:\nFor a list of libraries to facilitate scripting with the REST API, see Libraries for the REST API.\nIf you are building scripts or applications that use the REST API, you might also be interested in using webhooks to get notified about events or a GitHub App to access resources on behalf of a user or in an organization. For more information, see About webhooks and Deciding when to build a GitHub App."
+  },
+  {
+   "sid": "S4",
+   "url": "https://docs.github.com/en/rest/quickstart",
+   "official": true,
+   "excerpt": "Introduction\nThis article describes how to quickly get started with the GitHub REST API using GitHub CLI, curl, or JavaScript. For a more detailed guide, see Getting started with the REST API.\nUsing GitHub CLI in the command line\nGitHub CLI is the easiest way to use the GitHub REST API from the command line.\n- Install GitHub CLI on macOS, Windows, or Linux. For more information, see Installation in the GitHub CLI repository.\n- To authenticate to GitHub, run the following command from your terminal. gh auth login\n- Select where you want to authenticate to: \n - If you access GitHub at GitHub.com, select GitHub.com.\n - If you access GitHub at a different domain, select Other, then enter your hostname (for example: octocorp.ghe.com).\n- Follow the rest of the on-screen prompts. GitHub CLI automatically stores your Git credentials for you when you choose HTTPS as your preferred protocol for Git operations and answer \"yes\" to the prompt asking if you would like to authenticate to Git with your GitHub credentials. This can be useful as it allows you to use Git commands like git push and git pull without needing to set up a separate credential manager or use SSH.\n- Make a request using the "
+  },
+  {
+   "sid": "S5",
+   "url": "https://docs.github.com/en/rest",
+   "official": true,
+   "excerpt": "GitHub REST API documentation\nCreate integrations, retrieve data, and automate your workflows with the GitHub REST API.\nRecommended\nQuickstart for GitHub REST API\nLearn how to get started with the GitHub REST API.\nGetting started with the REST API\nLearn how to use the GitHub REST API.\nAuthenticating to the REST API\nYou can authenticate to the REST API to access more endpoints and have a higher rate limit.\nArticles\nLearn about the REST API\nAbout the OpenAPI description for the REST API\nThe GitHub REST API is fully described in an OpenAPI compliant document.\nLearn about the REST API\nAPI Versions\nLearn how to specify which REST API version to use whenever you make a request to the REST API.\nAuthenticate API requests\nAuthenticating to the REST API\nYou can authenticate to the REST API to access more endpoints and have a higher rate limit.\nLearn about the REST API\nBest practices for using the REST API\nFollow these best practices when using GitHub's API.\nLearn about the REST API\nBreaking changes\nLearn about breaking changes that were introduced in each REST API version."
+  },
+  {
+   "sid": "S6",
+   "url": "https://docs.github.com/en/rest/apps/oauth-applications",
+   "official": true,
+   "excerpt": "REST API endpoints for OAuth authorizations\nUse the REST API to interact with OAuth apps and OAuth authorizations of GitHub Apps\nAbout OAuth apps and OAuth authorizations of GitHub Apps\nYou can use these endpoints to manage the OAuth tokens that OAuth apps or GitHub Apps use to access people's accounts on GitHub.\nTokens for OAuth apps have the prefix gho_, while OAuth tokens for GitHub Apps, used for authenticating on behalf of the user, have the prefix ghu_. You can use the following endpoints for both types of OAuth tokens.\nDelete an app authorization\nOAuth and GitHub application owners can revoke a grant for their application and a specific user. You must provide a valid OAuth access_token as an input parameter and the grant for the token's owner will be deleted.\nDeleting an application's grant will also delete all OAuth tokens associated with the application for the user. Once deleted, the application will have no access to the user's account and will no longer be listed on the application authorizations settings screen within GitHub.\nBasic authentication for \"Delete an app authorization\"\nYou must use Basic Authentication to use this endpoint. Use the application's client_id as"
+  },
+  {
+   "sid": "S7",
+   "url": "https://docs.github.com/en/rest/authentication/keeping-your-api-credentials-secure",
+   "official": true,
+   "excerpt": "Choose an appropriate authentication method\nYou should choose an authentication method that is appropriate for the task you want to accomplish.\n- To use the API for personal use, you can create a personal access token.\n- To use the API on behalf of an organization or another user, you should create a GitHub App.\n- To use the API in a GitHub Actions workflow, you should authenticate with the built-in GITHUB_TOKEN.\nFor more information, see About authentication to GitHub.\nLimit the permissions of your credentials\nWhen creating a personal access token, only select the minimum permissions or scopes needed, and set an expiration date for the minimum amount of time you'll need to use the token. GitHub recommends that you use fine-grained personal access tokens instead of personal access tokens (classic). For more information, see Managing your personal access tokens.\nA token has the same capabilities to access resources and perform actions on those resources that the owner of the token has, and is further limited by any scopes or permissions granted to the token. A token cannot grant additional access capabilities to a user.\nWhen creating a GitHub App, select the minimum permissions that"
+  },
+  {
+   "sid": "S8",
+   "url": "https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api",
+   "official": true,
+   "excerpt": "About primary rate limits\nGitHub limits the number of REST API requests that you can make within a specific amount of time. This limit helps prevent abuse and denial-of-service attacks, and ensures that the API remains available for all users.\nSome endpoints, like the search endpoints, have more restrictive limits. For more information about these endpoints, see REST API endpoints for rate limits. The GraphQL API also has a separate primary rate limit. See Rate limits and query limits for the GraphQL API.\nIn general, you can calculate your primary rate limit for the REST API based on your method of authentication, as described below.\nPrimary rate limit for unauthenticated users\nYou can make unauthenticated requests if you are only fetching public data. Unauthenticated requests are associated with the originating IP address, not with the user or application that made the request.\nThe primary rate limit for unauthenticated requests is 60 requests per hour.\nPrimary rate limit for authenticated users\nYou can use a personal access token to make API requests. Additionally, you can authorize a GitHub App or OAuth app, which can then make API requests on your behalf.\nAll of these requests "
+  }
+ ],
+ "errors": [
+  "fetch https://portal.github.partners/content/8a99930f9858994901985cbe948468b6: 200 unsupported content-type application/pdf"
+ ]
+}

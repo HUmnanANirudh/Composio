@@ -1,0 +1,72 @@
+{
+ "id": 2,
+ "app": "HubSpot",
+ "category": "CRM and Sales",
+ "hint": "hubspot.com",
+ "composio": {
+  "found": true,
+  "slug": "HUBSPOT",
+  "name": "HubSpot",
+  "tools": 355,
+  "triggers": 2,
+  "auth": [
+   "OAUTH2",
+   "API_KEY"
+  ],
+  "managed_app": "Yes",
+  "url": "https://docs.composio.dev/toolkits/hubspot.md",
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview",
+   "official": true,
+   "excerpt": "While building apps on the developer platform, you can configure authentication based on how you plan to install your app. HubSpot also provides local authentication tooling via the HubSpot CLI.\nApp authentication\nThere are two authentication types available based on how you plan to distribute your app: OAuth is required for multiple accounts, while static auth access tokens are used for installing in a single account at a time.\nOAuth\nIf you plan to distribute your app to multiple accounts (either through listing on the HubSpot Marketplace or by managing specific authorized accounts), your app must be built using OAuth authentication. You\u2019ll need to set up and host an OAuth backend service (e.g., hosted as a Docker instance using a cloud service provider) to initiate the OAuth process and manage token data for users installing your app in their account. HubSpot provides a Node.js quickstart guide here, which includes code you can run in a Docker instance with full OAuth support. Authentication configuration details for your app are available on the app details page in the developer overview of your HubSpot account. Once you\u2019ve set up an OAuth backend, you can make API requests usin"
+  },
+  {
+   "sid": "S2",
+   "url": "https://developers.hubspot.com/docs/developer-tooling/platform/apis-by-tier",
+   "official": true,
+   "excerpt": "HubSpot API availability varies by product (Marketing Hub, Sales Hub, etc.) and subscription tier (Free, Starter, Professional, Enterprise). Use the table below to check which APIs you can access based on your current subscription. Rate limits also differ by tier \u2014 learn more in the API usage guidelines.\nRelated resources\n- API usage guidelines and limits: rate limits, daily usage limits, and handling 429 rate limit errors.\n- Account types: learn about HubSpot account types and their tier access, including developer test accounts and sandboxes.\n- Retrieve private app daily API usage: check your app\u2019s API usage programmatically.\n- HubSpot Product and Services Catalog \u2014 Technical Limits: official per-feature limits by product and tier, such as workflow counts, custom properties, email send limits, and more."
+  },
+  {
+   "sid": "S3",
+   "url": "https://developers.hubspot.com/ai-tools/mcp",
+   "official": true,
+   "excerpt": "These MCP servers answer the question\nEnable your agents and dev tools to interact with HubSpot.\nHubSpot offers two distinct MCP (Model Context Protocol) servers \u2014 one for connecting any MCP-compatible AI tool or agent to your CRM, and one for building on the HubSpot Developer Platform. Whether you're querying data, writing records, or embedding HubSpot context into an agentic tool you're building, there's a server for that.\nHubSpot MCP server (Remote)\nThe HubSpot MCP server enables you to give any MCP-compatible AI tool or agent secure read and write access to your HubSpot CRM data \u2014 contacts, deals, engagements, and more.\nDeveloper MCP server (local)\nThe Developer MCP server enables your agentic development tools to interact with the HubSpot Developer Platform via the CLI.\nBoth require using the latest Developer Platform version.\nFrequently Asked Questions\nMCP (Model Context Protocol), is a standardized way for agents built with Large Language Models (LLMs) \u2013 the technology behind many AI tools \u2013 to securely request and receive specific information from external systems like HubSpot. Think of it as a secure language or set of rules that allows an AI to ask for context (e.g., \"Giv"
+  },
+  {
+   "sid": "S4",
+   "url": "https://developers.hubspot.com/docs/api-reference/latest/overview",
+   "official": true,
+   "excerpt": "The 2026-09 APIs use a date-based versioning scheme (e.g.,\n/crm/2026-09/) that follows the previous 2026-03 API version. All endpoints in this section follow the pattern:\nhttps://api.hubapi.com/.\nThis versioning model gives HubSpot the ability to ship updates on a predictable schedule. When a new date version is released, the previous version continues to work until its end-of-life date, giving you time to migrate. For new integrations, always use the latest date version. Learn more about this change on HubSpot\u2019s Developer Changelog.\nAcross the API reference section, use the versioning dropdown menu in the top bar to switch versions. If there\u2019s an equivalent endpoint to the one you\u2019re currently viewing, you\u2019ll automatically be sent there. Otherwise, you\u2019ll land on that version\u2019s home page."
+  },
+  {
+   "sid": "S5",
+   "url": "https://developers.hubspot.com/docs/apps/legacy-apps/authentication/intro-to-auth",
+   "official": true,
+   "excerpt": "There are two ways to authenticate calls to HubSpot\u2019s APIs: OAuth, and private app access tokens. Below, learn more about each method and how to include it in your code for authorization.\nOAuth\nTo make a request using OAuth when building a public app, include the OAuth access token in the authorization header:\nPrivate app access tokens\nSimilar to OAuth, to make a request using a private app access token, include the token in the authorization header:\nAutomatic token deactivation\nTo protect developers from potential security incidents, HubSpot leverages the monitoring and secret scanning capabilities provided by GitHub to detect any HubSpot authentication tokens that are publicly exposed in GitHub repositories. Any detected tokens will automatically be deactivated, and you will be notified via email and in-app notification so you can generate a new token and update your integrations to replace the revoked token.\n- Developer API keys created within your app developer account.\n- Personal Access Keys used to authenticate commands in the HubSpot CLI.\n- Private access tokens used to authenticate requests in a private app.\n- SMTP tokens used for sending transactional emails."
+  },
+  {
+   "sid": "S6",
+   "url": "https://developers.hubspot.com/docs/developer-tooling/platform/usage-guidelines",
+   "official": true,
+   "excerpt": "HubSpot closely monitors usage of all APIs to ensure a quality experience for every user. All app and integration developers must comply with the HubSpot Acceptable Use Policy and API Terms. While HubSpot reserves the right to change or deprecate the APIs over time, updates will always be provided in advance through the Developer Changelog. Super Admins can review API call usage.\nAuthentication and security\nFor optimal security, all apps must use HubSpot\u2019s OAuth protocol directly, or use your app\u2019s static auth token if you\u2019re building an app installed in a single account. Apps are responsible for storing time-to-live (TTL) data and refreshing user access tokens in accordance with this protocol. When an access token is generated, it will include anexpires_in parameter indicating how long it can be used to make API calls before refreshing. Unauthorized (401) requests are not a valid indicator that a new access token must be retrieved.\nChecking API usage\nApps built on version 2025.2 and 2026.03 of the developer platform\nTo view API usage for your apps built on the new developer platform:\n- In your HubSpot account, navigate to Development in the main navigation bar.\n- In the left sideb"
+  },
+  {
+   "sid": "S7",
+   "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server",
+   "official": true,
+   "excerpt": "The HubSpot Model Context Protocol (MCP) server enables AI assistants and Large Language Models to securely interact with your HubSpot CRM data through natural conversation. By implementing the Model Context Protocol standard, this remote server acts as a bridge between AI systems and HubSpot\u2019s APIs, allowing for intelligent automation and insights without requiring users to understand complex API structures. For developers, the remote HubSpot MCP server provides secure, granular access to HubSpot CRM data through AI agents and third-party applications, and allows teams to build custom workflows, automate reporting, and integrate HubSpot context into third-party applications. For end-users, it creates a more streamlined, simpler way to query their HubSpot data using natural language. For guidance on when to use the HubSpot MCP server, check out recommended use cases.\nThe HubSpot MCP server documented on this page is separate from the developer MCP server. The developer MCP server helps developers build apps and CMS content assets locally on HubSpot\u2019s developer platform. In contrast, the HubSpot MCP server is intended for making requests to an account\u2019s CRM data, similar to using Hu"
+  },
+  {
+   "sid": "S8",
+   "url": "https://www.hubspot.com/partners",
+   "official": true,
+   "excerpt": "You want to grow your business faster. We're in the growth business. Explore our partner programs, find the one that's right for you, and let's start growing better together.\nFive ways to partner with HubSpot\u2014pick one that matches your business model.\nHubSpot's Solutions Partner Program is designed for service firms, consultancies, and agencies that help businesses attract, engage, and retain mid-market and enterprise customers. Whether your expertise is marketing, sales, customer success, web design, CRM, or agentic transformation\u2014if you want to accelerate your growth, we want to help.\nHubSpot's Technology Partner Program is for developers and companies that want to grow their business by building apps on HubSpot's open platform.\nHubSpot\u2019s Startup Partner Program is for accelerators, incubators, and VCs who want to help their startups grow by giving them access to the HubSpot CRM Suite, programming, and education\u2014all at a startup-friendly cost.\nHubSpot\u2019s Education Partner Program is for colleges and universities who want to bring the theory, practice, and technology used by growing businesses into their classrooms.\nHubSpot\u2019s Affiliate Partner Program is for bloggers, review sites,"
+  }
+ ],
+ "errors": []
+}

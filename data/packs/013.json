@@ -1,0 +1,71 @@
+{
+ "id": 13,
+ "app": "Freshdesk",
+ "category": "Support and Helpdesk",
+ "hint": "freshdesk.com",
+ "composio": {
+  "found": true,
+  "slug": "FRESHDESK",
+  "name": "Freshdesk",
+  "tools": 184,
+  "triggers": 0,
+  "auth": [
+   "API_KEY"
+  ],
+  "managed_app": null,
+  "url": "https://docs.composio.dev/toolkits/freshdesk.md",
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://developers.freshdesk.com/api",
+   "official": true,
+   "excerpt": "Overview\nFreshdesk is a cloud-based customer support platform that was founded with the mission of enabling companies of all sizes to provide great customer service. Our goal is simple: make it easy for brands to talk to their customers and make it easy for users to get in touch with businesses.\nFreshdesk's APIs belong to the Representational State Transfer (REST) category. They allow you to perform 'RESTful' operations such as reading, modifying, adding or deleting data from your helpdesk. The APIs also support Cross-Origin Resource Sharing (CORS).\nWhat API commands are used by Freshdesk?\nFreshdesk APIs are plain JSON over HTTP and use the following HTTP verbs:\n| Command | Purpose | \n|---|---|\n| POST | Create an object | \n| GET | Fetch one or more objects | \n| PUT | Update an object | \n| DELETE | Remove an object | \n Note:\nAll API requests should hit the secured endpoint, that is, only HTTPS\n\nSample code | Curl\n| 1 | curl -v -u yourapikey:X -X DELETE 'https://domain.freshdesk.com/api/v2/tickets/1' | \nEXPAND \u2193\nResponse\n| 1 | HTTP Status: 204 No Content | \nEXPAND \u2193\nDelete Multiple Tickets\n/api/v2/tickets/bulk_delete\nOAuth 2.0 Scope\n| 1 | freshdesk.tickets.delete | \nSample code | Curl\n| 1 | curl -v -u yourapikey:X -H \"Content-Type: application/json\" -X POST -d '{\"bulk_action\": {\"ids\": [20,21,22]}}' 'https://domain.freshdesk.com/api/v2/tickets/bulk_delete' | \nEXPAND \u2193\nResponse\n| 1 2 3 4 | { \"job_id\": \"e4d18654f60b5204513155b26c6cb630\", \"href\":\"https://domain.freshdesk.com/api/v2/jobs/e4d18654f60b5204513155b26c6cb630\" } | \nEXPAND \u2193\nThe bulk ticket deletion happens at the background and the progress can be checked using the job_id in the response.\n| 1 2 3 4 | { \"id\": \"e4d18654f60b5204513155b26c6cb630\", \"status\": \"IN PROGRESS\", } | \nEXPAND \u2193\nRestore a Ticket\n/api/v2/tickets/[id]/restore\nOAuth 2.0 Scopes\n| 1 | freshdesk.tickets.restore freshdesk.tickets.view | \nSample code | Curl\n| 1 | curl -v -u yourapikey:X -H \"Content-Type: application/json\" -X PUT -d '' 'https://domain.freshdesk.com/api/v2/tickets/1/restore' | \nEXPAND \u2193\nResponse\n| 1 | HTTP Status: 204 No Content | \nEXPAND \u2193"
+  },
+  {
+   "sid": "S2",
+   "url": "https://support.freshdesk.com/support/solutions/articles/50000012670-model-context-protocol-mcp-integration-in-freshdesk",
+   "official": true,
+   "excerpt": "Applies to: Freshdesk, Freshdesk Omni 2026.\nThe Freshworks Model Context Protocol (MCP) server enables AI tools like Cursor and Claude to securely connect and interact with Freshdesk. The MCP server acts as middleware to expose specific capabilities, such as creating tickets, by using public APIs and supported authentication methods.\nThis article provides details about supported MCP integrations and how to configure them in your AI tools.\nNote:\u00a0Currently, Freshdesk allows you to authenticate requests involved in MCP integration by using an\u00a0API key\u00a0only.\nTABLE OF CONTENTS\nSupported plans and limits\nThis feature applies to the following products: \n\u2022 Freshdesk Standalone 2021 (Latest version)\n\u2022 Freshdesk Unified Omni 2026\nStarting September 10, 2026, the Freshworks MCP integration is generally available. The rate limits and monthly action allowances for each plan are outlined below.\nWhat counts as an MCP action?\nAn action is defined as a successful tool invocation via MCP. Examples of tool invocations. Examples:\n\u2022 Fetch conversation related to the ticket with ID 1001 (1 action)\n\u2022 Update the company name for the record with ID 11 to Apple (1 action)\nImportant:\u00a0\n\u2022 Pricing: To view curre"
+  },
+  {
+   "sid": "S3",
+   "url": "https://www.freshworks.com/partners",
+   "official": true,
+   "excerpt": "Accelerate. Augment. Amplify.\nFor resellers, solution providers, technology and strategic partners, and affiliates. Freshworks helps you build new revenue streams, increase market size, and collaborate with experts.\nChannel partners\nUnlock new revenue with competitive benefits and grow your business with our highly-rated CX and EX solutions. Access exclusive resources, marketing assets, networking events, free certifications, and dedicated support once you join us.\nLearn more\nSince our inception, Flycast Partners has had the opportunity to work with numerous software manufacturers as a vendor. Over the past four years as a channel partner with Freshworks, we have found their partner program to be second to none. It has been a great ride so far.\nPartners. Integrations. Community.\nFind the right expert. See the range of 1,400+ apps and integrations. Or stay updated with the latest from Freshworks partners.\nReady to partner with Freshworks?\nJoin the Freshworks partner program to get started, or contact our team to discuss your interest."
+  },
+  {
+   "sid": "S4",
+   "url": "https://support.freshdesk.com/support/solutions/articles/215517-how-to-find-your-api-key",
+   "official": true,
+   "excerpt": "To find your API key:\n- Log in to your account.\n- Click on your profile picture on the top right and select Profile Settings.\n- On the right pane, click on the View API key\u00a0option and complete the captcha verification.\n- Copy-paste this as required to authenticate third-party solutions.\nYou can reset the API Key to revoke the authorization to the app connected to Freshdesk. However, resetting the API key disconnects all other apps using this key to connect with Freshdesk. In this case, provide the new key to the other apps to continue using them again.\nNote:\u00a0The API key will be displayed only when the agent is verified. Any activities via API are allowed as per the role assigned to the agent."
+  },
+  {
+   "sid": "S5",
+   "url": "https://support.freshdesk.com/support/solutions/articles/225435-where-can-i-find-my-api-key-",
+   "official": true,
+   "excerpt": "Note: If your account is on the Sprout plan, the API key and the API functionality will NOT be available.\nAn API key is a unique alphanumeric identifier, for each agent on your Freshdesk Account. Irrespective of which version of Freshdesk's APIs you use, you will need to provide either your username and password combination or your API key for authorization when making API calls by triggering webhooks. Here's how you can retrieve your API key:\n- Login to your Freshdesk Account\n- Click on your profile picture icon on the top right corner and select Profile Settings\n- On the right pane, you will find the API Key\n- Copy-paste this as required to authenticate third-party solutions\nPlease ensure that you are the administrator/account administrator to perform helpdesk activities using the API. Keep in mind that the API keys for admin/account admin are based on role capabilities. For example, the account admin API is required to install an app from the marketplace or for any integration, while the admin's API can be used for any ticketing-related activities. If you encounter any issues finding your API key under your profile, kindly log in to your helpdesk from a different browser or clear the cache or cookies from your existing browser. Then, log in if needed and navigate through your profile settings to find your API key."
+  },
+  {
+   "sid": "S6",
+   "url": "https://partnerimplementationsupport.freshdesk.com/support/solutions/articles/50000014407-mcp-integration-frequently-asked-questions-faq-",
+   "official": true,
+   "excerpt": "The following FAQs address common questions and clarifications.\nInfo: For an overview of MCP integration, including setup and configuration steps, see the MCP integration article.\nTABLE OF CONTENTS\nUnderstand MCP\nWhat is the Model Context Protocol (MCP)?\nThe Model Context Protocol (MCP) is an open standard that enables AI assistants, such as Claude and Microsoft Copilot, to connect directly to Freshdesk. Through MCP, these assistants can perform actions on your behalf, such as creating tickets, updating contacts, or retrieving conversation history, without leaving the AI client.\nWhich Freshdesk products support MCP?\nMCP is supported only in Freshdesk 2021 and Freshdesk Unified Omni 2026. Following is the compatibility matrix:\nWhich AI clients are supported?\nYou can use any AI client that supports the MCP standard. Connect your preferred MCP-compatible client to Freshdesk using the MCP server URL and the API key provided in your Freshdesk administrator settings.\nSetup and configuration\nHow do I find my MCP settings in Freshdesk?\nGo to Admin Settings > Apps & Integrations > MCP. On the MCP Details page, you can copy your MCP server URL, generate an API key, and manage your connection"
+  },
+  {
+   "sid": "S7",
+   "url": "https://www.freshworks.com/freshdesk/omni/mcp",
+   "official": true,
+   "excerpt": "Resolve customer issues wherever the work happens\nCustomer issues rarely live in one system. Freshdesk MCP lets teams work with Freshdesk from the AI tools they already use and reach the business systems a resolution depends on\u2014so support can move from context to action with less switching, fewer handoffs, and less custom integration work."
+  },
+  {
+   "sid": "S8",
+   "url": "https://developers.freshworks.com/freshdesk-sdk",
+   "official": true,
+   "excerpt": "Overview\nFreshdesk SDK - a javaScript SDK for Freshdesk APIs\nGetting Started\nUsage via NPM\n- To install, run:\nnpm install @freshworks/freshdesk --save\n1\n- Execute the following JS code to get ticket details:\nlet Freshdesk = require('@freshworks/freshdesk');\nlet fd = new Freshdesk({ domain: 'sample.freshdesk.com', api_key: 'xxxxxxxxx' });\nfd.tickets.getTicket(12345, {'include': 'conversations'}).then(function (result) {\n console.info('Data');\n console.info(result);\n}).catch(function (error) {\n console.error('Error');\n console.error(error);\n});\n1\n2\n3\n4\n5\n6\n7\n8\n9\nUsage via CDN\n- In your application HTML file, add the following script:\n<script src=\"https://unpkg.com/@freshworks/freshdesk/dist/freshdesk.js\">\n</script>\n1\n2\n- Execute the following JS code to get ticket details:\nlet fd = new Freshdesk({ domain: 'sample.freshdesk.com', api_key: 'xxxxxxxxx' });\nfd.tickets.getTicket(12345, {'include': 'conversations'}).then(function (result) {\n console.info('Data');\n console.info(result);\n}).catch(function (error) {\n console.error('Error');\n console.error(error);\n});\n1\n2\n3\n4\n5\n6\n7\n8\nAuthorization\nbasicAuth\n- Type: HTTP basic authentication"
+  }
+ ],
+ "errors": []
+}

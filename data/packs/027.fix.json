@@ -1,0 +1,18 @@
+{
+ "sources": [
+  {
+   "sid": "R1",
+   "url": "https://documentation.telegramd.com/docs/mcp",
+   "official": true,
+   "excerpt": "MCP\nThe Telegra Model Context Protocol (MCP) server enables AI-powered code editors like Cursor and Windsurf, plus general-purpose tools like Claude Desktop, to interact directly with your Telegra API and documentation.\nWhat is MCP?\nModel Context Protocol (MCP) is an open standard that allows AI applications to securely access external data sources and tools. The Telegra MCP server provides AI agents with:\n- Direct API access to Telegra functionality\n- Documentation search capabilities\n- Real-time data from your Telegra account\n- Code generation assistance for Telegra integrations\nTelegra MCP Server Setup\nTelegra hosts a remote MCP server at https://telegra-vfmh.readme.io/mcp. Configure your AI development tools to connect to this server. If your APIs require authentication, you can pass in headers via query parameters or however headers are configured in your MCP client.\nAdd to ~/.cursor/mcp.json:\n{\n \"mcpServers\": {\n \"telegra-vfmh\": {\n \"url\": \"https://telegra-vfmh.readme.io/mcp\"\n }\n }\n}\nAdd to ~/.codeium/windsurf/mcp_config.json:\n{\n \"mcpServers\": {\n \"telegra-vfmh\": {\n \"url\": \"https://telegra-vfmh.readme.io/mcp\"\n }\n }\n}\nAdd to claude_desktop_config.json:\n{\n \"mcpServers\": {\n \"telegra-vfmh\": {\n \"url\": \"https://telegra-vfmh.readme.io/mcp\"\n }\n }\n}\nTesting Your MCP Setup\nOnce configured, you can test your MCP server connection:\n- Open your AI editor (Cursor, Windsurf, etc.)\n- Start a new chat with the AI assistant\n- Ask about Telegra - try questions like:\n - \"How do I [common use case]?\"\n - \"Show me an example of [API functionality]\"\n - \"Create a [integration type] using Telegra\"\nThe AI should now have access to your Telegra account data and documentation through the MCP server.\nUpdated 10 months ago"
+  }
+ ],
+ "errors": [
+  "fetch https://github.com/mcp-telegram/mcp-telegram-cloud/blob/main/README.md: 503 too little text (JS-rendered?)"
+ ],
+ "todo": {
+  "official_mcp": [
+   "ungrounded"
+  ]
+ }
+}

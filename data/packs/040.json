@@ -1,0 +1,71 @@
+{
+ "id": 40,
+ "app": "SendGrid",
+ "category": "Marketing, Ads, Email and Social",
+ "hint": "sendgrid.com",
+ "composio": {
+  "found": true,
+  "slug": "SENDGRID",
+  "name": "SendGrid",
+  "tools": 364,
+  "triggers": 0,
+  "auth": [
+   "API_KEY"
+  ],
+  "managed_app": null,
+  "url": "https://docs.composio.dev/toolkits/sendgrid.md",
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
+   "official": true,
+   "excerpt": "Authentication\nTwilio supported SDKs\nThe Twilio SendGrid Web REST API v3 provides SDKs for seven different languages.\nThe Twilio SendGrid Web API v3 supports API keys, which add an additional layer of security to your account. Using API keys, you can:\n- Use another method of authentication separate from your account username and password.\n- Assign specific permissions to API keys that limit which areas of your account the key can access.\nYou can create API keys in your account. To use an API key, include an Authorization header with the value Bearer <YOUR_API_KEY_HERE> in your request. Replace <YOUR_API_KEY_HERE> with your API secret key.\n1GET https://api.sendgrid.com/v3/resource HTTP/1.12Authorization: Bearer <YOUR_API_KEY_HERE>\n1curl -X \"GET\" \"https://api.sendgrid.com/v3/templates\" \\2-H \"Authorization: Bearer <YOUR_API_KEY_HERE>\" \\3-H \"Content-Type: application/json\""
+  },
+  {
+   "sid": "S2",
+   "url": "https://www.twilio.com/en-us/products/email-api/pricing",
+   "official": true,
+   "excerpt": "Twilio SendGrid Email API pricing\nStart sending with a free SendGrid Email API trial\n- Sign up for a free trial\u2014no credit card required\n- Only pay for the volume and features you need\n- Unlock volume discounts as you scale\nSendGrid Email API Plans\nPricing is determined by monthly email volume and features. Select your email volume below to see which plans are right for you.\nNo credit card, no commitment.\n- Analytics & deliverability optimization\n- Additional teammates: 1\n- Event webhook: 1\n- Email validation: 0\n- Dynamic templates: Editor\nYou can upgrade any time after your free account is set up.\nTaxes and\u00a0overages may\napply.\n- Analytics & deliverability optimization\n- Additional teammates: 1\n- Event webhook: 2\n- Email validation: 0\n- Dynamic templates: Editor\nYou can upgrade any time after your free account is set up.\nTaxes and\u00a0overages may\napply.\n- Analytics & deliverability optimization\n- Dedicated IPs included\n- Subuser management\n- Single sign-on (SSO)\n- Additional teammates: 1,000\n- Event webhook: 5\n- Email validation: 2,500\n- Dynamic templates: Editor and testing\nNeed to send more? Talk to us for custom, high volume pricing.\n- Analytics & deliverability optimization\n- Dedic"
+  },
+  {
+   "sid": "S3",
+   "url": "https://www.twilio.com/docs/sendgrid/api-reference",
+   "official": true,
+   "excerpt": "SendGrid v3 API reference\nThe SendGrid v3 Web API provides a REST interface to send email at scale and ensure your application can handle high volumes.\nThe SendGrid API endpoints allow you to integrate with your tech stack to send transactional emails, create marketing campaigns, manage your contacts, and monitor the health of your email statistics.\nThis API reference provides complete documentation for every endpoint and operation. For an overview of using SendGrid APIs, see the Getting Started section.\nFor a full-featured guide to ensure you build your email program on a solid foundation, see the Email API Onboarding guide.\nJump to an email quickstart in your programming language of choice to implement the Mail Send API.\nSee our open-source SDKs and tools to integrate with SendGrid."
+  },
+  {
+   "sid": "S4",
+   "url": "https://www.twilio.com/docs/sendgrid/for-developers/sending-email/authentication",
+   "official": true,
+   "excerpt": "Authentication\nTwilio SendGrid supports API keys delivered via Bearer token or Basic authentication, depending on the Twilio SendGrid functionality you are using. In addition to Bearer API key authentication, Twilio SendGrid recommends two-factor authentication (2FA) to improve security.\nAuthenticate to the Twilio SendGrid API by creating an API Key in the Settings section of the Twilio SendGrid console.\nTwilio SendGrid requires using API keys because they are a secure way to talk to the Twilio SendGrid API that is separate from your username and password. If your API key gets compromised, you can delete and create a new API key and update your environment variables with the new key. API key permissions can be set to provide access to different functions of your account, without providing access to your account as a whole.\nTo use an API key, pass an Authorization header with a value of Bearer <Your-API-Key-Here>, where you replace <Your-API-Key-Here> with the API Key that you created in the UI.\nExample header:\ncurl -X \"GET\" \"https://api.sendgrid.com/v3/templates\" -H \"Authorization: Bearer <Your-API-Key-Here>\" -H \"Content-Type: application/json\"\nUsing basic authentication with your account password is not as secure as using an API key. If your credentials are compromised\u2014for example, if you accidentally commit them to version control\u2014it is more difficult to regain the security of your account when those credentials are your username and password rather than an API key. For this reason, Twilio SendGrid does not support Basic Authentication with a username and password. Twilio SendGrid supports Basic Authentication using an API key as your password value for some services.\nWhen using Basic Authentication, your username will always be apikey, and your password will be your API key.\nInfo\nIf you are currently using Basic authentication, we recommend upgrading your authentication method to Bearer using API Keys and then enabling Two-Factor Authentication for improved security. For more information, see Upgrading your authentication method to API Keys.\nTo ensure the security of your account, Twilio SendGrid requires enabling two-factor authentication (2FA) for all users. To learn about setting up 2FA, see Two-factor authentication.\nInfo\nIt is not possible to use basic authentication for users, subusers, or teammates that enable 2FA."
+  },
+  {
+   "sid": "S5",
+   "url": "https://www.twilio.com/docs/sendgrid/api-reference/api-keys",
+   "official": true,
+   "excerpt": "API Keys\nYour application, mail client, or website can all use API (Application Programming Interface) keys to authenticate access to SendGrid services. You can revoke an API key at any time without having to change your username and password, and an API key can be scoped to perform a limited number of actions.\nThere are 3 different types of API keys:\n- Full Access\nAllows the API key to accessGET, PATCH, PUT, DELETE and POST endpoints for all parts of your account, excluding billing and Email Address Validation.\n- Custom Access\nCustomizes levels of access for all parts of your account, excluding billing and Email Address Validation.\n- Billing Access\nAllows the API key to access billing endpoints for the account.\nYou must create your first API key using the Twilio SendGrid App. Once you have a key with permissions to manage other keys, you can use the endpoints documented as part of this API."
+  },
+  {
+   "sid": "S6",
+   "url": "https://www.twilio.com/docs/sendgrid/ui/account-and-settings/api-keys",
+   "official": true,
+   "excerpt": "API Keys\nTwilio SendGrid API key limitations\n- Twilio supports a key longer than 69 characters. No exceptions can be made for third-party infrastructure.\n- Twilio limits accounts to 100 API keys.\n- You can't give an API key greater permissions than your own.\n- The Twilio SendGrid Console displays the API key only once at creation.\n- Treat your API key like a password and store it somewhere safe.\n- Twilio can't retrieve or restore an unknown or deleted API key.\nTo authenticate access to Twilio SendGrid services, use Application Programming Interface (API) keys.\nThey are the preferred alternative to using a username and password because you can revoke an API key at any time without having to change your username and password. We suggest that you use API keys for connecting to all of SendGrid's services.\nGo to Settings > API Keys. The API Keys page displays your current API keys with the following parameters:\n| Parameter | Purpose | \n|---|---|\n| Name | The name you defined for your API key. | \n| API Key ID | The way you would reference your API key for management through the API. | \n| Action | Actions you can perform on your API keys, such as editing or deleting the key. | \nTo use the"
+  },
+  {
+   "sid": "S7",
+   "url": "https://www.twilio.com/docs/sendgrid/api-reference/api-keys/create-api-keys",
+   "official": true,
+   "excerpt": "Create API keys\nYour application, mail client, or website can all use API (Application Programming Interface) keys to authenticate access to SendGrid services. You can revoke an API key at any time without having to change your username and password, and an API key can be scoped to perform a limited number of actions.\nThere are 3 different types of API keys:\n- Full Access\nAllows the API key to accessGET, PATCH, PUT, DELETE and POST endpoints for all parts of your account, excluding billing and Email Address Validation.\n- Custom Access\nCustomizes levels of access for all parts of your account, excluding billing and Email Address Validation.\n- Billing Access\nAllows the API key to access billing endpoints for the account.\nYou must create your first API key using the Twilio SendGrid App. Once you have a key with permissions to manage other keys, you can use the endpoints documented as part of this API.\nAPI keys limited to 69 characters\nTwilio support a key longer than 69 characters. No exceptions can be made for third-party infrastructure.\nInfo\nThere is a limit of 100 API Keys on your account.\nPOST/v3/api_keys\nBase url: https://api.sendgrid.com (for global users and subusers)\nBase url:"
+  },
+  {
+   "sid": "S8",
+   "url": "https://www.twilio.com/docs/sendgrid/onboarding/email-api/build-and-test-your-application",
+   "official": true,
+   "excerpt": "Build and Test Your Application\nThis milestone of the Twilio SendGrid Onboarding Guide walks you through building and testing your email application so you can send at scale. A careful roll-out helps you avoid costly remediation later.\nIn this section, your team will:\n- Implement your email program architecture by setting up a parent account and creating optional Subusers.\n- Authenticate your domain and configure all settings for optimal deliverability.\n- Build and test your Email API or SMTP integration.\n- Complete an IP warm-up to establish your sender reputation with email service providers.\nWe designed these steps to facilitate a team implementation process, including both developers and non-developers. Each step and its associated action(s) is marked as required, recommended, or optional to help you navigate this guide efficiently while providing all the information needed to develop a solid email program.\nYou'll perform many of the following steps in the Twilio SendGrid user interface (UI). However, some steps are more technical than others, and we've noted when you may benefit from having a developer available.\nTwilio SendGrid offers three paid plans: Essentials, Pro, and Pr"
+  }
+ ],
+ "errors": []
+}

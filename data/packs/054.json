@@ -1,0 +1,71 @@
+{
+ "id": 54,
+ "app": "MrScraper",
+ "category": "Data, SEO and Scraping",
+ "hint": "docs.mrscraper.com",
+ "composio": {
+  "found": true,
+  "slug": "MRSCRAPER",
+  "name": "MrScraper",
+  "tools": 11,
+  "triggers": 0,
+  "auth": [
+   "API_KEY"
+  ],
+  "managed_app": null,
+  "url": "https://docs.composio.dev/toolkits/mrscraper.md",
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://docs.mrscraper.com/docs/api/authentication",
+   "official": true,
+   "excerpt": "Authentication\nLearn how to authenticate requests to the MrScraper API using API tokens and request headers.\nThe MrScraper API uses API token authentication to secure all endpoints. Every request must include a valid API token in the HTTP request headers.\nGetting Your API Token\nAPI tokens are managed directly from your MrScraper dashboard.\nSign in to your MrScraper Dashboard.\nClick your profile icon in the top-right corner and select API Tokens (or go to app.mrscraper.com/api-tokens).\nClick New Token.\nEnter a descriptive token name and choose an expiration date.\nClick Create, then copy and securely store the generated token.\nKeep Your Token Secure\nYour API token grants access to your account and plan resources. Never expose your token in client-side code (like browsers or mobile apps), and store it securely in an environment variable or server configuration.\nAuthenticating Requests\nInclude your API token in the x-api-token HTTP header on every request:\nMarketplace Endpoints\nFor Marketplace endpoints, authenticate using the standard RFC 6750 Authorization header with a Bearer token:\nVerify Token\nTo test your authentication and confirm that your token is valid, make a request to the /subscription-accounts endpoint:\nAnalytics Authentication\nAnalytics endpoints authenticate using the same x-api-token header as all other API endpoints.\nWhen querying analytics, you can also pass the apiTokenName query parameter to filter status data for a specific token by the name you assigned when creating it:\nNote\nThe apiTokenName query parameter filters metrics by the token's name (e.g., production-worker)."
+  },
+  {
+   "sid": "S2",
+   "url": "https://mrscraper.com/pricing",
+   "official": true,
+   "excerpt": "Teams use MrScraper to automate data extraction, keep information fresh, and build reliable data workflows at scale.\nDavid Meslar\nDirector of Marketing Blockdaemon\n\u2605\u2605\u2605\u2605\u2605\n\u201cMrScraper's API integration has been a huge win for Blockdaemon. Its seamless data extraction from multiple sources and automated updates have saved our team significant time and effort, streamlining our workflows.\u201d\nSimon Torring\nCo-Founder at Cube\n\u2605\u2605\u2605\u2605\u2605\n\u201cMrScraper is a reliable and quality-minded data provider. We appreciate MrScraper's fast customer service and rapid innovations that help us deliver best-in-class market insights\u201d\nBustem\nCEO\n\u2605\u2605\u2605\u2605\u2605\n\u201cMrScraper has been a complete game-changer for us. We plug their API and scraping tech directly into our internal system, and it lets us scan marketplaces + social media at scale to surface bad actors fast. It gives us real-time visibility so we can protect our client's brands and customers with confidence.\u201d\nAI-Powered\nExtract structured web data with intelligent scraping workflows.\nBuilt for Reliability\nUse proxies, reruns, APIs, and monitoring to keep data flowing.\nTime Saving\nAutomate recurring collecting and send results into your workflow.\nNeed a custom plan?\nGet "
+  },
+  {
+   "sid": "S3",
+   "url": "https://docs.mrscraper.com/docs/getting-started/mcp-server",
+   "official": true,
+   "excerpt": "MCP Server\nOfficial MrScraper MCP server for retrieving web pages, web search, and account usage. Connect AI clients or run the open-source server locally.\nMrScraper MCP is the official Model Context Protocol server for MrScraper. It connects AI clients to web page retrieval, web search, and your account usage.\nMrScraper MCP server source code on GitHub \u00b7 Install the @mrscraper/mcp npm package\nThe server exposes seven tools:\nstatus\nReturn the raw account status API response without summarizing, redacting body fields, or adding calculated fields.\nscrapeHtml\nRetrieve the raw HTML of a page. Browser rendering is optional.\nscrapeMarkdown\nRetrieve a page as Markdown. Including HTML also enables browser rendering and returns both outputs as JSON.\ngetScreenshot\nCapture a base64 screenshot of the full page or top viewport. Browser rendering is always enabled.\nscrapeBrand\nExtract a website's colors, typography, logos, and social links as JSON.\nscrapeJson\nExtract structured JSON from a page using a natural-language prompt. Append Json Schema: and a JSON schema to shape the output.\nwebSearch\nSearch the web and return ranked results with titles, URLs, descriptions, and sources.\nUse the hosted "
+  },
+  {
+   "sid": "S4",
+   "url": "https://docs.mrscraper.com/docs/integrations/webhook",
+   "official": true,
+   "excerpt": "Webhook\nLearn how to use webhooks to send an HTTP request to your own API whenever a MrScraper scrape starts, completes, or fails, and what each payload holds.\nWhat Are Webhooks?\nWebhooks let you automatically send HTTP requests to another API when specific events happen in your scraper \u2014 such as when a scrape starts, completes, or fails.\nWebhook Integration Benefits\nReal-Time Notifications\nGet instant updates on your scraper's status by sending data to your preferred endpoint.\nCustomizable Events\nChoose which events trigger the webhook, allowing for tailored integrations.\nSetting Up a Webhook\nFollow these steps to create and connect a webhook in MrScraper:\nOpen your MrScraper dashboard.\nClick the gear icon on the left panel and select Webhooks.\nOn the Webhooks page, click the + icon in the top-right corner.\nFill in the webhook details:\n- Request Type: Choose POST or PUT\n- Event: Select when the webhook should trigger (e.g., Scraping Started, Scraping Completed, Scraping Failed)\n- Name: Give your webhook a descriptive name\n- URL: Enter the endpoint of your external webhook app\n- Headers: (Optional) Add any custom headers\nClick Submit to save your webhook.\nGo to your Scraper page, ClickEllipsis ( \u22ee ) button and click Webhooks.\nUnder Webhook Settings, select the webhook you just created and click Save Webhook Settings.\nAfter connecting your scraper to a webhook, you'll receive a webhook payload each time a scrape runs. For example:"
+  },
+  {
+   "sid": "S5",
+   "url": "https://github.com/mrscraper-com/mrscraper-mcp",
+   "official": true,
+   "excerpt": "An MCP server exposing the seven MrScraper services through hosted HTTP or local stdio.\nSeven services share the same descriptions, parameter meanings, and defaults across the CLI, SDKs, and integrations. Names, types, authentication, and code examples follow each surface's conventions. See the API Reference.\n| Service | Public name | Description | \n|---|---|---|\n| Status | status | Return the raw account status API response without summarizing, redacting body fields, or adding calculated fields. | \n| Scrape HTML | scrapeHtml | Retrieve the raw HTML of a page. Browser rendering is optional. | \n| Scrape Markdown | scrapeMarkdown | Retrieve a page as Markdown. Including HTML also enables browser rendering and returns both outputs as JSON. | \n| Get screenshot | getScreenshot | Capture a base64 screenshot of the full page or top viewport. Browser rendering is always enabled. | \n| Scrape brand | scrapeBrand | Extract a website's colors, typography, logos, and social links as JSON. | \n| Scrape JSON | scrapeJson | Extract structured JSON from a page using a natural-language prompt. Append Json Schema: and a JSON schema to shape the output. | \n| Web search | webSearch | Search the web and "
+  },
+  {
+   "sid": "S6",
+   "url": "https://mrscraper.com/blog/ai-agent-api-authentication",
+   "official": true,
+   "excerpt": "Authenticate Web Data Tools for AI Agents Without Exposing Secrets\nAI & Machine Learning\nLearn when to use API keys or OAuth for AI agent tools, where credentials should live, how to separate user and service access, and how to audit every tool call.\nAn AI agent needs credentials to call a web data API. The hard part is keeping those credentials away from the agent itself.\nAnything the model can see, it can repeat. A key in a system prompt can show up in an answer. A key in browser code can be copied by anyone who opens the developer tools. A key in a log file can be read by anyone with log access.\nScraped pages add another risk. A web page can contain text that tries to get the agent to reveal its instructions or secrets. If the model never has the key, it cannot leak it.\nThis guide shows how to set up authentication so the agent can use web data tools without ever seeing a secret.\nTwo ways to connect\nMost teams use one of two patterns:\n- Your backend owns the key. Your server holds a MrScraper API token. The agent calls your tools, and your server calls MrScraper.\n- Each user connects their own account. A person signs in to MrScraper through their MCP client, such as Claude Code "
+  },
+  {
+   "sid": "S7",
+   "url": "https://docs.mrscraper.com/docs/getting-started/billing",
+   "official": true,
+   "excerpt": "Billing\nCompare MrScraper subscription plans, understand how token usage and billing cycles work, and choose the right plan for your scraping workload.\nMrScraper offers flexible subscription plans designed for different usage levels, from individual developers testing the platform to enterprise teams running large-scale scraping operations. All plans include access to our AI-powered scraping agents, browser rendering, and residential proxies (on applicable plans).\nAvailable Plans\n| Feature | Scraper Free | Scraper Pro | Scraper Enterprise | \n|---|---|---|---|\n| API Tokens | 1,000 token | 200,000 token | Custom | \n| Concurrent Requests | 10 | 100 | Custom | \n| Residential Proxies | \u274c | \u2705 | \u2705 | \n| Priority Email Support | \u274c | \u2705 | \u2705 | \n| Dedicated Account Manager | \u274c | \u2705 | \u2705 | \nFree Plan Limitations\nThe Free plan includes 100 tokens per month with no credit card required. Tokens reset at the beginning of each month. Once your allocation is exhausted, you'll need to upgrade to continue scraping.\nTransaction Page\nYou can view your past transactions, by going to Account \u2192 Subscription. The transaction page displays a list of all your billing activities, including:\n- Product\n- Amount (Pri"
+  },
+  {
+   "sid": "S8",
+   "url": "https://docs.mrscraper.com/docs/guides/programmatically",
+   "official": true,
+   "excerpt": "Create and Run a Scraper Programmatically\nLearn how to create an AI scraper once in the dashboard and then run it programmatically through the API. Set up once, automate everywhere.\nOverview\nThis guide shows you how to create an AI scraper in the dashboard and then use it programmatically through the API. This is perfect if you want to set up a scraper once and automate data extraction with simple API calls\u2014no need to configure it every time.\nPrerequisites\nBefore you start, make sure you have:\n- A MrScraper API token for authentication. If you don\u2019t have one yet, follow this guide to create an API token.\nVerify Your API Token\nYou can verify your API token and check your account status using the /subscription-accounts:\nResponse (200 OK):\nKey Response Fields:\nSubscription Account Fields:\n| Field | Type | Description | \n|---|---|---|\n| id | string | Unique identifier for your subscription account | \n| tokenLimit | integer | Maximum tokens available in your subscription plan | \n| tokenUsage | integer | Total tokens consumed so far | \n| stripeSubscriptionId | string | Stripe subscription identifier (for billing) | \n| userId | string | Your unique user identifier | \n| stripeStatus | stri"
+  }
+ ],
+ "errors": []
+}

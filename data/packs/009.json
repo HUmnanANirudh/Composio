@@ -1,0 +1,73 @@
+{
+ "id": 9,
+ "app": "Copper",
+ "category": "CRM and Sales",
+ "hint": "copper.com",
+ "composio": {
+  "found": true,
+  "slug": "COPPER",
+  "name": "Copper",
+  "tools": 65,
+  "triggers": 0,
+  "auth": [
+   "API_KEY"
+  ],
+  "managed_app": null,
+  "url": "https://docs.composio.dev/toolkits/copper.md",
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://developer.copper.com/introduction/authentication.html",
+   "official": true,
+   "excerpt": "Authentication\u00b6\nThere are two ways to access the Copper Developer API: API keys and OAuth2.0. API Keys are suitable for individual users, while OAuth2.0 is the preferred approach for partner integrations.\nAPI Keys\u00b6\nThe Dev API uses token based authentication. You have to include the token in the header of every request, along with the email address of the user who generated the token. Users can hold multiple valid tokens at the same time. Admins can see all user generated tokens and generate new ones.\nTo generate an API token, in the Copper web app go to System settings > API Keys and click the 'GENERATE API KEY' button. Copper allows you to label each key for its unique purpose. You'll need to generate an API key to make an API Request.\nOAuth2.0\u00b6\nClick here to get started."
+  },
+  {
+   "sid": "S2",
+   "url": "https://www.copper.com/pricing",
+   "official": true,
+   "excerpt": "Win customers for life.\nStart free, no credit card required.\nOptimize your processes with flexible pipelines and team collaboration features.\n- 2,500 contact limit\n- Task automation\n- Pipelines\n- Project Management\n- Contact enrichment\nScale your business with revenue tracking tools, workflows and bulk email.\n- 15,000 contact limit\n- Workflow automation\n- Bulk email\n- Reporting\n- Integrations\nElevate your business with customer nurture, custom analytics and unlimited usage.\n- Unlimited contacts\n- Email series\n- Custom reports\n- Multi-currency\n- Premium support\nOptimize your processes with flexible pipelines and team collaboration features.\n- 2,500 contact limit\n- Task automation\n- Pipelines\n- Project Management\n- Contact enrichment\nScale your business with revenue tracking tools, workflows and bulk email.\n- 15,000 contact limit\n- Workflow automation\n- Bulk email\n- Reporting\n- Integrations\nElevate your business with customer nurture, custom analytics and unlimited usage.\n- Unlimited contacts\n- Email series\n- Custom reports\n- Multi-currency\n- Premium support\nIf you need help choosing a plan, we're here for you.\nCompare Features\nBasic\nProfessional\nBusiness\nMeet the folks who chose Cop"
+  },
+  {
+   "sid": "S3",
+   "url": "https://www.copper.com/mcp",
+   "official": true,
+   "excerpt": "MCP - COMING SOON\nAsk questions.\nGet insights.\nCopper MCP is coming to Claude. Get answers about your clients and pipeline without opening a single record.\nPurpose-built tools designed around how you think about your contacts and pipelines.\nClaude understands how you\u2019ve tailored Copper to your business: your fields, customizations, activities, and saved filters.\nYour AI can only look, and only at what you\u2019re allowed to see.\nRequest early access to the beta, or join the waitlist for updates as we get closer to launch.\nThank you! Your submission has been received!\nOops! Something went wrong while submitting the form.\nAlready a Copper customer? Use your work email so we can match it to your account.\nDoes Copper have an MCP server?\nYes. Copper is launching an official MCP server, built and hosted by Copper. The beta launches in November 2026.\nDoes Copper work with Claude?\nYes. The Copper MCP beta works with Claude, so you can ask questions about your Copper data right from your Claude chats.\nDoes it work with other AI assistants or agents?\nNot during the beta. Claude is supported in the beta release, and other assistants are being evaluated for after the beta. If you use ChatGPT, Coppe"
+  },
+  {
+   "sid": "S4",
+   "url": "https://developer.copper.com/webhooks/notification-example.html",
+   "official": true,
+   "excerpt": "Webhook Notification Example\u00b6\nPOST https://your.endpoint.here\nThis example shows the notification request your endpoint will receive when a notification is sent.\nThere can be 0 or more secret fields shown, depending on the initial webhook configuration. The updated_attributes\nfield only shows up on an \"update\" event. The timestamp field is an ISO 8601 timestamp string.\nAny custom HTTP headers configured in the headers field are passed along to the webhook endpoint.\nRequest Body Template\u00b6\n{\n \"ids\": [<entity_id_1>, <entity_id_2>, ...],\n \"type\": \"<entity_type>\",\n \"event\": \"<event_type>\",\n \"subscription_id\": <subscription_id>,\n \"secret_field_1\": \"<string>\",\n \"secret_field_2\": \"<string>\",\n \"updated_attributes\": {\n \"field_name\": [<old_value>, <new_value>]\n },\n \"timestamp\": \"<string>\"\n}\nRequest Body with Non-Computed Custom Fields (Default)\u00b6\n{\n \"ids\": [\n 123\n ],\n \"secret\": \"secret\",\n \"key\": \"key\",\n \"subscription_id\": 1,\n \"event\": \"update\",\n \"type\": \"person\",\n \"updated_attributes\": {\n \"custom_fields\": {\n \"1\": [\n [ 1 ],\n [ 1, 2 ]\n ]\n }\n },\n \"timestamp\": \"2021-12-13T19:18:22.084Z\"\n}\nRequest Body with Computed Custom Field Values\u00b6\nNote: Dropdown/Multi-Select Dropdown Custom Fields are only converted to their name values when the Webhook subscription instance has custom_field_computed_values set to true.\n{\n \"ids\": [\n 123\n ],\n \"secret\": \"secret\",\n \"key\": \"key\",\n \"subscription_id\": 1,\n \"event\": \"update\",\n \"type\": \"person\",\n \"updated_attributes\": {\n \"custom_fields\": {\n \"1\": [\n [ \"Apples\"],\n [ \"Apples\", \"Bananas\" ]\n ]\n }\n },\n \"timestamp\": \"2021-12-13T19:18:22.084Z\"\n}"
+  },
+  {
+   "sid": "S5",
+   "url": "https://developer.copper.com/introduction/requests.html",
+   "official": true,
+   "excerpt": "Requests\u00b6\nEncryption\u00b6\nAll requests must be sent using HTTPS with TLS 1.2 or higher. Please make sure your developer tools support this version of TLS as older versions or SSL are not supported for security reasons.\nHeaders\u00b6\nAll Copper API calls must include the following headers to authenticate the request:\n| Key | Value | \n|---|---|\n| X-PW-AccessToken | API Key | \n| X-PW-Application | developer_api | \n| X-PW-UserEmail | Email address of token owner | \n| Content-Type | application/json | \nBody\u00b6\nFor PUT or POST requests (e.g. create, update, search), the request parameters must be provided as JSON in the request body.\nRate limits\u00b6\nAll API calls are limited to 180 requests per minute. Once this limit has been reached, calls will \nreturn an error response with status code 429. This rate limit is evaluated on a rolling window basis.\nOur bulk APIs have an additional rate limit of 3 requests per second. You may receive 429 error responses if you exceed this limit."
+  },
+  {
+   "sid": "S6",
+   "url": "https://developer.copper.com/introduction/oauth/flow.html",
+   "official": true,
+   "excerpt": "Copper OAuth2.0 Flow\u00b6\n1. Introduction\u00b6\nThird-party integrations may take advantage of OAuth 2.0 for the purpose of authorizing and authenticating access to the Copper Developer API. Employing the widely used Authorization Code Grant flow, Copper ensures a seamless and quick authentication process. This approach is particularly well-suited for integrations that cater to existing Copper customers, facilitating the establishment of a robust and secure connection between the integration and Copper.\n1.1 Prerequisites\u00b6\n- Your application provides an HTTPS callback endpoint capable of receiving POST requests\n- You have registered your application and received your client_id and client_secret credentials\n1.2 The Authorization Flow\u00b6\nThe authorization code grant flow involves the following steps:\n- Authorization Request: The application initiates the flow by redirecting the user to the authorization server's authorization endpoint.\n- User Authentication: The user logs in and grants permission to the application.\n- Authorization Grant: The authorization server provides an authorization code to the application.\n- Token Request: The application exchanges the authorization code for an access tok"
+  },
+  {
+   "sid": "S7",
+   "url": "https://developer.copper.com/introduction/oauth/index.html",
+   "official": true,
+   "excerpt": "Authentication via OAuth2.0\u00b6\n1. Introduction\u00b6\nYou can now access the Copper Developer API via OAuth2.0. This authentication method is an alternative to Copper's legacy API Keys, and is particularly well-suited for third-party integrations looking to create a seamless and secure link between their users and Copper.\nOAuth2.0 offers several advantages over the API Key flow:\n- Authentication is open to all users, not just administrators\n- No need to generate and copy API keys from Copper to your application\n- Readily available client libraries help with smooth integration\n2. Prerequisites\u00b6\nTo use OAuth2.0 with Copper, you must first register your application. This step protects requests from forgery and keeps your users secure.\nTo register your application, contact us. You will need to provide the name and purpose of your application as well as a URL to an HTTPS endpoint that will handle the secure callback.\nYou will receive two credentials, client_id and client_secret, required for all authorization flows.\n| Parameter | Description | \n|---|---|\n| client_id | A public alphanumeric string that uniquely identifies your application | \n| client_secret | A private alphanumeric secret that v"
+  },
+  {
+   "sid": "S8",
+   "url": "https://www.copper.com/partners",
+   "official": true,
+   "excerpt": "Join Copper\u2019s Partner Program.\nPartner with the only CRM that\u2019s a Recommended for Google Workspace app. Access competitive commissions, exclusive training resources and the opportunity to diversify your service offerings.\nCopper is trusted by 30,000+\ncompanies of all sizes\nAre you an agency, content creator or service provider that focuses on small to medium size businesses? We want to partner with you! Whether you provide support in sales, marketing, development, IT, or simply manage a review site, we can help you scale your business.\nCopper offers a variety of partner opportunities designed to reward collaboration and create mutual growth.\nIdeal for consultants who advise small business clients on CRM and productivity tools. Earn a 15% commission on both monthly and annual Copper subscriptions.\nPerfect for content creators who recommend business tools to a broad audience. Earn competitive CPC or CPL commissions for driving traffic and leads.\nBest for SaaS companies that want to integrate with Copper. We support natively embedded apps, API integrations, co-marketing, marketplace listings, and more.\n\"As a Copper partner (and customer) for 8+ years, we\u2019ve seen it all, and we can con"
+  }
+ ],
+ "errors": [
+  "fetch https://getcopper.io/docs/mcp: 200 too little text (JS-rendered?)"
+ ]
+}

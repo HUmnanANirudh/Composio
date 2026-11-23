@@ -1,0 +1,75 @@
+{
+ "id": 87,
+ "app": "Xero",
+ "category": "Finance and Fintech",
+ "hint": "developer.xero.com",
+ "composio": {
+  "found": true,
+  "slug": "XERO",
+  "name": "Xero",
+  "tools": 109,
+  "triggers": 0,
+  "auth": [
+   "OAUTH2"
+  ],
+  "managed_app": "No",
+  "url": "https://docs.composio.dev/toolkits/xero.md",
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://developer.xero.com/faq/getting-started",
+   "official": true,
+   "excerpt": "Getting started\nCan you give me an API key?\nThe Xero API does not support basic API Key authentication. Our API uses OAuth 2.0 which means you need to register your app to get a client id and client secret which you use to access the API.\nHow can I try out the API?\nThe quickest way to try out the API is to set up your demo company and dive into the API Explorer. Most of the API functionality is supported and you can quickly start playing with real calls against demo data.\nHow do I connect Xero to my Salesforce/SQL Database/thing you have no SDK for?\nWe've got SDKs to cover the most used technologies in the community, but we'll never cater for everyone. If we don't support your particular tech then check out our developer forum archive, or connect with other developers on Stack Overflow. You can also use our OpenAPI spec to generate your own SDK.\nHow do I get a Xero account to develop/test against?\nThe first step is to sign up for a free Xero account. Once you have done that, you have two options as to how you can begin development without incurring any cost:\n- Use the demo company (recommended)\n- Start a trial or paid Xero organisation subscription\nCheck out our Development Accounts guide for more details.\nHow do I get support for building my integration?\nHopefully everything you need to know is on the Xero Developer Centre, but if you're still stuck we encourage you to connect with other developers on Stack Overflow, or engage with a Xero certified developer for hire.\nWhat are some best practices for building an integration?\nFor some of the basics check out our Integration Best Practices guide. After that, browse through the rest of our how-to guides to find more guidance specific to your integration.\nWhat Authentication do you support?\nWe currently support OAuth 1.0a and OAuth 2.0. However, OAuth 1.0a is in the process of being deprecated and OAuth 2.0 is required for all new integrations.\nWhat kind of App should I build?\nThat's really up to you! Get connected with accountants and business owners to find out how you can help them be successful."
+  },
+  {
+   "sid": "S2",
+   "url": "https://developer.xero.com/pricing",
+   "official": true,
+   "excerpt": "App Plans\nPlans have been created to enable early innovation and create an accessible entry point for developers just getting started. As your app scales, requiring additional benefits, you can easily move through the plans.\n| | Starter | Core | Plus | Advanced | Enterprise | \n|---|---|---|---|---|---|\n| Connections (maximum) | 5 | 50 | 1000 | 10,000 | No Limit | \n| Prerequisites | | | App Certification | App Certification | App Certification | \n| Prerequisites (continued) | | | | Security Assessment (initial and annual) | Security Assessment (initial and annual) | \n| Payment Method | Not Applicable | Required | Required | Required | Required | \n| Xero App Store | Not Applicable | Not Applicable | Optional | Optional | Required | \nBenefits by Plan\nXero continues to invest in our ecosystem and the growth programs, co-marketing opportunities, technical support and benefits that enable you to connect to Xero\u2019s 4.6+ million global subscribers.\n| Benefit | Starter | Core | Plus | Advanced | Enterprise | \n|---|---|---|---|---|---|\n| Developer tools and resources | | | | | | \n| Developer tools (API explorer, Postman, Insomnia, Linx) | | | | | | \n| AI toolkit (Open AI Agentic SDKs, Prompt "
+  },
+  {
+   "sid": "S3",
+   "url": "https://developer.xero.com/faq/remote-mcp",
+   "official": true,
+   "excerpt": "Remote MCP\nCan I connect to more than one organisation?\nYes. A user can authorise several organisations for the same app. Ask the agent to list the connected organisations, then tell it which one to act on. Each organisation still goes through the standard OAuth consent step.\nCan I see what my agent did?\nEvery Xero API call your agent makes is logged in the Developer Portal, under the app you own. Only the API calls are logged, not the tool calls or prompts behind them. If you need a record of what your agent asked for and why, you will need to log that in your own client or agent.\nCan I try it before I upgrade?\nYes, apps on Starter plan can use it with the demo organisation. You can connect, run the tools, and decide whether it's worth upgrading to Core. Real customer organisations need the Core plan or above.\nCan I use a web app instead of PKCE?\nTechnically yes. We don't recommend it. A web app's client ID and client secret are easy to paste into an AI-enabled tool by accident, and a PKCE app removes that risk.\nCan I use the Remote MCP for free as an Accountant or Bookkeeper?\nYes. If you\u2019re building an integration for your practice or a client, MCP access is included in your API "
+  },
+  {
+   "sid": "S4",
+   "url": "https://developer.xero.com/partner/developer-partner",
+   "official": true,
+   "excerpt": "Steps to becoming a developer partner\n1. Register with us\nPlease read through the steps below to understand the requirements of becoming a certified developer partner. Steps 1 and 2 must be completed prior to registering your interest as a developer partner.\n- If you have questions about Xero\u2019s API Ecosystem we have a wealth of information here on our developer website.\n- If you have questions or concerns about your specific use case, please refer to our how-to guides, Developer Platform Terms & Conditions and our Terms of Agreement.\n- If you haven\u2019t been able to resolve your query, please email api@xero.com.\nSign up using the form below and we\u2019ll be in touch to offer help & knowledge for your integration.\n2. Ensure familiarity with both Xero and the Xero API\nXero\nSign up for a free Xero account, then use a free trial organisation or a Xero demo company to learn more about how the product works. Ideally, you should be a Xero customer so you are thoroughly familiar with the day-to-day workings of Xero. Learn more about getting started with Xero.\nXero API\nStart by reading our getting started guide for developers and signing up for either a free trial of Xero or use a Xero demo compan"
+  },
+  {
+   "sid": "S5",
+   "url": "https://devblog.xero.com/the-xero-remote-mcp-is-now-generally-available-06008f6ab2a7?gi=7610392ecdcb",
+   "official": true,
+   "excerpt": "The Xero Remote MCP (Model Context Protocol) now generally available\nDevelopers have been using the local Xero MCP server to let Claude, Cursor and other AI tools read and write real Xero data: pull an aged receivables report, draft an invoice, check who still owes you money, all from a chat window.\nThere was one catch. You had to run it yourself. Download it, configure it, keep it updated and keep it running on your own machine. Fine for one developer experimenting at their desk. Awkward the moment you wanted a colleague, a client or a second organisation to use the same thing.\nToday that changes. Remote MCP is now generally available. It\u2019s the same Xero MCP server, hosted and maintained by Xero. Add the URL and sign in. That\u2019s the setup.\nWhat is MCP?\nIf you\u2019ve heard \u201cMCP\u201d a hundred times this year and still couldn\u2019t define it, here it is: Model Context Protocol is a standard way for AI assistants to use tools. An MCP server is a menu of things an AI can do, with clear instructions for each one. Point an AI assistant at the Xero MCP server and it can list invoices, create contacts or run a profit and loss report, because we\u2019ve described exactly how.\nUntil now, that menu lived on y"
+  },
+  {
+   "sid": "S6",
+   "url": "https://developer.xero.com/faq/pricing-and-policy-updates",
+   "official": true,
+   "excerpt": "Pricing and Policy Updates\n01. Why is Xero making a change to their pricing model and Developer Terms and Conditions?\n- On 4-December, Xero announced new pricing and policies.\n- Designed to meet developers where they are in their app development journey, we are transitioning to five tiers: Starter, Core, Plus, Advanced, Enterprise based on connections and data consumption via the Xero APIs. This change will make it easier to move through the tiers and access benefits as you grow and scale, while also making it clearer for developers to forecast and control their pricing. Changes to app tiers and pricing model changes will take effect on 2 March, 2026.\n- The update to the Xero Developer Terms and Conditions, provides developers with clarity about the use of our Developer Platform, including prohibitions on using API data for AI/ML training and certain automated tools. We\u2019re also updating our Developer Platform Commercial Terms, which consolidates the existing Xero App Store Terms and Xero Certified Integration Terms, to reflect the new pricing model. If you registered as a Xero developer on or after 4 December, 2025, these revised terms apply to you immediately. If you registered be"
+  },
+  {
+   "sid": "S7",
+   "url": "https://developer.xero.com/ai",
+   "official": true,
+   "excerpt": "The Rise of the Builder: Build Next-Gen Xero Integrations with Xero\u2019s AI toolkit\nBuild innovative accounting integrations and intelligent automation powered by Xero's MCP Server, Command Line Interface, OpenAI Agents SDK and LangChain.\nXero's AI Toolkit\nThe most successful developers right now are \"Vibe Architects.\" They use vibe coding to quickly generate the \"bones\" of an app or agent but then use a CLI and professional frameworks (like LangChain, AutoGen, or MCP) to lock down the logic and ensure it doesn't hallucinate in production. And we've got it all here for you! Give your AI apps and agents the power of Xero's platform.\n- Agentic SDK Comprehensive collection of examples demonstrating how to build AI agents that integrate with the Xero API using various agentic frameworks and the Xero MCP Server. Review the Xero Agentic SDK\n- Remote MCP Server Try Xero's MCP Server\n- Xero Command Line Interface (CLI) This tool wraps the Xero API to provide a high-performance bridge for autonomous systems. Check out Xero's CLI\n- Prompt Library and Code Samples Xero's collection of pre-written text prompts, and code samples to help you get started. Check out Xero's prompt library\nXero's AI Learning Series: Automation Unleashed and The Rise of the Builder\nJoin Xero Developer as we dive deep into the world of AI development tools to show practical ways to streamline Xero workflow. These videos on vibecoding and low-code / no-code tools will give you the edge you need to build solutions that solve real problems specific to your needs. These are just a few we've recorded, but more are available on the Xero Developer YouTube channel.\n- Xero Automation Unleashed: AI-Powered Workflows for Your Business series Start the series from the beginning\n- Set up the Xero MCP Server with Claude and OpenAI Agents Watch the video\n- Build a Booking System Using Replit and Xero Watch the video\n- Automate Tasks With Lutra and Xero Watch the video\n- Request a Quote System Built with Lovable and Xero Watch the video\n- Build an Ecommerce Website with Cursor and Xero Watch the video"
+  },
+  {
+   "sid": "S8",
+   "url": "https://github.com/XeroAPI/xero-postman-oauth2/blob/master/README.md",
+   "official": true,
+   "excerpt": "A Postman collection for authenticating to the Xero API.\nFollow these steps to quickly get up and running with the Xero API and Postman:\nClick the button below and select the Desktop version of Postman (Chrome extension doesn't support environment variables). This will also install the Collection and Environment we'll be using.\nAlternatively, you can download the Xero OAuth2.0.postman_collection and OAuth 2.0.postman_environment JSON files above and import them via the Import button in the top left of the Postman Workplace sceen.\n2. Create an OAuth2 app at https://developer.xero.com/myapps\nGo to the Xero developer portal and create an OAuth2 app.\nIf you haven't already signed up for a xero account you can do so here.\nUse the following values:\n- App Name - your choice, but can't contain the word 'Xero'\n- Company or application URL - this needs to be an https address, but isn't used.\n- OAuth 2.0 redirect URI - also needs to be https but won\u2019t be used in Postman\nClick Create App\nThen:\n- Click Configuration from the left hand side of the screen\n- Click Generate a secret\n- Keep the page open\nCopy the Client id, Client secret and OAuth 2.0 redirect URI from the My Apps screen into the en"
+  }
+ ],
+ "errors": [
+  "fetch https://developer.xero.com/documentation/guides/webhooks/overview: 200 too little text (JS-rendered?)",
+  "fetch https://developer.xero.com/documentation/guides/oauth2/overview: 200 too little text (JS-rendered?)",
+  "fetch https://developer.xero.com/documentation/guides/oauth2/auth-flow: 200 too little text (JS-rendered?)"
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "id": 52,
+ "app": "SE Ranking",
+ "category": "Data, SEO and Scraping",
+ "hint": "seranking.com/api",
+ "composio": {
+  "found": false,
+  "slug": null,
+  "name": null,
+  "tools": null,
+  "triggers": null,
+  "auth": [],
+  "managed_app": null,
+  "url": null,
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://seranking.com/api/how-to-get-api",
+   "official": true,
+   "excerpt": "Getting API access\nIntroduction\nSE Ranking offers two powerful APIs to integrate our data and platform management capabilities into your workflows and applications:\n- Data API: Designed for pulling large volumes of raw SEO and marketing data (e.g., AI Search, keywords, backlinks, domain data). It uses a flexible, pay-as-you-go credit system.\n- Project API: Designed for automating and managing your SEO projects (e.g., creating sites, managing keywords, running audits). Access is tied to your main subscription limits.\nOne key, both APIs. A single API key authenticates every endpoint across the Data API and the Project API. There is no separate \u201cData key\u201d and \u201cProject key\u201d: you generate one key and use it everywhere. What you can call depends on your plan, not on the key. Data API requests draw on your credit balance, while Project API requests use your subscription limits.\nThis guide explains the requirements and steps to gain access to both.\nData API\nThe Data API provides direct access to SE Ranking\u2019s extensive databases. Usage is billed in API credits, and every current subscription plan includes a monthly credit allowance.\nCredits included with your plan\nAll Essential, Pro, Busine"
+  },
+  {
+   "sid": "S2",
+   "url": "https://seranking.com/api/integrations/mcp",
+   "official": true,
+   "excerpt": "MCP Server Documentation\nNew to SE Ranking MCP? What it does, pricing and use cases\nThe Model Context Protocol (MCP) server provides a standardized interface that allows any compatible AI model to access your SE Ranking and SE Visible data simply and securely.\nMCP server server follows the authenticated remote MCP spec, so it\u2019s centrally hosted and managed. Connect in one click in Claude or ChatGPT, natively in Cursor and other clients, or use the mcp-remote module for clients that don\u2019t support remote servers.\nWhat you can access\nThrough the MCP server, your AI assistant can work with data from these SE Ranking and SE Visible products*:\n- Data API: keyword research, backlinks, domain analysis, SERP, and more\n- Project API: your projects, rank tracking, audits, and competitors\n- Local Marketing API: your locations, local rankings, Google Business Profile, business listings, and reviews\n- SE Visible API: your AI visibility projects, brands, topics, prompts, and sources\n*The data available to you depends on your subscription. Not every API endpoint is available through MCP. Setup is the same for every product. Use your SE Ranking account, or an API key generated in the API Dashboard "
+  },
+  {
+   "sid": "S3",
+   "url": "https://seranking.com/api/data/getting-started",
+   "official": true,
+   "excerpt": "Getting started\nWelcome to the SE Ranking API! This guide will walk you through authenticating your account, making your first request, understanding our credit system, and more. Let\u2019s get you up and running in minutes.\nAuthentication\nAll requests to the Data API must be authenticated. The base URL for all endpoints is:\nhttps://api.seranking.com\n1. Obtain your API key\nFirst, you\u2019ll need to generate a unique API key from your account dashboard.\n1. Navigate to the API Dashboard. You can access this by clicking the API icon in the main left-hand navigation menu:\n2. On the API Dashboard, click the + CREATE API KEY button located in the top-right corner:\n3. In the Create API key dialog box:\na. Enter a descriptive name in the API key name field (e.g., \u201cDemo\u201d).\nc. Click CREATE KEY.\n4. Your new key will be generated and listed in the API Keys table. You can create multiple API keys for different applications or environments:\n2. Authenticate your requests\nYou have two methods to authenticate your requests. We strongly recommend using the Authorization header.\nMethod 1: Authorization header (recommended)\nInclude an Authorization header in your request, with the value Token YOUR_API_KEY.\nYou "
+  },
+  {
+   "sid": "S4",
+   "url": "https://seranking.com/api-pricing.html",
+   "official": true,
+   "excerpt": "SEO data piped into your stack\nOne API for keywords, backlinks, domains, audits, AI search, and more. Start pay as you go or commit annually for volume discounts.\n- MCP included\n- 14-day trial to test every API endpoint\n- Full API & MCP access from day one\n- Test the complete SEO & GEO data suite\n- MCP included\n- Top up API credits at any time, no commitment\n- Scale usage on your own timeline\n- Purchased credits never expire\n- MCP included\n- Up to 57% off Wallet rates\n- Volume-based pricing discounts\n- Includes Data API only\n- MCP included\n- High-volume pricing as low as at $30/1M credits\n- Custom integrations development\n- Custom RPS limits for your workload\nAlready have a SE Ranking subscription? Try API Add-on!\n- MCP included\n- For SE Ranking customers who need automation\n- Access to Data API + Project API\n- Volume-based pricing discounts\n- Backlinks API\n- Domain Research API\n- Keyword Research API\n- Website Audit API\n- AI Search API\n- Project Management API\nWant to know more about how credits are calculated? See the credit cost table \u2192\nQuery your data through AI assistants\nPull live SEO and GEO data directly inside your AI tools. Included in every plan.\nMCP\nConnect SE Ranking t"
+  },
+  {
+   "sid": "S5",
+   "url": "https://seranking.com/api/integrations",
+   "official": true,
+   "excerpt": "API integrations\nThe SE Ranking API allows you to extend the power of our data beyond the platform itself. By integrating SE Ranking with other tools and services, you can streamline your workflows, enhance your reporting capabilities, and leverage cutting-edge AI for deeper analysis.\nLooker Studio\nThe SE Ranking integration with Looker Studio (formerly Google Data Studio) connects your SEO data directly to Google\u2019s free data visualization platform. This allows you to build dynamic, interactive, and shareable dashboards without manual data exports.\nKey benefits\n- Automated reporting: Create real-time dashboards for tracking keyword performance, analyzing competitor traffic, and monitoring domain health.\n- Data blending: Combine SE Ranking data with other sources like Google Analytics, Search Console, and Google Ads for a unified marketing view.\n- Custom visualization: Turn raw SEO metrics into intuitive charts and graphs tailored to your specific KPIs.\nHow it works\nThe integration utilizes official Partner Connectors built on the SE Ranking Data API. You authorize the connection using your SE Ranking API key and select the specific report (e.g., Domain Keywords, Competitor Analysis"
+  },
+  {
+   "sid": "S6",
+   "url": "https://seranking.com/api/project/getting-started",
+   "official": true,
+   "excerpt": "Getting started\nAPI access and keys\nIn order to use the API, it is necessary to have an API key from the SE Ranking user account. The API key must be transferred via the token parameter for each invoked method or via the Authorization HTTP header.\nIf an API method is invoked without an API key, or if an invalid API key is transferred in the request, the server returns a \u201cno token\u201d or \u201cincorrect token\u201d error.\nOne key for both APIs. A single API key authorizes every endpoint across the Project API and the Data API. There is no separate \u201cProject key\u201d and \u201cData key\u201d: you generate one key and use it everywhere. What you can call depends on your plan, not on the key. Project API requests use your subscription limits, while Data API requests draw on your credit balance.\nFinding your API key\nEligible accounts receive a API key automatically. In most cases, your key already exists and is ready to use. To find it:\n1. Log in to the user account.\n2. Go to API -> Dashboard.\n3. Your API key will be listed in the API Keys table. Copy it and use it in your requests.\nMaking requests\nThe API is accessible via the HTTPS protocol. All API method invocations are HTTP GET/POST/PUT/DELETE requests to the"
+  },
+  {
+   "sid": "S7",
+   "url": "https://seranking.com/api.html",
+   "official": true,
+   "excerpt": "SEO API: Automate your SEO workflows\nConnect via API for custom integrations and bulk processes, or via MCP to query data from inside Claude or any AI assistant. Or do both.\nNo credit card required\nThe data your workflows will run on\nChoose how to put SE Ranking\u2019s API to work\nPick a workflow that fits your priorities and follow it straight through\nKnow exactly where competitors outrank you across search\nAnalyze any domain\u2019s performance, identify top competitors, and surface quick wins, competitor gaps, topic clusters, and AI Overviews where competitors appear but you don\u2019t.\nMonitor your brand visibility across engines at scale\nSee how your brand and competitors appear across Google, Bing, Yahoo, and AI Overviews. Track rankings, backlinks, and competitors across major engines.\nTurn a completed site audit into structured URL lists for your pipelines\nConnect to a completed site audit, pull every URL affected by each issue type, and drill into individual pages for full metrics. Works for bulk triage, automated ticketing, or custom reporting workflows.\nMonitor backlinks and surface link-building opportunities\nScreen prospects by authority and backlink quality. Surface competitor links "
+  },
+  {
+   "sid": "S8",
+   "url": "https://seranking.com/mcp.html",
+   "official": true,
+   "excerpt": "SEO MCP: Use SE Ranking\u2019s live data inside any AI assistant\nPut 180+ SEO tools behind every prompt: keyword data, backlinks, domain insights, audits, and more \u2014 all inside your favorite AI assistant.\nAsk ChatGPT your SEO questions, answered with live data\nChatGPT can talk about search, but it can\u2019t see your numbers. Connect SE Ranking and give it live keyword, site audit, and backlink data to work from.\nYour SE Ranking data, working inside ChatGPT\nAdd SE Ranking from the ChatGPT connector directory, then query your keywords, backlinks, domain performance, and site audits. Get answers backed by live data from your account, not the model\u2019s best guess.\nSE Ranking MCP use cases for everyday workflows\nLet your AI assistant reason, compare, and analyze with live SE Ranking data behind every answer.\nFind keyword ideas worth targeting\n Discover high-potential keyword ideas for your niche, then compare them by demand and recent trends to choose the best content angles. \nExample prompt:\n\u201cFind 50 keyword ideas for [seed keyword] in [country], including related, similar, long-tail, and question-based keywords. Show search volume, CPC, competition, difficulty, and 6-month trend data. Group them"
+  }
+ ],
+ "errors": []
+}

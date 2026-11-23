@@ -1,0 +1,73 @@
+{
+ "id": 48,
+ "app": "Gumroad",
+ "category": "Ecommerce",
+ "hint": "gumroad.com/api",
+ "composio": {
+  "found": true,
+  "slug": "GUMROAD",
+  "name": "Gumroad",
+  "tools": 13,
+  "triggers": 0,
+  "auth": [
+   "OAUTH2"
+  ],
+  "managed_app": "Yes",
+  "url": "https://docs.composio.dev/toolkits/gumroad.md",
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://gumroad.com/pricing",
+   "official": true,
+   "excerpt": "Simple, transparent pricing\n10% + $0.50\nPer transaction for all sales through your profile or direct links to your customers.\n30%\nPer transaction when new customers find and buy from you through our discover marketplace.\nWe're a Merchant \nof Record\nWhat this means for you\nBuild your creative business with confidence. We're taking care of all tax complexity worldwide, so you can focus on what you do best: creating.\n- \u2192 No more tax headaches - we handle everything\n- \u2192 Simplified global selling - we manage international tax compliance\n- \u2192 More time for creating - less time dealing with paperwork\nFrequently asked questions\nWhat can I sell on Gumroad?\nDigital products, e-books, courses, tutorials, and memberships\u2014almost anything! Creators in just about every industry use (and love) Gumroad, from digital artists, writers, musicians and other creative-types to business-minded entrepreneurs and tech gurus like our SaaS creators. A better question is, \"What can't I sell on Gumroad?\"\nWhat can't I sell on Gumroad?\nOutside of physical goods, things like illegal or illicit goods or services, securities & financial instruments, credit repair, gambling & lotteries, harassment & extremist content,"
+  },
+  {
+   "sid": "S2",
+   "url": "https://gumroad.com/help/article/280-create-application-api",
+   "official": true,
+   "excerpt": "Create an application for the API\nIn this article:\nTo create an application for general use, you'll need to build a Redirect URI handler to generate access tokens for each of your users. However, if you only want to use the API on your own Gumroad account, you can manually generate an access token, which is a simpler process.\nFor just your account\nIf you're writing some custom code you need to run with your Gumroad account, all you need is an access token. Your access token is used in the request header of every request to the API and should be kept secret, like a password.\nGenerating an access token\nFirst, sign in to your Gumroad account. Then, go to advanced settings. Here, you'll see a form to create a new application.\nProvide the following information and click \"Create application\":\n- Application icon: A small thumbnail image to identify your application.\n- Application name: A name for your application\n- Redirect URI: While this is very important when making a general-purpose application, when you just want an access token to use the API with your own account, simply enter localhost (http://127.0.0.1) in this field, as its value is not meaningful.\nKeep the application ID and se"
+  },
+  {
+   "sid": "S3",
+   "url": "https://gumroad.com/mcp",
+   "official": true,
+   "excerpt": "\u201cShow my recent sales.\u201d\nSee which products people bought and what they paid.\nSell digital products with AI\nConnect your Gumroad store to the AI assistant you already use. Check sales, draft products, publish them, and track payouts from your chat.\nYou\u2019ll need a Gumroad account and an assistant that supports MCP.\nAn MCP server for selling digital products\nModel Context Protocol (MCP) lets your AI assistant work with your store. Manage ebooks, templates, courses, and other digital products without leaving the chat.\nAsk for a product name, price, and description. Add the product files in Gumroad before publishing.\nCheck recent payout amounts and their status.\nChoose your assistant\nSubmitted for review. The Gumroad connector is not yet available in Muse.\nAvailable now in Claude\u2019s connector directory.\nListed in Claude\u2019s connector directory. You can also add it as a custom connector.\nAvailable now as a custom connector.\nAvailable now in ChatGPT\u2019s plugin directory.\nListed in ChatGPT\u2019s plugin directory.\nEvery assistant connects to its own URL and asks for OAuth access to your Gumroad account. Each connector page lists the exact address to paste.\nSet up Gumroad MCP\nSetup takes three steps i"
+  },
+  {
+   "sid": "S4",
+   "url": "https://gumroad.com/help/article/355-connect-ai-assistants-to-gumroad",
+   "official": true,
+   "excerpt": "Connecting AI assistants to your Gumroad store\nIn this article:\nWhat the Gumroad connector is\nGumroad runs a server that speaks MCP (Model Context Protocol), so an AI assistant that supports MCP can work with your store from your chat. You connect your Gumroad account once, sign in through Gumroad, and then you can ask the assistant things like \"show my recent sales\" or \"draft a product called Photo Pack for $12\".\nNothing about your store changes. Products, customers, sales, and payouts all stay in Gumroad, and customers still pay through Gumroad checkout. The connector is a way to read your store's data and make a few changes from chat instead of from your dashboard.\nWhich assistants you can connect\n- Claude: available now in Claude's connector directory. You can also add it as a custom connector.\n- Muse: submitted for review. The Gumroad connector is not yet available in Muse.\n- ChatGPT: available now in ChatGPT's plugin directory.\nSetup instructions for every assistant we support are also at gumroad.com/mcp.\nConnecting Claude\n- Open Gumroad in Claude's connector directory and connect it. You need to be signed in to Claude.\n- When Claude opens a Gumroad sign-in page, sign in and "
+  },
+  {
+   "sid": "S5",
+   "url": "https://gumroad.com/llms.txt",
+   "official": true,
+   "excerpt": "# Gumroad\n\n> Gumroad is an e-commerce marketplace where independent creators sell digital products \u2014 ebooks, courses, music, software, design assets, memberships, and more \u2014 directly to their audiences.\n\nEvery product is sold by an individual creator. Each creator has a storefront on their own subdomain, and every product has a canonical short URL. Discover is the marketplace-wide browse and search surface, organized as a taxonomy of categories with nested subcategories (for example 3D, Design, Education, Software Development), each addressable at its own path.\n\n## URL patterns\n\n- [Product pages](https://gumroad.com/help/article/136-find-your-products-url): `https://gumroad.com/l/{permalink}` \u2014 canonical page for a single product\n- [Creator storefronts](https://gumroad.com/): `https://{username}.gumroad.com` \u2014 a creator's profile and product listing\n- [Discover](https://gumroad.com/discover): marketplace browse and search; categories and subcategories are paths like `https://gumroad.com/{category}` and `https://gumroad.com/{category}/{subcategory}`\n- [Wishlists](https://gumroad.com/help/article/343-wishlists): `https://{username}.gumroad.com/wishlists/{slug}` \u2014 public, shareable product lists curated by users, served from the creator's storefront subdomain\n\n## Pricing\n\n- [Pricing](https://gumroad.com/pricing): no monthly fee; Gumroad charges 10% + $0.50 per transaction on sales made through a creator's own profile or direct links, and 30% per transaction when a new customer finds the product through Discover. Gumroad is the merchant of record and handles sales tax collection and remittance worldwide.\n\n## API\n\n- [API documentation](https://gumroad.com/api): public REST API for products, sales, subscribers, and licenses\n- [Muse](https://gumroad.com/muse) and [Claude](https://gumroad.com/claude) connectors: OAuth + MCP so an agent can list sales, draft and edit a product, add the files and links buyers receive and a cover image, publish it, and check payouts for a connected creator (`/.well-known/mcp.json`). Setup for humans: [Gumroad MCP](https://gumroad.com/mcp) and [connecting AI assistants to your store](https://gumroad.com/help/article/355-connect-ai-assistants-to-gumroad)\n- [Help Center](https://gumroad.com/help): documentation for creators and customers"
+  },
+  {
+   "sid": "S6",
+   "url": "https://gumroad.com/chatgpt",
+   "official": true,
+   "excerpt": "\u201cShow my recent sales.\u201d\nSee which products people bought and what they paid.\nSell digital products with AI\nfor ChatGPT\nConnect your Gumroad store to ChatGPT. Create product drafts, check sales, and track payouts from your chat.\nListed in ChatGPT\u2019s plugin directory.\nYou\u2019ll need a Gumroad account and MCP support in ChatGPT.\nAn MCP server for selling digital products\nUse Model Context Protocol (MCP) to connect your AI assistant to your store. Manage ebooks, templates, courses, and other digital products.\nAsk for a product name, price, and description. Add the product files in Gumroad before publishing.\nCheck recent payout amounts and their status.\nSet up Gumroad MCP\nAdd Gumroad from ChatGPT\u2019s plugin directory.\n- 1. Add the connector Open Gumroad in ChatGPT\u2019s plugin directory and connect it. If you cannot add plugins, ask your workspace administrator. Gumroad in ChatGPT\u2019s plugin directory MCP server URL https://gumroad.com/chatgpt/v1/mcp\n- 2. Connect your Gumroad account Sign in to Gumroad when prompted. Review the requested permissions before you authorize access.\n- 3. Start a conversation Select the connector in your chat. Try asking, \u201cShow my Gumroad products.\u201d\nThe connector can access your products, sales, buyer emails, and payouts according to the permissions you grant.\nNew products start as unpublished drafts. With product access, the connector can publish or unpublish them. Review these actions in your MCP client.\nShare your product\u2019s Gumroad link. Customers pay through Gumroad checkout. The MCP server does not take payments in your chat.\nRevoke the connection any time in Settings > Applications. Disconnecting the connector in your chat app does not revoke its access token, so revoke it here to end the connection.\nSubscribe to get tips and tactics to grow the way you want.\n\u24b8 Gumroad, Inc."
+  },
+  {
+   "sid": "S7",
+   "url": "https://gumroad.com/claude",
+   "official": true,
+   "excerpt": "\u201cShow my recent sales.\u201d\nSee which products people bought and what they paid.\nSell digital products with AI\nfor Claude\nConnect your Gumroad store to Claude. Create product drafts, check sales, and track payouts from your chat.\nListed in Claude\u2019s connector directory. You can also add it as a custom connector.\nYou\u2019ll need a Gumroad account and MCP support in Claude.\nAn MCP server for selling digital products\nUse Model Context Protocol (MCP) to connect your AI assistant to your store. Manage ebooks, templates, courses, and other digital products.\nAsk for a product name, price, and description. Add the product files in Gumroad before publishing.\nCheck recent payout amounts and their status.\nSet up Gumroad MCP\nAdd Gumroad from Claude\u2019s connector directory. On Team and Enterprise plans, your organization\u2019s settings control which connectors you can add.\n- 1. Add the connector Open Gumroad in Claude\u2019s connector directory and connect it. Or open Settings > Connectors in Claude, choose Add custom connector, and enter the URL below. If you cannot add connectors, ask your organization administrator. Gumroad in Claude\u2019s connector directory MCP server URL https://gumroad.com/claude/v1/mcp\n- 2. Connect your Gumroad account Sign in to Gumroad when prompted. Review the requested permissions before you authorize access.\n- 3. Start a conversation Select the connector in your chat. Try asking, \u201cShow my Gumroad products.\u201d\nThe connector can access your products, sales, buyer emails, and payouts according to the permissions you grant.\nNew products start as unpublished drafts. With product access, the connector can publish or unpublish them. Review these actions in your MCP client.\nShare your product\u2019s Gumroad link. Customers pay through Gumroad checkout. The MCP server does not take payments in your chat.\nRevoke the connection any time in Settings > Applications. Disconnecting the connector in your chat app does not revoke its access token, so revoke it here to end the connection.\nSubscribe to get tips and tactics to grow the way you want.\n\u24b8 Gumroad, Inc."
+  },
+  {
+   "sid": "S8",
+   "url": "https://gumroad.com/muse",
+   "official": true,
+   "excerpt": "\u201cShow my recent sales.\u201d\nSee which products people bought and what they paid.\nSell digital products with AI\nfor Muse\nSubmitted for review. The Gumroad connector is not yet available in Muse.\nAn MCP server for selling digital products\nUse Model Context Protocol (MCP) to connect your AI assistant to your store. Manage ebooks, templates, courses, and other digital products.\nAsk for a product name, price, and description. Add the product files in Gumroad before publishing.\nCheck recent payout amounts and their status.\nFor connector reviewers\nThe hosted MCP server supports OAuth with PKCE. These details are for review and testing with compatible MCP clients.\nMCP server URL\nhttps://gumroad.com/muse/v1/mcp\n A creator must authorize access to their Gumroad account. Tool access depends on the granted scopes.\nOAuth server metadata MCP discovery\nThe connector can access your products, sales, buyer emails, and payouts according to the permissions you grant.\nNew products start as unpublished drafts. With product access, the connector can publish or unpublish them. Review these actions in your MCP client.\nShare your product\u2019s Gumroad link. Customers pay through Gumroad checkout. The MCP server does not take payments in your chat.\nRevoke the connection any time in Settings > Applications. Disconnecting the connector in your chat app does not revoke its access token, so revoke it here to end the connection.\nSubscribe to get tips and tactics to grow the way you want.\n\u24b8 Gumroad, Inc."
+  }
+ ],
+ "errors": [
+  "fetch https://gumroad.com/api: 200 too little text (JS-rendered?)"
+ ]
+}

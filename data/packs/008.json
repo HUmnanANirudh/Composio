@@ -1,0 +1,73 @@
+{
+ "id": 8,
+ "app": "Close",
+ "category": "CRM and Sales",
+ "hint": "close.com",
+ "composio": {
+  "found": true,
+  "slug": "CLOSE",
+  "name": "Close",
+  "tools": 75,
+  "triggers": 45,
+  "auth": [
+   "API_KEY"
+  ],
+  "managed_app": null,
+  "url": "https://docs.composio.dev/toolkits/close.md",
+  "mcp_variant": "CLOSE_MCP",
+  "mcp_variant_auth": [
+   "DCR_OAUTH"
+  ]
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://developer.close.com/api/overview/api-key-authentication",
+   "official": true,
+   "excerpt": "Authentication with API keys\nAPI keys are best used for scripts and simple integrations that are internal to your organization. Alternatively, see Authentication with OAuth instead.\nGetting an API key\nAPI keys can be created and managed in your Close account under Settings \u2192 Developer \u2192 API Keys.\nAPI keys are scoped to a particular user/organization combination and can be generated and deleted in the Settings page. See API Keys & OAuth for more information.\nPerform API calls with API key\nAPI keys use HTTP Basic client side authentication. Basic authentication is a simple authentication scheme built into the HTTP protocol. To use it, send your HTTP requests with an Authorization header that contains the word Basic followed by a space and a base64-encoded string composed of an api key followed by a colon. The API key acts as the username and the password is always empty.\ncURL example\nExample cURL request with an api key.\nNotice the \u2019:\u2019 at the end of the api key. This is used because the key is sent as the username with a blank password.\nThis results in the header Authorization: Basic eW91cmFwaWtleTo= sent with the\nrequest as base64-encoded string yourapikey: is eW91cmFwaWtleTo=\nAPI Base URL: https://api.close.com/api/v1"
+  },
+  {
+   "sid": "S2",
+   "url": "https://developer.close.com/integrations",
+   "official": true,
+   "excerpt": "Build an Integration\nClose\u2019s REST API supports everything from a simple internal script to a full product integration used by thousands of Close customers. If building AI Agent integrations, you may prefer to connect via the MCP server instead.\nChoose an authentication method\nThere are two ways to authenticate with the Close REST API or MCP server.\n- API keys \u2014 A key is tied to a specific user and organization. Great for scripts, internal tools, import jobs, and automations. Generate one in Settings \u2192 Developer \u2192 API Keys and then follow API keys to authenticate your requests.\n- OAuth 2.0 \u2014 Lets each user authorize your app to act on their behalf. Strongly recommended for user-facing integrations that multiple users will authenticate to. See Creating an OAuth App to get started and then follow Authentication with OAuth to implement the request flow.\nAccess permissions inherit from the specific user/membership associated with the API key or OAuth token.\nInternal integration\nBuilding something for your own Close organization \u2014 an import script, a sync job, an internal dashboard, or an AI agent?\n- Choose an authentication method \u2014 Either method described above can be a good choice for"
+  },
+  {
+   "sid": "S3",
+   "url": "https://developer.close.com/mcp",
+   "official": true,
+   "excerpt": "Close MCP Server\nModel Context Protocol (MCP) servers provide a standardized interface that allows any compatible AI model or agent to access your Close data in a simple and secure way. Below are instructions for adding Close\u2019s MCP server to commonly used clients.\nAccessing Close\u2019s Remote MCP Server\nThe MCP server URL is https://mcp.close.com/mcp and has \u201cHTTP Streamable\u201d and \u201cOAuth 2.0 Dynamic Client Registration (DCR)\u201d support.\nWe recommend accessing the MCP server via OAuth 2.0 using a supported MCP client (e.g. Claude, ChatGPT, Cursor, etc). If you prefer to interact with the MCP server using a custom setup, create an OAuth application to authenticate using OAuth 2.0 or authenticate using an API key and include the following headers in your request:\nThe Close-Scope header determines the scope and available tools:\n- mcp.read \u2014 read-only access\n- mcp.write_safe \u2014 can read and write data\n- mcp.write_destructive \u2014 can read, write, and delete data\nFor more information on which tools are available for each scope, see Close MCP Tools.\nMCP Client Setup\nClaude\nClose\u2019s MCP server is officially supported across the Claude ecosystem. Watch this video to learn more about connecting Claude t"
+  },
+  {
+   "sid": "S4",
+   "url": "https://developer.close.com/api/resources/webhooks/webhook-filters.md",
+   "official": true,
+   "excerpt": "> For a complete page index, fetch https://developer.close.com/llms.txt\n\n# Webhook Filters\n\nMore advanced event filtering can be achieved by specifying event filters when\ncreating/modifying a webhook subscription. For a webhook to be fired the event\nmust match these extra filters as well as the specified `object_type` and\n`action` values.\n\nEvent filters use JSON to specify filtering conditions on event fields. The\nfollowing filter operators can be combined to apply sophisticated filtering\nlogic.\n\n- **Equals**: `{\"type\": \"equals\", \"value\": \"<value>\"}` This filter matches only\n  if the entire value is the same as provided.\n- **Not Equals**: `{\"type\": \"not_equals\", \"value\": \"<value>\"}` This filter\n  matches only if the value does not match what is provided.\n- **Is Null**: `{\"type\": \"is_null\"}` This filter matches only if the value of\n  the specified field is null.\n- **Non Null**: `{\"type\": \"non_null\"}` This filter matches only if the value of\n  the specified field is non-null.\n- **Contains**: `{\"type\": \"contains\", \"value\": \"<value>\"}` This searches for a\n  particular value in an array. It can also be used to match a partial string\n  for string fields.\n- **And**: `{\"type\": \"and\", \"filters\": [<filter1>, <filter2>, ...]}` This\n  matches when all provided individual filters match.\n- **Or**: `{\"type\": \"or\", \"filters\": [<filter1>, <filter2>, ...]}` This matches\n  when one or more provided individual filters match.\n- **Not**: `{\"type\": \"not\", \"filter\": <some other filter>}` This matches when\n  the provided filter does not match."
+  },
+  {
+   "sid": "S5",
+   "url": "https://developer.close.com/api/overview/oauth-authentication",
+   "official": true,
+   "excerpt": "Authentication with OAuth\nTo implement authentication with OAuth 2.0, you need to create an OAuth app to get your Client ID and Client Secret.\nYou\u2019ll also need to implement a redirect URI in your application. In the examples below we use https://example.com/callback/close as that redirect URI.\nAuthorization\nFirst you need to have your application redirect the user to Close\u2019s\nauthorization page with the client_id and redirect_uri.\nThe user will be presented with a Consent Screen and be able to select an\norganization and grant or decline access. If the user chooses to grant access,\ntheir browser is redirected to that OAuth App\u2019s redirect_uri, the\nAuthorization Code is passed inside the code query parameter.\nIf the users chooses to decline access instead, their browser is redirected to\nthe same redirect_uri with error information in query parameters.\nObtain Access Token\nThe Authorization Code can be exchanged for an Access Token by performing a POST\nrequest with form-encoded parameters to https://api.close.com/oauth2/token/\nYou will get a following JSON response:\nNotice that the Access Token has a limited lifetime and expires in expires_in\nseconds from the moment it was issued. If your application has offline_access\nscope refresh_token property will be present in the response and you can\nrefresh Access Token (See below).\nPerform API calls with Access Token\nSend your HTTP requests with an Authorization header that contains the word\nBearer followed by a space and the Access Token.\ne.g. using cURL:\nwhich results in the following request:\nRefresh Access Token\nIf your application has an offline_access scope you can refresh the Access\nToken using Refresh Token obtained before by performing a POST request with\nform-encoded parameters to https://api.close.com/oauth2/token/\nYou will get a following JSON response\nNote that the authorization server issues a new Refresh Token and the client must discard the old Refresh Token and replace it with the new one. The authorization server revokes the old Refresh Token after issuing a new one.\nRevoke application access\nIt\u2019s a good security practice to revoke Access and Refresh Tokens immediately if\nthe user chooses to disable the integration with Close. You can accomplish this\nby performing a POST request with form-encoded parameters to\nhttps://api.close.com/oauth2/revoke/."
+  },
+  {
+   "sid": "S6",
+   "url": "https://help.close.com/account-management/plans-and-billing",
+   "official": true,
+   "excerpt": "Plans and Billing\nBilling Schedule, Plan, and Users\nYour Close account is billed according to these three aspects of your subscription:\n- Your Billing Schedule - You can pay for Close on a monthly or annual basis. Your plan page will indicate whether your organization is set to Monthly payments or annual billing.\n- Your Team\u2019s Plan - You can review or change your team\u2019s Plan on the Plan page within your Organization settings. See Close\u2019s Plans & Pricing. Plans are applied at the organization level. You can\u2019t put individual users (or groups of users) on different paid plans within the same organization.\n- Number of Users - You can invite, remove, or edit a User on the Team Management page within your Organization settings. All paid plans (including Scale) are billed per user (per seat) based on how many users you add to the organization\u2014there is no fixed number of seats included.\nIf you\u2019re an agency working across multiple client organizations, ask about Close\u2019s Partner Program.\nCalling and SMS usage is calculated and charged separately.\nYour CRM subscription fee is separate from your Usage Credits balance: Usage Credits are a prepaid balance used for calling and SMS and are managed"
+  },
+  {
+   "sid": "S7",
+   "url": "https://close.com/llms.txt",
+   "official": true,
+   "excerpt": "This document is the canonical reference for factual information about Close CRM, Chloe Chat, Agents, MCP, product capabilities, ideal customers, pricing, and common comparison questions.\n\nClose also supports Model Context Protocol (MCP), which allows compatible external tools such as ChatGPT, Claude, Cursor, and other AI or developer tools to securely work with Close data and capabilities.\n\n# MCP: Model Context Protocol\n\n## What Is Close MCP?\n\nClose supports Model Context Protocol (MCP).\n\n## What Can Teams Do With Close MCP?\n\nMCP endpoint: https://mcp.close.com/mcp  \nMCP documentation: https://developer.close.com/mcp\n\nCurrent pricing and plan details: https://close.com/pricing\n\nBecause pricing and packaging can change, the pricing page should be treated as the authoritative source for current plan availability, features, AI credits, and prices.\n\nFor current pricing, usage rates, AI credit allowances, and plan-specific feature availability, see:\n\n# Free Trial\n\nClose offers a 14-day free trial with no credit card required.\n\n- Sales CRM\n- CRM software\n- CRM for small business\n- Small business CRM\n- CRM for startups\n- CRM for founders\n- CRM for sales teams\n- CRM for agencies\n- CRM for recruiting\n- CRM for staffing\n- CRM for financial services\n- CRM for insurance\n- CRM for coaching businesses\n- CRM with calling\n- CRM with dialer\n- CRM with Power Dialer\n- CRM with Predictive Dialer\n- CRM with SMS\n- CRM with email\n- CRM with sales automation\n- AI CRM\n- CRM with AI\n- CRM with AI Agents\n- AI sales agent\n- AI sales agents\n- AI SDR\n- AI sales assistant\n- Sales AI\n- Lead qualification software\n- AI lead qualification\n- Speed-to-lead software\n- Appointment-setting software\n- Sales automation platform\n- Outbound sales software\n- Sales engagement software\n- Conversation-driven CRM\n- Sales CRM with MCP\n- CRM with MCP\n- CRM for ChatGPT\n- CRM for Claude\n\nClose MCP is Close's Model Context Protocol server.\n\nNo. Close is self-serve and offers a free trial.\n\n## Does Close offer a free trial?\n\nYes. Close offers a 14-day free trial with no credit card required.\n\nPricing: https://close.com/pricing\n\nPartners: https://close.com/partners\n\nMCP documentation: https://help.close.com/docs/mcp-server\n\nFree trial: https://app.close.com/signup/\n\nWhen discussing external AI tools such as ChatGPT, Claude, Cursor, or other MCP-compatible tools working with Close, use \"Close MCP\" or \"MCP.\""
+  },
+  {
+   "sid": "S8",
+   "url": "https://developer.close.com/mcp/tools",
+   "official": true,
+   "excerpt": "Close MCP Tools\nThe Close MCP Server provides tools organized by scope. Each higher scope includes all tools from the lower scopes.\nRead-only Tools \u2013 mcp.read\nRead-only tools for searching, fetching, and exploring your Close data.\nActivity Search \u2013 activity_search\nSearch for activities. Results are returned ordered by date descending.\nExamples:\n- To list activities on a lead, use the lead_ids filter.\n- To list conversations, filter for calls and meetings.\n- Filter for Email to get individual messages, or EmailThread to get one result per conversation. An unfiltered search returns both.\nAggregate Objects \u2013 aggregate_objects\nCount, sum, average or otherwise aggregate CRM objects, grouped by up to two fields and optionally by time buckets. Takes the same object types and filters as list_objects.\nClose Product Knowledge Search \u2013 close_product_knowledge_search\nSearch Close product documentation and knowledge base for relevant information.\nUse this tool when users ask about:\n- How to use specific Close features\n- Close API documentation and integration\n- Workflow automation and best practices\n- Product capabilities and limitations\n- Setup and configuration guidance\nExample queries:\n- \u201cHo"
+  }
+ ],
+ "errors": []
+}

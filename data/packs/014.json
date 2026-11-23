@@ -1,0 +1,72 @@
+{
+ "id": 14,
+ "app": "Front",
+ "category": "Support and Helpdesk",
+ "hint": "front.com",
+ "composio": {
+  "found": true,
+  "slug": "FRONT",
+  "name": "Front",
+  "tools": 180,
+  "triggers": 0,
+  "auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "managed_app": "No",
+  "url": "https://docs.composio.dev/toolkits/front.md",
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://dev.frontapp.com/docs/authentication",
+   "official": true,
+   "excerpt": "Authentication\nThe Core API uses Bearer tokens to authenticate its user.\nYou MUST send the token for each request in the Authorization header. The token MUST be preceded by Bearer. See the Authorization header in the example request below.\ncurl --request GET \\\n --url https://api2.frontapp.com/conversations/cnv_123/drafts\n --header 'Authorization: Bearer [REQUEST_TOKEN]'\nOAuth v Front API Tokens\nThere are two ways to get a Bearer token \u2014 through API tokens in your settings or through an OAuth implementation.\nIn general, Front recommends implementing OAuth when feasible, which has the additional benefit of building within our application framework. The app framework makes it easy for customers to install your integration and makes it easy for you to update the integration with new Front features as they are added to the framework.\nHowever, if you\u2019re just building an integration for your own Front instance or a single Front customer, or just want to test our API endpoints as you brainstorm what to build, you can generate an API token to get up and running more quickly.\nFor Partners looking to launch a public integration to all Front customers, if your integration can support OAuth you"
+  },
+  {
+   "sid": "S2",
+   "url": "https://dev.frontapp.com/docs/partnering-with-front",
+   "official": true,
+   "excerpt": "Partnering With Front\nFront\u2019s partnership program allows third-party developers to launch integrations that can be easily installed by any Front customer. At Front, our mission is to be the hub for customer communication and customer operations, and our partnerships with developers like yourself are at the heart of that mission. You can see dozens of our existing partners in our Integrations Directory.\nThis page is focused on publishing apps on our App Store\n- If you\u2019re just looking to build an integration for your own team but don\u2019t want to publish the integration publicly, check out our APIs overview.\n- If you're looking to resell Front with custom integrations and workflows within your industry, check out our Channel Partnerships page.\nAs a Front partner, you\u2019ll receive the following benefits:\n- Access to thousands of highly engaged businesses already using Front\n- Marketing exposure through our Integrations page\n- First notice about upcoming improvements and new API features by joining our community\nPublishing requirements\nWe don\u2019t charge any fees for publishing apps, and how you price your product is entirely up to you. We do expect a commitment to maintaining and supporting y"
+  },
+  {
+   "sid": "S3",
+   "url": "https://help.front.com/en/articles/4883136",
+   "official": true,
+   "excerpt": "Get started with Front's MCP server\n\u26a0\ufe0f Front\u2019s MCP server allows external AI tools (e.g., Claude, ChatGPT) to connect to Front.\n- If you\u2019re looking to connect in the opposite direction and allow Front\u2019s AI to connect an external tool, follow the steps for MCP Connectors.\n- To let an AI tool manage your Front settings instead (rules, inboxes, AI agents), see Get started with Front's Admin MCP server.\nOverview\nFront's MCP server lets you and your teammates connect Front to AI assistants like Claude, ChatGPT, Gemini, and Microsoft Copilot. Once connected, the AI assistant can use your conversations, draft replies, leave internal comments, and take other actions on your behalf \u2014 all while respecting the user permissions set within Front.\nBecause Front handles every channel \u2014 email, SMS, chat, and more \u2014 in one place, the AI assistant gets the full context of a conversation: messages across all channels, internal comments, tag and assignment history, and rule actions, all in one timeline.\nHead to Front Community to read the official announcement and get the starter guide with ready-to-use templates for the MCP.\nWhat is the MCP server?\nMCP (Model Context Protocol) is an open standard tha"
+  },
+  {
+   "sid": "S4",
+   "url": "https://front.com/pricing",
+   "official": true,
+   "excerpt": "Use Cases\nAll-in-one support platform\nCollaborative shared inboxes\nPersonalized service at scale\nAI Platform\nBeyond happy-path automation\nAI help that actually gets complexity\nMake sure your AI agents measure up\nLet any AI agent join the team\nMore Features\nAll the channels, zero chaos\nComplexity in, clarity out\n24/7 self-serve support\nStop answering d\u00e9j\u00e0 vu\nEscape from tab hell\nPricing plans\nBuild the best CX\nPlans for startups, enterprises, and everything in between.\nStarter\n$25\nKey features include\nProfessional\n$65\nEVERYTHING IN STARTER, PLUS\nEnterprise\n$105\nEVERYTHING IN PROFESSIONAL, PLUS\nSingle channel type\nOmnichannel (email, SMS, social, WhatsApp, etc.)\nYes, if single channel type\nUp to 10 rules\nMacros and up to 20 rules\nUnlimited macros and rules\n1\nUp to 5\nUnlimited\nBasic\nCustomizable\nCustomizable and multi-language\nAdvanced\nCustom reports\nSSO, SCIM\nSSO, SCIM, and custom roles\nFront AI Add-ons\nPower up your plan with Front AI\nMeet Front AI: human-in-control AI that powers\nexceptional service on even your toughest tickets\nAutopilot\nRun complex customer work with our omnichannel AI agent\nCopilot\nSurface account signals, plan next steps, and draft replies with your AI assistan"
+  },
+  {
+   "sid": "S5",
+   "url": "https://dev.frontapp.com/docs/oauth",
+   "official": true,
+   "excerpt": "OAuth\nIntro to Front OAuth\nOAuth 2.0 is a protocol that lets external applications request authorization to API access in a secure way. When you set up OAuth in your app, you specify which scopes the OAuth token will have access to. Customers installing your app are then asked to authorize the requested scopes so that data is sent to you from their customer instance.\nEach OAuth application is assigned a unique Client ID and Client Secret which will be used in the authorization flow. The Client Secret should never be shared. To obtain your OAuth credentials, refer to Create, manage, and publish apps.\nOAuth is required for public integrations available to all Front customers unless you obtain an exception from us. OAuth makes it much easier for customers to install your integration through our App Store.\nEnd users authorizing OAuth apps must be admins. This applies to both private and public OAuth apps.\nThe only exception is when authorizing OAuth for our MCP server. That connection uses user-scoped tokens, so any Front teammate can authorize it.\nAt a glance\nThese are the main URLs that our OAuth process utilizes.\n| URL | Value | \n|---|---|\n| Authorization | https://app.frontapp.com/"
+  },
+  {
+   "sid": "S6",
+   "url": "https://dev.frontapp.com/docs/core-api-getting-started",
+   "official": true,
+   "excerpt": "Getting Started with the Core API\nThis tutorial demonstrates a simple use case for the Core API: you will create a contact via the API, and then update the contact you created. A contact in Front is a person or entity with whom you can communicate with via any supported Front channel (email, phone, social media, etc.).\nIn this tutorial, you will learn:\n- How to obtain an API token for the Core API\n- How to make API calls with the Core API to:\n - Create a contact in Front\n - Update the contact with custom fields\n - Send attachments via the API in order to update the contact avatar\n - Add additional handles to the contact\nAfter completing this tutorial, you will be ready to build your own integration using the Core API endpoints.\nPrerequisites\n- If you don\u2019t already have access to a Front account, create a developer account.\n- (If you intend to use OAuth) Create an app and generate OAuth credentials for it. Refer to our OAuth guide for a detailed walkthrough of the OAuth authorization process. OAuth is required if you are creating a public integration for all Front clients, but is optional if you are creating an integration for private use.\nStep 1: Obtain an API token\nYou have two op"
+  },
+  {
+   "sid": "S7",
+   "url": "https://dev.frontapp.com/docs/mcp-server",
+   "official": true,
+   "excerpt": "MCP Server\nConnect AI assistants to Front via the MCP server\nFront's MCP server (mcp.frontapp.com/mcp) lets AI agents act on Front conversation data using a single OAuth-authenticated endpoint. Agents authenticate as a specific Front user, with permissions matching that user's role (user-scoped authorization). The MCP server is separate from the Admin MCP server, which manages Front configurations such as rules, setting up teammates, managing AI features, etc.\nThis article covers how to connect the MCP server to any MCP-compatible client to Front using an OAuth app you create yourself in the Front developer settings. For the user-facing overview, official directory listings (Claude, and others coming), and use case inspirations for Front teammates, see the general Help Center article on the MCP server.\nLooking for examples before you build?\nThe MCP space in the Front Community has workflow walkthroughs, sample prompts, and more. You can also start up discussions about the MCP server with fellow users and our team.\nOverview\n| Endpoint | https://mcp.frontapp.com/mcp | \n| Transport | Streamable HTTP | \n| MCP spec version | 2025-11-25 | \n| Auth | OAuth 2.1 + PKCE required Note: Front d"
+  },
+  {
+   "sid": "S8",
+   "url": "https://front.com/product/compass-ai-agent-performance-monitoring",
+   "official": true,
+   "excerpt": "Use Cases\nAll-in-one support platform\nCollaborative shared inboxes\nPersonalized service at scale\nAI Platform\nBeyond happy-path automation\nAI help that actually gets complexity\nMake sure your AI agents measure up\nLet any AI agent join the team\nMore Features\nAll the channels, zero chaos\nComplexity in, clarity out\n24/7 self-serve support\nStop answering d\u00e9j\u00e0 vu\nEscape from tab hell\nCOMPASS\nScore every conversation your AI agents handle in Front, whether they\u2019re powered by Autopilot or an external provider like Claude or Codex, to see exactly what to improve.\nMeasure every agent\nGet out-of-the-box governance for every agent the moment it goes live, without relying on manual spreadsheets.\nKnow when an agent slips\nTrack quality and satisfaction over time, so you can see which agents are up to par and which need attention.\nThe fix, spelled out\nPinpoint exactly how your agents can improve, whether that\u2019s stronger tone guidance or a clearer process.\nThe Front AI Advantage\nAutopilot automates the routine, Copilot helps teams reply faster, and Compass uses AI to show you how agent service quality is actually landing.\nLegacy Help Desks\nDesigned for complex customer work\nConnects with AI agents "
+  }
+ ],
+ "errors": []
+}

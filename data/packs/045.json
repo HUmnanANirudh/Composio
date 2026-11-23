@@ -1,0 +1,73 @@
+{
+ "id": 45,
+ "app": "Magento (Adobe Commerce)",
+ "category": "Ecommerce",
+ "hint": "developer.adobe.com/commerce",
+ "composio": {
+  "found": false,
+  "slug": null,
+  "name": null,
+  "tools": null,
+  "triggers": null,
+  "auth": [],
+  "managed_app": null,
+  "url": null,
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://developer.adobe.com/commerce/extensibility/developer-agent/coding-tools",
+   "official": true,
+   "excerpt": "Commerce development MCPs and skills\nWhen migrating to Adobe Commerce as a Cloud Service, you can use the Commerce development MCPs and skills to convert existing Adobe Commerce PHP extensions to Adobe Developer App Builder applications.\nYou can also use these tools to create completely new App Builder applications and storefront customizations.\nThe Commerce development MCPs and skills provide the following benefits:\n- Enhanced development workflow \u2014 Integrated Adobe Commerce development tools.\n- AI-powered assistance \u2014 Context-aware code generation and debugging.\n- Commerce-specific features \u2014 Specialized tools for Adobe Commerce App Builder development.\n- Automated workflows \u2014 Streamlined development and deployment processes.\nBy installing the Commerce development MCPs and skills, you get access to:\n- Skills - An Adobe Commerce and App Builder specific skill set designed to guide and inform your application development.\n- Commerce Developer MCP Server\n- App Builder MCP Server\n- Dropins AI Tools\nFor skills, prompts, and best practices after setup, see Skills, prompts, and commands and Best practices.\nUpdating to the latest version\nAfter installing the Commerce development MCPs and"
+  },
+  {
+   "sid": "S2",
+   "url": "https://developer.adobe.com/commerce/extensibility/starter-kit/integration",
+   "official": true,
+   "excerpt": "Integrate your backoffice systems\ndata-variant=info\ndata-slots=text\nApp Management is the preferred tool for creating and updating Commerce extensions. Use the integration starter kit as an accelerator for scaffolding your integration, then define, build, and deploy the resulting app through App Management.\nThe Adobe Commerce integration starter kit provides a foundation for building custom integrations to enrich customer shopping experiences and support multichannel, global commerce for B2B, B2C, and hybrid businesses.\ndata-slots=link, text\nGive us 45 minutes; we'll help you to integrate with your back office system following our best practices.\ndata-slots=link, text\nInitiate robust shopper synchronization with your backend systems.\ndata-slots=link, text\nEnrich the shopper experience with backend integrations and realize the full power of Adobe Commerce.\ndata-slots=link, text\nIntegrate quickly and easily using the starter kit template, which works with the most common data flows."
+  },
+  {
+   "sid": "S3",
+   "url": "https://developer.adobe.com/commerce/marketplace/guides/eqp/v1/auth",
+   "official": true,
+   "excerpt": "Authentication\ndata-variant=info\ndata-slots=text\nThe Marketplace EQP API uses a two-step process to authenticate a client application and authorize access to resources:\n- Using your API access key, obtain a session token.\n- Provide the session token as an HTTP Authorization Bearer header to access a resource.\nBase URLs\nIn code examples in this documentation, we use the Base URL of the sandbox.\nOnce you are confident your sandbox API calls are correct, and you wish to submit a package for full manual review on the production environment, do the following:\n- Use the production Base URL instead of the sandbox one\n- Use your production API access key: application ID and application secret\nhttps://commercedeveloper-sandbox-api.adobe.comhttps://commercedeveloper-api.adobe.com\nAuthentication and authorization flow\nYou must use your API access key -- which is an application ID and secret -- to obtain your session token. The following is an example:\n- application ID \u2014 AQ17NZ49WC\n- application secret \u2014 8820c99614d65f923df7660276f20e029d73e2ca\nHow to obtain a session token {#session-token}\nThe following endpoint grants a session token:\nPOST /rest/v1/app/session/token\nParameters:\nYou must spec"
+  },
+  {
+   "sid": "S4",
+   "url": "https://experienceleague.adobe.com/en/docs/commerce-learn/ai-and-agentic-commerce/commerce-mcp/commerce-mcp-overview",
+   "official": true,
+   "excerpt": "Commerce MCP overview\n[Coming Soon]{class=\"badge informative\" title=\"This feature is coming soon and is subject to change.\"}\nThe Commerce MCP for Adobe Commerce helps developers build custom agentic experiences from discovery to checkout using real-time commerce data and tools. In this video, a custom AI Assistant uses the Commerce MCP to turn conversations into conversions by understanding shopper intent and delivering relevant product recommendations.\nWho is this video for?\n- Commerce store owners\n- Merchandisers\n- Digital marketers\nVideo content\n- Conversational product discovery using natural language instead of filters and search bars\n- Context-aware session management retaining cart contents and shopper preferences\n- Bidirectional cart management by typing, with no page reloads or confirmation modals\n- Checkout completed within the conversation, without navigating away\n- Post-purchase contextual guidance specific to the product purchased\nrecommendation-more-help\ncommerce-learn-help-ai-and-agentic-commerce"
+  },
+  {
+   "sid": "S5",
+   "url": "https://partners.adobe.com/digitalexperience",
+   "official": true,
+   "excerpt": "ADOBE PARTNER PROGRAM\nUnlock value with partners\nJoin the Adobe Digital Experience Partner Program to grow your business and deliver personalized, seamless customer experiences. Gain access to Adobe\u2019s tools, training, and collaboration to innovate, integrate scalable solutions, and drive success. Ready to lead in digital transformation? Let\u2019s make it happen\u2014together.\nGrow your business by partnering with Adobe!\nGet a sneak peek of how our unified partner program and reimagined Partner Experience Hub can help you establish and strengthen your Adobe business.\nGain the knowledge to grow your business\nWith diverse learning resources across Adobe products, certifications paths for individual learners, and a wealth of tools and resources, we\u2019ve got what you need to learn, evolve, and succeed.\nOn-demand learning. Access learning modules and train at your own pace using our library of courses, webinars, and other materials.\nPartner certification and accreditation journeys. Choose a credential journey for a personalized step-by-step path that will help you grow your skills.\nHands-on resources. Enhance your skills with access to demo tools and Adobe application sandboxes and downloads.\nClose"
+  },
+  {
+   "sid": "S6",
+   "url": "https://github.com/magento/devdocs/blob/master/src/guides/v2.4/get-started/create-integration.md",
+   "official": true,
+   "excerpt": "| group | web-api | \n|---|---|\n| subgroup | Web APIs | \n| title | Create an integration | \n| menu_title | Create an integration | \n| menu_order | 1 | \n| redirect_to | https://developer.adobe.com/commerce/webapi/get-started/create-integration/ | \n| status | migrated | \nAn integration enables third-party services to call the Magento web APIs. The Magento APIs currently supports Accounting, Enterprise Resource Planning (ERP), Customer Relationship Management (CRM), Product Information Management (PIM), and marketing automation systems out of the box.\nImplementing a simple integration requires little knowledge of PHP or Magento internal processes. However, you will need a working knowledge of\n- [Magento REST or SOAP Web APIs]({{ page.baseurl }}/get-started/bk-get-started-api.html)\n- [Web API authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication.html)\n- [OAuth-based authentication]( {{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html )\nBefore you begin creating a module, make sure that you have a working installation of Magento 2.0, and the [Magento System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html).\nTo create a"
+  },
+  {
+   "sid": "S7",
+   "url": "https://partners.adobe.com/digitalexperience/articles/support/commerce-sandbox-access-and-testing",
+   "official": true,
+   "excerpt": "SUPPORT GUIDE\nAdobe Commerce: Sandbox access and testing\nUpdated: August 19, 2026\nAccess to Adobe Commerce Sandbox\nAdobe wants to support the Magento community and will provide an Adobe Commerce sandbox to build and test your integration. To qualify for a sandbox you must meet the below criteria:\n- Join the Adobe Technology Partner Program partner program by registering here.\n- Be in good standing in the Commerce Marketplace.\n- Within six months of getting a sandbox have an extension submitted and approved in the Commerce Marketplace.\nIf a partner does not have an extension in the Commerce Marketplace at six months, we will remove the sandbox access, and it will not be restored. After that, sandbox access is a Silver partnership benefit.\nIf your company has lost sandbox access and you believe you qualify for a sandbox under the conditions outlined above, please request access by filing a ticket here.\nTo get sandbox access, please submit a support ticket. Detailed instructions are here. Once you get your sandbox, the below articles might be helpful:\n- To refresh your cloud sandbox you can see the Reset Environment on Cloud article.\n- Check out our Deployment Troubleshooter article if you have a stuck deployment.\n- And then all topics are covered in the Commerce Support Help Center.\nPartners who have access to Enterprise Edition (EE) entitlements can test their extension through the following methods as well:\n- Build your integration and then test it using the Cloud Docker Environment. \n - The steps for Cloud Docker development can be found in this article.\n - Support information on using Cloud Docker can be found here.\n- Build your integration and utilize the Extension Quality Program (EQP). More information on that program can be found here. \n - Follow a step by step process, detailed here, to create and test your extension."
+  },
+  {
+   "sid": "S8",
+   "url": "https://experienceleague.adobe.com/en/docs/commerce-admin/systems/integrations",
+   "official": true,
+   "excerpt": "Integrations\nDefining an integration in the Commerce Admin establishes the location of OAuth credentials and redirect URL for third-party integrations, and identifies the available API resources that are needed for the integration. For more detailed information about the integration registration process, see OAuth-based authentication in the Commerce developer documentation.\n{width=\"700\" modal=\"regular\"}\nOnboarding workflow\n- Authorize the integration - Go to the System > Extensions > Integrations page, find the relevant integration, and authorize.\n- Verify and establish login - When prompted, accept the access requested. If redirected to a third-party, log in to the system, or create an account. After a successful login, you return to the integration page.\n- Receive confirmation of authorized integration - The system sends notification that the integration has been authorized successfully. After setting up an integration and receiving the credentials, it is no longer necessary to make calls to access or request tokens.\nAdd an integration\n- On the Admin sidebar, go to System > Extensions > Integrations. {width=\"600\" modal=\"regular\"}\n- Enter the following integration information: \n "
+  }
+ ],
+ "errors": [
+  "fetch https://developer.adobe.com/commerce/webapi/get-started/authentication: 404 unsupported content-type ",
+  "fetch https://developer.adobe.com/commerce/webapi/get-started: 404 unsupported content-type ",
+  "fetch https://business.adobe.com/products/commerce.html: 0 ReadTimeout: The read operation timed out"
+ ]
+}

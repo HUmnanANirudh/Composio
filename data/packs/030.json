@@ -1,0 +1,69 @@
+{
+ "id": 30,
+ "app": "Vonage",
+ "category": "Communications and Messaging",
+ "hint": "developer.vonage.com",
+ "composio": {
+  "found": false,
+  "slug": null,
+  "name": null,
+  "tools": null,
+  "triggers": null,
+  "auth": [],
+  "managed_app": null,
+  "url": null,
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://developer.vonage.com/en/getting-started/concepts/authentication",
+   "official": true,
+   "excerpt": "Authentication\nVonage APIs support different authentication methods depending on which product you are using:\n| API{filter} | API Key and Secret (Header) | JSON Web Token (JWT) | \n|---|---|---|\n| Accounts | | | \n| Application | | | \n| Audit | | | \n| Channel Manager | | | \n| Conversation | | | \n| Conversion | | | \n| Device Location Retrieval | | | \n| Dispatch | | | \n| External Accounts | | | \n| Identity Insights | | | \n| Media | | | \n| Messages1 | | | \n| Numbers | | | \n| Number Insight | | | \n| Pricing v1 | | | \n| Pricing v2 | | | \n| Programmable SIP | | | \n| Quality on Demand | | | \n| Redact | | | \n| Reports | | | \n| SMS | | | \n| Verify (Legacy) | | | \n| Verify2 | | | \n| Voice3 | | | \n| Video | | | \n1 Messages supports both JWT and Basic authentication, however basic authentication does not support webhooks or advanced features such as ACLs. For most use-cases we recommend JWT Authentication. See Messages API Authentication\n2 Verify supports both JWT and Basic authentication, however basic authentication does not support webhooks or advanced features such as ACLs.\n3 SIP Trunking uses Digest Authentication method with the API Key as user and API Secret as password.\nContents\nIn this \n\n# A command with parameters\nvonage jwt create `\n--app-id='00000000-0000-0000-0000-000000000000' `\n--private-key=./private.key\n\n# A command with parameters\nvonage jwt create `\n--app-id='00000000-0000-0000-0000-000000000000' `\n--private-key=./private.key `\n--sub='Alice' `\n--acl='{\\\"paths\\\":{\\\"\\/*\\/users\\/**\\\":{},\\\"\\/*\\/conversations\\/**\\\":{},\\\"\\/*\\/sessions\\/**\\\":{},\\\"\\/*\\/devices\\/**\\\":{},\\\"\\/*\\/push\\/**\\\":{},\\\"\\/*\\/knocking\\/**\\\":{},\\\"\\/*\\/legs\\/**\\\":{}}}'\n\n# The `claims` field is optional and can be omitted as defaults are set\npaths = { ... }\nclaims = {'sub': 'Alice', 'paths': paths}\nvonage_jwt = jwt_client.generate_application_jwt(claims)\nThe Vonage JWT JDK library can be used to generate a signed JWT with claims.\n@builder = Vonage::JWTBuilder.new(application_id: YOUR_APPLICATION_ID, private_key: YOUR_PRIVATE_KEY)\n@token = @builder.jwt.generate\n( ... snippet is truncated)"
+  },
+  {
+   "sid": "S2",
+   "url": "https://www.vonage.com/communications-apis/pricing",
+   "official": true,
+   "excerpt": "API Pricing to Help You Connect With Your Customers\nHow Does API Pricing Work From Vonage?\nHow we price API provision differs slightly depending on the particular API in question. All API pricing is by usage, with big value and no surprises a key part of our philosophy. Check out our API cost rundown:\nUS LVN\nUsing PSTN Leg\n(additional Messaging & Voice rates apply for attempted and successful verifications)\nGlobal IP Message\nOriginal Carrier Insight\nAPI Pricing Models: Understanding Approaches to API Charges\nWith Vonage as your provider, API costs are generally straightforward and simple to understand. They\u2019re all based on a pay as you go API pricing model, meaning you\u2019re charged based on usage. Pay as you go isn\u2019t the only API pricing model, however. Let\u2019s take a quick look at the four most common:\nThis is probably the most popular API pricing model. Here, API users pay according to their actual usage of the API. There\u2019s no set or fixed fee. This makes this model attractive as if the API is only occasionally used, it doesn\u2019t cost as much.\nPay-per-use and pay-per-call are prime examples of the pay as you go API pricing model. In the case of the latter, the user is charged whenever "
+  },
+  {
+   "sid": "S3",
+   "url": "https://developer.vonage.com/en/mcp-server/overview",
+   "official": true,
+   "excerpt": "Vonage MCP Server\nThe Vonage MCP Server enables AI agents and developer tools to discover, describe, and use Vonage capabilities via the Model Context Protocol.\nAgent-native docs search (Documentation MCP)\nTool discovery & granular permissions\nIDE & Claude Desktop integration\nHigh-level guides that clarify core Vonage API concepts, ideal for gaining a deeper understanding before planning your implementation.\nStep-by-step, practical guides to connect MCP servers and use them from your IDE or AI assistant."
+  },
+  {
+   "sid": "S4",
+   "url": "https://developer.vonage.com/en/voice/voice-api/webhook-reference",
+   "official": true,
+   "excerpt": "Voice API Webhooks Reference\nVonage uses webhooks alongside its Voice API to enable your application to interact with the call. There are two required, and one optional, webhook endpoints:\n- Answer webhook is sent when a call is answered. This is for both incoming and outgoing calls.\n- Event webhook is sent for all the events that occur during a call. Your application can log, react to or ignore each event type.\n- Fallback URL is used when either the Answer or Event webhook fails or returns an HTTP error status.\n- Errors are also delivered to the event webhook endpoint if they occur.\nFor more general information, check out our webhooks guide.\nSigned Webhooks\nSigned webhooks are a way to verify that the request is coming from Vonage and its payload has not been tampered with during transit. Voice API, as well as Messages and Dispatch APIs, support signed callbacks by default. See Decoding signed webhooks to learn how to decode an incoming JWT signature.\nAnswer Webhook\nWhen an incoming call is answered, an HTTP request is sent to the answer_url you specified when setting up the application. For outgoing calls, specify the answer_url when you make the call.\nBy default, the answer webh"
+  },
+  {
+   "sid": "S5",
+   "url": "https://developer.vonage.com/en/getting-started/overview",
+   "official": true,
+   "excerpt": "Working with Vonage APIs\nWelcome to the Vonage API platform! Vonage provides a suite of APIs that enable you to communicate with your customers using your preferred channels.\nThis site provides comprehensive documentation for all of our APIs and you\u2019ll find everything you need to know about working with a particular API in the corresponding section.\nHowever, there are some fundamental concepts that you need to understand and tools that might help you that apply across all our APIs:\nSigning up for an account\nTo work with our APIs, you will need to sign up for an account. This will give you an API key and secret that you can use to access our APIs.\nAccessing the Developer Dashboard\nOnce you have an account, you can log into the Developer Dashboard. The Developer Dashboard is a GUI-based approach to managing your account, where you can:\n- View your API key and secret. You will need these to authenticate your requests to our APIs\n- Manage your account balance. Access to our APIs is charged on a per-request basis. We\u2019ll give you some free credit when you first open your account and you can top up when you run low.\n- Rent virtual numbers. You can use virtual numbers provided by Vonage to"
+  },
+  {
+   "sid": "S6",
+   "url": "https://www.vonage.com/pricing",
+   "official": true,
+   "excerpt": "Plans and Pricing\nExplore the plans and pricing available for each of our product categories below.\n\nCommunications APIs\n\nGet a snapshot of pricing for all of our APIs. Pay only for what you use, nothing more.\n\nUnified Communications\n\nVonage Business Communications\nLooking to transform your employee and customer experiences? Upgrade your office communications to a single, flexible platform that offers:\n- Unlimited calls and SMS*\n- Video collaboration\n- 50+ phone features\n- Team messaging\n- Mobile and desktop apps\n\nContact Centers"
+  },
+  {
+   "sid": "S7",
+   "url": "https://developer.vonage.com/en/mcp-server/conceptual-guides/introduction-to-vonage-mcp?_sp=a84e2595-0835-4be6-bc82-d85e27041979",
+   "official": true,
+   "excerpt": "Introduction to the Vonage MCP Servers\nWhat Is the Model Context Protocol (MCP)?\nThe Model Context Protocol (MCP) is an open standard that defines how AI models can discover and use external tools, APIs, and data sources in a consistent, secure way.\nJust as OpenAPI helps developers understand how to call an API, MCP gives AI agents a structured way to understand and use tools.\nEach MCP tool clearly defines:\n- What it does\n- What inputs it requires\n- What it returns\nBy using this shared structure, agents can make API calls safely \u2014 without any hardcoded integrations.\nWhat are the Vonage MCP Servers?\nVonage provides a few different individual MCP implementations, based on your needs. We have a Documentation Server which exposes our documentation to LLM models so you can get up-to-date answers, and a Server API Binding MCP server that expose Vonage APIs and developer tools in an AI-native format that can be used directly by MCP-compatible clients \u2014 such as Claude Desktop or VS Code\u2019s MCP extension.\nIn practice, this means developers and AI agents can query documentation, manage Vonage applications, and automate communication tasks simply by using natural language, providing several be"
+  },
+  {
+   "sid": "S8",
+   "url": "https://developer.vonage.com/en/tutorials/silent-authentication/introduction",
+   "official": true,
+   "excerpt": "Introduction\nUnlike traditional verification methods that rely on SMS or voice calls, silent authentication allows you to verify users through their mobile data connection, without requiring any user interaction. This leads to a faster onboarding experience, improving both security and user experience.\nIn this tutorial, you'll learn how to implement silent user verification in a mobile app using the Vonage Verify API, with a backend written in Node.js and a client built in Android (Kotlin). The demo app implements Silent Authentication verification with SMS as a fallback.\nThe tutorial is divided into three main sections:\n- the backend, where you'll set up the environment and build a backend,\n- the mobile app section, where you'll build a modern Android application, create a mobile UI, and integrate the Vonage SDKs,\n- testing the whole project.\nThe full source code for this tutorial is available on a GitHub repository. You can explore the repository directly to see the complete implementation.\nGetting Started with Silent Authentication\nSilent Authentication takes quite a bit to understand. This tutorial shows you how to build an integration from scratch with Nodejs and Kotlin"
+  }
+ ],
+ "errors": []
+}

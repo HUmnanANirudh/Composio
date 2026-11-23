@@ -1,0 +1,74 @@
+{
+ "id": 66,
+ "app": "Neo4j",
+ "category": "Developer, Infra and Data platforms",
+ "hint": "neo4j.com/docs/api",
+ "composio": {
+  "found": true,
+  "slug": "NEO4J",
+  "name": "Neo4J",
+  "tools": 21,
+  "triggers": 0,
+  "auth": [
+   "OAUTH2",
+   "BASIC",
+   "API_KEY",
+   "S2S_OAUTH2"
+  ],
+  "managed_app": "No",
+  "url": "https://docs.composio.dev/toolkits/neo4j.md",
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://neo4j.com/docs/aura/api/authentication",
+   "official": true,
+   "excerpt": "Authentication\nThe Aura API uses OAuth 2.0 for API authentication.\nCreating credentials\nAll tiers can create Aura API credentials. API credentials are linked to the user account, inheriting its capabilities and roles. The API credentials never expire unless you delete them.\nTo create credentials in the Aura console go to the Client credentials page in your browser, or:\n- Go to your profile menu from the top right corner of your screen\n- Select Account Settings\n- Select the Client credentials tab and Aura API\n- Select the Create client credential button\n- Enter a Client Name, and select Create.\n- Save the Client ID and Client Secret you are given in the resulting modal.\n| | You cannot retrieve your Client Secret after you close the modal, so save it securely. | \nAuthenticating API requests\nTo authenticate API requests to the Aura API, you must provide a Bearer Token in the Authorization header of each request as shown below:\nAuthorization: Bearer <access_token>\n| | You can use the Authorize button on the Aura API page to authenticate and test endpoints directly using your client ID and client secret. The UI sets the Authorization header for you. | \nToken endpoint\nYou can use the fol"
+  },
+  {
+   "sid": "S2",
+   "url": "https://neo4j.com/pricing",
+   "official": true,
+   "excerpt": "## Graph database pricing plans\n\n[ View pricing details ](https://console.neo4j.io/pricing) Try for free\n\n[ View pricing details ](https://console.neo4j.io/pricing) [ Try for free ](https://console.neo4j.io/?ref=pricing-page)---\n\n[ Start learning ](https://console.neo4j.io/?ref=pricing-page) [ Try for free ](https://console.neo4j.io?ref=aura-pricing) [ Try for free ](https://console.neo4j.io/?ref=pricing-page) [ Contact us ](https://neo4j.com/contact-us/)\n\n- **Free**: Start with a free plan to learn and explore graph data.\n    - **Professional**: Build high-performance applications with a production-ready cloud database.\n    - **Business Critical**: Ideal for mission-critical applications requiring a highly available database, robust enterprise controls, and 24/7 support. Perfect for running production workloads in a fully managed, secure, and flexible environment where uninterrupted access and security are essential.\n    - **Virtual Dedicated Cloud**: Ideal for customers needing highly customized, dedicated infrastructure with Virtual Private Cloud (VPC) and specific networking requirements. It offers a highly available database, robust security controls, and premium 24/7 support.\n\nFor more details on AuraDB capabilities, visit [Neo4j AuraDB.](https://neo4j.com/product/auradb/)\n- **How does Neo4j AuraDB Professional differ from the free plan?**\n    The free plan places limits on the number of nodes and relationships. It is suitable for small projects, learning, and prototyping. In contrast, AuraDB Professional offers enhanced performance and best-effort support, making it ideal for building high-performance, production-ready applications.\n- **Is there a free trial for the paid plans?**\n    Neo4j provides free trials on the AuraDB Professional tier as part of the paid plans, allowing users to explore the features and benefits before committing. The AuraDB Professional trial is available only in certain geographies for now. Contact [\\[email protected\\]](https://neo4j.com/cdn-cgi/l/email-protection#7201131e1701321c171d46185c111d1f) or [sign up directly](https://console.neo4j.io/).\n- **Can you use AuraDB on multiple cloud providers and marketplaces?**\n    AuraDB is available on AWS, Microsoft Azure, and Google Cloud. You can deploy AuraDB in over 60 global cloud regions. You can easily access and deploy AuraDB Professional through the following marketplaces:"
+  },
+  {
+   "sid": "S3",
+   "url": "https://github.com/neo4j/mcp",
+   "official": true,
+   "excerpt": "Neo4j MCP gives AI assistants and LLM-powered tools direct, structured access to your Neo4j graph database. By implementing the Model Context Protocol (MCP), it acts as a bridge between any MCP-compatible client, such as Claude, Cursor, or VS Code with MCP support, and your Neo4j instance.\n- Explore your graph schema - discover node labels, relationship types, and property keys\n- Let AI reason on your data model without prior knowledge\n- Run Cypher queries - execute, read, and write queries against your database in response to natural language prompts\n- Inspect and analyze data - retrieve nodes, relationships, and paths to answer questions, generate summaries, or feed data to other workflows\n- get-schema \u2014 introspect labels, relationship types, property keys\n- read-cypher \u2014 execute read-only Cypher queries that do not modify database data, enforced via EXPLAIN and Neo4j's query-type classification. Note: custom procedures or functions incorrectly classified as read-only by Neo4j may bypass this check; ensuring correct classification is the responsibility of the procedure/function maintainer.\n- write-cypher \u2014 execute write Cypher queries (disabled if NEO4J_MCP_READ_ONLY=true)\n- list-gds-procedures \u2014 list available GDS procedures\nInstall with PyPI:\npip install neo4j-mcp-server\nFor manual installation or using brew, please see MCP documentation -> Installation.\nCreate / edit mcp.json:\n{\n \"servers\": {\n \"neo4j\": {\n \"type\": \"stdio\",\n \"command\": \"python\",\n \"args\": [\"-m\", \"neo4j_mcp_server\"],\n \"env\": {\n \"NEO4J_MCP_URI\": \"bolt://localhost:7687\",\n \"NEO4J_MCP_USERNAME\": \"neo4j\",\n \"NEO4J_MCP_PASSWORD\": \"password\",\n \"NEO4J_MCP_DATABASE\": \"neo4j\",\n }\n }\n }\n}\nSee MCP documentation > Configuration for more details.\n- Documentation: The official Neo4j MCP documentation.\n- Discord: The Neo4j discord channel.\n- Contributing Guide: Contribution workflow, development environment, mocks and testing.\nFor issues and feedback, you can also create a GitHub issue with reproduction details (omit sensitive data)."
+  },
+  {
+   "sid": "S4",
+   "url": "https://neo4j.com/docs/getting-started",
+   "official": true,
+   "excerpt": "Get started with Neo4j\nExplore the capabilities of graph databases\nWork with data\nImport data to Neo4j\nRead more about the different ways of importing data to your Neo4j graph database.\nCreate applications with Neo4j\nRun through detailed examples of how to integrate Neo4j with your preferred programming language.\nData science with Neo4j\nLearn how to use Neo4j Graph Data Science, a library of graph algorithms for analysts and data scientists."
+  },
+  {
+   "sid": "S5",
+   "url": "https://neo4j.com/docs/graphql/7/aura-graphql/api-usage",
+   "official": true,
+   "excerpt": "Using your GraphQL API\n| | This is the documentation of the GraphQL Library version 7. For the long-term support (LTS) version 5, refer to GraphQL Library version 5 LTS. | \nQuerying your GraphQL API\nWhen the status for the GraphQL API is \"Ready\" you can send GraphQL requests to it. As all requests are subject to authentication, you must include an API key or JWT token.\nWith an API key authentication provider\nAdd x-api-key: YOUR_API_KEY to the header of the request.\nFor example, with cURL:\ncurl --location <YOUR_GRAPHQL_API_URL> --header 'Content-Type: application/json' --header 'x-api-key: <YOUR_API_KEY>' --data '<YOUR_GRAPHQL_QUERY>'\nWith a JWKS authentication provider\nObtain a JWT from your identity provider.\nUsing the JWT, add Authorization: Bearer <YOUR_JWT> to the headers of the request.\nFor example, with cURL:\ncurl --location <YOUR_GRAPHQL_API_URL> --header 'Authorization: Bearer <YOUR_JWT>'--header 'Content-Type: application/json --data '<YOUR_GRAPHQL_QUERY>'"
+  },
+  {
+   "sid": "S6",
+   "url": "https://neo4j.com/docs/query-api/current",
+   "official": true,
+   "excerpt": "IntroductionIntroduced in 5.19\n| | The Query API is enabled by default. It was however disabled by default on self-managed instances versions < 5.25. To enable it on those deployments, add QUERY_API_ENDPOINTS to the configuration setting server.http_enabled_modules. | \nThe Query API allows to execute Cypher statements against a Neo4j server through HTTP requests. This API supersedes the deprecated HTTP API.\nThe main use case of the API is for developing client applications in languages for which there is no supported library. If there exists an official library (driver) for the language you are using, consider using that instead \u2014 see Create applications.\nOn self-managed instances, the API uses port 7474 for HTTP and port 7473 for HTTPS by default. Ports can be altered via the configuration settings server.http.listen_address and server.https.listen_address.\nAura instances support only HTTPS through port 443.\nThis guide assumes that you have:\n- A running instance of Neo4j \u2014 If you don\u2019t have one, install Neo4j locally or sign up for an Aura cloud instance.\n- Some familiarity with Cypher \u2014 If you are new to it, check out Getting started \u2192 Cypher.\n| | The Query API supports HTTP/2 as well as HTTP/1.1, unless either is explicitly disabled in the server configuration setting server.http_enabled_transports. It\u2019s up to the client to initiate a connection with the preferred protocol. | \nGlossary\n- Aura\n- Aura is Neo4j\u2019s fully managed cloud service. It comes with both free and paid plans.\n- Cypher\n- Cypher is Neo4j\u2019s graph query language that lets you retrieve data from the database. It is like SQL, but for graphs.\n- ACID\n- Atomicity, Consistency, Isolation, Durability (ACID) are properties guaranteeing that database transactions are processed reliably. An ACID-compliant DBMS ensures that the data in the database remains accurate and consistent despite failures.\n- causal consistency\n- A database is causally consistent if read and write queries are seen by every member of the cluster in the same order. This is stronger than eventual consistency.\n- transaction\n- A transaction is a unit of work that is either committed in its entirety or rolled back on failure. An example is a bank transfer: it involves multiple steps, but they must all succeed or be reverted, to avoid money being subtracted from one account but not added to the other."
+  },
+  {
+   "sid": "S7",
+   "url": "https://neo4j.com/docs/mcp/current",
+   "official": true,
+   "excerpt": "Introduction\nNeo4j MCP implements the Model Context Protocol (MCP), an open standard that lets applications connect to external data sources and tools. It bridges any MCP-compatible client and your Neo4j instance, giving that client direct, structured access to your graph database.\nAI assistants and agents are the most common MCP clients today, tools like Claude, Cursor, or VS Code with MCP support. But MCP itself doesn\u2019t require AI. Any application that implements the MCP client specification can connect to Neo4j through it, whether or not a model is involved.\nNeo4j MCP is built for:\n- Developers who want to query Neo4j conversationally while prototyping.\n- Data scientists and analysts exploring graph data without deep Cypher\u00ae expertise.\n- Platform teams deploying shared tooling that needs structured, auditable access to Neo4j.\n- Application builders using Neo4j as a knowledge source or reasoning backend, including in multi-agent systems.\nA connected client can:\n- Explore your graph schema - discover node labels, relationship types, and property keys, and reason about your data model without knowing it in advance.\n- Run Cypher queries - execute reads and writes against your database from natural language prompts or programmatic calls.\n- Inspect and analyze data - retrieve nodes, relationships, and paths to answer questions, generate summaries, or feed other workflows.\nPrerequisites\n- A running Neo4j database instance. Options include Aura, neo4j-desktop or self-managed.\n- The APOC plugin installed in the Neo4j instance.\n- Any MCP-compatible client, e.g. VSCode with MCP support.\nOptional requirements\nThe Graph Data Science (GDS) library is optional. See GDS requirement for details.\nExamples for natural language prompts\nHere are some example prompts you can try in Copilot or any other MCP client:\n- \"What does my Neo4j instance contain? List all node labels, relationship types, and property keys.\"\n- \"Find all Person nodes and their relationships in my Neo4j instance.\"\n- \"Create a new User node with a name 'John' in my Neo4j instance.\""
+  },
+  {
+   "sid": "S8",
+   "url": "https://neo4j.com/developer/genai-ecosystem/model-context-protocol-mcp",
+   "official": true,
+   "excerpt": "Model Context Protocol (MCP) Integrations for the Neo4j Graph Database\nWhat is the Model Context Protocol\nThe Model Context Protocol was introduced by Anthropic in Nov 2024 to ease the integration of LLM Assistants with tools providing access to data, services, APIs and local systems.\nIt comes with a open source specification, and a number of SDKs (Python, TypeScript, Java, etc.) to implement MCP Servers and clients.\nThe MCP architecture consists of the MCP Host program which can be configured with a number of MCP Servers that provide capabilities like tools, resources, and prompts.\nIf you want to dive deeper, here is a comprehensive overview with explanations and examples with Neo4j.\nWhenever a user (or agent) requests in an interaction some task that could be executed by or through using a MCP Server capability, the LLM will select the tool, extract parameters and invoke the tool through an MCP Client connected to the MCP Server.\nLarge Cloud, Infrastructure and LLM Providers announced support for MCP in their offerings.\nAlso Agent Frameworks like LangChain, CrewAI, Pydantic.AI and Agent Development Kit (ADK) and others are supporting MCP as tools.\nThere are still a number of open"
+  }
+ ],
+ "errors": []
+}

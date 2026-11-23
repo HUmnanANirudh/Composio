@@ -1,0 +1,73 @@
+{
+ "id": 94,
+ "app": "Consensus",
+ "category": "AI, Research and Media-native",
+ "hint": "consensus.app (OAuth requested)",
+ "composio": {
+  "found": true,
+  "slug": "CONSENSUS",
+  "name": "Consensus",
+  "tools": 1,
+  "triggers": 0,
+  "auth": [
+   "API_KEY"
+  ],
+  "managed_app": null,
+  "url": "https://docs.composio.dev/toolkits/consensus.md",
+  "mcp_variant": "CONSENSUS_MCP",
+  "mcp_variant_auth": [
+   "DCR_OAUTH"
+  ]
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://docs.consensus.app/enterprise/security",
+   "official": true,
+   "excerpt": "Consensus is a multi-tenant SaaS application: a web app, an MCP server, and a REST API, all hosted on Google Cloud Platform and reached over HTTPS. Nothing is installed on your premises and no VPN is required. This page summarizes the controls; the full picture is available under NDA for your vendor review.\nCompliance\nConsensus is SOC 2 Type II compliant. The audit covers the security, availability, and confidentiality of the Consensus service. Request the current report and bridge letter through sales; we share it under NDA as part of your vendor review. The hosting platform, Google Cloud, holds its own certifications, including ISO 27001, SOC 1/2/3, and PCI DSS.\nWhat is sent\nA search request carries the user\u2019s query and any filters (year range, study type, journal quartile, and so on), plus a credential. Requests travel over HTTPS:\n- MCP server (https://mcp.consensus.app/mcp): an API key or a per-user OAuth token, sent as Authorization: Bearer.\n- REST API (https://api.consensus.app/v1/search): an API key, sent in the x-api-key header.\nWhen your users upload documents or search their Library in the Consensus web app, that content stays in their private Library. The MCP server and "
+  },
+  {
+   "sid": "S2",
+   "url": "https://docs.consensus.app/api-plans-and-access",
+   "official": true,
+   "excerpt": "The API is self-serve on every Consensus plan. Your plan sets how many calls you get each month, how many papers each request can return, and which features you can use.\nGet a key\n1\nOpen the dashboard\nSign in to Consensus and go to consensus.app/api-mcp, or click your profile icon and choose API & MCP Dashboard.\n2\nCreate a key\nClick Create API key, name it, and copy it. If you already have a key, open Keys and clients and click New key. The full key is shown once.\n3\nSend it on every request\nPass the key in the x-api-key header. Requests without a valid key return 401.\nWhat each plan includes\n* Returned on the first 50 search results and on Thread citations when you\u2019ve selected your institution in Consensus settings. An organization key uses the institution of the person who created it.\n** \nGET /v1/papers/full_text, at 1 credit per paper returned.\n*** GET /v1beta/papers/citations and GET /v1beta/papers/references, at 1 credit per 100 papers returned. Both are in beta, so their request and response schemas may change in the coming days.\nEvery plan can use every search filter. Compare plans at consensus.app/pricing.\nHow calls are counted\n- One call per 100 papers returned, rounded up,"
+  },
+  {
+   "sid": "S3",
+   "url": "https://docs.consensus.app/consensus-mcp",
+   "official": true,
+   "excerpt": "One hosted server covers every field of science, so you don\u2019t need separate PubMed, OpenAlex or Semantic Scholar servers. Your assistant gets ranked papers it can filter by study design, sample size and journal quality, and cites real studies in its answers. Connect your client below. You\u2019ll be searching in under 2 minutes.\nWhat you can build with the Consensus MCP\nClaude\nChatGPT\nMicrosoft 365 Copilot\nPerplexity\nHow Consensus compares\nIn blinded evaluations on real user queries, Consensus search returns more relevant papers than Google Scholar and than frontier models with web search. See Benchmarks.\nMore relevant than Google Scholar\nBeats GPT-5.5 and Opus 4.8, 10x faster\nConnect Your Client\nClaude Desktop\nOpen Settings\nBrowse connectors\nFind Consensus\nSign in\nStart searching\nClaude Code\n/mcp command inside Claude Code.\nChatGPT\nOpen ChatGPT\nFind Consensus\nSign in\nStart searching\nCodex\n~/.codex/config.toml:\nCursor\n~/.cursor/mcp.json:\nVS Code (GitHub Copilot)\nWindsurf\nGemini Spark\nOpen Connected Apps\nAdd a custom app\nApprove the connection\nStart searching\nPerplexity\nOpen the Consensus connector\nAdd the connector\nSign in with Consensus\nConfirm the connection\nOpen Computer\nAsk a resear"
+  },
+  {
+   "sid": "S4",
+   "url": "https://docs.consensus.app/api-reference/search.md",
+   "official": true,
+   "excerpt": "> The supported endpoint for searching academic papers. Use this instead of the legacy `/v1/quick_search` endpoint, which is deprecated and will be removed on 2027-02-07.\n\n````yaml /openapi.json get /v1/search\nopenapi: 3.1.0\ninfo:\n  title: Consensus API\n  description: >-\n    Search usage is billed in calls: one call per 100 papers returned, rounded\n    up, with a minimum of 1 call per request. Usage counts against your plan's\n    included monthly calls. Free plans include 30 calls per month, Pro and Teams\n    plans include 500, and Deep plans include 2,000. Paid plans with an active\n    metered API subscription may continue past the included limit; additional\n    calls are billed at $0.05 per call. Enterprise API keys have unlimited\n    access.\n  version: '1.0'\nservers:\n  - url: https://api.consensus.app\nsecurity: []\npaths:\n  /v1/search:\n    get:\n      summary: Search\n      description: >-\n        The supported endpoint for searching academic papers. Use this instead\n        of the legacy `/v1/quick_search` endpoint, which is deprecated and will\n        be removed on 2027-02-07.\n      operationId: v1_search\n      parameters:\n        - name: query\n          in: query\n          required: true\n          schema:\n            type: string\n            description: Query for research papers.\n            title: Query\n          description: Query for research "
+  },
+  {
+   "sid": "S5",
+   "url": "https://help.consensus.app/en/articles/16516328-the-consensus-api",
+   "official": true,
+   "excerpt": "The Consensus API lets you integrate Consensus search directly into your own applications, tools, and workflows. Use it to programmatically search academic research and retrieve relevant papers without needing to run each search manually in Consensus.\nAPI access is available directly from your Consensus account. Your API usage and Consensus MCP usage share the same monthly pool of calls. The number of calls included each month depends on your subscription tier.\nFor full technical documentation, endpoints, parameters, and response details, read our API docs here.\nHow to create an API key\nYou can create and manage API keys from the API & MCP Dashboard.\n- Click your profile icon (bottom-left corner)\n- Select API & MCP Dashboard\n- Open the 'Keys and Clients' tab\n- Click 'New key'\n- Give your API key a name so you can identify what you're using it for\n- Create the key and copy it somewhere secure\nYour full API key is only shown once. Make sure you copy it when you create it.\nIf you lose an API key, you won't be able to view it again. Instead, revoke the existing key and create a new one.\nMake your first API request\nOnce you've created an API key, you can use it to authenticate requests "
+  },
+  {
+   "sid": "S6",
+   "url": "https://consensus.app/home/mcp",
+   "official": true,
+   "excerpt": "\u2192\nGive your AI assistant 400M scholarly sources\nSearch, synthesize, and build research outputs with cited papers, right inside the AI assistant you already use.\n\u2192\nGive your AI assistant 400M scholarly sources\nSearch, synthesize, and build research outputs with cited papers, right inside the AI assistant you already use.\n\u2192\nGive your AI assistant 400M scholarly sources\nSearch, synthesize, and build research outputs with cited papers, right inside the AI assistant you already use.\nSimple setup\nPick your assistant. Follow the steps.\nSimple setup\nPick your assistant. Follow the steps.\nSimple setup\nPick your assistant. Follow the steps.\nChatGPT\nClaude\nCopilot\nPerplexity\nGemini\nMCP Clients\nGetting started with ChatGPT\nAdd the Consensus connector, then ask research questions with cited papers in any chat.\n1\nConnect to Consensus\nPlugins\n\u2192\nSearch\n\u2192\nConsensus\nIn ChatGPT, open Plugins from the sidebar or composer. Search for Consensus, open the listing, then click Connect and verify your account.\n2\nAdd Consensus to a prompt\nClick \"+\"\n\u2192\nMore\n\u2192\nConsensus\nMention @Consensus in a chat, or click + and search for Consensus. Then use any prompt or the workflows below.\nChatGPT\nClaude\nCopilot\nPerplexit"
+  },
+  {
+   "sid": "S7",
+   "url": "https://docs.consensus.app/search-basics/research-an-author",
+   "official": true,
+   "excerpt": "Sometimes you need to understand one person\u2019s footprint: what they\u2019ve published, and what influence it\u2019s had. Instead of scouring ResearchGate or Google Scholar, ask Consensus. The example uses a PhD candidate with a handful of papers, not a famous name, to show it works for early-career researchers too.\nYou\u2019ll learn how to:\n- Run an author-scoped search filtered by topic\n- Rank a researcher\u2019s papers by citation impact\n- Visualize the citation graph and regenerate it with several seeds\nStep 1: Find the author\u2019s papers on a topic\nStep 2: Trace the paper\u2019s impact\nStep 3: Triangulate with the citation graph\nScroll up to the original thread, click the paper, and click Graph. A new tab opens with the 15 papers most related to it, forward and backward. Open the sidebar, add two or three more papers as seeds, and click Regenerate graph. The graph now shows papers related to all of the seeds together, which is a fast way to find work on a narrow niche.\nReading and refining the graph\n- Horizontal axis is time; node size is citation count; opacity shows how connected a paper is.\n- Arrows point from a paper to the paper it cites. Hover a node to highlight its connections.\n- + Seed promotes a result to a seed; the minus button excludes it; Density switches between 20, 40, and 60 papers.\n- Click Chat at the bottom to ask questions with all seeds and results attached.\nGraphs aren\u2019t saved yet (beta), so promote seeds and save the papers you care about to your Library before closing the tab."
+  },
+  {
+   "sid": "S8",
+   "url": "https://docs.consensus.app/enterprise/connection-reference",
+   "official": true,
+   "excerpt": "Everything on this page applies to any MCP client or gateway. The platform guides link back here rather than repeating it.\nEndpoint and transport\nWhere a product lets you choose a transport, pick Streamable HTTP explicitly. Some gateways default to SSE, which will fail against this server.\nAuthentication\nTwo options. For a shared, server-side gateway credential, use an API key.\n- API key (recommended for gateways)\n- OAuth 2.0 (per-user)\nA single opaque credential sent as a bearer token:It lives entirely server-side, involves no user redirect and no token refresh, and maps to your Enterprise tier. Generate one from your Consensus account: profile icon \u2192 API & MCP Dashboard \u2192 Keys and clients \u2192 New key. The full key is shown once.Treat it like a password: keep it out of client-side code, public repositories, and screenshots.\nDiscovery documents\nGateways that support automatic configuration can read these:\n- https://mcp.consensus.app/.well-known/oauth-protected-resource \u2014 points to the authorization server\n- https://consensus.app/.well-known/oauth-authorization-server \u2014 full metadata: endpoints, scopes, and S256\nFirewall allowlist\nIf your organization runs an egress firewall, allow these hosts. Per-host wildcards cover any path changes on our end (new discovery documents, versioned endpoints) without another change request, while staying scoped to the hosts this integration touches:clerk.consensus.app is our authentication provider. Sign-in does a browser redirect through it, so it needs to be reachable wherever your users complete the consent screen. If you use the API-key path only, users never sign in and this host isn\u2019t needed.\nTighter scope: exact URLs\nIf policy requires exact URLs rather than wildcards, allow these. Expect a new change request any time we add or change a path.\nProtocol version\nThe server tracks the current MCP specification. Some gateways refuse upstream servers below a minimum protocol version (Kong and Azure API Management require2025-06-18 or later). If your gateway reports a version mismatch, contact us with the version it requires."
+  }
+ ],
+ "errors": []
+}

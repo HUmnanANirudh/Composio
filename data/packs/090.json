@@ -1,0 +1,73 @@
+{
+ "id": 90,
+ "app": "PitchBook",
+ "category": "Finance and Fintech",
+ "hint": "pitchbook.com (research API)",
+ "composio": {
+  "found": true,
+  "slug": "PITCHBOOK",
+  "name": "PitchBook",
+  "tools": 130,
+  "triggers": 0,
+  "auth": [
+   "API_KEY"
+  ],
+  "managed_app": null,
+  "url": "https://docs.composio.dev/toolkits/pitchbook.md",
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://pitchbook.com/help/PitchBook-api",
+   "official": true,
+   "excerpt": "Help: PitchBook API\nOverview\nPitchBook\u2019s API solution allows you to call specific PitchBook data into your internal business systems on demand. This flexible solution means you have access to PitchBook\u2019s expansive database. It\u2019s the ideal integration for CRM enrichment, allowing you to extract data on an ad-hoc basis that meets the needs of your organization.\nYou can explore a specific entity and retrieve valuable data, and the API solution enables you to apply specific criteria, such as location and industry, to drill down into the businesses you discover.\nUse cases\nThe API is a good solution if:\n- Your scope and data points are subject to change frequently.\n- You require a near-instant population of data.\n- You perform ad-hoc research.\n- You want to see past and present financial data.\n- RESTful API is a system requirement.\nHow the API works\nAccessing the API\nThe PitchBook API is a RESTful implementation that most HTTP clients can easily access in your chosen language or via a web browser. Every call will use the same base URL: https://api.pitchbook.com\nAvailable data points\nThe API solution offers a variety of relational endpoints, including financing details, deal stock information, as well as AI-powered VC exit predictor data. See the full list from our API Endpoints Overview document.\nCreate your API connection\nTo start your API connection, you will need to send a request directly to our Direct Data team through this link.\nOr if you\u2019re a PitchBook client, you can also head to the Plugins & Apps section from the My PitchBook section of the left-hand sidebar on the PitchBook Platform and choose PitchBook API.\nFrom this section on the platform, you can test specific endpoints. This section on PitchBook also allows you to reach out to our Direct Data team to request access to the API.\nNext steps\nOur team will work with you to understand the insights and data you\u2019re looking for and help you establish the API connection through an API key or authentication token. Available data for each entity type is packaged across several endpoints so you can map the data to your desired format and structure."
+  },
+  {
+   "sid": "S2",
+   "url": "https://pitchbook.com/products/premium-connectors",
+   "official": true,
+   "excerpt": "AI is only as good as its source\nPitchBook brings AI + HI\u2014Artificial Intelligence + Human Insights\u2014into enterprise LLMs you already know and trust, giving you instant, trustworthy answers to complex questions. Access the industry\u2019s most comprehensive, accurate, and timely private capital market data and research\u2014wherever you need it.\nA new era of AI-powered data and research\n- Clarify investment strategies Get the private capital markets data and research you need\u2014deals, players, and trends\u2014inside your favorite enterprise LLM.\n- Analyze new opportunities Uncover prospects, investors, and networking opportunities by combining PitchBook\u2019s authoritative data with world-class analysis.\n- Make smarter decisions Stop relying on public sources with questionable accuracy. Power your LLM workflows with insights you can trust.\nWith the PitchBook Premium Connector, clients can use enterprise AI platforms to quickly uncover company data, source new opportunities, and synthesize industry research.\nDiscover unrivaled company intelligence\nStreamline your financial research journey from search to insight. Retrieve comprehensive data on a specific company, including overviews, financials, deal hist"
+  },
+  {
+   "sid": "S3",
+   "url": "https://pitchbook.com/pricing",
+   "official": true,
+   "excerpt": "Execute your strategy with PitchBook\u2019s unparalleled global data and support\n- Always-on customer support and tools at your fingertips Transform workflows with a customer success team that understands your business and the challenges you face. Connect with our support team through live chat or access our self-service help center at any time.\n- Power decisions with timely, relevant insights Drive decision-making with data and insights in the format that works for you. Surface the latest market activity with the support of specialized data operations experts and fine-tuned processes.\n- Get unmatched breadth and depth Execute your core workflows with meticulously gathered, expert-refined data exclusively available through PitchBook.\nFAQs about PitchBook\nIs PitchBook worth it?\nOur full-featured platform and interconnected datasets mean your dollar goes further with us. Discover private market analysis and emerging technology research\u2014including direct access to our analyst team for consultation. Plus, enjoy complimentary access to our desktop offering, PitchBook Mobile app, and Excel and PowerPoint plugins, as well as our Chrome extension.\nHow much does PitchBook cost?\nWhile PitchBook is"
+  },
+  {
+   "sid": "S4",
+   "url": "https://pitchbook.com/products/direct-access-data/api",
+   "official": true,
+   "excerpt": "API: Flexibly call down data on demand\nGet the data you need, when you need it\nCall down the specific data points you need for a dashboard, project, report or transaction using our API. Programatically track critical inflection points such as funding rounds, executive changes or liquidity events to stay on top of market activity.\nCall data on all PitchBook entity types including deals, investors, funds, people, limited partners and service providers.\nCustomized solutions for the way you work\nOur team of experts will work with you to ensure your organization can bridge any gap of understanding to place insights and data where they can make the biggest business impact. Available data for each entity type is conveniently packaged across several endpoints so you can get all the data you need\u2014and none that you don\u2019t.\nStreamline your operations\nOur RESTful API utilizes JSON and is system agnostic, so you can integrate it into custom applications and CRMs to bring the industry\u2019s best data directly into your workflow. Provide your team with the right data to more easily analyze trends and build predictive models\u2014right in your existing systems."
+  },
+  {
+   "sid": "S5",
+   "url": "https://pitchbook.com/help/getting-started-with-pitchbook-premium-connector",
+   "official": true,
+   "excerpt": "Help: Getting started with PitchBook\u2019s Premium Connector\nOverview\nAs we rely on AI tools to move faster and make smarter decisions, switching between tools to find data can be time-consuming. PitchBook\u2019s Premium Connector solves this by integrating PitchBook data directly into the AI platforms you already use. With secure access, you can query private market insights without disrupting workflow. In this article, learn how our Premium Connector works and which AI platforms we partner with.\nHow it works\nThe Premium Connector provides a secure link between PitchBook and AI tools. Once connected, you can use your AI tool to access a wide range of PitchBook\u2019s private market data directly. By specifying \u201cUsing PitchBook data as the source\u201d in your query, you ensure the response includes only PitchBook\u2019s verified proprietary data.\nWhen a question is sent, the connector translates it into a query that PitchBook can process. It then retrieves the relevant information, formats it, and sends it back to the AI tool. This workflow ensures that data is delivered accurately and only according to the permissions assigned to each user.\nWorkflow\nThis section outlines the general workflow for using t"
+  },
+  {
+   "sid": "S6",
+   "url": "https://pitchbook.com/partners",
+   "official": true,
+   "excerpt": "Partnerships at PitchBook\nPitchBook partners with AI platforms, data providers, industry associations, and world-class sports organizations in our shared mission to create elevated experiences for financial professionals. Together, we\u2019re unlocking powerful, brand-building moments that foster unique opportunities and initiatives within our community.\n- Data Partnerships We partner with leading LLMs and data providers to deliver the most comprehensive private capital market intelligence. Accelerate research workflows with the Essential and Premium Connectors or unlock proprietary deal performance data with StepStone.\n- Industry Partnerships Our partnerships include leading industry associations and high-profile conferences, among others. Together, we\u2019re creating world-class experiences and industry-defining research that transform opaque private capital markets into a vibrant community.\n- Brand Partnership PitchBook is The Official Financial Data Provider of the Seattle Kraken and Climate Pledge Arena. The team leverages our data to identify growth, deal, and investment opportunities.\nAccess institutional-grade deal data from StepStone\nPitchBook users can unlock trusted deal performa"
+  },
+  {
+   "sid": "S7",
+   "url": "https://pitchbook.com/products/pitchbooks-ai-capabilities",
+   "official": true,
+   "excerpt": "The intelligence you trust, wherever you work\nResearch and decision-making now happen in the models, dashboards, and tools your teams use every day. Get the same PitchBook intelligence you trust, wherever you work, with Data Feed, API, CRM, LLM partnerships, and integrations. The difference is never the data; it\u2019s how your team wants to reach it.\nPitchBook\u2019s guiding AI principles\nPitchBook\u2019s AI capabilities are designed with intention\u2014accelerating workflows and enabling confident decision-making\n- Accelerating research with AI+HI Most AI tools scrape the internet for surface-level data with questionable accuracy. Our AI+HI approach combines PitchBook\u2019s raw datasets, the #1 source for private capital market data, with human expertise and proprietary insights.\n- Maintaining the highest standard We build advanced AI capabilities that are grounded in our clients\u2019 real-world needs. Quickly access the most relevant data, research, and insights you need to beat the market.\n- Meeting you where you\u2019re at We partner with enterprise LLMs to bring institutional-grade private capital market data and research into tools you already know and use. PitchBook\u2019s Premium Connectors deliver reliable intelligence inside your secure ecosystem.\nPitchBook AI\nPitchBook AI puts innovation to work on the deliverables your team produces again and again. Our in-platform agentic experience turns PitchBook\u2019s trusted data into finished, shareable work product. Define what good looks like once, save it as a repeatable Skill, and automate the repetition with Agents, with reasoning and sources shown as it works.\nPitchBook Data MCP\nPitchBook Data MCP gives your team secure, native access to select company, deal, investor, and fund data in the proprietary tools your firm has built or the commercial LLMs it uses. It brings the grounded access available through our LLM partners to the systems where your team is already asking questions, without a separate integration to maintain."
+  },
+  {
+   "sid": "S8",
+   "url": "https://pitchbook.com/free-trial",
+   "official": true,
+   "excerpt": "I agree to PitchBook\u2019s privacy policy\nof surveyed organizations saw their return on investment with PitchBook within the first year or less. Source: PitchBook customer survey; results based on responses from 3,005 PitchBook users, June 2026."
+  }
+ ],
+ "errors": [
+  "fetch https://pitchbook.com/products/direct-access-data: 403 too little text (JS-rendered?)"
+ ]
+}

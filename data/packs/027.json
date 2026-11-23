@@ -1,0 +1,71 @@
+{
+ "id": 27,
+ "app": "Telegram",
+ "category": "Communications and Messaging",
+ "hint": "core.telegram.org",
+ "composio": {
+  "found": true,
+  "slug": "TELEGRAM",
+  "name": "Telegram",
+  "tools": 18,
+  "triggers": 0,
+  "auth": [
+   "API_KEY"
+  ],
+  "managed_app": null,
+  "url": "https://docs.composio.dev/toolkits/telegram.md",
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://core.telegram.org/api/obtaining_api_id",
+   "official": true,
+   "excerpt": "Machine-readable version of this page: /api/obtaining_api_id.md.\nWe welcome all developers to use our API and source code to create Telegram-like messaging applications on our platform free of charge.\nIn order to ensure consistency and security across the Telegram ecosystem, all third-party client apps must comply with the API Terms of Service.\nIn order to obtain an API id and develop your own application using the Telegram API you need to do the following:\n- Sign up for Telegram using an official application.\n- Log in to your Telegram core: https://my.telegram.org.\n- Go to \"API development tools\" and fill out the form.\n- You will get basic addresses as well as the api_id and api_hash parameters required for user authorization.\n- For the moment each number can only have one api_id connected to it.\nWe will be sending important developer notifications to the phone number that you use in this process, so please use an up-to-date number connected to your active Telegram account.\nBefore using the MTProto Telegram API, please note that all API client libraries are strictly monitored to prevent abuse.\nIf you use the Telegram API for flooding, spamming, faking subscriber and view counters of channels, you will be banned forever.\nDue to excessive abuse of the Telegram API, all accounts that log in using unofficial Telegram API clients are automatically put under observation to avoid violations of the Terms of Service.\nIf you didn't violate the Terms of Service but your account does get banned after using the API, write to recover@telegram.org explaining what you intend to do with the API, asking to unban your account.\nPlease note that emails are checked by a human, so automatically generated emails will be detected and banned.\nEveryone is welcome to use our open source code. We have included a sample API id with the code. This API id is limited on the server side and is not suitable for apps released to end-users \u2014 using it for anything but testing purposes will result in the API_ID_PUBLISHED_FLOOD error for your users. It is necessary that you obtain your own API id before you publish your app.\nPlease remember to publish your code as well in order to comply with the GNU GPL licenses."
+  },
+  {
+   "sid": "S2",
+   "url": "https://core.telegram.org/api",
+   "official": true,
+   "excerpt": "Machine-readable version of this page: /api.md.\nWe offer three kinds of APIs for developers. The Bot API allows you to easily create programs that use Telegram messages for an interface. The Telegram API and TDLib allow you to build your own customized Telegram clients. You are welcome to use both APIs free of charge. Lastly, the Gateway API allows any business, app or website to send verification codes through Telegram instead of traditional SMS.\nYou can also add Telegram Widgets to your website.\nDesigners are welcome to create Animated Stickers and Emoji or Custom Themes for Telegram.\nThis API allows you to connect bots to our system. Telegram Bots are special accounts that do not require an additional phone number to set up. These accounts serve as an interface for code running somewhere on your server.\nTo use this, you don't need to know anything about how our MTProto encryption protocol works \u2014 our intermediary server will handle all encryption and communication with the Telegram API for you. You communicate with this server via a simple HTTPS interface that offers a simplified version of the Telegram API.\nBot developers can also make use of our Payments API to accept payments"
+  },
+  {
+   "sid": "S3",
+   "url": "https://core.telegram.org/bots/api.md",
+   "official": true,
+   "excerpt": "- Download files without a size limit.\n- Upload files up to 2000 MB.\n- Upload files using their local path and [the file URI scheme](https://en.wikipedia.org/wiki/File_URI_scheme).\n- Use an HTTP URL for the webhook.\n- Use any local IP address for the webhook.\n- Use any port for the webhook.\n- Set *max_webhook_connections* up to 100000.\n- Receive the absolute local path as a value of the *file_path* field without the need to download the file after a [getFile](/bots/api/methods/getfile.md) request.\n\n- [getUpdates](/bots/api/methods/getupdates.md): receive incoming updates using long polling (wiki).\n- [setWebhook](/bots/api/methods/setwebhook.md): specify a URL and receive incoming updates via an outgoing webhook.\n- [deleteWebhook](/bots/api/methods/deletewebhook.md): remove webhook integration if you decide to switch back to getUpdates.\n- [getWebhookInfo](/bots/api/methods/getwebhookinfo.md): get current webhook status.\n\nEach message broadcasted over the free amount of 30 messages per second incurs a cost of 0.1 Stars per message, paid with Telegram Stars from the bot's balance. In order to use this feature, a bot must have at least *10,000 Stars* on its balance.\n\n- [forwardMessage](/bots/api/methods/forwardmessage.md): forward messages of any kind.\n- [forwardMessages](/bots/api/methods/forwardmessages.md): forward multiple messages of any kind.\n- [copyMessage](/bots/api/methods/copymessage.md): copy messages of any kind.\n- [copyMessages](/bots/api/methods/copymessages.md): copy messages of any kind.\n- [sendPhoto](/bots/api/methods/sendphoto.md): send photos.\n- [sendLivePhoto](/bots/api/methods/sendlivephoto.md): send live photos.\n- [sendAudio](/bots/api/methods/sendaudio.md): send audio files, if you want Telegram clients to display them in the music player.\n- [sendDocument](/bots/api/methods/senddocument.md): send general files.\n- [sendVideo](/bots/api/methods/sendvideo.md): send video files, Telegram clients support MPEG4 videos (other formats may be sent as Document).\n- [sendAnimation](/bots/api/methods/sendanimation.md): send animation files (GIF or H.264/MPEG-4 AVC video without sound).\n- [sendVoice](/bots/api/methods/sendvoice.md): send audio files, if you want Telegram clients to display the file as a playable voice message.\n- [sendVideoNote](/bots/api/methods/sendvideonote.md): send a rounded square MPEG4 video of up to 1 minute lon"
+  },
+  {
+   "sid": "S4",
+   "url": "https://core.telegram.org/api/auth",
+   "official": true,
+   "excerpt": "Machine-readable version of this page: /api/auth.md.\nAuthorization is associated with a client's encryption key identifier: auth_key_id. No additional parameters need to be passed into methods following authorization.\nTo log in as a bot, follow these instructions \u00bb.\nThe following alternative login flows are also available to users:\nExample implementations: Telegram for Android, TDLib.\nTo show a nicely formatted and validated phone number field, the help.countriesList constructor can be obtained using the help.getCountriesList method.\nThe help.countriesList config and other configuration values are then used as described here\u00a0\u00bb.\nThen, a text message containing an authorization code is sent to the user's phone using auth.sendCode.\nHowever, this is not always the case, if future auth tokens are used:\nWhen invoking auth.logOut on a previously authorized session, the server may return a future_auth_token, which should be stored in the local database.\nA future_auth_token is also contained in the auth.authorization returned when logging in.\nAt all times, the future auth token database should contain at most 20 tokens: evict older tokens as new tokens are added to stay below this limit.\nWh"
+  },
+  {
+   "sid": "S5",
+   "url": "https://telegram.org/tos/bot-developers",
+   "official": true,
+   "excerpt": "Bots and Mini Apps (collectively, \u201cThird Party Apps\u201d or \u201cTPA\u201d) are third party applications that integrate into Telegram and its interfaces, allowing developers to offer tools, products and services through the Telegram ecosystem, which users may access using Telegram clients.\nDevelopers can operate their TPA by interfacing with the Bot API (\u201cBot API\u201d) made available by Telegram for this purpose. The Bot API, along with Bot and Mini App in-app native interfaces and integrations, and all other associated tools, documentation, frameworks and services made available by Telegram collectively comprise the Telegram Bot Platform (\u201cBot Platform\u201d).\nThese Terms of Service for Bot Platform Developers (\u201cBot Developer Terms\u201d or \u201cthese terms\u201d) govern your usage of the Telegram Bot Platform for the purposes of developing services that integrate it or function in connection with it, and constitute a legally binding agreement between you and Telegram Messenger Inc. (\u201cTelegram\u201d). For the purposes of these Terms, \u2018we\u2019, \u2018us\u2019 and \u2018our\u2019 refers to Telegram, and \u2018you\u2019 refers to you, the developer of TPA.\nBy connecting your services to Telegram via Bot Platform, you agree that you have read in full, unders"
+  },
+  {
+   "sid": "S6",
+   "url": "https://core.telegram.org/gateway",
+   "official": true,
+   "excerpt": "Machine-readable version of this page: /gateway.md.\nTelegram Gateway is a cost-effective and privacy-focused solution for user authentication, allowing businesses to verify their customers\u2019 phone numbers through Telegram at a fraction of traditional SMS costs.\n- Authenticate users for just $0.01 per verification code \u2014 up to 50x cheaper than SMS.\n- Automatic refunds for undelivered codes, ensuring you only pay for successful verifications.\n- Uses Telegram\u2019s trusted infrastructure to deliver codes quickly and safely.\n- Helps apps avoid outdated and expensive verification methods.\n- Easy integration with a clear API.\n- Free testing environment \u2014 try it out before committing.\nStart verifying users smarter \u2014 read the full guide and integrate Telegram Gateway today!\nThis page will walk you through the main benefits and features of the Telegram Gateway.\nFor more information, see:\nTo access Telegram, registered users only need an internet connection. Thanks to the Telegram Verification Platform, accessible by developers via the Gateway API, users can conveniently receive your message on mobile or desktop, without needing an active SMS plan from their provider.\nVerification via Telegram co"
+  },
+  {
+   "sid": "S7",
+   "url": "https://core.telegram.org/bots/telegram-login",
+   "official": true,
+   "excerpt": "Machine-readable version of this page: /bots/telegram-login.md.\nTelegram offers app and website developers a free and open platform that lets over 1 billion users seamlessly sign up and log in with their Telegram accounts.\n- Higher conversion\nUsers sign in with a few taps, boosting conversion and retention.\n- Lower verification costs\nUsers can share their verified phone number, removing the need for expensive codes.\n- Direct communication channels\nYou can reach your users within Telegram, with built-in push notification support.\n- Further integration\nYou can deliver more services directly via the Bot API and Mini Apps.\nNote: This document describes the Telegram Login library and the new OpenID Connect login flow.\nThe legacy iframe-based JavaScript widget documentation is archived here.\nTelegram offers a compact tool to quickly add Telegram login buttons to your interface. You can also directly access our library's JS API.\nFor mobile developers, we also provide ready-to-use Native SDKs for iOS and Android.\nAlternatively, Telegram supports the standard OpenID Connect protocol. This allows you to integrate Telegram authentication into your application using any OIDC-compatible library"
+  },
+  {
+   "sid": "S8",
+   "url": "https://core.telegram.org/api/srp",
+   "official": true,
+   "excerpt": "Machine-readable version of this page: /api/srp.md.\nTelegram uses the Secure Remote Password protocol version 6a to implement 2FA.\nExample implementation: tdlib.\nTo login to an account protected by a 2FA password or to perform some other actions (like changing channel owner), you will need to verify the user's knowledge of the current 2FA account password.\nTo do this, first the client needs to obtain SRP parameters and the KDF algorithm to use to check the validity of the password via account.getPassword method. For now, only the passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow algorithm is supported, so we'll only explain that.\nThen, after the user provides a password, the client should generate an InputCheckPasswordSRP object using SRP and a specific KDF algorithm as shown below and pass it to appropriate method (e.g. auth.checkPassword in case of authorization).\nThis extension of the SRP protocol uses the password-based PBKDF2 with 100000 iterations using sha512 (PBKDF2HMACSHA512iter100000).\nPBKDF2 is used to additionally rehash the x parameter, obtained using a method similar to the one described in RFC 2945 (H(s | H ( I | password | I) | s) instead of H(s | H "
+  }
+ ],
+ "errors": []
+}

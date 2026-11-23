@@ -1,0 +1,71 @@
+{
+ "id": 25,
+ "app": "Pumble",
+ "category": "Communications and Messaging",
+ "hint": "pumble.com",
+ "composio": {
+  "found": true,
+  "slug": "PUMBLE",
+  "name": "Pumble",
+  "tools": 9,
+  "triggers": 0,
+  "auth": [
+   "API_KEY"
+  ],
+  "managed_app": null,
+  "url": "https://docs.composio.dev/toolkits/pumble.md",
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration",
+   "official": true,
+   "excerpt": "Pumble API Overview\nBy using the Pumble API addon, you can interact with Pumble\u2019s API documentation without using any complex authentication processes. This addon lets you generate an API key that allows you to send messages, reactions, and more via simple HTTP requests.\nThe rate limit is up to 1000 requests per minute per user.\nInstall API addon #\nBefore you can create an API key, you need to install the API addon on your Pumble workspace.\nHere\u2019s how to do this:\n- Click on + Add apps in the left sidebar\n- Click on Install in the API section\n- Allow permissions\nGenerate an API key #\nOnce your API addon is installed, you can generate API keys directly in Pumble.\nHere\u2019s how:\n- Click on API in the left sidebar\n- Select Add API key\n- Enter API key name\n- Click Generate to complete the action\nYou\u2019ll receive an ephemeral message containing the generated API key. This message is not visible to other users. Copy this key for future use. The generated key enables interaction with the Addon\u2019s public API, allowing users to send requests and execute various actions within Pumble, including:\n- Sending messages\n- Leaving a reply to a message\n- Message deletion\n- Adding a reaction to a message\n- Channel creation\n- Listing the messages in a channel (if the channel is private, Addon Bot needs to be a member of that channel)\n- Listing the channels and DMs that belong to the user who created the key\nThe full list of available actions is available in the Swagger documentation. You can also use the documentation in Swagger, just enter your API key in the Authorize part.\nDelete API key #\nYou can remove an API key by following these steps:\n- Click on API in the left sidebar\n- Select Delete API key\n- Choose a key from the list\n- Click Delete to confirm the action\nValid commands #\nThere are a few specific actions for interacting with the Pumble API addon. You can use these commands directly in messages:\n- /api-keys generate \u2013 addon will generate API keys for that particular user and store it in their database. Users can generate as much API keys as they want to.\n- /api-keys list \u2013 addon will list all user\u2019s API keys\n- /api-keys help \u2013 to list all valid commands you can use"
+  },
+  {
+   "sid": "S2",
+   "url": "https://pumble.com/integrations",
+   "official": true,
+   "excerpt": "Google Calendar\nJoin Pumble meet from Calendar.\nExplore a whole ecosystem of apps that integrate with Pumble to expand your collaboration even further.\nConnect Apps\nBuild custom apps that integrate your internal tools, processes and data, to work as only your company can.\nPumble provides integration with native Clockify and Plaky integrations, both of which are free and don\u2019t count towards your subscription plan limits.\nGet started for free\nWith integrations keep work and information in one place, and Pumble will keep it all securely.\nConnect the tools that you already use to get more from them every time you work with them in Pumble.\nYou can work with apps in channels, where they\u2019re a seamless part of the conversation, across all your devices.\nPumble integrations connect tools like Google Calendar, Emailer and Zapier to Pumble, to help supercharge your workflow. Integrations are built using Pumble API.\nYes you can. The Pumble API is publicly available for anyone to explore. You can view our documentation and get started. You can create internal integrations for private use, or build public integrations that are available to Pumble users.\nPumble offers native integrations with both Clockify and Plaky. These integrations are free to use and do not affect your Pumble subscription plan limits. For example, if you\u2019re on the free plan, you can have up 3 apps and integrations in addition to the integrations with Clockify and Plaky.\nWhile Pumble does not charge a fee to use integrations, our partners may charge a fee for using their service.\nYou can access the API and install integrations on any Pumble subscription."
+  },
+  {
+   "sid": "S3",
+   "url": "https://pumble.com/mcp",
+   "official": true,
+   "excerpt": "STEP 1\nConfigure apps\nGo to your Pumble workspace settings to set up apps and integrations.\nBring your AI agent into your Pumble workspace and streamline collaboration, stay in the loop, and get an efficient way to interact with your workspace.\nSet up your MCP\nShare information to multiple channels with ease. Escape the pain of sending dozens of messages yourself.\nCatch up with your team in seconds. Eliminate hours lost sifting through past threads and conversations.\nFetch specific files without sifting through chats yourself. Avoid losing important files ever again.\nUse channel and user info to recommend the right place to ask questions. Dodge unnecessary back-and-forths.\n\nSTEP 1\n\nConfigure apps\n Go to your Pumble workspace settings to set up apps and integrations.\n\nSTEP 2\n\nCreate a new app\n Go to Create app \u2192 Create from scratch to set up your AI agent.\n\nSTEP 3\n\nAdd app details\n Enter app info and control permissions to limit your AIs access your workspace.\n\nSTEP 4\n\nInstall the app\n Select Create app to use its app key and install app to use the user and bot tokens.\n\nSTEP 5\n\nConnect the app to your AI agent\n Use developer tools (e.g., your terminal) to connect your AI agent with Pumble.\n\nFull control over your AI connection\nYour agent is connected via secure API keys to prevent unauthorized access.\nYou control what your AI agent can access with different permissions.\nStay in charge \u2014 update permissions, delete apps, or add new ones anytime.\nyour team\n \u2022\u00a0Unlimited users \u00a0\n\u2022\u00a0Unlimited chat history \u00a0\n\u2022\u00a0Free forever"
+  },
+  {
+   "sid": "S4",
+   "url": "https://pumble.com/help/integrations/add-pumble-apps/incoming-webhooks-for-pumble",
+   "official": true,
+   "excerpt": "Incoming Webhooks for Pumble\nWith the incoming webhooks, you can easily post messages from other apps into Pumble. When you create an incoming webhook, you receive a unique URL by which you can send a JSON payload with the message text.\nCreating an incoming webhook #\nTo create a new incoming webhook:\n- Click on your Workspace name at the top left corner\n- Navigate to the Workspace settings\n- Select General settings from the dropdown\n- Click on the Incoming Webhooks section in the sidebar\n- Click on the New Webhook button at the top right corner\n- Choose the channel where your webhook will post messages\n- Click on the Add incoming Webhook button to complete the process\nWhen you create your webhook, the editor opens up automatically. There, you\u2019ll be able to customize its name, change the channel, add a descriptive label, customize the icon, and most importantly, copy or regenerate your unique URL.\nThe rate limit on incoming webhooks on Pumble is 1 second per webhook.\nThe maximum number of characters in a webhook is 10000.\nUsing incoming webhook to send a message #\nTo send a message using the incoming webhooks you just created, simply make an HTTP POST request to the unique URL you c"
+  },
+  {
+   "sid": "S5",
+   "url": "https://pumble.com/learn/pumble/ai-automation-guide",
+   "official": true,
+   "excerpt": "Want to automate workflows, build custom messaging alerts, and connect LLMs directly to your team communication data? You can do so using Pumble by CAKE.com\u2019s 3 core engineering interfaces:\n- The Pumble API addon \u2014 generate an API key, send messages, react, and create channels via HTTP requests.\n- The Pumble AI Assistant addon \u2014 bring an AI provider into the workspace using your own API key.\n- The Pumble MCP server \u2014 connect external AI agents (Claude, Gemini, Codex) to Pumble so they can search, read, and act.\nThese developer surfaces allow technical teams to integrate custom code or external AI agents with Pumble while completely avoiding per-seat AI premiums.\nHere\u2019s how you can use Pumble\u2019s AI infrastructure to automate processes and create a context-aware collaborative space.\n- Using AI and automation in Pumble opens up new opportunities for workflow automation and brings LLMs directly into your team communication.\n- Pumble\u2019s API, AI Assistant addon, and MCP server are ideal for teams that want to automate their communication and workflows without any hidden fees or data safety risks.\n- Connecting AI Assistants, custom APIs, and the MCP server inside Pumble helps you build a mo"
+  },
+  {
+   "sid": "S6",
+   "url": "https://pumble.com/help/integrations/automation-workflow-integrations/how-to-use-the-pumble-mcp-server",
+   "official": true,
+   "excerpt": "How to use the Pumble MCP server\nWith the Pumble Model Context Protocol (MCP) server, you can connect third-party AI agents (e.g., Claude, Gemini, Codex) to Pumble and let them access content so they can search messages, find information, and take actions on your behalf.\nHow to connect to an MCP server #\nTo connect your AI assistant to the Pumble MCP server, you will have to create a Pumble addon and take credentials from there. To do this, you will first need to access Pumble addons.\n- Click on the three dots next to the Workspace name\n- Hover over Workspace settings\n- Select Configure apps\nOnce you have opened the Configure apps page, you can add your own addon. Here\u2019s how:\n- Click on + Create app\n- Select Create from scratch\n- Enter app name\n- Enter description\n- Select User scopes\n- Select Bot scopes\n- Click on Install app\nWhen the app is installed, make sure to copy the App key, user token, and bot token.\nWhat can you do after connecting to the MCP server? #\nThe list of available MCP tools is dynamic and depends entirely on the specific scopes you selected when creating an app.\nThese are all the available tools that the Pumble MCP server lets you use:\n| Tool | Required scopes "
+  },
+  {
+   "sid": "S7",
+   "url": "https://pumble.com/help/integrations/add-pumble-apps/guide-to-pumble-integrations",
+   "official": true,
+   "excerpt": "Guide to Pumble Addons\nPumble\u2019s integrations seamlessly connect various software tools (e.g., Google Drive, Calendly, Polls, GitHub), making collaboration easier within your workspace. By consolidating all your essential tools, Pumble reduces unnecessary steps and simplifies workflows, creating effective teamwork.\nThis guide will walk you through the basics of Pumble integrations, from finding and adding addons to understanding their functionality.\n| Subscription type | Maximum number of addons | \n|---|---|\n| Free subscription | Up to 3 addons | \n| Pro plan | Up to 10 addons | \n| Business and Enterprise plans | Unlimited number of addons | \nOnly Owners and Admins can install apps. If your Workspace has Request App approval turned on, members can request an installation, and an Owner or Admin approves or declines it.\nTypes of addons #\nPumble supports different types of addons. The way an app is built determines its installation, management, and interaction within your workspace.\nFind and add addons #\nExplore the Pumble App Directory or browse the CAKE.com Marketplace to find and add addons to your workspace:\n- Click on the three dots next to your Workspace name\n- Hover over Workspac"
+  },
+  {
+   "sid": "S8",
+   "url": "https://pumble.com/help/workspace-administration/pricing/pumble-free-trial",
+   "official": true,
+   "excerpt": "Pumble Free Trial\nDuring the 7-day trial period, you can explore and use the app\u2019s best tools to optimize your workflow and facilitate seamless team communication.\nA 7-day Free Trial is automatically activated when you create a new workspace.\nFree trial features #\nDuring the Free Trial period, your Workspace users are granted unrestricted access to all the features and functionalities typically exclusive to Enterprise plan subscribers. This includes the use of advanced collaboration tools, administrative controls, and unlimited number of integrations.\nTrial expiration #\nOnce the Free trial expires, the following will happen:\n- The workspace is downgraded to a Free plan.\n- Higher subscription plan features become unavailable.\n- Guest users won\u2019t have access, as this is a paid feature.\nCheck out this article for more information on upgrading your workspace to a paid plan.\nUpgrade during the trial period #\nYou don\u2019t need to wait until the trial period ends to upgrade your workspace to a paid plan. By upgrading, you can enjoy uninterrupted service and take full advantage of the enhanced capabilities offered by our paid plans. To do it:\n- Click on the countdown in the top left corner, next to your workspace name\n- Follow the instructructions on the upgrade process from this article\nOnly Organization owner and Workspace admins can upgrade a workspace to a paid plan."
+  }
+ ],
+ "errors": []
+}

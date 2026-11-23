@@ -1,0 +1,75 @@
+{
+ "id": 63,
+ "app": "Netlify",
+ "category": "Developer, Infra and Data platforms",
+ "hint": "docs.netlify.com/api",
+ "composio": {
+  "found": true,
+  "slug": "NETLIFY_MCP",
+  "name": "Netlify MCP",
+  "tools": 9,
+  "triggers": 0,
+  "auth": [
+   "DCR_OAUTH"
+  ],
+  "managed_app": "No",
+  "url": "https://docs.composio.dev/toolkits/netlify_mcp.md",
+  "mcp_variant": "NETLIFY_MCP",
+  "mcp_variant_auth": [
+   "DCR_OAUTH"
+  ]
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api",
+   "official": true,
+   "excerpt": "For the complete Netlify documentation index, see llms.txt. Markdown versions of any documentation page are available by appending .md to its URL.\nUse the Netlify REST API to manage atomic deploys of your sites and apps, manage form submissions, inject JavaScript snippets, manage DNSDNSThe system that translates a domain name like yoursite.com into the address computers use to find your site., and so much more.\nThis document covers the basics for interacting with the Netlify API, plus instructions for deploying sites and notes on some commonly used endpoints.\nYou can browse the OpenAPI reference for the Netlify API to explore available endpoints. Check out our Support Guide on understanding and using Netlify\u2019s API.\nAdditionally, we have two API clients for your convenience:\nIf you\u2019d like to interact with the Netlify API using a no-code tool, you can use n8n.io\u2019s Netlify node. The node currently supports the following operations:\n- Create a new deployment\n- Get a deployment\n- Get all deployments\n- Cancel a deployment\n- Get a site\n- Get all sites\n- Delete a site\nMake a request\nSection titled \u201cMake a request\u201d\nAll URLs start with https://api.netlify.com/api/v1/. SSLSSLThe technology th"
+  },
+  {
+   "sid": "S2",
+   "url": "https://docs.netlify.com/build/build-with-ai/agent-setup-guides/agent-setup-overview",
+   "official": true,
+   "excerpt": "Quick setup\nEquip your agent with the latest Netlify context, including agent skills:\nPaste it into your agent and say what to build and deploy to Netlify in the same prompt. If your agent gives you a login link, open it and sign in to Netlify.\nFor the complete Netlify documentation index, see llms.txt. Markdown versions of any documentation page are available by appending .md to its URL.\nLearn how to set up any agent with Netlify, including custom agents, in a few minutes. For setup steps written for your specific agent, check out the guides for specific agents below.\nRun this in your project folder:\nIt signs you in, installs Netlify\u2019s agent skills, adds the Netlify MCP server for the agents it finds, and links the folder to a Netlify project. Then open your agent in the same folder and ask your agent for a draft or production deploy.\nConnect to the Netlify MCP server to equip your agent with the best of Netlify expertise and the Netlify CLI.\nNetlify offers an MCP server, which you can connect to through a connector, plugin, or your agent.\nTo start connecting to Netlify\u2019s remote MCP server by running this command and following the prompts to select the agents you want to configure"
+  },
+  {
+   "sid": "S3",
+   "url": "https://docs.netlify.com/build/data-and-storage/netlify-database/api.md",
+   "official": true,
+   "excerpt": "---\ntitle: \"API reference\"\ndescription: \"Reference for the modules and methods you can use to interact with Netlify Database from your application code.\"\n---\n\n> For the complete documentation index for AI agents, see [llms.txt](https://docs.netlify.com/llms.txt). Markdown versions of any documentation page are available by appending `.md` to its docs.netlify.com URL.\n\nReturns the database connection string for the current environment, automatically pointing to the correct [database branch](/build/data-and-storage/netlify-database/#database-branches) (e.g. the production database for production deploys, or an isolated branch for deploy previews).\n\n## REST API\n\nThe Netlify REST API exposes endpoints for managing databases, branches, and snapshots programmatically. All endpoints are scoped to a site, are rooted at `https://api.netlify.com/api/v1`, and authenticate via OAuth 2 - see the full [Netlify API reference](https://open-api.netlify.com) for authentication details and shared response shapes.\n\n### `POST /sites/{site_id}/database/snapshot/{snapshot_id}/restore`\n\nRestores a snapshot to a database branch. Defaults to the production branch if no branch name is specified.\n\n- `branch_name` _(string, optional)_: the name of the branch to restore the snapshot to; defaults to `production`"
+  },
+  {
+   "sid": "S4",
+   "url": "https://developers.netlify.com/guides/generating-personal-access-tokens-with-netlify-oauth",
+   "official": true,
+   "excerpt": "#Create and setup the application\nSince we\u2019re not going to use any frameworks, getting set up is as easy as creating a folder with two files: app.js and index.html in your project directory.\nFirst, let\u2019s set up our HTML so we have elements we can utilize in our js file.\nNext, we\u2019ll fill in our app file:\nWhile the comments above do a decent job of breaking down the pieces of our js file \u2014 let\u2019s take a moment to understand what\u2019s happening:\n- Set the variables for the needed CLIENT_ID and our REDIRECT_URI (we\u2019re using localhost:8888 since we\u2019re using netlify dev as our development server)\n- Generate a random UUID to help track the state of the request returned back after completing the OAuth flow\n- Build our OAuth URL from a few of the variables we\u2019ve created so far to attach to our button back in the HTML code\n- Once the OAuth flow is finished and we return a successful hash, we extract the values we need from the hash. We make sure the state matches, clear the hash from the URL, and begin the fetch to our /create-token endpoint\n- Finally, we make sure we only handle the token if there is a hash located in the URL\nAll that\u2019s left is to wire up our serverless function and generate ou\n\n#Generating a personal access token\nLet\u2019s start by installing our single dependency in our project to help setup our function\nAfter successful OAuth authentication, the returned access token can be used as a Bearer token for Netlify API calls. However, for more granular control over authentication, Personal Access Tokens (PATs) provide additional benefits. PATs offer configurable lifespans and enhanced security features that may be better suited for production environments.\nWe will build an example of protecting our function using the OAuth access token, while also passing through that token to an API call generating our PAT.\nLet\u2019s create a file for our function using Netlify\u2019s functions folder named create-token.ts and fill in our function:\nAbove you\u2019ll see we take and check for the access token we\u2019ve sent through our original fetch. Applying that same token to the POST request that creates our new PAT and return a success message. This token is now usable, within it\u2019s lifespan, to authorize new API requests made to Netlify."
+  },
+  {
+   "sid": "S5",
+   "url": "https://answers.netlify.com/t/support-guide-understanding-and-using-netlifys-api/160",
+   "official": true,
+   "excerpt": "Last reviewed by Netlify Support staff: July 2025\nDid you know that Netlify has an extensive public API? Anything that you configure in our Admin UI at https://app.netlify.com is managed using this same API, and you\u2019re welcome to use it to create and configure your site(s) and perform most other operations on your account.\nWe have an article on API Usage in our official documentation which shows how to do some common tasks like deploying your site and configuring it in great detail. It also talks about your options for authentication (since most endpoints require authentication), and also gives examples of usage with the command line http tool curl, so this article won\u2019t rehash that information.\nSome details not covered in that article that will be useful as you explore the API:\n- https://open-api.netlify.com has a fairly thorough list of the available calls but is always a work in progress (it may not be entirely complete; if you notice something missing, please file an issue here), since it has to be manually updated with new and changed endpoints.\n- Be aware of our API rate limits as documented in this article.\n- Unless you get officially branded as a reseller, you cannot manage"
+  },
+  {
+   "sid": "S6",
+   "url": "https://github.com/netlify/netlify-mcp",
+   "official": true,
+   "excerpt": "Netlify MCP Server follows the Model Context Protocol (MCP) to enable code agents to use the Netlify API and CLI\u2014so they can create new projects, build, deploy, and manage your Netlify resources using natural language prompts.\nThe Model Context Protocol is an emerging standard protocol for connecting code agents with MCP servers, allowing them to manage resources and perform tasks using natural language. The Netlify MCP Server acts as a bridge, providing API access, CLI tools, prompts, and more for your agents.\nYou can connect to the Netlify MCP Server using a variety of MCP clients, including:\n- Windsurf\n- Cursor\n- Claude\n- Copilot (VSCode)\n- Cline\n- Warp\n- LM Studio\n- See the full list\nWith Netlify MCP Server, your AI agents can:\n- Create, manage, and deploy Netlify projects\n- Modify access controls for enhanced project security\n- Install or uninstall Netlify extensions\n- Fetch user and team information\n- Enable and manage form submissions\n- Create and manage environment variables and secrets\n- and more...\n- Node.js 22 or higher\nCheck with node --version\n- A Netlify account\n- An MCP client (e.g., Windsurf, Cursor, Claude, Copilot)\nTip: Install the Netlify CLI globally for the bes"
+  },
+  {
+   "sid": "S7",
+   "url": "https://open-api.netlify.com",
+   "official": true,
+   "excerpt": "Download OpenAPI specification:Download\nNetlify is a hosting service for the programmable web. It understands your documents and provides an API to handle atomic deploys of websites, manage form submissions, inject JavaScript snippets, and much more. This is a REST-style API that uses JSON for serialization and OAuth 2 for authentication.\nThis document is an OpenAPI reference for the Netlify API that you can explore. For more detailed instructions for common uses, please visit the online documentation. Visit our Community forum to join the conversation about understanding and using Netlify's API.\nAdditionally, we have two API clients for your convenience:\nnetlifyAuth\n| client_id required | string | \n| message | string | \n- Payload\nContent typeapplication/json\n{\n- \"message\": \"string\"\n}\n- 201\n- 401\n- 422\n- default\n{\n- \"id\": \"string\",\n- \"client_id\": \"string\",\n- \"authorized\": true,\n- \"created_at\": \"string\"\n}\n- 200\n- default\n{\n- \"id\": \"string\",\n- \"uid\": \"string\",\n- \"full_name\": \"string\",\n- \"avatar_url\": \"string\",\n- \"email\": \"string\",\n- \"affiliate_id\": \"string\",\n- \"site_count\": 0,\n- \"created_at\": \"string\",\n- \"last_login\": \"string\",\n- \"login_providers\": [\n - \"string\"\n],\n- \"onboarding_prog"
+  },
+  {
+   "sid": "S8",
+   "url": "https://www.netlify.com/partners",
+   "official": true,
+   "excerpt": "---\ntitle: \"AI is redefining the web. Grow your business shaping its future.\"\ndescription: \"Join Netlify Partners to earn revenue share by referring and building on Netlify. Up to 20% revshare for agencies, creators, and developers. Apply now.\"\nsource: \"https://www.netlify.com/partners/\"\nlast_updated: \"2026-11-23T20:42:30.000Z\"\n---\nNetlify Partners\n\n### Ecosystem Partners\n\nAll partners start as Ecosystem Partners. This includes creators, publishers, educators, freelancers, AI builders, technology partners, and teams who influence how builders explore tools and get started. Partners that go on to deliver hands-on implementation and operate production systems can later qualify as Certified Partners. Certified Partners include agencies, consultancies, and technology partners that help customers move from first AI use to reliable, production-ready systems on Netlify. If you help teams build, ship, or scale on the modern, AI-powered web, you are likely a good fit.\n\nPartner impact is measured across referral, recommendation, and influence. Netlify uses PartnerStack to support tracking, attribution, and reporting across different partner models. Depending on the partnership type, attribution may include tracked referrals and partner-assisted conversions rather than simple link-based clicks.\n\nEcosystem Partners represent the starting point for all partners, including technology partners. They focus on education, guidance, integrations, and early influence as teams discover and explore Netlify. Certified Partners are Ecosystem Partners that have progressed to offer deeper delivery. Certification is based on demonstrated production experience on Netlify, including successfully deploying and operating real customer workloads. This includes agencies, consultancies, and technology partners that deliver hands-on implementation, operate production systems, and support customers as they scale.\n\nYou can apply to Netlify Partners through the [sign-up form](https://dash.partnerstack.com/application?company=netlify&group=ecosystempartners). Once approved, you\u2019ll start as an Ecosystem Partner and receive onboarding guidance and access to relevant partner resources, through PartnerStack.\n\nEcosystem Partners is for content creators, bloggers, freelancers, agencies, developers, and SaaS products or platforms. Applications are reviewed and approved by the Netlify Partner Team."
+  }
+ ],
+ "errors": [
+  "fetch https://app.netlify.com/applications: 200 too little text (JS-rendered?)"
+ ]
+}

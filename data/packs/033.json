@@ -1,0 +1,71 @@
+{
+ "id": 33,
+ "app": "LinkedIn Ads",
+ "category": "Marketing, Ads, Email and Social",
+ "hint": "learn.microsoft.com/linkedin/marketing",
+ "composio": {
+  "found": true,
+  "slug": "LINKEDIN_ADS",
+  "name": "Linkedin Ads",
+  "tools": 28,
+  "triggers": 0,
+  "auth": [
+   "OAUTH2"
+  ],
+  "managed_app": "No",
+  "url": "https://docs.composio.dev/toolkits/linkedin_ads.md",
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://developer.linkedin.com/product-catalog/marketing/advertising-api",
+   "official": true,
+   "excerpt": "What solutions can you build?\nEnable ads management at scale\n\nBuild functionality for scalable ads management with Ad Campaigns and Creatives APIs \nBuild holistic view of marketing performance\n\nLeverage the\u00a0Ad Analytics API\u00a0to pull campaign performance data and identify which campaigns are delivering results \nSupercharge targeting in the privacy-first era\n\nEasily create high-intent, AI-powered audience segments using first-party or third-party data with Matched Audiences and Predictive Audiences APIs \nAmplify event reach and boost attendance\n\nUtilize the Event Ads API to promote events to targeted audiences before, during, and after they occur, maximizing attendance and engagement \n*These APIs are private and require additional approval once you\u2019ve been approved for the Advertising API. To apply for access to private APIs, first submit an application for the Advertising API with an ads management or reporting use case. Once you\u2019ve been approved for the Advertising API, submit a request through the form here.\nMeet the qualifications:\n\nDo you have an established business?\nDo you have an established use case?\nDoes your use case align with our supported solutions and is not restricted?\nDo you agree to comply with LinkedIn Marketing API Terms? \nApply for Development tier access:\n\n1. Create an app, add Advertising API, and complete the access form under My Apps > select your app > Products.\n2. LinkedIn will review your application\n3. Check the Developer Portal for the status of your application\n4. If your application is approved, get started. If your Advertising API application is rejected, review common rejection reasons, create a new app, and submit a new application \nResources to get you started\n\n\u2022\u00a0\u00a0Upgrading to Standard tier\n\u2022\u00a0\u00a0Restricted uses for LinkedIn Marketing APIs\n\u2022\u00a0\u00a0Getting started with the Advertising API\n\u2022\u00a0\u00a0API and permission tiers"
+  },
+  {
+   "sid": "S2",
+   "url": "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow?view=li-lms-2026-11&amp;toc=/linkedin/marketing/toc.json&amp;bc=/linkedin/breadcrumb/toc.json",
+   "official": true,
+   "excerpt": "Note\nAccess to this page requires authorization. You can try signing in or changing directories.\nAccess to this page requires authorization. You can try changing directories.\nThe Authorization Code Flow is used for applications to request permission from a LinkedIn member to access their account data. The level of access or profile detail is explicitly requested using the scope parameter during the authorization process outlined below. This workflow will send a consent prompt to a selected member, and once approved your application may begin making API calls on behalf of that member.\nThis approval process ensures that LinkedIn members are aware of what level of detail an application may access or action it may perform on their behalf.\nIf multiple scopes are requested, the user must consent to all of them and may not select the individual scopes. For the benefit of your LinkedIn users, please ensure that your application requests the least number of scope permissions.\nNote\nGenerate a Token Manually Using the LinkedIn Developer Portal \nThe LinkedIn Developer Portal has a token generator for manually creating tokens. Visit the LinkedIn Developer Portal Token Generator or follow the st"
+  },
+  {
+   "sid": "S3",
+   "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started?view=li-lms-2026-10",
+   "official": true,
+   "excerpt": "Note\nAccess to this page requires authorization. You can try signing in or changing directories.\nAccess to this page requires authorization. You can try changing directories.\nWarning\nDeprecation Notice: The Marketing Version 202601 (Marketing January 2026) will be sunset on January 15, 2027. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation. If you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.\nOAuth 2.0 and Permission Scopes\nAll LinkedIn API endpoints have access limitations called permission \"Scopes\", which define what your app can do on a user's behalf.\nOAuth 2.0 Scopes are a part of the authentication process and define USER ACCESS (r_basicprofile, r_ads, rw_ads) to LinkedIn PRODUCTS (Consumer, Marketing, Learning) and SERVICES (Posts, Ad Accounts, Campaign management.)\nMarketing APIs require the rw_ads scope. Other APIs require additional permission scopes which are documented in topic-specific pages. To learn more, see Marketing-Frequently Asked Questions.\nMap Campaign Ad Account ID to Application\n- From Campa"
+  },
+  {
+   "sid": "S4",
+   "url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers?view=li-lms-2026-10",
+   "official": true,
+   "excerpt": "Note\nAccess to this page requires authorization. You can try signing in or changing directories.\nAccess to this page requires authorization. You can try changing directories.\nWarning\nDeprecation Notice: The Marketing Version 202601 (Marketing January 2026) will be sunset on January 15, 2027. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation. If you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.\nLinkedIn has two tiers of access to our Advertising API: Development and Standard.\nThe tier assigned to your app defines how many Ad Accounts you can manage through the APIs. Upgrade to the next access tier by meeting the requirements described for that next level. Please note that all API Calls at all access levels are made on production data. Also, use of LinkedIn's Campaign Management APIs is subject to our LinkedIn Marketing API Program Terms.\nAccess to the Advertising API is reserved for applications building supported use cases. See the Advertising API Overview for more information on supported use cases.\n| Tier | Descr"
+  },
+  {
+   "sid": "S5",
+   "url": "https://developer.linkedin.com/product-catalog/marketing",
+   "official": true,
+   "excerpt": "Why build with LinkedIn Marketing APIs?\n\nGrow your business by building scalable solutions that drive workflow efficiency, streamline marketing activities, deliver unique insights, and maximize results for B2B marketers. \nScale and optimize advertising on LinkedIn to promote a business\nCreate and promote engaging LinkedIn events, on and off platform\n Establish brand presence and nurture a community on LinkedIn\nConnect data between platforms to improve customer outcomes"
+  },
+  {
+   "sid": "S6",
+   "url": "https://learn.microsoft.com/en-us/linkedin/marketing/quick-start?view=li-lms-2026-05",
+   "official": true,
+   "excerpt": "Note\nAccess to this page requires authorization. You can try signing in or changing directories.\nAccess to this page requires authorization. You can try changing directories.\nWarning\nDeprecation Notice: The Marketing Version 202601 (Marketing January 2026) will be sunset on January 15, 2027. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation. If you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.\nUse this quick start guide to begin working with the LinkedIn APIs. Refer to the following steps to get started:\n- Apply for API access.\n- Get started with the Advertising API.\n- Get started with the Community Management.\n- Get started with the Lead Sync API.\n- Get started with the Conversions API.\n- Get started with the Events Management API.\n- Get started with the Matched Audiences API.\n- Learn about the tools to manage your app.\nStep 1: Apply for API Access\n- Create a LinkedIn Page.\n- Create a developer application in the Developer Portal.\n- Review our API and data restrictions to ensure your use case is supported and your"
+  },
+  {
+   "sid": "S7",
+   "url": "https://www.linkedin.com/help/linkedin/answer/a527289",
+   "official": true,
+   "excerpt": "LinkedIn Marketing APIs offer solutions to help developers build their business through our platform and reach more of the audiences that matter. Below you'll find information on the application review process for the Advertising API.\nAdvertising API Application Review and Developer Support\nLast updated: 6 months ago\n- Create an app on the LinkedIn Developers Platform and add Advertising API to your app.\n-\n\nComplete the Access Request Form. The form is available in the Developer Portal > My Apps > Select your App > Products > View Access Form.\n-\n\nAfter completing the Access Request Form, we\u2019ll review and notify you of the status and outcome.\n-\n\nLog into the Developer portal using your LinkedIn account.\n-\n\nClick My Apps and select the App you are interested in.\n-\n\nOnce in the app, select the Products tab.\n- The status of your application will be reflected under the Products tab. If denied, the reason for denial will be displayed.\nThere are a variety of reasons your application to Advertising API may be rejected; including, but not limited to:\n- \n Your application was missing required information such as your name, company name, or website.\n- \n The use-case you provided doesn\u2019t meet the criteria for our supported marketing use-cases.\n- Advertising API can\u2019t be used to enhance Sign-In with LinkedIn or to collect member profile information.\n- Advertising API no longer supports self-serve V1 APIs to display company page feeds on your website.\nIf your application is missing information (Insufficient Details, Incomplete Access Request Form), you'll see a re-apply button in the Products Tab and you can re-apply on your app.\nFor any other reasons, you can re-apply for the Advertising API. However, you\u2019ll need to create a new app through our Developer Portal.\nYou\u2019ll receive an email notifying you of your acceptance to the Advertising API and additional information on how to get started. You\u2019ll also receive details on how to seek technical support.\nFor email support, contact our developer support team."
+  },
+  {
+   "sid": "S8",
+   "url": "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-plan?view=li-lms-2026-11",
+   "official": true,
+   "excerpt": "Note\nAccess to this page requires authorization. You can try signing in or changing directories.\nAccess to this page requires authorization. You can try changing directories.\nWarning\nDeprecation Notice: The Marketing Version 202601 (Marketing January 2026) will be sunset on January 15, 2027. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation. If you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.\nOverview\nMedia Planners can utilize the /mediaPlan API to save and retrieve media plans within an advertising account, allowing them to reference previously created media plans.\nNote\nThis is a private API that's available to qualified developers who meet additional criteria for access. To learn more about eligibility qualifications and how to request access, please see the FAQ. If you wish to apply for access, submit the application survey.\nPermissions\n| Permission | Description | \n|---|---|\n| rw_media_plans | Manage an authenticated member's Media Plans. Can manage and read Media Plans. This permission belongs to the Media P"
+  }
+ ],
+ "errors": []
+}

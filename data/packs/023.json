@@ -1,0 +1,71 @@
+{
+ "id": 23,
+ "app": "Zoho Cliq",
+ "category": "Communications and Messaging",
+ "hint": "zoho.com/cliq",
+ "composio": {
+  "found": true,
+  "slug": "ZOHO_CLIQ",
+  "name": "Zoho Cliq",
+  "tools": 162,
+  "triggers": 0,
+  "auth": [
+   "OAUTH2"
+  ],
+  "managed_app": "No",
+  "url": "https://docs.composio.dev/toolkits/zoho_cliq.md",
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://www.zoho.com/cliq/help/restapi/v3/oauth",
+   "official": true,
+   "excerpt": "OAuth 2.0 workflow\n\nStep 1: Register your app and get OAuth credentials\nThe first step in using OAuth authentication is registering your app with the Zoho API console. Once you register your client, you will get a Client ID and Client secret for your application. This Client ID and Client secret are used to authorize your app's OAuth requests. Ensure the redirect URI used in OAuth requests exactly matches the one configured in the API Console.\nStep 2: Obtain an access token\nAn access token is an OAuth token that allows access to Zoho's protected resources. The method for generating an access token depends on the type of application. For instance, server-based applications can use the authorization code flow, while client-based applications can utilize the implicit flow. However, in all cases, the access token is provided only after the user grants permission through consent. Access tokens are always assigned specific scopes, which are outlined in the request, and these scopes will be presented to the user during the permission request process.\nAuth, access token, and refresh token URLs\n- Authorization URL (get auth code): https://accounts.zoho.{dc}/oauth/v2/auth\n- Access token URL: https://accounts.zo"
+  },
+  {
+   "sid": "S2",
+   "url": "https://www.zoho.com/cliq/help/restapi/v3/registerclient",
+   "official": true,
+   "excerpt": "To access Zoho's resources through the Zoho Cliq APIs, you first need to register your application. Applications can be registered as one of the following client types:\n- Server-based application\n- Client-based application\n- Mobile-based application\n- Non-browser based application\n- Self client\nRegistering your application\nUpon successful registration of your application, you will receive a Client ID and Client Secret. These credentials are used to obtain an access token, which is required to make API calls to Zoho Cliq.\nFollow the steps below to register your application:\n- Go to the Zoho API Console, then click GET STARTED.\n- Hover over your application's client type and click CREATE NOW. If you've previously added an application, click ADD CLIENT in the top-right corner.\n- Enter the required details, then click CREATE.\n| Details Required | Server-based | Client-based | Mobile-based | Non-browser based | Self client | \n|---|---|---|---|---|---|\n| Client Name | Yes | Yes | Yes | Yes | Yes | \n| Homepage URL | Yes | Yes | Yes | Yes | No | \n| Authorized Redirect URI | Yes | Yes | Yes | No | No | \n| Javascript Domain | No | Yes | No | No | No | \nHomepage URL\n- The complete URL to your"
+  },
+  {
+   "sid": "S3",
+   "url": "https://www.zoho.com/cliq/mcp-server.html",
+   "official": true,
+   "excerpt": "Zoho CliqMCP Server\nSupported clients\nBring AI to where your work lives.\nWith Zoho Cliq's Model Context Protocol (MCP), AI in Cliq goes beyond conversation by letting your AI agent take action across Cliq, Zoho apps and beyond, not just chat.\nMCP is a standardized bridge between AI agents (like Claude, Windsurf, VS Code) and Cliq, layered on top of your data, apps, and actions - so you can say what you need in plain language, and watch it happen instantly\nView Documentation\nLet AI operate your workspace\nThe Cliq MCP Server exposes Cliq's core capabilities as standardized tools, so MCP-compatible AI clients can read context, take action, and coordinate work across Zoho and third-party systems.\nPrompt\n\"Send me summary of today's sales wins to #sales\".\nTools\nUnderstand what's happening\nAI reads your workspace, not just messages.\nCliq MCP gives AI access to channels, threads, users, roles, and past conversations \u2014 so it understands context, ownership, and decisions.\nCoordinate teams in real time\nAI can organize people, not just data.\nCreate channels, route updates, notify the right teams, and respect org structure automatically.\nMonitor and surface what matters\nImportant signals reach "
+  },
+  {
+   "sid": "S4",
+   "url": "https://www.zoho.com/mcp/llms.txt",
+   "official": true,
+   "excerpt": "# Zoho MCP | Zoho's Model Context Protocol to empower AI Agents\n\n> Meet Zoho MCP (Model Context Protocol), which enables developers to instantly transform business apps into intelligent, agent-ready systems\u2014systems that think, act, and respond like a teammate, not just a tool.\n\nZoho MCP | Zoho's Model Context Protocol to empower AI Agents Apps weren\u2019t built for AI agentsuntil now.Sign Up for FreeJust prompt\u2014or don\u2019t prompt\u2014and watch work get done.\u00a0For decades, business apps have made users click type toggle and chase That ends nowMeet Zoho MCP (Model Context Protocol), which enables developers to instantly transform business apps into intelligent, agent-ready systems\u2014systems that think, act, and respond like a teammate, not just a tool.\n\n## Overview\n- [Zoho MCP | Zoho's Model Context Protocol to empower AI Agents](https://www.zoho.com/mcp/index.md): Meet Zoho MCP (Model Context Protocol), which enables developers to instantly transform business apps into intelligent, agent-ready systems\u2014systems that think, act, and respond like a teammate, not just a tool.\n- [Sign in to your Zoho MCP account | Zoho MCP Login](https://www.zoho.com/mcp/login.md): Zoho MCP\u2019s login page. Sign in to access your apps.\n- [Pricing | Zoho MCP](https://www.zoho.com/mcp/pricing.md): Explore connecting Zoho MCP to your entire Zoho ecosystem and third-party apps without adding a single line item to your budget.\n- [Sign Up for Zoho MCP, the Model Context Protocol for AI Workflows](https://www.zoho.com/mcp/signup.md): Sign up for Zoho MCP, the Model Context Protocol for AI interoperability. Connect AI agents, LLMs, and 300+ apps to build agentic, no-code workflows.\n\n### Services\n- [Third-party services | Zoho MCP](https://www.zoho.com/mcp/services/third-party-services.md): Explore Third-party services supported by Zoho MCP and learn how seamless integrations enable secure, scalable connectivity to streamline workflows across your Zoho ecosystem.\n- [Supported Zoho services | Zoho MCP](https://www.zoho.com/mcp/services/zoho-services.md): Explore Zoho services supported by Zoho MCP and learn how seamless integrations enable secure, scalable connectivity to streamline workflows across your Zoho ecosystem."
+  },
+  {
+   "sid": "S5",
+   "url": "https://www.zoho.com/cliq/help/restapi/v2/registerclient",
+   "official": true,
+   "excerpt": "To access Zoho's resources through the Zoho Cliq APIs, you first need to register your application. Applications can be registered as one of the following client types:\n- Server-based application\n- Client-based application\n- Mobile-based application\n- Non-browser based application\n- Self client\nRegistering your application\nUpon successful registration of your application, you will receive a Client ID and Client Secret. These credentials are used to obtain an access token, which is required to make API calls to Zoho Cliq.\nFollow the steps below to register your application:\n- Go to the Zoho API Console, then click GET STARTED.\n- Hover over your application's client type and click CREATE NOW. If you've previously added an application, click ADD CLIENT in the top-right corner.\n- Enter the required details, then click CREATE.\n| Details Required | Server-based | Client-based | Mobile-based | Non-browser based | Self client | \n|---|---|---|---|---|---|\n| Client Name | Yes | Yes | Yes | Yes | Yes | \n| Homepage URL | Yes | Yes | Yes | Yes | No | \n| Authorized Redirect URI | Yes | Yes | Yes | No | No | \n| Javascript Domain | No | Yes | No | No | No | \nHomepage URL\n- The complete URL to your"
+  },
+  {
+   "sid": "S6",
+   "url": "https://www.zoho.com/cliq/pricing.html",
+   "official": true,
+   "excerpt": "Introducing the Flexi Subscription plan\nNot every user needs the same plan. Mix and match license tiers based on individual usage for greater flexibility and cost efficiency.\nExplore the Flexi Subscription plan\nCompare our pocket-friendly plans.\n@available, @all, @username, #channel\nUser, Departments, Designations\nUser, Departments, Designations\nTeams, Custom Roles\nTeams, Custom Roles\nCheckin, Checkout, Status\nView teams you are a part of\nView and manage tasks through Zoho Projects or directly within Cliq.\nEditing default keyboard shortcuts is available across all plans.\nCollaborate with users from other organizations with channels\nOnly organization admins can create external channels.\nUsers can be assigned custom roles to access specific channel levels\nNo. of devices in which Cliq Rooms app can be configured\nSchedule and stream virtual events to a large audience\nIP restrictions apply across all Zoho apps and is not limited to just Cliq.\nIP restrictions can be applied for specific clients like mobile, and desktop app also.\nDialogs requesting permissions to access data in extensions and internal tools\nDisable chat history to chat off the record\nTo collaborate through team and multi-"
+  },
+  {
+   "sid": "S7",
+   "url": "https://www.zoho.com/cliq/help/platform/configure-zoho-cliq-mcp.html",
+   "official": true,
+   "excerpt": "Configuring Your Zoho MCP Server\nPrerequisites\nThe Zoho MCP service is for anyone who needs to optimize and automate their operations workflow. There is no restriction or prior programming language required to use this service to its fullest potential.\nHowever, there are few fundamental prerequisites that need to be fulfilled to ensure you can leverage all the advantages the Zoho MCP service has to offer:\n- You will need valid and authenticated credentials in all the Zoho services, third-party services, or custom services that you plan to configure as your tool.\n- Ensure you are using your AI agent with the appropriate plan to access the integration sections and create your own integrations.\nTo configure your Zoho MCP server:\n- Navigate to the Zoho MCP console. (mcp.zoho.com)\n- Provide a name for your Zoho MCP server and click Create Server.\n- The Zoho MCP Server will be created. Click the Configure Tools button to configure the required tools\n- Choose Zoho Cliq.\n- You will be presented with a list of tools. These tools provide the appropriate context and access to perform the required actions instructed in the prompt. You can also search for your required tools using the search-bar.\n- Click Add Now, once you have selected the required tools.\n- All the required tools will be added to your Zoho MCP server.\nMCP URL\nA unique and secure URL will be generated by the Zoho MCP service each time you create a Zoho MCP server. This MCP URL will serve as the endpoint invoked when a prompt is executed from your MCP Client.\nTo copy the MCP URL:\n- Click the Connect tab in the sidebar.\n- Click the copy button next to the URL to copy it.\nNow you can use this URL to integrate your Zoho MCP server with your MCP Client. Additionally, you can also click the API Key Re-Generate button to generate a new MCP URL endpoint to invoke your Zoho MCP server."
+  },
+  {
+   "sid": "S8",
+   "url": "https://www.zoho.com/cliq/help/platform/faq.html",
+   "official": true,
+   "excerpt": "Platform\n- How are Commands and Bots different if they can execute the same task? Even though Commands and Bots have the same execution end point of triggering a deluge task, they mainly differ in the way they are executed. \n - Command: A command is an interface that can be triggered to execute a task inside a chat window.\n - Bot: A bot's primary functionality is to trigger external services to bring the response as a message to you inside the chat window. A bot can also be configured to post a message at a scheduled time and time period.\n- What are command parameters and how are they different from command suggestions? A command is an executable programme triggered to give a response inside the chat window when the user executes by typing a ' / ' followed by the command name. Command Parameters: A command parameter is an additional input passed while executing the command with a \"hyphen\". For example, a /traffic command can have the parameters, -to and -from for the user to specify the to and from locations. Command Suggestions: Command Suggestions are tips that are shown to the user similar to Google,suggesting search inputs for you.\n- How can I integrate external services with Z"
+  }
+ ],
+ "errors": []
+}

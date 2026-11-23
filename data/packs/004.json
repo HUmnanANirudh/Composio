@@ -1,0 +1,71 @@
+{
+ "id": 4,
+ "app": "Attio",
+ "category": "CRM and Sales",
+ "hint": "attio.com",
+ "composio": {
+  "found": true,
+  "slug": "ATTIO",
+  "name": "Attio",
+  "tools": 114,
+  "triggers": 0,
+  "auth": [
+   "OAUTH2"
+  ],
+  "managed_app": "Yes",
+  "url": "https://docs.composio.dev/toolkits/attio.md",
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://docs.attio.com/rest-api/guides/authentication",
+   "official": true,
+   "excerpt": "In order to make requests to the Attio REST API, you need to generate an access token. There are two ways to generate an access token:\n- By implementing an OAuth 2.0 flow\n- By generating an API key for your workspace\nYou should prefer the OAuth 2.0 flow if building an app for multiple workspaces. If you are building an app for a single workspace, you can manually generate an API key to make requests on behalf of that workspace only.\nGenerating access tokens\nOAuth 2.0\nAttio implements the standard OAuth 2.0 specification, using the Authorization Code Grant Flow (RFC 6749 section 4.1). You can find the reference for our OAuth authorize, token exchange and introspect endpoints here. If you would prefer a tutorial on how to implement an OAuth 2.0 flow into an existing app, you can find one here. We recommend using a well-established library for making OAuth requests, because they apply many of the security recommendations added after the original OAuth protocol was released. You can find some library recommendations here.\nOAuth for unpublished apps\nWhile you develop your app, it can grant tokens for the workspace it is installed in. To get access tokens for other workspaces, you\u2019ll nee"
+  },
+  {
+   "sid": "S2",
+   "url": "https://attio.com/pricing",
+   "official": true,
+   "excerpt": "Get started with:\n- Ask Attio, your personal agent\n- Self-builds from email and calendar\n- Automatic enrichment\n- Agents and workflows\n- 50,000 records and 3 objects\nStart for free with plans for every stage of growth, whether startup or enterprise.\nSave 20% with annual billing\nFor small teams building their first sales process.\n$40mo/workspace\nIncludes 1 user.\nAdd users for $44$35/mo each.\nEverything in Free, and:\n- Email sharing and AI summaries\n- Send 1,000 emails/mo\n- Private lists\n- Basic permissions\n- 250,000 records and 5 objects\nMost popular\nFor growing teams turning sales into a repeatable engine.\n$100mo/workspace\nAdd users for $99$79/mo each.\nEverything in Plus, and:\n- Custom objects\n- Call intelligence\n- Sequences\n- Team and user permissions\n- Advanced reporting\n- Track product usage and events\n- Data rules for reps and agents\n- 1M records and 12 objects\nFor teams and orgs running multiple GTM motions at scale.\n$1,000mo/workspace\nIncludes 5 users, annual billing.\nAdd users for $189$189/mo each.\nEverything in Pro, and:\n- Unlimited objects\n- Query in SQL with API or MCP\n- Data connector\n- Unlimited data rules by team\n- Single sign-on (SSO)\n- User provisioning (SCIM)\n- Audi"
+  },
+  {
+   "sid": "S3",
+   "url": "https://docs.attio.com/mcp/overview",
+   "official": true,
+   "excerpt": "Learn how to connect AI agents to your Attio workspace. Connect your AI tools to Attio using the Model Context Protocol (MCP), an open standard that lets AI assistants interact with your Attio CRM workspace.\nWhat is Attio MCP?\nAttio MCP is Attio\u2019s hosted MCP server that gives AI tools secure access to your Attio workspace. It\u2019s designed to work seamlessly with popular AI assistants like Claude, ChatGPT, Cursor, and more.\nWhy use Attio MCP?\n- Easy setup \u2014 Connect through simple OAuth with one-click installation for supported AI tools\n- Natural language CRM management \u2014 Manage your entire Attio workspace through conversational AI instead of clicking through multiple screens\n- Full workspace access \u2014 AI tools can search, read, create, and update records across your CRM\u2014people, companies, deals, tasks, and notes\n- Optimized for AI \u2014 Built specifically for AI agents with efficient data formatting and human-readable responses\n- Secure by design \u2014 Authenticates as your Attio user with OAuth, and read operations are auto-approved while write operations request confirmation\nWhat can you do with Attio MCP?\n- Contact & company lookup \u2014 Find contacts at specific companies, look up email addres"
+  },
+  {
+   "sid": "S4",
+   "url": "https://docs.attio.com/rest-api/endpoint-reference/webhooks/list-webhooks.md",
+   "official": true,
+   "excerpt": "# List webhooks\n\n> Get all of the webhooks in your workspace.\n\nRequired scopes: `webhook:read`.\n\nRequired scopes: `webhook:read`.\n\nWhen filters are compared for uniqueness, key\n                                  order and the order of operations are ignored.\n                                example:\n                                  $and:\n                                    - field: parent_object_id\n                                      operator: equals\n                                      value: 97052eb9-e65e-443f-a297-f2d9a4a7f795\n                            required:\n                              - event_type\n                              - filter\n                          description: >-\n                            One or more events the webhook is subscribed to.\n\nWithin a workspace, the combination of target URL,\n                            event type and filter must be unique across all of\n                            your webhooks. A duplicate \u2014 whether against another\n                            webhook or repeated within a single request \u2014 is\n                            rejected with a `409 uniqueness_conflict`.\n                        id:\n                          type: object\n                          properties:\n                            workspace_id:\n                              type: string\n                              format: uuid\n                              description: The ID of the workspace the webhook belongs to.\n                              example: 14beef7a-99f7-4534-a87e-70b564330a4c\n                            webhook_id:\n                              type: string\n                              format: uuid\n                              description: The ID of the webhook.\n                              example: 23e42eaf-323a-41da-b5bb-fd67eebda553\n                          required:\n                            - workspace_id\n                            - webhook_id\n                        status:\n                     "
+  },
+  {
+   "sid": "S5",
+   "url": "https://attio.com/help/reference/apps/generating-an-api-key",
+   "official": true,
+   "excerpt": "# Generate an API key\n\nEasily generate API keys for your Attio workspace.\n\n> Available on all plans.\n>\n> **Admins** can create and manage API keys.\n\nAPI keys allow you to connect external tools and services to your workspace with secure, scoped access. You can generate access tokens to read, create, or update data in Attio, making it easy to build custom integrations, automate workflows, and sync information across platforms.\n\n## Generate an API key\n\nIn order to generate an API key for your workspace, you must be an admin. If you're not an admin for your workspace, you can ask an admin to complete the following steps:\n\n- From the dropdown beside your workspace name, click **Workspace settings**.\n- Click the **Developers** tab.\n- Click **+ New access token**.\n- Give your new access token a name.\n- Set the appropriate **Scopes** for the token.\n\nTreat access tokens like passwords, as they contain sensitive information. [Learn more about keeping your data safe](https://attio.com/help/apps/other-apps/generating-an-api-key#keeping-your-data-safe).\n\n## Manage API keys\n\nOnce you've created access tokens, admins can manage them from the **Developers** page in Workspace settings.\n\nYour API keys should be treated as highly sensitive information - think of a token like a password. You should only give tokens to services you fully trust."
+  },
+  {
+   "sid": "S6",
+   "url": "https://attio.com/partners/app-partners",
+   "official": true,
+   "excerpt": "App partners\nBuild apps that transform GTM.\nPower the next generation of CRM and build the future of business software.\nApp SDK\nDevelop Typescript React applications that run natively on Attio\u2019s platform.\nREST API\nDevelop apps that read and write information to and from workspaces.\nStart building.\nCreate custom apps, automations, and integrations on top of Attio.\nCreate your appCreate your app\n//\nHead over to our developer console and sign in with your Attio account. Create your app and give it a unique name.\nDevelopDevelop\n//\nUse React, TypeScript, and our App SDK to build your app that runs natively inside of Attio.\nManage authenticationManage authentication\n//\nConnect to your service by configuring OAuth or access tokens.\nConfigure your listingConfigure your listing\n//\nGive your app a logo, a description, and screenshots, to show users what it does.\nPublishPublish\n//\nSubmit your app for review via the developer console, and share it with your users.\nLearn more on docs.attio.com\nExplore existing apps.\nSee what other developers have built in Attio.\nVisit the App Store to explore the apps and integrations that extend Attio\u2019s functionality.\nDiscover apps\nSales engagement\nEmail & cal"
+  },
+  {
+   "sid": "S7",
+   "url": "https://attio.com/platform/mcp",
+   "official": true,
+   "excerpt": "Speaks your language.\nNo views to build, no filters to set. Get insights and take action in conversation.\nAttio connects to the AI tools your team already has open.\nUse Attio from your AI tools to find deals, log calls, and draft follow-ups.\nChatGPT, Claude, and everything else that speaks MCP.\nComplete CRM context without opening a new tab.\nSearch, create, and update across your CRM records and activities.\nAuthenticate via OAuth with user-scoped permissions.\nSearch records, log notes, create tasks, and update deals.\nYour AI tools can read from Attio and write back to it.\n\"Update the deal value based on today's call\"\n\"Build a list of positive quotes from customers\"\n\"Create reminders for next steps on key deals\"\nMCP is in daily use across Attio.\n583k+\nDaily average MCP calls from Attio workspaces.\nNo setup, no code, no waiting on anyone else.\nGet the latest updates."
+  },
+  {
+   "sid": "S8",
+   "url": "https://docs.attio.com/docs/oauth/authorize.md",
+   "official": true,
+   "excerpt": "> ## Documentation Index\n> Fetch the complete documentation index at: https://docs.attio.com/llms.txt\n> Use this file to discover all available pages before exploring further.\n\n# Authorize\n\n#### Query Parameters\n\n**client\\_id** `string` *required*\n\nYour app's client ID. You can find this in your app's settings pages at\n[build.attio.com](https://build.attio.com).\n\n**response\\_type** `string` *required*\n\nThe response type. This should always be `\"code\"`.\n\n**redirect\\_uri** `string` *required*\n\nThe URL to redirect to after the user authorizes access to your app. This URL must exactly match\none of the registered redirect URLs in your app's settings pages at\n[build.attio.com](https://build.attio.com).\n\n**state** `string`\n\nA random string to prevent CSRF attacks. Set this when starting the OAuth flow and verify it\nmatches when the user is redirected back to your app.\n\n**token\\_level** `string` (default: workspace)\n\nThe [level](https://docs.attio.com/rest-api/guides/authentication.md#token-levels) of the access token, either\n`\"workspace\"` or `\"user\"`. A `\"user\"` token requires `code_challenge` and `code_challenge_method`.\n\n**code\\_challenge** `string`\n\nA [PKCE](https://datatracker.ietf.org/doc/html/rfc7636) code challenge: the base64url-encoded\nSHA-256 hash of a code verifier. Required when `token_level` is `\"user\"`. Pass the code verifier\nas `code_verifier` when you exchange the code at the [token endpoint](https://docs.attio.com/docs/oauth/token.md).\n\n**code\\_challenge\\_method** `string`\n\nThe PKCE code challenge method. This should always be `\"S256\"`. Required when `code_challenge` is\nset.\n\n#### Response\n\n**302** `Redirect`\n\nAfter the user approves the connection, they are redirected to the `redirect_uri` with a `code`\nquery parameter. If provided, the original `state` is also included.\n\nThis documentation is built and hosted on [Mintlify](https://mintlify.com), a developer documentation platform."
+  }
+ ],
+ "errors": []
+}

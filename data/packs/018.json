@@ -1,0 +1,71 @@
+{
+ "id": 18,
+ "app": "Help Scout",
+ "category": "Support and Helpdesk",
+ "hint": "helpscout.com",
+ "composio": {
+  "found": true,
+  "slug": "HELP_SCOUT",
+  "name": "Help Scout",
+  "tools": 129,
+  "triggers": 0,
+  "auth": [
+   "OAUTH2"
+  ],
+  "managed_app": "No",
+  "url": "https://docs.composio.dev/toolkits/help_scout.md",
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://developer.helpscout.com/mailbox-api/overview/authentication",
+   "official": true,
+   "excerpt": "Authentication\nThis is an HTTPS-only API and it uses OAuth 2.0 authorization, implementing Authorization Code and Client Credential flows.\nAll requests have to be authenticated via the Authorization header:\ncurl -H \"Authorization: Bearer f4f4994a875f461ca4d4708b9e027df4\" \\\nhttps://api.helpscout.net/v2/users/me\nThe Authorization Code flow is typically used for integrations to be used by other Help Scout users. The Client Credentials flow is meant for internal integrations.\nAll credentials must be associated with an active, invited user in the Help Scout account; a 401 error will be returned if a user does not meet these credentials.\nPlease note that you can choose to send data as JSON, form or query params in all POST requests on this page, as long as the appropriate Content-Type header is included.\nOAuth2 application\nYou need to create an OAuth2 application before you can use the API. Create one by navigating to Your Profile > My apps and click Create My App. A redirection URL is necessary when using the Authorization Code flow.\nAuthorization Code flow\nThis is a redirection-based flow. The application must be capable of interacting with the user-agent (i.e. the user\u2019s web browser) "
+  },
+  {
+   "sid": "S2",
+   "url": "https://docs.helpscout.com/article/1140-mailbox-api",
+   "official": true,
+   "excerpt": "Help Scout's Inbox API, Docs API, Beacon JavaScript, Apps, and Open Source Tools\nHelp Scout offers many integrations right out of the box, but there are lots of other apps out there in the world that you might want to connect \u2014 maybe even some your team has built for yourselves.\nThe Inbox API, custom apps, and open source tools are available for you to link your Help Scout account to any number of other apps or access your data for any number of other reasons. Leveraging these tools will require some developer skill in most instances, but if you can dream it, point your developers over to the documentation to see if they can build it!\nThe full Help Scout Developer documentation is at https://developer.helpscout.com/\nIn this article\nAPI Access\nEach paid Help Scout plan has different levels of API access.\n| Plan | Rate Limit | Endpoint Access | \n|---|---|---|\n| Standard | Up to 200 calls per minute | No access to reporting endpoints | \n| Plus | Up to 400 calls per minute | All endpoints available | \n| Pro | Up to 800 calls per minute | All endpoints available | \nThe Free plan does not include access to the API or integrations.\nLinks to Specific Documentation\nThe developer documentation is your definitive source for complete information. https://developer.helpscout.com/mailbox-api/ will take you directly to the Inbox API portion.\nBelow you'll find direct links to some of the most often asked about bits:\nOur developer documentation also includes information on:\n- Webhooks - have Help Scout send out notifications of events.\n- Apps - build your own conversation sidebar apps to quickly access information from other tools your team uses.\n- Open Source tools - find community built resources like PHP, .NET, and Ruby clients, custom apps like SnoozeBot, and more!\n- Docs API - custom development for working with Docs.\n- Beacon customizations, both with JavaScript for web apps/sites and mobile SDKs for your mobile apps.\nIf you have any questions about the API, just reach out to ask!"
+  },
+  {
+   "sid": "S3",
+   "url": "https://docs.helpscout.com/article/1779-connect-your-ai-agent-with-help-scout-to-search-conversations-and-pull-reports",
+   "official": true,
+   "excerpt": "Connect your AI Agent to Help Scout via MCP\nHelp Scout MCP gives AI assistants secure, official access to Help Scout data. You can connect Claude, ChatGPT, Cursor, and your own internal AI tools directly to Help Scout to pull up conversations, customer details, mailbox data, and Docs content. This integration is available on the Standard, Plus, and Pro plans \u2014 any plan that includes Help Scout API access. Report tools require Plus or Pro. Access is read-only for new connections, and each team member connects with their own Help Scout credentials, ensuring your AI Agent only accesses data that the specific user is permitted to see.\nBefore You Get Started\nKeep the following requirements and details in mind before setting up the connector:\n- Your Help Scout account must have API access, which is included on the Standard, Plus, and Pro plans.\n- Log in to Help Scout with your own credentials during setup. AI Agents only access data that your specific user account is permitted to see. For more details on user permissions, see User Roles and Permissions.\n- Adding the connector may require an admin. On Claude Team and Enterprise plans, only a Claude Owner can add custom connectors. On Chat"
+  },
+  {
+   "sid": "S4",
+   "url": "https://developer.helpscout.com/webhooks",
+   "official": true,
+   "excerpt": "Webhooks\nWebhooks enable Help Scout to call a script on your server when one or more events have happened. Webhooks can be thought of as event listeners or push notifications.\nConfiguring webhooks can be done through the Help Scout user interface. Simply log in, click the gear icon (Settings) in the top right, go to Workspace > Apps, then select the Webhooks app.\nAvailable Events\nEach request body uses the object format linked in the table below.\n| Type | Event Name | Request Header | v2 Request Body | \n|---|---|---|---|\n| Conversation | Assigned | convo.assigned | v2 Conversation object | \n| | Created | convo.created | v2 Conversation object | \n| | Created (AI Answers) | convo.ai-answers.created | v2 Conversation object | \n| | Deleted | convo.deleted | {id: id-of-convo-that-was-deleted} | \n| | Merged | convo.merged | v2 Conversation object | \n| | Moved | convo.moved | v2 Conversation object | \n| | Status Updated | convo.status | v2 Conversation object | \n| | Tags Updated | convo.tags | v2 Conversation object | \n| | Custom Fields Updated | convo.custom-fields | v2 Conversation object | \n| | Customer Reply | convo.customer.reply.created | v2 Conversation object | \n| | Agent Reply | "
+  },
+  {
+   "sid": "S5",
+   "url": "https://developer.helpscout.com/docs-api",
+   "official": true,
+   "excerpt": "Overview\nYour API Key\nEach User has a Docs API key. To generate, view, or regenerate the API key, click your avatar in the top right of your account, then click Your Profile.\nNext, click Security and Access in the menu on the left. Your API key is listed under the Docs API section.\nNote: If you don't see an API key in your profile, that's because you haven't been granted the \"Docs: Create new, edit settings & Collections\" permission by the Account Owner or an Administrator.\nAuthentication\nThis is an HTTPS-only API. Authentication is based on API keys. Each API key is associated with a Help Scout user. Results returned from various responses are based upon the role of the user to which the API key is tied.\nThe API key is passed via HTTP Basic Authentication and goes in the username field. A dummy password, such as X, goes in the password field.\nTo try the API via curl on the command-line, the general form used would be:\nFor instance, if your API key is 60783dd23ef, you would execute:\nEndpoints\nAll API requests are made to https://docsapi.helpscout.net/ and all requests are served over HTTPS. The current version is v1.\nFormats\nThe API will only support JSON at this time.\nCorrelation "
+  },
+  {
+   "sid": "S6",
+   "url": "https://www.helpscout.com/pricing",
+   "official": true,
+   "excerpt": "Deliver delightful support at every stage of growth\nStandard\nFor growing teams looking to automate more tasks and move beyond email.\nTry for Free\nGet core features like...\n- Multiple Inboxes\n- Live chat and SMS\n- WhatsApp, Instagram, and Messenger\n- Multiple knowledge bases\n- One basic SLA policy\n- Basic workflows\n- Unlimited tags and saved replies\n- AI Inbox assistant\nPlus\nPopular\nFor teams managing higher volume and complexity across multiple channels.\nTry for Free\nEverything in Standard and...\n- Advanced workflows\n- Two advanced SLA policies\n- Secure customer portal\n- Unlimited AI Drafts\n- Round robin routing\n- Salesforce, Jira, and HubSpot\n- Internal teams\n- Group conversations by company\nPro\nFor teams that need the highest level of scale and security.\nBook a Demo\nEverything in Plus and...\n- Unlimited workflows\n- Unlimited SLA policies\n- Multiple routing types\n- SSO/SAML\n- HIPAA compliance\n- Up to 50 light users\n- Dedicated onboarding specialist\n- Strategic account manager\n- Preferred pricing on Aircall\nEnvoy\nAdd-on\nScale capacity with an AI assistant that instantly resolves customer requests. Pay per resolution on a monthly basis.\n- Resolve more than just the basics Handle eve"
+  },
+  {
+   "sid": "S7",
+   "url": "https://articles.helpscout.com/blog/introducing-help-scout-mcp",
+   "official": true,
+   "excerpt": "Every customer conversation tells a story. Support teams hear about issues before anyone else. They answer buying questions, uncover new customer requests, explain complex workflows, and help customers succeed day after day. Over time, those conversations become one of the richest sources of customer knowledge in your business.\nToday, we're bringing Help Scout's Model Context Protocol (MCP) server out of beta, making it generally available to all Help Scout customers.\nWhether you're preparing for a customer meeting, investigating a bug, writing documentation, or brainstorming a new idea, AI has quickly become a thought partner for getting work done. But the quality of those answers depends on the information it has access to. Now, your AI assistant can retrieve customer context directly from Help Scout instead of relying on manual searches through your inbox.\nWith Help Scout's MCP server, AI assistants like Claude, ChatGPT, and Cursor can securely retrieve the customer knowledge already stored in your Help Scout account. Instead of manually searching through conversations, you can simply ask questions like:\n- What product issues has this customer reported over the last six months?\n"
+  },
+  {
+   "sid": "S8",
+   "url": "https://docs.helpscout.com/category/1556-payment-and-billing",
+   "official": true,
+   "excerpt": "Help Scout Support\nToggle Navigation\nHome\nGetting Started\nAccount Management\nInbox\nScout\nBeacon\nDocs\nChannels & Apps\nStatus\nPayment and Billing\nAnswer your questions about payment options and billing details\nSort by Default\nSort A-Z\nSort by Popularity\nSort by Last Updated\nBilling and Plans Guide\nCancel Your Help Scout Account\nPayments and Invoices\nAI Drafts Pricing and Billing\nMessages Pricing\nLegacy Plan Changes\nAbout Annual Payments\nAI Resolutions Pricing\nRestricted Access for Russia and Belarus\nHelp Scout for Good\nNo results found"
+  }
+ ],
+ "errors": []
+}

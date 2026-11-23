@@ -1,0 +1,74 @@
+{
+ "id": 34,
+ "app": "GoHighLevel",
+ "category": "Marketing, Ads, Email and Social",
+ "hint": "highlevel.stoplight.io",
+ "composio": {
+  "found": true,
+  "slug": "HIGHLEVEL_LOCATION",
+  "name": "HighLevel Location",
+  "tools": 555,
+  "triggers": 0,
+  "auth": [
+   "OAUTH2",
+   "BEARER_TOKEN"
+  ],
+  "managed_app": "No",
+  "url": "https://docs.composio.dev/toolkits/highlevel_location.md",
+  "mcp_variant": "HIGHLEVEL_MCP",
+  "mcp_variant_auth": [
+   "API_KEY"
+  ]
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://help.gohighlevel.com/support/solutions/articles/48001060529-highlevel-api-documentation",
+   "official": true,
+   "excerpt": "HighLevel provides APIs that allow developers to build custom integrations, automate processes, and connect external applications with the HighLevel platform.\nThe APIs support contacts, conversations, calendars, workflows, payments, webhooks, and more.\nAPI access is available across HighLevel subscription plans. However, certain endpoints and capabilities may require a higher-tier plan.\nImportant: API V1 reached end-of-support on December 31, 2025. Existing integrations may continue working, but API V1 no longer receives updates or technical support. Developers are encouraged to use supported API versions.\nFor complete endpoint references, visit the Official HighLevel API Documentation.\nHighLevel API Documentation\nThe official API documentation provides information about available endpoints, authentication, request parameters, response formats, and supported API versions. Developers can use this documentation to:\n- Explore available API endpoints.\n- Review authentication requirements.\n- Check supported API versions.\n- Build and maintain custom integrations.\n- Understand endpoint-specific restrictions.\nNote: New legacy API key generation is being phased out. Private Integration Toke"
+  },
+  {
+   "sid": "S2",
+   "url": "https://marketplace.gohighlevel.com/docs/other/mcp/index.html",
+   "official": true,
+   "excerpt": "HighLevel MCP Server\nStop clicking. Start asking.\nYour next booking, follow-up, or invoice can start with a sentence. Connect HighLevel to your AI assistant, then ask it to find a contact, book an appointment, send a message, update a deal, or schedule a social post. The assistant works directly with your HighLevel account, so you can get work done from the conversation you\u2019re already having.\nMore than 700 actions across 38 HighLevel features give you room to hand off everyday work:\n- Follow up while the context is fresh. Look up a lead\u2019s messages, check their appointments, and send your reply from the same chat.\n- Turn a decision into action. Create and send an invoice, update a deal, or add a follow-up task without opening each record yourself.\n- Keep marketing moving. Schedule social posts, review email campaign results, and manage promotions.\n- Skip screen navigation. The assistant searches and updates records directly, without opening HighLevel pages or reading screenshots. See why use MCP.\n- Keep access on your terms. Connect the sub-accounts you want to use and approve the permissions. Agencies with multi-sub-account installation enabled can switch between connected sub-acco"
+  },
+  {
+   "sid": "S3",
+   "url": "https://stoplight.io/welcome?utm_source=workspaces&amp;utm_medium=referral&amp;utm_campaign=free_workspace_banner",
+   "official": true,
+   "excerpt": "Create your workspace\nEnter your email below to create your Stoplight workspace.\nYour Work Email\nSign Up\nBy continuing, you are agreeing to our\nCustomer Terms of Service\nand\nPrivacy Policy\n, and to receiving emails from Stoplight."
+  },
+  {
+   "sid": "S4",
+   "url": "https://help.gohighlevel.com/support/solutions/articles/155000008488-highlevel-api-migration-guide-how-to-move-to-private-integrations",
+   "official": true,
+   "excerpt": "This simple, step-by-step guide will help you transition your connected apps (like Zapier, Make, or custom tools) from old, legacy API keys to HighLevel\u2019s new, secure Private Integration Tokens.\nHighLevel API v1 reached end-of-support on December 31, 2025. Existing v1 integrations may continue to work, but they are no longer maintained or supported.\nHighLevel directs users of legacy API keys to migrate to Private Integrations, which provide scoped access through Private Integration Tokens (PITs)\nPrivate Integration Tokens are available across plans, but certain API endpoints require Founder Plan access.\nCritical rule before starting\nDo NOT update or edit your existing, active automations.\u00a0Doing so might break your current setups. Instead, you will:\n- Keep your existing automations running.\n- Create brand-new automations alongside them using the new APIs.\n- Test the new ones.\n- Delete the old automations and your old API key only after everything works perfectly.\nStep-by-Step Migration Guide\nUnlike v1 API keys, which provide broad access to account data, Private Integrations allow you to select the specific scopes and permissions an integration can access. Private Integrations can b"
+  },
+  {
+   "sid": "S5",
+   "url": "https://help.gohighlevel.com/support/solutions/articles/155000009289-what-is-the-highlevel-partner-network",
+   "official": true,
+   "excerpt": "The HighLevel Partner Network connects qualified HighLevel founders with businesses looking for expertise, services, and support. Eligible Founder Plan customers can opt in and complete the qualification process to become Partners. This article explains how to join the Partner Network, how matching works, and how Partner status and customer connections contribute to future opportunities.\nTABLE OF CONTENTS\nWhat is the HighLevel Partner Network?\nThe HighLevel Partner Network is a program that connects businesses with qualified HighLevel partners who can help them use the platform effectively. Businesses are matched with Partners based on their specific needs and the expertise of available Partners.\nFor qualified Partners, the network provides opportunities to connect with potential customers, establish service relationships, and grow their businesses.\nPartner Eligibility and Qualification\nJoining the Partner Network requires an eligible Founder Plan subscription and successful completion of the qualification process. Meeting these requirements allows founders to become qualified Partners.\nVisit: https://partners.gohighlevel.com/\nHow Partner Matching Works\nPartner matching connects bu"
+  },
+  {
+   "sid": "S6",
+   "url": "https://help.gohighlevel.com/support/solutions/articles/155000005741-how-to-setup-and-use-the-highlevel-mcp-server",
+   "official": true,
+   "excerpt": "Connect your AI assistant to HighLevel so it can find CRM records and perform supported actions from your instructions. The HighLevel MCP Server, also called the LeadConnector MCP Server, connects through OAuth: sign in, choose the sub-account or sub-accounts to include, and approve the requested permissions.\nThis guide covers setup for Claude, ChatGPT, Codex, Cursor, Muse, and Grok Bot, along with how to work across authorized sub-accounts and discover available operations.\nTABLE OF CONTENTS\nWhat is the HighLevel MCP Server?\nMCP stands for Model Context Protocol. It gives AI assistants a standard way to discover and use tools from connected applications. With the HighLevel MCP Server, your assistant can work with supported CRM data and actions without you needing to know the underlying API.\nThe active catalog includes more than 600 read, create, update, and delete operations across 38 domains. The operations available to your connection depend on the OAuth scopes and permissions you approve.\nBefore You Connect\nYou need access to the HighLevel sub-account or sub-accounts you want to connect and a supported AI client. ChatGPT users can find the official HighLevel plugin in Plugins. "
+  },
+  {
+   "sid": "S7",
+   "url": "https://marketplace.gohighlevel.com/docs/Authorization/PrivateIntegrationsToken/index.html",
+   "official": true,
+   "excerpt": "Private Integrations\nPrivate Integrations allow you to build powerful custom integrations between your HighLevel account and any other third-party app.\nIf you are looking to integrate your HighLevel account with a third-party app, you have two options:\n- Find and install the relevant app from the App Marketplace\n- Build your own private integration by yourself or with the help of a developer using APIs.\nPrivate Integrations help you achieve #2 securely.\nKey Advantages of Private Integrations\n- Simple: Generate Private Integration tokens from your account settings and manage them with ease.\n- Secure: You get to restrict the scopes/permissions that a developer can access on your account.\nPrivate Integrations are available for both Agencies and Sub-Accounts.\nWhat's the difference between Private Integrations and API Keys?\n| Private Integrations | API Keys | \n|---|---|\n| More Secure: You get to restrict the scopes/permissions that a developer can access on your account | Less Secure: A developer gets unrestricted access to all your account data | \n| State-of-art: Private Integrations allows you to access API v2.0 which is state of the art | Out-dated: API Keys work on API v1.0 which ha"
+  },
+  {
+   "sid": "S8",
+   "url": "https://www.gohighlevel.com/pricing",
+   "official": true,
+   "excerpt": "Unlimited contacts, unlimited Users. Scale your business without a tax on growth.\nStarter\nFor one business or a few clients\nChat and phone support\nWorkflow Builder\nCampaign Builder\n2 way SMS\n2 way Email\nApp Marketplace for Agency & Sub-accounts\nAll Core Features\nExperience it for 14 Days FREE\nMOST POPULAR\nFounder\nPerfect for founders, agencies, consultants, and service providers looking to scale\nEverything in Unlimited, plus:\nSaaS mode with unlimited reselling\nHighLevel Partner Network Coming soon\nReady-made industry solutions\nProject management\nMeeting rooms\nEvents\nExclusive access to features and discounts\nUnlimited\nFor agencies managing unlimited clients\nEverything in Starter Plan and...\nWhite-label desktop app\nBasic API access\nPass-through billing for usage and add-ons\nEnterprise plan\nDesigned for high volume businesses & agencies, our Enterprise plan is custom tailored to each business in order to maximize margins and deliver the best of what HighLevel has to offer.\nFeatures\n- Conversation AI*\n- Voice AI*\n- Content AI\n- Funnel AI\n- Reviews AI*\n- Website & Funnel Builder\n- Domain Management\n- CRM & Pipelines\n- Custom Dashboards & Reporting\n- Email + SMS Marketing*\n- Inbound & o"
+  }
+ ],
+ "errors": []
+}

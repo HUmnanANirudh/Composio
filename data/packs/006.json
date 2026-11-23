@@ -1,0 +1,71 @@
+{
+ "id": 6,
+ "app": "Podio",
+ "category": "CRM and Sales",
+ "hint": "podio.com",
+ "composio": {
+  "found": true,
+  "slug": "PODIO",
+  "name": "Podio",
+  "tools": 143,
+  "triggers": 0,
+  "auth": [
+   "OAUTH2"
+  ],
+  "managed_app": "No",
+  "url": "https://docs.composio.dev/toolkits/podio.md",
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://developers.podio.com/authentication",
+   "official": true,
+   "excerpt": "How to authenticate with Podio API\nThe Podio API uses the OAuth2 protocol for authentication. This allows external apps to request authorization to Podio without having direct access to the user's password. Our API supports different OAuth flows depending on what kind of integration you are making.\nBefore you can use the Podio API you must register your application. Your application is assigned a unique identifier, called \"Client ID\", together with a \"Client Secret\". You will need both of these to authenticate. The Client Secret should not be shared with anyone.\nAuthentication flows\nPodio supports four different ways of autheticating depending on what kind of application you are building:\n- Server-side flow\n- This is the preferred way of authenticating for web apps.\n- Client-side flow\n- Use the client-side flow if your application does not have a server. Examples: Browser extensions, web app running purely in the browser, mobile or desktop applications.\n- Username & password flow\n- Use this flow only if none of the other flows are suitable. It requires the user's username and password to be shared.\n- App authentication flow\n- Use app authentication if you only need to interact with"
+  },
+  {
+   "sid": "S2",
+   "url": "https://developers.podio.com/index/faq",
+   "official": true,
+   "excerpt": "Frequently Asked Questions\nFrequently Asked Questions\nIs the Podio API free to use?\nThe Podio API is available to use for both paid and free Podio accounts. Both have full access to the API and the same base rate Limit A and Limit B apply. There is no extra charge for using the API as long as the usage is within these base rate limits. Paid accounts have an additional capability of upgrading to higher API rate limits by purchasing an API Add-on.\nHow do I get an API key?\nYou have to sign in or sign up with Podio. Then you find your API keys as a tab under your account settings.\nWhat are the limitation on API requests?\nTo ensure Podio runs well for everyone, API integrations are subject to two base rate limits. Limit A applies to resource-intensive API operations, while Limit B applies to all other API operations. If you exceed an applicable limit, affected API requests will return errors. See the Rate Limits section for the current limits and information about monitoring your usage.\nCan I get a higher rate limit?\nYes. If your API integration requires a higher rate limit, you can request your contract owner to purchase an API Add-on for the relevant API key. The API Add-on increases "
+  },
+  {
+   "sid": "S3",
+   "url": "https://developers.podio.com/doc",
+   "official": true,
+   "excerpt": "Podio API Documentation\nAreas\nOur API is split up into different areas, that each contains a subset of methods grouped by functionality. You could call each area its own API, but we like to call them areas, because it's just a simple grouping.\nCore Areas\n- Applications\n- This area is used to manage application definitions.\n- Comments\n- Comments are made by users on different objects.\n- Contacts\n- Each user has a profile attached, that holds all the personal details of the user.\n- Files\n- This area contains all the files that can be uploaded to Podio by end users.\n- Hooks\n- Hooks are webhooks that can call external sites when certain actions occur in Podio.\n- Items\n- Items are entries in an app.\n- OAuth authorization\n- This API uses OAuth 2.\n- Status\n- Status messages are small texts that the users wishes to share with the other users in a space.\n- Tasks\n- Tasks are used to track what work has to be done.\nOther Areas\n- Actions\n- Actions are activities performed by users that does not pertain to one of the core objects in Podio, items, tasks and statuses.\n- Alerts\n- An alert is a ping from on user to one or more other users.\n- App market\n- Apps and packs can be shared to the app mark"
+  },
+  {
+   "sid": "S4",
+   "url": "https://developers.podio.com/examples/webhooks",
+   "official": true,
+   "excerpt": "Tutorials\nWorking with Webhooks\nWebhooks provide a way to build event-driven apps, because you can be notified about changes in Podio. Webhooks allow a URL to be called when an item is created, updated or deleted in an app.\nExample scenario\nImagine that a developer would like to be notified by SMS of new bugs created in their Podio bug tracker. Since Podio doesn't support sending of SMS messages, this would have to be implemented using a third-party SMS gateway service. Instead of polling for new bugs every 5 minutes, a webhook can be set up on the bugs app that will call the SMS service whenever a bug is created. This allows for near real-time notifications and avoids the need to continually check for changes in Podio.\nSupported events\nEach webhook is registered to receive updates about a specific event in Podio, for example an item being updated or a comment being added. View a full list of supported events in the API reference documentation.\nRegistering your webhook\nThe easiest way to register a webhook is from inside Podio. Go to your app and click on 'Developer' in the settings dropdown. Here you can add new webhooks and see a list of existing webhooks for that app.\nIf you nee"
+  },
+  {
+   "sid": "S5",
+   "url": "https://developers.podio.com/authentication/server_side",
+   "official": true,
+   "excerpt": "Authentication\nServer-side flow\nThe server-side flow works by sending your user to Podio to authorize. It's a four step process:\n- You redirect your user to Podio for authorization\n- Podio redirects back to your web app with an authorization code\n- You use the authorization code to obtain an access token\n- You use the access token for all API requests\nThe first step is to redirect your user to Podio's authorization endpoint, providing your client_id and a redirect_uri. The redirect_uri must be on the same domain as the domain you specified when you applied for your API Key. The endpoint you must redirect to is:\n https://podio.com/oauth/authorize?client_id=YOUR_APP_ID&redirect_uri=YOUR_URL&scope=SCOPE_STRING\n\nAfter granting access the user will be redirected to the URL you passed in the redirect_uri parameter with an authorization code appended:\nhttp://YOUR_URL?code=THE_AUTHORIZATION_CODE\n You must then use the authorization code to obtain an access token. To authenticate your app, you must pass the authorization code and your client_secret to our endpoint. In return you will receive an access token. Make a POST like this:\n HTTP METHOD: POST\n URL: https://api.podio.com/oauth/token/v2\n HEADER: \"Content-Type: application/json\"\n BODY:\n {\n \"grant_type\": \"authorization_code\",\n \"client_id\": YOUR_APP_ID,\n \"redirect_uri\": YOUR_URL,\n \"client_secret\": YOUR_APP_SECRET,\n \"code\": THE_AUTHORIZATION_CODE,\n }\nIf your app is successfully authenticated and the authorization code from the user is valid, the API will return the access token:\n{\n \"access_token\": ACCESS_TOKEN,\n \"token_type\": \"bearer\",\n \"expires_in\": EXPIRES_IN,\n \"refresh_token\": REFRESH_TOKEN,\n \"scope\": GRANTED_SCOPE_STRING,\n \"ref\":\n {\n \"type\": \"user\",\n \"id\": USER_ID\n }\n}\nSee Scopes & Permissions for details about the value of GRANTED_SCOPE_STRING\nExample: Ruby Sinatra\nThe following code example is written in Ruby, using Sinatra and the OAuth\n\n# access this to request a token from Podio.\nget '/auth/podio' do\n url = podio_client.web_server.authorize_url(:redirect_uri => redirect_uri)\n puts \"Redirecting to URL: #{url.inspect}\"\n redirect url\nend\n\n# If the user authorizes it, this request gets your access token"
+  },
+  {
+   "sid": "S6",
+   "url": "https://developers.podio.com/api-key",
+   "official": true,
+   "excerpt": "Get API key\nGenerating API keys to Podio\nIt's easy to get one or more API keys for accessing your Podio data. You just have to sign in or sign up with Podio, and go to the API key tab in your settings."
+  },
+  {
+   "sid": "S7",
+   "url": "https://developers.podio.com/index/limits",
+   "official": true,
+   "excerpt": "Concepts and conventions\nRate limits\nThe Podio API only allows you to make a certain amount of API calls each hour. The general limit is 1,000 API calls per hour, but if the API call is deemed resource-intensive, a lower rate of 250 calls per hour is enforced. So Podio API uses a two-limit model.\n- Limit A = 250 calls per hour. It applies to resource-intensive operations marked \"Limit A\" or \"Rate-Limited\" in the API reference.\n- Limit B = 1,000 calls per hour. It applies to all standard API operations marked \"Limit B\" or \"Standard\" in the API reference.\nIf you hit the rate limits the API will begin returning 420 HTTP error codes for all API calls. Rate limits are per user per API key and are measured on a rolling hour basis.\nYou can monitor your current status by examining two HTTP headers that are returned with each request you make:\nX-Rate-Limit-Limit: The ceiling for the request you just made\nX-Rate-Limit-Remaining: The number of requests you have left for the current 1 hour window\nYou cannot currently see when your rate limit counter is reset.\nIf you have a project that requires a higher rate limit, get an API Add-on for your related API key. An API Add-on will give your key increased rate limits (both Limit A and B). We have multiple tiers available for API Add-ons, so you can choose which tier is most relevant for your anticipated usage. Read product documentation to learn more about how to choose, buy and manage Add-ons.\nIn case your project requires a rate limit higher than the available API Add-ons, contact us with a brief description of your project, your estimated usage, and the client_id of the API key you are using to raise an exception request.\nTips for reducing API usage\n- Avoid making API requests inside loops. Instead of fetching individual objects inside a loop, fetch a collection of objects in one API operation. E.g. filter items\n- Cache results whenever possible. This is especially true when you are displaying data to the public (i.e. every sees the same output).\n- Don't poll for changes. Instead of polling Podio to see if your content has changed use webhooks or push to receive a notification.\n- Use logging to see how many requests you're making\n- Bundle responses with \"fields\" parameter"
+  },
+  {
+   "sid": "S8",
+   "url": "https://developers.podio.com/authentication/app_auth",
+   "official": true,
+   "excerpt": "Authentication\nApp authentication flow\nThe app authentication flow is suitable in situations where you only need data from a single app and do not wish authenticate as a specific user. It is similar to the username & password flow, but uses the app ID and a special app token as the login credentials.\nWhen you authenticate as an app you can only access that specific app and if you create content it will appear as having been created by the app itself rather than a specific user. Good uses for the app authentication flow are automated scripts that run without any user interaction.\nTo gain an access token, you make a POST request to our endpoint with your authentication parameters placed in the request body. The grant_type parameter set to app.\n HTTP METHOD: POST\n URL: https://api.podio.com/oauth/token/v2\n HEADER: \"Content-Type: application/json\"\n BODY:\n {\n \"grant_type\": \"app\",\n \"app_id\": YOUR_PODIO_APP_ID,\n \"app_token\": YOUR_PODIO_APP_TOKEN,\n \"client_id\": YOUR_CLIENT_ID,\n \"redirect_uri\": YOUR_URL,\n \"client_secret\": YOUR_CLIENT_SECRET\n }\nYou can find the Podio App ID and Podio App Token by going to your app in Podio and clicking the Developer link in the settings dropdown.\nIf your app is successfully authenticated and the credentials provided are valid, the API will return the access token:\n{\n \"access_token\": ACCESS_TOKEN\n \"token_type\": \"bearer\",\n \"expires_in\": EXPIRES_IN,\n \"refresh_token\": REFRESH_TOKEN,\n \"ref\":\n {\n \"type\": \"app\",\n \"id\": APP_ID\n }\n}\nExample code\nThe example code below show you how to do app authentication using the Ruby gem or PHP client.\nPodio.setup(\n :api_key => 'YOUR_CLIENT_ID',\n :api_secret => 'YOUR_CLIENT_SECRET'\n)\nbegin\n Podio.client.authenticate_with_app('YOUR_APP_ID', 'YOUR_APP_TOKEN')\n # Authentication was a success, now you can start making API calls.\nrescue Podio::PodioError => ex\n # Something went wrong\nend"
+  }
+ ],
+ "errors": []
+}

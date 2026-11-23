@@ -1,0 +1,75 @@
+{
+ "id": 84,
+ "app": "Paygent Connect",
+ "category": "Finance and Fintech",
+ "hint": "paygent (NMI-powered)",
+ "composio": {
+  "found": false,
+  "slug": null,
+  "name": null,
+  "tools": null,
+  "triggers": null,
+  "auth": [],
+  "managed_app": null,
+  "url": null,
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://paygenthq.ai/help",
+   "official": true,
+   "excerpt": "Paygent is a wallet your AI agents pay from. You add money, connect an agent and give it a daily limit. The agent can ask to pay, and nothing is paid until you approve it with your PIN.\nHow it works\n- Open a wallet at paygenthq.ai, confirm your phone and set your approval PIN.\n- Add money by bank transfer to your wallet account number, direct debit or stablecoin.\n- Connect an agent with the Paygent connector (steps below). When it connects, you approve it with your PIN and choose its slot: a name, a daily limit and the tools it may use.\n- Ask your agent to buy something. At the checkout it prepares the payment and asks you. You see who is paid, how much and why, and approve with your PIN on Paygent\u2019s website or phone app.\n- The agent pays and files the receipt. Every payment is kept in Activity under the agent that made it.\nConnect an agent\nEvery agent uses the same connector: name Paygent, address https://paygenthq.ai/mcp. Each agent you approve gets its own slot, up to five.\nClaude\n- In Claude, open Customize, then Connectors, then Add custom connector. Or in your Paygent wallet, open Agents, choose Connect an agent, then Claude: it opens this window filled in.\n- Name: Paygent. U"
+  },
+  {
+   "sid": "S2",
+   "url": "https://docs.paygent.to/reference/api-reference",
+   "official": true,
+   "excerpt": "Backend API Reference\nThe Paygent backend exposes a small REST API. The SDK uses it. You also call it directly to manage plans, users, and subscriptions.\nBase URL: https://api.paygent.to/api/v1\nAuthentication: Bearer token in Authorization: Bearer pg_live_... header. The product creation endpoint (POST /products) is the only exception \u2014 it's how you mint the first key.\nContent type: application/json for all request and response bodies.\nProducts\nPOST /products\nCreate a new product (tenant). Returns the API key \u2014 exactly once. No authentication required.\nimport httpx\nr = httpx.post(\n \"https://api.paygent.to/api/v1/products\",\n json={\n \"name\": \"MyAgent\",\n \"contact_name\": \"Jane Developer\",\n \"contact_email\": \"jane@example.com\",\n },\n)\nr.raise_for_status()\nprint(r.json())\ncurl -X POST https://api.paygent.to/api/v1/products \\\n -H \"Content-Type: application/json\" \\\n -d '{\n \"name\": \"MyAgent\",\n \"contact_name\": \"Jane Developer\",\n \"contact_email\": \"jane@example.com\"\n }'\nconst res = await fetch(\"https://api.paygent.to/api/v1/products\", {\n method: \"POST\",\n headers: { \"Content-Type\": \"application/json\" },\n body: JSON.stringify({\n name: \"MyAgent\",\n contact_name: \"Jane Developer\",\n contact_email: \"ja"
+  },
+  {
+   "sid": "S3",
+   "url": "https://paygenthq.ai/support",
+   "official": true,
+   "excerpt": "Write to [email protected] and a person on the Paygent team will reply, usually within one working day.\nContact us\nWrite from the email on your Paygent account, so we can find it. Include the payment or receipt number if your question is about a payment.\nNever send us your PINs, your BVN or a full card number. We will never ask for them, by email or anywhere else.\nIf something is urgent\n- An agent is doing something you didn\u2019t ask for: open Agents in your wallet and pause or disconnect it. It loses access at once.\n- You think someone knows your PIN: change it in Settings, then email us.\n- The agent card was used without your approval: open Card and freeze it, then email us.\nCommon questions\nAn approval request expired\nNo money moved. Ask your agent to prepare the payment again and approve the new request.\nA payment shows as failed\nThe amount returns to your wallet. Check the recipient\u2019s details with your agent and try again, or email us with the payment number.\nMy deposit hasn\u2019t arrived\nBank transfers usually arrive within minutes. If it has been more than an hour, email us with the amount, the time and your bank.\nMy agent can\u2019t connect\nCheck it is using the address https://paygenthq.ai/mcp, and that you approved it with your PIN on the Paygent page it opened. The help page has the steps for each agent.\nSee also the help page, privacy policy and terms of use."
+  },
+  {
+   "sid": "S4",
+   "url": "https://docs.paygent.to/reference/sdk-reference",
+   "official": true,
+   "excerpt": "# After updating subscription via the API:\npg.refresh_user(\"user_123\")\npg.reset_user(user_id)\ndef reset_user(self, user_id: str) -> None\nDrop the user from the in-memory cache. Next call for this user re-runs the 5-step fallback chain.\nCallbacks\nRegister hooks that fire on gate decisions and metering events. Multiple callbacks per slot are allowed.\npg.on_soft_gate(callback)\ndef on_soft_gate(self, callback: Callable[[GuardResult], None]) -> None\nRegister a soft-gate callback. Multiple callbacks can be registered. They fire in registration order; one throwing doesn't stop the others.\npg.on_soft_gate(lambda r: print(f\"\u26a0 {r.message}\"))\npg.on_hard_gate(callback)\ndef on_hard_gate(self, callback: Callable[[GuardResult], None]) -> None\nRegister a hard-gate callback. Fires before PaygentLimitExceeded is raised.\npg.on_usage(callback)\ndef on_usage(self, callback: Callable[[UsageEvent], None]) -> None\nRegister a callback for every successfully-metered call. Fires across all metering paths (auto-instrument, wrap, framework callbacks).\npg.on_session_start(callback)\ndef on_session_start(self, callback: Callable[[UserState], None]) -> None\nRegister a callback that fires when a UserState is first l"
+  },
+  {
+   "sid": "S5",
+   "url": "https://docs.withpaygent.com/documentation/introduction/what-is-paygent.md",
+   "official": true,
+   "excerpt": "| Without usage-aware billing                             | With Paygent                                    |\n| ------------------------------------------------------- | ----------------------------------------------- |\n| Spreadsheets to reconcile API costs vs customer charges | Real-time usage \u2192 revenue in one system         |\n| One flat subscription that loses money on heavy users   | Activity, outcome, credit, and hybrid pricing   |\n| Manual invoices every month                             | Orders + automatic invoice generation           |\n| No margin visibility per agent or customer              | Cost and revenue dashboards per indicator       |\n| Weeks to launch a new pricing experiment                | Plans, wallets, and fee stacks in the dashboard |\n\n**Plans** package pricing into tiers (Starter / Pro / Enterprise) or custom deals per customer. Orders reference plans \u2014 not raw agent defaults.\n\n| Model              | Type                           | Docs                                                               |\n| ------------------ | ------------------------------ | ------------------------------------------------------------------ |\n| Setup fee          | One-time                       | [Subscription Fees](/documentation/introduction/subscription-fees) |\n| Platform fee       | Recurring                      | [Subscription Fees](/documentation/introduction/subscription-fees) |\n| Seat-based         | Recurring per user             | [Subscription Fees](/documentation/introduction/subscription-fees) |\n| Activity-based     | Per usage event                | [Pricing Models](/documentation/introduction/pricing-models)       |\n| Outcome-based      | Per result                     | [Pricing Models](/documentation/introduction/pricing-models)       |\n| Credits / wallets  | Prepaid or postpaid            | [Credit Currencies](/documentation/introduction/credit-currencies) |\n| External costs     | Pass-through (telephony, etc.) | [External Costs](/documentation/introduction/external-costs)       |\n| Custom model rates | Token/minute markups           | [Custom Pricing](/d\n\n* **AI SaaS founders** launching usage-based or hybrid pricing\n* **Voice / video agent builders** billing per minute, call, or outcome\n* **Enterprise AI teams** needing setup fees, custom plans, and GST/VAT\n* **Platform teams** reselling LLM access with credit packs and wallets"
+  },
+  {
+   "sid": "S6",
+   "url": "https://docs.withpaygent.com/documentation/getting-started/quick-start",
+   "official": true,
+   "excerpt": "Quick Start\nGet started with Paygent in less than 5 minutes. Choose your SDK and start tracking AI usage immediately.\nStep 1 \u2014 Get Your API Key\nSign up at withpaygent.com and get your API key from the dashboard.\nStep 2 \u2014 Install the SDK\nPython\nNode.js\nGo\nStep 3 \u2014 Set up Agents and Indicators\nDefine your AI agents and the indicators (actions) they\u2019ll track in the Paygent dashboard. For example, create a chatbot-agent agent and a message-sent indicator.\nCommon Examples:\n- Agent: customer-support-bot \u2192 Indicator: message-sent\n- Agent: sales-assistant \u2192 Indicator: meeting-booked\n- Agent: content-generator \u2192 Indicator: article-generated\nCreating an Agent\nStep 1: Go to Paygent dashboard and click on \u201cCreate Agent\u201d\nStep 2: Give agent name and external ID. External ID is important, Select other agent\nStep 3: Create indicators. Indicators can be activity-based or outcome-based\nStep 4: Define your pricing. For example, in the image it\u2019s $2 per call\nStep 5: Your agent is created successfully!\nCreating a Customer\nStep 1: Click on \u201cCreate Customer\u201d\nStep 2: Define customer and external ID. Tip: Always use your database customer ID as external ID\nStep 3: Customer is created successfully!\nStep 4 \u2014"
+  },
+  {
+   "sid": "S7",
+   "url": "https://paygentlabs.com/developers",
+   "official": true,
+   "excerpt": "Over the standards you would pick anyway.\nPaygent is not a proprietary API \u2014 it is an agent built on the wire models of the Universal Commerce Protocol: a discovery document and an MCP checkout endpoint modelled on UCP, plus an agent card. Conformance to the current UCP release is on the roadmap. If your runtime can call a tool, it can search, recommend how to pay for the most value on each cart, spend points, and complete the checkout.\nAll money and points math is deterministic and server-side \u2014 never delegated to a model.\n\n# \u2192 checkout binds to the offer shown, at the price shown\n Discovery \u00b7 /.well-known/ucp\n Agent card \u00b7 /.well-known/agent_card.json\n MCP checkout \u00b7 /ucp/mcp\nStandard surfaces\n Integrate the way the ecosystem already works.\nNo proprietary SDK required to start \u2014 you talk to Paygent through a discovery document and\n an MCP checkout modelled on UCP. Conformance to the current UCP release is on the roadmap.\n\ud83e\udeaa\nAgent card at /.well-known/agent_card.json: the commerce agent's identity, capabilities and endpoint. Signing keys are pinned out of band at onboarding, never fetched over the network.\n\ud83e\udded\nThe /.well-known/ucp document advertises its checkout capability and MCP endpoint, machine-readable.\n\ud83d\udd27\nCreate, get, add items to, complete, and cancel checkouts as MCP tool calls \u2014 completion and cancellation are idempotent on the caller's key.\nThe wallet contract\n Bring your own wallet \u2014 against a contract, not a conversation.\nPaygent moves value through a wallet agent it does not own. That seam is a versioned specification,\n available on request, that any wallet vendor can implement without reading our source.\n\ud83d\udcd8\n1.x contract, currently 1.1\nA self-contained guide: discovery, authentication, transp"
+  },
+  {
+   "sid": "S8",
+   "url": "https://www.withpaygent.com/pricing",
+   "official": true,
+   "excerpt": "Pricing that adapts to your stage of growth\nGet started for free, and access powerful infrastructure as you expand.\nFree Plan\n$0per/month\nPerfect for small teams getting started\n- 10K events per month\n- 1 year data retention\n- Email support\nStarter Plan\n$399per/month\nPerfect for early-stage AI Agents companies\n- 1 Million events per month\n- 7 year data retention\n- 24/7 priority support\nMost Popular\nGrowth Plan\n$799per/month\nFor scaling AI agent platforms\n- 10 Million events per month\n- 7 year data retention\n- 24/7 Priority support\nEnterprise Plan\nCustom\nFor large-scale AI Agents operations\n- Custom events per month\n- 7 year data retention\n- 24/7 dedicated support\n- Custom data integrations"
+  }
+ ],
+ "errors": [
+  "fetch https://api.paygent.tech/docs: 0 ConnectTimeout: timed out",
+  "fetch https://www.gopaygent.com/pricing: 0 ConnectError: [Errno -3] Temporary failure in name resolution",
+  "fetch https://www.gopaygent.com/products/connect: 0 ConnectError: [Errno -3] Temporary failure in name resolution",
+  "fetch https://www.gopaygent.com/developers/docs: 0 ConnectError: [Errno -3] Temporary failure in name resolution",
+  "fetch https://www.gopaygent.com: 0 ConnectError: [Errno -3] Temporary failure in name resolution"
+ ]
+}

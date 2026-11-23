@@ -1,0 +1,71 @@
+{
+ "id": 78,
+ "app": "Coda",
+ "category": "Productivity and Project Management",
+ "hint": "coda.io/developers",
+ "composio": {
+  "found": true,
+  "slug": "CODA",
+  "name": "Coda",
+  "tools": 110,
+  "triggers": 4,
+  "auth": [
+   "API_KEY"
+  ],
+  "managed_app": null,
+  "url": "https://docs.composio.dev/toolkits/coda.md",
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://connect.superhuman.com/t/accessing-coda-api-from-a-3rd-party-software/47539",
+   "official": true,
+   "excerpt": "Hi! I am experimenting with creating an app that as part of its job shows the user some content from their Coda space. Say a table. The API for accessing that is clear, but the authentication piece is confusing to me. Ideally I would love to have an OAuth2 integration, where I register with Coda, get the user\u2019s consent and access the document without storing any user secret. From what I\u2019m reading, however, that is currently only available for packs, and the way it works is that Coda defers the authentication part to the vendor (say todoist).\nAm I misunderstanding or is the only way for my use-case to work currently is for every user to store their secret key with me?\nThanks!\n\nHi @anon79829953 - The Coda API uses API tokens for authentication, which users can create on their account page:\nYour application would be to collect those tokens from your users and store them to later use. We don\u2019t support OAuth2 currently, but even if we did you would need to store a user\u2019s access tokens and refresh tokens, so the storage part is pretty similar.\nWhen you write a Coda Pack you as the Pack maker don\u2019t have to worry about the storing the credentials, but only because the Packs infrastructure does it for you. When you are writing your own application outside of Coda you\u2019ll need to do it yourself.\nLet me know if that clarifies things!"
+  },
+  {
+   "sid": "S2",
+   "url": "https://coda.io/apis/v1/openapi.yaml",
+   "official": true,
+   "excerpt": "We make the Superhuman Docs API available to all of our users free of\n    charge, in both free and paid workspaces. However, API\n\n- For the [`#createDoc`](#operation/createDoc) endpoint specifically, the\n    owner of the API token must be a Doc\n      Maker (or Admin) in the workspace. If the \"Any member can create docs\" option in enabled in the workspace\n      settings, they can be an Editor and will get auto-promoted to Doc Maker upon using this endpoint. Lastly, if in\n      addition, the API key owner matches the \"Auto-join email domains\" setting, they will be auto-added to the\n      workspace and promoted to Doc Maker upon using this endpoint\n\nheaders = {'Authorization': 'Bearer <your API token>'}\n            uri = f'https://docs.superhuman.com/apis/v1/categories'\n            res = requests.get(uri, headers=headers).json()\n\nheaders = {'Authorization': 'Bearer <your API token>'}\n            uri = 'https://docs.superhuman.com/apis/v1/docs'\n            params = {\n              'isOwner': True,\n              'query': 'New',\n            }\n            res = requests.get(uri, headers=headers, params=params).json()\n\nheaders = {'Authorization': 'Bearer <your API token>'}\n\n// => Your new Pack ID is 123\n  /packs/{packId}:\n    get:\n      summary: Get a single Pack\n      description: |\n        Returns a single Pack.\n      operationId: getPack\n      tags:\n        - Packs\n      parameters:\n        - $ref: '#/components/parameters/packId'\n      responses:\n        '200':\n          description: The requested Pack.\n          content:\n            application/json:\n              schema:\n                $ref: '#/components/schemas/Pack'\n        '400':\n          $ref: '#/components/responses/BadRequestError'\n        '401':\n          $ref: '#/components/responses/UnauthorizedError'\n        '403':\n          $ref: '#/components/responses/ForbiddenError'\n        '404':\n          $ref: '#/components/responses/NotFoundError'\n        '429':\n          $ref: '#/components/responses/TooManyRequestsError'\n    patch:\n      summary: Update Pack\n      description: |\n        Update an existing Pack for non-versioned fields.\n      operationId: updatePack\n      tags:\n        - Packs\n      parameters:\n        - $ref: '#/components/parameters/packId'\n      requestBody:\n        description: Parameters for updating the Pack.\n        required: true\n        content:\n          applicati"
+  },
+  {
+   "sid": "S3",
+   "url": "https://help.coda.io/hc/en-us/articles/44722661982989-Connect-to-the-Coda-MCP",
+   "official": true,
+   "excerpt": "\u2139\ufe0f The Coda MCP is in beta. Behavior and available tools are subject to change.\nWithin this article, you\u2019ll find...\nSupported clients\n| Supported client | Method of authentication | \n| ChatGPT | OAuth 2 | \n| Claude (including Claude Code, Claude Cowork, and Claude Chat) | OAuth 2 | \n| CoPilot Studio | Personal Access Tokens | \n| Cursor | OAuth 2 | \n| OpenAI Codex | Personal Access Tokens | \n| Google Antigravity | Personal Access Tokens | \nConnect ChatGPT with Coda MCP\n- Within ChatGPT, click into the Apps tab of the left panel\n- Enter \"Coda\" in the search bar\n- Select Coda from the search results, then click Connect\n - Note: If you see Disabled by admin instead of Connect, this likely indicates that the admin of your account has disabled connecting to new apps. We suggest contacting your admin and requesting they enable the Coda app for you or your org. Refer to this documentation to learn more.\n- Click Sign in with Coda\n- A new tab will open, where you will be prompted to sign into Coda and grant ChatGPT the necessary access.\n- Once authentication has been completed, you'll be redirected back to ChatGTP and should see a Coda is now connected confirmation.\nTip: If you would like to"
+  },
+  {
+   "sid": "S4",
+   "url": "https://docs.superhuman.com/@oleg/getting-started-guide-coda-api",
+   "official": true,
+   "excerpt": "Superhuman Docs API\nIn this Getting Started Guide, we'll introduce you to the Superhuman Docs API and share examples of how to do more with your docs programatically.\nAccess your docs programmatically.\nIt's easy to create and edit Superhuman Docs in your browser, but sometimes you need programmatic access to automate parts of your workflow. The Superhuman Docs API enables you to read and write data to your Superhuman Docs document using code.\nIn this Getting Started Guide, we'll introduce you to the and share examples of how to do more with your documents using the API. This guide assumes that you are familiar with writing code.\nIf you want to build an integration without writing code, check out the Zapier links in the quick links section below! is an app that allows you to build workflows connecting two or more apps without code.\nWhat are examples of things you can do with the API?\nIf you have feedback on the API or you build something that can benefit the entire Superhuman Docs community, !\nLet's start with some examples\nFor these examples, we'll be using (), which lets you write code in a JavaScript-like syntax and use built-in libraries for many Google products, as well as the Coda API library. What's more, you can set up a schedule to run your scripts periodically, and best of all, it's free\u30fcperfect for getting acquainted with the Superhuman Docs API.\nIf you haven't used Apps Script before, don't worry! The syntax is straightforward, and you should be able to pick it up easily if you've used JavaScript or another procedural language like Python or Java. Of course, you can always use other mechanisms to host your scripts and access our API if you prefer not to use Apps Script.\nWe recommend tackling these in order, but feel free to skip ahead once you've gotten through the first one.\nGuides\nDescription\nDone?\nAdd personal notes & takeaways"
+  },
+  {
+   "sid": "S5",
+   "url": "https://help.coda.io/hc/en-us/articles/39555941038349-Does-Coda-have-an-API",
+   "official": true,
+   "excerpt": "The Coda API is a RESTful API that lets you programmatically interact with Coda Docs\nCoda has a public API available to all users. The API allows you to get data in and out of tables in Coda as well as access computed values from formulas and user-selected values from controls.\nWithin this article, you'll find...\nWhat can I do with Coda API?\nThe Coda REST API allows users to programmatically interact with Coda docs in a number of ways, including:\n- List and search Coda docs\n- Listing docs\n- Creating and copying docs\n- Listing tables within a doc\n- Retrieving rows\n- Inserting and updating rows\n- Listing pages in a doc\n- Updating page title/image/icon\n- Publishing a doc\nCheck out our full API documentation here.\nTo see examples of the Coda API in action, take a look at this Coda doc.\n\u2139\ufe0f Enterprise customers wanting to learn about our Admin Audit API, check out this article.\nFAQs\nAre there API size limits on requests?\nThe limit for requests is 2 MB, but there is also a limit of 85 KB for any given row. See this community post for more details.\nAre API limits per workspace, user, or token?\nLimits are attached to a user/IP.\nWhy am I getting a 429 rate limit error?\nIf you're getting a 42"
+  },
+  {
+   "sid": "S6",
+   "url": "https://help.coda.io/hc/en-us/articles/44722769665549-Security-recommendations-for-the-Coda-MCP",
+   "official": true,
+   "excerpt": "This article provides security recommendations for using Coda\u2019s Model Context Protocol (MCP) integration. When you connect an AI assistant to your Coda workspace via MCP, it gains access to read and modify your documents based on your account permissions.\n\u2139\ufe0f This article offers general guidance only and should not be relied upon as a complete security solution. Your organization is responsible for independently evaluating security and compliance risks.\nWithin this article, you\u2019ll find...\nAuthentication\nCoda MCP supports two authentication methods:\nOAuth2 with PKCE (recommended)\nThe primary way to connect is via OAuth2 with PKCE, a three-legged authorization flow. This simplifies setup and is the most secure option for most users. OAuth2 with PKCE eliminates the need to manually generate and manage API tokens.Note that this form of Auth currently only supports the mcp:all scope - more granular scopes such as accessing specific workspaces/folders with read/write permissions will be coming soon.\nPersonal API tokens\nPersonal API tokens remain available for specific use cases:\n- Building scripts or automations that need a token to connect to the MCP\n- Platforms that don\u2019t yet have a ful"
+  },
+  {
+   "sid": "S7",
+   "url": "https://coda.io/resources/guides/getting_started_with_coda_mcp",
+   "official": true,
+   "excerpt": "5 min read\nGetting started with Superhuman Docs MCP\nLet AI build, organize, and update real work inside your docs.\n- Create docs and tables from simple descriptions.\n- Turn rough notes into polished, shareable write-ups.\n- Generate insights from your data and surface what matters most.\nYou might paste a doc link into your AI client and ask: \u201cSummarize the latest updates in this project table and create a weekly status report.\u201d Your agent reads the table, generates a summary, and writes the update directly in your doc.\nWhat's covered:\n- What Superhuman Docs MCP is and how it works\n- Prompts that build real docs\n- What to try first\nWhat you'll need:\n- Access to Superhuman Docs MCP\n- A few copy-and-paste prompts\n- An AI client connected to the Superhuman Docs MCP\nIf you can share a doc link and describe what you want, you can put your agent to work.\nWhen you use ChatGPT, Claude, Cursor, or similar clients, you\u2019re already chatting with a powerful model. Connect your client to Superhuman Docs via MCP, and that model can act directly inside your workspace, creating docs, reading tables, or updating rows, all without leaving the conversation. Haven't set up Superhuman Docs MCP yet? Follow"
+  },
+  {
+   "sid": "S8",
+   "url": "https://github.com/coda/packs-sdk/blob/main/docs/samples/topic/authentication.md",
+   "official": true,
+   "excerpt": "| nav | Authentication | \n|---|---|\n| description | Samples that show how to authenticate with an API. | \n| icon | material/account-key | \nAdding authentication to your Pack allows you to pass credentials with your API requests. Simply specify the type of authentication to use and the platform will collect the credentials from the user, store them, and apply them to Fetcher requests. Per-user authentication is the most common, where each user connects to their own account, while system-wide authentication is used in cases where the Pack maker's keys are used for all users.\nThe platform supports a fixed set of authentication types which cover the most common patterns that APIs use. In addition you can define your own form of custom token authentication to support more complex scenarios. It's not possible to write completely custom authentication code however, as the platform alone has access to the user's credentials.\nLearn More{ .md-button }\nAuthentication that passes a long-lived token in the Authorization header using the \"Bearer\" scheme. This sample connects to the Todoist API.\n{% raw %}\nimport * as sdk from \"@codahq/packs-sdk\";\nexport const pack = sdk.newPack();\n// Per-user aut"
+  }
+ ],
+ "errors": []
+}

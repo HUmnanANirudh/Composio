@@ -1,0 +1,73 @@
+{
+ "id": 68,
+ "app": "MongoDB Atlas",
+ "category": "Developer, Infra and Data platforms",
+ "hint": "mongodb.com/docs/atlas/api",
+ "composio": {
+  "found": true,
+  "slug": "MONGODB",
+  "name": "MongoDB",
+  "tools": 496,
+  "triggers": 0,
+  "auth": [
+   "S2S_OAUTH2"
+  ],
+  "managed_app": "No",
+  "url": "https://docs.composio.dev/toolkits/mongodb.md",
+  "mcp_variant": "MONGODB_MCP",
+  "mcp_variant_auth": [
+   "S2S_OAUTH2"
+  ]
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://www.mongodb.com/docs/atlas/api/api-authentication",
+   "official": true,
+   "excerpt": "Important\nWe recommend you use service accounts instead of API keys to authenticate to the Atlas Administration API. API keys are a legacy authentication method.\nTo use the Atlas Administration API to manage your Atlas clusters, you must authenticate your API requests. The Atlas Administration API accepts the following authentication methods:\n- Service account access tokens (OAuth 2.0)\n- API keys (HTTP Digest Authentication)\nTo learn how to use service accounts and API keys to configure programmatic access to your Atlas organizations and projects, see the Atlas Administration API Getting Started guide.\nThe Atlas Administration API doesn't provide access to the data stored in your clusters. To read or write data in a database, you must authenticate to your cluster using the credentials for a database user with the appropriate read or write roles. You can use the Atlas Administration API to create and manage database users.\nNote\nMany Atlas Administration API endpoint URLs follow the format of /api/atlas/<version>/groups/<GROUP-ID>/, where <GROUP-ID> is your project ID. For these resources, the service account or API keys that you use to authenticate the request must be a member of th"
+  },
+  {
+   "sid": "S2",
+   "url": "https://www.mongodb.com/docs/atlas/api",
+   "official": true,
+   "excerpt": "You can interact with Atlas programmatically to perform administrative tasks or manage your deployments using the following resources.\nAtlas Administration API\nProgrammatically perform administrative tasks on your Atlas cluster outside of the Atlas UI with the Atlas Administration API. Atlas Administration API resources add, edit, or delete administrative objects within Atlas, including projects, users, and clusters.\nYou can explore the various endpoints available through the Atlas Administration API in MongoDB's Postman workspace.\nTo configure access for the Atlas Administration API, see Get Started with the Atlas Administration API.\nAtlas Go SDK\nThe Atlas Go SDK provides platform-specific and Go language-specific tools, libraries, and documentation to help you build applications that interact with Atlas quickly and easily using the Atlas Administration API.\nAtlas Embedding and Reranking API\nThe Embedding and Reranking API provides endpoints for accessing Voyage AI's state-of-the-art embedding and reranking models. Use the REST API and available client SDKs to power search and retrieval in your AI applications.\nAtlas CLI\nThe Atlas CLI is a command-line interface built specifically"
+  },
+  {
+   "sid": "S3",
+   "url": "https://www.mongodb.com/products/tools/mcp-server",
+   "official": true,
+   "excerpt": "TOOLS\nThe MongoDB MCP Server gives AI agents the tools they need to explore, query, and manage MongoDB deployments. Run it self-managed locally, or use the Atlas Managed MCP Server.\nAutomatically surface critical database context, including configurations, collection schemas, and sample data, directly to your coding agents. They\u2019ll write more accurate MongoDB code and optimized queries while you stay in the flow.\nNo more copy-pasting schemas or switching tools. Explore, code, and manage MongoDB deployments without leaving your development environment.\nThe MongoDB MCP Server acts as a standard plugin for any MCP-enabled environment. Build autonomous agents that can explore datasets, generate insights, and interact with MongoDB deployments.\nBring valuable context from MongoDB databases into development environments for data exploration, database operations, and context-aware code generation.\nConnecting the MongoDB MCP Server to your AI development tools lets you use natural language to explore and manage databases while generating accurate application code.\nExplore and query data\nManage databases\nGenerate code \nChatGPT App for MongoDB Atlas for accessing data and managing the platfor"
+  },
+  {
+   "sid": "S4",
+   "url": "https://www.mongodb.com/docs/atlas/graphql-api",
+   "official": true,
+   "excerpt": "You can manage data on your Atlas cluster using AWS AppSync Direct Lambda Resolvers. The Lambda function, serving as a resolver for the AWS AppSync GraphQL API, enables seamless CRUD operations on your data in your Atlas cluster. Integrating Atlas with AWS AppSync offers a powerful, flexible solution for building scalable, serverless GraphQL APIs.\nThis integration not only reduces the complexity of managing multiple data sources, but also enhances the development experience by providing a unified and flexible platform for modern application architectures. Whether you're handling CRUD operations or optimizing payloads, this integration enables you to build scalable, efficient, and cost-effective APIs.\nThis page walks you through the following steps:\n- Deploy the CloudFormation stack that contains the Serverless Lambda function and an AWS-managed AppSync GraphQL API.\n- Test the AppSync API by running queries from the AWS AppSync API console or Postman.\nPrerequisites\nBefore you begin, you must do the following:\n- Deploy an Atlas cluster\n- Configure the database for network security and access\n- Set up an AWS account with access to the AWS Management Console\nProcedure\nCreate the Server"
+  },
+  {
+   "sid": "S5",
+   "url": "https://www.mongodb.com/docs/atlas/api/service-accounts/generate-oauth2-token",
+   "official": true,
+   "excerpt": "If you use service accounts, a token is required to make requests to the Atlas Administration API. To learn more, see Service Accounts Overview.\nNote\nIP access lists apply to using service account access tokens, not creating or revoking them. You can generate a token from any IP address, but you can only use it to call the API if your IP address is on the access list.\nResource\nPOST https://cloud.mongodb.com/api/oauth/token\nRequest Path Parameters\nThis endpoint doesn't use HTTP request path parameters.\nRequest Query Parameters\nThe following query parameters are optional:\n| Name | Type | Necessity | Description | Default | \n|---|---|---|---|---|\n| pretty | boolean | Optional | Flag that indicates whether the response body should be in a prettyprint format. | false | \n| envelope | boolean | Optional | Flag that indicates whether or not to wrap the response in an envelope. Some API clients cannot access the HTTP response headers or status code. To remediate this, set envelope : true in the query. For endpoints that return a list of results, the content object is an envelope. Atlas adds the status field to the response body. | false | \nRequest Body Parameters\nThis endpoint doesn't use H"
+  },
+  {
+   "sid": "S6",
+   "url": "https://www.mongodb.com/docs/atlas/configure-api-access",
+   "official": true,
+   "excerpt": "Important\nEach Atlas Administration API has its own resources and requires initial setup.\nYou can access the Atlas Administration API servers through the public Internet only. The Atlas Administration API is not available over connections that use network peering or private endpoints.\nTo learn more, see Atlas Programmatic Access.\nThe Atlas Administration API follows the principles of the REST architectural style to expose a number of internal resources which enable programmatic access to administrative features in Atlas. To learn more about the Atlas Administration API, see Atlas Administration API Reference.\nThe Atlas Administration API doesn't provide access to the data stored in your clusters. To read or write data in a database, you must authenticate to your cluster using the credentials for a database user with the appropriate read or write roles. You can use the Atlas Administration API to create and manage database users.\nTo use the Atlas Administration API to manage your Atlas clusters, you must authenticate your API requests with one of the following authentication methods:\n- Service account access tokens (OAuth 2.0)\n- API keys (HTTP Digest Authentication)\nTo learn about t"
+  },
+  {
+   "sid": "S7",
+   "url": "https://www.mongodb.com/docs/mcp-server/get-started",
+   "official": true,
+   "excerpt": "Important\nThe feature described on this page is not currently supported on Atlas Infinite clusters during public preview. For the features supported in public preview, see Public Preview Availability.\nIn this guide, you learn how to get started with the MongoDB MCP Server by configuring and using it in your AI client.\nBefore You Begin\nBefore you begin, review MongoDB MCP Server Prerequisites for Running Atlas Tools to ensure you meet all the requirements to configure the MongoDB MCP Server.\nTip\nSelect your desired AI Client from the AI Client dropdown below for setup instructions.\nNext Steps\nFor a list of the tools available for the MongoDB MCP Server, see Supported Tools.\nFor examples of how to use the MongoDB MCP Server, see MongoDB MCP Server Usage Examples."
+  },
+  {
+   "sid": "S8",
+   "url": "https://www.mongodb.com/docs/get-started",
+   "official": true,
+   "excerpt": "Important\nThe atlas deployments commands are deprecated as of Atlas CLI version 1.52.0. Use atlas local commands for local deployments and atlas clusters commands for cloud deployments. We updated this guide to use the new commands.\nIn this guide, you will learn how to create a MongoDB Atlas deployment locally or in the cloud. Then, you will learn how to create an application that connects to your deployment. To learn how to install MongoDB Community or MongoDB Enterprise editions on your own infrastructure, see the Install MongoDB guide.\nCreate a MongoDB Atlas Deployment\nThis section shows how to set up a local or cloud MongoDB Atlas deployment and connect to the deployment by using the MongoDB Shell.\nInstall dependencies\nBefore you begin this tutorial, you must install the following dependencies in your development environment:\n- Atlas CLI: Command-line interface that allows you to manage your deployments from the terminal\n- MongoDB Shell: Interactive tool that connects to a deployment and provides database operation support\n- Docker: Platform that allows you to run software within containers, including local MongoDB deployments\nSelect the tab corresponding to your operating syst"
+  }
+ ],
+ "errors": []
+}

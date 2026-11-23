@@ -1,0 +1,20 @@
+{
+ "round0": {
+  "grounding": {
+   "auth_methods": [
+    "ungrounded"
+   ]
+  },
+  "rules": {
+   "auth_methods": [
+    "low_confidence"
+   ]
+  }
+ },
+ "todo": {
+  "auth_methods": [
+   "ungrounded",
+   "low_confidence"
+  ]
+ }
+}

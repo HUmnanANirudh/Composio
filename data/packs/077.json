@@ -1,0 +1,74 @@
+{
+ "id": 77,
+ "app": "ClickUp",
+ "category": "Productivity and Project Management",
+ "hint": "clickup.com/api",
+ "composio": {
+  "found": true,
+  "slug": "CLICKUP",
+  "name": "ClickUp",
+  "tools": 165,
+  "triggers": 21,
+  "auth": [
+   "OAUTH2",
+   "API_KEY"
+  ],
+  "managed_app": "Yes",
+  "url": "https://docs.composio.dev/toolkits/clickup.md",
+  "mcp_variant": "CLICKUP_MCP",
+  "mcp_variant_auth": [
+   "DCR_OAUTH"
+  ]
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://developer.clickup.com/docs/authentication",
+   "official": true,
+   "excerpt": "Authentication\nAuthenticate to the ClickUp API using a personal token or OAuth.\nAuthentication\nTo use the ClickUp API, you must authenticate every request.\nFor personal use, authenticate with your personal API token.\nFor apps or integrations that other people use, use the OAuth flow, allowing users to authorize Workspaces for your app.\nInclude the token in the Authorization header of your requests.\nBoth methods ensure that you and your users only have access to the information permitted by ClickUp.\nPersonal Token\nUse a personal API token for individual or testing purposes. Personal tokens begin with pk_.\nAdd the token to the header: Authorization: {personal_token}. This is also needed to use the Try-It feature in the API docs.\nGenerate or regenerate a Personal API Token\n- Log in to ClickUp.\n- In the upper-right corner, click your avatar.\n- Select Settings.\n- In the sidebar, click Apps. Or click here to go directly to your settings.\n- Under API Token, click Generate or Regenerate.\n- Click Copy to copy the personal token to your clipboard. Personal tokens never expire.\nBuild Apps for others - OAuth Flow\nTo allow others to use your app, implement the OAuth2 flow so each user has their"
+  },
+  {
+   "sid": "S2",
+   "url": "https://help.clickup.com/hc/en-us/articles/6303422883095-Create-your-own-app-with-the-ClickUp-API",
+   "official": true,
+   "excerpt": "Want to create an app that integrates with ClickUp? Give your users the ability to sign in using OAuth 2.0!\nBe sure to also check out our API documentation!\nWhat you'll need\n- The ClickUp API is available on all ClickUp plans.\n- Workspace owners or admins can manage integration settings and create OAuth apps in the Workspace.\n- Members and limited members with full edit permissions can use personal API tokens.\n- Limited members with view-only permissions cannot access or manage the API.\nOAuth 2 flow\nWhen you want to develop an application that others can use, you must use an OAuth2 authentication flow.\nWith OAuth 2, everyone who uses your app gets assigned an individualized token. Each user can only access the content available to their individual ClickUp user account.\nIf you are unfamiliar with OAuth2, Digital Ocean has put together a great guide that should get you started. We also recommend checking out OAuth's website for additional details.\nCreate an app\nThe first step for using OAuth 2 is to create an app in your Workspace. You must be a Workspace owner or admin to manage integration settings.\nTo create an app in your Workspace:\n- In the upper-left corner, click your Workspac"
+  },
+  {
+   "sid": "S3",
+   "url": "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server",
+   "official": true,
+   "excerpt": "ClickUp's MCP Server\nLearn about ClickUp's MCP Server so you can use your AI assistant with ClickUp!\nThe Model Context Protocol (MCP) is a secure, standardized framework that lets external AI agents interact with ClickUp Workspace data\u2014like tasks, lists, folders, and docs\u2014using natural language. MCP helps users, especially developers, automate workflows, connect third-party AI tools, and enable agentic AI features in their preferred apps, all while keeping security and user control tight.\nClickUp's MCP Server is available on all plans.\nSetup instructions\nLearn how to setup your AI assistant with ClickUp's MCP server.\nOur MCP server URL is https://mcp.clickup.com/mcp.\nWhat you can do\nWith ClickUp's MCP server, you can:\n- Orchestrate task workflows: Manage tasks with assignees, priorities, and due dates across lists and spaces.\n- Build executive reports: Create release notes, status updates, and portfolio summaries from tasks and docs.\n- Track time: Log time entries and manage timers.\n- Answer work questions: Search tasks, docs, and comments for quick answers.\n- Collaborate in comments and chat: Summarize threads, extract action items, and post updates. And more!\nSupported MCP Client"
+  },
+  {
+   "sid": "S4",
+   "url": "https://developer.clickup.com/docs/webhooks",
+   "official": true,
+   "excerpt": "Webhooks\nCreate webhooks using the ClickUp API.\nWebhooks\nWebhooks allow you to subscribe to events in your Workspace. You can create a webhook to subscribe to events from a specific location in your Workspace.\nWebhooks Scope\nWebhooks are created using the user's auth token and therefore are tied to the user.\nIf the user who created a webhook is disabled, the webhook remains but stops triggering. The system checks if the user is still part of the relevant hierarchy before triggering each webhook.\nSecurity\nClickUp currently does not support dedicated IP addresses from which webhook events are sent.\nEach webhook event is signed with a shared secret that is unique to the webhook and returned when the webhook is created. This guarantees that the event is coming from ClickUp. More under Webhook Signature.\nRegistering a Webhook\nWebhooks registrations are created using the Create Webhook endpoint. Each registration can be configured to subscribe to one or more events and a destination URL that ClickUp will send the event to. See more under Receiving Webhook Events further down the page.\nTip\nUse a service like https://smee.io/ to test webhooks easily.\nYou can use * as a wildcard to subscrib"
+  },
+  {
+   "sid": "S5",
+   "url": "https://developer.clickup.com/reference/getaccesstoken",
+   "official": true,
+   "excerpt": "post https://api.clickup.com/api/v2/oauth/token\nThese are the routes for authing the API and going through the OAuth flow.\nApplications utilizing a personal API token don't use this endpoint.\nNote: OAuth tokens are not supported when using the Try It feature of our Reference docs. You can't try this endpoint from your web browser.\nRecent Requests\nLog in to see full request history\n| Time | Status | User Agent | | \n|---|---|---|---|\n| Retrieving recent requests\u2026 | | | | \nLoading\u2026"
+  },
+  {
+   "sid": "S6",
+   "url": "https://developer.clickup.com/docs/apis-available-by-plan",
+   "official": true,
+   "excerpt": "API availability by Plan\nOur Public API is available on all ClickUp Plans . Some endpoints and parameters are limited by plan.\nEndpoints available on the Enterprise Plan\nThe following endpoints are only available on the Enterprise Plan:\nManage users\nManage guests\nParameters available by Plan\nWhen using Update Space:\n- admin_can_manage is only available on the Enterprise Plan.\nWhen using Create a time entry, Start a time Entry, or Update a time Entry :\n- Unlimited uses of tags is available on the Business Plus and Enterprise Plan. Learn more\n- The tid parameter associates time entries with tasks. Unlimited uses of time entries that are not associated with tasks is available on the Business Plus and Enterprise Plan. Learn more\nWhen using Create a time entry:\n- Unlimited uses of assigneeparameter for other people is available on the Business Plus and Enterprise Plan.\nUpdated 7 months ago\nDid this page help you?"
+  },
+  {
+   "sid": "S7",
+   "url": "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server-1",
+   "official": true,
+   "excerpt": "MCP Server Setup Instructions\nLearn how to setup your AI assistant with ClickUp's MCP server.\nSetup instructions\nBelow are the setup instructions for some of the most popular AI assistants.\nClaude\nSet up Claude to use the ClickUp MCP server!\nPro, Team, Enterprise\nIf you're on the Pro, Team, or Enterprise plan:\n- In a browser or the desktop app, navigate to Settings in the sidebar.\n- Scroll to Connectors at the bottom and click Add.\n- In the prompt, enter the following:\n- Name: ClickUp\n- Remote MCP Server URL: https://mcp.clickup.com/mcp\nFree\nIf you're on the Free plan of Claude, you'll set up the MCP server from the Claude desktop app:\n- Go to your Claude desktop settings page.\n- Click on Developer section.\n- Click on edit config then open the claude_desktop_config.json with your editor of choice.\n- Add the following and restart the Claude desktop app:\n{\n \"mcpServers\": {\n \"clickup\": {\n \"command\": \"npx\",\n \"args\": [\"-y\", \"mcp-remote\", \"https://mcp.clickup.com/mcp\"]\n }\n }\n}\nClaude Code\nUse the follow command: claude mcp add --transport http clickup https://mcp.clickup.com/mcp\nOnce you've opened a Claude Code session, run /mcp to go through the authentication flow.\nCursor\nInstall here,"
+  },
+  {
+   "sid": "S8",
+   "url": "https://clickup.com/pricing",
+   "official": true,
+   "excerpt": "Free Forever\nKey features\nand much more...\n100% Money-back Guarantee\nSave up to 33% with yearly\n$0\nNo credit card required\n60 MB Storage\nUnlimited Tasks & Subtasks\nUnlimited Free Members\nCollaborative Docs\nKanban Boards\nCalendar View\nSprint Management\nTime Tracking\nSyncUps Video Calls\nTwo-Factor Authentication\n24/7 Support\n1 Form\n$9\nuser / mo \u00b7 billed yearly\n / user / mo \u00b7 pooled\nEverything in Free Forever, plus:\nCustom Fields & Task Types\nUnlimited Storage and Spaces\nUnlimited Forms\nUnlimited Gantt Charts\nUnlimited ClickUp Chat\n1K Automations / mo$20 value\nGoals\nGoogle Drive, Dropbox & Box\nLive Chat Support\n$17\nUnlimited Standard Models\nEverything in Core, plus:\nAdvanced Dashboards\nWebhooks & Automation Integrations\n10K Automations / mo$100 value\nResource Management\nGoogle SSO + SMS 2FA\nPrivate Views\nPrivate Docs\nTimesheets\nTime in Status Reports\nCustom\nTalk to our team\nUnlimited AI Notetaker\nEverything in Business, plus:\nWhite Labeling\n1M Automations / mo$1,000 value\nEnterprise Permissions & Governance\nAdvanced SSO, SCIM, SAML\nAudit Logs & Session Management\nEnterprise API & Integrations\nConnected Search Google Drive, OneDrive, Gmail, Microsoft Teams, Slack\nONE PLAN. EVERYTHING M"
+  }
+ ],
+ "errors": []
+}

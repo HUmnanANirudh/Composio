@@ -1,0 +1,73 @@
+{
+ "id": 92,
+ "app": "Otter AI",
+ "category": "AI, Research and Media-native",
+ "hint": "help.otter.ai (MCP server)",
+ "composio": {
+  "found": true,
+  "slug": "OTTER_AI_MCP",
+  "name": "Otter.ai MCP",
+  "tools": 3,
+  "triggers": 0,
+  "auth": [
+   "DCR_OAUTH"
+  ],
+  "managed_app": "No",
+  "url": "https://docs.composio.dev/toolkits/otter_ai_mcp.md",
+  "mcp_variant": "OTTER_AI_MCP",
+  "mcp_variant_auth": [
+   "DCR_OAUTH"
+  ]
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+   "official": true,
+   "excerpt": "Otter.ai\u2019s Public API provides programmatic access to retrieve channels, conversations, transcripts, audio, action items, insights, outlines, and workspace details from your Otter account.\nAPI Fundamentals\nEssential information for authenticating, paging through results, and understanding usage limits.\nAuthentication Create and manage your API keys\nAll API requests require authentication using Bearer token authentication. Follow the steps below to create your API key.\n- Go to Integrations \u2192 Developer.\u00a0\n- Click Create key.\n- Click Copy and store the API key in a safe place. Note: This is only visible once. Make sure you copy the API key in this pop-up. If you forget to copy, follow steps 1-3 to create another key.\n- The API key can now be used. Follow steps 1-4 to create another API key. Note: There is a limit of 2 API keys per user.\nUsing your API key:\nInclude your API key in the Authorization header for every request:\nAuthorization: Bearer YOUR_API_KEY\n\u2705 Security best practices:\n- Never share your API key publicly or commit it to version control\n- Store API keys securely using environment variables or secrets management\n- Rotate API keys periodically\nRate Limits\nEnterprise plan us"
+  },
+  {
+   "sid": "S2",
+   "url": "https://help.otter.ai/hc/en-us/articles/35287607569687-Otter-MCP-Server",
+   "official": true,
+   "excerpt": "Connect AI models to Otter using Model Context Protocol (MCP). Connecting Otter MCP to your AI applications enables secure, scalable access to various language model understandings to power features like smarter summaries, contextual suggestions, and automated insights for all your Otter conversations and meetings.\nWhat is Model Context Protocol (MCP)?\nMCP is an open standard that allows AI assistants like Claude and ChatGPT\nto securely access external data sources. With Otter\u2019s MCP Server, these AI\nassistants can:\n\u2705 Search your meeting transcripts across all time periods\n\u2705 Analyze patterns and themes across multiple meetings\n\u2705 Generate content using your actual meeting data\n\u2705 Surface insights without leaving your AI workflow\n\ud83d\udd11 Key advantage: Your meeting knowledge becomes instantly accessible to AI\nassistants, eliminating manual copy-paste and context-switching.\n\ud83d\udd12 Security: All access is OAuth-authenticated with granular permissions.\nYour AI assistant can only access meetings you explicitly authorize.\nClaude setup Learn how to set up Claude\nConnect Otter MCP to Claude.\n- Go to Settings \u2192 Connectors \u2192 Browse connectors. Note: If your workspace admin has already added Otter.ai, it w"
+  },
+  {
+   "sid": "S3",
+   "url": "https://help.otter.ai/hc/en-us/categories/360002285334-Getting-started",
+   "official": true,
+   "excerpt": "Skip to main content\n|\nHelp Center\nSubmit a request\nSubmit a request\nHelp Center\nGetting started\nOn this page\nPlans & Pricing\nOtter 101\nPolicies & guidelines\nGetting started\nNew to Otter? Here are the basics to get started with Otter.\nPlans & Pricing\nOtter x TechSoup Nonprofit discount\nStudent & Teacher discount program for the Pro plan\nOtter 101\nOtter Quick Start Guide\nOtter.ai features\nWhat is Otter?\nConversation, import, and app limits on the Basic free plan\nDownload the Otter mobile app\nGetting the most out of Otter.ai: Best Practices for in-person recordings\nPolicies & guidelines\nData security and privacy policies\n\u00d7\n\u276e\n\u276f"
+  },
+  {
+   "sid": "S4",
+   "url": "https://otter.ai/pricing",
+   "official": true,
+   "excerpt": "100 names + 100 other terms\nUser:\n100 names + 100 other terms\n800 names + 800 other terms\nUser:\n200 names + 200 other terms\n800 names + 800 other terms\nUser:\n200 names + 200 other terms\n(3 per conversation)\nFrequently Asked Questions\nYes! Just log in to your account, go to Settings, and select \u201cUpgrade to Business\u201d. Follow the prompts and you\u2019ll be set.\nWe accept credit and debit cards on the Otter.ai website, as well as in-app purchases billed through the Apple App Store or Google Play.\nNot yet \u2014 but we\u2019re actively considering adding PayPal as a payment option in the future.\nYes, we offer a 20% discount on Otter Pro Monthly and Otter Pro Annual plans for individual students and teachers using an email address ending with .edu. The discounted prices are as follows:\nOtter Pro Annual: $6.67 USD per month (billed $79.99 annually)\nOtter Pro Monthly: $13.59 USD per month\nTo subscribe:\n1. Sign up for Otter Basic (or login) using an email address ending with .edu (e.g., john.smith@stanford.edu).\n2. After you\u2019ve signed into your Otter account, click your name in the top left, and then click the \u201cUpgrade plan\u201d link.\n3. Click the \u201cStudent & Teacher Discount\u201d link towards the bottom of the page, just below the Pro plan description.\nFor additional details, please see our help center article."
+  },
+  {
+   "sid": "S5",
+   "url": "https://otter.ai/blog/otter-for-enterprise-connect-ai-to-ai-with-otters-mcp",
+   "official": true,
+   "excerpt": "Otter for Enterprise: Connect AI-to-AI with Otter\u2019s MCP\nIn this article\nShare this post\nOtter's MCP Server connects your meeting data directly to AI tools like Claude and ChatGPT, bringing your meeting intelligence into your everyday AI workflows .\nWhat Is MCP?\nModel Context Protocol (MCP) is an open standard that lets AI assistants securely access external data sources. With Otter's MCP Server, your AI tools can:\n- Search your meeting transcripts across all time periods\n- Analyze patterns and themes across multiple meetings\n- Generate content using your actual meeting data\n- Surface insights without leaving your AI workflow\nThe key advantage: Your meeting knowledge becomes instantly accessible to AI assistants\u2014no more manual copy-paste or context-switching.\nSecure by Design\n- OAuth-authenticated with granular permissions\n- Your AI assistant can only access meetings you explicitly authorize\nSee It in Action\nReady to learn more? Check out our detailed setup guide.\nInterested in Otter for your enterprise? Request a demo to see how the MCP Server can transform your team's workflow."
+  },
+  {
+   "sid": "S6",
+   "url": "https://help.otter.ai/hc/en-us/categories/360003570313-Account-settings-billing",
+   "official": true,
+   "excerpt": "Skip to main content\n|\nHelp Center\nSubmit a request\nSubmit a request\nHelp Center\nAccount settings & billing\nOn this page\nManaging billing, payment, & plan\nSecurity settings\nAccount settings\nAccount settings & billing\nAdjust your settings and manage your billing in Otter.\nManaging billing, payment, & plan\nMy paid subscription is not showing\nAdd a UK VAT ID to your Otter account\nCancel an Otter subscription\nCancel your Otter Pro subscription\nError in creating team subscription\nMove your Apple App Store (iOS) or Google Play Store (Android) subscription to Otter via Web\nSecurity settings\nSet up two-factor authentication (2FA)\nTroubleshooting two-factor authentication (2FA)\nAccount settings\nContact Otter.ai Support\nCan't sign in to your Otter account\nChange or reset your password\nChange your Apple Hide My Email (Private Relay) address in Otter\nChange your email address\nChange your profile picture\n\u00d7\n\u276e\n\u276f"
+  },
+  {
+   "sid": "S7",
+   "url": "https://help.otter.ai/hc/en-us/articles/27616131311127-Connect-Otter-to-Zapier",
+   "official": true,
+   "excerpt": "Connecting Otter.ai to Zapier unlocks a new level of automation and efficiency. With seamless integration, you can easily connect Otter to your other favorite tools, automating repetitive tasks and streamlining workflows.\nUse Zapier to import audio files to Otter, or use Zapier to export Otter\u2019s transcripts, summaries, action items, and more to other apps. Check out all the premade recipes to quickly get started on Zapier for free.\nZapier setup\nFollow the steps below to connect your Otter account to Zapier.\n- Go to Zapier directly, or in Otter, go to Account Settings \u2192 Integrations, then click Connect next to Zapier.\n- Create a new Zap. Under Account, click Sign in. If you have already created an API key, skip to step 6. Note: Make sure Otter.ai is selected as the App before signing in.\n- Go to the Account Settings \u2192 Developer. Note: The Developer tab may not be available on all plans. If you don\u2019t see it, access it directly at otter.ai/setting/developer.\n- Click Create key.\n- An API key will be generated. Click Copy and save your API key in a secure location. Note: Your API key is only displayed once and can\u2019t be viewed again. If you lose it, you\u2019ll need to delete the existing API"
+  },
+  {
+   "sid": "S8",
+   "url": "https://help.otter.ai/hc/en-us/articles/4412365535895-Does-Otter-offer-an-open-API",
+   "official": true,
+   "excerpt": "Does Otter offer an open API? Otter Help April 23, 2026 20:37 Updated Yes, Otter offers a public API for Enterprise customers. To get started, contact your Otter account manager to enable access. Check out our Otter.ai Public API article for more information. Related articles Connect Slack to Otter.ai Export to Dropbox Export conversations Otter Chrome extension Set up Otter Live Notes Feedback 0 comments Article is closed for comments.\nFeedback\n0 comments\nArticle is closed for comments."
+  }
+ ],
+ "errors": []
+}

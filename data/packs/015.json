@@ -1,0 +1,73 @@
+{
+ "id": 15,
+ "app": "Pylon",
+ "category": "Support and Helpdesk",
+ "hint": "usepylon.com",
+ "composio": {
+  "found": true,
+  "slug": "PYLON_MCP",
+  "name": "Pylon MCP",
+  "tools": 12,
+  "triggers": 0,
+  "auth": [
+   "DCR_OAUTH"
+  ],
+  "managed_app": "No",
+  "url": "https://docs.composio.dev/toolkits/pylon_mcp.md",
+  "mcp_variant": "PYLON_MCP",
+  "mcp_variant_auth": [
+   "DCR_OAUTH"
+  ]
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+   "official": true,
+   "excerpt": "Authentication\nHow to authenticate with Pylon's API\nThe Pylon API uses Bearer authentication. This means you\u2019ll need to pass your API token in the header of your request:\nAuthorization: Bearer <token>\nAPI regions\nPylon\u2019s API is available in two regions. Use the base URL that matches where your Pylon tenant is hosted:\n- US region: https://api.usepylon.com\n- EU region: https://api.eu.usepylon.com\nBoth regions use the same API endpoints and authentication. Configure your integration to use the region where your Pylon tenant is hosted.\nYou can tell a token's region from its prefix:\npylon_api_eu_\nEU\npylon_api_\nUS\nTokens created before prefixes were introduced have no prefix. Sending a token to the other region's API returns 401 with the wrong_region_token error code, and the message names the correct URL.\nOnce you've created a token, call the /me endpoint to retrieve details about your organization and confirm your token works.\nCreate an API token\nOnly Admins can create and manage API tokens.\n- Go to Settings > Integrations & dev > API. On the Tokens tab, click Create API Token.\n- Enter a Name.\n- Choose who the token acts as: \n - Leave Act as user or bot (optional) empty to give the tok"
+  },
+  {
+   "sid": "S2",
+   "url": "https://www.usepylon.com/pricing",
+   "official": true,
+   "excerpt": "Your customers reach you in Slack, Teams, email and WhatsApp, and requests are coming in faster than you can hire. Pylon brings every channel into one queue and lets AI handle the busywork. You pay for the seats and AI credits your team uses, never per ticket.\nTrusted by 1,800+ B2B customers globally\nChoose the seat type your team needs. For Enterprise customers, our sales team will work with you on a custom quote.\nProfessional\nIncludes:\nViewer seats\nCore support\nOut-of-the-box Analytics\nAutomations\nSkills\nBroadcasts\nMCP\nAPI\nIntegrations\n$89/seat\non an annual contract\nRecommended\nAdvanced\nRBAC\nCustomer portal\nCustom reporting\nData warehouse\nSAML SSO (add on)\n$139/seat\nEnterprise\nMSA\nSAML SSO\nCustom quote\nAgentic support features unlock powerful workflows on Pylon that save teams money and time. These features and workflows run on credits. Choose how many credits you need for a year or purchase credits as you go. If you run out, you can easily top up in Pylon.\nOur sales team will help you estimate how many credits you\u2019ll need based on your support complexity and the agentic features you plan to use.\nTickets per month\n100\n20,000+\nWhat % of tickets do you want automated?\n%\n0%\n100%\nWha"
+  },
+  {
+   "sid": "S3",
+   "url": "https://docs.usepylon.com/pylon-docs/integrations/pylon-mcp",
+   "official": true,
+   "excerpt": "Pylon MCP\nExpose Pylon data to AI tools and assistants via Model Context Protocol.\nPylon MCP Server\nThe Pylon MCP Server exposes Pylon data to AI tools that support the Model Context Protocol (e.g. Claude, ChatGPT, Cursor). AI tools authenticate with OAuth or an API token and can read and update issues, accounts, contacts, knowledge base articles, tasks and projects, triggers, and more within the authenticated identity's permissions.\n- Server URL (US): https://mcp.usepylon.com\n- Server URL (EU): https://mcp.eu.usepylon.com\n- Auth: OAuth 2.0 or an API token. Actions are performed as the signed-in user or the token's identity, with that identity's current role and permissions.\n- Transport: Streamable HTTP (stateless; no server-side sessions).\nSetup in Pylon\nOpen Settings > AI Controls > MCP Server in Pylon. Copy your workspace's regional MCP URL from Installation and use it in your AI tool. For client-specific instructions, see connecting to the Pylon MCP Server.\nAuthentication\nBoth methods use the same regional MCP URL. Choose the method your client supports.\nOAuth\nUse OAuth with AI tools that offer an interactive connection flow. Add the regional MCP URL to your client, then sign i"
+  },
+  {
+   "sid": "S4",
+   "url": "https://docs.usepylon.com/pylon-docs/developer/webhooks",
+   "official": true,
+   "excerpt": "Webhooks\nReceive webhooks for various events happening in Pylon.\nThis page covers webhooks that Pylon sends to you.\nSetup\n- Go to Settings > Integrations & dev > Webhooks and click Create Webhook.\n- Enter a Name and the Target URL, and pick the HTTP method (POST by default; GET, PUT, PATCH, and DELETE are also available).\n- Optionally, add Custom headers, for example an Authorization header with a Bearer token. Turn on Secret for a header to encrypt its value and hide it after saving.\n- Click Create and copy the webhook secret. Pylon shows it only once. You need it to verify deliveries.\nThe target must be a public http or https URL. Private and internal network addresses are blocked. If your endpoint sits behind a firewall, allowlist Pylon's IP addresses for your region.\nPayload\nIn the Send webhook action, write the request body in JSON payload. Type { to insert variables such as {{ issue.id }} or {{ issue.title }}. The variables you can use depend on the trigger's object. See Template variables for the full list, including tags, the latest message, and its author.\nFollow these rules when you write the payload:\n- The payload must be valid JSON before variables are filled in.\n- Put "
+  },
+  {
+   "sid": "S5",
+   "url": "https://support.usepylon.com/articles/4735104435-how-do-i-create-an-api-token",
+   "official": true,
+   "excerpt": "How do I create a Pylon API token?\nApplies to: Pylon API access\nTo create a Pylon API token, sign in as a user with permission to manage API tokens, then open Settings \u2192 API Tokens. If you do not see that page, ask a workspace admin to create the token or update your access.\n- Open Settings \u2192 API Tokens.\n- Select Create.\n- Enter a token name, then finish creation.\n- Copy the token immediately and store it in a secure location. Pylon only shows the full token value once.\nUse the token to authenticate Pylon API requests with a Bearer header:\n- Authorization: Bearer <token>\nIf you need read-only access, a workspace admin should choose an appropriate role for the token when creating it."
+  },
+  {
+   "sid": "S6",
+   "url": "https://docs.usepylon.com/pylon-docs/developer/api",
+   "official": true,
+   "excerpt": "API\nProgrammatic access to read and write data in Pylon\nPylon\u2019s API can be used to programmatically access and take action on data within Pylon.\nOnly Admin users can create API tokens. To learn more about Admins, see Roles & User Management.\nSome common use cases for our API include:\n- Fetching information about customers\n- Fetching information about issues\n- Creating issues programmatically\nCheck out our API Reference for specifications on all endpoints. To call the API from TypeScript, Python, or Go, use our SDKs, with pinned installation commands and upgrade guidance for each language.\nBefore you build an integration, read:\n- Authentication for creating tokens, roles, and regions\n- API conventions for IDs, timestamps, pagination, search filters, update behavior, files, and slugs\n- Rate limits for request limits and how to handle 429 responses\n- Errors for error codes and response format\nLast updated\nWas this helpful?"
+  },
+  {
+   "sid": "S7",
+   "url": "https://www.usepylon.com/integrations/mcp",
+   "official": true,
+   "excerpt": "Connect ChatGPT, Claude, and Cursor to Pylon. Work issues, accounts, contacts, and your knowledge base with the permissions you already have.\nOops! Something went wrong while submitting the form.\nTrusted by 1,800+ B2B customers globally\nWhat is Pylon\u2019s MCP server?\nCan ChatGPT, Claude, and Cursor use Pylon data?\nYes. Point a supported MCP client at your regional Pylon MCP URL, sign in with OAuth or use an API token, and work issues, accounts, contacts, and your knowledge base from the AI tool you already use. For ChatGPT, you can also install Pylon\u2019s native ChatGPT app from Settings > Plugins (some older views, including very old iOS or Android apps, show Apps instead of Plugins). See how to connect Pylon to ChatGPT with MCP.\nIs access scoped to each user?\nYes. Every action runs as the authenticated user. The server cannot return data that user cannot see in Pylon, or write changes that user cannot already make in the UI. Connecting needs the MCP Access permission, which the standard Member and Admin roles include.\nCan engineers investigate from their editor?\nYes. Tools like Claude Code or Cursor can open a Pylon issue, pull message history, and keep working in the same flow your te"
+  },
+  {
+   "sid": "S8",
+   "url": "https://www.usepylon.com/integrations/api-webhooks",
+   "official": true,
+   "excerpt": "Read and act on your Pylon data programmatically.\nOops! Something went wrong while submitting the form.\nTrusted by 1,800+ B2B customers globally\nWhy teams use it\nPull customer and issue data into your own systems\nProgrammatically fetch information about customers and issues from Pylon, so the data your team relies on can live wherever you need it.\nCreate issues without leaving your stack\nOpen issues in Pylon programmatically from your own applications, letting you file tickets from any system your team already works in.\nAutomate across the objects that matter to your workflow\nThe API spans the full range of Pylon objects \u2014 accounts, contacts, issues, messages, tasks and projects, knowledge base, custom fields, custom objects, tags, macros, and more \u2014 so you can automate against whichever part of your workflow you need.\nReact to Pylon events in real time\nWebhooks fire on specific events inside Pylon and post to an endpoint you control, so downstream systems stay in sync the moment something happens.\nHow to install\nStep 1\nCreate an API token\nAs an Admin, generate an API token in Pylon to authenticate your requests. Note that only Admin users can create API tokens.\nStep 2\nCall the API"
+  }
+ ],
+ "errors": []
+}

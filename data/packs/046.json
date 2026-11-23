@@ -1,0 +1,69 @@
+{
+ "id": 46,
+ "app": "Squarespace",
+ "category": "Ecommerce",
+ "hint": "developers.squarespace.com",
+ "composio": {
+  "found": false,
+  "slug": null,
+  "name": null,
+  "tools": null,
+  "triggers": null,
+  "auth": [],
+  "managed_app": null,
+  "url": null,
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+   "official": true,
+   "excerpt": "Authentication and permissions\nTo keep Squarespace merchant site data private and secure, every request to Commerce APIs must be authenticated and have minimum permissions. However, authenticated requests automatically have access to public site data, such as site name, identifier, language, currency, time zone, and location.\nRead the permission levels for each Commerce API below. Then, depending on your development needs, authenticate requests by using an API key or OAuth access token.\nRemember: Requests only have access to data for the website that owns the API key or OAuth access token.\nAPI permission levels\nForms API\n- Read Only: View form submission data; for Zapier integration only\nInventory API\n- Read Only: View inventory stock levels\n- Read and Write: Manage inventory stock levels\nOrders API\n- Read Only: View order, fulfillment, and customer information (name, email, address, and more)\n- Read and Write: View customer information (name, email, address, and more); manage order and fulfillment information\nProducts API\n- Read Only: View product information, including information for any images and variants; view Store Page information\n- Read and Write: Manage product informatio"
+  },
+  {
+   "sid": "S2",
+   "url": "https://support.squarespace.com/hc/en-us/articles/236297987-Squarespace-API-keys",
+   "official": true,
+   "excerpt": "How to set up, use, and troubleshoot API keys to connect integrations to your site.\nAn application programming interface (API) lets developers build integrations and applications that can connect to your Squarespace site.\nThis guide provides a general overview of the Squarespace API and unique API keys. For detailed information, visit the API developer documentation.\nFor help with Zapier, visit Adding form integrations with Zapier.\nThe Squarespace API has the following availability. To learn more, visit Choosing the right Squarespace plan:\n- Forms API (for Zapier integration) is available on Core, Plus, Advanced, Business, Commerce Basic, and Commerce Advanced plans.\n- Orders API is available in the Core, Plus, Advanced, and Commerce Advanced plan.\n- Inventory API is available in the Core, Plus, Advanced, and Commerce Advanced plan.\n- Transactions API is available in the Core, Plus, Advanced, and Commerce Advanced plan.\nAbout our API\nWhat you can build\nWith our API, you can build direct integrations with other software, with a wide variety of use cases. Create a Forms API key to use our integration with Zapier, or create commerce API keys to build your own custom commerce tools.\nUs"
+  },
+  {
+   "sid": "S3",
+   "url": "https://developers.squarespace.com/mcp/overview",
+   "official": true,
+   "excerpt": "Overview of the Squarespace MCP Server\nThe Squarespace MCP server connects AI assistants to Squarespace. It's built on the Model Context Protocol, an open standard for connecting AI applications to outside tools, so assistants like Gemini, Claude, and ChatGPT can look things up and make changes on Squarespace in the middle of a conversation.\nWith it, someone can describe a new business and leave the chat with a domain ready to buy, or ask \"which orders still need shipping?\" about their own store and get a live answer.\nConnect a Client \u2192 Add Squarespace to Gemini, Claude, ChatGPT, or another MCP client.\nNotice: If you are a Squarespace user who is accessing the Squarespace MCP server through an AI assistant, for example to search for a domain or manage your own website, your use is governed by our Terms of Service. If you're a developer building an experience for your users and connecting your own app or agent directly to the Squarespace MCP server, for example to add domain search to your product, your use is governed by our Developer Terms of Use.\nWhat you can do\nThe server's tools are organized into groups. Each group has its own page describing what its tools do, what to ask for"
+  },
+  {
+   "sid": "S4",
+   "url": "https://developers.squarespace.com/changes/self-service-oauth-credential-management",
+   "official": true,
+   "excerpt": "Announcing Self-Service OAuth Credential Management\nDate: Monday, July 27, 2026\nStarting Monday, July 27, 2026, Squarespace is transitioning to a self-service model for OAuth credential management, empowering developers to build and maintain integrations with greater speed and autonomy.\nWhat is changing?\nHistorically, obtaining OAuth credentials to work with Squarespace APIs required manual form submissions and Zendesk tickets, often resulting in wait times of several days. With this launch, we are introducing a new \"Developer Apps\" tab within the Account Dashboard, allowing you to bypass manual provisioning.\nKey Features\n- Instant Credential Generation: Generate OAuth client IDs and secrets immediately for development and testing.\n- On-Demand Secret Rotation: Securely rotate client secrets through the self-service interface to maintain high security standards without reaching out to support.\n- Unified Management: Create, update, and view application details in a single dashboard.\nDemo Mode and Production Reviews\nTo ensure platform security while maintaining developer speed, all new applications created via the self-service tool will enter Demo Mode by default.\nWhen you are ready to take your integration live, simply request a review directly from the app details page in your dashboard.\nApproval takes your app out of Demo Mode. It doesn't list your app in Squarespace Extensions, which is a separate process.\nHow to Get Started\n- Visit the Portal: Navigate to developers.squarespace.com and select Start Building on our homepage.\n- Accept Terms: You will be prompted to accept the mandatory Developer Terms of Use to unlock the new functionality.\n- Manage Credentials: Access the Developers tab in your Account Dashboard to begin creating your first app.\nNote for Existing Users: This change applies to new OAuth applications. Existing OAuth users who wish to utilize the self-service management screen should create a new app through the dashboard and request a review.\nThank you for building on the Squarespace platform. We look forward to seeing what you create."
+  },
+  {
+   "sid": "S5",
+   "url": "https://developers.squarespace.com/commerce-apis/making-requests",
+   "official": true,
+   "excerpt": "Making requests to Commerce APIs\nIn three steps, you can send a successful request to any Commerce API to manage numerous commerce features of any Squarespace merchant site.\nDiscounts: Manage discounts for a site, including their eligibility criteria, discount amount, and activation trigger.\nContacts: Manage the people associated with a site \u2014 customers, subscribers, donors \u2014 including their address books and marketing preferences.\nAnalytics: Retrieve aggregated commerce data (order counts, totals, donations) for contacts in bulk.\nInventory: Read and adjust stock information for product variants.\nOrders: Access order history for one-time purchases and subscription orders or import orders from third-party sales channels.\nProducts: Manage physical products, including their variants and images.\nProfiles: Read customers, mailing list subscribers, and donors. Now in maintenance mode \u2014 new integrations should use the Contacts API.\nTransactions: Access financial transactions for orders and donations.\nWebhook Subscriptions API: Subscribe to notifications from a site, like when an order was created, by configuring a webhook endpoint.\n1. Generate an API key or start the OAuth process\nIf you "
+  },
+  {
+   "sid": "S6",
+   "url": "https://developers.squarespace.com/mcp/connect-a-client",
+   "official": true,
+   "excerpt": "Connect a Client\nThe Squarespace MCP server is a remote server: your client connects to it over HTTPS, and there's nothing to install. In Gemini, Squarespace is already built in. For Claude, ChatGPT, and other clients, you add it with the server URL.\nGemini\nSquarespace is built into Gemini as one of its connected apps, so there's no server URL to enter.\n- On gemini.google.com, open Customize in the sidebar, then Connectors.\n- Find Squarespace and click Add.\n- In a chat, type @Squarespace or just ask for a domain.\nGemini offers Squarespace to personal Google accounts in the US, in English, on the web, mobile, and Windows apps. Only the Domains tools are available in Gemini.\nServer URL\nCode\nUse this URL in Claude, ChatGPT, and any other MCP client. Menu names in each client change between releases, so the steps below may not match your version exactly.\nClaude\n- Open Settings \u2192 Connectors and choose to add a custom connector.\n- Enter https://mcp.squarespace.com/mcp as the server URL.\n- To use the Commerce tools, connect and sign in to Squarespace when prompted.\n- Start a new chat with the connector turned on.\nClaude Code\nAdd the server from your terminal:\nCode\nThen run /mcp in Claude "
+  },
+  {
+   "sid": "S7",
+   "url": "https://developers.squarespace.com/reseller/products-and-pricing",
+   "official": true,
+   "excerpt": "Squarespace Products for Resale\nThe Squarespace Reseller API lets approved partners programmatically resell select Squarespace products to their end-customers. Resellers handle discovery, purchase, subscription management and billing, while Squarespace provisions and hosts the products.\nProducts Available for Resale\nResellers can resell one or more of these Squarespace products:\n1) Squarespace Domains\n- Squarespace offers domain names across 400+ Top-Level Domains (TLDs) -- e.g. .COM, .NET, .ORG, .BIZ, .SITE, .AI.\n- Via the Reseller API, resellers can enable customers to search for, select and purchase a custom domain (e.g. www.mycustomdomain.com) within the reseller's own UX.\n- Customers can then manage their purchased domain on Squarespace -- e.g. configure nameservers and DNS settings, and manage WHOIS privacy. Some of these actions are also possible via the Reseller API, should a reseller choose to facilitate them from their environment.\n2) Squarespace Websites\n- Squarespace helps users build beautiful, professional websites that perfectly represents their ideas, brands, or businesses.\n- Via the Reseller API, resellers can enable customers to purchase a Squarespace website with"
+  },
+  {
+   "sid": "S8",
+   "url": "https://developers.squarespace.com/commerce-apis/oauth",
+   "official": true,
+   "excerpt": "Accessing Squarespace APIs using OAuth 2.0\nSquarespace uses OAuth 2.0 to authorize third-party applications to integrate with Squarespace and consume Squarespace APIs.\nTerms\n| Client | Third-party application that needs to make Squarespace API calls. | \n| User | Squarespace customer who wants to integrate their site with a client. | \n| Confirmation page | Page created by Squarespace for the user to authorize (Allow or Deny) client access to their Squarespace account. | \n| Access token | Short-term token to make authenticated API requests. | \n| Refresh token | Long-term token to obtain new access tokens. | \nInstructions\n1. Register the client and obtain OAuth 2.0 credentials\nBefore a client can make Squarespace API calls, the client must be registered with Squarespace as an OAuth client. Start the Oauth client process here.\n- Client name\n- Icon image (.png or .svg format, max size 200kb, 1:1 ratio)\n- Redirect URI(s) - For example, https://thirdpartyapp.com/oauth/connect\n- Initiate URL* - For example, https://thirdpartyapp.com/oauth/initiate.\n- Link to Client's Terms and Conditions\n- Link to Client's Privacy Policy\n*Applies only to Squarespace partner apps. These will be linked from "
+  }
+ ],
+ "errors": []
+}

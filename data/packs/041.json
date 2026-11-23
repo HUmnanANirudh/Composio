@@ -1,0 +1,72 @@
+{
+ "id": 41,
+ "app": "Shopify",
+ "category": "Ecommerce",
+ "hint": "shopify.dev",
+ "composio": {
+  "found": true,
+  "slug": "SHOPIFY",
+  "name": "Shopify",
+  "tools": 478,
+  "triggers": 45,
+  "auth": [
+   "OAUTH2",
+   "S2S_OAUTH2"
+  ],
+  "managed_app": "No",
+  "url": "https://docs.composio.dev/toolkits/shopify.md",
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://shopify.dev/docs/api/usage/authentication",
+   "official": true,
+   "excerpt": "Shopify API authentication\nTo call a Shopify API, your code sends an access token in a request header to authenticate the identity that token represents (your app or a buyer) and authorize what that identity can access. How you obtain the token and which header carries it vary by API.\nThis page explains the shared model behind Shopify API authentication: how a request is authenticated, and where to go to set it up for each API.\nAnchor to How it worksHow it works\nEvery authenticated Shopify API request follows the same shape:\n- Your code obtains an access token scoped to the access it needs.\n- Your code includes the token in a request header.\n- Shopify checks the token on each request and returns the data the token is scoped to, or an error if the token doesn't grant the required access scope.\nAuthentication proves which identity is making a request, and authorization determines what that identity is allowed to do. The access token does both: it identifies your app or a buyer, and its access scopes determine what it can access.\nSome flows authenticate a user first. For example, embedded apps validate an ID token, then exchange it for an access token.\nAnchor to Authentication by APIA"
+  },
+  {
+   "sid": "S2",
+   "url": "https://www.shopify.com/in/pricing",
+   "official": true,
+   "excerpt": "You've got plans. Us too.\nBasic\n\u20b91,499/mo\nFor solo entrepreneurs\nSell online, in person, and in AI chats\n2% 3rd-party payment providers\nBuilt-in AI assistant\nMillions of tokensPlenty for store design, marketing, reports, automations, and more.\nEarn up to \u20b9110,000 in creditsEarn 1% back on all sales as subscription credits (0.5% on non-Shopify Payments).\nGrow\n\u20b95,599/mo\nFor small teams\nEverything in Basic\n1% 3rd-party payment providers\nUp to 5 staff accounts\nEarn up to \u20b9170,000 in creditsEarn 1% back on all sales as subscription credits (0.5% on non-Shopify Payments).\nAdvanced\n\u20b922,680/mo\nFor global reach\nEverything in Grow\n0.6% 3rd-party payment providers\nUp to 15 staff accounts\nLive 3rd-party shipping rates\nTailor your store by region\nEarn up to \u20b9230,000 in creditsEarn 1% back on all sales as subscription credits (0.5% on non-Shopify Payments).\nPlus\nfrom \u20b91,75,000/mo\nFor complex businesses\nEverything in Advanced\n0.2% 3rd-party payment providers\nUnlimited staff accounts\nFully customizable checkout\nUp to 200 POS Pro locations\nUnlimited B2B catalogs\nPriority 24/7 phone support"
+  },
+  {
+   "sid": "S3",
+   "url": "https://shopify.dev/docs/apps/build/shop-mcp",
+   "official": true,
+   "excerpt": "Shop MCP\nShop MCP is a remote Model Context Protocol (MCP) server that gives your agent access to Shop.app product catalog. Ask your agent to find products, and it returns live results with images, prices, ratings, and purchase links.\nAnchor to What you can doWhat you can do\nAfter you connect Shop MCP, you can ask your agent to find products, browse categories, or search by activity. For example:\n- \"Find me a gift for a coffee lover\"\n- \"Show me some candles\"\n- \"I need new running shoes\"\n- \"What yoga mats does Shop have?\"\nYour agent searches Shop.app and returns products with images, prices, shop names, star ratings, and links to purchase directly on Shop.app.\nAnchor to ToolsTools\nAnchor to searchsearch\nSearches for products on Shop.app.\nAnchor to InputInput\n| Parameter | Type | Required | Description | \n|---|---|---|---|\n| query | string | Yes | Natural language product search query | \nAnchor to OutputOutput\nThe search tool returns a response containing up to 30 products.\nEach product includes the following fields:\n| Field | Type | Description | \n|---|---|---|\n| id | string | Product ID | \n| title | string | Product title | \n| price | object | Current price as {amount, currencyCode"
+  },
+  {
+   "sid": "S4",
+   "url": "https://shopify.dev/docs/apps/build/authentication-authorization/manage-credentials",
+   "official": true,
+   "excerpt": "Manage your app credentials\nYour app's client credentials consist of a client ID and a client secret. The client ID identifies your app to Shopify, and the client secret authorizes it to make OAuth calls. Some tools and documentation call these the API key and API secret: SHOPIFY_API_KEY holds your client ID, and SHOPIFY_API_SECRET holds your client secret.\nYour app can also add public keys. It signs client assertions with the matching private keys to get application-only access tokens for stores that have installed it, without sending its client secret.\nReference this page when you need to locate your credentials for environment configuration, apply security best practices, rotate your client secret after launch, or rotate and revoke public keys.\nA service account token is a separate credential for authenticating Shopify CLI in CI/CD, not for API requests. To create, use, or rotate one, refer to Manage service accounts.\nAnchor to Find your credentialsFind your credentials\nYour credentials are available in the Dev Dashboard:\n- Open the Dev Dashboard.\n- Click Apps and select your app.\n- Click Settings.\n- View or copy your client ID and secret under Credentials.\nYour client ID is per"
+  },
+  {
+   "sid": "S5",
+   "url": "https://www.shopify.com/in/legal/api-terms",
+   "official": true,
+   "excerpt": "Shopify API License and Terms of Use\nWhat we value\nBy using our API, you\u2019re part of the Shopify platform. These are the values that we feel keep our platform strong.\nThese values aren\u2019t legally binding. To get the complete picture of our legal requirements, read the Shopify API License and Terms of Use\nRespect our merchants\nWhen you\u2019re granted a Shopify API license, you get access to millions of merchants who might be looking for an app just like yours. You\u2019ll still own your app, but Shopify owns the platform. As owners of the platform, we put reasonable limits on the use of the merchant data it allows you to access.\nOnly request the merchant data you need to provide your service, nothing more. Get merchants\u2019 permission to do so, and follow our rules for deleting personal customer data. If your public app captures customer data via a Shopify online store or POS, sync it back to the merchant\u2019s Shopify store, or let them do it manually.\nYou\u2019ll also need your own privacy policy that describes how you handle merchant data.\nBuild responsibly\nMake sure your developer system meets internet security standards. Don\u2019t do anything criminal, irresponsible or sketchy, or disrupt or overburden o"
+  },
+  {
+   "sid": "S6",
+   "url": "https://shopify.dev/changelog/posts/add-shopping-and-shop-pay-checkout-to-any-agent-with-shop-mcp",
+   "official": true,
+   "excerpt": "Shop MCP lets your agent or app search Shopify Catalog, build carts, and complete Shop Pay checkout through a single MCP connection. It works with over 1 billion products in Shopify Catalog and doesn't require an API key for search. Nothing changes for existing Catalog API integrations, and no action is required.\nWhat changed\nShop MCP is live at https://mcp.shop.com, with a skill description at that MCP-compatible agents can read. One connection gives your agent tools, grouped into a few main flows:\n- Search and product details: - Sign-in with Shop: the shopper signs in once, and search tools use their saved preferences.\n- Carts and checkout on Shopify stores: your agent builds a cart and creates a checkout at the store that sells the product. Carts and checkout work without sign-in. With a signed-in shopper, checkout can use their saved addresses and Shop Pay, and your agent completes the purchase with - Orders: for a signed-in shopper, your agent finds orders and tracking with \nThe shop CLI calls the same server from your terminal so you can try a search before you write any code:\nnpm install -g @shopify/shop\nshop search \"ceramic coffee dripper\"\nEach result shows the store, the p"
+  },
+  {
+   "sid": "S7",
+   "url": "https://shopify.dev/docs/apps/build/authentication-authorization/access-tokens",
+   "official": true,
+   "excerpt": "Access tokens\nAn access token is a credential your app sends with each API request. It authenticates your app to the API and carries a set of access scopes that authorize what your app can access. Shopify enforces those scopes on every request, returning only the data they allow.\nYour app obtains a token through an authorization flow called a grant, such as token exchange, then includes it in a request header on each call. Because a token is scoped to a specific set of permissions and can expire or be revoked, a leaked token exposes only what it was granted, and you can revoke access without rotating your app's core credentials.\nThis page covers access tokens for the GraphQL Admin API, which authenticates requests with a token sent in the X-Shopify-Access-Token header. Other Shopify APIs issue their own token types and use their own headers. For which token and header each API expects, see Shopify API authentication. If you're setting up authentication for an app, start with About app authentication, which guides you to the flow for your app type. This page is the reference for the token types and grants themselves.\nAnchor to Access tokens and ID tokensAccess tokens and ID tokens\nA"
+  },
+  {
+   "sid": "S8",
+   "url": "https://community.shopify.com/t/can-i-use-shopify-apis-in-my-private-apps/246521",
+   "official": true,
+   "excerpt": "I have a react native mobile app and I want to use Shopify APIs.\nCan I use it?\nIf yes, what is the pricing?\nHi DexterrTech,\nMany Shopify app developers do use React native in their apps so I would say you\u2019d be able to use Shopify APIs in this context. When you create an app via the Shopify CLI or your partner dashboard API keys will be generated that you can use to access Shopify\u2019s APIs, via axios or apollo-client.\nRE: Pricing - Shopify does not charge extra for using our APIs. However, there are rate limits to consider. Both the REST and GraphQL APIs have specific call limits that vary based on the type of Shopify plan the store is on.\nHope this helps,\nThanks for response Liam.\nI have a few more questions:\na. So just buying Shopify\u2019s Basic plan should help get access to APIs?\nb. Also regarding transaction fees per order will that be charged when we just use APIs?\nIf possible help me understand end to end pricing required if I want to use Shopify APIs without using its store\nHi again,\nSo you can test out the APIs for free using a partner account that gives you access to development stores that you can use as a sandbox. If you want to process orders you can transfer the development store to a paid plan. More info on that in our help docs.\nTransaction fees are applied by payment gateways to orders that are processed, whether these orders are made via an API or not.\nHope this helps!\nPowered by Discourse, best viewed with JavaScript enabled"
+  }
+ ],
+ "errors": []
+}

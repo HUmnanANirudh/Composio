@@ -1,0 +1,71 @@
+{
+ "id": 59,
+ "app": "Waterfall.io",
+ "category": "Data, SEO and Scraping",
+ "hint": "waterfall.io (contact/company intel)",
+ "composio": {
+  "found": false,
+  "slug": null,
+  "name": null,
+  "tools": null,
+  "triggers": null,
+  "auth": [],
+  "managed_app": null,
+  "url": null,
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://docs.waterfall.io/v1/authentication",
+   "official": true,
+   "excerpt": "Authenticate data and account API requests with your Waterfall API key in the\nx-api-key header. Contact the team for API access and pricing.\nThe API host is https://api.waterfall.io. Data endpoints use /v1/; Account Reporter V2 uses /v2/account. Use the path shown on each reference page.\nBest practices\n- Store keys in server-side environment variables. Keep them out of browser code and public repositories.\n- Rotate keys periodically.\n- Use dedicated sub-keys to manage access and usage for separate teams or workflows. Creating and managing sub-keys requires a master API key.\nMissing keys return\n401. Invalid keys return 403; this status can also indicate that a feature or permission is unavailable to the key. Inspect the error code using the Errors guide.\nFollow the quickstart to make your first request, or use Agent Skills to build with an agent."
+  },
+  {
+   "sid": "S2",
+   "url": "https://docs.waterfall.io/v1/faq",
+   "official": true,
+   "excerpt": "Find answers about Waterfall, the data you can get, and how to use it in your workflow. For an endpoint comparison, start with Choose an API. Jump to About Waterfall, choosing a capability, data and results, access and pricing, or building an integration.\nAbout Waterfall\nWhat is Waterfall used for?\nWaterfall.io is a B2B data API for go-to-market workflows. Use Waterfall to find people at target accounts, enrich contact and company records, match emails to business profiles, find phone numbers, verify email addresses, and check job changes.\nWho is Waterfall for?\nWaterfall serves growth, revenue, and go-to-market teams. GTM engineers build prospecting workflows, revenue operations teams fill gaps in CRM records, and product-led growth teams add business context to signups. Developers can also add contact and company data to GTM tools, recruitment platforms, CRMs, marketing software, and other products.\nWho are Waterfall.io\u2019s customers?\nWaterfall.io\u2019s current and past customers include Ramp, Gorgias, Zapier, Lightfield, JOIN, awork, Coverflex, Netic, 360Learning, Rippling, and ClickUp.\nWhat does Waterfall\u2019s multi-vendor approach mean?\nWaterfall combines 30+ data vendors through one AP"
+  },
+  {
+   "sid": "S3",
+   "url": "https://www.waterfall.io",
+   "official": true,
+   "excerpt": "Waterfall Enrichment api, powered by 30+ data vendors\nOne GTM API to\nTrack job changes\nSearch for prospects\nFind verified emails\nFind mobile numbers\nTrack job changes\nVerify emails\nWaterfall\u00ae aggregates 30+ different data vendors so that you can maximize contact, email and mobile number coverage without signing multiple data vendors or long-term contracts.\nGTM & Revenue leaders at top B2B companies use Waterfall\n3 reasons (plus a bonus) why these brands choose Waterfall\nBefore\nAll your data vendors\nAFTER\n1\nQuality\n1\nQuality\nBefore\nIncomplete & Outdated Data\nYou\u2019re working with outdated information. Emails bounce and phone numbers disconnect. Contact profiles don\u2019t match reality.\nAfter\nCleaned, Structured and Verified Data\nEvery profile verified in real-time. What you see is current, accurate and ready to use.\n2\nCoverage\n2\nCoverage\nBefore\nMissing Contact Coverage\nYou look for complete profiles across multiple platforms. One vendor has North America covered but not Europe, others give you emails but no phones - leaving you with prospects you can't actually reach.\nAfter\nGlobal Contact Coverage\nYou pull verified contact data that's comprehensive globally. Email, phone, title, company -"
+  },
+  {
+   "sid": "S4",
+   "url": "https://docs.waterfall.io/v1/webhook-jwks",
+   "official": true,
+   "excerpt": "Webhook JWKS\ncurl --request GET \\\n --url https://api.waterfall.io/.well-known/jwks.jsonimport requests\nurl = \"https://api.waterfall.io/.well-known/jwks.json\"\nresponse = requests.get(url)\nprint(response.text)const options = {method: 'GET'};\nfetch('https://api.waterfall.io/.well-known/jwks.json', options)\n .then(res => res.json())\n .then(res => console.log(res))\n .catch(err => console.error(err));<?php\n$curl = curl_init();\ncurl_setopt_array($curl, [\n CURLOPT_URL => \"https://api.waterfall.io/.well-known/jwks.json\",\n CURLOPT_RETURNTRANSFER => true,\n CURLOPT_ENCODING => \"\",\n CURLOPT_MAXREDIRS => 10,\n CURLOPT_TIMEOUT => 30,\n CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n CURLOPT_CUSTOMREQUEST => \"GET\",\n]);\n$response = curl_exec($curl);\n$err = curl_error($curl);\ncurl_close($curl);\nif ($err) {\n echo \"cURL Error #:\" . $err;\n} else {\n echo $response;\n}package main\nimport (\n \"fmt\"\n \"net/http\"\n \"io\"\n)\nfunc main() {\n url := \"https://api.waterfall.io/.well-known/jwks.json\"\n req, _ := http.NewRequest(\"GET\", url, nil)\n res, _ := http.DefaultClient.Do(req)\n defer res.Body.Close()\n body, _ := io.ReadAll(res.Body)\n fmt.Println(string(body))\n}HttpResponse<String> response = Unirest.get(\"https://api.w"
+  },
+  {
+   "sid": "S5",
+   "url": "https://docs.waterfall.io/v1/book-demo",
+   "official": true,
+   "excerpt": "API access is available by approval. Request a key through the email field on the Waterfall website, or book a call to discuss your workflow. A member of our team reviews every access request. We aim to reply within a couple of hours.\nRequest an API key\nEnter your work email on our homepage to request access.\nBook a call\nTalk through your use case, pricing, and integration with our team."
+  },
+  {
+   "sid": "S6",
+   "url": "https://docs.waterfall.io/v1/overview",
+   "official": true,
+   "excerpt": "Waterfall brings together 30+ data vendors through one B2B data API. Find people at target accounts, match emails to business profiles, find contact details, and check whether existing contacts have changed jobs. Use it to build signup enrichment, prospecting, and CRM workflows with the data your team needs. About Waterfall explains how it fits into your stack.\nExplore use cases\nStart with a signup, target account, or CRM record and see the workflow.\nUse with agents\nRun a lookup with an agent or build Waterfall into your application.\nEvaluate Waterfall\nCompare useful results, match quality, and cost on your own records.\nMake your first request\nLaunch a contact enrichment job and retrieve its result.\nWhat do you want to build?\nHow the API works\nSend requests tohttps://api.waterfall.io with your API key in the x-api-key header. Authentication covers access and key management.\nProspector and the contact, phone, and company enrichment APIs return a job_id. Use the matching Finder to retrieve the result, or provide a webhook_url to receive it. Search and verification APIs return results in the same request. The API selection guide lists the response pattern and availability for each capability.\nEvery reference page shows the supported inputs and outputs. Use Usage Tracking to read returned costs, and Account Reporting for usage across a date range.\nFor API access, pricing, or help choosing the right workflow, talk to the Waterfall team. Common product and integration questions are covered in the FAQ."
+  },
+  {
+   "sid": "S7",
+   "url": "https://docs.waterfall.io/v1/api-keys-list",
+   "official": true,
+   "excerpt": "Get API keys\ncurl --request GET \\\n --url https://api.waterfall.io/v1/api-keys \\\n --header 'x-api-key: <api-key>'import requests\nurl = \"https://api.waterfall.io/v1/api-keys\"\nheaders = {\"x-api-key\": \"<api-key>\"}\nresponse = requests.get(url, headers=headers)\nprint(response.text)const options = {method: 'GET', headers: {'x-api-key': '<api-key>'}};\nfetch('https://api.waterfall.io/v1/api-keys', options)\n .then(res => res.json())\n .then(res => console.log(res))\n .catch(err => console.error(err));<?php\n$curl = curl_init();\ncurl_setopt_array($curl, [\n CURLOPT_URL => \"https://api.waterfall.io/v1/api-keys\",\n CURLOPT_RETURNTRANSFER => true,\n CURLOPT_ENCODING => \"\",\n CURLOPT_MAXREDIRS => 10,\n CURLOPT_TIMEOUT => 30,\n CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,\n CURLOPT_CUSTOMREQUEST => \"GET\",\n CURLOPT_HTTPHEADER => [\n \"x-api-key: <api-key>\"\n ],\n]);\n$response = curl_exec($curl);\n$err = curl_error($curl);\ncurl_close($curl);\nif ($err) {\n echo \"cURL Error #:\" . $err;\n} else {\n echo $response;\n}package main\nimport (\n \"fmt\"\n \"net/http\"\n \"io\"\n)\nfunc main() {\n url := \"https://api.waterfall.io/v1/api-keys\"\n req, _ := http.NewRequest(\"GET\", url, nil)\n req.Header.Add(\"x-api-key\", \"<api-key>\")\n res, _ :="
+  },
+  {
+   "sid": "S8",
+   "url": "https://docs.waterfall.io/v1/introduction",
+   "official": true,
+   "excerpt": "The Waterfall API is available at\nhttps://api.waterfall.io. Send your API key in the x-api-key header. See Authentication.\nEndpoints\nChoose an API based on what you already know and what you want to find. The guidance below separates search, enrichment, verification, and employment checks.\nFind people and contact details\nSearch Contact or Prospector? Use Search Contact when you need profile search and structured filters. Use Prospector when you have a target account and want to find people and contact details by title. To enrich someone found through Search Contact, pass their LinkedIn identifier to Contact Enrichment. See account prospecting for the workflow.\nFind and enrich companies\nFor existing CRM records, use CRM enrichment. For website traffic, start with website company identification.\nCheck a contact\u2019s employment\nJob Change checks a contact\u2019s company information and returns a status with an available profile snapshot. Start with a supported company-and-contact identifier combination or a professional email. If you need recurring checks, your workflow schedules the requests and compares the results. See job changes.\nWhen do results arrive?\nFor async APIs, the launcher returns ajob_id. Retrieve the result with the matching Finder or receive it through webhook_url.\nFor sync data APIs, read the result in the POST response. Where a Finder exists, use it to retrieve the saved result later. Email Verification has no Finder.\nThe job\u2019s status describes processing. Inspect the returned data to decide whether it is useful for your task. A SUCCEEDED job does not promise that every requested field was found.\nSearch Company and Company Titles are Preview APIs. Their behavior may change. Check the relevant reference before building a critical workflow around a Preview API.\nManage your integration\n- API Keys Management: create and manage keys for your workflows.\n- Usage Tracking: inspect a job\u2019s returned cost and balance snapshot.\n- Account Reporting: read usage across a date range.\n- Webhook Verification: verify the origin and integrity of signed deliveries.\nReady to try a contact lookup? Follow the quickstart. If you are comparing providers, use the evaluation guide. Working with an agent? Start with Use Waterfall with an agent to run a lookup or build an integration."
+  }
+ ],
+ "errors": [
+  "fetch https://github.com/Waterfall-io/api-skills/blob/master/skills/waterfall-direct-api/SKILL.md: 503 too little text (JS-rendered?)"
+ ]
+}

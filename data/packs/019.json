@@ -1,0 +1,72 @@
+{
+ "id": 19,
+ "app": "Gorgias",
+ "category": "Support and Helpdesk",
+ "hint": "gorgias.com",
+ "composio": {
+  "found": true,
+  "slug": "GORGIAS",
+  "name": "Gorgias",
+  "tools": 51,
+  "triggers": 0,
+  "auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "managed_app": "Yes",
+  "url": "https://docs.composio.dev/toolkits/gorgias.md",
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://developers.gorgias.com/docs/access-tokens-api-keys",
+   "official": true,
+   "excerpt": "Access Tokens (API Keys)\n Please remember that the API key authentication method can be used only for private apps. If you plan to build a public app you have to use OAuth2.\nEach access token (or API key) is tied to a specific user and has the same permissions as the user that holds them. Requests made with an access token will act on behalf of a user and will have access to the resources their permissions allow. As an admin, you can easily generate and revoke your access token in the settings of your account.\nExample: If you use an Access Token for a user with an Observer Agent role, then you can only do the things that an Observer agent can. Learn more about roleshere.\nHow do I get my API key?\n- Log in to your Gorgias account\n- Navigate to Settings \u2192 REST API\n- Click the Create API key button\nOnce you have your credentials, you can start performing requests directly from the API documentation .\nRequest example\ncurl --request GET \\\n --url https://your-customer-account.gorgias.com/api/account \\\n --header 'Authorization: Basic base64encode(USERNAME:API_KEY)'\n Since we're using HTTP Basic Authentication, the USERNAME:API_KEY pair has to be a base64 encoded string. Note the : between the USERNAME and API_KEY is a separator used to differentiate between the username and the password.\nUpdated about 1 year ago"
+  },
+  {
+   "sid": "S2",
+   "url": "https://docs.gorgias.com/en-US/rest-api-208286",
+   "official": true,
+   "excerpt": "Access your Gorgias REST API credentialsUpdated 5 months ago\nThe Gorgias REST API lets you read and write data in your helpdesk programmatically. To authenticate API requests, Gorgias uses HTTP Basic Authentication with three pieces of information: your base API URL, your email address, and an API key. You can find and manage all three from the REST API settings page in your helpdesk.\nFor full API documentation, visit the Gorgias Developer Documentation.\nRequirements\n- Available on all Helpdesk plans\n- The account owner and admins can access the API credentials and create API keys\nFind your API credentials\nYou can find the Base API URL (https://{your-domain}.gorgias.com/api/), Username (the email address on your account), and API key in your Gorgias settings. If you don\u2019t have an existing API key, you\u2019ll have to create one first.\n- From your helpdesk, click the Settings icon in the bottom-left corner.\n- In the menu, locate Account, then select REST API.\n- Under API Access & Credentials, you'll find the Base API URL, your Username, and Password (API Key).\n- Click Copy next to any field to copy it to your clipboard.\nCreate an API key\nIf you haven't created an API key yet, the Password field will show a Create API key button instead of a key value.\n- From your helpdesk, click the Settings icon in the bottom-left corner.\n- In the menu, locate Account, then select REST API.\n- Under Password (API Key), click Create API Key.\nYour API key is generated immediately and displayed alongside the other credentials. Your API key grants full access to your account's data. Once you\u2019ve copied it, store it somewhere secure and don\u2019t share it with anyone.\nReset your API key\nYou can reset your API key at any time. Resetting generates a new key and immediately invalidates the old one. Any integrations or scripts using the old key will stop working until they're updated with the new one.\n- From your helpdesk, click the Settings icon in the bottom-left corner.\n- In the menu, locate Account, then select REST API.\n- Next to the Password (API Key) field, click Reset.\n- Click OK to confirm.\nImport the Postman collection\nThe REST API settings page also includes a Run in Postman button. Clicking it imports the Gorgias Postman collection with your domain, email address, and API key pre-filled as environment variables, so you can start making requests immediately."
+  },
+  {
+   "sid": "S3",
+   "url": "https://helpcenter.gorgias.com/en-US/connect-your-ai-assistant-to-the-gorgias-mcp-6310546",
+   "official": true,
+   "excerpt": "Who can use this feature?\nThe Gorgias MCP lets you work with your Gorgias helpdesk using an AI assistant, like Claude or ChatGPT. Once you connect the MCP, your AI assistant can access your Gorgias data and account, so you can manage your helpdesk through conversations. For example, you can use an AI assistant to read and analyze your tickets, audit your account, configure AI Agent, and update your settings.\nMCP (Model Context Protocol) is the standard that lets an AI tool connect to another app like Gorgias.\nYou can add the Gorgias MCP from Claude's connector directory or ChatGPT's plugin directory. If you use another AI client, such as Claude Code, Codex, Cursor, or Copilot, you can create a custom connector for the MCP instead. This article covers:\nRequirements\n- A Gorgias account on any Helpdesk plan.\n- An account with Claude, ChatGPT, or another MCP-compatible AI assistant.\n- Your Gorgias subdomain. This is the your-brand part of your account URL (your-brand.gorgias.com). You'll enter it when you authorize the connection.\nWho can use the Gorgias MCP?\nEveryone can connect the Gorgias MCP, but the actions you can take with your AI assistant depend on the role assigned to your us"
+  },
+  {
+   "sid": "S4",
+   "url": "https://developers.gorgias.com/reference/introduction",
+   "official": true,
+   "excerpt": "Please make sure to check out our Quickstart guide to make sure you understand the difference between Private and Public apps and to learn about the steps you need to follow when building them.\nThe Gorgias API is structured with REST in mind. Our API has predictable resource-oriented URLs, accepts JSON-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.\nOn this page, you'll find the complete REST API reference, examples, definitions of objects, and guides.\n\ud83d\udeab\nResources, resources' attributes, and resources' operations not documented in this documentation should not be used and should be considered as non-existing.\nThey are reserved for internal use and can be changed or removed at any time without prior notice. You should not rely on them at any time.\n\ud83d\uddde Developer Newsletter\nPlease sign up for our monthly developer newsletter if you start using our API.\nIt contains important updates about upcoming and breaking changes to the API."
+  },
+  {
+   "sid": "S5",
+   "url": "https://developers.gorgias.com/docs/oauth2-bearer-token",
+   "official": true,
+   "excerpt": "OAuth2 Bearer Token\n Please remember that OAuth2 is required for all public apps to be approved.\nOAuth provides a secure way for your application to access Gorgias data without having to store or use sensitive data such as passwords/access tokens of Gorgias users. OAuth2 also provides more granular permissions via OAuth2 Scopes which further increases the security of our customers' data.\nIn OAuth2, the authentication is done using Bearer Access Tokens. Once you get them you can perform API calls like so:\ncurl --request GET \\\n --url https://your-customer-account.gorgias.com/api/account \\\n --header 'Authorization: Bearer YOUR-PLAIN-TEXT-ACCESS-TOKEN'\nAccess Token expiration\nPlease remember that OAuth Bearer Access Tokens expire after some time. This is done because sometimes applications only need temporary access to the API (e.g.: one time data import).\nIf your app needs permanent access you should request the offline scope described in OAuth2 Scopes and get a refresh_token that can be used to get a new access_token when the old one expires.\nUpdated about 1 year ago"
+  },
+  {
+   "sid": "S6",
+   "url": "https://developers.gorgias.com/reference/authentication",
+   "official": true,
+   "excerpt": "The Gorgias API supports two authentication methods:\n- \ud83d\udd10 Private app \u2192 API key\n- \ud83d\udc65 Public app \u2192 OAuth2\nUsing OAuth2 is mandatory for public apps.\nFor testing purposes, you can perform requests directly from the API Reference using your API keys.\n- Go to any endpoint (e.g: \"Retrieve your account\")\n- Use your email (username) and your API key"
+  },
+  {
+   "sid": "S7",
+   "url": "https://www.gorgias.com/llm-info",
+   "official": true,
+   "excerpt": "### Gorgias in AI assistants\nThe Gorgias MCP lets brands work with their Gorgias account through an AI assistant. MCP (Model Context Protocol) is the standard that lets an AI tool connect to another app. Once connected, the assistant can read and analyze tickets, reply to customers, manage macros and rules, audit and configure AI Agent, draft Help Center articles, and pull insights like ticket volume, response times, and CSAT. What it can do depends on the user's role in Gorgias. Changes that reach customers or go live are reviewed first: Help Center articles and AI Agent guidance are saved as drafts, and new rules start turned off.\nThe Gorgias MCP is included on every Helpdesk plan. AI Agent is not required.\n- Claude: add Gorgias MCP from Claude's connector directory (web, desktop, or mobile).\n- ChatGPT: install Gorgias MCP from ChatGPT's plugin directory.\n- Other AI clients, including Claude Code, Codex, Cursor, and VS Code Copilot: add https://mcp.gorgias.com/mcp as an HTTP MCP server. If you open this URL in a browser, you'll see a page saying it hosts an MCP endpoint. That's expected.\nTo finish connecting, enter your Gorgias subdomain (your-brand.gorgias.com), sign in to Gorgi\n\n## Pricing\nGorgias Helpdesk is priced on how many tickets a brand handles each month, never per agent. Plans range from 50 to 5,000 tickets a month, with a small per-ticket fee above the plan's limit.\nAI Agent can be added to any plan for Shopify stores. Brands pay only when AI Agent fully resolves a conversation on its own. If a human steps in, it does not count.\n- $1.00 per automated interaction with monthly billing, or $0.90 with annual billing\n- Plans include 30 to 530 automated interactions a month, with higher volumes available through sales\n- Automated interactions beyond the plan's limit cost $1.50 each\n- AI Agent works across email, live chat, SMS, Instagram DMs, Facebook Messenger, and WhatsApp\nVoice and SMS are optional add-ons, priced by call and text volume.\nFor full pricing: https://www.gorgias.com/pricing\nFor a plain-language explanation of AI Agent pricing: https://www.gorgias.com/blog/ai-agent-pricing"
+  },
+  {
+   "sid": "S8",
+   "url": "https://developers.gorgias.com/docs/oauth2-authentication-for-creating-apps-with-gorgias.md",
+   "official": true,
+   "excerpt": "# OAuth2 authentication for creating apps with Gorgias\n\nIn order to be able to have an approved public app with Gorgias, it is required that the app is using OAuth2 for authentication.\n\nYou can obtain the OAuth2 token by following these steps and requirements:\n\n<ol>\n  <li> Creating an app on the partners\u2019 account</li>\n  <li> Obtaining the client_id and client_secret</li>\n  <li> Redirect authorization</li>\n  <li> Post request to obtain the access token (has a 24 hours expiration time)</li>\n  <li> Refresh token used to obtain the next token (does not have expiration time)</li>\n</ol>\n\n<Image title=\"partner ss.png\" alt={2618} align=\"center\" src=\"https://files.readme.io/6e81a04-partner_ss.png\">\n  partners page screenshot for the client\\_id and client\\_secret\n</Image>\n\nOnce the application is approved it will appear on the applications page in the helpdesk, and on that page, the connect app button will be available. The Gorgias users will click on the button to initiate the app installation and they will be redirected to the app URL which was specified on the app submission form in the partners\u2019 account. After you have received that request, the app should send an authorization redirect to the following URL: https\\://`{subdomain}`.gorgias.com/oauth/authorize\n\nEach Gorgias account has its own endpoint, which is defined by the subdomain. On these endpoints are sent all API requests, including the authorization requests.\n\n<ul>\n  <li> response_type=code</li>\n  <li> client_id=`{your_app_client_id}`</li>\n  <li> redirect_uri=(app\u2019s backend endpoint where to redirect once the app is authorized in order to obtain the tokes)</li>\n  <li>scope={<a href=\"https://developers.gorgias.com/docs/oauth2-scopes\">scopes</a>}</li>\n</ul>\n\n<Image title=\"authorization ss.png\" alt={802} align=\"center\" src=\"https://files.readme.io/8c44cf6-authorization_ss.png\">\n  Authorization page screenshot\n</Image>\n\nIn order to test the OAuth2 flow before the application is submitted, you can access it through the partner portal, and on my apps page you can choose the preview option when selecting the additional options of the application, or you can use the following URL to start the installation process: https\\://`{subdomain}`.gorgias.com/app/settings/integrations/app/`{your_app_client_id}`\\\nYou can use your sandbox subdomain and your app client id values in order to generate the testing URL."
+  }
+ ],
+ "errors": []
+}

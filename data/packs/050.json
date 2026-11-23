@@ -1,0 +1,74 @@
+{
+ "id": 50,
+ "app": "fanbasis",
+ "category": "Ecommerce",
+ "hint": "fanbasis.com",
+ "composio": {
+  "found": false,
+  "slug": null,
+  "name": null,
+  "tools": null,
+  "triggers": null,
+  "auth": [],
+  "managed_app": null,
+  "url": null,
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://commas.com/terms",
+   "official": true,
+   "excerpt": "IMPORTANT: PLEASE READ THESE TERMS CAREFULLY BEFORE ACCESSING OR USING THE FANBASIS OR COMMAS PLATFORM.\nThese Platform Terms of Service (\u201cTerms\u201d) govern your access to and use of www.fanbasis.com, any related subdomains, any Commas branded websites and subdomains, any other FanBasis-owned or FanBasis-operated affiliated websites, and all FanBasis or Commas mobile or downloadable applications (collectively, the \u201cPlatform\u201d). The Platform includes all software, tools, features, technologies, content, and services that FanBasis makes available for you to market, purchase, sell, manage, promote, or fulfill digital or physical offerings.\nFanBasis, Inc., which does business under both the \u201cFanBasis\u201d and \u201cCommas\u201d names (collectively, \u201cFanBasis,\u201d \u201cCommas,\u201d \u201cwe,\u201d \u201cus,\u201d or \u201cour\u201d), provides the Platform to you conditioned upon your acceptance of these Terms. References in these Terms to FanBasis include the Commas brand, and these Terms apply to the Platform and all experiences presented under either name. Your access to and use of the Platform, whether through our website, mobile application, or any integrated tools, constitutes your full and ongoing consent to be bound by these Terms.\nBy acc"
+  },
+  {
+   "sid": "S2",
+   "url": "https://commas.com/charge",
+   "official": true,
+   "excerpt": "Find out what you bought\nEmail us the address you used at checkout, or the date, amount and last 4 digits of the card that was charged, and we\u2019ll tell you what it was for. Your receipt email also shows what you bought.\nBilling help\nCharge from COMMAS.COM?\nCommas is the merchant of record for purchases made on Commas checkouts. That\u2019s why the charge shows our name instead of the creator\u2019s, and why we can help with it.\nOr email support@commas.com\nWhat the charge is\nYou bought something on a Commas checkout.\nIndependent creators and businesses sell courses, coaching, memberships and digital products on Commas. When you buy one, you pay Commas.\n- Commas is the merchant We take the payment, send your receipt and handle billing, access and refunds.\n- The creator delivers it They provide the course, coaching or program. We work with them if something goes wrong.\nGet help\nWhat do you need to do?\nCancel at least 24 hours before your next billing date to stop the next charge. Use the order link in your Commas receipt, or ask us and we\u2019ll cancel it for you.\nIf your order wasn\u2019t delivered, isn\u2019t as described or wasn\u2019t authorized, ask within 14 days of delivery. We review it with the creator an"
+  },
+  {
+   "sid": "S3",
+   "url": "https://actionist.ai/app-store/apps/fanbasis",
+   "official": false,
+   "excerpt": "#208 most-used\nSell, host, and scale your digital business \u2014 every transaction automated\nFanBasis is the all-in-one storefront platform built for creators and digital entrepreneurs \u2014 combining payments, subscription management, course and community hosting, upsells, BNPL checkout options, and affiliate tracking in a single tool. Connect FanBasis to Actionist and your agents can react to every storefront event: enrol buyers in post-purchase sequences when a sale closes, launch dunning campaigns within about a minute of a failed payment, compile chargeback evidence before a dispute deadline, track affiliate commissions automatically, and maintain revenue and subscription health dashboards across your entire business \u2014 without manually exporting a single CSV.\nEliminates manual work. Agents eliminate the manual cycle of exporting FanBasis transactions, updating CRM records, launching email sequences, monitoring billing failures, and tracking affiliate commissions \u2014 all tasks that compound with every sale and cancellation event.\nWhat your FanBasis agent runs on autopilot\nA week of scheduled jobs your Actionist agent will execute on your behalf.\nFanBasis \u00d7 every other app you use\nEnd-to-"
+  },
+  {
+   "sid": "S4",
+   "url": "https://www.npmjs.com/package/commas-cli",
+   "official": false,
+   "excerpt": "# Subscriptions\ncommas subs list\ncommas subs product <productId>\ncommas subs cancel <subscriptionId> --session <checkoutSessionId>\ncommas subs extend --session <id> --user <userId> --days 30\ncommas subs link-create --title \"Pro Plan\" --price 49.99 --frequency-days 30 \\\n --trial-days 7 --courses 11,12 --discord-roles 22 --addons 33 # full subscription offer, one command\ncommas subs link-preview --title \"Pro Plan\" --price 49.99 --frequency-days 30\ncommas subs upgrades <subscriptionId> # tiers + proration math\ncommas subs upgrade-preview <subscriptionId> --to <svcId> # exact charge, read-only\ncommas subs upgrade <subscriptionId> --to <svcId> # executes (confirms first)\n\n# Webhooks\ncommas webhooks list\ncommas webhooks create --url https://example.com/hook --events payment.succeeded,refund.created\ncommas webhooks test <id> --event payment.succeeded\n\n# Docs\ncommas docs how do subscription webhooks work\n\n# Escape hatch \u2014 call any MCP tool directly\ncommas call list_products -p per_page=5\ncommas call create_discount_code --params '{\"code\":\"VIP\",\"type\":\"fixed\",\"value\":500}'\nCommands run against production (https://www.fanbasis.com) by default. The sandbox\nis https://api-sandbox.commas.net and needs its own API key, created in the sandbox\ndashboard at https://sandbox.commas.net (Account \u2192 API Keys). Keys from the old QA\ndashboard (qa.dev-fan-basis.com) do not work there. Check and add one with:\ncommas keys list # which environments have a key\ncommas keys add sandbox # prompts for the key, no echo\nIf you ask for sandbox without one, the command stops and tells you \u2014 it will never quietly fall back to production.\nThe server tracks production vs sandbox per MCP session, so the CLI persists your choice locally and re-applies it on every run:\ncommas env # show current default\ncommas env sandbox # all future commands run against the sandbox\ncommas env production\ncommas tx list --env sandbox # one-off override\nIf the sandbox switch fails, the command aborts rather than silently running against production.\nMoney-moving and destructive commands (charge, refund, cancel, delete) use the server's "
+  },
+  {
+   "sid": "S5",
+   "url": "https://www.trysignl.app/docs/integrations/fanbasis",
+   "official": false,
+   "excerpt": "Integrations\nConnect Commas\nCreator-economy payment rail. Paste your API key and SIGNL creates the Commas webhook, imports past payments and reconciles new ones into the ledger. Paying commissions through Commas is not built.\n4 steps\nStatus\nBetaNot yet confirmed against a real delivery from a connected account.\nSetup\n- In Commas, open Account, API Keys and create a live key (the default scopes are enough). A sandbox key does not work.\n- Open Integrations, Payments, or this tab, paste the key on the Commas card and save. SIGNL checks it, creates its own webhook in Commas and keeps the signing secret.\n- SIGNL imports the last twelve months of payments (up to 5,000) in the background; the card shows the result.\n- Make a test payment and check \"Last event received\" updates.\nIn a workspace, open Integrations and pick Commas. The card shows these steps and ticks the ones SIGNL can see: the connection saved, and the connection proven working.\nWhat it does\nHow it connects\nSend events to SIGNL\nOne-key connect\nPayment webhooks\nPast-payment import\nLedger reconciliation"
+  },
+  {
+   "sid": "S6",
+   "url": "https://www.npmjs.com/package/@fanbasis/checkout-sdk",
+   "official": false,
+   "excerpt": "This library provides convenient access to the Fanbasis Checkout REST API from server-side TypeScript or JavaScript.\nThe full API of this library can be found in api.md.\nIt is generated with Stainless.\nnpm install @fanbasis/checkout-sdk\nThe full API of this library can be found in api.md.\nimport FanbasisCheckout from '@fanbasis/checkout-sdk';\nconst client = new FanbasisCheckout({\n apiKey: process.env['FANBASIS_CHECKOUT_API_KEY'], // This is the default and can be omitted\n environment: 'sandbox', // defaults to 'production'\n});\nconst checkoutSession = await client.checkoutSessions.create();\nconsole.log(checkoutSession.data);\nThis library includes TypeScript definitions for all request params and response fields. You may import and use them like so:\nimport FanbasisCheckout from '@fanbasis/checkout-sdk';\nconst client = new FanbasisCheckout({\n apiKey: process.env['FANBASIS_CHECKOUT_API_KEY'], // This is the default and can be omitted\n environment: 'sandbox', // defaults to 'production'\n});\nconst checkoutSession: FanbasisCheckout.CheckoutSessionCreateResponse =\n await client.checkoutSessions.create();\nDocumentation for each method, request param, and response field are available in docs"
+  },
+  {
+   "sid": "S7",
+   "url": "https://docs.themochi.app/api-reference/fanbasis",
+   "official": false,
+   "excerpt": "Fanbasis\nUUID4 identifying one intended write. Reuse it only when retrying that same write.\n^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$\nSuccess\nThe request is invalid.\nAuthentication is missing, invalid, or revoked.\nThe authenticated identity lacks the required scope or capability.\nThe resource is unavailable or not visible to this organization.\nThe write conflicts with current state or an identical request is still running.\nThe write contains fields outside its closed input schema.\nThe request-rate budget is exhausted.\nPOST /v1/connections/fanbasis/ HTTP/1.1\nHost: api.themochi.app\nAuthorization: Bearer YOUR_SECRET_TOKEN\nIdempotency-Key: 123e4567-e89b-12d3-a456-426614174000\nContent-Type: application/json\nAccept: */*\nContent-Length: 18\n{\n \"api_key\": \"text\"\n}{\n \"category\": \"text\",\n \"id\": \"text\",\n \"provider\": \"text\",\n \"status\": \"text\"\n}\nUUID4 identifying one intended write. Reuse it only when retrying that same write.\n^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$\nSuccess\nNo content\nThe request is invalid.\nAuthentication is missing, invalid, or revoked.\nThe authenticated identity lacks the required scope or capability.\nThe resource is unavailable or not visible to this organization.\nThe write conflicts with current state or an identical request is still running.\nThe write contains fields outside its closed input schema.\nThe request-rate budget is exhausted.\nDELETE /v1/connections/fanbasis/ HTTP/1.1\nHost: api.themochi.app\nAuthorization: Bearer YOUR_SECRET_TOKEN\nIdempotency-Key: 123e4567-e89b-12d3-a456-426614174000\nAccept: */*\nNo content\nLast updated\nWas this helpful?"
+  },
+  {
+   "sid": "S8",
+   "url": "https://emergent.sh/integrations/fanbasis",
+   "official": false,
+   "excerpt": "FanBasis Integration with Emergent\nAutomate your FanBasis creator monetization workflows, deliver subscriptions and exclusive content to fans at scale, manage membership tiers and community engagement intelligently, and connect digital commerce operations across all your creator and payment tools using simple prompts.\nFanBasis + Emergent\nThe FanBasis and Emergent integration enables users to build and deploy custom creator monetization applications, subscription management systems, and fan engagement workflows by prompt, combining Emergent's full-stack vibe coding capabilities with FanBasis's powerful creator economy platform. This allows content creators, influencers, and digital entrepreneurs to create specialized business tools, revenue analytics dashboards, and intelligent automations around their subscription and content data without boilerplate code or complex API management.\nWith Emergent, you can:\n- Build custom creator business dashboards that track subscriptions, revenue, churn metrics, and fan engagement across all offerings\n- Create automated workflows that handle member onboarding, content delivery, payment recovery, and community management\n- Design comprehensive anal"
+  }
+ ],
+ "errors": [
+  "fetch https://support.fanbasis.com: 0 ConnectError: [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] ssl/tls alert handshake failure (_ssl.c:1010)",
+  "fetch https://dev-docs.fanbasis.com: 200 too little text (JS-rendered?)",
+  "fetch https://commasdocs.com: 200 too little text (JS-rendered?)",
+  "fetch https://github.com/subtain-haider/laravel-payments/blob/main/docs/gateways/fanbasis.md: 503 too little text (JS-rendered?)"
+ ]
+}

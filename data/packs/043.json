@@ -1,0 +1,74 @@
+{
+ "id": 43,
+ "app": "BigCommerce",
+ "category": "Ecommerce",
+ "hint": "developer.bigcommerce.com",
+ "composio": {
+  "found": true,
+  "slug": "BIGCOMMERCE",
+  "name": "BigCommerce",
+  "tools": 532,
+  "triggers": 0,
+  "auth": [
+   "API_KEY",
+   "OAUTH2"
+  ],
+  "managed_app": "No",
+  "url": "https://docs.composio.dev/toolkits/bigcommerce.md",
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://docs.bigcommerce.com/developer/docs/overview/api-fundamentals/api-accounts",
+   "official": true,
+   "excerpt": "API Accounts\nBigCommerce offers a suite of APIs that let you manage store data, sign customers in, make client-side queries for product information, and write apps that integrate third-party services into store operations.\nBigCommerce API accounts play a role in every authenticated request to our servers. Our API accounts come in a few different flavors to meet the needs of different use cases. For example, app API accounts work well in multi-store contexts, whereas store API accounts are a good choice for frontend applications. Some endpoints only work with one kind of API account.\nFor an overview of the authentication schemes that our APIs use, see the Authentication section below.\nAPI accounts\nBigCommerce offers three types of OAuth-based API accounts to developers who wish to use BigCommerce\u2019s REST APIs: store-level credentials, app-level credentials, and account-level credentials. This section describes the difference between the three, how to obtain and revoke account credentials, and the use cases for each. It also contains a reference for available OAuth scopes and provides a compelling list of reasons to migrate from legacy API tokens to OAuth credentials.\nEvery parent set"
+  },
+  {
+   "sid": "S2",
+   "url": "https://docs.bigcommerce.com/developer/docs/integrations/becoming-a-partner",
+   "official": true,
+   "excerpt": "Becoming a Partner\nThe BigCommerce Partner Program includes access to resources, training, sales enablement, partner support, and a referral network to increase your client base and build better ecommerce experiences. Becoming an official BigCommerce partner will empower you to provide best-of-breed solutions to the fast-growing online businesses we host.\nWe offer two partnership programs designed to help you grow your business.\nAgency partners\nThe Agency Partner Program is for agencies that build ecommerce solutions and deliver custom experiences for their clients. As an agency partner, you get access to advanced features, training resources, and integrations. To learn more, see Partner Program.\nTechnology partners\nThe Technology Partner Program is for companies that design ecommerce themes, custom apps, and business software integrations. To learn more, see Partner Program.\nYou don\u2019t need to be a partner to build and test an app. You can test in any BigCommerce store. You need an approved Technology Partner account to submit an app to the BigCommerce App Marketplace.\nApply to the Partner Program\nThe following steps outline how to apply to become a BigCommerce partner (Agency or T"
+  },
+  {
+   "sid": "S3",
+   "url": "https://docs.bigcommerce.com/developer/api-reference/mcp/overview",
+   "official": true,
+   "excerpt": "MCP Overview\nThe Model Context Protocol (MCP) is an open standard that lets AI agents, such as Claude, Cursor, and ChatGPT, discover and call tools. An MCP server publishes a list of tools, each with a name, a description, and an input schema. The agent picks the right tool for a request and calls it, instead of scraping pages or calling raw APIs.\nBigCommerce supports MCP in three ways. Each one serves a different kind of agent and acts with a different level of access.\nThe Docs MCP server is separate from these capabilities. It lets your AI tool search the BigCommerce developer documentation, and it can\u2019t read or change store data.\nUse cases\nStorefront MCP\nUse Storefront MCP to let an agent shop your catalog for someone: a conversational shopping assistant, a chat widget on your storefront, or a third-party AI shopping app. The agent can search products, compare options, build a cart, and hand the shopper a checkout link.\n- Every store gets the storefront tools. Catalog, cart, and checkout tools work for guests, logged-in customers, and B2B buyers.\n- B2B Edition stores get extra tools. Authenticated buyers can also manage shopping lists and request and work with quotes.\n- Shopper "
+  },
+  {
+   "sid": "S4",
+   "url": "https://docs.bigcommerce.com/developer/docs/storefront/guides/graphql-storefront-api/overview",
+   "official": true,
+   "excerpt": "GraphQL Storefront API overview\nBigCommerce\u2019s GraphQL Storefront API makes it possible to power a headless storefront; see Introduction to Headless Commerce for details. The GraphQL Storefront API also lets you query storefront data from within a Stencil theme.\nThis graph serves as a flexible interface for building shopper experiences. For example, with the GraphQL Storefront API, it is possible to do the following:\n- Query product catalog data to help shoppers find the product they\u2019re looking for through BigCommerce\u2019s searching, filtering, and sorting capabilities.\n- Request any product\u2019s images at any resolution.\n- Ask for a signed-in customer\u2019s details, such as name, email address, and attributes.\n- Look up objects, such as categories or brands, by URL, and fetch their details.\n- Create new carts, fetch existing carts, and initiate checkout.\nGraphQL currently does not support sorting products based on pricing defined in Price Lists. Price based sorting methods with GraphQL will be based on prices on the product level.\nAdditionally, by leveraging the power of GraphQL, data for multiple resources can be returned from a single API call, which simplifies integration and increases pe"
+  },
+  {
+   "sid": "S5",
+   "url": "https://www.bigcommerce.com/pricing",
+   "official": true,
+   "excerpt": "Limited-time offer\nSave 50% on your first year\nPurchase a Core, Growth, or Scale annual plan by Dec 31*\nPay Monthly\nPay Annually\nCore\nNew businesses with up to $30K in annual sales.\n$19.50\n$39\nSave 50%\nper month, billed annually\nUp to $30K TTM GMV; plan auto-upgrades to Growth\nZero fees with Embedded Payment Providers*\n24/7 chat & email support*\nGrowth\nEstablished businesses scaling toward $100K in annual sales.\n$52.50\n$105\nUp to $100K TTM GMV; plan auto-upgrades to Scale\n24/7 live phone and chat, with express routing available\nScale\nMost Popular\nBusinesses scaling operations across channels, markets, or catalogs.\n$199.50\n$399\nUp to $33,333/month GMV; (0.9% on GMV above cap)\n24/7 live phone and chat, with express routing or priority support available\nPerformance\nEnterprise operations that need custom integrations, SLAs, and strategic support.\nCustom pricing\nstarting at $1,499 per month, billed annually\nCustom payment terms that fit your volume\nDedicated Customer Success\nManager\n24/7 live phone and chat, with priority support included\n*Promotional price applies to new customers only. Annual plan must be purchased by Dec 31, 2026 to qualify for discount.\nAnnual online sales are calcu"
+  },
+  {
+   "sid": "S6",
+   "url": "https://docs.bigcommerce.com/developer/docs/ai-agent-setup",
+   "official": true,
+   "excerpt": "Docs MCP Server\nThe docs site exposes a Model Context Protocol (MCP) server that AI tools can search and reference. Once connected, your AI tool can answer questions like \u201cHow does the BigCommerce checkout API work?\u201d by pulling directly from the docs.\nThis server lets your AI tool search and reference the BigCommerce documentation. It can\u2019t read or change your store, orders, catalog, or account settings. If you\u2019re looking for an MCP server that interacts with your storefront, see the BigCommerce MCP Server. For everything else, use the REST and GraphQL APIs.\nFor schema-aware workflows, you can also download BigCommerce OpenAPI Specifications and add them to tools that import OpenAPI files.\nPick your agent\nSetup your agent\nClaude Code\nCopy the install command\nPick the scope you want.\nFor a single project, click the Copy page dropdown in the upper right of any docs page and select Connect to Claude Code, or copy it from here:\nFor every project on your machine, copy this one instead:\nCodex\nRun this in your terminal to add the docs server:\nConfirm it appears with codex mcp list, then use /mcp inside the Codex TUI to check its status.\nCursor\nFastest: click the Copy page dropdown in the upper right of any docs page and select Connect to Cursor. Cursor opens and asks you to confirm the new server. No file editing needed.\nTo set it up manually instead, add the BigCommerce docs server entry to one of these files. In recent Cursor versions, the Settings \u2192 Tools & MCPs \u2192 New MCP Server button opens mcp.json for direct editing rather than a Name/URL form.\n- .cursor/mcp.json in your project root (project-scoped), or\n- ~/.cursor/mcp.json in your home directory (available in every project)\nSave the file \u2014 Cursor picks the new server up automatically.\nClaude Desktop\nnpx to work.\nLocate and open the config file\nIn Claude Desktop, go to Settings > Developer > Edit Config \u2014 this reveals claude_desktop_config.json in Finder (macOS) or Explorer (Windows). Open that file in VS Code, Cursor, or any text editor.\nVerify it\u2019s working\nOnce you\u2019ve connected, try asking your AI tool:\n- \u201cWhat MCP tools do you have available?\u201d \u2014 you should see tools from the BigCommerce docs server.\n- \u201cSearch the BigCommerce docs for webhooks.\u201d \u2014 if it returns results pulled from the docs, you\u2019re set."
+  },
+  {
+   "sid": "S7",
+   "url": "https://docs.bigcommerce.com/developer/docs/integrations/apps/guide/auth",
+   "official": true,
+   "excerpt": "Single-Click App OAuth Flow\nAfter you install your draft app and create an app profile, you\u2019re ready to write the code grant authorization flow that generates a unique access_token for each store that installs your app. This article covers the sequence and contents of API requests and responses in the code grant authorization flow for a BigCommerce app.\nIt may be more appropriate for your application to use an API client to handle this logic; see the list of BigCommerce API clients that expose OAuth-related helper methods.\nStore owner access_token constraint\nTypically, only store owners and authorized users can create API accounts and access_tokens for a store. However, when an app is approved to be publicly available for additional stores to install, it can generate access_tokens on behalf of store owners and authorized users.\nOverview\nYour app must expose a callback endpoint, GET /auth, that the merchant\u2019s store control panel can hit to initiate the code grant authorization flow. For a list of all the callback endpoints your app can expose, both required and optional, see Single-Click App Callback Handlers.\nBigCommerce uses a modified version of the OAuth2 authorization code gran"
+  },
+  {
+   "sid": "S8",
+   "url": "https://www.bigcommerce.com/blog/storefront-mcp",
+   "official": true,
+   "excerpt": "See if the BigCommerce platform is a good fit for your business.\nNo credit card required.\nStorefront MCP Is Now Live: Here's What You Can Build with It\nGet The Print Version\nTired of scrolling? Download a PDF version for easier offline reading and sharing with coworkers.\nA link to download the PDF will arrive in your inbox shortly.\nBigCommerce Storefront MCP is now available to every store on the platform. Any live, transacting store can opt in starting now.\nIf you've been watching this space and waiting for the right moment to start building AI-powered shopping experiences, this is it.\nMCP, or Model Context Protocol, is an open standard that lets AI agents like Claude, Cursor, and others discover and call tools over a common protocol. Think of it as the interface layer between a language model and the real world. Instead of generating text about products, an AI can search your catalog, build a cart, and hand a shopper off to checkout.\nBigCommerce\u2019s Storefront MCP server gives AI agents purpose-built commerce tools to do exactly that: interact with a BigCommerce storefront through natural language on behalf of any shopper.\nThe result is a dramatically shorter path from \u201cI want to b"
+  }
+ ],
+ "errors": [
+  "fetch https://support.bigcommerce.com/s/article/Store-API-Accounts?language=en_US: 200 too little text (JS-rendered?)"
+ ]
+}

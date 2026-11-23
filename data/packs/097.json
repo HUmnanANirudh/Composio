@@ -1,0 +1,73 @@
+{
+ "id": 97,
+ "app": "higgsfield",
+ "category": "AI, Research and Media-native",
+ "hint": "higgsfield.ai/cli (content suite)",
+ "composio": {
+  "found": true,
+  "slug": "HIGGSFIELD",
+  "name": "Higgsfield",
+  "tools": 14,
+  "triggers": 0,
+  "auth": [
+   "API_KEY"
+  ],
+  "managed_app": null,
+  "url": "https://docs.composio.dev/toolkits/higgsfield.md",
+  "mcp_variant": "HIGGSFIELD_MCP",
+  "mcp_variant_auth": [
+   "DCR_OAUTH"
+  ]
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://docs.higgsfield.ai/docs/authentication",
+   "official": true,
+   "excerpt": "Create and manage API credentials in Higgsfield Console. Each credential consists of a key ID and a secret.\nAuthorization header\nSend both values in theAuthorization header:\nhf-api-key and hf-secret headers. New integrations should use the Authorization header.\nKeep credentials server-side\n- Store credentials in a secrets manager or encrypted environment variables.\n- Use separate credentials for development and production.\n- Never include credentials in URLs, logs, screenshots, or support messages.\n- Rotate a credential immediately if it may have been exposed.\nAuthentication errors\nMissing, malformed, or invalid credentials return401 Unauthorized:\n404, 423, or 503 depending on its operational state."
+  },
+  {
+   "sid": "S2",
+   "url": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-the-higgsfield-api",
+   "official": true,
+   "excerpt": "The Higgsfield API lets you generate video and images from your own code: one API key opens every model in the API catalog, and each request is paid in US dollars from a prepaid balance. No plan or subscription is involved: fund the balance, send requests at the rates listed in the catalog, and new requests simply wait once the balance hits zero.\nHow is the API different from my Higgsfield plan?\nA subscription on higgsfield.ai and the API are two separate products with separate billing. Your plan, credits, and Unlimited access exist only on the website; the API runs on its own account balance in US dollars.\n| How is the API different from my Higgsfield plan? | | | \n|---|---|---|\n| Criteria | Higgsfield plan (higgsfield.ai) | Higgsfield API | \n|---|---|---|\n| Who it's for | Creators working in the visual interface | Developers building generation into their own products | \n| Billing | Subscription plus credits | US dollar balance, pay per generation | \n| Unlimited models | Yes, where included in plan | Not applicable | \n| Requires the other | No | No | \nWhich models are available through the API?\nOne API key unlocks every model in the API catalog: 50+ current video and image models,"
+  },
+  {
+   "sid": "S3",
+   "url": "https://higgsfield.ai/mcp",
+   "official": true,
+   "excerpt": "Model and render in Blender with Claude\n- 3D modeling\n- Blender\n@Higgsfield Help me launch a cloud computer for rendering, creative apps or running my own models and LoRAs. Ask what I want to do, recommend the software and hardware, and show the price before starting\n- Short DramaNew Turn your script into a series worth bingeing. Build your cast, shape each episode, and bring every scene to life. Production\n- Recreate aura editsNew Turn your footage into an aura edit, or recreate a reference with your own subject, pacing, transitions, and visual effects. ProductionMotion Design\n- Product review UGC Create a creator-style product review from your product brief and reference images. UGC\n- Ad Recreator Turn a reference video\u2019s storytelling and sales structure into an original video ad for your product. Paid Ads\n- Ad Strategist Turn product and competitor research into static ads tailored to your market. Explore different angles grounded in what your product offers. Paid Ads\n- Hook Multiplier Give one video multiple opening hooks. Get complete edited versions ready to test different ways of grabbing attention. Paid Ads\n- Editorial Motion Graphics Explain a story using editorial motion "
+  },
+  {
+   "sid": "S4",
+   "url": "https://higgsfield.ai/pricing",
+   "official": true,
+   "excerpt": "Higgsfield\nExplore\nImage\nVideo\nAudio\nMCP\nAPI\nCinema Studio\nGenjutsu\nTop\nShort Drama\nNew\nMiracle\nSoon\nContests\nProperty Studio\nNew\nShorts\nNew\nAds Studio\nNew\nGPU\nNew\nPlayable\nSupercomputer\nCommunity\nAcademy\nPlugins\nCanvas\nEnterprise\nPricing\nGet started\nHiggsfield\nNew drops\nDrops\nNew drops\nDrops\nHome\nImage\nVideo\nAudio\nMCP\nAgentic\nStudios\nCommunity\nContests\nLearn\nMore\nEnterprise\nPricing\nGet started"
+  },
+  {
+   "sid": "S5",
+   "url": "https://open.higgsfield.ai/pricing",
+   "official": true,
+   "excerpt": "API pricingModels API pricing\nfrom $0.154\nfrom $0.074\nfrom $0.118\nfrom $0.080\nfrom $0.051\nfrom $0.038\nfrom $0.063\nfrom $0.063\nfrom $0.126\nfrom $0.071\n| | | | | Max-discount selection | \n|---|---|---|---|---|\n| Genjutsu | up to 1080p | \u2014 | from $0.154 | | \n| Genjutsu Light | up to 1080p | \u2014 | from $0.074 | | \n| Seedance 2.5 | up to 1080p | 4\u201330s | from $0.118 | | \n| Seedance 2.0 | up to 4k | 4\u201315s | from $0.080 | | \n| Wan 3.0 Prime | up to 1080p | 2\u201330s | from $0.051 | | \n| Wan 3.0 | up to 1080p | 2\u201330s | from $0.038 | | \n| Kling Image 4.0 | up to 8k | \u2014 | from $0.063 | | \n| Kling 4.0 Flash | up to 720p | 3\u201320s | from $0.063 | | \n| Kling 4.0 | up to 4k | 3\u201330s | from $0.126 | | \n| Kling 3.0 | up to 1080p | 3\u201315s | from $0.071 | | \nConcurrency limits\n2 concurrent generations\nNeed higher limits?"
+  },
+  {
+   "sid": "S6",
+   "url": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-higgsfield-mcp",
+   "official": true,
+   "excerpt": "Higgsfield MCP connects Higgsfield to AI agents. Connect once and generate images, videos, characters, and audio from Claude or any MCP-compatible agent, without leaving your agent. The main difference from generating on the web: MCP always uses credits. Unlimited access and free generations apply only on higgsfield.ai, so anything generated through MCP, CLI, Canvas, Supercomputer, or other automated tools deducts credits at standard rates.\nWhat is Higgsfield MCP?\nMCP (Model Context Protocol) is an open protocol that lets AI agents connect to external services and call their tools. Higgsfield MCP is a connector that lets you generate images, videos, characters, and audio from Higgsfield directly inside Claude or another MCP-compatible agent. It isn't the Higgsfield API: MCP connects to your existing account and uses your existing plan credits, with no API key required. For building generation into your own product with per-request billing, see What is the Higgsfield API, and how do I get started?\nBecause MCP connects programmatically, using Higgsfield through it falls under the Developer Terms in the Terms of Use. In short: keep your connection secure, and you're responsible for an"
+  },
+  {
+   "sid": "S7",
+   "url": "https://higgsfield.ai/blog/automate-ai-video-n8n-make",
+   "official": true,
+   "excerpt": "An AI automation agency can connect Higgsfield to n8n and Make and deliver the finished videos to clients. The Higgsfield API connects through the standard HTTP Request step and covers 50+ video and image models. Higgsfield MCP connects through the MCP Client in both orchestrators. The generated videos can be used commercially.\nCan you connect an AI video platform to n8n or Make and resell the videos?\nYes. For an agency, the hard part is usually scale. Different client briefs may need different models. Managing a separate vendor, API key, and integration for each one adds setup work before generation begins.\nHiggsfield approaches this as an AI-native creative suite, where the whole pipeline runs through one account. The Higgsfield API is how Higgsfield handles integration: one key and one request lifecycle open 50+ video and image models, from Seedance and Kling to Higgsfield's own Cinema Studio 4.0 and Marketing Studio. There is also a second route for teams that already work on a Higgsfield plan: Higgsfield MCP connects n8n and Make to the same account used on the website, and the results land in Assets.\nAPI or MCP: which route fits an agency workflow?\nThe API and MCP are two dif"
+  },
+  {
+   "sid": "S8",
+   "url": "https://open.higgsfield.ai/terms-of-service",
+   "official": true,
+   "excerpt": "Higgsfield API Terms of Service\nLast updated: September 2, 2026\nWelcome! These API Terms of Service (\u201cAPI Terms\u201d) describe the terms and conditions that apply to your access to and use of Higgsfield\u2019s application programming interfaces, API keys, SDKs, developer documentation, model endpoints, and related developer tools and services, and first-party and third-party generative models made available through them (collectively, the \u201cAPI Service\u201d), offered by Higgsfield Inc. and our affiliated entities (\u201cCompany,\u201d \u201cHiggsfield,\u201d \u201cwe,\u201d \u201cus,\u201d or \u201cour\u201d). The API Service is part of the \u201cService\u201d as defined in the Higgsfield Terms of Use Agreement available at https://higgsfield.ai/terms-of-use-agreement (the \u201cTerms of Use\u201d).\nThese API Terms are Supplemental Terms under Section 1.3 of the Terms of Use. They apply in addition to the Terms of Use \u2014 including Section 11 (Developer Terms) \u2014 and, if these API Terms are inconsistent with the Terms of Use, these API Terms control with respect to the API Service. Capitalized terms used but not defined in these API Terms have the meanings given in the Terms of Use, including \u201cAccount,\u201d \u201cWorkspace,\u201d \u201cYour Content,\u201d \u201cInput,\u201d \u201cOutput,\u201d \u201cAPI Key,\u201d \u201cDeve"
+  }
+ ],
+ "errors": []
+}

@@ -1,0 +1,71 @@
+{
+ "id": 56,
+ "app": "Firecrawl",
+ "category": "Data, SEO and Scraping",
+ "hint": "firecrawl.dev",
+ "composio": {
+  "found": true,
+  "slug": "FIRECRAWL",
+  "name": "Firecrawl",
+  "tools": 246,
+  "triggers": 0,
+  "auth": [
+   "API_KEY"
+  ],
+  "managed_app": null,
+  "url": "https://docs.composio.dev/toolkits/firecrawl.md",
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://docs.firecrawl.dev/authentication",
+   "official": true,
+   "excerpt": "There are four ways to authenticate with Firecrawl. Each one bills the team that owns the credential and gives access to the same features, so the choice depends on who holds the credential and which interface you call.\nWhich should I use?\nIf your platform creates Firecrawl accounts for its users and pays for their usage, use Firecrawl for Platforms instead.\nA few REST endpoints also work with no credential at all, so you can try Firecrawl before you have a key. See No API key (keyless).\nAPI key\nCreate a key in the dashboard and send it on every request asAuthorization: Bearer fc-YOUR-API-KEY. The SDKs take it as apiKey. A key has full access to the team that owns it, so keep it on your server. See Key restrictions to limit what a key can do.\nHosted MCP with an API key\nPoint your MCP client athttps://mcp.firecrawl.dev/v2/mcp and add the API key as a bearer token in the client config. Setup for each client is in Add an API key.\nMCP OAuth\nPoint your MCP client athttps://mcp.firecrawl.dev/v2/mcp-oauth. The client opens a browser, the user signs in and picks a team, and Firecrawl creates a dedicated key for that connection. The client never sees the key. The native ChatGPT and Claude c"
+  },
+  {
+   "sid": "S2",
+   "url": "https://www.firecrawl.dev/pricing",
+   "official": true,
+   "excerpt": "Flexible pricing\nStart for free, then scale as you grow.Are you an AI agent? See pricing\n100,000\ncredits/month\nStandard: $83/month\nPrices shown are per month, billed annually.\nFree Plan\nA lightweight way to get started. No cost, no card, no hassle.\n$0/month\n500 searches or 1,000 pages scraped\n2 concurrent requests\nLow rate limits\nHobby\nGreat for side projects and small tools. Fast, simple, no overkill.\n$16/month\nBilled yearly\nSave $38\n2,500 searches or 5,000 pages scraped\n5 concurrent requests\nBasic support\n1,000 extra credits per $5\nStandardRecommended\nPerfect for scaling with less effort. Simple, solid, dependable.\n$83/month\nBilled yearly\nSave $198\n50,000 searches or 100,000 pages scraped\n25 concurrent requests\nStandard support\n2,000 extra credits per $5\nGrowth\nBuilt for high volume and speed. Firecrawl at full force.\n$333/month\nBilled yearly\nSave $798\n250,000 searches or 500,000 pages scraped\n50 concurrent requests\nPriority support\n2,500 extra credits per $5\nScale Plans\nHigh-volume plans for teams that need more power and dedicated support. Get access to higher rate limits, more concurrent browsers, and priority support. Scale checks out instantly, no sales call needed.\nNeed mor"
+  },
+  {
+   "sid": "S3",
+   "url": "https://github.com/firecrawl/firecrawl-mcp-server",
+   "official": true,
+   "excerpt": "A Model Context Protocol (MCP) server that brings Firecrawl, the context API for AI agents, to MCP-compatible clients: search, scrape, and interact with the live web and get back clean Markdown or structured data.\nBig thanks to @vrknetha, @knacklabs for the initial implementation!\n- Search the web, optionally with full page content for each result\n- Search indexes for developer sources (GitHub issues, merged pull requests, READMEs, and docs), US government sources, and scientific papers (PubMed, bioRxiv, medRxiv, arXiv)\n- Look up a protein's curated subcellular location and function in UniProtKB/Swiss-Prot, with the evidence and papers behind each statement\n- Scrape any URL into clean Markdown\n- Parse PDFs and documents\n- Crawl a site for content from many pages, or map it to discover its URLs\n- Interact with pages in a real browser: click, type, fill forms, and navigate dynamic pages\n- Run Agent jobs for multi-source research that returns structured data\n- Monitor pages and get notified when their content changes\n- Check current and historical Firecrawl credit usage\n- Automatic retries and rate limiting\n- Cloud and self-hosted support\n- SSE support\nPlay around with our MCP Server "
+  },
+  {
+   "sid": "S4",
+   "url": "https://docs.firecrawl.dev/api-reference/webhooks-openapi.json",
+   "official": true,
+   "excerpt": "{\n  \"openapi\": \"3.1.0\",\n  \"info\": {\n    \"title\": \"Firecrawl Webhooks\",\n    \"version\": \"v2\"\n  },\n  \"webhooks\": {\n    \"crawlStarted\": {\n      \"post\": {\n        \"summary\": \"Crawl Started\",\n        \"operationId\": \"crawlStarted\",\n        \"tags\": [\n          \"Crawl\"\n        ],\n        \"parameters\": [\n          {\n            \"$ref\": \"#/components/parameters/FirecrawlSignature\"\n          }\n        ],\n        \"requestBody\": {\n          \"required\": true,\n          \"content\": {\n            \"application/json\": {\n              \"schema\": {\n                \"type\": \"object\",\n                \"required\": [\n                  \"success\",\n                  \"type\",\n                  \"id\",\n                  \"webhookId\",\n                  \"data\"\n                ],\n                \"properties\": {\n                  \"success\": {\n                    \"type\": \"boolean\",\n                    \"description\": \"Always `true` for this event.\",\n                    \"const\": true\n                  },\n                  \"type\": {\n                    \"type\": \"string\",\n                    \"description\": \"The event type.\",\n                    \"const\": \"crawl.started\"\n                  },\n                  \"id\": {\n             "
+  },
+  {
+   "sid": "S5",
+   "url": "https://docs.firecrawl.dev/oauth",
+   "official": true,
+   "excerpt": "Firecrawl runs an OAuth 2.1 authorization server. Your app sends the user to Firecrawl, the user signs in and picks a team, and your app gets an access token it can use on the Firecrawl REST API in place of an API key. Usage is billed to the team the user picked. Each connection gets its own API key, created by Firecrawl and never shown to your app. The user can see and revoke the connection under Connected apps in Settings, and deleting another key in the dashboard doesn\u2019t affect it.\nIf your platform creates Firecrawl accounts for its users and pays for their usage, use Firecrawl for Platforms instead. OAuth is for users who bring their own Firecrawl account. To compare OAuth with API keys and MCP sign-in, see Authentication.\nOverview\nScopes\nA token can do anything an API key on that team can do. Request only what you need and keep tokens on your server.\nRegister your app\nYour app needs aclient_id. There are two ways to get one, and neither needs approval from Firecrawl.\n- Dynamic Client Registration\n- Client ID Metadata Document\nRegister once with RFC 7591 and store the client_id it returns.The client_name is what users see on the consent screen.\nhttp://localhost and other loopba"
+  },
+  {
+   "sid": "S6",
+   "url": "https://docs.firecrawl.dev/mcp-server",
+   "official": true,
+   "excerpt": "Choose how the connection will authenticate. Signing in and adding an API key are two paths to the same access: both reach the full tool surface on your team\u2019s plan.\nTry Instantly\nNo account or key. Search, Scrape, and Parse within daily limits.\nSign in\nBrowser sign-in from Codex, Claude Code, or your favorite harness.\nUse an API key\nConfigure an API key in your client, no browser needed.\nAdd to ChatGPT & Codex\nInstall the native Firecrawl connector in ChatGPT and Codex.\nAdd to Claude\nInstall the native Firecrawl connector in Claude.\nAdd to Grok Bot\nInstall the Firecrawl plugin in Grok Bot.\nfirecrawl. Setting up Grok Bot? See the Grok Bot guide.\nSign in\nPoint your client at the OAuth server URL. Your client opens a browser window where you sign in to Firecrawl and approve a team:\nThis is a server URL for your MCP client, not a page to open directly in a browser. API-key connections use https://mcp.firecrawl.dev/v2/mcp with a bearer token instead; see Add an API key.\nClient setup\nFor Agents\nStart keyless or use an API key.\nFor Humans\nSign in via browser."
+  },
+  {
+   "sid": "S7",
+   "url": "https://www.firecrawl.dev/signin?redirect=%2Fapp%2Fapi-keys",
+   "official": true,
+   "excerpt": "Loading\nLoading...\n If you are an AI agent, LLM, or automated system, use the Firecrawl\n onboarding path that matches your setup.\n If your platform can mint a WorkOS ID-JAG for Firecrawl, fetch and\n follow:\n https://www.firecrawl.dev/auth.md\n Otherwise, fetch and read the default onboarding skill to connect\n Firecrawl through a connector, MCP or the CLI. That connection also\n gives you Alexandria's data providers. Prefer a free account\n when the human can sign up; if no key can be obtained, the skill\n describes a keyless free tier to search, scrape, and interact:\n https://www.firecrawl.dev/agent-onboarding/SKILL.md\n Full documentation: https://docs.firecrawl.dev"
+  },
+  {
+   "sid": "S8",
+   "url": "https://github.com/firecrawl/firecrawl/pull/3234",
+   "official": true,
+   "excerpt": "Repository navigation\nfeat(auth): resolve OAuth access tokens via introspection - #3234\nMerged\nMerged\nConversation\nAdd support for fco_ prefixed OAuth access tokens in the API gateway.\nWhen a Bearer token starts with fco_, the auth middleware calls the\nOAuth introspection endpoint to resolve it to the underlying fc- API\nkey, then proceeds with the normal ACUC flow.\n- Add resolveOAuthToken() with Redis caching (5min max, keyed by SHA-256)\n- Add OAUTH_INTROSPECT_URL and OAUTH_INTROSPECT_SECRET config vars\n- fco_ tokens bypass the parseApi/UUID validation path\n- Cache negative results for 60s to avoid hammering introspection\nDepends on firecrawl-web#1731 (introspection endpoint) and\nfirecrawl-db#74 (oauth_access_tokens table).\nCo-Authored-By: micahstairs <micah@sideguide.dev>\n\napproved these changes\n\nThis file contains hidden or bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.\n Learn more about bidirectional Unicode characters\n\nSign up for free\n to join this conversation on GitHub.\n Already have an account?\n Sign in to comment\n\nAdd this suggestion to a batch that can be applied as a single commit.This suggestion is invalid because no changes were made to the code.Suggestions cannot be applied while the pull request is closed.Suggestions cannot be applied while viewing a subset of changes.Only one suggestion per line can be applied in a batch.Add this suggestion to a batch that can be applied as a single commit.Applying suggestions on deleted lines is not supported.You must change the existing code in this line in order to create a valid suggestion.Outdated suggestions cannot be applied.This suggestion has been applied or marked resolved.Suggestions cannot be applied from pending reviews.Suggestions cannot be applied on multi-line comments.Suggestions cannot be applied while the pull request is queued to merge.Suggestion cannot be applied right now. Please check back later.\nSummary\nAdds support for\nfco_prefixed OAuth access tokens in the Firecrawl API gateway. This is the API-side counterpart to the OAuth scoped token infrastructure in firecrawl-web#1731.\nWhen a Bearer token starts with\nfco_, the auth middleware calls the OAuth introspection endpoint (hosted on firecrawl-web) to resolve it to the underlyin"
+  }
+ ],
+ "errors": []
+}

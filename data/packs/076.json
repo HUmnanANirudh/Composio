@@ -1,0 +1,73 @@
+{
+ "id": 76,
+ "app": "Monday.com",
+ "category": "Productivity and Project Management",
+ "hint": "developer.monday.com",
+ "composio": {
+  "found": true,
+  "slug": "MONDAY",
+  "name": "Monday",
+  "tools": 126,
+  "triggers": 17,
+  "auth": [
+   "OAUTH2"
+  ],
+  "managed_app": "Yes",
+  "url": "https://docs.composio.dev/toolkits/monday.md",
+  "mcp_variant": "MONDAY_MCP",
+  "mcp_variant_auth": [
+   "DCR_OAUTH"
+  ]
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://developer.monday.com/api-reference/docs/authentication",
+   "official": true,
+   "excerpt": "Authentication\nLearn about monday platform API token permissions, how to access tokens, and how to authenticate requests\nThe monday.com platform API utilizes personal V2 API tokens to authenticate requests and identify the user making the call. These tokens are unique to each user and have no explicit length.\nPersonal tokens allow you to interact with the API using your own user account. Their permissions mirror what you can do in the monday.com UI, ensuring that API access is consistent with your platform-level permissions.\nIf you don't have a monday.com account yet, create a free developer account to get an API token and start testing.\nToken permissions\nPersonal tokens mirror all permission levels set in the monday.com UI, including board, column, item, or account access.\nFor example: If you don't have permission to access a certain workspace via the UI, you won't have permission using your personal API token either.\nApp tokens have an additional set of permission scopes that specify which queries and mutations it can access, while personal tokens have all permission scopes.\nAccessing your token\nYou can access your API token in two ways, depending on your user type.\nIn the Develo"
+  },
+  {
+   "sid": "S2",
+   "url": "https://developer.monday.com/api-reference/docs/developer-sandbox",
+   "official": true,
+   "excerpt": "Developer Sandbox Account\nSign up for a free monday.com developer account to build and test apps and API integrations in a sandbox separate from your production data.\nA developer account (also called a sandbox account) is a free monday.com account designed for building and testing monday apps and API integrations. It runs in an environment separate from your production or work data, so you can experiment without affecting live workflows.\nYou can use any monday.com account to explore the apps framework and API. A developer account is the recommended option when you need higher limits and Pro/Enterprise capabilities for thorough testing.\nSign up for a developer account\nCreate a free developer account and start building right away:\nSign up for a free developer account\nAfter sign-up, open the Developer Center from your profile menu (Developers) to manage apps, API tokens, and usage.\nOther account options\n| Option | When to use it | \n|---|---|\n| Existing monday.com account | You already have an account and only need light testing. | \n| Trial account | You want to evaluate monday.com beyond development. Sign up for a trial. | \n| Trial extension | Your trial is ending but you need more ti"
+  },
+  {
+   "sid": "S3",
+   "url": "https://developer.monday.com/api-reference/docs/mondaycom-mcp",
+   "official": true,
+   "excerpt": "Platform MCP overview\nConnect AI agents to monday.com data through the hosted Platform MCP server\nThe Platform MCP is monday.com's hosted MCP (Model Context Protocol) server, maintained by the monday.com AI team. It lets AI agents read and write monday.com data \u2014 creating items, updating columns, querying boards, and more \u2014 through a standardized protocol supported by all major AI platforms.\nConnect using the hosted server. No local setup is required:\n{\n \"mcpServers\": {\n \"monday-mcp\": {\n \"url\": \"https://mcp.monday.com/mcp\"\n }\n }\n}\nMCP tool calls are executed as GraphQL API requests and count toward your account's daily API call limit.\nExplore the docs\nConnect from Claude, ChatGPT, Cursor, Copilot, Gemini, and other supported AI platforms.\nChoose an auth path \u2014 API token, your own OAuth app, or dynamic client registration.\nAdmins approve additional MCP connections and redirect URIs beyond the pre-approved third-party agents.\nFull reference for all 60+ tools, organized by category, with equivalent GraphQL APIs.\nSecurity architecture, authentication, tenant isolation, and OWASP MCP Top 10 alignment.\nMore resources\nBuilding monday.com apps? Use the separate Apps MCP to scaffold features, deploy code, and promote versions. Both servers can run side by side.\nUpdated about 2 months ago"
+  },
+  {
+   "sid": "S4",
+   "url": "https://developer.monday.com/api-reference/reference/webhooks",
+   "official": true,
+   "excerpt": "return jsonify({'challenge': challenge})\n # print(request.json)\n # return 'success', 200\n else:\n abort(400)\nif __name__ == '__main__':\n app.run(debug=True)\nAuthenticating requests\nSome webhook requests contain a JWT in the Authorization header, which can be used to check the request is legitimate. To authenticate the request, verify the JWT's signature against the app's Signing Secret, as described in our integrations documentation.\nIf you want to enable this feature, create the webhook with an integration app token:\n- Create a monday app & add an integration feature to it\n- Generate an OAuth token for this app\n- Call the create_webhook mutation using the OAuth token\nRemove ability to turn off webhook\nEnd-users cannot disable integration webhooks. This is so the app does not get disrupted by a curious end-user toggling a webhook on and off.\nTo enable this feature, make sure to create the webhook with an integration app token. Instructions to do that are in the previous section.\nRetry policy\nRequests sent through our webhook integration will retry once a minute for 30 minutes.\nQueries\nGet webhooks\n- Required scope:webhooks:read\n- Returns an array containing one or a collection of we"
+  },
+  {
+   "sid": "S5",
+   "url": "https://developer.monday.com/apps/docs/choosing-auth",
+   "official": true,
+   "excerpt": "Choosing an authentication method\nLearn the different ways your app can authenticate with the monday API and the best use-cases for each\nIntroduction\nDetermining which authentication method to use in your app can be difficult and confusing.\nWhen designing your app, you should consider what data it needs to access. Any data that comes from a user\u2019s monday.com account must be accessed via the monday GraphQL API.\nAdditionally, if your app accesses data from other platforms, you should consider their authentication protocols as well.\nHow do you authenticate with the monday API?\nThe monday API uses token-based authentication. To successfully authenticate with our GraphQL API, every request should include an API token in the request\u2019s \u201cAuthorization\u201d header.\nGenerally speaking, there are four ways your app can get an access token to use:\n- Seamless Authentication using monday SDK\n- Seamless Authentication using shortTermToken\n- Using an OAuth Access Token\n- Using a user\u2019s global API token\nMethod 1: Seamless Authentication\nWe offer two mechanisms for seamless authentication, which eliminate most of the overhead of user and token management in your app. We recommend using Seamless Authenti"
+  },
+  {
+   "sid": "S6",
+   "url": "https://developer.monday.com/api-reference/docs/basics",
+   "official": true,
+   "excerpt": "The basics\nRead what the monday platform API can do, who can use it, and how it works\nWelcome to monday.com, a work OS where teams create and shape their own workflows in minutes, code-free. Our mission is to help teams outdo their best, fulfilling their potential, and collaborating more effectively.\nThe monday GraphQL API is part of the monday apps framework. It is an application layer that allows apps to read and update data inside a monday.com account. It supports operations boards, items, column values, users, workspaces, and more.\nWhy use the API?\nThere are countless use cases for the API, including:\n- Accessing board data to render a custom report inside a monday.com dashboard\n- Creating a new item on a board when a record is created on another system\n- Importing data from another source programmatically\nWith the monday apps framework, developers can package their own web apps and integrations as native monday.com building blocks.\nWho can use the API?\nAdmin, member, and guest users are all able to utilize the monday.com API.\nAdmins and members have access to their own API tokens. Guests cannot access an API key but can utilize API features through other authentication methods, like OAuth or a shortLivedToken.\nViewers, users who have been deactivated or disabled, users with unconfirmed emails, or users on student accounts cannot access the API.\nFor building and testing apps or API integrations without touching production data, use a free developer account.\nWhat monday products does the API support?\nThe platform API currently supports the monday work management, dev, sales CRM, and service products. It currently does not support Workforms.\nHow does GraphQL work?\nThe monday.com API is built with GraphQL, a flexible query language that allows you to return as much or as little data as you need. GraphQL is an application layer that parses the query you send it and returns (or changes) data accordingly. To learn more about the fundamental GraphQL components, check out our GraphQL overview!\nJoin our developer community!\nWe've created a community specifically for our devs where you can search through previous topics to find solutions, ask new questions, hear about new features and updates, and learn tips and tricks from other devs. Come join in on the fun! \ud83d\ude0e\nUpdated about 2 months ago"
+  },
+  {
+   "sid": "S7",
+   "url": "https://support.monday.com/hc/en-us/articles/28588158981266-Get-started-with-monday-MCP",
+   "official": true,
+   "excerpt": "2 min read \nmonday MCP is the hosted server that gives AI tools secure access to your monday.com workspace. It connects your account directly to AI assistants like Claude, Cursor, and Copilot Studio through the Model Context Protocol (MCP), an open standard for AI integrations.\nPrerequisites\n- An active monday.com account with appropriate permissions\n- MCP is preinstalled on all monday.com accounts.\nIf you can't connect, ask your admin to check Admin \u2192 Permissions \u2192 AI Connectors. See Managing AI Connectors & MCP Access for more information.\n- Supported AI client\n- OAuth consent for monday MCP when prompted by your client\nWhat can you do with monday MCP?\n- Project reporting \u2013 generate sprint summaries, team performance reports, and deadline tracking from your boards (including monday dev sprints)\n- Smart task management \u2013 convert meeting notes into structured items, assign tasks, and update statuses through natural language\n- Cross-team visibility \u2013 ask for rollups like \u201cWhat\u2019s blocking the launch?\u201d across Product, Marketing, and RevOps boards\n- Operational workflows \u2013 create and triage incidents, support requests, and ops checklists (with clear owners, priority, and due dates)\n- C"
+  },
+  {
+   "sid": "S8",
+   "url": "https://developer.monday.com/apps/docs/oauth.md",
+   "official": true,
+   "excerpt": "# OAuth and Permissions\n\nAuthenticating monday apps with OAuth2 and defining permission scopes.\n\n1. Make an authorization request and redirect the user to the monday OAuth URL with the client ID: `https://auth.monday.com/oauth2/authorize`\n2. The user sees the permission scopes your app is requesting and approves the request.\n3. The user is redirected to a defined URL (redirect URL) with a temporary authorization code in the query params after approval.\n4. Your app's backend sends a POST to the token request endpoint with this code. The token endpoint will respond with an access token. The access token gives your app access to the monday API on behalf of the user and will be valid until the user uninstalls your app.\n\nThe first step in the OAuth flow is making an authorization request and redirecting a user to the monday OAuth page. The OAuth request URL is: `https://auth.monday.com/oauth2/authorize`.\n\n| Parameter                  | Description                                                                                                                                                                                                                                                                    | Default value                                                                                                                                                                                                                  | Required                                           |\n| :------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------- |\n| client\\_id                 | Your \n\nOnce you have obtained an authorization code from the authorization endpoint, you can exchange it for an access token to make calls to monday\u2019s API. The authorization code is only valid for 10 minutes, after which you will have to make another request to get another code."
+  }
+ ],
+ "errors": []
+}

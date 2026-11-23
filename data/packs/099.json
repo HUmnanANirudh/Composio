@@ -1,0 +1,73 @@
+{
+ "id": 99,
+ "app": "YouTube Transcript",
+ "category": "AI, Research and Media-native",
+ "hint": "transcriptapi.com",
+ "composio": {
+  "found": true,
+  "slug": "YOUTUBE_TRANSCRIPT",
+  "name": "YouTube Transcript",
+  "tools": 9,
+  "triggers": 0,
+  "auth": [
+   "API_KEY"
+  ],
+  "managed_app": null,
+  "url": "https://docs.composio.dev/toolkits/youtube_transcript.md",
+  "mcp_variant": null,
+  "mcp_variant_auth": []
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://transcriptapi.io/pricing",
+   "official": true,
+   "excerpt": "What one credit buys\nEvery endpoint costs one credit per call, with exceptions that cost more (translation, summaries) or nothing (cache hits, failed calls). The full parameter list for each endpoint is in the API reference.\n| Call | Cost | Notes | \n|---|---|---|\n| Transcript of one video | 1 credit | Timestamped segments as JSON, any caption language the video has. SRT and VTT come from the MCP server and the free tools. | \n| Translated transcript | 1 + 1 per 40 segments | The translation part is at least 2, so 3 minimum. A 10-minute video is usually 5\u20137 credits. | \n| YouTube search, one page | 1 credit | Up to 50 results per page. | \n| Channel videos, one page | 1 credit | Newest first, up to 200 per call. | \n| Search inside a channel | 1 credit | YouTube's own in-channel ranking. | \n| Playlist videos | 1 credit | The first page of the playlist, about 100 videos, in order. | \n| Summary in the free summariser, signed in | 2 credits | The fetch plus the model tokens. There is no REST summary endpoint. | \n| Repeat of a cached video | 0 | Same video, same language, within the cache window. | \n| A call that fails on YouTube's side | 0 | Captions off, private, deleted, age-restricted: "
+  },
+  {
+   "sid": "S2",
+   "url": "https://transcripthook.com/integrations/mcp",
+   "official": true,
+   "excerpt": "Setup\nThe server runs on our side, so setup is a URL and a browser approval rather than a package and a runtime.\nPick your client. Each one connects through your browser: log in to TranscriptHook, check the approval screen, which names the app, the account and the address you will be sent back to, and approve. Revoke any app in Dashboard \u2192 Connect & API keys.\nclaude mcp add --transport http transcripthook https://transcripthook.com/mcp\nThen run /mcp in Claude Code and choose Authenticate. Your browser opens; log in and approve. This is the setup for a YouTube transcript in Claude Code. After that, paste any YouTube link and ask for what you need: \"Get the transcript for https://youtu.be/\u2026 and summarize the key points.\"\nIf the form doesn't open pre-filled: Settings \u2192 Connectors \u2192 Add custom connector, name it TranscriptHook and paste https://transcripthook.com/mcp. Claude Desktop uses the same connectors as your claude.ai account.\nIn ChatGPT, open Settings \u2192 Apps & Connectors, turn on Developer mode under Advanced, then create a connector with this URL and OAuth authentication: https://transcripthook.com/mcp\nInstall in VS Code VS Code Insiders\nVS Code opens, adds the server, and ask\n\nYes. It is a remote server over Streamable HTTP at https://transcripthook.com/mcp, not a local process. Any client that accepts a remote MCP URL can reach it: Claude Code, Claude Desktop, claude.ai, ChatGPT, VS Code and Cursor. These connect with a one-time browser approval (OAuth). Clients without OAuth use an API key header. Same URL everywhere, no per-machine setup.\n\nNot for Claude Code, Claude Desktop or claude.ai. They connect with OAuth, so you log in and approve in the browser and there is nothing to copy. Revoke any connected app in Dashboard \u2192 Connect & API keys. Apps connected this way can read your data and add, pause or resume channels, but never delete them. Clients without OAuth use an API key, the same kind as the REST API, created on the same page. MCP and REST share one rate limit per key. Keys are stored hashed, so create a key to get a usable one. You can keep several named keys and revoke one without affecting the others. No YouTube API key is needed either way.\n\nGet started\nThe free plan includes the full MCP server, 1 monitored channel and 10 transcript lookups a month.\nNo credit card \u00b7 Free tier forever"
+  },
+  {
+   "sid": "S3",
+   "url": "https://transcriptapi.com/docs/getting-started/curl",
+   "official": true,
+   "excerpt": "YouTube Transcript API with cURL\nThis page shows how to get a YouTube transcript from the command line with cURL and TranscriptAPI. It\u2019s the quickest way to test your API key and see the response before you write code.\nWriting code? See the Python and JavaScript / Node.js quick starts.\nBefore you start\nSection titled \u201cBefore you start\u201d\n- An API key. Sign up to get 100 free credits (no card required), then copy a key from the API Keys dashboard.\n- cURL in a bash-compatible shell (macOS, Linux, WSL, or Git Bash on Windows). Run curl --version to check it is installed.\n- Your key in an environment variable, so it stays out of your shell history:\nEach successful transcript request costs 1 credit. Failed requests (4xx and 5xx) cost nothing. See Credit Usage & Billing.\nGet a transcript\nSection titled \u201cGet a transcript\u201d\n-G sends the parameters as a query string, and --data-urlencode encodes the video URL for you. video_url also accepts a short URL (https://youtu.be/...) or the 11-character video ID.\nResponse (shortened):\nEach segment has the caption text, its start time in seconds, and its duration in seconds. The full field list is in the API Reference.\nCheck a video first (free)\nSection"
+  },
+  {
+   "sid": "S4",
+   "url": "https://youtubescribe.com/docs",
+   "official": true,
+   "excerpt": "Every YouTube video, over one REST call.\nEight endpoints cover transcripts, video and channel search, channel uploads, RSS latest and playlists. Bearer auth, JSON out, credits charged only on a 200.\nOne bearer token, every request.\nSend your key in the Authorization header. Keys are prefixed sk_, never expire unless revoked, and work for both the REST API and the MCP server.\nYouTube transcript\nPull the caption track from any YouTube video. Returns structured segments or plain text, with timestamps on or off, in the language you ask for.\n| Name | Type | Need | Description | Default | \n|---|---|---|---|---|\n| video_url | string | Required | Full YouTube URL, youtu.be short URL, or the bare 11-character video ID. Pattern ^([a-zA-Z0-9_-]{11}\\|https?://.*)$ | | \n| format | string | Optional | json returns structured segments; text returns the transcript as one string. | json | \n| include_timestamp | boolean | Optional | Include start and duration on each segment, or [123.45s] prefixes in text format. | true | \n| send_metadata | boolean | Optional | Add title, author_name, author_url and thumbnail_url to the response. | false | \n| language | string | Optional | Comma-separated priority l"
+  },
+  {
+   "sid": "S5",
+   "url": "https://getyoutubetranscript.com/docs",
+   "official": true,
+   "excerpt": "A REST API for YouTube transcripts, search, and metadata. Get an API key from your [dashboard](https://getyoutubetranscript.com/developers) \u2014 100 free credits, no card required.\n\n## Authentication\n\nPass your API key as a bearer token, or via `x-api-key`:\n\n```\nAuthorization: Bearer sk_live_...\n\n## Credits & plans\n\n| Plan | Price | Credits/mo | Top-up price | Rate limit |\n| --- | --- | --- | --- | --- |\n| Free | $0/mo | 100 (one-time) | \u2014 | 60 req/min |\n| Monthly | $5/mo | 1,000 | $2.50 / 1,000 | 200 req/min |\n| Annual | $4.50/mo ($54/yr) | 1,000 | $1.50 / 1,000 | 300 req/min |\n| Starter | $19/mo | 7,500 | $1.50 / 1,000 | 300 req/min |\n| Pro | $49/mo | 25,000 | $1.50 / 1,000 | 400 req/min |\n| Scale | $99/mo | 60,000 | $1.50 / 1,000 | 600 req/min |\n\n## Endpoints\n\n```\ncurl \"https://getyoutubetranscript.com/api/v1/transcript?v=jNQXAC9IVRw\" \\\n  -H \"Authorization: Bearer sk_live_...\"\n```\n\n```\ncurl \"https://getyoutubetranscript.com/api/v1/transcript/languages?v=kJQP7kiw5Fk\" \\\n  -H \"Authorization: Bearer sk_live_...\"\n```\n\n```\ncurl -X POST \"https://getyoutubetranscript.com/api/v1/batch\" \\\n  -H \"Authorization: Bearer sk_live_...\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n        \"videos\": [\"jNQXAC9IVRw\", \"https://youtu.be/dQw4w9WgXcQ\"],\n        \"webhook_url\": \"https://example.com/hooks/transcripts\"\n      }'\n```\n\n```\ncurl \"https://getyoutubetranscript.com/api/v1/batch?id=324eb615-e4d5-4b3c-b8e7-04235671066b\" \\\n  -H \"Authorization: Bearer sk_live_...\"\n```\n\n```\ncurl \"https://getyoutubetranscript.com/api/v1/search?q=lofi+beats\" \\\n  -H \"Authorization: Bearer sk_live_...\"\n```\n\n```\ncurl \"https://getyoutubetranscript.com/api/v1/resolve?handle=@mkbhd\" \\\n  -H \"Authorization: Bearer sk_live_...\"\n```\n\n```\ncurl \"https://getyoutubetranscript.com/api/v1/channel/latest?channel=@mkbhd\" \\\n  -H \"Authorization: Bearer sk_live_...\"\n```\n\n```\ncurl \"https://getyoutubetranscript.com/api/v1/channel/videos?channel=@mkbhd&tab=shorts&sort=popular\" \\\n  -H \"Authorization: Bearer sk_live_...\"\n```\n\n```\ncurl \"https://getyoutubetranscript.com/api/v1/channel/playlists?channel=@mkbhd\" \\\n  -H \"Authorization: Bearer sk_live_...\"\n```\n\n```\ncurl \"https://getyoutubetranscript.com/api/v1/channel/posts?channel=@mkbhd\" \\\n  -H \"Authorization: Bearer sk_live_...\"\n```\n\n```\ncurl \"https://getyoutubetranscript.com/api/v1/channel/search?channel=@mkbhd&q=iphone\" \\\n  -H \"Authorization: Bearer sk_live_...\"\n```"
+  },
+  {
+   "sid": "S6",
+   "url": "https://transcriptapi.com/docs/mcp",
+   "official": true,
+   "excerpt": "MCP (Model Context Protocol)\nUse TranscriptAPI to fetch transcripts, search YouTube, browse channels, and list playlists \u2014 all from within your AI assistant via Model Context Protocol (MCP).\nComplete guide to integrate TranscriptAPI with Claude AI assistant via MCP.\nRecommendedChatGPT Tutorial\nStep-by-step guide to connect TranscriptAPI with ChatGPT using OAuth authentication.\nAgent Builder Tutorial\nLearn how to set up TranscriptAPI with OpenAI Agent Builder for AI workflows.\nYouTube Transcript MCP Server\nSection titled \u201cYouTube Transcript MCP Server\u201d\nTranscriptAPI runs a hosted (remote) MCP server at https://transcriptapi.com/mcp. Add that URL to an MCP client and your AI assistant can fetch YouTube transcripts, search YouTube, and list a channel\u2019s or playlist\u2019s videos. There is nothing to install or host. The server uses the same account, API keys, and credits as the REST API.\n- Server URL: https://transcriptapi.com/mcp\n- Authentication: OAuth 2.1 (Claude, ChatGPT) or an API key sent as a Bearer token (OpenAI Agent Builder and other clients). See Authentication.\n- Tools: 12, covering transcripts, video info and metadata, search, channels, and playlists. See Available Tools.\n- Cos"
+  },
+  {
+   "sid": "S7",
+   "url": "https://transcriptapi.com/docs/mcp/claude",
+   "official": true,
+   "excerpt": "Connect TranscriptAPI to Claude (Step-by-Step Guide 2026)\nTo let Claude read YouTube videos with TranscriptAPI, add its hosted MCP server at https://transcriptapi.com/mcp, which fetches video transcripts and searches YouTube. In Claude, add that URL as a custom connector under Customize > Connectors, keep the sign-in settings marked Detected, then click Add and authorize it. For Claude Code, add it with one line, then run /mcp to sign in:\nLearn how to connect TranscriptAPI\u2019s YouTube Transcript MCP to Claude for a seamless, natural conversation experience with YouTube videos. This comprehensive guide walks you through setup and showcases Claude\u2019s powerful multi-video analysis capabilities.\nWhat You Can Do with Claude + TranscriptAPI\nSection titled \u201cWhat You Can Do with Claude + TranscriptAPI\u201d\nClaude\u2019s MCP integration with TranscriptAPI transforms how you interact with YouTube content. Unlike other platforms, Claude offers a truly natural experience where the YouTube Transcript MCP works seamlessly in the background.\nKey Capabilities\nSection titled \u201cKey Capabilities\u201d\nNatural Conversations: Simply paste YouTube links and chat naturally - no manual tool selection needed. Claude automat"
+  },
+  {
+   "sid": "S8",
+   "url": "https://transcriptapi.com/docs/api",
+   "official": true,
+   "excerpt": "YouTube Transcript API Reference\nThe YouTube Transcript API provides a simple and reliable way to extract transcripts from YouTube videos programmatically. This complete reference covers authentication, request parameters, response formats, and practical examples.\nWant to test the API interactively? Try our Swagger UI where you can make live requests right in your browser.\nBase URL\nSection titled \u201cBase URL\u201d\nAll API requests are made to:\nEndpoints\nSection titled \u201cEndpoints\u201d\nThe API provides the following endpoints:\n| Endpoint | Description | Credits | \n|---|---|---|\n| GET /youtube/transcript | Extract video transcript (supports a language priority list) | 1 | \n| GET /youtube/info | Video metadata + available transcript languages | Free | \n| GET /youtube/video/metadata | Rich video metadata (structured description, channel, optional details/related) | 1 | \n| GET /youtube/search | Search videos, channels, playlists, or movies \u2014 with sort/upload_date/duration/features filters | 1 | \n| GET /youtube/channel/resolve | Resolve @handle/URL to channel ID | Free | \n| GET /youtube/channel/info | Channel profile / identity (title, handle, counts, tags, banners, tabs) | 1 | \n| GET /youtube/chann"
+  }
+ ],
+ "errors": [
+  "fetch https://youtubevideotranscript.io/docs/mcp: 0 ConnectError: [Errno -3] Temporary failure in name resolution"
+ ]
+}

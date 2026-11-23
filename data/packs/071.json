@@ -1,0 +1,74 @@
+{
+ "id": 71,
+ "app": "Notion",
+ "category": "Productivity and Project Management",
+ "hint": "developers.notion.com",
+ "composio": {
+  "found": true,
+  "slug": "NOTION",
+  "name": "Notion",
+  "tools": 60,
+  "triggers": 8,
+  "auth": [
+   "OAUTH2",
+   "API_KEY"
+  ],
+  "managed_app": "Yes",
+  "url": "https://docs.composio.dev/toolkits/notion.md",
+  "mcp_variant": "NOTION_MCP",
+  "mcp_variant_auth": [
+   "DCR_OAUTH"
+  ]
+ },
+ "sources": [
+  {
+   "sid": "S1",
+   "url": "https://developers.notion.com/guides/authorization/overview",
+   "official": true,
+   "excerpt": "What is authorization?\nAuthorization is the process of granting a connection or token access to Notion data. Internal connections use a static credential called an internal connection API token, personal access tokens use a user-scoped static token, and OAuth integrations and public integrations use the OAuth 2.0 protocol.\nInternal connection auth flow set-up\nTo use an internal connection, start by creating your connection in the Developer portal. The internal connection will be associated with the workspace of your choice. You are required to be a workspace owner to create a connection. Once the connection is created, you can update its settings as needed under theConfiguration tab and retrieve the API token in this tab.\nThe API token will be used to authenticate REST API requests. The connection sends the same token in every API request.\nConnection permissions\nBefore a connection can interact with your Notion workspace page(s), the page must be manually shared with the connection. To share a page with a connection, visit the page in your Notion workspace, click the \u2022\u2022\u2022 menu at the top right of a page, scroll down toAdd connections, and use the search bar to find and select the co"
+  },
+  {
+   "sid": "S2",
+   "url": "https://www.notion.com/help/what-is-the-notion-developer-platform",
+   "official": true,
+   "excerpt": "What is the Notion Developer Platform?\nLearn what\u2019s included with the Notion Developer Platform and how to explore more.\nNotion's Developer Platform is a set of building blocks for developers and agents to build on Notion. Use it to extend Custom Agents with custom logic, sync data from any system into your workspace, and bring external agents (like Claude, Codex, or ones your team built) into Notion.\nThe Developer Platform includes:\n- Notion CLI ntn (public beta): The command line for building on Notion. Made for developers and agents.\n- Workers (public beta): Run custom code that connects Notion to other systems.\n- External Agents API (private beta): Bring any external agent into Notion.\n- Agent SDK (private alpha): Bring Notion Agents into any app.\n- Admin API: Run organization admin work with code, on the Enterprise Plan.\nBuilding a connection that other people sign in to? See Notion API connections to create one and choose which workspaces are allowed to install it.\nYou can turn on Developer Mode to find developer tools inside Notion. Use it to copy IDs, open connections and personal access tokens from your sidebar, and check Workers without switching to a separate website. Le"
+  },
+  {
+   "sid": "S3",
+   "url": "https://developers.notion.com/guides/mcp/get-started-with-mcp",
+   "official": true,
+   "excerpt": "The easiest way to connect is through your AI assistant\u2019s connector or plugin library. You can also browse available connections in Notion under Settings \u2192 Notion MCP.\nFrom your AI assistant\nFrom Notion\nManual setup\nConnect from your AI assistant\nOpen your AI assistant\u2019s connector or plugin library and search for Notion. Select it and follow the prompts to authorize access to your Notion workspace. After you authorize the connection, your AI assistant can read and update content that you can access in the selected workspace. If Notion isn\u2019t listed, check whether your assistant supports adding a custom MCP server and follow manual setup.\nConnect from Notion\nIn Notion, open Settings \u2192 Notion MCP and browse the directory. Select your AI assistant and follow its connection instructions.\nManual setup\nUse these instructions if you\u2019re adding Notion as a custom MCP server or configuring a client directly. The remote server URL ishttps://mcp.notion.com/mcp.\nCodex\nClaude Code\nCursor\nfx\nHermes\nDevin\nPi\nVS Code\nAntigravity\nOther MCP clients\nCodex (ChatGPT)\nCodex is OpenAI\u2019s coding agent. See the Codex MCP documentation for more details.command not found, make sure codex is on your PATH.~/.code"
+  },
+  {
+   "sid": "S4",
+   "url": "https://developers.notion.com/reference/webhooks.md",
+   "official": true,
+   "excerpt": "# Webhooks\n\nWebhooks let your connection receive real-time updates from Notion. Whenever a page or database changes, Notion sends a secure HTTP POST request to your webhook endpoint. This allows your application to respond to workspace activity as it happens \u2014 whether that's syncing data, triggering automation, or keeping your UI in sync with user activity.\n\nWithin a minute, Notion sends a webhook request to your configured endpoint.\n\n![The Webhooks tab offers a button to start a subscription.](https://mintcdn.com/notion-demo/kSI9TVzPayvF1_1o/images/reference/522e40363df1bd7437239b25a1caacc8cc607426f45fc90febfff5f00647aeb4-webhooks-1.png?fit=max\\&auto=format\\&n=kSI9TVzPayvF1_1o\\&q=85\\&s=d749482045c385e3bd2b0200208e1cb3)\n\nEnter your public **Webhook URL** \u2014 this is the public endpoint where you want Notion to send events. It must be a secure (SSL) and publicly available endpoint. Endpoints in localhost are not reachable.\n\nAt this point, your webhook is created but not yet verified. To complete the setup, you\u2019ll need to confirm that your endpoint can receive and respond to verification.\n\n> [!TIP]\n>\n> **Using the SDK for JavaScript and TypeScript?**\n>\n> [`@notionhq/client`](https://github.com/makenotion/notion-sdk-js) v5.23.0 and later includes a `verifyWebhookSignature()` helper that performs this check for you, including the constant-time comparison. Pass the raw request body exactly as it arrived (re-serialized JSON produces different bytes and fails verification), the `X-Notion-Signature` header value, and your `verification_token`:\n>\n> ```javascript theme={null}\n> import { verifyWebhookSignature } from \"@notionhq/client\"\n>\n> const isTrustedPayload = await verifyWebhookSignature({\n>   body: rawRequestBody,\n>   signature: request.headers[\"x-notion-signature\"],\n>   verificationToken,\n> })\n> ```\n>\n> It works without configuration in Node.js 18+, Bun, Deno, Cloudflare Workers, Vercel Edge Functions, and browsers. The SDK also exports `signWebhookPayload()` for generating signatures when testing your handler.\n\n* [Event types & delivery](https://developers.notion.com/reference/webhooks-events-delivery.md) \u2014 Full list of supported event types, payload structure, and delivery behavior.\n* [Webhook event reference](https://developers.notion.com/reference/webhooks/page-created.md) \u2014 API reference pages for each webhook event type with payload schemas."
+  },
+  {
+   "sid": "S5",
+   "url": "https://developers.notion.com/guides/connections-and-tokens/oauth-integrations/overview",
+   "official": true,
+   "excerpt": "Use an OAuth integration when your internal tool needs to act on behalf of each person who uses it. Each user authorizes the app separately and grants it access to content. Your app uses an access token tied to that user. For example, a tool that helps teammates work with their own project pages can ask each person to connect their Notion account. A shared automation that updates one team tracker can use an internal connection, with access granted to the connection independently of any one person. Both options can serve internal tools. Choose OAuth when access needs to be authorized by each user, and an internal connection when the tool should use shared connection access.\nInstallation scope\nChoose Or select 1 or more workspaces when creating your integration. Only those workspaces can install it, and it cannot be listed on the Marketplace. To make your app available to any workspace, create a public integration. Installation scope cannot be changed after creation. If you later need to make the app available to any workspace, create a new integration.\nCreate an OAuth integration\n1\nOpen the Developer portal\nGo to Developer connections in the Developer portal and select New connectio"
+  },
+  {
+   "sid": "S6",
+   "url": "https://www.notion.com/pricing",
+   "official": true,
+   "excerpt": "One tool to run your company.\nEssentials for staying organized.\nIncludes:\n- Limited storage\n- Trial AI capabilities like generating docs, or autofilling databases Trial of Notion AI\n- Capture, organize, and act on responses right inside Notion. Basic forms\n- Publish a Notion page to the web Basic sites\n- Connect multiple Calendars to manage work and time together. Notion Calendar\n- Organize hundreds or thousands of items in one place, like projects or tasks Databases including subtasks, dependencies, custom properties and more\nEverything in Free, and:\n- Trial AI capabilities like generating docs, or autofilling databases Trial of Notion AI\n- Remove Notion branding from public forms Custom forms\n- Customize your top header, choose a light or dark theme, add a custom favicon, and integrate with Google Analytics. Custom sites\n- Visualize data from databases in different ways (e.g. donut, bar, and line charts). Charts\n- Blocks are pieces of content you add to a page (e.g. to-do checkboxes, paragraphs, bullet points, etc.). Collaborative blocks\n- A per file size limit may apply to any file that you upload to a Notion page or database. File uploads\nThe AI workspace for work that matters."
+  },
+  {
+   "sid": "S7",
+   "url": "https://developers.notion.com/guides/mcp/overview",
+   "official": true,
+   "excerpt": "Notion MCP lets your AI assistant find answers in your workspace, turn notes into documents, and manage your projects in Notion. Connect an MCP client, such as Claude, ChatGPT, and Gemini, through the Model Context Protocol (MCP).\nWhat you can do with Notion MCP\nNotion MCP lets your AI assistant search your workspace, create and edit pages, and manage databases. Describe what you need, and your AI assistant can find the relevant pages in Notion.\n- Manage a project\n- Track a release\n- Manage content\n- Save memories\nKeep tasks, owners, deadlines, and decisions together so your team can see the next milestone and what needs attention.\nSet up my project in Notion with a task tracker, milestones, and linked docs and meeting notes. Use the project details from our conversation.\nExplore more skills\nFind reusable skills and examples for preparing meetings, planning marketing campaigns, and writing project updates with your AI assistant.\nNext steps\nConnect your AI assistant\nSet up a connection to Notion MCP in your AI assistant.\nExplore supported tools\nSee which tools Notion MCP provides and what each one can do.\nUse your Notion Skills\nCreate Skills in Notion, share them with teammates, and use them in any AI assistant connected to Notion MCP.\nUnderstand admin controls\nManage MCP clients and understand how workspace members use Notion MCP."
+  },
+  {
+   "sid": "S8",
+   "url": "https://developers.notion.com/guides/authorization/credential-security.md",
+   "official": true,
+   "excerpt": "Credentials authorize requests to the Notion API. This guidance applies to internal connection API tokens, OAuth access tokens, and [personal access tokens](https://developers.notion.com/guides/connections-and-tokens/personal-access-tokens.md).\n\nNever ship an internal connection token or a client secret in page source that strangers can load. Anyone who can view the source can use that secret to act as the connection. Build tools copy some environment variables into the browser bundle, such as ones that start with `VITE_` or `NEXT_PUBLIC_`. Don't give a token one of those names.\n\nFor apps that other people use, create a [public connection](https://developers.notion.com/guides/connections-and-tokens/public-integrations/overview), which uses OAuth. Exchange the OAuth code for a token on a server you control. For a personal or local tool, putting a token in a page that only you can open is a risk you must choose whether to accept.\n\nOAuth token endpoints under `/v1/oauth/*` do not send CORS headers on purpose. OAuth code exchange requires a client secret and must run on a server.\n\nFind the connection or personal access token that uses the exposed token.\n\nSelect **Refresh** for an internal connection, or revoke the personal access token.\n\nFor a PAT, you can also revoke the token from [Personal access tokens](https://www.notion.so/developers/tokens) in the Developer portal. Create a new token if the application still needs access.\n\n### 3. Review activity\n\nIf you need help with an exposed token or unauthorized access, contact [Notion support](https://www.notion.com/help)."
+  }
+ ],
+ "errors": []
+}
