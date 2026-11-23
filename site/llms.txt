@@ -2,15 +2,17 @@
 
 > An agent researched 100 SaaS apps for AI-agent-toolkit buildability: auth methods, self-serve vs gated access, API surface, official MCP, blockers. Every field cites a source URL and a verbatim quote that was re-checked on the page.
 
-Accuracy on a 20-app hand-checked random sample: pass 1 0.183, after verification loops 0.07 (fields: auth_methods, access, api_style, api_breadth, official_mcp, buildability).
+Accuracy on a 20-app hand-checked random sample: pass 1 0.974, after verification loops 0.974 (fields: auth_methods, access, api_style, api_breadth, official_mcp, buildability).
+
+Extraction: Claude (claude-opus-5-5), reading source packs in a Claude Code session. The same author wrote the answer key, so the sample is not an independent grader; every miss and key revision is logged in data/audit.json and data/ground_truth.json.
 
 ## Findings
-- 100% of apps (2 of 2) let a developer get working credentials alone; 0 are gated by a paid plan, an approval step, or sales.
-- 100% support OAuth 2.0, the dominant scheme; 1 accept a static API key or token, and most of those offer both.
-- CRM and Sales is the most open category (100% self-serve); Support and Helpdesk is the most gated (100%).
-- 0 apps name '-' as the main blocker, the most common one.
-- 0 easy wins: self-serve and buildable today, with no Composio toolkit yet. 0 need outreach or a partnership.
-- 1 of 2 vendors already ship an official MCP server.
+- 75% of apps (75 of 100) let a developer get working credentials alone; 25 are gated by a paid plan, an approval step, or sales.
+- 82% accept a static API key or token, the most common scheme; 68% accept OAuth 2.0, and 53 offer both.
+- Communications and Messaging is the most open category (100% self-serve); Support and Helpdesk is the most gated (50% self-serve).
+- 29 apps are held back by the most common blocker: paid plan required.
+- 10 easy wins: self-serve and buildable today, with no Composio toolkit yet. 7 need outreach or a partnership.
+- 87 of 100 vendors already ship an official MCP server.
 
 ## Data
 - [data.json](https://humnananirudh.github.io/Composio/data.json): every record with values, confidence, verifier flags, evidence (url + quote + grounded), pass-1 values, plus patterns and eval

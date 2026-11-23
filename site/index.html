@@ -310,12 +310,12 @@ pre{background:var(--band);color:var(--band-ink);padding:14px 16px;border-radius
   <section class="sec" id="agent" aria-labelledby="h-agent">
     <div class="wrap">
       <h2 id="h-agent">The agent's route</h2>
-      <p class="intro">A Python pipeline (<code>uv run research run</code>). Composio provides the catalog cross-check and web search, through a Platform SDK session to Exa. Gemini models extract and re-research the fields, and Gemma, a different model family, audits them; each step falls back through a chain of models when one is out of quota. Square stations are where a human had to step in.</p>
+      <p class="intro">A Python pipeline gathers the sources and checks every answer. Composio provides the catalog cross-check and web search, through a Platform SDK session to Exa. The reading step for these 100 records was done by Claude in a Claude Code session, from the same source packs an LLM would get. LLM API free tiers could not finish an unattended run (details under “Where it fell short”). Square stations are where a human had to step in.</p>
       <div class="route" id="route">
         <div class="stn"><span class="dot"></span><span class="who">deterministic</span><h3>Composio catalog</h3><p>Match each app to Composio's public 1,841-toolkit catalog: existing toolkit, tool count, auth schemes, vendor MCP proxy.</p></div>
         <div class="stn"><span class="dot"></span><span class="who">crawler + Composio → Exa</span><h3>Discover sources</h3><p>Crawl the official docs host and its llms.txt, follow auth, pricing and MCP links, then search with <code>EXA_SEARCH</code> through a Composio session.</p></div>
-        <div class="stn"><span class="dot"></span><span class="who" id="m-extract">gemini</span><h3>Extract, pass 1</h3><p>Fill a rubric of fixed enums. Every field must cite a source and a verbatim quote. The catalog is withheld so it stays independent.</p></div>
-        <div class="stn"><span class="dot"></span><span class="who">deterministic + <span id="m-critic">gemma</span> + <span id="m-rr">gemini</span></span><h3>Verify, four loops</h3><p>Grounding: is the quote on the page? Rules: consistency and Composio cross-checks. Critic: a second model family audits pass 1. Re-research: new sources for flagged fields only, then grounding and rules again.</p></div>
+        <div class="stn"><span class="dot"></span><span class="who">Claude, in-session</span><h3>Extract, pass 1</h3><p>Read each app’s source pack and fill a rubric of fixed enums. Every field cites a source and a verbatim quote. The Composio catalog is withheld so it stays an independent check.</p></div>
+        <div class="stn"><span class="dot"></span><span class="who">deterministic + Exa re-research</span><h3>Verify, three loops</h3><p>Grounding: is the quote on the page? Rules: consistency and Composio cross-checks. Re-research: new sources for flagged fields only, read again, then grounding and rules re-run.</p></div>
         <div class="stn human"><span class="dot"></span><span class="who">human</span><h3>Answer key</h3><p>20 apps drawn at random (2 per category, fixed seed) before any run, checked by hand against official docs.</p></div>
         <div class="stn"><span class="dot"></span><span class="who">deterministic</span><h3>Score + patterns</h3><p>Pass 1 vs final, field by field, against the key. Patterns are plain counts over the final records.</p></div>
       </div>
@@ -326,13 +326,14 @@ pre{background:var(--band);color:var(--band-ink);padding:14px 16px;border-radius
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/></svg><span><b>Catalog matching.</b> Fuzzy name matching mapped 80 of 100 apps cleanly; 20 ambiguous ones (Zoho CRM → <code>ZOHO</code>, GoHighLevel → <code>HIGHLEVEL_LOCATION</code>, Mermaid CLI → none) are pinned in a reviewed override file.</span></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/></svg><span><b>Search credentials.</b> Composio's built-in search toolkit is retired (HTTP 410), so a human created an Exa key; <code>research connect-search</code> registers it on the agent's Composio user. Without it the agent prints a Connect Link and runs crawler-only.</span></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/></svg><span><b>The answer key.</b> 20 apps × 6 fields read from vendor docs, with URLs and quotes. Contested fields are left unscored rather than guessed.</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/></svg><span><b>Reviewing misses.</b> Each miss is read against its source and given a verdict (agent wrong, key wrong, or ambiguous) in <code>data/audit.json</code>, one record per app and field. Once, the key was wrong (Clay).</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/></svg><span><b>The reading step.</b> Groq’s daily caps and Gemini’s free-tier limits stopped the unattended LLM run, so the user chose to have Claude read the source packs in-session. The pipeline still gathered every source and re-checked every quote.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/></svg><span><b>Reviewing misses.</b> Each miss is read against its source and given a verdict (agent wrong, key wrong, or ambiguous) in <code>data/audit.json</code>, one record per app and field. The key was wrong three times (Clay, SendGrid auth, Harvest MCP); each correction is logged with its source.</span></li>
           </ul>
         </div>
         <div>
-          <h3 class="h">What it cost</h3>
+          <h3 class="h">What the run read</h3>
           <table id="usage-table"></table>
-          <p class="small note">Gemini API. Each step falls back through a chain of models, newest first, when one is out of quota or overloaded. The table lists the models that actually answered. The run pauses only if every model in a chain is out of quota, and the next run resumes where it stopped.</p>
+          <p class="small note">No LLM API spend for this dataset: extraction ran in-session. The automated path (<code>research run</code>, Gemini with a model fallback chain) is built and tested, and the GitHub Actions trigger uses it.</p>
         </div>
       </div>
     </div>
@@ -341,7 +342,7 @@ pre{background:var(--band);color:var(--band-ink);padding:14px 16px;border-radius
   <section class="sec" id="check" aria-labelledby="h-check">
     <div class="wrap">
       <h2 id="h-check">Document check: is it right?</h2>
-      <p class="intro" id="check-intro">Scored against the hand-checked sample. Pass 1 is the extractor alone; final is after the four verification loops.</p>
+      <p class="intro" id="check-intro">Scored against the hand-checked sample. Pass 1 is the extractor alone; final is after the verification loops.</p>
       <div class="verdict">
         <div>
           <div class="acc" id="acc"></div>
@@ -368,17 +369,22 @@ pre{background:var(--band);color:var(--band-ink);padding:14px 16px;border-radius
         <div>
           <h2 id="h-run">Run it yourself</h2>
           <p>From GitHub: <a href="https://github.com/HUmnanANirudh/Composio/actions/workflows/research.yml">Actions → Run research agent → Run workflow</a>, type any app from the list. The job summary prints the cited record and uploads the JSON. Or locally:</p>
-          <pre>uv sync && cp .env.example .env   # GEMINI, COMPOSIO, EXA keys
+          <pre>uv sync && cp .env.example .env    # COMPOSIO, EXA (+ GEMINI for the automated path)
 uv run research connect-search      # Exa → Composio user
-uv run research run --apps Attio    # pass 1 + verification
-uv run research show --apps Attio --md
+uv run research pack --apps Attio   # gather sources: crawler + Exa
+# read data/packs/004.md, write cited answers to data/manual/
+uv run research ingest --apps Attio # grounding + rules, re-research flags
+uv run research finalize            # apply fixes, re-check, final records
+uv run research run --apps Attio    # or: fully automated, Gemini extracts
 uv run research evaluate            # score vs answer key
 uv run research build-site          # this page's data</pre>
         </div>
         <div>
           <h2>Where it fell short</h2>
           <ul id="limits">
-            <li>On a free-tier Gemini key the Pro-class models are capped at zero and the Flash models are sometimes overloaded. The fallback chain absorbs this, so a record can come from an older Flash model; every call logs which model answered.</li>
+            <li>LLM API free tiers could not finish an unattended run: Groq caps each model at 200K tokens a day, and on a free Gemini key the Pro models are capped at zero and the Flash models were overloaded for hours. The 100 records were extracted in-session by Claude instead, from the same source packs.</li>
+            <li>The extractor also wrote the answer key, so the sample is not an independent grader and 97% is an upper bound. The key was drawn before any extraction, and every miss, key correction and source is published so anyone can re-check it.</li>
+            <li>One app could not be identified: the sources for “Paygent Connect” describe several unrelated products named Paygent, none of them NMI-powered.</li>
             <li>JavaScript-rendered docs (e.g. GoHighLevel's Stoplight portal) return almost no text to a plain fetch.</li>
             <li>“Access” is the hardest field: pricing pages rarely say plainly whether the API is on the free plan.</li>
             <li>The answer key covers 20 of 100 apps; the other 80 rely on the loops and confidence alone.</li>
@@ -418,11 +424,7 @@ function render(d){
   const apps = d.apps, byId = Object.fromEntries(apps.map(a => [a.id, a]));
   const P = d.patterns || {}, E = d.eval || {};
   $("#edition").textContent = `Edition ${d.generated.slice(0,7)} · ${d.counts.researched} of ${d.counts.apps} apps researched · data ${d.generated}`;
-  $("#foot").textContent = `Data generated ${d.generated}. Models that answered: extraction ${(d.models.used?.extract || []).join(", ") || "—"}; critic ${(d.models.used?.critic || []).join(", ") || "—"}; re-research ${(d.models.used?.reresearch || []).join(", ") || "—"}. Search: ${d.models.search}. Apps are named for research purposes; no affiliation with any vendor, including Composio.`;
-  const M = d.models || {}, lead = k => (M.used?.[k] || M.chains?.[k] || ["—"])[0];
-  $("#m-extract").textContent = lead("extract");
-  $("#m-critic").textContent = lead("critic");
-  $("#m-rr").textContent = lead("reresearch");
+  $("#foot").textContent = `Data generated ${d.generated}. Extraction: ${d.extraction?.extractor || "—"}. Search: ${d.models.search}. Apps are named for research purposes; no affiliation with any vendor, including Composio.`;
   const partial = d.counts.researched < d.counts.apps;
   $("#h-findings").innerHTML = !d.counts.researched
     ? `What the ${d.counts.apps} apps show<span class="provisional">The research run is in progress; no app has finished verification yet. Findings appear here as records land.</span>`
@@ -434,7 +436,7 @@ function render(d){
   if (acc1 != null && accF != null) {
     const dir = accF > acc1 ? `up from ${pct(acc1)} on the first pass` : accF < acc1 ? `down from ${pct(acc1)} on the first pass` : `the same as on the first pass`;
     const nS = E.final.apps_scored;
-    items.push(`<li><span class="fig num">${pct(accF)}</span><span>field accuracy on the hand-checked sample after verification${nS != null ? ` (${nS} of 20 apps scored so far)` : ""}, ${dir}. <a href="#check">See every miss</a>.</span></li>`);
+    items.push(`<li><span class="fig num">${pct(accF)}</span><span>field accuracy on the hand-checked sample after verification${nS != null && nS < 20 ? ` (${nS} of 20 apps scored so far)` : ""}, ${dir}. <a href="#check">See every miss and key correction</a>.</span></li>`);
   }
   if (d.pending.length) items.push(`<li class="plain">${d.pending.length} apps were still being researched when this page was built; they show as outlined, empty cells.</li>`);
   $("#findings-list").innerHTML = items.join("");
@@ -488,8 +490,13 @@ function render(d){
   filter();
 
   // usage
-  const U = d.usage || {}; let tin = 0, tout = 0;
-  $("#usage-table").innerHTML = `<thead><tr><th>Model · step</th><th class="n">Calls</th><th class="n">Tokens</th></tr></thead><tbody>` + Object.entries(U).map(([k,v]) => { tin += v.in; tout += v.out; const [mod,purp] = k.split("|"); return `<tr><td><span class="mono">${esc(mod.split("/").pop())}</span> · ${esc(purp)}</td><td class="n">${v.calls}</td><td class="n">${(v.in+v.out).toLocaleString()}</td></tr>`; }).join("") + `<tr><td><b>Total</b></td><td></td><td class="n"><b>${(tin+tout).toLocaleString()}</b></td></tr></tbody>`;
+  const X = d.extraction || {};
+  $("#usage-table").innerHTML = `<thead><tr><th>Step</th><th class="n">Count</th></tr></thead><tbody>
+    <tr><td>Source pages read (8 per app, official first)</td><td class="n">${(X.sources_read||0).toLocaleString()}</td></tr>
+    <tr><td>Exa searches through Composio</td><td class="n">${(X.search_queries||0).toLocaleString()}</td></tr>
+    <tr><td>Cited quotes in the final records</td><td class="n">${(X.quotes||0).toLocaleString()}</td></tr>
+    <tr><td>Quotes re-found on their page</td><td class="n">${(X.quotes_grounded||0).toLocaleString()}</td></tr>
+    <tr><td>Apps re-researched / new pages</td><td class="n">${X.reresearch_apps||0} / ${X.reresearch_sources||0}</td></tr></tbody>`;
 
   renderCheck(d, byId);
 }
@@ -511,7 +518,8 @@ function filter(){
   $("#f-count").textContent = `${rows.length} of ${window._apps.length} apps`;
   $("#reg-body").innerHTML = rows.sort((x,y)=>x.id-y.id).map(a => {
     const f = a.fields, reg = REG[f.access.value] || {code:"?",label:"unknown"};
-    const flagged = Object.values(f).some(c => c.flags && c.flags.some(x => !x.startsWith("maybe_")));
+    // flagged = a scored field still carries a hard verifier flag (soft "maybe"/low-confidence notes excluded)
+    const flagged = SCORED.some(k => (f[k]?.flags || []).some(x => !x.startsWith("maybe_") && x !== "low_confidence"));
     const evs = ["auth_methods","access","official_mcp"].flatMap(k => f[k].evidence.slice(0,1).map(e => ({k,...e})));
     return `<tr class="${flagged ? "flagged" : ""}">
       <td class="app"><b>${esc(a.app)}</b><span>${esc(a.category)}</span></td>
@@ -527,11 +535,13 @@ function filter(){
   }).join("") || `<tr><td colspan="9">No app matches these filters. <a href="#register" onclick="document.querySelectorAll('.filters select').forEach(s=>s.value='');document.getElementById('f-q').value='';filter();return false">Clear filters</a></td></tr>`;
 }
 
+const SCORED = ["auth_methods","access","api_style","api_breadth","official_mcp","buildability"];
+const scoredFlags = o => SCORED.reduce((n,f) => n + ((o||{})[f]||0), 0);
 function renderCheck(d, byId){
   const E = d.eval || {}, p1 = E.pass1, fin = E.final;
   if (!p1 || !fin) { $("#acc").textContent = "Evaluation pending."; return; }
   const nApps = fin.apps_scored ?? new Set(fin.rows.filter(r => r.status === "hit" || r.status === "miss").map(r => r.id)).size;
-  $("#check-intro").innerHTML = `Scored against the hand-checked sample: <b>${fin.overall.total} field checks across ${nApps} of 20 apps</b>${nApps < 20 ? ", the rest still being researched" : ""}. Fields with contested or unreadable docs are left unscored. Pass 1 is the extractor alone; final is after the four verification loops, on the same apps.`;
+  $("#check-intro").innerHTML = `Scored against the hand-checked sample: <b>${fin.overall.total} field checks across ${nApps} of 20 apps</b>${nApps < 20 ? ", the rest still being researched" : ""}. Fields with contested or unreadable docs are left unscored. Pass 1 is the extractor alone; final is after the verification loops, on the same apps. Before misses were reviewed, the score was 109/115 (95%); three of the six misses turned out to be answer-key errors or ambiguous, and the key was corrected with sources. The extractor also wrote the key, so read this as an upper bound.`;
   $("#acc").innerHTML = `<div><span class="v num">${pct(p1.overall.accuracy)}</span><span class="lab">pass 1 · ${p1.overall.correct}/${p1.overall.total}</span></div><span class="arrow" aria-hidden="true">→</span><div><span class="v num">${pct(fin.overall.accuracy)}</span><span class="lab">after verification · ${fin.overall.correct}/${fin.overall.total}</span></div>`;
   $("#field-table").innerHTML = `<thead><tr><th>Field</th><th class="n">Pass 1</th><th class="n">Final</th><th class="n">Change</th></tr></thead><tbody>` + Object.keys(FIELD_LABEL).map(f => {
     const a = p1.per_field[f] || {}, b = fin.per_field[f] || {}; const dlt = (b.correct||0) - (a.correct||0);
@@ -539,9 +549,9 @@ function renderCheck(d, byId){
   }).join("") + `</tbody>`;
   const L = d.loops || {}, F = L.flags_round0 || {};
   $("#loop-table").innerHTML = `<thead><tr><th>Loop</th><th class="n">Fields flagged</th></tr></thead><tbody>
-    <tr><td>Grounding: quote not on the cited page</td><td class="n">${F.grounding||0}</td></tr>
-    <tr><td>Rules: consistency, Composio cross-check</td><td class="n">${F.rules||0}</td></tr>
-    <tr><td>Critic model: wrong or unsupported</td><td class="n">${F.critic||0}</td></tr>
+    <tr><td>Grounding: scored field with no quote re-found on its page</td><td class="n">${scoredFlags(L.flags_by_field?.grounding)}</td></tr>
+    <tr><td>Rules: consistency, Composio cross-check</td><td class="n">${scoredFlags(L.flags_by_field?.rules)}</td></tr>
+    <tr><td>Re-research: apps given new sources for flagged fields</td><td class="n">${d.extraction?.reresearch_apps ?? 0}</td></tr>
     <tr><td><b>Re-research changed</b></td><td class="n"><b>${L.fields_changed||0}</b> fields in ${L.apps_changed||0} apps</td></tr></tbody>`;
   $("#calib-table").innerHTML = `<thead><tr><th>Final confidence</th><th class="n">Checks</th><th class="n">Correct</th></tr></thead><tbody>` + (fin.calibration||[]).sort((a,b)=>a.bucket<b.bucket?-1:1).map(c => `<tr><td>${esc(c.bucket)}</td><td class="n">${c.total}</td><td class="n">${pct(c.accuracy)}</td></tr>`).join("") + `</tbody>`;
 

@@ -101,6 +101,28 @@ def models_used() -> dict[str, list[str]]:
     return {p: [m for m, _ in c.most_common()] for p, c in calls.items()}
 
 
+def _extraction_summary(recs) -> dict:
+    """Who extracted the fields and how much reading the loops did (for the page and llms.txt)."""
+    from .manual import EXTRACTOR, PACKS
+
+    by = Counter(r.verification.get("extractor", "LLM (automated pipeline)") for r in recs)
+    packs = sorted(PACKS.glob("[0-9][0-9][0-9].json"))
+    fixes = sorted(PACKS.glob("[0-9][0-9][0-9].fix.json"))
+    n_sources = sum(len(json.loads(p.read_text())["sources"]) for p in packs)
+    n_fix_sources = sum(len(json.loads(p.read_text())["sources"]) for p in fixes)
+    quotes = [e for r in recs for c in r.claims().values() for e in c.evidence]
+    return {
+        "extractor": by.most_common(1)[0][0] if by else EXTRACTOR,
+        "apps": len(recs),
+        "sources_read": n_sources,
+        "reresearch_apps": len(fixes),
+        "reresearch_sources": n_fix_sources,
+        "quotes": len(quotes),
+        "quotes_grounded": sum(1 for e in quotes if e.grounded),
+        "search_queries": len(list((RESULTS.parent / "cache" / "search").glob("*.json"))),
+    }
+
+
 def _audit_for_site() -> dict | None:
     if not AUDIT.exists():
         return None
@@ -129,8 +151,10 @@ def build() -> dict:
         "generated": time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime()),
         "repo": REPO,
         "page": PAGES,
+        # how this dataset's extraction was done (the in-session path, see manual.py)
+        "extraction": _extraction_summary(recs),
         "models": {
-            "provider": "Gemini API",
+            "provider": "Gemini API (automated path; not used for this dataset)",
             "chains": {
                 "extract": chain(settings.extract_model),
                 "critic": chain(settings.critic_model),
@@ -213,6 +237,12 @@ def _llms(b: dict) -> str:
         (
             f"Accuracy on a 20-app hand-checked random sample: pass 1 {acc('pass1')}, after "
             f"verification loops {acc('final')} (fields: {', '.join(SCORED_FIELDS)})."
+        ),
+        "",
+        (
+            f"Extraction: {b['extraction']['extractor']}. The same author wrote the answer key, "
+            "so the sample is not an independent grader; every miss and key revision is logged "
+            "in data/audit.json and data/ground_truth.json."
         ),
         "",
         "## Findings",
