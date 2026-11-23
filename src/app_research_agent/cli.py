@@ -21,6 +21,8 @@ def main() -> None:
     v = with_apps(sub.add_parser("verify", help="re-run verification on existing pass-1 records"))
     v.add_argument("--no-critic", action="store_true")
     with_apps(sub.add_parser("catalog", help="show Composio catalog match per app"))
+    sh = with_apps(sub.add_parser("show", help="print final records"))
+    sh.add_argument("--md", action="store_true", help="markdown table (for CI job summaries)")
     sub.add_parser("export", help="bundle results into data/results/results.json")
     sub.add_parser("evaluate", help="score pass 1 and final against the hand-checked sample")
     sub.add_parser("patterns", help="compute cross-app patterns")
@@ -46,6 +48,8 @@ def main() -> None:
         from .pipeline import run
 
         run(apps, verify_only=True, use_critic=not args.no_critic)
+    elif args.cmd == "show":
+        show(apps, args.md)
     elif args.cmd == "export":
         from .pipeline import export
 
@@ -59,3 +63,40 @@ def main() -> None:
         from .patterns import main as patterns_main
 
         patterns_main()
+
+
+def show(apps, md: bool) -> None:
+    """Print final records (markdown for CI job summaries)."""
+    from .pipeline import FINAL, PASS1, load
+    from .schema import CLAIM_FIELDS
+
+    for a in apps:
+        rec = load(FINAL, a) or load(PASS1, a)
+        if rec is None:
+            print(f"{a.app}: no results")
+            continue
+        if not md:
+            print(rec.model_dump_json(indent=2))
+            continue
+        print(f"## {rec.app} ({rec.category})\n")
+        print(
+            f"Composio toolkit: `{rec.composio.slug or 'none'}`"
+            f"{f' ({rec.composio.tools} tools)' if rec.composio.found else ''}\n"
+        )
+        print("| Field | Value | Conf. | Evidence | Verifier flags |\n|---|---|---|---|---|")
+        for f in CLAIM_FIELDS:
+            c = getattr(rec, f)
+            ev = next((e for e in c.evidence if e.grounded), c.evidence[0] if c.evidence else None)
+            evs = (
+                f"[{'✓' if ev.grounded else '✗'} source]({ev.url}) “{ev.quote[:90]}”" if ev else "—"
+            )
+            print(
+                f"| {f} | {c.value} | {c.confidence} | {evs.replace('|', '/')} | "
+                f"{'; '.join(c.flags)[:120].replace('|', '/') or '—'} |"
+            )
+        changes = rec.verification.get("changes", [])
+        if changes:
+            print("\n**Changed by verification:**\n")
+            for ch in changes:
+                print(f"- `{ch['field']}`: {ch['from']} → {ch['to']}")
+        print()

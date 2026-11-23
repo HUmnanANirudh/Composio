@@ -1,0 +1,35 @@
+name: Run research agent
+
+# Runnable trigger: Actions tab -> "Run research agent" -> Run workflow -> type app(s).
+on:
+  workflow_dispatch:
+    inputs:
+      apps:
+        description: "Apps from data/apps.csv: names ('Slack,Stripe'), ids ('3,7') or ranges ('1-10')"
+        required: true
+        default: "Attio"
+      critic:
+        description: "Run the critic-model verification loop"
+        type: boolean
+        default: true
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --frozen
+      - name: Research (pass 1 + verification loops)
+        env:
+          COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: |
+          uv run research run --apps "${{ inputs.apps }}" --force ${{ inputs.critic && ' ' || '--no-critic' }}
+      - name: Write job summary
+        run: uv run research show --apps "${{ inputs.apps }}" --md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: research-results
+          path: data/results/
