@@ -1,0 +1,834 @@
+{
+ "_about": {
+  "sampling": "Stratified random: 2 apps per category, random.Random(2026), drawn BEFORE any agent run.",
+  "method": "Each field read from official docs/pricing pages (URLs + verbatim quotes below). Fields marked null are unscored because the docs were contested or unreadable.",
+  "checked_by": "Claude (claude-opus-5-5) reading official docs via web fetch on 2026-11-23; human spot-check pending (see human_review)",
+  "auth_rule": "auth_methods/api_style are scored correct when core <= agent <= core|optional, treating API_KEY and BEARER_TOKEN as equivalent."
+ },
+ "apps": [
+  {
+   "id": 2,
+   "app": "HubSpot",
+   "truth": {
+    "auth_methods": {
+     "core": [
+      "OAUTH2",
+      "BEARER_TOKEN"
+     ],
+     "optional": [
+      "API_KEY",
+      "JWT"
+     ]
+    },
+    "access": "SELF_SERVE_FREE",
+    "api_style": {
+     "core": [
+      "REST"
+     ],
+     "optional": []
+    },
+    "api_breadth": "BROAD",
+    "official_mcp": true,
+    "buildability": "READY"
+   },
+   "accept": {},
+   "evidence": {
+    "auth_methods": {
+     "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/account-service-keys.md",
+     "quote": "You can then include your service key as a Bearer token"
+    },
+    "access": {
+     "url": "https://developers.hubspot.com/docs/getting-started/account-types.md",
+     "quote": "It can be free or paid, and is used as your production environment."
+    },
+    "official_mcp": {
+     "url": "https://developers.hubspot.com/docs/build-with-ai/remote-mcp-server.md",
+     "quote": "The remote HubSpot MCP server is a publicly hosted endpoint"
+    }
+   },
+   "notes": "",
+   "human_review": null
+  },
+  {
+   "id": 6,
+   "app": "Podio",
+   "truth": {
+    "auth_methods": {
+     "core": [
+      "OAUTH2"
+     ],
+     "optional": []
+    },
+    "access": "SELF_SERVE_FREE",
+    "api_style": {
+     "core": [
+      "REST"
+     ],
+     "optional": []
+    },
+    "api_breadth": "BROAD",
+    "official_mcp": false,
+    "buildability": "READY"
+   },
+   "accept": {},
+   "evidence": {
+    "auth_methods": {
+     "url": "https://developers.podio.com/authentication",
+     "quote": "The Podio API uses the OAuth2 protocol for authentication."
+    },
+    "access": {
+     "url": "https://developers.podio.com/authentication",
+     "quote": "Before you can use the Podio API you must register your application."
+    }
+   },
+   "notes": "Free plan lists API integrations at 1000 calls/hour.",
+   "human_review": null
+  },
+  {
+   "id": 19,
+   "app": "Gorgias",
+   "truth": {
+    "auth_methods": {
+     "core": [
+      "OAUTH2",
+      "BASIC"
+     ],
+     "optional": [
+      "API_KEY"
+     ]
+    },
+    "access": "SELF_SERVE_TRIAL",
+    "api_style": {
+     "core": [
+      "REST"
+     ],
+     "optional": []
+    },
+    "api_breadth": "BROAD",
+    "official_mcp": true,
+    "buildability": "READY_WITH_CAVEATS"
+   },
+   "accept": {
+    "api_breadth": [
+     "MODERATE"
+    ],
+    "access": [
+     "APPROVAL"
+    ]
+   },
+   "evidence": {
+    "auth_methods": {
+     "url": "https://developers.gorgias.com/reference/authentication",
+     "quote": "Use your email (username) and your API key"
+    },
+    "access": {
+     "url": "https://www.gorgias.com/pricing",
+     "quote": "The Gorgias trial period lasts 7 days."
+    },
+    "official_mcp": {
+     "url": "https://github.com/gorgias/mcp-cookbook",
+     "quote": "The Gorgias MCP is a first-party connector"
+    }
+   },
+   "notes": "Developer sandbox needs a draft app to be approved.",
+   "human_review": null
+  },
+  {
+   "id": 20,
+   "app": "Gladly",
+   "truth": {
+    "auth_methods": {
+     "core": [
+      "BASIC"
+     ],
+     "optional": [
+      "API_KEY"
+     ]
+    },
+    "access": "PARTNERSHIP",
+    "api_style": {
+     "core": [
+      "REST"
+     ],
+     "optional": []
+    },
+    "api_breadth": "BROAD",
+    "official_mcp": true,
+    "buildability": "NEEDS_OUTREACH"
+   },
+   "accept": {
+    "api_breadth": [
+     "MODERATE"
+    ]
+   },
+   "evidence": {
+    "auth_methods": {
+     "url": "https://developer.gladly.com/rest/",
+     "quote": "Gladly API uses token-based Basic Authentication."
+    },
+    "access": {
+     "url": "https://developer.gladly.com/rest/",
+     "quote": "First, you'll need to set up an account with the necessary API permissions"
+    },
+    "official_mcp": {
+     "url": "https://github.com/gladly/claude-plugin",
+     "quote": "Gladly needs to have turned on the Gladly MCP for your organization."
+    }
+   },
+   "notes": "Requires an existing Gladly customer org; no free tier or trial found.",
+   "human_review": null
+  },
+  {
+   "id": 22,
+   "app": "Twilio",
+   "truth": {
+    "auth_methods": {
+     "core": [
+      "BASIC"
+     ],
+     "optional": [
+      "API_KEY",
+      "OAUTH2",
+      "JWT"
+     ]
+    },
+    "access": "SELF_SERVE_TRIAL",
+    "api_style": {
+     "core": [
+      "REST"
+     ],
+     "optional": []
+    },
+    "api_breadth": "BROAD",
+    "official_mcp": true,
+    "buildability": "READY_WITH_CAVEATS"
+   },
+   "accept": {
+    "buildability": [
+     "READY"
+    ]
+   },
+   "evidence": {
+    "auth_methods": {
+     "url": "https://www.twilio.com/docs/usage/requests-to-twilio",
+     "quote": "To authenticate requests to the Twilio APIs, use HTTP Basic authentication."
+    },
+    "access": {
+     "url": "https://www.twilio.com/docs/usage/trials.md",
+     "quote": "You can sign up for a Twilio free trial account without a credit card."
+    },
+    "official_mcp": {
+     "url": "https://www.twilio.com/docs/ai/mcp.md",
+     "quote": "it does not connect to a Twilio account or execute any API calls"
+    }
+   },
+   "notes": "Twilio's MCP is a docs-search server, not an action server.",
+   "human_review": null
+  },
+  {
+   "id": 24,
+   "app": "Lark (Larksuite)",
+   "truth": {
+    "auth_methods": {
+     "core": [
+      "OAUTH2"
+     ],
+     "optional": [
+      "JWT",
+      "BEARER_TOKEN",
+      "API_KEY",
+      "OTHER"
+     ]
+    },
+    "access": "SELF_SERVE_FREE",
+    "api_style": {
+     "core": [
+      "REST"
+     ],
+     "optional": []
+    },
+    "api_breadth": "BROAD",
+    "official_mcp": true,
+    "buildability": "READY"
+   },
+   "accept": {},
+   "evidence": {
+    "auth_methods": {
+     "url": "https://github.com/larksuite/lark-openapi-mcp",
+     "quote": "Obtain the App ID and App Secret, which will be used for API authentication"
+    },
+    "official_mcp": {
+     "url": "https://github.com/larksuite/lark-openapi-mcp",
+     "quote": "This is the Feishu/Lark official OpenAPI MCP"
+    }
+   },
+   "notes": "App id/secret -> tenant_access_token has no clean enum; any of JWT/BEARER/API_KEY/OTHER accepted alongside OAuth.",
+   "human_review": null
+  },
+  {
+   "id": 39,
+   "app": "Threads (Meta)",
+   "truth": {
+    "auth_methods": {
+     "core": [
+      "OAUTH2"
+     ],
+     "optional": [
+      "BEARER_TOKEN"
+     ]
+    },
+    "access": "SELF_SERVE_FREE",
+    "api_style": {
+     "core": [
+      "REST"
+     ],
+     "optional": [
+      "GRAPHQL"
+     ]
+    },
+    "api_breadth": "MODERATE",
+    "official_mcp": true,
+    "buildability": "READY_WITH_CAVEATS"
+   },
+   "accept": {
+    "api_breadth": [
+     "NARROW"
+    ],
+    "buildability": [
+     "READY"
+    ],
+    "access": [
+     "APPROVAL"
+    ]
+   },
+   "evidence": {
+    "auth_methods": {
+     "url": "https://developers.facebook.com/documentation/threads/get-started",
+     "quote": "API authentication is handled by Threads user access tokens that conform to the OAuth 2.0 protocol."
+    },
+    "access": {
+     "url": "https://developers.facebook.com/documentation/threads/get-started",
+     "quote": "To access the Threads API, create an app and pick the Threads use case."
+    },
+    "official_mcp": {
+     "url": "https://developers.facebook.com/documentation/threads/llms.txt",
+     "quote": "Connect your Threads account to an AI assistant with the Threads MCP server"
+    }
+   },
+   "notes": "App Review needed before non-tester users can authorize.",
+   "human_review": null
+  },
+  {
+   "id": 40,
+   "app": "SendGrid",
+   "truth": {
+    "auth_methods": {
+     "core": [
+      "API_KEY"
+     ],
+     "optional": []
+    },
+    "access": "SELF_SERVE_FREE",
+    "api_style": {
+     "core": [
+      "REST"
+     ],
+     "optional": []
+    },
+    "api_breadth": "BROAD",
+    "official_mcp": null,
+    "buildability": "READY"
+   },
+   "accept": {
+    "access": [
+     "SELF_SERVE_TRIAL"
+    ]
+   },
+   "evidence": {
+    "auth_methods": {
+     "url": "https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
+     "quote": "include an Authorization header with the value Bearer <YOUR_API_KEY_HERE>"
+    },
+    "access": {
+     "url": "https://www.twilio.com/en-us/products/email-api/pricing",
+     "quote": "Sign up for our free plan (no credit card required)"
+    }
+   },
+   "notes": "official_mcp unscored: no MCP found but search was not exhaustive.",
+   "human_review": null
+  },
+  {
+   "id": 47,
+   "app": "Ecwid",
+   "truth": {
+    "auth_methods": {
+     "core": [
+      "BEARER_TOKEN"
+     ],
+     "optional": [
+      "OAUTH2"
+     ]
+    },
+    "access": "PAID_PLAN",
+    "api_style": {
+     "core": [
+      "REST"
+     ],
+     "optional": []
+    },
+    "api_breadth": "BROAD",
+    "official_mcp": false,
+    "buildability": "READY_WITH_CAVEATS"
+   },
+   "accept": {
+    "api_breadth": [
+     "MODERATE"
+    ]
+   },
+   "evidence": {
+    "auth_methods": {
+     "url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid.md",
+     "quote": "start making API requests with its access tokens"
+    },
+    "access": {
+     "url": "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid.md",
+     "quote": "Only stores on paid plans can access API."
+    }
+   },
+   "notes": "Free test-store upgrade available by emailing Ecwid.",
+   "human_review": null
+  },
+  {
+   "id": 49,
+   "app": "Amazon Selling Partner",
+   "truth": {
+    "auth_methods": {
+     "core": [
+      "OAUTH2"
+     ],
+     "optional": [
+      "OTHER"
+     ]
+    },
+    "access": "APPROVAL",
+    "api_style": {
+     "core": [
+      "REST"
+     ],
+     "optional": []
+    },
+    "api_breadth": "BROAD",
+    "official_mcp": null,
+    "buildability": "READY_WITH_CAVEATS"
+   },
+   "accept": {
+    "access": [
+     "PAID_PLAN"
+    ],
+    "buildability": [
+     "NEEDS_OUTREACH"
+    ]
+   },
+   "evidence": {
+    "auth_methods": {
+     "url": "https://developer-docs.amazon.com/sp-api/docs/connecting-to-the-selling-partner-api",
+     "quote": "A Login with Amazon (LWA) access token authorizes your application"
+    },
+    "access": {
+     "url": "https://developer-docs.amazon.com/sp-api/docs/sp-api-registration-overview",
+     "quote": "You must register as a Selling Partner API (SP-API) developer before you can register your Selling Partner API application."
+    }
+   },
+   "notes": "Developer profile application with security questionnaire; private seller apps need a paid Professional selling account.",
+   "human_review": null
+  },
+  {
+   "id": 58,
+   "app": "Sherlock",
+   "truth": {
+    "auth_methods": {
+     "core": [
+      "NONE"
+     ],
+     "optional": []
+    },
+    "access": "NO_PUBLIC_API",
+    "api_style": {
+     "core": [
+      "CLI"
+     ],
+     "optional": [
+      "SDK_ONLY"
+     ]
+    },
+    "api_breadth": "NONE",
+    "official_mcp": false,
+    "buildability": "READY_WITH_CAVEATS"
+   },
+   "accept": {
+    "api_breadth": [
+     "NARROW"
+    ],
+    "buildability": [
+     "BLOCKED"
+    ]
+   },
+   "evidence": {
+    "access": {
+     "url": "https://github.com/sherlock-project/sherlock",
+     "quote": "pipx install sherlock-project"
+    }
+   },
+   "notes": "Open-source CLI; toolkit means wrapping the CLI.",
+   "human_review": null
+  },
+  {
+   "id": 60,
+   "app": "Clay",
+   "truth": {
+    "auth_methods": null,
+    "access": null,
+    "api_style": null,
+    "api_breadth": null,
+    "official_mcp": true,
+    "buildability": null
+   },
+   "accept": {},
+   "evidence": {
+    "official_mcp": {
+     "url": "https://university.clay.com/courses/clay-mcps-for-reps",
+     "quote": "Learn how to use Clay directly inside of AI chat tools like ChatGPT, Claude, and more"
+    }
+   },
+   "notes": "CONTESTED: pricing lists a free 'CLI / API' quota but FAQ says Enterprise includes 'Clay API access'. No public API reference found. Needs human/sales confirmation.",
+   "human_review": null
+  },
+  {
+   "id": 61,
+   "app": "GitHub",
+   "truth": {
+    "auth_methods": {
+     "core": [
+      "BEARER_TOKEN",
+      "OAUTH2"
+     ],
+     "optional": [
+      "JWT",
+      "BASIC"
+     ]
+    },
+    "access": "SELF_SERVE_FREE",
+    "api_style": {
+     "core": [
+      "REST",
+      "GRAPHQL"
+     ],
+     "optional": []
+    },
+    "api_breadth": "BROAD",
+    "official_mcp": true,
+    "buildability": "READY"
+   },
+   "accept": {},
+   "evidence": {
+    "auth_methods": {
+     "url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+     "quote": "You can also create an OAuth token with an OAuth app to access the REST API."
+    },
+    "access": {
+     "url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+     "quote": "If you want to use the GitHub REST API for personal use, you can create a personal access token."
+    },
+    "official_mcp": {
+     "url": "https://github.com/github/github-mcp-server",
+     "quote": "GitHub's official MCP Server"
+    }
+   },
+   "notes": "",
+   "human_review": null
+  },
+  {
+   "id": 64,
+   "app": "Cloudflare",
+   "truth": {
+    "auth_methods": {
+     "core": [
+      "BEARER_TOKEN"
+     ],
+     "optional": [
+      "API_KEY",
+      "OAUTH2"
+     ]
+    },
+    "access": "SELF_SERVE_FREE",
+    "api_style": {
+     "core": [
+      "REST"
+     ],
+     "optional": [
+      "GRAPHQL"
+     ]
+    },
+    "api_breadth": "BROAD",
+    "official_mcp": true,
+    "buildability": "READY"
+   },
+   "accept": {},
+   "evidence": {
+    "auth_methods": {
+     "url": "https://developers.cloudflare.com/fundamentals/api/get-started/keys/",
+     "quote": "Global API key is the previous authorization scheme"
+    },
+    "access": {
+     "url": "https://developers.cloudflare.com/fundamentals/api/get-started/",
+     "quote": "Create an API token to grant access to the API to perform actions."
+    },
+    "official_mcp": {
+     "url": "https://github.com/cloudflare/mcp",
+     "quote": "MCP server for the Cloudflare API"
+    }
+   },
+   "notes": "",
+   "human_review": null
+  },
+  {
+   "id": 72,
+   "app": "Airtable",
+   "truth": {
+    "auth_methods": {
+     "core": [
+      "BEARER_TOKEN",
+      "OAUTH2"
+     ],
+     "optional": []
+    },
+    "access": "SELF_SERVE_FREE",
+    "api_style": {
+     "core": [
+      "REST"
+     ],
+     "optional": []
+    },
+    "api_breadth": "MODERATE",
+    "official_mcp": true,
+    "buildability": "READY"
+   },
+   "accept": {
+    "api_breadth": [
+     "BROAD"
+    ]
+   },
+   "evidence": {
+    "auth_methods": {
+     "url": "https://airtable.com/developers/web/api/authentication",
+     "quote": "We currently support using personal access tokens and OAuth access tokens"
+    },
+    "official_mcp": {
+     "url": "https://airtable.com/developers",
+     "quote": "The Airtable MCP server gives agents your base's full structure"
+    }
+   },
+   "notes": "Legacy API keys ended Feb 2024.",
+   "human_review": null
+  },
+  {
+   "id": 80,
+   "app": "Harvest",
+   "truth": {
+    "auth_methods": {
+     "core": [
+      "BEARER_TOKEN",
+      "OAUTH2"
+     ],
+     "optional": []
+    },
+    "access": "SELF_SERVE_TRIAL",
+    "api_style": {
+     "core": [
+      "REST"
+     ],
+     "optional": []
+    },
+    "api_breadth": "BROAD",
+    "official_mcp": false,
+    "buildability": "READY_WITH_CAVEATS"
+   },
+   "accept": {
+    "access": [
+     "SELF_SERVE_FREE"
+    ],
+    "buildability": [
+     "READY"
+    ],
+    "api_breadth": [
+     "MODERATE"
+    ]
+   },
+   "evidence": {
+    "auth_methods": {
+     "url": "https://help.getharvest.com/api-v2/introduction/overview/general/",
+     "quote": "Harvest requires applications to authenticate all requests with OAuth2 or Personal Access Tokens."
+    },
+    "access": {
+     "url": "https://www.getharvest.com/pricing",
+     "quote": "Get started on any plan with a free trial. No credit card required."
+    }
+   },
+   "notes": "Free plan exists (1 seat, 2 projects); API on free plan unconfirmed, so TRIAL and FREE both accepted.",
+   "human_review": null
+  },
+  {
+   "id": 82,
+   "app": "Plaid",
+   "truth": {
+    "auth_methods": {
+     "core": [
+      "API_KEY"
+     ],
+     "optional": [
+      "OTHER"
+     ]
+    },
+    "access": "SELF_SERVE_FREE",
+    "api_style": {
+     "core": [
+      "REST"
+     ],
+     "optional": []
+    },
+    "api_breadth": "BROAD",
+    "official_mcp": true,
+    "buildability": "READY_WITH_CAVEATS"
+   },
+   "accept": {
+    "buildability": [
+     "READY"
+    ]
+   },
+   "evidence": {
+    "auth_methods": {
+     "url": "https://plaid.com/docs/api/",
+     "quote": "Almost all Plaid API endpoints require a client_id and secret."
+    },
+    "access": {
+     "url": "https://plaid.com/pricing/",
+     "quote": "Sandbox is always free."
+    },
+    "official_mcp": {
+     "url": "https://plaid.com/docs/resources/",
+     "quote": "Plaid's Dashboard MCP server allows you to access Plaid's diagnostics and analytics tools"
+    }
+   },
+   "notes": "Production access requested via Dashboard.",
+   "human_review": null
+  },
+  {
+   "id": 85,
+   "app": "iPayX",
+   "truth": {
+    "auth_methods": {
+     "core": [
+      "BEARER_TOKEN"
+     ],
+     "optional": []
+    },
+    "access": "PAID_PLAN",
+    "api_style": {
+     "core": [
+      "REST"
+     ],
+     "optional": []
+    },
+    "api_breadth": "NARROW",
+    "official_mcp": true,
+    "buildability": "READY_WITH_CAVEATS"
+   },
+   "accept": {
+    "access": [
+     "SELF_SERVE_FREE"
+    ]
+   },
+   "evidence": {
+    "auth_methods": {
+     "url": "https://www.ipayx.ai/docs/api",
+     "quote": "Every request requires a Bearer token in the Authorization header."
+    },
+    "access": {
+     "url": "https://www.ipayx.ai/",
+     "quote": "Upgrade to the 100-audit Credit Pack or Unlimited for API access"
+    },
+    "official_mcp": {
+     "url": "https://www.ipayx.ai/docs/mcp-server",
+     "quote": "Connect your AI agent to real-time FX audit verdicts."
+    }
+   },
+   "notes": "Not a payments product: an FX-rate audit API. Hint URL ipayx.ai/docs 404s; docs live at www.ipayx.ai/docs/api.",
+   "human_review": null
+  },
+  {
+   "id": 92,
+   "app": "Otter AI",
+   "truth": {
+    "auth_methods": null,
+    "access": "PARTNERSHIP",
+    "api_style": null,
+    "api_breadth": null,
+    "official_mcp": true,
+    "buildability": "NEEDS_OUTREACH"
+   },
+   "accept": {},
+   "evidence": {
+    "access": {
+     "url": "https://help.otter.ai/hc/en-us/articles/4412365535895-Does-Otter-offer-an-open-API",
+     "quote": "Yes, Otter offers a public API for Enterprise customers. To get started, contact your Otter account manager"
+    },
+    "official_mcp": {
+     "url": "https://otter.ai/",
+     "quote": "access your meeting knowledge through Otter's MCP Server"
+    }
+   },
+   "notes": "API docs behind enterprise; auth/style unscored. MCP is self-serve on the free tier.",
+   "human_review": null
+  },
+  {
+   "id": 98,
+   "app": "Mermaid CLI",
+   "truth": {
+    "auth_methods": {
+     "core": [
+      "NONE"
+     ],
+     "optional": []
+    },
+    "access": "NO_PUBLIC_API",
+    "api_style": {
+     "core": [
+      "CLI"
+     ],
+     "optional": [
+      "SDK_ONLY"
+     ]
+    },
+    "api_breadth": "NONE",
+    "official_mcp": false,
+    "buildability": "READY_WITH_CAVEATS"
+   },
+   "accept": {
+    "api_breadth": [
+     "NARROW"
+    ],
+    "buildability": [
+     "BLOCKED"
+    ]
+   },
+   "evidence": {
+    "auth_methods": {
+     "url": "https://github.com/mermaid-js/mermaid-cli",
+     "quote": "This is a command-line interface (CLI) for mermaid."
+    }
+   },
+   "notes": "Local CLI/Node library; no hosted API.",
+   "human_review": null
+  }
+ ]
+}
