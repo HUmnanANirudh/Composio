@@ -41,7 +41,9 @@ def _app_tokens(app: App) -> list[str]:
 
 
 def _is_code_host(app: App) -> bool:
-    return bool(app.domain) and web.registrable(app.domain) in CODE_HOSTS
+    """The hint is a repository on a code host (not, say, docs.github.com)."""
+    h = web.host(app.hint_url) if app.hint_url else ""
+    return h.removeprefix("www.") in CODE_HOSTS
 
 
 @lru_cache(maxsize=256)
@@ -53,7 +55,8 @@ def official_domains(app: App) -> frozenset[str]:
         p = web.fetch(app.hint_url)
         if p.final_url:
             doms.add(web.registrable(web.host(p.final_url)))
-    return frozenset(doms - set(CODE_HOSTS))
+    # a repo hint makes the code host a shared platform, not the vendor's domain
+    return frozenset(doms - set(CODE_HOSTS)) if _is_code_host(app) else frozenset(doms)
 
 
 def is_official(app: App, url: str) -> bool:
@@ -62,6 +65,7 @@ def is_official(app: App, url: str) -> bool:
         h = web.host(url)
         if web.registrable(h) in CODE_HOSTS or h.endswith("githubusercontent.com"):
             return f"/{owner}/" in url + "/"
+        return False  # other sites sharing the project's name are not the project
     h = web.host(url)
     if web.registrable(h) in official_domains(app):
         return True
@@ -186,7 +190,8 @@ def gather(
     # Lanes: one per search query (auth / access / MCP), plus the crawler's topic picks
     # (which also cover the API reference). The page budget is filled round-robin across
     # lanes, so every topic gets a page before any topic gets a second one.
-    lanes: list[list[str]] = [list(extra_urls or [])]
+    # for an open-source repo the repo page is the documentation: it goes first
+    lanes: list[list[str]] = [list(extra_urls or []) + (seeds[:1] if _is_code_host(app) else [])]
     for q in queries or [t.format(app=app.app) for t in QUERY_TEMPLATES]:
         try:
             lanes.append([h.url for h in web.search(q, refresh=refresh)])

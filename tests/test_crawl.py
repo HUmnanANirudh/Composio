@@ -94,3 +94,13 @@ def test_vendor_github_org_is_official(monkeypatch):
     assert is_official(GORGIAS, "https://github.com/gorgias/mcp-cookbook")
     assert not is_official(GORGIAS, "https://github.com/someone/helpdesk-scraper")
     official_domains.cache_clear()
+
+
+def test_code_host_project_rejects_same_name_sites_and_docs_github_is_not_a_repo(monkeypatch):
+    official_domains.cache_clear()
+    monkeypatch.setattr(research.web, "fetch", fake_fetch({}))
+    assert not is_official(SHERLOCK, "https://docs.sherlocklabs.dev/explore/mcp")
+    gh = App(61, "Dev", "GitHub", "docs.github.com/rest")
+    assert not research._is_code_host(gh)
+    assert is_official(gh, "https://docs.github.com/en/rest/authentication")
+    official_domains.cache_clear()
