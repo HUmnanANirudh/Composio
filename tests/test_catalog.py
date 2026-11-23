@@ -15,11 +15,7 @@ def test_parse_rows():
     rows = parse_catalog(SAMPLE)
     assert [r.slug for r in rows] == ["CLOSE_MCP", "CLOSE", "CLOSEIO", "HUBSPOT"]
     hub = rows[-1]
-    assert (
-        hub.auth == ["OAUTH2", "API_KEY"]
-        and hub.tools == 355
-        and hub.managed_app == "Yes"
-    )
+    assert hub.auth == ["OAUTH2", "API_KEY"] and hub.tools == 355 and hub.managed_app == "Yes"
     assert rows[1].managed_app is None
 
 

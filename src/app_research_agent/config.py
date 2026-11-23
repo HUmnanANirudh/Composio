@@ -21,19 +21,13 @@ def _env(name: str, default: str | None = None) -> str | None:
 
 @dataclass
 class Settings:
-    composio_api_key: str | None = field(
-        default_factory=lambda: _env("COMPOSIO_API_KEY")
-    )
+    composio_api_key: str | None = field(default_factory=lambda: _env("COMPOSIO_API_KEY"))
     groq_api_key: str | None = field(default_factory=lambda: _env("GROQ_API_KEY"))
-    extract_model: str = field(
-        default_factory=lambda: _env("EXTRACT_MODEL", "openai/gpt-oss-120b")
-    )
+    extract_model: str = field(default_factory=lambda: _env("EXTRACT_MODEL", "openai/gpt-oss-120b"))
     critic_model: str = field(
         default_factory=lambda: _env("CRITIC_MODEL", "moonshotai/kimi-k2-instruct")
     )
-    search_model: str = field(
-        default_factory=lambda: _env("SEARCH_MODEL", "groq/compound-mini")
-    )
+    search_model: str = field(default_factory=lambda: _env("SEARCH_MODEL", "groq/compound-mini"))
     search_backend: str = field(
         default_factory=lambda: _env("SEARCH_BACKEND", "auto")
     )  # auto | composio | groq | none

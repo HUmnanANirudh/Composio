@@ -82,11 +82,7 @@ def _key(s: str) -> str:
 
 def registrable(host: str) -> str:
     parts = host.lower().split(":")[0].split(".")
-    if (
-        len(parts) >= 3
-        and parts[-2] in ("co", "com", "org", "net")
-        and len(parts[-1]) == 2
-    ):
+    if len(parts) >= 3 and parts[-2] in ("co", "com", "org", "net") and len(parts[-1]) == 2:
         return ".".join(parts[-3:])
     return ".".join(parts[-2:])
 
@@ -159,10 +155,7 @@ def _walk_hits(obj: Any, backend: str) -> list[SearchHit]:
                         url=url,
                         title=str(o.get("title") or o.get("name") or ""),
                         snippet=str(
-                            o.get("snippet")
-                            or o.get("description")
-                            or o.get("content")
-                            or ""
+                            o.get("snippet") or o.get("description") or o.get("content") or ""
                         )[:400],
                         backend=backend,
                     )
@@ -207,9 +200,7 @@ class ComposioSearch:
             user_id=settings.composio_user_id,
             dangerously_skip_version_check=True,
         )
-        data = (
-            res if isinstance(res, dict) else getattr(res, "model_dump", lambda: res)()
-        )
+        data = res if isinstance(res, dict) else getattr(res, "model_dump", lambda: res)()
         if isinstance(data, dict) and data.get("successful") is False:
             raise RuntimeError(data.get("error") or "tool failed")
         return data
@@ -269,9 +260,7 @@ def search(query: str, refresh: bool = False) -> list[SearchHit]:
     if path.exists() and not refresh:
         return [SearchHit(**h) for h in json.loads(path.read_text())]
     if backend not in _backend_cache:
-        _backend_cache[backend] = (
-            ComposioSearch() if backend == "composio" else GroqSearch()
-        )
+        _backend_cache[backend] = ComposioSearch() if backend == "composio" else GroqSearch()
     hits = _backend_cache[backend].search(query)
     path.write_text(json.dumps([asdict(h) for h in hits]))
     return hits

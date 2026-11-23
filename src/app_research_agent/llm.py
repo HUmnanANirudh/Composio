@@ -62,22 +62,14 @@ def chat_json(model: str, system: str, user: str, attempts: int = 5) -> dict[str
             return parse_json(r.choices[0].message.content)
         except RateLimitError as e:
             last = e
-            ra = (
-                e.response.headers.get("retry-after")
-                if e.response is not None
-                else None
-            )
+            ra = e.response.headers.get("retry-after") if e.response is not None else None
             time.sleep(float(ra) + 1 if ra else delay)
             delay = min(delay * 2, 90)
         except (APIConnectionError, APIStatusError) as e:
             last = e
             if isinstance(e, APIStatusError) and e.status_code in (401, 403, 404):
                 raise LLMError(f"{model}: {e.status_code} {e}") from e
-            if (
-                isinstance(e, APIStatusError)
-                and e.status_code < 500
-                and e.status_code != 413
-            ):
+            if isinstance(e, APIStatusError) and e.status_code < 500 and e.status_code != 413:
                 # 400 json_validate_failed etc: ask again, more firmly
                 messages = messages[:2] + [
                     {"role": "user", "content": "Return ONLY one valid JSON object."}

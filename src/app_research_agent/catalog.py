@@ -58,9 +58,7 @@ def parse_catalog(text: str) -> list[ComposioCatalogEntry]:
         m = _ROW.match(line)
         if not m:
             continue
-        auth = [
-            a.strip() for a in m["auth"].split(",") if a.strip() and a.strip() != "—"
-        ]
+        auth = [a.strip() for a in m["auth"].split(",") if a.strip() and a.strip() != "—"]
         managed = m["managed"].strip()
         rows.append(
             ComposioCatalogEntry(
@@ -84,11 +82,7 @@ def catalog() -> tuple[ComposioCatalogEntry, ...]:
 
 def _overrides() -> dict[str, dict]:
     if OVERRIDES.exists():
-        return {
-            k: v
-            for k, v in json.loads(OVERRIDES.read_text()).items()
-            if not k.startswith("_")
-        }
+        return {k: v for k, v in json.loads(OVERRIDES.read_text()).items() if not k.startswith("_")}
     return {}
 
 

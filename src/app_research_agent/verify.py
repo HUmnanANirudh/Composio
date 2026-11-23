@@ -110,14 +110,8 @@ def rule_checks(rec: AppRecord, sources: list[Source]) -> dict[str, list[str]]:
         if auth and theirs and not auth & theirs:
             flag("auth_methods", f"disagrees_with_composio:{sorted(theirs)}")
         elif theirs - auth:
-            flag(
-                "auth_methods", f"maybe_incomplete_vs_composio:{sorted(theirs - auth)}"
-            )
-    if (
-        rec.official_mcp.value is False
-        and cat.mcp_variant
-        and "DCR_OAUTH" in cat.mcp_variant_auth
-    ):
+            flag("auth_methods", f"maybe_incomplete_vs_composio:{sorted(theirs - auth)}")
+    if rec.official_mcp.value is False and cat.mcp_variant and "DCR_OAUTH" in cat.mcp_variant_auth:
         flag("official_mcp", f"composio_proxies_vendor_mcp:{cat.mcp_variant}")
 
     access, build = rec.access.value, rec.buildability.value
@@ -235,9 +229,7 @@ def _actionable(flags: dict[str, list[str]]) -> dict[str, list[str]]:
 def reresearch(
     app: App, rec: AppRecord, flags: dict[str, list[str]], sources: list[Source]
 ) -> list[Source]:
-    queries = sorted(
-        {q.format(app=app.app) for f in flags for q in FIELD_QUERIES.get(f, [])}
-    )
+    queries = sorted({q.format(app=app.app) for f in flags for q in FIELD_QUERIES.get(f, [])})
     keep = [s.url for s in sources if s.official]
     new_sources, errors = gather(
         app, queries=queries, extra_urls=keep, max_pages=settings.max_pages + 2
@@ -261,9 +253,7 @@ def reresearch(
         if c.value is None and old.value is not None:
             continue  # model dropped the field; keep the old answer
         if c.value != old.value:
-            changes.append(
-                {"field": f, "from": old.value, "to": c.value, "why": flags[f]}
-            )
+            changes.append({"field": f, "from": old.value, "to": c.value, "why": flags[f]})
         setattr(rec, f, c)
     rec.verification.setdefault("changes", []).extend(changes)
     seen = {s.url for s in sources}
@@ -282,9 +272,7 @@ def finalize_confidence(rec: AppRecord, flags: dict[str, list[str]]) -> None:
         c.flags = flags.get(f, [])
 
 
-def verify(
-    app: App, rec: AppRecord, sources: list[Source], use_critic: bool = True
-) -> AppRecord:
+def verify(app: App, rec: AppRecord, sources: list[Source], use_critic: bool = True) -> AppRecord:
     rec = rec.model_copy(deep=True)
     rec.pass_name = "final"
     rounds = []

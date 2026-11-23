@@ -46,15 +46,11 @@ def is_official(app: App, url: str) -> bool:
 def rank_urls(app: App, urls: list[str]) -> list[str]:
     def score(u: str) -> tuple:
         off = is_official(app, u)
-        docsy = bool(
-            re.search(r"developer|docs|api|dev\.|reference|auth", u, re.IGNORECASE)
-        )
+        docsy = bool(re.search(r"developer|docs|api|dev\.|reference|auth", u, re.IGNORECASE))
         return (not off, web.is_low_trust(u), not docsy)
 
     seen: set[str] = set()
-    uniq = [
-        u for u in urls if not (u.split("#")[0] in seen or seen.add(u.split("#")[0]))
-    ]
+    uniq = [u for u in urls if not (u.split("#")[0] in seen or seen.add(u.split("#")[0]))]
     return sorted(uniq, key=score)
 
 
@@ -83,9 +79,7 @@ def gather(
             break
         p = web.fetch(u, refresh=refresh)
         if not p.ok:
-            errors.append(
-                f"fetch {u}: {p.status} {p.error or 'too little text (JS-rendered?)'}"
-            )
+            errors.append(f"fetch {u}: {p.status} {p.error or 'too little text (JS-rendered?)'}")
             continue
         sources.append(
             Source(
@@ -143,9 +137,7 @@ def format_sources(sources: list[Source]) -> str:
     )
 
 
-def claims_from_json(
-    data: dict, sources: list[Source], fields=CLAIM_FIELDS
-) -> dict[str, Claim]:
+def claims_from_json(data: dict, sources: list[Source], fields=CLAIM_FIELDS) -> dict[str, Claim]:
     by_id = {s.sid: s for s in sources}
     out: dict[str, Claim] = {}
     for f in fields:
@@ -167,9 +159,7 @@ def claims_from_json(
             conf = float(raw.get("confidence", 0.5))
         except (TypeError, ValueError):
             conf = 0.5
-        out[f] = Claim(
-            value=normalize(f, raw.get("value")), evidence=ev, confidence=conf
-        )
+        out[f] = Claim(value=normalize(f, raw.get("value")), evidence=ev, confidence=conf)
     return out
 
 
@@ -208,9 +198,7 @@ def normalize(field: str, v):
         out = []
         for i in items:
             raw = str(i).strip().upper()
-            k = _ENUM_ALIASES.get(
-                re.sub(r"[^A-Z0-9]", "", raw), re.sub(r"[\s-]+", "_", raw)
-            )
+            k = _ENUM_ALIASES.get(re.sub(r"[^A-Z0-9]", "", raw), re.sub(r"[\s-]+", "_", raw))
             if k not in out:
                 out.append(k)
         return sorted(out)

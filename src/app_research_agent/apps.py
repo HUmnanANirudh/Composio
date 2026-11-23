@@ -32,9 +32,7 @@ def load_apps(path: Path | None = None) -> list[App]:
     path = path or DATA / "apps.csv"
     with path.open(newline="") as f:
         return [
-            App(
-                int(r["id"]), r["category"].strip(), r["app"].strip(), r["hint"].strip()
-            )
+            App(int(r["id"]), r["category"].strip(), r["app"].strip(), r["hint"].strip())
             for r in csv.DictReader(f)
         ]
 

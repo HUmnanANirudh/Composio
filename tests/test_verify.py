@@ -13,10 +13,7 @@ def test_quote_score_exact_fuzzy_and_fabricated():
     assert quote_score("private key authentication and OAuth", PAGE) == 100
     # small paraphrase / whitespace / smart quotes still count
     assert (
-        quote_score(
-            "provides 3 methods of authentication, including private key auth", PAGE
-        )
-        >= 88
+        quote_score("provides 3 methods of authentication, including private key auth", PAGE) >= 88
     )
     assert quote_score("Klaviyo requires a paid plan to access the API", PAGE) < 88
 
@@ -32,15 +29,11 @@ def test_ground_flags_fabricated_quote():
     rec = _rec(
         auth_methods=Claim(
             value=["OAUTH2"],
-            evidence=[
-                Evidence(url=SRC[0].url, quote="OAuth (used to call server-side APIs)")
-            ],
+            evidence=[Evidence(url=SRC[0].url, quote="OAuth (used to call server-side APIs)")],
         ),
         access=Claim(
             value="PAID_PLAN",
-            evidence=[
-                Evidence(url=SRC[0].url, quote="API access requires the Pro plan")
-            ],
+            evidence=[Evidence(url=SRC[0].url, quote="API access requires the Pro plan")],
         ),
     )
     flags = ground(rec, SRC)
