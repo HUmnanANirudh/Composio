@@ -29,6 +29,9 @@ def main() -> None:
     sub.add_parser("evaluate", help="score pass 1 and final against the hand-checked sample")
     sub.add_parser("patterns", help="compute cross-app patterns")
     sub.add_parser("audit", help="field-level audit of the answer-key apps (data/audit.json)")
+    with_apps(sub.add_parser("pack", help="in-session extraction: gather sources into packs"))
+    with_apps(sub.add_parser("ingest", help="in-session: pass-1 records + checks + fix packs"))
+    with_apps(sub.add_parser("finalize", help="in-session: apply fixes, re-check, final records"))
     rv = sub.add_parser("review", help="record a verdict on one audit cell")
     rv.add_argument("app_id", type=int)
     rv.add_argument("field")
@@ -80,6 +83,10 @@ def main() -> None:
         from .patterns import main as patterns_main
 
         patterns_main()
+    elif args.cmd in ("pack", "ingest", "finalize"):
+        from . import manual
+
+        getattr(manual, args.cmd)(apps)
     elif args.cmd in ("audit", "review"):
         from . import audit
 
