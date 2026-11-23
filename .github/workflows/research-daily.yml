@@ -4,9 +4,11 @@ name: Research checkpoint (scheduled)
 # Each run picks up where the last one stopped (records are saved per app), works until
 # every model in the fallback chain is out of quota or the step time budget runs out, then commits
 # only data/results + site/ after the tests pass, and redeploys the Pages site.
+# The schedule is paused: the 100-app dataset was extracted in-session (see README),
+# so an unattended LLM run would overwrite it. Re-enable the cron to resume LLM runs.
 on:
-  schedule:
-    - cron: "23 */3 * * *"
+  # schedule:
+  #   - cron: "23 */3 * * *"
   workflow_dispatch:
 
 permissions:
