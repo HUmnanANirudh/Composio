@@ -72,6 +72,7 @@ class Page:
     error: str | None = None
     fetched_at: float = field(default_factory=time.time)
     links: list[list[str]] = field(default_factory=list)  # [[absolute_url, anchor_text], ...]
+    rendered_by: str | None = None  # set when text came from the rendered-page fallback
 
     @property
     def ok(self) -> bool:
@@ -180,9 +181,34 @@ def fetch(url: str, refresh: bool = False) -> Page:
             page.error = f"unsupported content-type {ctype}"
     except httpx.HTTPError as e:
         page.error = f"{type(e).__name__}: {e}"
+    if page.status == 200 and len(page.text) <= 200 and settings.rendered_fallback:
+        rendered = fetch_rendered(url)
+        if rendered:
+            page.text, page.error = rendered, None
+            page.title = page.title or url
+            page.links = page.links or extract_links(rendered, page.final_url or url, is_html=False)
+            page.rendered_by = "composio:EXA_GET_CONTENTS_ACTION"
     page.text = page.text[:200_000]
     path.write_text(json.dumps(asdict(page)))
     return page
+
+
+def fetch_rendered(url: str) -> str | None:
+    """Text of a JS-rendered page via Exa's crawler, executed through the Composio session.
+
+    Used only when a plain fetch returns HTTP 200 but almost no text (client-rendered
+    docs portals). Returns None when Exa cannot crawl it either.
+    """
+    try:
+        if "composio" not in _backend_cache:
+            _backend_cache["composio"] = ComposioSearch()
+        session = _backend_cache["composio"].session
+        r = session.execute("EXA_GET_CONTENTS_ACTION", arguments={"urls": [url], "text": True})
+    except Exception:  # noqa: BLE001 - fallback only
+        return None
+    results = (r.data or {}).get("results") or [] if r.result_type == "completed" else []
+    text = (results[0].get("text") or "") if results else ""
+    return text if len(text) > 200 else None
 
 
 # --------------------------------------------------------------------------- search

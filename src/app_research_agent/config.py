@@ -30,6 +30,9 @@ class Settings:
         default_factory=lambda: _env("SEARCH_BACKEND", "auto")
     )  # auto | composio | groq | none
     search_toolkit: str = field(default_factory=lambda: _env("SEARCH_TOOLKIT", "exa"))
+    rendered_fallback: bool = field(
+        default_factory=lambda: _env("RENDERED_FALLBACK", "1") not in ("0", "false")
+    )
     concurrency: int = field(default_factory=lambda: int(_env("CONCURRENCY", "3")))
     composio_user_id: str = field(
         default_factory=lambda: _env("COMPOSIO_USER_ID", "research-agent")
