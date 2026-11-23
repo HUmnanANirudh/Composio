@@ -3,7 +3,15 @@
   "sampling": "Stratified random: 2 apps per category, random.Random(2026), drawn BEFORE any agent run.",
   "method": "Each field read from official docs/pricing pages (URLs + verbatim quotes below). Fields marked null are unscored because the docs were contested or unreadable.",
   "checked_by": "Claude (claude-opus-5-5) reading official docs via web fetch on 2026-11-23; human spot-check pending (see human_review)",
-  "auth_rule": "auth_methods/api_style are scored correct when core <= agent <= core|optional, treating API_KEY and BEARER_TOKEN as equivalent."
+  "auth_rule": "auth_methods/api_style are scored correct when core <= agent <= core|optional, treating API_KEY and BEARER_TOKEN as equivalent.",
+  "revisions": [
+   {
+    "date": "2026-11-23",
+    "app": "Clay",
+    "change": "was unscored (CONTESTED) -> scored",
+    "why": "The hand check only read university.clay.com and clay.com. The agent's docs crawler probed developers.clay.com and found the Public API docs, which a re-check confirmed. Logged as a case where the agent corrected the answer key."
+   }
+  ]
  },
  "apps": [
   {
@@ -486,21 +494,54 @@
    "id": 60,
    "app": "Clay",
    "truth": {
-    "auth_methods": null,
-    "access": null,
-    "api_style": null,
-    "api_breadth": null,
+    "auth_methods": {
+     "core": [
+      "API_KEY"
+     ],
+     "optional": [
+      "OAUTH2"
+     ]
+    },
+    "access": "SELF_SERVE_FREE",
+    "api_style": {
+     "core": [
+      "REST"
+     ],
+     "optional": [
+      "CLI"
+     ]
+    },
+    "api_breadth": "MODERATE",
     "official_mcp": true,
-    "buildability": null
+    "buildability": "READY_WITH_CAVEATS"
    },
-   "accept": {},
+   "accept": {
+    "access": [
+     "PAID_PLAN",
+     "SELF_SERVE_TRIAL"
+    ],
+    "api_breadth": [
+     "NARROW"
+    ],
+    "buildability": [
+     "READY"
+    ]
+   },
    "evidence": {
     "official_mcp": {
      "url": "https://university.clay.com/courses/clay-mcps-for-reps",
      "quote": "Learn how to use Clay directly inside of AI chat tools like ChatGPT, Claude, and more"
+    },
+    "auth_methods": {
+     "url": "https://developers.clay.com/public-api/authentication.md",
+     "quote": "Every request to the Clay Public API must include a Clay API key in the `clay-api-key` header."
+    },
+    "access": {
+     "url": "https://www.clay.com/pricing",
+     "quote": "Build with Clay via CLI / API (Free plan: 100 search results / 30 days)"
     }
    },
-   "notes": "CONTESTED: pricing lists a free 'CLI / API' quota but FAQ says Enterprise includes 'Clay API access'. No public API reference found. Needs human/sales confirmation.",
+   "notes": "Public API (api.clay.com/public/v0) + CLI + agent plugin, documented at developers.clay.com. Free plan has a small CLI/API quota; Tables API is Enterprise-only, so PAID_PLAN also accepted.",
    "human_review": null
   },
   {
