@@ -8,7 +8,6 @@ authors = [
 requires-python = ">=3.12"
 dependencies = [
     "composio>=0.34.0",
-    "groq>=1.7.0",
     "httpx>=0.28.1",
     "pydantic>=2.14.4",
     "pysocks>=1.7.1",

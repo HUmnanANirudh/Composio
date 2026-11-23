@@ -2,7 +2,7 @@ name: Research checkpoint (scheduled)
 
 # Resumes the 100-app run every few hours until every app has a final record.
 # Each run picks up where the last one stopped (records are saved per app), works until
-# Groq's free-tier daily quota pauses it or the step time budget runs out, then commits
+# every model in the fallback chain is out of quota or the step time budget runs out, then commits
 # only data/results + site/ after the tests pass, and redeploys the Pages site.
 on:
   schedule:
@@ -14,7 +14,7 @@ permissions:
   actions: write # to trigger the Pages deploy (pushes made with GITHUB_TOKEN don't)
 
 concurrency:
-  group: groq-quota # one runner at a time: runs share one Groq key's quota and the same files
+  group: llm-quota # one runner at a time: runs share one Gemini key and the same files
   cancel-in-progress: false
 
 jobs:
@@ -40,13 +40,13 @@ jobs:
           echo "final=$n" >> "$GITHUB_OUTPUT"
           echo "Final records before this run: $n / 100"
 
-      - name: Research (resumes; pauses at the daily quota)
+      - name: Research (resumes; pauses only when every model is out of quota)
         if: steps.progress.outputs.final != '100'
         timeout-minutes: 320 # leaves time to save the cache and commit
         continue-on-error: true
         env:
           COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           CONCURRENCY: "3"
         run: uv run research run 2>&1 | grep -vE "skipped|cached$" | tee -a "$GITHUB_STEP_SUMMARY"
 
@@ -72,7 +72,7 @@ jobs:
           git config user.name "research-checkpoint[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/results/pass1 data/results/final data/results/usage.jsonl \
-                  data/results/eval.json data/results/patterns.json site/
+                  data/results/eval.json data/results/patterns.json data/audit.json site/
           if git diff --cached --quiet; then
             echo "pushed=false" >> "$GITHUB_OUTPUT"; echo "Nothing new to commit."; exit 0
           fi

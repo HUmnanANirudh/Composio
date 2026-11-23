@@ -30,37 +30,53 @@ def _env(name: str, default: str | None = None) -> str | None:
 @dataclass
 class Settings:
     composio_api_key: str | None = field(default_factory=lambda: _env("COMPOSIO_API_KEY"))
-    groq_api_key: str | None = field(default_factory=lambda: _env("GROQ_API_KEY"))
-    extract_model: str = field(default_factory=lambda: _env("EXTRACT_MODEL", "openai/gpt-oss-120b"))
-    critic_model: str = field(default_factory=lambda: _env("CRITIC_MODEL", "qwen/qwen3.8-27b"))
-    # Spread across models: each has its own 200K tokens/day on Groq's free tier.
-    reresearch_model: str = field(
-        default_factory=lambda: _env("RERESEARCH_MODEL", "openai/gpt-oss-20b")
+    gemini_api_key: str | None = field(default_factory=lambda: _env("GEMINI_API_KEY"))
+    # Each role is a fallback chain (comma-separated), newest first. A model whose quota is
+    # used up (or that is capped at 0 on this key's tier) is retired for the run and the
+    # next one takes over; an overloaded model (503) is skipped for a few minutes.
+    extract_model: str = field(
+        default_factory=lambda: _env(
+            "EXTRACT_MODEL",
+            "gemini-4-hydrogen,gemini-3.8-flash,gemini-3.6-flash,gemini-flash-latest,"
+            "gemini-3.5-flash-lite",
+        )
     )
-    critic_rounds: int = field(default_factory=lambda: int(_env("CRITIC_ROUNDS", "1")))
-    search_model: str = field(default_factory=lambda: _env("SEARCH_MODEL", "openai/gpt-oss-20b"))
+    # the critic leads with Gemma (a different model family from the Gemini extractor)
+    critic_model: str = field(
+        default_factory=lambda: _env(
+            "CRITIC_MODEL",
+            "gemma-4-31b-it,gemini-3.8-flash,gemini-3.6-flash,gemini-4-hydrogen,"
+            "gemini-3.5-flash-lite",
+        )
+    )
+    reresearch_model: str = field(
+        default_factory=lambda: _env(
+            "RERESEARCH_MODEL",
+            "gemini-3.6-flash,gemini-4-hydrogen,gemini-3.8-flash,gemini-flash-latest,"
+            "gemini-3.5-flash-lite",
+        )
+    )
+    thinking_level: str = field(default_factory=lambda: _env("THINKING_LEVEL", "medium"))
+    critic_rounds: int = field(default_factory=lambda: int(_env("CRITIC_ROUNDS", "3")))
     search_backend: str = field(
         default_factory=lambda: _env("SEARCH_BACKEND", "auto")
-    )  # auto | composio | groq | none
+    )  # auto | composio | none
     search_toolkit: str = field(default_factory=lambda: _env("SEARCH_TOOLKIT", "exa"))
-    # wait out a daily-quota 429 if Groq says tokens free up within this many seconds
-    max_daily_wait: int = field(default_factory=lambda: int(_env("MAX_DAILY_WAIT", "1800")))
     concurrency: int = field(default_factory=lambda: int(_env("CONCURRENCY", "3")))
     composio_user_id: str = field(
         default_factory=lambda: _env("COMPOSIO_USER_ID", "research-agent")
     )
-    # Sized for Groq's free tier (8K tokens/min/model): ~6 pages x 2.2K chars ~= 3.5K tokens in.
-    max_pages: int = field(default_factory=lambda: int(_env("MAX_PAGES", "6")))
-    page_chars: int = field(default_factory=lambda: int(_env("PAGE_CHARS", "2000")))
-    max_output_tokens: int = field(default_factory=lambda: int(_env("MAX_OUTPUT_TOKENS", "2500")))
-    tpm_limit: int = field(default_factory=lambda: int(_env("TPM_LIMIT", "8000")))
+    # evidence budget per app: 8 pages x 5K chars of the most relevant paragraphs
+    max_pages: int = field(default_factory=lambda: int(_env("MAX_PAGES", "8")))
+    page_chars: int = field(default_factory=lambda: int(_env("PAGE_CHARS", "5000")))
+    # Gemini counts thinking tokens against the output limit
+    max_output_tokens: int = field(default_factory=lambda: int(_env("MAX_OUTPUT_TOKENS", "16384")))
 
     def resolved_search_backend(self) -> str:
         """auto -> Composio (Exa connected through a Composio session) when a key is set.
 
         If no Composio search tool is connected, web.search() degrades to 'none' and the
-        agent relies on the docs crawler. 'groq' (browser_search) is opt-in only: each
-        query pulls ~35K tokens of results into context, too much for the free tier.
+        agent relies on the docs crawler.
         """
         if self.search_backend != "auto":
             return self.search_backend

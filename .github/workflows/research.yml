@@ -14,7 +14,7 @@ on:
         default: true
 
 concurrency:
-  group: groq-quota # shares one Groq key with the scheduled checkpoint run
+  group: llm-quota # shares one Gemini key with the scheduled checkpoint run
   cancel-in-progress: false
 
 jobs:
@@ -28,7 +28,7 @@ jobs:
       - name: Research (pass 1 + verification loops)
         env:
           COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           uv run research run --apps "${{ inputs.apps }}" --force ${{ inputs.critic && ' ' || '--no-critic' }}
       - name: Write job summary

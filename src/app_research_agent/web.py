@@ -2,7 +2,6 @@
 
 Search backends (SEARCH_BACKEND):
   composio  -> Composio Search toolkit executed through the Composio SDK
-  groq      -> Groq compound model with built-in web search
   none      -> no search; only seed URLs (the app's hint URL)
 
 Fetching is plain HTTP + trafilatura text extraction. Every fetched page is
@@ -270,36 +269,6 @@ class ComposioSearch:
         return _walk_hits(r.data, f"composio:{self.tool.slug}")
 
 
-class GroqSearch:
-    """Web search via Groq's built-in browser_search tool on a gpt-oss model."""
-
-    def __init__(self) -> None:
-        from groq import Groq
-
-        self.client = Groq(api_key=settings.groq_api_key, max_retries=4)
-
-    def search(self, query: str) -> list[SearchHit]:
-        from .llm import record_usage
-
-        r = self.client.chat.completions.create(
-            model=settings.search_model,
-            messages=[{"role": "user", "content": f"Search the web for: {query}"}],
-            tools=[{"type": "browser_search"}],
-            tool_choice="required",
-            max_completion_tokens=600,
-            temperature=0,
-        )
-        record_usage(settings.search_model, "search", r.usage)
-        hits: list[SearchHit] = []
-        for t in r.choices[0].message.executed_tools or []:
-            res = getattr(t, "search_results", None)
-            for item in getattr(res, "results", None) or []:
-                if item.url:
-                    hits.append(SearchHit(url=item.url, title=item.title or "", backend="groq"))
-        seen: set[str] = set()
-        return [h for h in hits if not (h.url in seen or seen.add(h.url))]
-
-
 _backend_cache: dict[str, Any] = {}
 _search_lock = threading.Lock()
 _backend_errors: dict[str, str] = {}
@@ -315,7 +284,7 @@ def search(query: str, refresh: bool = False) -> list[SearchHit]:
         return [SearchHit(**h) for h in json.loads(path.read_text())]
     if backend not in _backend_cache:
         try:
-            _backend_cache[backend] = ComposioSearch() if backend == "composio" else GroqSearch()
+            _backend_cache[backend] = ComposioSearch()
         except Exception as e:  # noqa: BLE001 - no search tool connected: crawler-only mode
             _backend_cache[backend] = None
             _backend_errors[backend] = str(e)

@@ -1,40 +1,40 @@
 {
  "pass1": {
   "overall": {
-   "correct": 21,
-   "total": 115,
-   "accuracy": 0.183
+   "correct": 4,
+   "total": 6,
+   "accuracy": 0.667
   },
   "per_field": {
    "auth_methods": {
-    "correct": 3,
-    "total": 19,
-    "accuracy": 0.158
+    "correct": 0,
+    "total": 1,
+    "accuracy": 0.0
    },
    "access": {
-    "correct": 2,
-    "total": 20,
-    "accuracy": 0.1
+    "correct": 0,
+    "total": 1,
+    "accuracy": 0.0
    },
    "api_style": {
-    "correct": 5,
-    "total": 19,
-    "accuracy": 0.263
+    "correct": 1,
+    "total": 1,
+    "accuracy": 1.0
    },
    "api_breadth": {
-    "correct": 5,
-    "total": 19,
-    "accuracy": 0.263
+    "correct": 1,
+    "total": 1,
+    "accuracy": 1.0
    },
    "official_mcp": {
-    "correct": 3,
-    "total": 18,
-    "accuracy": 0.167
+    "correct": 1,
+    "total": 1,
+    "accuracy": 1.0
    },
    "buildability": {
-    "correct": 3,
-    "total": 20,
-    "accuracy": 0.15
+    "correct": 1,
+    "total": 1,
+    "accuracy": 1.0
    }
   },
   "rows": [
@@ -42,167 +42,73 @@
     "id": 2,
     "app": "HubSpot",
     "field": "auth_methods",
-    "status": "hit",
-    "agent": [
-     "BEARER_TOKEN",
-     "OAUTH2"
-    ],
-    "truth": {
-     "core": [
-      "OAUTH2",
-      "BEARER_TOKEN"
-     ],
-     "optional": [
-      "API_KEY",
-      "JWT"
-     ]
-    },
-    "accept": null,
-    "confidence": 0.97,
-    "flags": []
+    "status": "missing"
    },
    {
     "id": 2,
     "app": "HubSpot",
     "field": "access",
-    "status": "hit",
-    "agent": "SELF_SERVE_FREE",
-    "truth": "SELF_SERVE_FREE",
-    "accept": null,
-    "confidence": 0.9,
-    "flags": []
+    "status": "missing"
    },
    {
     "id": 2,
     "app": "HubSpot",
     "field": "api_style",
-    "status": "hit",
-    "agent": [
-     "REST"
-    ],
-    "truth": {
-     "core": [
-      "REST"
-     ],
-     "optional": []
-    },
-    "accept": null,
-    "confidence": 0.98,
-    "flags": []
+    "status": "missing"
    },
    {
     "id": 2,
     "app": "HubSpot",
     "field": "api_breadth",
-    "status": "hit",
-    "agent": "BROAD",
-    "truth": "BROAD",
-    "accept": null,
-    "confidence": 0.9,
-    "flags": []
+    "status": "missing"
    },
    {
     "id": 2,
     "app": "HubSpot",
     "field": "official_mcp",
-    "status": "hit",
-    "agent": true,
-    "truth": true,
-    "accept": null,
-    "confidence": 0.95,
-    "flags": []
+    "status": "missing"
    },
    {
     "id": 2,
     "app": "HubSpot",
     "field": "buildability",
-    "status": "hit",
-    "agent": "READY",
-    "truth": "READY",
-    "accept": null,
-    "confidence": 0.9,
-    "flags": []
+    "status": "missing"
    },
    {
     "id": 6,
     "app": "Podio",
     "field": "auth_methods",
-    "status": "miss",
-    "agent": [
-     "BASIC",
-     "OAUTH2"
-    ],
-    "truth": {
-     "core": [
-      "OAUTH2"
-     ],
-     "optional": []
-    },
-    "accept": null,
-    "confidence": 1.0,
-    "flags": []
+    "status": "missing"
    },
    {
     "id": 6,
     "app": "Podio",
     "field": "access",
-    "status": "hit",
-    "agent": "SELF_SERVE_FREE",
-    "truth": "SELF_SERVE_FREE",
-    "accept": null,
-    "confidence": 1.0,
-    "flags": []
+    "status": "missing"
    },
    {
     "id": 6,
     "app": "Podio",
     "field": "api_style",
-    "status": "hit",
-    "agent": [
-     "REST"
-    ],
-    "truth": {
-     "core": [
-      "REST"
-     ],
-     "optional": []
-    },
-    "accept": null,
-    "confidence": 1.0,
-    "flags": []
+    "status": "missing"
    },
    {
     "id": 6,
     "app": "Podio",
     "field": "api_breadth",
-    "status": "hit",
-    "agent": "BROAD",
-    "truth": "BROAD",
-    "accept": null,
-    "confidence": 1.0,
-    "flags": []
+    "status": "missing"
    },
    {
     "id": 6,
     "app": "Podio",
     "field": "official_mcp",
-    "status": "hit",
-    "agent": false,
-    "truth": false,
-    "accept": null,
-    "confidence": 0.2,
-    "flags": []
+    "status": "missing"
    },
    {
     "id": 6,
     "app": "Podio",
     "field": "buildability",
-    "status": "hit",
-    "agent": "READY",
-    "truth": "READY",
-    "accept": null,
-    "confidence": 1.0,
-    "flags": []
+    "status": "missing"
    },
    {
     "id": 19,
@@ -210,6 +116,7 @@
     "field": "auth_methods",
     "status": "miss",
     "agent": [
+     "API_KEY",
      "OAUTH2"
     ],
     "truth": {
@@ -222,7 +129,7 @@
      ]
     },
     "accept": null,
-    "confidence": 0.98,
+    "confidence": 1.0,
     "flags": []
    },
    {
@@ -235,7 +142,7 @@
     "accept": [
      "APPROVAL"
     ],
-    "confidence": 0.9,
+    "confidence": 1.0,
     "flags": []
    },
    {
@@ -253,7 +160,7 @@
      "optional": []
     },
     "accept": null,
-    "confidence": 0.99,
+    "confidence": 1.0,
     "flags": []
    },
    {
@@ -266,202 +173,102 @@
     "accept": [
      "MODERATE"
     ],
-    "confidence": 0.85,
+    "confidence": 0.6,
     "flags": []
    },
    {
     "id": 19,
     "app": "Gorgias",
-    "field": "official_mcp",
-    "status": "miss",
-    "agent": false,
-    "truth": true,
-    "accept": null,
-    "confidence": 0.8,
-    "flags": []
-   },
-   {
-    "id": 19,
-    "app": "Gorgias",
-    "field": "buildability",
-    "status": "miss",
-    "agent": "READY",
-    "truth": "READY_WITH_CAVEATS",
-    "accept": null,
-    "confidence": 0.9,
-    "flags": []
-   },
-   {
-    "id": 20,
-    "app": "Gladly",
-    "field": "auth_methods",
-    "status": "hit",
-    "agent": [
-     "BASIC"
-    ],
-    "truth": {
-     "core": [
-      "BASIC"
-     ],
-     "optional": [
-      "API_KEY"
-     ]
-    },
-    "accept": null,
-    "confidence": 0.98,
-    "flags": []
-   },
-   {
-    "id": 20,
-    "app": "Gladly",
-    "field": "access",
-    "status": "miss",
-    "agent": "SELF_SERVE_FREE",
-    "truth": "PARTNERSHIP",
-    "accept": null,
-    "confidence": 0.9,
-    "flags": []
-   },
-   {
-    "id": 20,
-    "app": "Gladly",
-    "field": "api_style",
-    "status": "hit",
-    "agent": [
-     "REST"
-    ],
-    "truth": {
-     "core": [
-      "REST"
-     ],
-     "optional": []
-    },
-    "accept": null,
-    "confidence": 0.97,
-    "flags": []
-   },
-   {
-    "id": 20,
-    "app": "Gladly",
-    "field": "api_breadth",
-    "status": "hit",
-    "agent": "BROAD",
-    "truth": "BROAD",
-    "accept": [
-     "MODERATE"
-    ],
-    "confidence": 0.96,
-    "flags": []
-   },
-   {
-    "id": 20,
-    "app": "Gladly",
-    "field": "official_mcp",
-    "status": "miss",
-    "agent": false,
-    "truth": true,
-    "accept": null,
-    "confidence": 0.3,
-    "flags": []
-   },
-   {
-    "id": 20,
-    "app": "Gladly",
-    "field": "buildability",
-    "status": "miss",
-    "agent": "READY",
-    "truth": "NEEDS_OUTREACH",
-    "accept": null,
-    "confidence": 0.94,
-    "flags": []
-   },
-   {
-    "id": 22,
-    "app": "Twilio",
-    "field": "auth_methods",
-    "status": "hit",
-    "agent": [
-     "BASIC",
-     "BEARER_TOKEN",
-     "OAUTH2"
-    ],
-    "truth": {
-     "core": [
-      "BASIC"
-     ],
-     "optional": [
-      "API_KEY",
-      "OAUTH2",
-      "JWT"
-     ]
-    },
-    "accept": null,
-    "confidence": 0.98,
-    "flags": []
-   },
-   {
-    "id": 22,
-    "app": "Twilio",
-    "field": "access",
-    "status": "miss",
-    "agent": "SELF_SERVE_FREE",
-    "truth": "SELF_SERVE_TRIAL",
-    "accept": null,
-    "confidence": 0.95,
-    "flags": []
-   },
-   {
-    "id": 22,
-    "app": "Twilio",
-    "field": "api_style",
-    "status": "hit",
-    "agent": [
-     "REST"
-    ],
-    "truth": {
-     "core": [
-      "REST"
-     ],
-     "optional": []
-    },
-    "accept": null,
-    "confidence": 0.97,
-    "flags": []
-   },
-   {
-    "id": 22,
-    "app": "Twilio",
-    "field": "api_breadth",
-    "status": "hit",
-    "agent": "BROAD",
-    "truth": "BROAD",
-    "accept": null,
-    "confidence": 0.96,
-    "flags": []
-   },
-   {
-    "id": 22,
-    "app": "Twilio",
     "field": "official_mcp",
     "status": "hit",
     "agent": true,
     "truth": true,
     "accept": null,
-    "confidence": 0.94,
+    "confidence": 1.0,
     "flags": []
+   },
+   {
+    "id": 19,
+    "app": "Gorgias",
+    "field": "buildability",
+    "status": "hit",
+    "agent": "READY_WITH_CAVEATS",
+    "truth": "READY_WITH_CAVEATS",
+    "accept": null,
+    "confidence": 0.9,
+    "flags": []
+   },
+   {
+    "id": 20,
+    "app": "Gladly",
+    "field": "auth_methods",
+    "status": "missing"
+   },
+   {
+    "id": 20,
+    "app": "Gladly",
+    "field": "access",
+    "status": "missing"
+   },
+   {
+    "id": 20,
+    "app": "Gladly",
+    "field": "api_style",
+    "status": "missing"
+   },
+   {
+    "id": 20,
+    "app": "Gladly",
+    "field": "api_breadth",
+    "status": "missing"
+   },
+   {
+    "id": 20,
+    "app": "Gladly",
+    "field": "official_mcp",
+    "status": "missing"
+   },
+   {
+    "id": 20,
+    "app": "Gladly",
+    "field": "buildability",
+    "status": "missing"
+   },
+   {
+    "id": 22,
+    "app": "Twilio",
+    "field": "auth_methods",
+    "status": "missing"
+   },
+   {
+    "id": 22,
+    "app": "Twilio",
+    "field": "access",
+    "status": "missing"
+   },
+   {
+    "id": 22,
+    "app": "Twilio",
+    "field": "api_style",
+    "status": "missing"
+   },
+   {
+    "id": 22,
+    "app": "Twilio",
+    "field": "api_breadth",
+    "status": "missing"
+   },
+   {
+    "id": 22,
+    "app": "Twilio",
+    "field": "official_mcp",
+    "status": "missing"
    },
    {
     "id": 22,
     "app": "Twilio",
     "field": "buildability",
-    "status": "hit",
-    "agent": "READY",
-    "truth": "READY_WITH_CAVEATS",
-    "accept": [
-     "READY"
-    ],
-    "confidence": 0.95,
-    "flags": []
+    "status": "missing"
    },
    {
     "id": 24,
@@ -1007,54 +814,55 @@
   "calibration": [
    {
     "bucket": "high (>=0.75)",
-    "correct": 20,
-    "total": 28,
-    "accuracy": 0.714
+    "correct": 3,
+    "total": 5,
+    "accuracy": 0.6
    },
    {
-    "bucket": "low (<0.5)",
+    "bucket": "medium (0.5-0.75)",
     "correct": 1,
-    "total": 2,
-    "accuracy": 0.5
+    "total": 1,
+    "accuracy": 1.0
    }
-  ]
+  ],
+  "apps_scored": 1
  },
  "final": {
   "overall": {
-   "correct": 8,
-   "total": 115,
-   "accuracy": 0.07
+   "correct": 5,
+   "total": 6,
+   "accuracy": 0.833
   },
   "per_field": {
    "auth_methods": {
     "correct": 1,
-    "total": 19,
-    "accuracy": 0.053
+    "total": 1,
+    "accuracy": 1.0
    },
    "access": {
-    "correct": 1,
-    "total": 20,
-    "accuracy": 0.05
+    "correct": 0,
+    "total": 1,
+    "accuracy": 0.0
    },
    "api_style": {
-    "correct": 2,
-    "total": 19,
-    "accuracy": 0.105
+    "correct": 1,
+    "total": 1,
+    "accuracy": 1.0
    },
    "api_breadth": {
-    "correct": 2,
-    "total": 19,
-    "accuracy": 0.105
+    "correct": 1,
+    "total": 1,
+    "accuracy": 1.0
    },
    "official_mcp": {
     "correct": 1,
-    "total": 18,
-    "accuracy": 0.056
+    "total": 1,
+    "accuracy": 1.0
    },
    "buildability": {
     "correct": 1,
-    "total": 20,
-    "accuracy": 0.05
+    "total": 1,
+    "accuracy": 1.0
    }
   },
   "rows": [
@@ -1062,86 +870,37 @@
     "id": 2,
     "app": "HubSpot",
     "field": "auth_methods",
-    "status": "hit",
-    "agent": [
-     "BEARER_TOKEN",
-     "OAUTH2"
-    ],
-    "truth": {
-     "core": [
-      "OAUTH2",
-      "BEARER_TOKEN"
-     ],
-     "optional": [
-      "API_KEY",
-      "JWT"
-     ]
-    },
-    "accept": null,
-    "confidence": 1.0,
-    "flags": []
+    "status": "missing"
    },
    {
     "id": 2,
     "app": "HubSpot",
     "field": "access",
-    "status": "hit",
-    "agent": "SELF_SERVE_FREE",
-    "truth": "SELF_SERVE_FREE",
-    "accept": null,
-    "confidence": 1.0,
-    "flags": []
+    "status": "missing"
    },
    {
     "id": 2,
     "app": "HubSpot",
     "field": "api_style",
-    "status": "hit",
-    "agent": [
-     "REST"
-    ],
-    "truth": {
-     "core": [
-      "REST"
-     ],
-     "optional": []
-    },
-    "accept": null,
-    "confidence": 1.0,
-    "flags": []
+    "status": "missing"
    },
    {
     "id": 2,
     "app": "HubSpot",
     "field": "api_breadth",
-    "status": "hit",
-    "agent": "BROAD",
-    "truth": "BROAD",
-    "accept": null,
-    "confidence": 1.0,
-    "flags": []
+    "status": "missing"
    },
    {
     "id": 2,
     "app": "HubSpot",
     "field": "official_mcp",
-    "status": "hit",
-    "agent": true,
-    "truth": true,
-    "accept": null,
-    "confidence": 1.0,
-    "flags": []
+    "status": "missing"
    },
    {
     "id": 2,
     "app": "HubSpot",
     "field": "buildability",
-    "status": "hit",
-    "agent": "READY",
-    "truth": "READY",
-    "accept": null,
-    "confidence": 1.0,
-    "flags": []
+    "status": "missing"
    },
    {
     "id": 6,
@@ -1183,8 +942,10 @@
     "id": 19,
     "app": "Gorgias",
     "field": "auth_methods",
-    "status": "miss",
+    "status": "hit",
     "agent": [
+     "API_KEY",
+     "BASIC",
      "OAUTH2"
     ],
     "truth": {
@@ -1198,9 +959,7 @@
     },
     "accept": null,
     "confidence": 1.0,
-    "flags": [
-     "maybe_incomplete_vs_composio:['API_KEY', 'BEARER_TOKEN']"
-    ]
+    "flags": []
    },
    {
     "id": 19,
@@ -1243,26 +1002,26 @@
     "accept": [
      "MODERATE"
     ],
-    "confidence": 0.95,
+    "confidence": 1.0,
     "flags": []
    },
    {
     "id": 19,
     "app": "Gorgias",
     "field": "official_mcp",
-    "status": "miss",
-    "agent": false,
+    "status": "hit",
+    "agent": true,
     "truth": true,
     "accept": null,
-    "confidence": 0.9,
+    "confidence": 1.0,
     "flags": []
    },
    {
     "id": 19,
     "app": "Gorgias",
     "field": "buildability",
-    "status": "miss",
-    "agent": "READY",
+    "status": "hit",
+    "agent": "READY_WITH_CAVEATS",
     "truth": "READY_WITH_CAVEATS",
     "accept": null,
     "confidence": 1.0,
@@ -1884,10 +1643,11 @@
   "calibration": [
    {
     "bucket": "high (>=0.75)",
-    "correct": 8,
-    "total": 12,
-    "accuracy": 0.667
+    "correct": 5,
+    "total": 6,
+    "accuracy": 0.833
    }
-  ]
+  ],
+  "apps_scored": 1
  }
 }
