@@ -12,6 +12,7 @@ dependencies = [
     "httpx>=0.28.1",
     "pydantic>=2.14.4",
     "python-dotenv>=1.2.4",
+    "rapidfuzz>=3.14.6",
     "rich>=15.0.0",
     "trafilatura>=2.3.1",
 ]
