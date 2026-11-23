@@ -63,3 +63,34 @@ def test_bare_domain_probes_docs_hosts_and_crawl_picks_topics(monkeypatch):
     assert "https://docs.ecwid.com/get-started/set-up-your-dev-environment" in picked
     assert not any("changelog" in u or "zapier" in u for u in picked)
     official_domains.cache_clear()
+
+
+GORGIAS = App(19, "Support", "Gorgias", "developers.gorgias.com")
+
+
+def test_topic_picks_round_robin_before_second_picks(monkeypatch):
+    official_domains.cache_clear()
+    monkeypatch.setattr(research.web, "fetch", fake_fetch({}))
+    page = Page(
+        url="https://developers.gorgias.com",
+        status=200,
+        text="x" * 300,
+        links=[
+            ["https://developers.gorgias.com/docs/oauth2-authentication", "OAuth2"],
+            ["https://developers.gorgias.com/docs/oauth2-scopes", "OAuth2 scopes"],
+            ["https://developers.gorgias.com/docs/developer-sandbox", "Sandbox"],
+            ["https://developers.gorgias.com/docs/mcp", "MCP server"],
+        ],
+    )
+    first_three = set(crawl_candidates(GORGIAS, [page])[:3])
+    assert "https://developers.gorgias.com/docs/developer-sandbox" in first_three
+    assert "https://developers.gorgias.com/docs/mcp" in first_three
+    official_domains.cache_clear()
+
+
+def test_vendor_github_org_is_official(monkeypatch):
+    official_domains.cache_clear()
+    monkeypatch.setattr(research.web, "fetch", fake_fetch({}))
+    assert is_official(GORGIAS, "https://github.com/gorgias/mcp-cookbook")
+    assert not is_official(GORGIAS, "https://github.com/someone/helpdesk-scraper")
+    official_domains.cache_clear()

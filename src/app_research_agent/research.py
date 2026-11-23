@@ -65,6 +65,10 @@ def is_official(app: App, url: str) -> bool:
     h = web.host(url)
     if web.registrable(h) in official_domains(app):
         return True
+    if web.registrable(h) in ("github.com", "gitlab.com"):  # the vendor's own org, e.g. /gorgias/
+        owner = (urlparse(url).path.strip("/").split("/") or [""])[0].lower()
+        labels = {d.split(".")[0] for d in official_domains(app)}
+        return bool(owner) and (owner in labels or any(t in owner for t in _app_tokens(app)))
     reg = web.registrable(h).split(".")[0]
     return any(t in reg for t in _app_tokens(app))
 
@@ -79,9 +83,9 @@ def rank_urls(app: App, urls: list[str]) -> list[str]:
 
     def score(u: str) -> tuple:
         off = is_official(app, u)
-        docsy = bool(re.search(r"developer|docs|api|dev\.|reference|auth", u, re.IGNORECASE))
         in_scope = bool(hint_path) and urlparse(u).path.startswith(hint_path)
-        return (not off, web.is_low_trust(u), not in_scope, not docsy)
+        # stable sort: within a tier, gather()'s budget order (hint, topic picks, search) holds
+        return (not off, web.is_low_trust(u), not in_scope)
 
     seen: set[str] = set()
     uniq = [
@@ -90,14 +94,27 @@ def rank_urls(app: App, urls: list[str]) -> list[str]:
     return sorted(uniq, key=score)
 
 
+def interleave(app: App, lanes: list[list[str]], fallback: list[str]) -> list[str]:
+    """Round-robin the official pages of each lane; then off-site pages, then index pages."""
+    tiers = [rank_urls(app, [u for u in lane if not web.is_low_trust(u)]) for lane in lanes]
+    official = [[u for u in t if is_official(app, u)] for t in tiers]
+    out: list[str] = []
+    for i in range(max((len(t) for t in official), default=0)):
+        out += [t[i] for t in official if i < len(t)]
+    out += [u for t in tiers for u in t if not is_official(app, u)]
+    out += fallback
+    seen: set[str] = set()
+    return [u for u in out if not (_page_key(u) in seen or seen.add(_page_key(u)))]
+
+
 # Link topics the crawler tries to cover, each with URL/anchor keywords.
-TOPICS = {
+TOPICS = {  # surface first: the search queries already cover auth, access and MCP
+    "surface": r"api[-_ ]?reference|/reference|/api/?$|endpoints|rest[-_ ]api|graphql|webhook",
     "auth": r"auth|oauth|api[-_ ]?key|apikey|access[-_ ]token|credential|personal[-_ ]access",
     "access": r"pricing|plans?\b|billing|partner|developer[-_ ]?(program|account|portal)|sandbox|"
     r"get[-_ ]?started|getting[-_ ]started|quickstart|apply|request[-_ ]access|"
     r"dev[-_ ]?environment|test[-_ ]store|developer[-_ ]store|limits|free",
     "mcp": r"\bmcp\b|model[-_ ]context|/mcp|ai[-_ ]?(agents?|tools)",
-    "surface": r"api[-_ ]?reference|/reference|/api/?$|endpoints|rest[-_ ]api|graphql|webhook",
 }
 
 
@@ -127,7 +144,7 @@ def crawl_candidates(app: App, pages: list[web.Page], per_topic: int = 2) -> lis
         for u, text in p.links:
             if is_official(app, u) and not web.is_low_trust(u):
                 links.setdefault(u, text)
-    picked: list[str] = []
+    ranked: list[list[str]] = []
     for rx in TOPICS.values():
         scored = []
         for u, text in links.items():
@@ -135,10 +152,18 @@ def crawl_candidates(app: App, pages: list[web.Page], per_topic: int = 2) -> lis
             hits = len(re.findall(rx, hay))
             if re.search(r"changelog|release[-_ ]notes|/blog|/news|careers|/legal|/terms", u):
                 continue
-            if hits and u not in picked:
+            if hits:
                 docsy = bool(re.search(r"developer|docs|api", u))
                 scored.append((hits + docsy, -len(u), u))
-        picked += [u for *_, u in sorted(scored, reverse=True)[:per_topic]]
+        ranked.append([u for *_, u in sorted(scored, reverse=True)])
+    # round-robin: every topic's best link before any topic's second, so one topic
+    # (e.g. two OAuth pages) can't use up the page budget
+    picked: list[str] = []
+    for rank in range(per_topic):
+        for topic in ranked:
+            fresh = [u for u in topic if u not in picked]
+            if fresh:
+                picked.append(fresh[0])
     return picked
 
 
@@ -152,20 +177,23 @@ def gather(
     """Discover + fetch sources. Returns (sources, errors).
 
     1. crawl: hint URL, developer-docs hosts and llms.txt, then their auth/pricing/MCP links
-    2. search: supplementary web search (Composio/Exa or Groq) for what the docs don't link
+    2. search: supplementary web search (Exa through a Composio session) for what the docs don't link
     """
     errors: list[str] = []
     limit = max_pages or settings.max_pages
     seed_pages = [p for u in docs_seeds(app) if (p := web.fetch(u, refresh=refresh)).ok]
-    urls: list[str] = list(extra_urls or [])
-    urls += [p.final_url or p.url for p in seed_pages if is_official(app, p.final_url or p.url)]
-    urls += crawl_candidates(app, seed_pages)
+    seeds = [p.final_url or p.url for p in seed_pages if is_official(app, p.final_url or p.url)]
+    # Lanes: one per search query (auth / access / MCP), plus the crawler's topic picks
+    # (which also cover the API reference). The page budget is filled round-robin across
+    # lanes, so every topic gets a page before any topic gets a second one.
+    lanes: list[list[str]] = [list(extra_urls or [])]
     for q in queries or [t.format(app=app.app) for t in QUERY_TEMPLATES]:
         try:
-            urls += [h.url for h in web.search(q, refresh=refresh)]
+            lanes.append([h.url for h in web.search(q, refresh=refresh)])
         except Exception as e:  # noqa: BLE001 - search is supplementary
             errors.append(f"search '{q}': {str(e)[:200]}")
-    ranked = [u for u in rank_urls(app, urls) if not web.is_low_trust(u)]
+    lanes.append(crawl_candidates(app, seed_pages, per_topic=3))
+    ranked = interleave(app, lanes, fallback=seeds)
     sources: list[Source] = []
     seen_final: set[str] = set()
     for u in ranked:

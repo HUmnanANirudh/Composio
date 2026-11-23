@@ -22,7 +22,13 @@ def test_rank_prefers_official_docs():
         "https://www.klaviyo.com/pricing",
         "https://developers.klaviyo.com/en/reference",
     ]
-    assert rank_urls(KLAVIYO, urls)[0] == "https://developers.klaviyo.com/en/reference"
+    ranked = rank_urls(KLAVIYO, urls)
+    assert ranked[-1] == "https://medium.com/klaviyo-tips"  # official pages first
+    # within the official tier, gather()'s budget order (topic picks, then search) holds
+    assert ranked[:2] == [
+        "https://www.klaviyo.com/pricing",
+        "https://developers.klaviyo.com/en/reference",
+    ]
 
 
 def test_normalize_aliases():
