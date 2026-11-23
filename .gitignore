@@ -6,7 +6,6 @@ __pycache__/
 .ruff_cache/
 data/cache/
 *.log
-data/results/usage.jsonl
 data/results/errors/
 .impeccable/review/
 data/usage-archive/

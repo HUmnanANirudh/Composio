@@ -65,7 +65,19 @@ uv run pytest
 
 **Free-tier friendly.** Groq's free tier allows 8K tokens per minute per model. `llm.py` keeps a sliding-window token budget per model, synced from Groq's `x-ratelimit-*` headers. It also runs gpt-oss with low reasoning effort and sizes prompts to fit. When a daily quota runs out, the run pauses and the next invocation resumes from where it stopped. Token use per call is logged to `data/results/usage.jsonl`.
 
-**GitHub Actions.** Set the `GROQ_API_KEY` and `COMPOSIO_API_KEY` repo secrets (and connect Exa once with `connect-search`). Then run *Run research agent* with any app. The job summary prints the cited record, and the JSON is uploaded as an artifact.
+**GitHub Actions.** Set the `GROQ_API_KEY` and `COMPOSIO_API_KEY` repo secrets (and connect Exa once with `connect-search`). Two workflows use them:
+
+- *Run research agent* (manual): research any app on demand. The job summary prints the cited record, and the JSON is uploaded as an artifact.
+- *Research checkpoint* (`research-daily.yml`, every 3 hours): resumes the full run with no one at the keyboard. Each run:
+  - picks up where the last one stopped, with the 20 answer-key apps first;
+  - works until Groq's daily quota pauses it;
+  - re-scores, then rebuilds the site bundle;
+  - commits only `data/results/` and `site/`, and only after the tests pass;
+  - redeploys Pages.
+
+  Both workflows share one concurrency group, so only one of them spends the Groq quota at a time.
+
+**Checkpoints.** Every record and cache file is written to a temp file and then renamed into place. A run killed mid-app loses only that app's work, never a saved file. Network errors, 429s and 5xx responses are not cached, so the next run fetches those pages again. In CI, the page and search cache persists between runs (`actions/cache`), so the verifier checks quotes against the same text the extractor saw.
 
 ## Layout
 
@@ -81,7 +93,7 @@ site/                         the case study (static; GitHub Pages)
 
 ## Known limits
 
-- **Throughput.** Groq's free tier makes a full run take hours, spread across daily caps.
+- **Throughput.** Groq's free tier caps each model at 200K tokens a day, so a full 100-app run takes 2–3 days. The scheduled checkpoint workflow carries the run across those days.
 - **JavaScript-rendered docs.** Portals like GoHighLevel's Stoplight docs return almost no text to a plain fetch.
 - **Access is the hardest field.** Pricing pages rarely say whether the API is included on the free plan.
 - **Coverage of the key.** The answer key covers 20 of the 100 apps. The other 80 rely on the verification loops and calibrated confidence alone.
