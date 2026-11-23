@@ -1,0 +1,158 @@
+{
+  "id": 97,
+  "app": "higgsfield",
+  "category": "AI, Research and Media-native",
+  "hint": "higgsfield.ai/cli (content suite)",
+  "docs_url": "https://docs.higgsfield.ai/docs/authentication",
+  "one_liner": {
+    "value": "AI video and image generation suite with an API across 50+ models",
+    "evidence": [
+      {
+        "url": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-the-higgsfield-api",
+        "quote": "The Higgsfield API lets you generate video and images from your own code",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.higgsfield.ai/docs/authentication",
+        "quote": "Each credential consists of a key ID and a secret.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "access": {
+    "value": "PAID_PLAN",
+    "evidence": [
+      {
+        "url": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-the-higgsfield-api",
+        "quote": "each request is paid in US dollars from a prepaid balance",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.6,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://higgsfield.ai/blog/automate-ai-video-n8n-make",
+        "quote": "The Higgsfield API connects through the standard HTTP Request step",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.75,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "MODERATE",
+    "evidence": [
+      {
+        "url": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-the-higgsfield-api",
+        "quote": "One API key unlocks every model in the API catalog: 50+ current video and image models",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.6,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-higgsfield-mcp",
+        "quote": "Higgsfield MCP connects Higgsfield to AI agents.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "webhooks": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY_WITH_CAVEATS",
+    "evidence": [
+      {
+        "url": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-the-higgsfield-api",
+        "quote": "No plan or subscription is involved: fund the balance",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "API calls are paid per generation from a prepaid USD balance; there is no free API tier.",
+    "evidence": [
+      {
+        "url": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-the-higgsfield-api",
+        "quote": "new requests simply wait once the balance hits zero",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "HIGGSFIELD",
+    "name": "Higgsfield",
+    "tools": 14,
+    "triggers": 0,
+    "auth": [
+      "API_KEY"
+    ],
+    "managed_app": null,
+    "url": "https://docs.composio.dev/toolkits/higgsfield.md",
+    "mcp_variant": "HIGGSFIELD_MCP",
+    "mcp_variant_auth": [
+      "DCR_OAUTH"
+    ]
+  },
+  "sources": [
+    "https://docs.higgsfield.ai/docs/authentication",
+    "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-the-higgsfield-api",
+    "https://higgsfield.ai/mcp",
+    "https://higgsfield.ai/pricing",
+    "https://open.higgsfield.ai/pricing",
+    "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-higgsfield-mcp",
+    "https://higgsfield.ai/blog/automate-ai-video-n8n-make",
+    "https://open.higgsfield.ai/terms-of-service"
+  ],
+  "pass_name": "pass1",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session"
+  },
+  "errors": []
+}

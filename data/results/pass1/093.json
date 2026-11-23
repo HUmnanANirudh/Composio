@@ -1,0 +1,164 @@
+{
+  "id": 93,
+  "app": "Fathom",
+  "category": "AI, Research and Media-native",
+  "hint": "fathom.video",
+  "docs_url": "https://developers.fathom.ai/quickstart",
+  "one_liner": {
+    "value": "Free AI meeting notetaker with summaries and CRM sync",
+    "evidence": [
+      {
+        "url": "https://www.fathom.ai/features/api",
+        "quote": "structured meeting data, from summaries and action items to transcripts and Highlights",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.fathom.ai/faq",
+        "quote": "Use an API key if you only need access to your own (or your team’s) meetings",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://developers.fathom.ai/faq",
+        "quote": "Use OAuth if you’re building an app that other Fathom users will install",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://developers.fathom.ai/faq",
+        "quote": "API access—keys and webhooks— are included on all plans.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.fathom.ai/quickstart",
+        "quote": "using the /recordings/{recording_id}/transcript endpoint",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "MODERATE",
+    "evidence": [
+      {
+        "url": "https://www.fathom.ai/features/api",
+        "quote": "from summaries and action items to transcripts and Highlights",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.75,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developers.fathom.ai/mcp-docs",
+        "quote": "Fathom now offers an official MCP (Model Context Protocol) server",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.97,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://www.fathom.ai/features/api",
+        "quote": "Webhooks fire when a meeting’s content is ready",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://www.fathom.ai/features/api",
+        "quote": "Generate an API key yourself, no admin approval needed",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "FATHOM",
+    "name": "Fathom",
+    "tools": 10,
+    "triggers": 1,
+    "auth": [
+      "OAUTH2",
+      "API_KEY"
+    ],
+    "managed_app": "Yes",
+    "url": "https://docs.composio.dev/toolkits/fathom.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://developers.fathom.ai/faq",
+    "https://developers.fathom.ai/mcp-docs",
+    "https://www.fathom.ai/pricing",
+    "https://developers.fathom.ai/sdks/authentication",
+    "https://www.fathom.ai/features/api",
+    "https://www.fathom.ai/features/mcp-server",
+    "https://developers.fathom.ai/quickstart",
+    "https://developers.fathom.ai/mcp-docs/claude"
+  ],
+  "pass_name": "pass1",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session"
+  },
+  "errors": []
+}

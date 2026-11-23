@@ -1,0 +1,14 @@
+{
+ "round0": {
+  "grounding": {
+   "webhooks": [
+    "ungrounded"
+   ],
+   "sandbox": [
+    "ungrounded"
+   ]
+  },
+  "rules": {}
+ },
+ "todo": {}
+}

@@ -1,0 +1,162 @@
+{
+  "id": 91,
+  "app": "NotebookLM",
+  "category": "AI, Research and Media-native",
+  "hint": "cloud.google.com/gemini (Enterprise API)",
+  "docs_url": "https://developers.google.com/notebook/docs",
+  "one_liner": {
+    "value": "Google's AI research notebook (Gemini Notebook) with an API and MCP server",
+    "evidence": [
+      {
+        "url": "https://developers.google.com/notebook/docs",
+        "quote": "Create, list, and update notebooks.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.google.com/notebook/docs/authentication",
+        "quote": "The Gemini Notebook API uses [OAuth 2.0]",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://developers.google.com/notebook/docs/authentication",
+        "quote": "The API doesn't\naccept API keys.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://developers.google.com/notebook/docs",
+        "quote": "During the preview, the API is available for personal Google Accounts.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.6,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.google.com/notebook/docs",
+        "quote": "[REST API reference]",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "MODERATE",
+    "evidence": [
+      {
+        "url": "https://developers.google.com/notebook/docs",
+        "quote": "Add web pages, YouTube videos, plain text, Markdown, or uploaded files to a notebook.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.75,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developers.google.com/notebook/docs",
+        "quote": "Connect AI coding agents and IDEs to the remote Gemini Notebook MCP server.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "webhooks": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY_WITH_CAVEATS",
+    "evidence": [
+      {
+        "url": "https://developers.google.com/notebook/docs",
+        "quote": "The Gemini Notebook API and\n> [MCP server](https://developers.google.com/notebook/docs/mcp.md.txt) are in an early access Public\n> Preview",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "The API is an early-access preview for personal Google accounts only; the Enterprise API needs paid licenses.",
+    "evidence": [
+      {
+        "url": "https://developers.google.com/notebook/docs/authentication",
+        "quote": "Requests authenticated with a Google Workspace account fail with `403 PERMISSION_DENIED`",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.75,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "NOTEBOOK_LM",
+    "name": "NotebookLM",
+    "tools": 11,
+    "triggers": 0,
+    "auth": [
+      "OAUTH2"
+    ],
+    "managed_app": "Yes",
+    "url": "https://docs.composio.dev/toolkits/notebook_lm.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks",
+    "https://developers.google.com/notebook/docs/mcp",
+    "https://docs.cloud.google.com/endpoints/docs",
+    "https://developers.google.com/notebook/docs/authentication",
+    "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/set-up-licensing",
+    "https://www.kortex-notebooklm.com/blog/notebooklm-mcp",
+    "https://accounts.google.com/v3/signin/identifier?continue=https://aistudio.google.com/apikey&followup=https://aistudio.google.com/apikey&ltmpl=aistudio&passive=1209600&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S-1307322374:1795457036522543",
+    "https://developers.google.com/notebook/docs"
+  ],
+  "pass_name": "pass1",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session"
+  },
+  "errors": []
+}

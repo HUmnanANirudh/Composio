@@ -1,0 +1,164 @@
+{
+  "id": 96,
+  "app": "Devin",
+  "category": "AI, Research and Media-native",
+  "hint": "docs.devin.ai (MCP)",
+  "docs_url": "https://docs.devin.ai/api-reference/overview",
+  "one_liner": {
+    "value": "Autonomous AI software engineer from Cognition",
+    "evidence": [
+      {
+        "url": "https://docs.devin.ai/api-reference/overview",
+        "quote": "The Devin API enables you to integrate Devin into your applications, automate workflows, and build powerful tools.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY",
+      "BEARER_TOKEN"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.devin.ai/api-reference/authentication",
+        "quote": "A Service User API Key authenticates as the service user",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://docs.devin.ai/api-reference/authentication",
+        "quote": "A Personal Access Token authenticates as the human user who created it",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://docs.devin.ai/work-with-devin/devin-mcp",
+        "quote": "Sign up for a Devin account at Devin.ai",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://docs.devin.ai/work-with-devin/devin-mcp",
+        "quote": "Generate an API key from your account settings",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.45,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.devin.ai/api-reference/overview",
+        "quote": "Base URL:https://api.devin.ai/v3/organizations/*",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "MODERATE",
+    "evidence": [
+      {
+        "url": "https://docs.devin.ai/api-reference/overview",
+        "quote": "sessions, knowledge, playbooks, secrets, and more",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.75,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://docs.devin.ai/work-with-devin/devin-mcp",
+        "quote": "The Devin MCP server provides programmatic access to Devin’s platform capabilities",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.97,
+    "flags": []
+  },
+  "webhooks": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://docs.devin.ai/work-with-devin/devin-mcp",
+        "quote": "Generate an API key from your account settings",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.75,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.5,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "DEVIN_MCP",
+    "name": "Devin MCP",
+    "tools": 23,
+    "triggers": 0,
+    "auth": [
+      "API_KEY"
+    ],
+    "managed_app": null,
+    "url": "https://docs.composio.dev/toolkits/devin_mcp.md",
+    "mcp_variant": "DEVIN_MCP",
+    "mcp_variant_auth": [
+      "API_KEY"
+    ]
+  },
+  "sources": [
+    "https://docs.devin.ai/api-reference/authentication",
+    "https://devin.ai/pricing",
+    "https://docs.devin.ai/work-with-devin/devin-mcp",
+    "https://docs.devin.ai/api-reference/overview",
+    "https://docs.devin.ai/api-reference/personal-access-tokens",
+    "https://mcp.devin.ai",
+    "https://docs.devin.ai/work-with-devin/browser-auth",
+    "https://docs.devin.ai/api-reference/getting-started/migration-guide"
+  ],
+  "pass_name": "pass1",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session"
+  },
+  "errors": []
+}
