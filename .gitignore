@@ -9,3 +9,4 @@ data/cache/
 data/results/usage.jsonl
 data/results/errors/
 .impeccable/review/
+data/usage-archive/

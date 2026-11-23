@@ -246,7 +246,7 @@ def reresearch(
         notes="\n".join(f"- {f}: {'; '.join(v)}" for f, v in flags.items()),
         previous={f: getattr(rec, f).value for f in flags},
     )
-    data = chat_json(settings.extract_model, system, user, purpose="reresearch")
+    data = chat_json(settings.reresearch_model, system, user, purpose="reresearch")
     new = claims_from_json(data, new_sources, fields=tuple(flags))
     changes = []
     for f, c in new.items():
@@ -281,7 +281,7 @@ def verify(app: App, rec: AppRecord, sources: list[Source], use_critic: bool = T
         g = ground(rec, sources)
         r = rule_checks(rec, sources)
         c: dict[str, list[str]] = {}
-        if use_critic:
+        if use_critic and rnd < settings.critic_rounds:
             try:
                 c, _ = critic(rec, sources)
             except DailyLimitError:
