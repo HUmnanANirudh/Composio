@@ -14,6 +14,14 @@ RESULTS = DATA / "results"
 load_dotenv(ROOT / ".env")
 
 
+def atomic_write(path: Path, text: str) -> None:
+    """Write via a temp file + rename, so a killed run never leaves a half-written file."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_name(f".{path.name}.{os.getpid()}.tmp")
+    tmp.write_text(text)
+    os.replace(tmp, path)
+
+
 def _env(name: str, default: str | None = None) -> str | None:
     v = os.getenv(name)
     return v if v not in (None, "") else default

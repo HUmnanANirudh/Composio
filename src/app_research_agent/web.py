@@ -24,7 +24,7 @@ from urllib.parse import urljoin, urlparse
 import httpx
 import trafilatura
 
-from .config import CACHE, settings
+from .config import CACHE, atomic_write, settings
 
 UA = (
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -180,8 +180,11 @@ def fetch(url: str, refresh: bool = False) -> Page:
             page.error = f"unsupported content-type {ctype}"
     except httpx.HTTPError as e:
         page.error = f"{type(e).__name__}: {e}"
+        return page  # transient network errors are not cached: the next run retries
     page.text = page.text[:200_000]
-    path.write_text(json.dumps(asdict(page)))
+    if page.status == 429 or page.status >= 500:
+        return page  # rate-limited / server error: retry on the next run instead of caching
+    atomic_write(path, json.dumps(asdict(page)))
     return page
 
 
@@ -321,7 +324,7 @@ def search(query: str, refresh: bool = False) -> list[SearchHit]:
     # one search at a time keeps us inside per-minute rate limits
     with _search_lock:
         hits = _backend_cache[backend].search(query)
-    path.write_text(json.dumps([asdict(h) for h in hits]))
+    atomic_write(path, json.dumps([asdict(h) for h in hits]))
     return hits
 
 

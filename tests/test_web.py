@@ -34,3 +34,13 @@ def test_excerpt_prefers_auth_paragraphs():
 
 def test_excerpt_fallback_when_paragraphs_too_big():
     assert relevant_excerpt("x" * 5000, 100) == "x" * 100
+
+
+def test_atomic_write_replaces_without_leftovers(tmp_path):
+    from app_research_agent.config import atomic_write
+
+    p = tmp_path / "a" / "rec.json"
+    atomic_write(p, "one")
+    atomic_write(p, "two")
+    assert p.read_text() == "two"
+    assert [f.name for f in p.parent.iterdir()] == ["rec.json"]

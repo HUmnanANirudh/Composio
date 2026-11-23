@@ -22,7 +22,7 @@ from functools import lru_cache
 import httpx
 
 from .apps import App
-from .config import CACHE, DATA
+from .config import CACHE, DATA, atomic_write
 from .schema import ComposioCatalogEntry
 
 CATALOG_URL = "https://docs.composio.dev/toolkits.md"
@@ -48,7 +48,7 @@ def fetch_catalog_text(refresh: bool = False) -> str:
         return path.read_text()
     CACHE.mkdir(parents=True, exist_ok=True)
     text = httpx.get(CATALOG_URL, timeout=60, follow_redirects=True).text
-    path.write_text(text)
+    atomic_write(path, text)
     return text
 
 

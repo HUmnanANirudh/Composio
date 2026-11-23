@@ -11,7 +11,7 @@ from pathlib import Path
 from rich.console import Console
 
 from .apps import App
-from .config import RESULTS, settings
+from .config import RESULTS, atomic_write, settings
 from .llm import DailyLimitError
 from .research import gather, research_app
 from .schema import AppRecord
@@ -27,8 +27,7 @@ def _path(d: Path, app: App) -> Path:
 
 
 def save(rec: AppRecord, d: Path) -> None:
-    d.mkdir(parents=True, exist_ok=True)
-    (d / f"{rec.id:03d}.json").write_text(rec.model_dump_json(indent=2))
+    atomic_write(d / f"{rec.id:03d}.json", rec.model_dump_json(indent=2))
 
 
 def load(d: Path, app: App) -> AppRecord | None:
@@ -68,7 +67,15 @@ def run_one(
         return f"[red]{app.app}: FAILED {type(e).__name__}: {e}[/red]"
 
 
+def _answer_key_ids() -> set[int]:
+    path = RESULTS.parent / "ground_truth.json"
+    return {a["id"] for a in json.loads(path.read_text())["apps"]} if path.exists() else set()
+
+
 def run(apps: list[App], **kw) -> None:
+    # answer-key apps first, so accuracy can be measured before the rest finish
+    key = _answer_key_ids()
+    apps = sorted(apps, key=lambda a: a.id not in key)
     console.print(
         f"Researching {len(apps)} app(s) | search={settings.resolved_search_backend()} "
         f"extract={settings.extract_model} critic={settings.critic_model}"

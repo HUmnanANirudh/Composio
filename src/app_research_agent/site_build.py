@@ -79,7 +79,10 @@ def usage_summary() -> dict:
         return {}
     agg = defaultdict(lambda: {"calls": 0, "in": 0, "out": 0})
     for line in path.read_text().splitlines():
-        r = json.loads(line)
+        try:
+            r = json.loads(line)
+        except json.JSONDecodeError:  # a torn last line from a killed run
+            continue
         a = agg[f"{r['model']}|{r['purpose']}"]
         a["calls"] += 1
         a["in"] += r["in"]
