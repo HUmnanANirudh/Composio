@@ -15,10 +15,11 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+import threading
 import time
 from dataclasses import asdict, dataclass, field
 from typing import Any
-from urllib.parse import urlparse
+from urllib.parse import urljoin, urlparse
 
 import httpx
 import trafilatura
@@ -70,6 +71,7 @@ class Page:
     text: str = ""
     error: str | None = None
     fetched_at: float = field(default_factory=time.time)
+    links: list[list[str]] = field(default_factory=list)  # [[absolute_url, anchor_text], ...]
 
     @property
     def ok(self) -> bool:
@@ -87,8 +89,26 @@ def registrable(host: str) -> str:
     return ".".join(parts[-2:])
 
 
+def canonical(url: str) -> str:
+    """Drop fragments and a trailing slash so one page is one URL."""
+    u = url.split("#")[0]
+    return (
+        u[:-1]
+        if u.endswith("/") and u.count("/") > 3
+        else u.rstrip("/")
+        if u.count("/") == 3
+        else u
+    )
+
+
+_SKIP = re.compile(
+    r"accounts\.|/signin|/sign-in|/login|/signup|/sign-up|/register\?|/oauth/authorize\?"
+)
+
+
 def is_low_trust(url: str) -> bool:
-    return any(d in url for d in LOW_TRUST)
+    """Aggregators, community posts and login walls: never used as evidence."""
+    return any(d in url for d in LOW_TRUST) or bool(_SKIP.search(url))
 
 
 # --------------------------------------------------------------------------- fetch
@@ -111,11 +131,35 @@ def _extract_text(html: str, url: str) -> tuple[str, str]:
     return title, re.sub(r"[ \t]+", " ", text).strip()
 
 
+_HREF = re.compile(r"<a\s[^>]*?href=[\"']([^\"'#]+)[\"'][^>]*>(.*?)</a>", re.IGNORECASE | re.DOTALL)
+_MDLINK = re.compile(r"\[([^\]]{1,200})\]\((https?://[^)\s]+|/[^)\s]*)\)")
+
+
+def extract_links(body: str, base: str, is_html: bool) -> list[list[str]]:
+    """Absolute links (with anchor text) from an HTML page or a markdown/llms.txt file."""
+    out: list[list[str]] = []
+    if is_html:
+        pairs = [(h, re.sub(r"<[^>]+>|\s+", " ", t).strip()) for h, t in _HREF.findall(body)]
+    else:
+        pairs = [(h, t) for t, h in _MDLINK.findall(body)]
+    seen: set[str] = set()
+    for href, text in pairs:
+        if href.startswith(("mailto:", "javascript:", "tel:")):
+            continue
+        u = canonical(urljoin(base, href))
+        if u.startswith("http") and u not in seen:
+            seen.add(u)
+            out.append([u, text[:120]])
+    return out[:600]
+
+
 def fetch(url: str, refresh: bool = False) -> Page:
     PAGES.mkdir(parents=True, exist_ok=True)
     path = PAGES / f"{_key(url)}.json"
     if path.exists() and not refresh:
-        return Page(**json.loads(path.read_text()))
+        cached = json.loads(path.read_text())
+        if "links" in cached:  # entries from before link capture are refetched once
+            return Page(**cached)
     page = Page(url=url)
     try:
         r = httpx.get(
@@ -128,8 +172,10 @@ def fetch(url: str, refresh: bool = False) -> Page:
         ctype = r.headers.get("content-type", "")
         if "html" in ctype:
             page.title, page.text = _extract_text(r.text, page.final_url)
+            page.links = extract_links(r.text, page.final_url, is_html=True)
         elif ctype.startswith("text/") or "json" in ctype or "markdown" in ctype:
             page.text = r.text
+            page.links = extract_links(r.text, page.final_url, is_html=False)
         else:
             page.error = f"unsupported content-type {ctype}"
     except httpx.HTTPError as e:
@@ -177,78 +223,84 @@ def _walk_hits(obj: Any, backend: str) -> list[SearchHit]:
 
 
 class ComposioSearch:
-    """Web search via Composio's Search toolkit (no connected account needed)."""
+    """Web search through a Composio session (Platform SDK), scoped to one search toolkit.
 
-    CANDIDATE_SLUGS = (
-        "COMPOSIO_SEARCH_WEB",
-        "COMPOSIO_SEARCH_SEARCH",
-        "COMPOSIO_SEARCH_DUCK_DUCK_GO_SEARCH",
-        "COMPOSIO_SEARCH_EXA_SEARCH",
-        "COMPOSIO_SEARCH_TAVILY_SEARCH",
-    )
+    Composio's own COMPOSIO_SEARCH toolkit is retired (410 ToolRouterV2_ToolkitRetired,
+    observed 2026-11-23), so search runs on a toolkit the project connects (Exa by default,
+    SEARCH_TOOLKIT to change). Per the Composio skill, the tool slug and its arguments are
+    read from the live tool schema rather than hard-coded.
+    """
 
     def __init__(self) -> None:
         from composio import Composio
 
-        self.client = Composio(api_key=settings.composio_api_key)
-        self.slug: str | None = None
-
-    def _execute(self, slug: str, args: dict) -> Any:
-        res = self.client.tools.execute(
-            slug,
-            args,
-            user_id=settings.composio_user_id,
-            dangerously_skip_version_check=True,
-        )
-        data = res if isinstance(res, dict) else getattr(res, "model_dump", lambda: res)()
-        if isinstance(data, dict) and data.get("successful") is False:
-            raise RuntimeError(data.get("error") or "tool failed")
-        return data
+        tk = settings.search_toolkit
+        composio = Composio()
+        self.session = composio.create(user_id=settings.composio_user_id, toolkits=[tk])
+        state = self.session.toolkits(toolkits=[tk]).items
+        if not state or not state[0].connection or not state[0].connection.is_active:
+            link = self.session.authorize(tk).redirect_url
+            raise RuntimeError(
+                f"{tk} is not connected for this Composio user; connect it at {link}"
+            )
+        tools = composio.tools.get_raw_composio_tools(toolkits=[tk], limit=200)
+        cands = [
+            t
+            for t in tools
+            if t.slug == f"{tk.upper()}_SEARCH"
+            or (
+                t.slug.endswith("_SEARCH")
+                and "query" in ((t.input_parameters or {}).get("required") or [])
+            )
+        ]
+        if not cands:
+            raise RuntimeError(f"no search tool found in toolkit {tk}")
+        self.tool = cands[0]
+        self.props = set((self.tool.input_parameters or {}).get("properties", {}))
 
     def search(self, query: str) -> list[SearchHit]:
-        slugs = [self.slug] if self.slug else list(self.CANDIDATE_SLUGS)
-        last: Exception | None = None
-        for slug in slugs:
-            try:
-                data = self._execute(slug, {"query": query})
-                self.slug = slug
-                return _walk_hits(data, f"composio:{slug}")
-            except Exception as e:  # noqa: BLE001 - try next slug
-                last = e
-        raise RuntimeError(f"no Composio search tool worked: {last}")
+        args: dict[str, Any] = {"query": query}
+        if "numResults" in self.props:
+            args["numResults"] = 8
+        r = self.session.execute(self.tool.slug, arguments=args)
+        if r.result_type != "completed":
+            raise RuntimeError(f"{self.tool.slug}: {r.result_type} {r.error}")
+        return _walk_hits(r.data, f"composio:{self.tool.slug}")
 
 
 class GroqSearch:
-    """Web search via a Groq compound model's built-in search tool."""
+    """Web search via Groq's built-in browser_search tool on a gpt-oss model."""
 
     def __init__(self) -> None:
         from groq import Groq
 
-        self.client = Groq(api_key=settings.groq_api_key)
+        self.client = Groq(api_key=settings.groq_api_key, max_retries=4)
 
     def search(self, query: str) -> list[SearchHit]:
+        from .llm import record_usage
+
         r = self.client.chat.completions.create(
             model=settings.search_model,
-            messages=[
-                {
-                    "role": "user",
-                    "content": f"Search the web for: {query}\n"
-                    "Reply only with a JSON list of the top 8 results as "
-                    '[{"url":..., "title":..., "snippet":...}]. Prefer official vendor docs.',
-                }
-            ],
+            messages=[{"role": "user", "content": f"Search the web for: {query}"}],
+            tools=[{"type": "browser_search"}],
+            tool_choice="required",
+            max_completion_tokens=600,
             temperature=0,
         )
-        msg = r.choices[0].message
-        hits = _walk_hits(getattr(msg, "executed_tools", None) or [], "groq")
-        m = re.search(r"\[.*\]", msg.content or "", re.DOTALL)
-        if m:
-            hits += _walk_hits(m.group(0), "groq")
+        record_usage(settings.search_model, "search", r.usage)
+        hits: list[SearchHit] = []
+        for t in r.choices[0].message.executed_tools or []:
+            res = getattr(t, "search_results", None)
+            for item in getattr(res, "results", None) or []:
+                if item.url:
+                    hits.append(SearchHit(url=item.url, title=item.title or "", backend="groq"))
         seen: set[str] = set()
         return [h for h in hits if not (h.url in seen or seen.add(h.url))]
 
 
 _backend_cache: dict[str, Any] = {}
+_search_lock = threading.Lock()
+_backend_errors: dict[str, str] = {}
 
 
 def search(query: str, refresh: bool = False) -> list[SearchHit]:
@@ -260,8 +312,16 @@ def search(query: str, refresh: bool = False) -> list[SearchHit]:
     if path.exists() and not refresh:
         return [SearchHit(**h) for h in json.loads(path.read_text())]
     if backend not in _backend_cache:
-        _backend_cache[backend] = ComposioSearch() if backend == "composio" else GroqSearch()
-    hits = _backend_cache[backend].search(query)
+        try:
+            _backend_cache[backend] = ComposioSearch() if backend == "composio" else GroqSearch()
+        except Exception as e:  # noqa: BLE001 - no search tool connected: crawler-only mode
+            _backend_cache[backend] = None
+            _backend_errors[backend] = str(e)
+    if _backend_cache[backend] is None:
+        raise RuntimeError(f"search backend '{backend}' unavailable: {_backend_errors[backend]}")
+    # one search at a time keeps us inside per-minute rate limits
+    with _search_lock:
+        hits = _backend_cache[backend].search(query)
     path.write_text(json.dumps([asdict(h) for h in hits]))
     return hits
 

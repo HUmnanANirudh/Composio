@@ -24,28 +24,32 @@ class Settings:
     composio_api_key: str | None = field(default_factory=lambda: _env("COMPOSIO_API_KEY"))
     groq_api_key: str | None = field(default_factory=lambda: _env("GROQ_API_KEY"))
     extract_model: str = field(default_factory=lambda: _env("EXTRACT_MODEL", "openai/gpt-oss-120b"))
-    critic_model: str = field(
-        default_factory=lambda: _env("CRITIC_MODEL", "moonshotai/kimi-k2-instruct")
-    )
-    search_model: str = field(default_factory=lambda: _env("SEARCH_MODEL", "groq/compound-mini"))
+    critic_model: str = field(default_factory=lambda: _env("CRITIC_MODEL", "qwen/qwen3.8-27b"))
+    search_model: str = field(default_factory=lambda: _env("SEARCH_MODEL", "openai/gpt-oss-20b"))
     search_backend: str = field(
         default_factory=lambda: _env("SEARCH_BACKEND", "auto")
     )  # auto | composio | groq | none
+    search_toolkit: str = field(default_factory=lambda: _env("SEARCH_TOOLKIT", "exa"))
     concurrency: int = field(default_factory=lambda: int(_env("CONCURRENCY", "3")))
     composio_user_id: str = field(
         default_factory=lambda: _env("COMPOSIO_USER_ID", "research-agent")
     )
+    # Sized for Groq's free tier (8K tokens/min/model): ~6 pages x 2.2K chars ~= 3.5K tokens in.
     max_pages: int = field(default_factory=lambda: int(_env("MAX_PAGES", "6")))
-    page_chars: int = field(default_factory=lambda: int(_env("PAGE_CHARS", "3500")))
+    page_chars: int = field(default_factory=lambda: int(_env("PAGE_CHARS", "2200")))
+    max_output_tokens: int = field(default_factory=lambda: int(_env("MAX_OUTPUT_TOKENS", "2500")))
+    tpm_limit: int = field(default_factory=lambda: int(_env("TPM_LIMIT", "8000")))
 
     def resolved_search_backend(self) -> str:
+        """auto -> Composio (Exa connected through a Composio session) when a key is set.
+
+        If no Composio search tool is connected, web.search() degrades to 'none' and the
+        agent relies on the docs crawler. 'groq' (browser_search) is opt-in only: each
+        query pulls ~35K tokens of results into context, too much for the free tier.
+        """
         if self.search_backend != "auto":
             return self.search_backend
-        if self.composio_api_key:
-            return "composio"
-        if self.groq_api_key:
-            return "groq"
-        return "none"
+        return "composio" if self.composio_api_key else "none"
 
 
 settings = Settings()

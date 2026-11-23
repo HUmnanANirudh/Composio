@@ -4,6 +4,8 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass
+from functools import lru_cache
+from urllib.parse import urlparse
 
 from . import web
 from .apps import App
@@ -28,6 +30,9 @@ class Source:
     excerpt: str  # what the model sees
 
 
+CODE_HOSTS = ("github.com", "gitlab.com", "bitbucket.org", "npmjs.com", "pypi.org")
+
+
 def _app_tokens(app: App) -> list[str]:
     base = re.sub(r"\(.*?\)", "", app.app).lower()
     return [t for t in re.findall(r"[a-z0-9]+", base) if len(t) >= 4] or [
@@ -35,23 +40,103 @@ def _app_tokens(app: App) -> list[str]:
     ]
 
 
+def _is_code_host(app: App) -> bool:
+    return bool(app.domain) and web.registrable(app.domain) in CODE_HOSTS
+
+
+@lru_cache(maxsize=256)
+def official_domains(app: App) -> frozenset[str]:
+    """Registrable domains that count as the vendor's own: the hint's, and where it redirects."""
+    doms = set()
+    if app.hint_url:
+        doms.add(web.registrable(web.host(app.hint_url)))
+        p = web.fetch(app.hint_url)
+        if p.final_url:
+            doms.add(web.registrable(web.host(p.final_url)))
+    return frozenset(doms - set(CODE_HOSTS))
+
+
 def is_official(app: App, url: str) -> bool:
+    if _is_code_host(app):  # an open-source project: only its own repo/org is official
+        owner = "/".join(app.hint_url.split("/")[3:4])
+        h = web.host(url)
+        if web.registrable(h) in CODE_HOSTS or h.endswith("githubusercontent.com"):
+            return f"/{owner}/" in url + "/"
     h = web.host(url)
-    if app.domain and web.registrable(h) == web.registrable(app.domain):
+    if web.registrable(h) in official_domains(app):
         return True
     reg = web.registrable(h).split(".")[0]
     return any(t in reg for t in _app_tokens(app))
 
 
+def _page_key(u: str) -> str:
+    """X and X.md are the same docs page (many doc sites serve both)."""
+    return re.sub(r"\.md$", "", web.canonical(u))
+
+
 def rank_urls(app: App, urls: list[str]) -> list[str]:
+    hint_path = urlparse(app.hint_url or "").path.rstrip("/")
+
     def score(u: str) -> tuple:
         off = is_official(app, u)
         docsy = bool(re.search(r"developer|docs|api|dev\.|reference|auth", u, re.IGNORECASE))
-        return (not off, web.is_low_trust(u), not docsy)
+        in_scope = bool(hint_path) and urlparse(u).path.startswith(hint_path)
+        return (not off, web.is_low_trust(u), not in_scope, not docsy)
 
     seen: set[str] = set()
-    uniq = [u for u in urls if not (u.split("#")[0] in seen or seen.add(u.split("#")[0]))]
+    uniq = [
+        u for u in map(web.canonical, urls) if not (_page_key(u) in seen or seen.add(_page_key(u)))
+    ]
     return sorted(uniq, key=score)
+
+
+# Link topics the crawler tries to cover, each with URL/anchor keywords.
+TOPICS = {
+    "auth": r"auth|oauth|api[-_ ]?key|apikey|access[-_ ]token|credential|personal[-_ ]access",
+    "access": r"pricing|plans?\b|billing|partner|developer[-_ ]?(program|account|portal)|sandbox|"
+    r"get[-_ ]?started|getting[-_ ]started|quickstart|apply|request[-_ ]access|"
+    r"dev[-_ ]?environment|test[-_ ]store|developer[-_ ]store|limits|free",
+    "mcp": r"\bmcp\b|model[-_ ]context|/mcp|ai[-_ ]?(agents?|tools)",
+    "surface": r"api[-_ ]?reference|/reference|/api/?$|endpoints|rest[-_ ]api|graphql|webhook",
+}
+
+
+def docs_seeds(app: App) -> list[str]:
+    """The hint URL, plus the usual developer-docs hosts and their llms.txt."""
+    seeds: list[str] = []
+    if app.hint_url:
+        seeds.append(app.hint_url)
+        reg = web.registrable(web.host(app.hint_url))
+        hosts = [web.host(app.hint_url)] + [
+            f"{p}.{reg}" for p in ("developers", "developer", "docs")
+        ]
+        for h in dict.fromkeys(hosts):
+            seeds += [f"https://{h}/llms.txt"]
+            if h != web.host(app.hint_url):
+                seeds.append(f"https://{h}")
+    return seeds
+
+
+def crawl_candidates(app: App, pages: list[web.Page], per_topic: int = 2) -> list[str]:
+    """Pick the most promising official links for each topic from already-fetched pages."""
+    links: dict[str, str] = {}
+    for p in pages:
+        for u, text in p.links:
+            if is_official(app, u) and not web.is_low_trust(u):
+                links.setdefault(u, text)
+    picked: list[str] = []
+    for rx in TOPICS.values():
+        scored = []
+        for u, text in links.items():
+            hay = f"{urlparse(u).path} {text}".lower()
+            hits = len(re.findall(rx, hay))
+            if re.search(r"changelog|release[-_ ]notes|/blog|/news|careers|/legal|/terms", u):
+                continue
+            if hits and u not in picked:
+                docsy = bool(re.search(r"developer|docs|api", u))
+                scored.append((hits + docsy, -len(u), u))
+        picked += [u for *_, u in sorted(scored, reverse=True)[:per_topic]]
+    return picked
 
 
 def gather(
@@ -61,34 +146,44 @@ def gather(
     max_pages: int | None = None,
     refresh: bool = False,
 ) -> tuple[list[Source], list[str]]:
-    """Search + fetch. Returns (sources, errors)."""
+    """Discover + fetch sources. Returns (sources, errors).
+
+    1. crawl: hint URL, developer-docs hosts and llms.txt, then their auth/pricing/MCP links
+    2. search: supplementary web search (Composio/Exa or Groq) for what the docs don't link
+    """
     errors: list[str] = []
+    limit = max_pages or settings.max_pages
+    seed_pages = [p for u in docs_seeds(app) if (p := web.fetch(u, refresh=refresh)).ok]
     urls: list[str] = list(extra_urls or [])
-    if app.hint_url:
-        urls.append(app.hint_url)
+    urls += [p.final_url or p.url for p in seed_pages if is_official(app, p.final_url or p.url)]
+    urls += crawl_candidates(app, seed_pages)
     for q in queries or [t.format(app=app.app) for t in QUERY_TEMPLATES]:
         try:
             urls += [h.url for h in web.search(q, refresh=refresh)]
-        except Exception as e:  # noqa: BLE001
-            errors.append(f"search '{q}': {e}")
+        except Exception as e:  # noqa: BLE001 - search is supplementary
+            errors.append(f"search '{q}': {str(e)[:200]}")
     ranked = [u for u in rank_urls(app, urls) if not web.is_low_trust(u)]
     sources: list[Source] = []
-    budget = settings.page_chars
+    seen_final: set[str] = set()
     for u in ranked:
-        if len(sources) >= (max_pages or settings.max_pages):
+        if len(sources) >= limit:
             break
         p = web.fetch(u, refresh=refresh)
+        final = web.canonical(p.final_url or u)
         if not p.ok:
             errors.append(f"fetch {u}: {p.status} {p.error or 'too little text (JS-rendered?)'}")
             continue
+        if _page_key(final) in seen_final:
+            continue
+        seen_final.add(_page_key(final))
         sources.append(
             Source(
                 sid=f"S{len(sources) + 1}",
-                url=p.final_url or u,
+                url=final,
                 title=p.title,
-                official=is_official(app, p.final_url or u),
+                official=is_official(app, final),
                 text=p.text,
-                excerpt=web.relevant_excerpt(p.text, budget),
+                excerpt=web.relevant_excerpt(p.text, settings.page_chars),
             )
         )
     return sources, errors

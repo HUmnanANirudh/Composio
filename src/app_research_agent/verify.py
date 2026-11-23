@@ -20,7 +20,7 @@ from . import web
 from .apps import App
 from .catalog import composio_auth_as_enum
 from .config import settings
-from .llm import LLMError, chat_json
+from .llm import DailyLimitError, LLMError, chat_json
 from .research import RUBRIC, Source, claims_from_json, format_sources, gather
 from .schema import SCORED_FIELDS, AppRecord, Claim
 
@@ -245,12 +245,12 @@ def reresearch(
         notes="\n".join(f"- {f}: {'; '.join(v)}" for f, v in flags.items()),
         previous={f: getattr(rec, f).value for f in flags},
     )
-    data = chat_json(settings.extract_model, system, user)
+    data = chat_json(settings.extract_model, system, user, purpose="reresearch")
     new = claims_from_json(data, new_sources, fields=tuple(flags))
     changes = []
     for f, c in new.items():
         old: Claim = getattr(rec, f)
-        if c.value is None and old.value is not None:
+        if c.value in (None, []) and old.value not in (None, []):
             continue  # model dropped the field; keep the old answer
         if c.value != old.value:
             changes.append({"field": f, "from": old.value, "to": c.value, "why": flags[f]})
@@ -283,6 +283,8 @@ def verify(app: App, rec: AppRecord, sources: list[Source], use_critic: bool = T
         if use_critic:
             try:
                 c, _ = critic(rec, sources)
+            except DailyLimitError:
+                raise
             except LLMError as e:
                 rec.errors.append(f"critic round {rnd}: {e}")
         flags = merge_flags(g, r, c)

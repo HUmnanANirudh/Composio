@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import threading
 import traceback
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
@@ -11,6 +12,7 @@ from rich.console import Console
 
 from .apps import App
 from .config import RESULTS, settings
+from .llm import DailyLimitError
 from .research import gather, research_app
 from .schema import AppRecord
 from .verify import verify
@@ -34,9 +36,14 @@ def load(d: Path, app: App) -> AppRecord | None:
     return AppRecord.model_validate_json(p.read_text()) if p.exists() else None
 
 
+STOP = threading.Event()  # set when a daily quota runs out; remaining apps are skipped
+
+
 def run_one(
     app: App, force: bool = False, use_critic: bool = True, verify_only: bool = False
 ) -> str:
+    if STOP.is_set():
+        return f"{app.app}: skipped (daily quota reached)"
     try:
         rec = None if force else load(PASS1, app)
         if rec is None:
@@ -52,6 +59,9 @@ def run_one(
             n = len(final.verification.get("changes", []))
             return f"{app.app}: done ({n} field(s) changed by verification)"
         return f"{app.app}: cached"
+    except DailyLimitError as e:
+        STOP.set()
+        return f"[yellow]{app.app}: paused, {e}. Re-run the same command later to resume.[/yellow]"
     except Exception as e:  # noqa: BLE001 - one app failing must not kill the run
         (RESULTS / "errors").mkdir(parents=True, exist_ok=True)
         (RESULTS / "errors" / f"{app.id:03d}.txt").write_text(traceback.format_exc())
