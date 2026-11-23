@@ -1,0 +1,223 @@
+{
+  "id": 19,
+  "app": "Gorgias",
+  "category": "Support and Helpdesk",
+  "hint": "gorgias.com",
+  "docs_url": "https://developers.gorgias.com/",
+  "one_liner": {
+    "value": "Customer support platform API for tickets, messages, and automation",
+    "evidence": [
+      {
+        "url": "https://docs.gorgias.com/llms.txt",
+        "quote": "Gorgias is a customer support platform for ecommerce brands",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.gorgias.com/docs/oauth2-authentication-for-creating-apps-with-gorgias.md",
+        "quote": "In order to be able to have an approved public app with Gorgias, it is required that the app is using OAuth2 for authentication.",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://developers.gorgias.com/llms.txt",
+        "quote": "OAuth2 Scopes allow to limit your app's access to Gorgias user’s account data.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": [
+      "maybe_incomplete_vs_composio:['API_KEY', 'BEARER_TOKEN']"
+    ]
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://developers.gorgias.com/llms.txt",
+        "quote": "1. Register on Developer Portal & Get Gorgias Sandbox Account",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.gorgias.com/llms.txt",
+        "quote": "Gorgias Developer Portal. REST API reference and Guides.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://developers.gorgias.com/llms.txt",
+        "quote": "API Reference: Gorgias API",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": false,
+    "evidence": [
+      {
+        "url": "https://developers.gorgias.com/llms.txt",
+        "quote": "Gorgias Developer Portal",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "webhooks": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.15,
+    "flags": [
+      "ungrounded"
+    ]
+  },
+  "sandbox": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developers.gorgias.com/llms.txt",
+        "quote": "1. Register on Developer Portal & Get Gorgias Sandbox Account",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://developers.gorgias.com/llms.txt",
+        "quote": "REST API reference and Guides",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.4,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "GORGIAS",
+    "name": "Gorgias",
+    "tools": 51,
+    "triggers": 0,
+    "auth": [
+      "API_KEY",
+      "OAUTH2"
+    ],
+    "managed_app": "Yes",
+    "url": "https://docs.composio.dev/toolkits/gorgias.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://developers.gorgias.com/llms.txt",
+    "https://developers.gorgias.com",
+    "https://docs.gorgias.com/llms.txt",
+    "https://docs.gorgias.com/en-US",
+    "https://developers.gorgias.com/docs/oauth2-authentication-for-creating-apps-with-gorgias.md",
+    "https://developers.gorgias.com/docs/oauth2-scopes.md",
+    "https://docs.gorgias.com/en-US/change-your-billing-frequency-or-billing-date-1006760.md",
+    "https://developers.gorgias.com/docs/1-register-on-developer-portal.md"
+  ],
+  "pass_name": "final",
+  "verification": {
+    "changes": [],
+    "rounds": [
+      {
+        "round": 0,
+        "grounding": {
+          "webhooks": [
+            "ungrounded"
+          ]
+        },
+        "rules": {
+          "auth_methods": [
+            "maybe_incomplete_vs_composio:['API_KEY', 'BEARER_TOKEN']"
+          ]
+        },
+        "critic": {
+          "auth_methods": [
+            "critic_wrong:['OAUTH2', 'API_KEY'] (Sources confirm OAuth2 for public apps, but Gorgias also supports API keys for private apps/server-side calls.)"
+          ]
+        }
+      },
+      {
+        "round": 1,
+        "grounding": {
+          "webhooks": [
+            "ungrounded"
+          ]
+        },
+        "rules": {
+          "auth_methods": [
+            "maybe_incomplete_vs_composio:['API_KEY', 'BEARER_TOKEN']"
+          ]
+        },
+        "critic": {}
+      },
+      {
+        "round": 2,
+        "grounding": {
+          "webhooks": [
+            "ungrounded"
+          ]
+        },
+        "rules": {
+          "auth_methods": [
+            "maybe_incomplete_vs_composio:['API_KEY', 'BEARER_TOKEN']"
+          ]
+        },
+        "critic": {}
+      }
+    ],
+    "open_flags": {
+      "webhooks": [
+        "ungrounded"
+      ],
+      "auth_methods": [
+        "maybe_incomplete_vs_composio:['API_KEY', 'BEARER_TOKEN']"
+      ]
+    }
+  },
+  "errors": []
+}

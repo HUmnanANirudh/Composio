@@ -1,3 +1,3 @@
 id,app,category,one_liner,auth_methods,access,api_style,api_breadth,official_mcp,webhooks,sandbox,buildability,main_blocker,composio_toolkit,composio_tools,docs_url
-2,HubSpot,CRM and Sales,Create tomorrow's solutions today on HubSpot's Developer Platform.,BEARER_TOKEN;OAUTH2,SELF_SERVE_FREE,REST,BROAD,True,True,True,READY,,HUBSPOT,355,https://developers.hubspot.com/docs/api-reference/latest/overview
-19,Gorgias,Support and Helpdesk,Customer support platform for ecommerce brands,OAUTH2,APPROVAL,REST,MODERATE,False,False,True,NEEDS_OUTREACH,,GORGIAS,51,https://developers.gorgias.com
+2,HubSpot,CRM and Sales,"HubSpot provides APIs to integrate, automate and extend its Smart CRM platform.",BEARER_TOKEN;OAUTH2,SELF_SERVE_FREE,REST,BROAD,True,True,True,READY,,HUBSPOT,355,https://developers.hubspot.com/docs/api-reference/latest/overview
+19,Gorgias,Support and Helpdesk,"Customer support platform API for tickets, messages, and automation",OAUTH2,SELF_SERVE_FREE,REST,BROAD,False,False,True,READY,,GORGIAS,51,https://developers.gorgias.com/

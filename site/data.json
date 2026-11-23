@@ -1,10 +1,12 @@
 {
- "generated": "2026-11-23 18:18 UTC",
+ "generated": "2026-11-23 19:52 UTC",
  "repo": "https://github.com/HUmnanANirudh/Composio",
  "page": "https://humnananirudh.github.io/Composio/",
  "models": {
   "extract": "openai/gpt-oss-120b",
   "critic": "qwen/qwen3.8-27b",
+  "reresearch": "openai/gpt-oss-20b",
+  "critic_rounds": 1,
   "search": "composio session -> EXA_SEARCH"
  },
  "counts": {
@@ -15,8 +17,8 @@
   "n": 2,
   "headlines": [
    {
-    "fig": "50%",
-    "text": "of apps (1 of 2) let a developer get working credentials alone; 1 is gated by a paid plan, an approval step, or sales."
+    "fig": "100%",
+    "text": "of apps (2 of 2) let a developer get working credentials alone; 0 are gated by a paid plan, an approval step, or sales."
    },
    {
     "fig": "100%",
@@ -24,7 +26,7 @@
    },
    {
     "fig": "CRM and Sales",
-    "text": "is the most open category (100% self-serve); Support and Helpdesk is the most gated (0%)."
+    "text": "is the most open category (100% self-serve); Support and Helpdesk is the most gated (100%)."
    },
    {
     "fig": "0",
@@ -32,7 +34,7 @@
    },
    {
     "fig": "0",
-    "text": "easy wins: self-serve and buildable today, with no Composio toolkit yet. 1 needs outreach or a partnership."
+    "text": "easy wins: self-serve and buildable today, with no Composio toolkit yet. 0 need outreach or a partnership."
    },
    {
     "fig": "1",
@@ -47,12 +49,10 @@
    "OAUTH2": 2
   },
   "access": {
-   "SELF_SERVE_FREE": 1,
-   "APPROVAL": 1
+   "SELF_SERVE_FREE": 2
   },
   "buildability": {
-   "READY": 1,
-   "NEEDS_OUTREACH": 1
+   "READY": 2
   },
   "blockers": {},
   "categories": [
@@ -76,14 +76,14 @@
    {
     "category": "Support and Helpdesk",
     "n": 1,
-    "self_serve": 0,
-    "gated": 1,
-    "self_serve_pct": 0,
+    "self_serve": 1,
+    "gated": 0,
+    "self_serve_pct": 100,
     "access": {
-     "APPROVAL": 1
+     "SELF_SERVE_FREE": 1
     },
     "build": {
-     "NEEDS_OUTREACH": 1
+     "READY": 1
     },
     "auth": {
      "OAUTH2": 1
@@ -93,32 +93,22 @@
   "official_mcp": 1,
   "composio_coverage": 2,
   "easy_wins": [],
-  "outreach": [
-   {
-    "id": 19,
-    "app": "Gorgias",
-    "category": "Support and Helpdesk",
-    "access": "APPROVAL",
-    "build": "NEEDS_OUTREACH",
-    "blocker": null,
-    "composio": "GORGIAS"
-   }
-  ],
+  "outreach": [],
   "blocked": [],
   "mcp_but_api_gated": []
  },
  "eval": {
   "pass1": {
    "overall": {
-    "correct": 13,
+    "correct": 21,
     "total": 115,
-    "accuracy": 0.113
+    "accuracy": 0.183
    },
    "per_field": {
     "auth_methods": {
-     "correct": 1,
+     "correct": 3,
      "total": 19,
-     "accuracy": 0.053
+     "accuracy": 0.158
     },
     "access": {
      "correct": 2,
@@ -126,24 +116,24 @@
      "accuracy": 0.1
     },
     "api_style": {
-     "correct": 3,
+     "correct": 5,
      "total": 19,
-     "accuracy": 0.158
+     "accuracy": 0.263
     },
     "api_breadth": {
-     "correct": 3,
+     "correct": 5,
      "total": 19,
-     "accuracy": 0.158
+     "accuracy": 0.263
     },
     "official_mcp": {
-     "correct": 2,
+     "correct": 3,
      "total": 18,
-     "accuracy": 0.111
+     "accuracy": 0.167
     },
     "buildability": {
-     "correct": 2,
+     "correct": 3,
      "total": 20,
-     "accuracy": 0.1
+     "accuracy": 0.15
     }
    },
    "rows": [
@@ -167,7 +157,7 @@
       ]
      },
      "accept": null,
-     "confidence": 1.0,
+     "confidence": 0.97,
      "flags": []
     },
     {
@@ -196,7 +186,7 @@
       "optional": []
      },
      "accept": null,
-     "confidence": 1.0,
+     "confidence": 0.98,
      "flags": []
     },
     {
@@ -207,7 +197,7 @@
      "agent": "BROAD",
      "truth": "BROAD",
      "accept": null,
-     "confidence": 0.8,
+     "confidence": 0.9,
      "flags": []
     },
     {
@@ -218,7 +208,7 @@
      "agent": true,
      "truth": true,
      "accept": null,
-     "confidence": 1.0,
+     "confidence": 0.95,
      "flags": []
     },
     {
@@ -229,7 +219,7 @@
      "agent": "READY",
      "truth": "READY",
      "accept": null,
-     "confidence": 1.0,
+     "confidence": 0.9,
      "flags": []
     },
     {
@@ -299,7 +289,7 @@
      "agent": false,
      "truth": false,
      "accept": null,
-     "confidence": 1.0,
+     "confidence": 0.2,
      "flags": []
     },
     {
@@ -331,7 +321,7 @@
       ]
      },
      "accept": null,
-     "confidence": 0.97,
+     "confidence": 0.98,
      "flags": []
     },
     {
@@ -344,7 +334,7 @@
      "accept": [
       "APPROVAL"
      ],
-     "confidence": 0.94,
+     "confidence": 0.9,
      "flags": []
     },
     {
@@ -362,7 +352,7 @@
       "optional": []
      },
      "accept": null,
-     "confidence": 0.96,
+     "confidence": 0.99,
      "flags": []
     },
     {
@@ -375,7 +365,7 @@
      "accept": [
       "MODERATE"
      ],
-     "confidence": 0.2,
+     "confidence": 0.85,
      "flags": []
     },
     {
@@ -386,7 +376,7 @@
      "agent": false,
      "truth": true,
      "accept": null,
-     "confidence": 0.2,
+     "confidence": 0.8,
      "flags": []
     },
     {
@@ -404,73 +394,173 @@
      "id": 20,
      "app": "Gladly",
      "field": "auth_methods",
-     "status": "missing"
+     "status": "hit",
+     "agent": [
+      "BASIC"
+     ],
+     "truth": {
+      "core": [
+       "BASIC"
+      ],
+      "optional": [
+       "API_KEY"
+      ]
+     },
+     "accept": null,
+     "confidence": 0.98,
+     "flags": []
     },
     {
      "id": 20,
      "app": "Gladly",
      "field": "access",
-     "status": "missing"
+     "status": "miss",
+     "agent": "SELF_SERVE_FREE",
+     "truth": "PARTNERSHIP",
+     "accept": null,
+     "confidence": 0.9,
+     "flags": []
     },
     {
      "id": 20,
      "app": "Gladly",
      "field": "api_style",
-     "status": "missing"
+     "status": "hit",
+     "agent": [
+      "REST"
+     ],
+     "truth": {
+      "core": [
+       "REST"
+      ],
+      "optional": []
+     },
+     "accept": null,
+     "confidence": 0.97,
+     "flags": []
     },
     {
      "id": 20,
      "app": "Gladly",
      "field": "api_breadth",
-     "status": "missing"
+     "status": "hit",
+     "agent": "BROAD",
+     "truth": "BROAD",
+     "accept": [
+      "MODERATE"
+     ],
+     "confidence": 0.96,
+     "flags": []
     },
     {
      "id": 20,
      "app": "Gladly",
      "field": "official_mcp",
-     "status": "missing"
+     "status": "miss",
+     "agent": false,
+     "truth": true,
+     "accept": null,
+     "confidence": 0.3,
+     "flags": []
     },
     {
      "id": 20,
      "app": "Gladly",
      "field": "buildability",
-     "status": "missing"
+     "status": "miss",
+     "agent": "READY",
+     "truth": "NEEDS_OUTREACH",
+     "accept": null,
+     "confidence": 0.94,
+     "flags": []
     },
     {
      "id": 22,
      "app": "Twilio",
      "field": "auth_methods",
-     "status": "missing"
+     "status": "hit",
+     "agent": [
+      "BASIC",
+      "BEARER_TOKEN",
+      "OAUTH2"
+     ],
+     "truth": {
+      "core": [
+       "BASIC"
+      ],
+      "optional": [
+       "API_KEY",
+       "OAUTH2",
+       "JWT"
+      ]
+     },
+     "accept": null,
+     "confidence": 0.98,
+     "flags": []
     },
     {
      "id": 22,
      "app": "Twilio",
      "field": "access",
-     "status": "missing"
+     "status": "miss",
+     "agent": "SELF_SERVE_FREE",
+     "truth": "SELF_SERVE_TRIAL",
+     "accept": null,
+     "confidence": 0.95,
+     "flags": []
     },
     {
      "id": 22,
      "app": "Twilio",
      "field": "api_style",
-     "status": "missing"
+     "status": "hit",
+     "agent": [
+      "REST"
+     ],
+     "truth": {
+      "core": [
+       "REST"
+      ],
+      "optional": []
+     },
+     "accept": null,
+     "confidence": 0.97,
+     "flags": []
     },
     {
      "id": 22,
      "app": "Twilio",
      "field": "api_breadth",
-     "status": "missing"
+     "status": "hit",
+     "agent": "BROAD",
+     "truth": "BROAD",
+     "accept": null,
+     "confidence": 0.96,
+     "flags": []
     },
     {
      "id": 22,
      "app": "Twilio",
      "field": "official_mcp",
-     "status": "missing"
+     "status": "hit",
+     "agent": true,
+     "truth": true,
+     "accept": null,
+     "confidence": 0.94,
+     "flags": []
     },
     {
      "id": 22,
      "app": "Twilio",
      "field": "buildability",
-     "status": "missing"
+     "status": "hit",
+     "agent": "READY",
+     "truth": "READY_WITH_CAVEATS",
+     "accept": [
+      "READY"
+     ],
+     "confidence": 0.95,
+     "flags": []
     },
     {
      "id": 24,
@@ -1016,9 +1106,9 @@
    "calibration": [
     {
      "bucket": "high (>=0.75)",
-     "correct": 12,
-     "total": 16,
-     "accuracy": 0.75
+     "correct": 20,
+     "total": 28,
+     "accuracy": 0.714
     },
     {
      "bucket": "low (<0.5)",
@@ -1030,9 +1120,9 @@
   },
   "final": {
    "overall": {
-    "correct": 9,
+    "correct": 8,
     "total": 115,
-    "accuracy": 0.078
+    "accuracy": 0.07
    },
    "per_field": {
     "auth_methods": {
@@ -1041,9 +1131,9 @@
      "accuracy": 0.053
     },
     "access": {
-     "correct": 2,
+     "correct": 1,
      "total": 20,
-     "accuracy": 0.1
+     "accuracy": 0.05
     },
     "api_style": {
      "correct": 2,
@@ -1127,7 +1217,7 @@
      "agent": "BROAD",
      "truth": "BROAD",
      "accept": null,
-     "confidence": 0.9,
+     "confidence": 1.0,
      "flags": []
     },
     {
@@ -1215,16 +1305,14 @@
      "id": 19,
      "app": "Gorgias",
      "field": "access",
-     "status": "hit",
-     "agent": "APPROVAL",
+     "status": "miss",
+     "agent": "SELF_SERVE_FREE",
      "truth": "SELF_SERVE_TRIAL",
      "accept": [
       "APPROVAL"
      ],
-     "confidence": 0.85,
-     "flags": [
-      "critic_wrong:PARTNERSHIP (S8 requires contacting techpartners@gorgias.com to convert a trial to a developer account, indicating a partnership gate.)"
-     ]
+     "confidence": 1.0,
+     "flags": []
     },
     {
      "id": 19,
@@ -1249,16 +1337,13 @@
      "app": "Gorgias",
      "field": "api_breadth",
      "status": "hit",
-     "agent": "MODERATE",
+     "agent": "BROAD",
      "truth": "BROAD",
      "accept": [
       "MODERATE"
      ],
-     "confidence": 0.05,
-     "flags": [
-      "ungrounded",
-      "low_confidence"
-     ]
+     "confidence": 0.95,
+     "flags": []
     },
     {
      "id": 19,
@@ -1268,24 +1353,19 @@
      "agent": false,
      "truth": true,
      "accept": null,
-     "confidence": 0.05,
-     "flags": [
-      "ungrounded",
-      "low_confidence"
-     ]
+     "confidence": 0.9,
+     "flags": []
     },
     {
      "id": 19,
      "app": "Gorgias",
      "field": "buildability",
      "status": "miss",
-     "agent": "NEEDS_OUTREACH",
+     "agent": "READY",
      "truth": "READY_WITH_CAVEATS",
      "accept": null,
-     "confidence": 0.25,
-     "flags": [
-      "ungrounded"
-     ]
+     "confidence": 1.0,
+     "flags": []
     },
     {
      "id": 20,
@@ -1904,14 +1984,8 @@
     {
      "bucket": "high (>=0.75)",
      "correct": 8,
-     "total": 9,
-     "accuracy": 0.889
-    },
-    {
-     "bucket": "low (<0.5)",
-     "correct": 1,
-     "total": 3,
-     "accuracy": 0.333
+     "total": 12,
+     "accuracy": 0.667
     }
    ]
   }
@@ -2773,47 +2847,44 @@
  },
  "loops": {
   "flags_round0": {
-   "grounding": 3,
-   "rules": 3,
+   "grounding": 2,
+   "rules": 1,
    "critic": 1
   },
   "flags_by_field": {
    "grounding": {
-    "api_breadth": 1,
-    "official_mcp": 1,
+    "sandbox": 1,
     "webhooks": 1
    },
    "rules": {
-    "auth_methods": 1,
-    "api_breadth": 1,
-    "official_mcp": 1
+    "auth_methods": 1
    },
    "critic": {
     "auth_methods": 1
    }
   },
-  "fields_changed": 3,
-  "apps_changed": 1,
+  "fields_changed": 0,
+  "apps_changed": 0,
   "rounds_used": {
-   "1": 1,
+   "2": 1,
    "3": 1
   }
  },
  "usage": {
   "openai/gpt-oss-120b|extract": {
-   "calls": 3,
-   "in": 6755,
-   "out": 2450
+   "calls": 5,
+   "in": 12185,
+   "out": 4137
   },
   "qwen/qwen3.8-27b|critic": {
-   "calls": 6,
-   "in": 16946,
-   "out": 1992
+   "calls": 9,
+   "in": 22281,
+   "out": 3045
   },
-  "openai/gpt-oss-120b|reresearch": {
-   "calls": 3,
-   "in": 9744,
-   "out": 1303
+  "openai/gpt-oss-20b|reresearch": {
+   "calls": 4,
+   "in": 12094,
+   "out": 747
   }
  },
  "roster": [
@@ -3337,13 +3408,13 @@
    },
    "fields": {
     "one_liner": {
-     "value": "Create tomorrow's solutions today on HubSpot's Developer Platform.",
+     "value": "HubSpot provides APIs to integrate, automate and extend its Smart CRM platform.",
      "confidence": 1.0,
      "flags": [],
      "evidence": [
       {
        "url": "https://developers.hubspot.com",
-       "quote": "Create tomorrow's solutions today on HubSpot's Developer Platform.",
+       "quote": "Add dashboards, app cards, and custom interfaces to your solutions with HubSpot\u2019s APIs",
        "grounded": true
       }
      ]
@@ -3358,12 +3429,12 @@
      "evidence": [
       {
        "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview",
-       "quote": "OAuth is required for multiple accounts",
+       "quote": "OAuth is required for multiple accounts, while static auth access tokens are used for installing in a single account",
        "grounded": true
       },
       {
        "url": "https://developers.hubspot.com/docs/apps/legacy-apps/authentication/intro-to-auth",
-       "quote": "private app access tokens",
+       "quote": "There are two ways to authenticate calls to HubSpot\u2019s APIs: OAuth, and private app access tokens",
        "grounded": true
       }
      ]
@@ -3374,8 +3445,8 @@
      "flags": [],
      "evidence": [
       {
-       "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview",
-       "quote": "static auth access tokens are used for installing in a single account",
+       "url": "https://developers.hubspot.com",
+       "quote": "Craft seamless experiences that help businesses grow better powered by HubSpot's Smart CRM",
        "grounded": true
       }
      ]
@@ -3389,19 +3460,19 @@
      "evidence": [
       {
        "url": "https://developers.hubspot.com/docs/api-reference/latest/overview",
-       "quote": "All endpoints in this section follow the pattern: https://api.hubapi.com/.",
+       "quote": "All endpoints in this section follow the pattern: https://api.hubapi.com/",
        "grounded": true
       }
      ]
     },
     "api_breadth": {
      "value": "BROAD",
-     "confidence": 0.9,
+     "confidence": 1.0,
      "flags": [],
      "evidence": [
       {
-       "url": "https://developers.hubspot.com",
-       "quote": "Add dashboards, app cards, and custom interfaces to your solutions with HubSpot\u2019s APIs",
+       "url": "https://developers.hubspot.com/docs/api-reference/latest/overview",
+       "quote": "The 2026-09 APIs use a date\u2011based versioning scheme...",
        "grounded": true
       }
      ]
@@ -3413,7 +3484,7 @@
      "evidence": [
       {
        "url": "https://developers.hubspot.com/ai-tools",
-       "quote": "The Developer MCP Server gives you the power to create HubSpot apps",
+       "quote": "The Developer MCP Server gives you the power to create HubSpot apps using natural language",
        "grounded": true
       }
      ]
@@ -3425,7 +3496,7 @@
      "evidence": [
       {
        "url": "https://developers.hubspot.com",
-       "quote": "Use workflows, webhooks, and custom actions",
+       "quote": "Use workflows, webhooks, and custom actions to execute the next step the moment data updates",
        "grounded": true
       }
      ]
@@ -3436,8 +3507,13 @@
      "flags": [],
      "evidence": [
       {
-       "url": "https://developers.hubspot.com",
-       "quote": "HubSpot's Developer Platform",
+       "url": "https://developers.hubspot.com/docs/getting-started/account-types",
+       "quote": "Developer test accounts are free HubSpot accounts with access to a 90-day trial of many enterprise features, with the following limitations:",
+       "grounded": true
+      },
+      {
+       "url": "https://community.hubspot.com/t/api-access-to-a-sandbox-account/125333",
+       "quote": "If you are developing an app or integration, I\u2019d recommend using an App Developer Account and testing with a Developer Test Account versus using a Standard Sandbox.",
        "grounded": true
       }
      ]
@@ -3449,8 +3525,13 @@
      "evidence": [
       {
        "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview",
-       "quote": "OAuth is required for multiple accounts",
+       "quote": "OAuth is required for multiple accounts, while static auth access tokens are used for installing in a single account",
        "grounded": true
+      },
+      {
+       "url": "https://developers.hubspot.com",
+       "quote": "HubSpot's Developer Platform... free developer resources",
+       "grounded": false
       }
      ]
     },
@@ -3462,7 +3543,7 @@
     }
    },
    "pass1": {
-    "one_liner": "Create tomorrow's solutions today on HubSpot's Developer Platform.",
+    "one_liner": "HubSpot provides APIs to integrate, automate and extend its Smart CRM platform.",
     "auth_methods": [
      "BEARER_TOKEN",
      "OAUTH2"
@@ -3485,7 +3566,9 @@
     "https://developers.hubspot.com/docs/api-reference/latest/overview",
     "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview",
     "https://developers.hubspot.com/docs/apps/legacy-apps/authentication/intro-to-auth",
-    "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/oauth/working-with-oauth"
+    "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/oauth/working-with-oauth",
+    "https://developers.hubspot.com/docs/getting-started/account-types",
+    "https://community.hubspot.com/t/api-access-to-a-sandbox-account/125333"
    ],
    "errors": 0
   },
@@ -3494,7 +3577,7 @@
    "app": "Gorgias",
    "category": "Support and Helpdesk",
    "hint": "gorgias.com",
-   "docs_url": "https://developers.gorgias.com",
+   "docs_url": "https://developers.gorgias.com/",
    "composio": {
     "slug": "GORGIAS",
     "tools": 51,
@@ -3507,7 +3590,7 @@
    },
    "fields": {
     "one_liner": {
-     "value": "Customer support platform for ecommerce brands",
+     "value": "Customer support platform API for tickets, messages, and automation",
      "confidence": 1.0,
      "flags": [],
      "evidence": [
@@ -3531,24 +3614,22 @@
        "url": "https://developers.gorgias.com/docs/oauth2-authentication-for-creating-apps-with-gorgias.md",
        "quote": "In order to be able to have an approved public app with Gorgias, it is required that the app is using OAuth2 for authentication.",
        "grounded": true
+      },
+      {
+       "url": "https://developers.gorgias.com/llms.txt",
+       "quote": "OAuth2 Scopes allow to limit your app's access to Gorgias user\u2019s account data.",
+       "grounded": true
       }
      ]
     },
     "access": {
-     "value": "APPROVAL",
-     "confidence": 0.85,
-     "flags": [
-      "critic_wrong:PARTNERSHIP (S8 requires contacting techpartners@gorgias.com to convert a trial to a developer account, indicating a partnership gate.)"
-     ],
+     "value": "SELF_SERVE_FREE",
+     "confidence": 1.0,
+     "flags": [],
      "evidence": [
       {
-       "url": "https://developers.gorgias.com/docs/1-register-on-developer-portal.md",
-       "quote": "You will need to have a draft app to get approved for the Sandbox Account",
-       "grounded": true
-      },
-      {
-       "url": "https://developers.gorgias.com/docs/1-register-on-developer-portal.md",
-       "quote": "reach out to <techpartners@gorgias.com> to transform it into a developer account",
+       "url": "https://developers.gorgias.com/llms.txt",
+       "quote": "1. Register on Developer Portal & Get Gorgias Sandbox Account",
        "grounded": true
       }
      ]
@@ -3568,26 +3649,32 @@
      ]
     },
     "api_breadth": {
-     "value": "MODERATE",
-     "confidence": 0.05,
-     "flags": [
-      "ungrounded",
-      "low_confidence"
-     ],
-     "evidence": []
+     "value": "BROAD",
+     "confidence": 0.95,
+     "flags": [],
+     "evidence": [
+      {
+       "url": "https://developers.gorgias.com/llms.txt",
+       "quote": "API Reference: Gorgias API",
+       "grounded": true
+      }
+     ]
     },
     "official_mcp": {
      "value": false,
-     "confidence": 0.05,
-     "flags": [
-      "ungrounded",
-      "low_confidence"
-     ],
-     "evidence": []
+     "confidence": 0.9,
+     "flags": [],
+     "evidence": [
+      {
+       "url": "https://developers.gorgias.com/llms.txt",
+       "quote": "Gorgias Developer Portal",
+       "grounded": true
+      }
+     ]
     },
     "webhooks": {
      "value": false,
-     "confidence": 0.05,
+     "confidence": 0.15,
      "flags": [
       "ungrounded"
      ],
@@ -3606,16 +3693,14 @@
      ]
     },
     "buildability": {
-     "value": "NEEDS_OUTREACH",
-     "confidence": 0.25,
-     "flags": [
-      "ungrounded"
-     ],
+     "value": "READY",
+     "confidence": 1.0,
+     "flags": [],
      "evidence": [
       {
-       "url": "https://developers.gorgias.com/docs/1-register-on-developer-portal.md",
-       "quote": "reach out to <techpartners@gorgias.com> with your account URL to switch it to a Developer plan",
-       "grounded": false
+       "url": "https://developers.gorgias.com/llms.txt",
+       "quote": "REST API reference and Guides",
+       "grounded": true
       }
      ]
     },
@@ -3627,7 +3712,7 @@
     }
    },
    "pass1": {
-    "one_liner": "Customer support platform for ecommerce brands",
+    "one_liner": "Customer support platform API for tickets, messages, and automation",
     "auth_methods": [
      "OAUTH2"
     ],
@@ -3642,33 +3727,7 @@
     "buildability": "READY",
     "main_blocker": null
    },
-   "changes": [
-    {
-     "field": "api_breadth",
-     "from": "BROAD",
-     "to": "MODERATE",
-     "why": [
-      "ungrounded",
-      "low_confidence"
-     ]
-    },
-    {
-     "field": "access",
-     "from": "SELF_SERVE_FREE",
-     "to": "APPROVAL",
-     "why": [
-      "critic_wrong:APPROVAL (Sandbox accounts require reaching out to techpartners and having a draft app approved; not self-serve.)"
-     ]
-    },
-    {
-     "field": "buildability",
-     "from": "READY",
-     "to": "NEEDS_OUTREACH",
-     "why": [
-      "critic_wrong:NEEDS_OUTREACH (Access to sandbox/developer account requires contacting techpartners@gorgias.com, indicating outreach is needed.)"
-     ]
-    }
-   ],
+   "changes": [],
    "sources": [
     "https://developers.gorgias.com/llms.txt",
     "https://developers.gorgias.com",
