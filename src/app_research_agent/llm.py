@@ -137,7 +137,8 @@ def chat_json(
     from groq import APIConnectionError, APIStatusError, RateLimitError
 
     messages = [{"role": "system", "content": system}, {"role": "user", "content": user}]
-    est = (len(system) + len(user)) // 3 + settings.max_output_tokens
+    # ~4 chars/token for English + JSON; reserve a typical (not maximum) output; settle() corrects it
+    est = (len(system) + len(user)) // 4 + min(settings.max_output_tokens, 1200)
     delay = 8.0
     last: Exception | None = None
     for _ in range(attempts):
