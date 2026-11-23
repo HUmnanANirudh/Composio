@@ -44,5 +44,8 @@ Regime is never carried by color alone. Every cell and chip also prints its lett
 - One content width (1240px max) with a gutter of `clamp(16px, 4vw, 40px)` on both sides.
 - First viewport: compact two-column masthead, then findings (figure + sentence rows on one left edge) beside the 100-cell regime matrix and its record card.
 - Dense passages (register, miss tables) alternate with reading passages (findings, route).
+- Every section head after the first viewport sits under a 2px ink chapter rule, the manual's chapter break. No kicker labels or section numbers.
+- Spacing is in three steps: between sections (88–144px), between blocks inside a section (40–76px), and inside a block (12–24px). Space above a heading is always larger than the space below it.
+- Rows breathe: findings rows have 17px vertical padding, table cells 11–14px, list rows 11px.
 - The page closes on the dark band that matches the masthead: "Run it yourself" and "Where it fell short".
 - Below 980px everything stacks, and the route turns vertical. Below 640px the matrix drops app names and keeps codes, with category labels spanning each row.

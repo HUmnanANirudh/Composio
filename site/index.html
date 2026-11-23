@@ -62,28 +62,35 @@ code,.mono{font-family:var(--mono);font-size:.86em;letter-spacing:0}
 .mast .bar a{color:var(--band-ink);text-decoration:none}
 .mast .bar a:hover{text-decoration:underline}
 .mast .ed{font-family:var(--mono);font-size:12.5px;color:var(--band-ink-2)}
-.mast .head{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(20px,4vw,56px);align-items:end;padding:clamp(22px,3vw,36px) 0 clamp(22px,3vw,32px)}
+.mast .head{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(28px,5vw,80px);align-items:end;padding:clamp(40px,5.5vw,76px) 0 clamp(40px,5vw,64px)}
 .mast h1{font-family:var(--display);font-variation-settings:"wdth" 68;font-weight:800;font-size:clamp(44px,6.6vw,92px);line-height:.9;letter-spacing:-.02em;margin:0;text-wrap:balance}
 .mast h1 span{display:block}
-.mast .sub{color:var(--band-ink-2);font-size:clamp(15.5px,1.3vw,17px);margin:0 0 16px}
+.mast .sub{color:var(--band-ink-2);font-size:clamp(15.5px,1.3vw,17px);line-height:1.6;margin:0 0 24px;max-width:56ch}
 .mast .sub b{color:var(--band-ink);font-weight:500}
-.mast .runline{display:flex;flex-wrap:wrap;gap:10px 10px;font-size:14.5px}
+.mast .runline{display:flex;flex-wrap:wrap;align-items:center;gap:12px 12px;font-size:14.5px}
+.mast .agentline{margin:16px 0 0;font-size:13.5px;color:var(--band-ink-2)}
+.mast .agentline a{color:var(--band-ink);text-decoration:underline;text-decoration-color:#ffffff55}
+.mast .agentline a:hover{text-decoration-color:currentColor}
 .btn{display:inline-flex;align-items:center;gap:8px;background:var(--act);color:var(--act-ink);border:0;border-radius:6px;padding:10px 16px;font:600 15px/1 var(--body);text-decoration:none;cursor:pointer}
 .btn:hover{filter:brightness(1.08)}
 .btn.ghost{background:transparent;color:var(--band-ink);box-shadow:inset 0 0 0 1px #ffffff55}
 .btn svg{width:16px;height:16px}
 
 /* ---------- first viewport: findings + matrix ---------- */
-.lead{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,56px);padding:clamp(28px,4vw,48px) 0 8px}
-.lead h2,.sec h2{font-family:var(--display);font-variation-settings:"wdth" 75;font-weight:750;font-size:clamp(26px,3vw,36px);line-height:1.05;letter-spacing:-.01em;margin:0 0 14px;text-wrap:balance}
+.lead{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,80px);padding-top:clamp(48px,6vw,88px)}
+.lead h2,.sec h2{font-family:var(--display);font-variation-settings:"wdth" 75;font-weight:750;font-size:clamp(26px,3vw,36px);line-height:1.05;letter-spacing:-.01em;margin:0 0 24px;text-wrap:balance}
+/* a manual's chapter rule: ink at strength over every section head */
+.sec > .wrap > h2{border-top:2px solid var(--ink);padding-top:clamp(18px,2vw,24px);margin-bottom:16px}
+.provisional{display:block;font:500 13.5px/1.45 var(--body);color:var(--ink-3);letter-spacing:0;margin-top:8px}
 .findings{list-style:none;margin:0;padding:0;counter-reset:f}
-.findings li{display:grid;grid-template-columns:92px 1fr;gap:4px 14px;align-items:baseline;padding:11px 0;border-top:1px solid var(--rule);font-size:16.5px;line-height:1.42}
+.findings li{display:grid;grid-template-columns:104px 1fr;gap:4px 20px;align-items:baseline;padding:17px 0;border-top:1px solid var(--rule);font-size:16.5px;line-height:1.5}
 .findings li:first-child{border-top:0;padding-top:2px}
 .findings li.plain{display:block}
-.findings .fig{font-family:var(--display);font-variation-settings:"wdth" 72;font-weight:800;font-size:28px;line-height:1;letter-spacing:-.01em;white-space:nowrap}
+.findings .fig{font-family:var(--display);font-variation-settings:"wdth" 72;font-weight:800;font-size:30px;line-height:1;letter-spacing:-.01em;white-space:nowrap}
+.findings li.plain{padding-top:20px;color:var(--ink-3);font-size:14px}
 .findings .fig.word{font-size:17px;line-height:1.1;white-space:normal}
 .matrix-wrap{position:relative}
-.matrix{display:grid;grid-template-columns:minmax(92px,auto) repeat(10,minmax(0,1fr));gap:3px;align-items:stretch}
+.matrix{display:grid;grid-template-columns:minmax(92px,auto) repeat(10,minmax(0,1fr));gap:4px;align-items:stretch}
 .matrix .cat{font-size:12.5px;line-height:1.15;color:var(--ink-2);display:flex;align-items:center;padding-right:8px}
 .cell{appearance:none;border:0;margin:0;padding:5px 4px 4px;min-height:46px;border-radius:3px;display:flex;flex-direction:column;justify-content:space-between;text-align:left;cursor:pointer;font:500 10.5px/1.1 var(--body);overflow:hidden;position:relative;transition:transform .18s cubic-bezier(.2,.8,.2,1),box-shadow .18s}
 .cell .code{font:600 11px/1 var(--mono);opacity:.9}
@@ -98,50 +105,53 @@ code,.mono{font-family:var(--mono);font-size:.86em;letter-spacing:0}
 .rg-APPROVAL{background:var(--r-approval);color:var(--r-approval-ink)}
 .rg-PARTNERSHIP{background:var(--r-partner);color:var(--r-partner-ink)}
 .rg-NO_PUBLIC_API{background:var(--r-none);color:var(--r-none-ink)}
-.legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin:14px 0 0;padding:0;list-style:none;font-size:13.5px;color:var(--ink-2)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin:20px 0 0;padding:0;list-style:none;font-size:13.5px;color:var(--ink-2)}
 .legend li{display:flex;align-items:center;gap:7px}
 .chip{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:20px;padding:0 5px;border-radius:3px;font:600 12px/1 var(--mono)}
-.matrix-note{font-size:13px;color:var(--ink-3);margin:8px 0 0}
-.record{margin-top:16px;background:var(--sheet);border:1px solid var(--rule);border-radius:8px;padding:16px 18px;min-height:178px}
+.matrix-note{font-size:13px;color:var(--ink-3);margin:12px 0 0;max-width:72ch}
+.record{margin-top:24px;background:var(--sheet);border:1px solid var(--rule);border-radius:8px;padding:20px 22px;min-height:190px}
 .record h3{margin:0 0 2px;font:750 22px/1.1 var(--display);font-variation-settings:"wdth" 80}
-.record .meta{font-size:13px;color:var(--ink-3);margin-bottom:10px}
-.record dl{display:grid;grid-template-columns:max-content 1fr;gap:5px 14px;margin:0;font-size:14.5px}
+.record .meta{font-size:13px;color:var(--ink-3);margin-bottom:14px}
+.record dl{display:grid;grid-template-columns:max-content 1fr;gap:7px 18px;margin:0;font-size:14.5px}
 .record dt{color:var(--ink-3)}
 .record dd{margin:0}
-.record .q{font-size:13.5px;color:var(--ink-2);margin:10px 0 0}
+.record .q{font-size:13.5px;color:var(--ink-2);margin:14px 0 0;padding-top:12px;border-top:1px solid var(--rule-2)}
 
 /* ---------- sections ---------- */
-.sec{padding:clamp(44px,6vw,80px) 0 0}
-.sec > .wrap > p.intro,.sec p.intro{max-width:70ch;color:var(--ink-2);margin:0 0 22px;font-size:17px}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,40px)}
-.three{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,36px)}
-h3.h{font:700 20px/1.2 var(--body);margin:0 0 10px}
+.sec{padding:clamp(88px,10vw,144px) 0 0}
+.sec > .wrap > p.intro,.sec p.intro{max-width:68ch;color:var(--ink-2);margin:0 0 clamp(36px,4vw,52px);font-size:17px;line-height:1.6}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,80px)}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(32px,4vw,56px)}
+.block{margin-top:clamp(52px,6vw,76px)}
+.stack,h3.h.stack{margin-top:clamp(40px,4.5vw,56px)}
+h3.h{font:700 19px/1.25 var(--body);margin:0 0 16px}
+.note{margin:14px 0 0;max-width:62ch}
 .small{font-size:13.5px;color:var(--ink-3)}
 /* category bars */
-.catbars{display:grid;gap:8px}
+.catbars{display:grid;gap:12px}
 .catbar{display:grid;grid-template-columns:minmax(150px,220px) 1fr 44px;gap:12px;align-items:center;font-size:14.5px}
 .catbar .track{display:flex;height:22px;border-radius:3px;overflow:hidden;background:var(--rule-2)}
 .catbar .track span{display:block;height:100%}
 .catbar .pct{text-align:right;font-family:var(--mono);font-size:13px}
 /* simple tables */
 table{border-collapse:collapse;width:100%;font-size:14.5px}
-th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--rule-2);vertical-align:top}
+th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--rule-2);vertical-align:top}
 th{font-weight:700;color:var(--ink-2);font-size:13px;border-bottom:1px solid var(--rule)}
 td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
 .bar-inline{display:inline-block;height:8px;border-radius:2px;background:var(--ink-2);vertical-align:middle;margin-left:8px}
 .list-tight{list-style:none;margin:0;padding:0}
-.list-tight li{padding:7px 0;border-top:1px solid var(--rule-2);font-size:14.5px}
+.list-tight li{padding:11px 0;border-top:1px solid var(--rule-2);font-size:14.5px;line-height:1.5}
 .list-tight li:first-child{border-top:0}
 /* register */
-.filters{display:flex;flex-wrap:wrap;gap:10px 12px;align-items:end;margin:0 0 14px}
+.filters{display:flex;flex-wrap:wrap;gap:14px 16px;align-items:end;margin:0 0 20px}
 .filters label{display:grid;gap:4px;font-size:12.5px;color:var(--ink-3)}
 .filters select,.filters input{font:500 14.5px/1 var(--body);color:var(--ink);background:var(--sheet);border:1px solid var(--rule);border-radius:6px;padding:9px 32px 9px 10px;min-width:150px;appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--ink-3) 50%),linear-gradient(135deg,var(--ink-3) 50%,transparent 50%);background-position:calc(100% - 15px) 52%,calc(100% - 10px) 52%;background-size:5px 5px;background-repeat:no-repeat}
 .filters input{background-image:none;padding-right:10px;min-width:200px}
 .filters .count{font-size:14px;color:var(--ink-2);margin-left:auto}
-.reg{overflow-x:auto;border:1px solid var(--rule);border-radius:8px;background:var(--sheet);padding:4px 6px}
-.reg table{min-width:1040px}
+.reg{overflow-x:auto;border:1px solid var(--rule);border-radius:8px;background:var(--sheet);padding:6px 8px}
+#reg-table{min-width:1040px}
 .reg th{position:sticky;top:0;background:var(--sheet);z-index:1}
-.reg td{font-size:14px}
+.reg td{font-size:14px;padding-top:14px;padding-bottom:14px}
 .reg td.app b{display:block;font-weight:700}
 .reg td.app span{color:var(--ink-3);font-size:12.5px}
 .enum{font:500 12.5px/1.3 var(--mono)}
@@ -152,47 +162,52 @@ details.ev summary{cursor:pointer;color:var(--act);font-size:13px}
 details.ev blockquote{margin:6px 0 0;padding:0 0 0 10px;border-left:1px solid var(--rule);font-size:13px;color:var(--ink-2)}
 .reg tr.flagged td.app b::after{content:" · flagged";font-weight:500;color:var(--miss);font-size:12px}
 /* route */
-.route{display:grid;grid-template-columns:repeat(6,1fr);gap:0;position:relative;margin:8px 0 0}
-.stn{position:relative;padding:34px 14px 0 0}
+.route{display:grid;grid-template-columns:repeat(6,1fr);gap:0;position:relative;margin:0}
+.stn{position:relative;padding:42px 28px 0 0}
 .stn::before{content:"";position:absolute;left:0;right:0;top:11px;height:3px;background:var(--ink)}
 .stn:last-child::before{right:auto;width:14px}
 .stn .dot{position:absolute;left:0;top:3px;width:19px;height:19px;border-radius:50%;background:var(--paper);border:3px solid var(--ink)}
 .stn.human .dot{border-radius:3px;background:var(--r-paid);border-color:var(--ink)}
-.stn h3{margin:0 0 4px;font:700 16px/1.2 var(--body)}
-.stn p{margin:0;font-size:13.5px;color:var(--ink-2)}
-.stn .who{display:block;font:600 12px/1.4 var(--mono);color:var(--ink-3);margin-bottom:4px}
-.humans{margin-top:28px}
-.humans li{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start}
+.stn h3{margin:0 0 8px;font:700 16px/1.25 var(--body)}
+.stn p{margin:0;font-size:14px;line-height:1.55;color:var(--ink-2)}
+.stn .who{display:block;font:600 12px/1.4 var(--mono);color:var(--ink-3);margin-bottom:6px}
+.humans{margin-top:clamp(60px,7vw,96px)}
+.humans li{display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:start;padding:14px 0}
 .humans svg{width:22px;height:22px;margin-top:1px}
 /* document check */
-.verdict{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,56px);align-items:start}
-.acc{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin:6px 0 12px}
+.verdict{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(36px,5vw,80px);align-items:start}
+.acc{display:flex;align-items:baseline;gap:20px;flex-wrap:wrap;margin:0 0 32px}
 .acc .v{font-family:var(--display);font-variation-settings:"wdth" 75;font-weight:800;font-size:clamp(40px,5vw,64px);line-height:1}
 .acc .arrow{font-size:28px;color:var(--ink-3)}
-.acc .lab{display:block;font:500 13px/1.3 var(--body);color:var(--ink-3)}
+.acc .lab{display:block;font:500 13px/1.3 var(--body);color:var(--ink-3);margin-top:8px}
 .stampmark{display:inline-block;transform:rotate(-2.5deg);border:1.5px solid var(--stamp);color:var(--stamp);border-radius:4px;padding:2px 7px;font:700 12px/1.3 var(--mono);letter-spacing:.05em;text-transform:uppercase}
 .stampmark.bad{border-color:var(--miss);color:var(--miss)}
 .stampmark.grey{border-color:var(--unscored);color:var(--unscored)}
 .struck{text-decoration:line-through;text-decoration-thickness:1.5px;text-decoration-color:var(--miss)}
 .missrow td{font-size:13.5px}
+.verdict-note{display:block;margin-top:6px;color:var(--ink-2);font-size:13px;max-width:46ch}
 .delta-up{color:var(--hit);font-weight:700}.delta-down{color:var(--miss);font-weight:700}
-.callout{background:var(--sheet);border:1px solid var(--rule);border-radius:8px;padding:16px 18px}
+.callout{background:var(--sheet);border:1px solid var(--rule);border-radius:8px;padding:22px 24px}
+.callout p{margin:0 0 10px}
 pre{background:var(--band);color:var(--band-ink);padding:14px 16px;border-radius:8px;overflow:auto;font:500 13px/1.6 var(--mono)}
 /* close */
-.close{background:var(--band);color:var(--band-ink);margin-top:clamp(48px,7vw,96px);padding:clamp(36px,5vw,64px) 0}
-.close h2{font-family:var(--display);font-variation-settings:"wdth" 70;font-weight:800;font-size:clamp(34px,5vw,60px);line-height:.95;margin:0 0 14px}
-.close p,.close li{color:var(--band-ink-2)}
+.close{background:var(--band);color:var(--band-ink);margin-top:clamp(104px,12vw,168px);padding:clamp(60px,7.5vw,104px) 0 clamp(36px,4vw,48px)}
+.close h2{font-family:var(--display);font-variation-settings:"wdth" 70;font-weight:800;font-size:clamp(34px,5vw,60px);line-height:.95;margin:0 0 24px}
+.close p,.close li{color:var(--band-ink-2);line-height:1.6}
+.close ul{padding-left:20px;margin:0 0 24px}
+.close li{margin-bottom:10px}
+.close pre{margin:20px 0 0}
 .close a{color:#9db8ff}
-.close .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px)}
+.close .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,6vw,96px)}
 .close pre{background:#ffffff10;color:var(--band-ink)}
-.foot{color:var(--band-ink-2);font-size:13px;border-top:1px solid #ffffff22;margin-top:32px;padding-top:16px}
+.foot{color:var(--band-ink-2);font-size:13px;border-top:1px solid #ffffff22;margin-top:clamp(56px,6vw,80px);padding-top:20px}
 .loading{padding:40px 0;color:var(--ink-3)}
 @media (max-width: 980px){
   .mast .head{grid-template-columns:1fr}
   .lead,.verdict,.two,.close .grid{grid-template-columns:1fr}
   .three{grid-template-columns:1fr}
   .route{grid-template-columns:1fr}
-  .stn{padding:0 0 18px 34px}
+  .stn{padding:0 0 28px 40px}
   .stn::before{left:8px;right:auto;top:0;bottom:0;width:3px;height:auto}
   .stn:last-child::before{bottom:auto;height:14px;width:3px}
   .stn .dot{top:0}
@@ -206,6 +221,9 @@ pre{background:var(--band);color:var(--band-ink);padding:14px 16px;border-radius
   .catbar{grid-template-columns:1fr 40px}
   .catbar .label{grid-column:1/-1}
   .filters .count{margin-left:0;width:100%}
+  .findings li{grid-template-columns:72px 1fr;gap:4px 14px}
+  .findings .fig{font-size:26px}
+  .findings .fig.word{font-size:15px}
 }
 @media (prefers-reduced-motion: reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
@@ -226,9 +244,8 @@ pre{background:var(--band);color:var(--band-ink);padding:14px 16px;border-radius
     <div class="runline">
       <a class="btn" id="run-trigger" href="https://github.com/HUmnanANirudh/Composio/actions/workflows/research.yml"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg>Run the agent on any app</a>
       <a class="btn ghost" href="https://github.com/HUmnanANirudh/Composio">Source and README</a>
-      <a class="btn ghost" href="data.json">data.json</a>
-      <a class="btn ghost" href="llms.txt">llms.txt</a>
     </div>
+    <p class="agentline">For agents: <a href="llms.txt">llms.txt</a> · <a href="data.json">data.json</a> · <a href="results.csv">results.csv</a></p>
     </div>
     </div>
   </div>
@@ -257,15 +274,15 @@ pre{background:var(--band);color:var(--band-ink);padding:14px 16px;border-radius
         <div>
           <h3 class="h">Who lets you in alone, by category</h3>
           <div class="catbars" id="catbars"></div>
-          <p class="small" style="margin-top:10px">Percentage = apps where credentials are self-serve (free or trial).</p>
+          <p class="small note">Percentage = apps where credentials are self-serve (free or trial).</p>
         </div>
         <div>
           <h3 class="h">How apps authenticate</h3>
           <table id="auth-table"></table>
-          <p class="small" style="margin-top:10px">An app counts once per method it accepts, so rows sum past 100.</p>
+          <p class="small note">An app counts once per method it accepts, so rows can sum past the number of apps.</p>
         </div>
       </div>
-      <div class="three" style="margin-top:40px">
+      <div class="three block">
         <div><h3 class="h">Most common blockers</h3><ul class="list-tight" id="blockers"></ul></div>
         <div><h3 class="h">Easy wins: self-serve, no Composio toolkit yet</h3><ul class="list-tight" id="easy"></ul></div>
         <div><h3 class="h">Needs outreach or partnership</h3><ul class="list-tight" id="outreach"></ul></div>
@@ -293,12 +310,12 @@ pre{background:var(--band);color:var(--band-ink);padding:14px 16px;border-radius
   <section class="sec" id="agent" aria-labelledby="h-agent">
     <div class="wrap">
       <h2 id="h-agent">The agent's route</h2>
-      <p class="intro">A Python pipeline (<code>uv run research run</code>). Composio provides the catalog cross-check and web search, through a Platform SDK session to Exa. Groq models extract and audit the fields. Square stations are where a human had to step in.</p>
+      <p class="intro">A Python pipeline (<code>uv run research run</code>). Composio provides the catalog cross-check and web search, through a Platform SDK session to Exa. Gemini models extract and re-research the fields, and Gemma, a different model family, audits them; each step falls back through a chain of models when one is out of quota. Square stations are where a human had to step in.</p>
       <div class="route" id="route">
         <div class="stn"><span class="dot"></span><span class="who">deterministic</span><h3>Composio catalog</h3><p>Match each app to Composio's public 1,841-toolkit catalog: existing toolkit, tool count, auth schemes, vendor MCP proxy.</p></div>
         <div class="stn"><span class="dot"></span><span class="who">crawler + Composio → Exa</span><h3>Discover sources</h3><p>Crawl the official docs host and its llms.txt, follow auth, pricing and MCP links, then search with <code>EXA_SEARCH</code> through a Composio session.</p></div>
-        <div class="stn"><span class="dot"></span><span class="who" id="m-extract">gpt-oss-120b</span><h3>Extract, pass 1</h3><p>Fill a rubric of fixed enums. Every field must cite a source and a verbatim quote. The catalog is withheld so it stays independent.</p></div>
-        <div class="stn"><span class="dot"></span><span class="who">deterministic + <span id="m-critic">qwen3.8-27b</span> + <span id="m-rr">gpt-oss-20b</span></span><h3>Verify, four loops</h3><p>Grounding: is the quote on the page? Rules: consistency and Composio cross-checks. Critic: a second model family audits pass 1. Re-research: new sources for flagged fields only, then grounding and rules again.</p></div>
+        <div class="stn"><span class="dot"></span><span class="who" id="m-extract">gemini</span><h3>Extract, pass 1</h3><p>Fill a rubric of fixed enums. Every field must cite a source and a verbatim quote. The catalog is withheld so it stays independent.</p></div>
+        <div class="stn"><span class="dot"></span><span class="who">deterministic + <span id="m-critic">gemma</span> + <span id="m-rr">gemini</span></span><h3>Verify, four loops</h3><p>Grounding: is the quote on the page? Rules: consistency and Composio cross-checks. Critic: a second model family audits pass 1. Re-research: new sources for flagged fields only, then grounding and rules again.</p></div>
         <div class="stn human"><span class="dot"></span><span class="who">human</span><h3>Answer key</h3><p>20 apps drawn at random (2 per category, fixed seed) before any run, checked by hand against official docs.</p></div>
         <div class="stn"><span class="dot"></span><span class="who">deterministic</span><h3>Score + patterns</h3><p>Pass 1 vs final, field by field, against the key. Patterns are plain counts over the final records.</p></div>
       </div>
@@ -309,13 +326,13 @@ pre{background:var(--band);color:var(--band-ink);padding:14px 16px;border-radius
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/></svg><span><b>Catalog matching.</b> Fuzzy name matching mapped 80 of 100 apps cleanly; 20 ambiguous ones (Zoho CRM → <code>ZOHO</code>, GoHighLevel → <code>HIGHLEVEL_LOCATION</code>, Mermaid CLI → none) are pinned in a reviewed override file.</span></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/></svg><span><b>Search credentials.</b> Composio's built-in search toolkit is retired (HTTP 410), so a human created an Exa key; <code>research connect-search</code> registers it on the agent's Composio user. Without it the agent prints a Connect Link and runs crawler-only.</span></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/></svg><span><b>The answer key.</b> 20 apps × 6 fields read from vendor docs, with URLs and quotes. Contested fields are left unscored rather than guessed.</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/></svg><span><b>Reviewing misses.</b> Every miss below was read against the source to decide whether the agent or the key was wrong. Once, the key was wrong (Clay).</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/></svg><span><b>Reviewing misses.</b> Each miss is read against its source and given a verdict (agent wrong, key wrong, or ambiguous) in <code>data/audit.json</code>, one record per app and field. Once, the key was wrong (Clay).</span></li>
           </ul>
         </div>
         <div>
           <h3 class="h">What it cost</h3>
           <table id="usage-table"></table>
-          <p class="small" style="margin-top:10px">All on Groq's free tier: 8K tokens per minute and 200K per day for each model. The agent paces itself with a token budget and spreads work across three models so each daily quota is used. At a daily cap it pauses cleanly, and the next run resumes where it stopped.</p>
+          <p class="small note">Gemini API. Each step falls back through a chain of models, newest first, when one is out of quota or overloaded. The table lists the models that actually answered. The run pauses only if every model in a chain is out of quota, and the next run resumes where it stopped.</p>
         </div>
       </div>
     </div>
@@ -329,17 +346,17 @@ pre{background:var(--band);color:var(--band-ink);padding:14px 16px;border-radius
         <div>
           <div class="acc" id="acc"></div>
           <table id="field-table"></table>
-          <h3 class="h" style="margin-top:28px">What each loop caught on pass 1</h3>
+          <h3 class="h stack">What each loop caught on pass 1</h3>
           <table id="loop-table"></table>
-          <h3 class="h" style="margin-top:28px">Does confidence mean anything?</h3>
+          <h3 class="h stack">Does confidence mean anything?</h3>
           <table id="calib-table"></table>
         </div>
         <div>
           <h3 class="h">Every miss in the final records</h3>
           <div class="reg"><table id="miss-table"></table></div>
-          <h3 class="h" style="margin-top:28px">Fixed by verification</h3>
+          <h3 class="h stack">Fixed by verification</h3>
           <div class="reg"><table id="fixed-table"></table></div>
-          <div class="callout" style="margin-top:28px" id="key-revisions"></div>
+          <div class="callout stack" id="key-revisions"></div>
         </div>
       </div>
     </div>
@@ -351,7 +368,7 @@ pre{background:var(--band);color:var(--band-ink);padding:14px 16px;border-radius
         <div>
           <h2 id="h-run">Run it yourself</h2>
           <p>From GitHub: <a href="https://github.com/HUmnanANirudh/Composio/actions/workflows/research.yml">Actions → Run research agent → Run workflow</a>, type any app from the list. The job summary prints the cited record and uploads the JSON. Or locally:</p>
-          <pre>uv sync && cp .env.example .env   # GROQ, COMPOSIO, EXA keys
+          <pre>uv sync && cp .env.example .env   # GEMINI, COMPOSIO, EXA keys
 uv run research connect-search      # Exa → Composio user
 uv run research run --apps Attio    # pass 1 + verification
 uv run research show --apps Attio --md
@@ -361,12 +378,12 @@ uv run research build-site          # this page's data</pre>
         <div>
           <h2>Where it fell short</h2>
           <ul id="limits">
-            <li>Groq's free tier (200K tokens per day per model) spreads a full run over about three days, and re-research runs on the smaller gpt-oss-20b to fit the budget.</li>
+            <li>On a free-tier Gemini key the Pro-class models are capped at zero and the Flash models are sometimes overloaded. The fallback chain absorbs this, so a record can come from an older Flash model; every call logs which model answered.</li>
             <li>JavaScript-rendered docs (e.g. GoHighLevel's Stoplight portal) return almost no text to a plain fetch.</li>
             <li>“Access” is the hardest field: pricing pages rarely say plainly whether the API is on the free plan.</li>
             <li>The answer key covers 20 of 100 apps; the other 80 rely on the loops and confidence alone.</li>
           </ul>
-          <p class="small" style="color:var(--band-ink-2)">For agents: <a href="llms.txt">llms.txt</a> · <a href="data.json">data.json</a> (records, evidence, flags, pass-1 values, eval) · <a href="results.csv">results.csv</a></p>
+          <p class="small" style="color:var(--band-ink-2);margin:0">For agents: <a href="llms.txt">llms.txt</a> · <a href="data.json">data.json</a> (records, evidence, flags, pass-1 values, eval) · <a href="results.csv">results.csv</a></p>
         </div>
       </div>
       <p class="foot" id="foot">Data generated —. Apps are referred to by name for research purposes; no affiliation with any vendor, including Composio.</p>
@@ -401,16 +418,25 @@ function render(d){
   const apps = d.apps, byId = Object.fromEntries(apps.map(a => [a.id, a]));
   const P = d.patterns || {}, E = d.eval || {};
   $("#edition").textContent = `Edition ${d.generated.slice(0,7)} · ${d.counts.researched} of ${d.counts.apps} apps researched · data ${d.generated}`;
-  $("#foot").textContent = `Data generated ${d.generated}. Extraction ${d.models.extract}; critic ${d.models.critic}; search ${d.models.search}. Apps are named for research purposes; no affiliation with any vendor, including Composio.`;
-  $("#m-extract").textContent = d.models.extract.replace("openai/","");
-  $("#m-critic").textContent = d.models.critic.replace("qwen/","");
-  if (d.models.reresearch) $("#m-rr").textContent = d.models.reresearch.replace("openai/","");
+  $("#foot").textContent = `Data generated ${d.generated}. Models that answered: extraction ${(d.models.used?.extract || []).join(", ") || "—"}; critic ${(d.models.used?.critic || []).join(", ") || "—"}; re-research ${(d.models.used?.reresearch || []).join(", ") || "—"}. Search: ${d.models.search}. Apps are named for research purposes; no affiliation with any vendor, including Composio.`;
+  const M = d.models || {}, lead = k => (M.used?.[k] || M.chains?.[k] || ["—"])[0];
+  $("#m-extract").textContent = lead("extract");
+  $("#m-critic").textContent = lead("critic");
+  $("#m-rr").textContent = lead("reresearch");
+  const partial = d.counts.researched < d.counts.apps;
+  $("#h-findings").innerHTML = !d.counts.researched
+    ? `What the ${d.counts.apps} apps show<span class="provisional">The research run is in progress; no app has finished verification yet. Findings appear here as records land.</span>`
+    : partial ? `What the first ${d.counts.researched} apps show<span class="provisional">Provisional: ${d.counts.researched} of ${d.counts.apps} apps researched so far. Every figure below is recomputed as records land.</span>` : `What the ${d.counts.apps} apps show`;
 
   // findings
   const acc1 = E.pass1?.overall?.accuracy, accF = E.final?.overall?.accuracy;
   const items = (P.headlines || []).map(h => `<li><span class="fig num${/^[\d%]+$/.test(h.fig) ? "" : " word"}">${esc(h.fig)}</span><span>${esc(h.text)}</span></li>`);
-  if (acc1 != null && accF != null) items.push(`<li><span class="fig num">${pct(accF)}</span><span>accuracy on the hand-checked sample after verification, up from ${pct(acc1)} on the first pass. <a href="#check">See every miss</a>.</span></li>`);
-  if (d.pending.length) items.push(`<li class="plain small">${d.pending.length} apps were still being researched when this page was built; they show as outlined, empty cells.</li>`);
+  if (acc1 != null && accF != null) {
+    const dir = accF > acc1 ? `up from ${pct(acc1)} on the first pass` : accF < acc1 ? `down from ${pct(acc1)} on the first pass` : `the same as on the first pass`;
+    const nS = E.final.apps_scored;
+    items.push(`<li><span class="fig num">${pct(accF)}</span><span>field accuracy on the hand-checked sample after verification${nS != null ? ` (${nS} of 20 apps scored so far)` : ""}, ${dir}. <a href="#check">See every miss</a>.</span></li>`);
+  }
+  if (d.pending.length) items.push(`<li class="plain">${d.pending.length} apps were still being researched when this page was built; they show as outlined, empty cells.</li>`);
   $("#findings-list").innerHTML = items.join("");
 
   // legend
@@ -504,9 +530,8 @@ function filter(){
 function renderCheck(d, byId){
   const E = d.eval || {}, p1 = E.pass1, fin = E.final;
   if (!p1 || !fin) { $("#acc").textContent = "Evaluation pending."; return; }
-  const scored = fin.rows.filter(r => r.status !== "unscored" && r.status !== "missing");
-  const nApps = new Set(scored.map(r => r.id)).size;
-  $("#check-intro").innerHTML = `Scored against the hand-checked sample: <b>${nApps} apps × 6 fields = ${fin.overall.total} checks</b> (fields with contested or unreadable docs are left unscored). Pass 1 is the extractor alone; final is after the four verification loops.`;
+  const nApps = fin.apps_scored ?? new Set(fin.rows.filter(r => r.status === "hit" || r.status === "miss").map(r => r.id)).size;
+  $("#check-intro").innerHTML = `Scored against the hand-checked sample: <b>${fin.overall.total} field checks across ${nApps} of 20 apps</b>${nApps < 20 ? ", the rest still being researched" : ""}. Fields with contested or unreadable docs are left unscored. Pass 1 is the extractor alone; final is after the four verification loops, on the same apps.`;
   $("#acc").innerHTML = `<div><span class="v num">${pct(p1.overall.accuracy)}</span><span class="lab">pass 1 · ${p1.overall.correct}/${p1.overall.total}</span></div><span class="arrow" aria-hidden="true">→</span><div><span class="v num">${pct(fin.overall.accuracy)}</span><span class="lab">after verification · ${fin.overall.correct}/${fin.overall.total}</span></div>`;
   $("#field-table").innerHTML = `<thead><tr><th>Field</th><th class="n">Pass 1</th><th class="n">Final</th><th class="n">Change</th></tr></thead><tbody>` + Object.keys(FIELD_LABEL).map(f => {
     const a = p1.per_field[f] || {}, b = fin.per_field[f] || {}; const dlt = (b.correct||0) - (a.correct||0);
@@ -522,9 +547,11 @@ function renderCheck(d, byId){
 
   const gtBy = Object.fromEntries((d.ground_truth?.apps||[]).map(a => [a.id, a]));
   const misses = fin.rows.filter(r => r.status === "miss");
-  $("#miss-table").innerHTML = `<thead><tr><th>App · field</th><th>Agent said</th><th>Answer key</th></tr></thead><tbody>` + (misses.map(r => {
-    const g = gtBy[r.id], ev = g?.evidence?.[r.field];
-    return `<tr class="missrow"><td><b>${esc(r.app)}</b><br>${FIELD_LABEL[r.field]} <span class="conf">conf ${r.confidence}</span></td><td><span class="struck">${esc(fmt(r.agent))}</span></td><td>${esc(truthText(r.truth))}${r.accept && r.accept.length ? `<br><span class="small">also accepted: ${esc(r.accept.join(", "))}</span>` : ""}${ev ? `<br><a class="small" href="${esc(ev.url)}">${esc(host(ev.url))}</a>` : ""}</td></tr>`;
+  const VERDICT = {agent_wrong:["agent wrong","bad"],key_wrong:["key wrong",""],ambiguous:["ambiguous","grey"],agent_correct:["agent right",""]};
+  const rv = Object.fromEntries((d.audit?.reviews || []).map(x => [x.id+"|"+x.field, x]));
+  $("#miss-table").innerHTML = `<thead><tr><th>App · field</th><th>Agent said</th><th>Answer key and review</th></tr></thead><tbody>` + (misses.map(r => {
+    const g = gtBy[r.id], ev = g?.evidence?.[r.field], v = rv[r.id+"|"+r.field], vb = v && VERDICT[v.verdict];
+    return `<tr class="missrow"><td><b>${esc(r.app)}</b><br>${FIELD_LABEL[r.field]} <span class="conf">conf ${r.confidence}</span></td><td><span class="struck">${esc(fmt(r.agent))}</span></td><td>${esc(truthText(r.truth))}${r.accept && r.accept.length ? `<br><span class="small">also accepted: ${esc(r.accept.join(", "))}</span>` : ""}${ev ? `<br><a class="small" href="${esc(ev.url)}">${esc(host(ev.url))}</a>` : ""}${vb ? `<span class="verdict-note"><span class="stampmark ${vb[1]}">${vb[0]}</span> ${esc(v.note)}</span>` : `<span class="verdict-note small">Review pending.</span>`}</td></tr>`;
   }).join("") || `<tr><td colspan="3"><span class="stampmark">no misses</span></td></tr>`) + `</tbody>`;
 
   const p1map = Object.fromEntries(p1.rows.map(r => [r.id+"|"+r.field, r]));
@@ -533,7 +560,7 @@ function renderCheck(d, byId){
   $("#fixed-table").innerHTML = `<thead><tr><th>App · field</th><th>Pass 1</th><th>Final</th></tr></thead><tbody>` + fixed.map(r => `<tr><td><b>${esc(r.app)}</b> · ${FIELD_LABEL[r.field]}</td><td><span class="struck">${esc(fmt(p1map[r.id+"|"+r.field].agent))}</span></td><td>${esc(fmt(r.agent))} <span class="stampmark">fixed</span></td></tr>`).join("") + broke.map(r => `<tr><td><b>${esc(r.app)}</b> · ${FIELD_LABEL[r.field]}</td><td>${esc(fmt(p1map[r.id+"|"+r.field].agent))}</td><td><span class="struck">${esc(fmt(r.agent))}</span> <span class="stampmark bad">broken by loop</span></td></tr>`).join("") + (fixed.length + broke.length ? "" : `<tr><td colspan="3">No field changed outcome.</td></tr>`) + `</tbody>`;
 
   const rev = d.ground_truth?.about?.revisions || [];
-  $("#key-revisions").innerHTML = `<h3 class="h">When the answer key was wrong</h3>` + (rev.map(r => `<p style="margin:0 0 8px"><b>${esc(r.app)}</b>: ${esc(r.why)}</p>`).join("") || "<p>No revisions.</p>") + `<p class="small" style="margin:0">Key method: ${esc(d.ground_truth?.about?.sampling || "")} ${esc(d.ground_truth?.about?.checked_by || "")}</p>`;
+  $("#key-revisions").innerHTML = `<h3 class="h">When the answer key was wrong</h3>` + (rev.map(r => `<p><b>${esc(r.app)}</b>: ${esc(r.why)}</p>`).join("") || "<p>No revisions.</p>") + `<p class="small" style="margin:0">Key method: ${esc(d.ground_truth?.about?.sampling || "")} ${esc(d.ground_truth?.about?.checked_by || "")}</p>`;
 }
 </script>
 </body>
