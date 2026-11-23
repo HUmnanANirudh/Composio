@@ -35,6 +35,8 @@ class Settings:
         default_factory=lambda: _env("SEARCH_BACKEND", "auto")
     )  # auto | composio | groq | none
     search_toolkit: str = field(default_factory=lambda: _env("SEARCH_TOOLKIT", "exa"))
+    # wait out a daily-quota 429 if Groq says tokens free up within this many seconds
+    max_daily_wait: int = field(default_factory=lambda: int(_env("MAX_DAILY_WAIT", "1800")))
     concurrency: int = field(default_factory=lambda: int(_env("CONCURRENCY", "3")))
     composio_user_id: str = field(
         default_factory=lambda: _env("COMPOSIO_USER_ID", "research-agent")

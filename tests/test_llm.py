@@ -16,3 +16,12 @@ def test_budget_allows_within_cap_and_settles():
     b.settle("m", r1, 100, {"x-ratelimit-limit-tokens": "2000"})
     assert b._used("m", time.time()) == 500 and b.limit["m"] == 2000
     assert r2 in b.spent["m"]
+
+
+def test_try_again_parse():
+    from app_research_agent.llm import _try_again_seconds
+
+    assert _try_again_seconds("please try again in 20m12.624s. need more") == 1212.624
+    assert _try_again_seconds("try again in 1h2m3s") == 3723
+    assert _try_again_seconds("try again in 7.5s") == 7.5
+    assert _try_again_seconds("no hint here") is None

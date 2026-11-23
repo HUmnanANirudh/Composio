@@ -122,6 +122,17 @@ def _extra(model: str) -> dict:
     return {}
 
 
+def _try_again_seconds(msg: str) -> float | None:
+    """Parse Groq's 'try again in 1h2m3.4s' hint into seconds."""
+    m = re.search(r"try again in ((?:\d+h)?(?:\d+m)?(?:[\d.]+s)?)", msg)
+    if not m or not m.group(1):
+        return None
+    parts = {unit: val for val, unit in re.findall(r"([\d.]+)([hms])", m.group(1))}
+    return (
+        float(parts.get("h", 0)) * 3600 + float(parts.get("m", 0)) * 60 + float(parts.get("s", 0))
+    )
+
+
 def _retry_after(e) -> float | None:
     h = getattr(getattr(e, "response", None), "headers", None) or {}
     try:
@@ -161,6 +172,11 @@ def chat_json(
             last = e
             msg = str(e).lower()
             if "per day" in msg or "(tpd)" in msg or "(rpd)" in msg:
+                # Groq's daily window is rolling: if tokens free up soon, wait instead of pausing
+                wait = _try_again_seconds(msg)
+                if wait is not None and wait <= settings.max_daily_wait:
+                    time.sleep(wait + 5)
+                    continue
                 raise DailyLimitError(f"{model}: daily quota exhausted: {e}") from e
             time.sleep((_retry_after(e) or delay) + 1)
             delay = min(delay * 2, 90)
