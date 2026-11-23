@@ -1,0 +1,184 @@
+{
+  "id": 44,
+  "app": "Salesforce Commerce Cloud",
+  "category": "Ecommerce",
+  "hint": "developer.salesforce.com/docs/commerce",
+  "docs_url": "https://developer.salesforce.com/docs/commerce",
+  "one_liner": {
+    "value": "Salesforce's enterprise B2C and B2B commerce platform",
+    "evidence": [
+      {
+        "url": "https://www.salesforce.com/commerce/pricing/?bc=OTH",
+        "quote": "Commerce Cloud B2C Premium",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "JWT",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://sfcclearning.com/infocenter/OCAPI/current/usage/OAuth.php",
+        "quote": "OAuth is used to authenticate requests in the context of a client ID, also known as a Client Credentials Grant",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://salesforcecommercecloud.github.io/b2c-developer-tooling/guide/authentication.md",
+        "quote": "`private_key_jwt` for JWT Bearer authentication (certificate-based)",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "access": {
+    "value": "PARTNERSHIP",
+    "evidence": [
+      {
+        "url": "https://www.salesforce.com/commerce/pricing/?bc=OTH",
+        "quote": "Choose the right Commerce solution for your business needs.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.6,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://salesforcecommercecloud.github.io/b2c-developer-tooling/guide/authentication.md",
+        "quote": "OAuth + SCAPI",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://sfcclearning.com/infocenter/OCAPI/current/usage/OAuth.php",
+        "quote": "When using the Shop API or Data API",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://salesforcecommercecloud.github.io/b2c-developer-tooling/mcp",
+        "quote": "The B2C MCP server connects your AI assistant to Salesforce B2C Commerce tools",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "webhooks": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "sandbox": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://docs.digitsec.com/hc/en-us/articles/4959085683988-How-to-Connect-Salesforce-Commerce-Cloud",
+        "quote": "Select SandBox API User",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.4,
+    "flags": []
+  },
+  "buildability": {
+    "value": "NEEDS_OUTREACH",
+    "evidence": [
+      {
+        "url": "https://www.salesforce.com/commerce/pricing/?bc=OTH",
+        "quote": "Choose the right Commerce solution for your business needs.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "Enterprise-only: API clients come with a Commerce Cloud customer org bought through sales.",
+    "evidence": [
+      {
+        "url": "https://salesforcecommercecloud.github.io/b2c-developer-tooling/guide/authentication.md",
+        "quote": "Log in to [Account Manager](https://account.demandware.com).",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.65,
+    "flags": []
+  },
+  "composio": {
+    "found": false,
+    "slug": null,
+    "name": null,
+    "tools": null,
+    "triggers": null,
+    "auth": [],
+    "managed_app": null,
+    "url": null,
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://www.salesforce.com/commerce/pricing/?bc=OTH",
+    "https://www.salesforce.com/blog/agentforce-commerce-anthropic-agents/?bc=OTH",
+    "https://www.salesforce.com/commerce/ai/agents/?bc=OTH",
+    "https://sfcclearning.com/infocenter/OCAPI/current/usage/OAuth.php",
+    "https://salesforcecommercecloud.github.io/b2c-developer-tooling/guide/authentication.md",
+    "https://docs.digitsec.com/hc/en-us/articles/4959085683988-How-to-Connect-Salesforce-Commerce-Cloud",
+    "https://salesforcecommercecloud.github.io/b2c-developer-tooling/mcp",
+    "https://help.marker.io/en/articles/14171515-connect-marker-io-mcp-to-salesforce-commerce-cloud"
+  ],
+  "pass_name": "pass1",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session"
+  },
+  "errors": [
+    "fetch https://developer.salesforce.com/docs/commerce/b2c-commerce/references/b2c-commerce-ocapi/oauth.html: 403 too little text (JS-rendered?)",
+    "fetch https://developer.salesforce.com/docs/commerce/commerce-api/guide/scapi-get-started.html: 403 too little text (JS-rendered?)",
+    "fetch https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/mcp-dx-intro.html: 403 too little text (JS-rendered?)",
+    "fetch https://developer.salesforce.com/docs/commerce/b2c-commerce/references/b2c-commerce-ocapi/shopapiresources.html: 403 too little text (JS-rendered?)",
+    "fetch https://developer.salesforce.com/docs/commerce/commerce-solutions/guide/b2c-developer-sandboxes.html: 403 too little text (JS-rendered?)",
+    "fetch https://developer.salesforce.com/docs/commerce/commerce-vibes/guide/b2c-developer-tooling.html: 403 too little text (JS-rendered?)",
+    "fetch https://developer.salesforce.com/docs/commerce/commerce-api/guide/authorization.html: 403 too little text (JS-rendered?)",
+    "fetch https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-d2c-comm-pricing-promotions-apis.html: 403 too little text (JS-rendered?)",
+    "fetch https://developer.salesforce.com/docs/commerce/commerce-solutions/guide/sfnext-mcp-server.html: 403 too little text (JS-rendered?)",
+    "fetch https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/partners/readiness/b2c_commerce_isv_partner_onboarding_guide.pdf: 200 unsupported content-type application/pdf",
+    "fetch https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/agentic-mcp-shopper-tools-quick-start.html: 403 too little text (JS-rendered?)",
+    "fetch https://developer.salesforce.com/blogs/2020/09/commerce-cloud-developer-center: 403 too little text (JS-rendered?)",
+    "fetch https://developer.salesforce.com/podcast/2021/02/episode-69-b2c-commerce-development-with-andrew-lawrence: 403 too little text (JS-rendered?)",
+    "fetch https://www.postman.com/salesforce-developers/salesforce-developers/documentation/1qkzgik/salesforce-commerce-b2c: 200 too little text (JS-rendered?)",
+    "fetch https://c1.sfdcstatic.com/content/dam/web/en_us/www/documents/legal/Agreements/alliance-agreements-and-terms/commerce-cloud-link-partner-integration-agreement.pdf: 200 unsupported content-type application/pdf"
+  ]
+}

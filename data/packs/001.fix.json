@@ -1,0 +1,57 @@
+{
+ "sources": [
+  {
+   "sid": "R1",
+   "url": "https://www.salesforce.com/partners/become-a-partner/?bc=OTH",
+   "official": true,
+   "excerpt": "\u201cWith Salesforce technology and AgentExchange partner apps and experts, we\u2019ve been able to hone in on actual data analysis, which enables us to take quicker action.\u201d\nJen HabermanChief Operating Officer, Beyond Better Foods\n\n\"Combining Salesforce solutions with partner apps on AgentExchange has helped us meet our business goals and keep track of our activities and priorities along the way.\"\nFederico BeyerCorporate Special Projects Manager, Royal Resorts\nEnhance your Partner Program experience with the free pass to all things Salesforce:\n- Free online learning on Trailhead\n- Original programs and live-streamed events\n- Community groups and support\n- Easy sign-up for live and on-demand events\nExplore these resources to get on the path to growth.\nExplore the partner benefits of AgentExchange.\nRead a recent Valoir report about how AgentExchange enables partners to speed up time-to-market and reduce ongoing technology management costs.\nYour Salesforce Partner journey starts here\nDiscover key milestones to Salesforce partnership: from concept to a scalable, distributable solution. Get the best practices to build, establish a profitable listing, and launch your app on the world's leading Agentic Enterprise.\nFind answers to your questions.\nYou first submit your application by signing up for the Partner Community, you'll receive a Due Diligence Questionnaire to fill out and send back. Then your application will"
+  },
+  {
+   "sid": "R2",
+   "url": "https://github.com/salesforcecli/mcp",
+   "official": true,
+   "excerpt": "Important\n\u26a0\ufe0f End of Life: November 2nd, 2026\nThe Salesforce DX local MCP server (@salesforce/mcp) reaches end of life on November 2nd, 2026.\nSee forcedotcom/mcp#46 for more details.\nMCP Server for Interacting with Salesforce Orgs\nReport bugs and issues here.\nFor feature requests and other related topics, start a Discussion here.\nFor general documentation about the Salesforce DX MCP Server, see this section in the Salesforce DX Developer Guide. The docs include:\n- Comprehensive overview, including details about the security features.\n- Quick start guide.\n- Multiple examples of configuring the server in your MCP client.\n- Sample prompts for invoking the core DX MCP tools.\nThe Salesforce DX MCP Server is a specialized Model Context Protocol (MCP) implementation designed to facilitate seamless interaction between large language models (LLMs) and Salesforce orgs. This MCP server provides a robust set of tools and capabilities that enable LLMs to read, manage, and operate Salesforce resources securely.\nConfigure the Salesforce DX MCP Server for your MCP client by updating its associated MCP JSON file; each client is slightly different, so check your MCP client documentation for details. "
+  },
+  {
+   "sid": "R3",
+   "url": "https://www.salesforce.com/crm/pricing/?bc=OTH",
+   "official": true,
+   "excerpt": "Become an agentic enterprise with our refreshed step-by-step guide.\nGet the guide \u2192\nCRM Pricing\nThe #1 agentic CRM is built to fit your needs as your business grows.\nChoose the CRM plan that's right for you.\nStarter Suite\n- Assistive AI with Agentforce Coworker\n- Email Nurture Campaigns and AI-assisted Content Creation\n- Built-in Sales Flows and Lead Routing\n- Free Slack Workspace, Connected to your CRM\nPro Suite\n- Everything in Starter plus Enhanced, Real-Time Chat\n- Sales Quoting and Forecasting\n- Greater Customization, Automation+ Access to AppExchange\n- Premier Support (add-on)\nPut turnkey AI to work with a CRM that already knows your customers \u2014 so you can automate great experiences and focus on the things that actually matter.\nAchieve your goals faster with Salesforce Success Plans.\nWith resources, guidance, and technical support, our three levels of Success Plans help your business get more value from Salesforce and prepare your data for a future with AI.\nStandard Success Plan\n- Access to Knowledge Articles, documentation, and Trailhead\n- Global Trailblazer Community\nPremier Success Plan\n- Expert guidance and product education\n- Health checks and recommendations\n- Access to "
+  },
+  {
+   "sid": "R4",
+   "url": "https://www.salesforce.com/platform/sandboxes-environments/?bc=OTH",
+   "official": true,
+   "excerpt": "Salesforce Sandboxes\nSalesforce Sandboxes create isolated copies of your production environment. These replicas allow teams to safely test changes (eg new features or code) and conduct implementations like Agentforce and Data Cloud, without risking live data. Multiple sandboxes speed up collaborative deployment and improve version control, avoiding system downtime."
+  }
+ ],
+ "errors": [
+  "fetch https://developer.salesforce.com/docs/platform/api-rest/guide/quickstart-dev-org.html: 403 too little text (JS-rendered?)",
+  "fetch https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/hosted-mcp-servers-overview.html: 403 too little text (JS-rendered?)",
+  "fetch https://help.salesforce.com/s/articleView?id=000385436&language=en_US&type=1: 200 too little text (JS-rendered?)",
+  "fetch https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/legal/Agreements/alliance-agreements-and-terms/salesforce-partner-program-policies.pdf: 200 unsupported content-type application/pdf",
+  "fetch https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-dev-mcp.html: 403 too little text (JS-rendered?)",
+  "fetch https://developer.salesforce.com/docs/platform/api-rest/guide/quickstart-oauth.html: 403 too little text (JS-rendered?)",
+  "fetch https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/client-connection-overview.html: 403 too little text (JS-rendered?)",
+  "fetch https://www.salesforce.com/content/dam/web/en_us/www/documents/pricing/salesforce-platform-pricing-editions.pdf?bc=HA: 200 unsupported content-type application/pdf",
+  "fetch https://help.salesforce.com/s/articleView?id=000391959&language=en_US&type=1: 200 too little text (JS-rendered?)",
+  "fetch https://developer.salesforce.com: 403 too little text (JS-rendered?)",
+  "fetch https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/create-external-client-app.html: 403 too little text (JS-rendered?)",
+  "fetch https://developer.salesforce.com/docs/platform/isvforce/guide/dev-packages-rest-api-access.html: 403 too little text (JS-rendered?)",
+  "fetch https://developer.salesforce.com/docs/ai/agentforce/guide/mcp.html: 403 too little text (JS-rendered?)"
+ ],
+ "todo": {
+  "access": [
+   "ungrounded",
+   "low_confidence"
+  ],
+  "official_mcp": [
+   "ungrounded",
+   "low_confidence"
+  ],
+  "buildability": [
+   "ungrounded",
+   "low_confidence"
+  ]
+ }
+}

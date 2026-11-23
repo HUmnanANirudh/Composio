@@ -1,0 +1,15 @@
+{
+ "round0": {
+  "grounding": {
+   "official_mcp": [
+    "ungrounded"
+   ]
+  },
+  "rules": {}
+ },
+ "todo": {
+  "official_mcp": [
+   "ungrounded"
+  ]
+ }
+}

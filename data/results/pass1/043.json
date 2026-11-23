@@ -1,0 +1,179 @@
+{
+  "id": 43,
+  "app": "BigCommerce",
+  "category": "Ecommerce",
+  "hint": "developer.bigcommerce.com",
+  "docs_url": "https://docs.bigcommerce.com/developer/docs/overview/api-fundamentals/api-accounts",
+  "one_liner": {
+    "value": "SaaS ecommerce platform for growing and enterprise merchants",
+    "evidence": [
+      {
+        "url": "https://docs.bigcommerce.com/developer/docs/overview/api-fundamentals/api-accounts",
+        "quote": "BigCommerce offers a suite of APIs that let you manage store data",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "BEARER_TOKEN",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.bigcommerce.com/developer/docs/overview/api-fundamentals/api-accounts",
+        "quote": "BigCommerce offers three types of OAuth-based API accounts",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://docs.bigcommerce.com/developer/docs/integrations/apps/guide/auth",
+        "quote": "generates a unique access_token for each store that installs your app",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_TRIAL",
+    "evidence": [
+      {
+        "url": "https://www.bigcommerce.com/blog/storefront-mcp",
+        "quote": "No credit card required.",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://docs.bigcommerce.com/developer/docs/integrations/becoming-a-partner",
+        "quote": "You don’t need to be a partner to build and test an app. You can test in any BigCommerce store.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.6,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "GRAPHQL",
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.bigcommerce.com/developer/docs/overview/api-fundamentals/api-accounts",
+        "quote": "BigCommerce’s REST APIs",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://docs.bigcommerce.com/developer/docs/storefront/guides/graphql-storefront-api/overview",
+        "quote": "BigCommerce’s GraphQL Storefront API makes it possible to power a headless storefront",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://docs.bigcommerce.com/developer/docs/overview/api-fundamentals/api-accounts",
+        "quote": "a suite of APIs that let you manage store data, sign customers in, make client-side queries for product information",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://docs.bigcommerce.com/developer/api-reference/mcp/overview",
+        "quote": "BigCommerce supports MCP in three ways.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY_WITH_CAVEATS",
+    "evidence": [
+      {
+        "url": "https://docs.bigcommerce.com/developer/docs/integrations/becoming-a-partner",
+        "quote": "You need an approved Technology Partner account to submit an app to the BigCommerce App Marketplace.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "Store access needs a paid plan after the trial; listing an app needs an approved Technology Partner account.",
+    "evidence": [
+      {
+        "url": "https://docs.bigcommerce.com/developer/docs/integrations/becoming-a-partner",
+        "quote": "You need an approved Technology Partner account to submit an app",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.6,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "BIGCOMMERCE",
+    "name": "BigCommerce",
+    "tools": 532,
+    "triggers": 0,
+    "auth": [
+      "API_KEY",
+      "OAUTH2"
+    ],
+    "managed_app": "No",
+    "url": "https://docs.composio.dev/toolkits/bigcommerce.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://docs.bigcommerce.com/developer/docs/overview/api-fundamentals/api-accounts",
+    "https://docs.bigcommerce.com/developer/docs/integrations/becoming-a-partner",
+    "https://docs.bigcommerce.com/developer/api-reference/mcp/overview",
+    "https://docs.bigcommerce.com/developer/docs/storefront/guides/graphql-storefront-api/overview",
+    "https://www.bigcommerce.com/pricing",
+    "https://docs.bigcommerce.com/developer/docs/ai-agent-setup",
+    "https://docs.bigcommerce.com/developer/docs/integrations/apps/guide/auth",
+    "https://www.bigcommerce.com/blog/storefront-mcp"
+  ],
+  "pass_name": "pass1",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session"
+  },
+  "errors": [
+    "fetch https://support.bigcommerce.com/s/article/Store-API-Accounts?language=en_US: 200 too little text (JS-rendered?)"
+  ]
+}

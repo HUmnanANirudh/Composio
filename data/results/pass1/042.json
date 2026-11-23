@@ -1,0 +1,169 @@
+{
+  "id": 42,
+  "app": "WooCommerce",
+  "category": "Ecommerce",
+  "hint": "woocommerce.com/document/woocommerce-rest-api",
+  "docs_url": "https://developer.woocommerce.com/docs/apis/rest-api",
+  "one_liner": {
+    "value": "Open-source ecommerce plugin for WordPress",
+    "evidence": [
+      {
+        "url": "https://woocommerce.com/pricing",
+        "quote": "WooCommerce is the free, Open Source ecommerce platform for WordPress.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY",
+      "BASIC",
+      "OTHER"
+    ],
+    "evidence": [
+      {
+        "url": "https://developer.woocommerce.com/docs/apis/rest-api/authentication",
+        "quote": "You may use [HTTP Basic Auth]",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://developer.woocommerce.com/docs/apis/rest-api/authentication",
+        "quote": "You must use [OAuth 1.0a \"one-legged\" authentication]",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://woocommerce.com/pricing",
+        "quote": "WooCommerce is free to download and use",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://woocommerce.com/document/woocommerce-rest-api",
+        "quote": "The WooCommerce REST API connects your store to external systems and services.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://woocommerce.com/document/woocommerce-rest-api",
+        "quote": "The WooCommerce REST API connects your store to external systems and services.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developer.woocommerce.com/2026/10/21/woocommerce-11-3-mcp",
+        "quote": "WooCommerce core product and order abilities will be enabled by default, and will require the WordPress MCP Adapter plugin active on your store to establish an MCP connection.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developer.woocommerce.com/docs/apis/rest-api",
+        "quote": "RequestBin - Allows you test webhooks.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.5,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://developer.woocommerce.com/docs/apis/rest-api",
+        "quote": "To start using REST API, you first need to generate API keys.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "Each store is self-hosted, so credentials and the base URL are per merchant site.",
+    "evidence": [
+      {
+        "url": "https://woocommerce.com/document/woocommerce-rest-api",
+        "quote": "Each set of keys is linked to a WordPress user on your site.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.5,
+    "flags": []
+  },
+  "composio": {
+    "found": false,
+    "slug": null,
+    "name": null,
+    "tools": null,
+    "triggers": null,
+    "auth": [],
+    "managed_app": null,
+    "url": null,
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://woocommerce.com/document/woocommerce-rest-api",
+    "https://developer.woocommerce.com/docs/features/mcp",
+    "https://developer.woocommerce.com/2024/01/17/the-woocommerce-legacy-rest-api-extension-is-now-available-in-wordpress-org",
+    "https://developer.woocommerce.com/docs/apis/rest-api/authentication",
+    "https://woocommerce.com/pricing",
+    "https://developer.woocommerce.com/2026/10/21/woocommerce-11-3-mcp",
+    "https://developer.woocommerce.com/docs/apis/rest-api",
+    "https://developer.woocommerce.com/2026/05/12/mcp-abilities-api-10-9"
+  ],
+  "pass_name": "pass1",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session"
+  },
+  "errors": []
+}

@@ -1,0 +1,158 @@
+{
+  "id": 1,
+  "app": "Salesforce",
+  "category": "CRM and Sales",
+  "hint": "salesforce.com",
+  "docs_url": "https://developer.salesforce.com/docs/platform/api-rest/guide/intro-rest.html",
+  "one_liner": {
+    "value": "Enterprise CRM and customer platform",
+    "evidence": [
+      {
+        "url": "https://www.salesforce.com/agentforce/ai-agents/?bc=OTH",
+        "quote": "the Model Context Protocol (MCP), which lets an agent reach resources, tools, and prompts",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://getknit.dev/blog/salesforce-api-key",
+        "quote": "Salesforce does not issue static API keys; authenticating requires OAuth 2.0 credentials.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.6,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://getknit.dev/blog/salesforce-api-key",
+        "quote": "Salesforce REST architecture exposes records, collections, and query results via resource endpoints",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.6,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://getknit.dev/blog/salesforce-api-key",
+        "quote": "Salesforce REST architecture exposes records, collections, and query results via resource endpoints",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.5,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "sandbox": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://www.salesforce.com/platform/pricing-add-ons/?bc=OTH",
+        "quote": "Developer Sandbox Platform Expansion An individual development environment with a copy of all your metadata.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [],
+    "confidence": 0.4,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.4,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "SALESFORCE",
+    "name": "Salesforce",
+    "tools": 595,
+    "triggers": 7,
+    "auth": [
+      "OAUTH2",
+      "S2S_OAUTH2"
+    ],
+    "managed_app": "Yes",
+    "url": "https://docs.composio.dev/toolkits/salesforce.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://www.salesforce.com/in/services/pricing/?bc=OTH",
+    "https://www.salesforce.com/agentforce/ai-agents/ai-agent-frameworks/?bc=OTH",
+    "https://www.salesforce.com/platform/pricing-add-ons/?bc=OTH",
+    "https://www.salesforce.com/in/partners/become-a-partner/?bc=OTH",
+    "https://www.salesforce.com/agentforce/ai-agents/?bc=OTH",
+    "https://getknit.dev/blog/salesforce-api-key",
+    "https://help.sharecrm.com/30efe/5848f/2a6bd/a2072",
+    "https://docs.mulesoft.com/composer-salesforce/ms_composer_http_reference"
+  ],
+  "pass_name": "pass1",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session"
+  },
+  "errors": [
+    "fetch https://help.salesforce.com/s/articleView?id=xcloud.remoteaccess_oauth_client_credentials_flow.htm&language=en_US&type=5: 200 too little text (JS-rendered?)",
+    "fetch https://help.salesforce.com/s/articleView?id=000385436&language=en_US&type=1: 200 too little text (JS-rendered?)",
+    "fetch https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/hosted-mcp-servers-overview.html: 403 too little text (JS-rendered?)",
+    "fetch https://developer.salesforce.com/blogs/2024/02/invoke-rest-apis-with-the-salesforce-integration-user-and-oauth-client-credentials: 403 too little text (JS-rendered?)",
+    "fetch https://help.salesforce.com/s/articleView?id=000391959&language=en_US&type=1: 200 too little text (JS-rendered?)",
+    "fetch https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available: 403 too little text (JS-rendered?)",
+    "fetch https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_oauth_and_connected_apps.htm: 403 too little text (JS-rendered?)",
+    "fetch https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/servers-reference.html: 403 too little text (JS-rendered?)",
+    "fetch https://developer.salesforce.com/docs/platform/api-rest/guide/quickstart-oauth.html: 403 too little text (JS-rendered?)",
+    "fetch https://developer.salesforce.com/docs/platform/api/guide/sforce-api-quickstart-intro.html: 403 too little text (JS-rendered?)",
+    "fetch https://developer.salesforce.com/docs/ai/agentforce/guide/mcp.html: 403 too little text (JS-rendered?)",
+    "fetch https://mcp.docs.salesforce.com/about: 401 too little text (JS-rendered?)",
+    "fetch https://help.salesforce.com/s/articleView?id=remoteaccess_authenticate_overview.htm&language=en_US: 200 too little text (JS-rendered?)",
+    "fetch https://developer.salesforce.com/docs/platform/api-rest/guide/quickstart.html: 403 too little text (JS-rendered?)",
+    "fetch https://developer.salesforce.com/docs/platform/hosted-mcp-servers/references/reference/sobject-all.html: 403 too little text (JS-rendered?)",
+    "fetch https://www.salesforce.com/in/products/free-trial/developer/?d=pb&amp;pr=: 200 too little text (JS-rendered?)",
+    "fetch https://developer.salesforce.com/docs/platform/salesforce-app-limits-cheatsheet/guide/salesforce-app-limits-platform-api.html: 403 too little text (JS-rendered?)",
+    "fetch https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-mcp-servers.html: 403 too little text (JS-rendered?)",
+    "fetch https://developer.salesforce.com/docs/atlas.en-us.packagingGuide.meta/packagingGuide/dev_packages_api_access.htm: 403 too little text (JS-rendered?)",
+    "fetch https://help.salesforce.com/s/articleView?id=platform.api_catalog_create_custom_salesforce_mcp_servers.htm&language=en_US&type=5: 200 too little text (JS-rendered?)",
+    "fetch https://developer.salesforce.com/docs/platform/headless-get-started/guide/headless-mcp.html: 403 too little text (JS-rendered?)"
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "id": 49,
+  "app": "Amazon Selling Partner",
+  "category": "Ecommerce",
+  "hint": "developer-docs.amazon.com/sp-api",
+  "docs_url": "https://developer-docs.amazon/sp-api/docs/connecting-to-the-selling-partner-api",
+  "one_liner": {
+    "value": "Amazon's API for sellers and vendors (orders, listings, inventory, finance)",
+    "evidence": [
+      {
+        "url": "https://developer.amazonservices.com/amazon-selling-partner-plugin",
+        "quote": "Sales\n Listings\n Finance",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://developer-docs.amazon/sp-api/docs/onboarding-step-6-set-up-the-authorization-workflow",
+        "quote": "Public applications: Must use OAuth 2.0 through Login with Amazon (LWA).",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "access": {
+    "value": "APPROVAL",
+    "evidence": [
+      {
+        "url": "https://developer-docs.amazon/sp-api/docs/connecting-to-the-selling-partner-api",
+        "quote": "Register the application. For details, refer to Registering your application.",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://developer-docs.amazon/sp-api/docs/register-as-a-public-developer",
+        "quote": "Must list their application in the Amazon Selling Partner Appstore",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://developer-docs.amazon/sp-api/docs/onboarding-step-8-call-the-sp-api-in-production",
+        "quote": "GET https://sellingpartnerapi-na.amazon.com/sellers/v1/marketplaceParticipations",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://developer-docs.amazon/sp-api/reference/welcome-to-api-references",
+        "quote": "Welcome to the Selling Partner API reference.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developer.amazonservices.com/amazon-selling-partner-plugin",
+        "quote": "The Selling Partner plugin connects your Amazon data directly to your preferred AI agent",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.6,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "sandbox": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developer-docs.amazon/sp-api/docs/onboarding-step-6-set-up-the-authorization-workflow",
+        "quote": "the sandbox environment lets you explore the Selling Partner API (SP-API) functionality with test credentials",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY_WITH_CAVEATS",
+    "evidence": [
+      {
+        "url": "https://developer-docs.amazon/sp-api/docs/connecting-to-the-selling-partner-api",
+        "quote": "Get the application authorized by a selling partner or, if you're a private developer, authorize it yourself.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.65,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "Developers must register and be approved; public apps also need an Appstore listing and each seller's authorization.",
+    "evidence": [
+      {
+        "url": "https://developer-docs.amazon/sp-api/docs/register-as-a-public-developer",
+        "quote": "Obtain explicit authorization from each seller or vendor through OAuth.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "AMAZON",
+    "name": "Amazon",
+    "tools": 0,
+    "triggers": 0,
+    "auth": [
+      "OAUTH2"
+    ],
+    "managed_app": "Yes",
+    "url": "https://docs.composio.dev/toolkits/amazon.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://developer-docs.amazon/sp-api/docs/connecting-to-the-selling-partner-api",
+    "https://developer-docs.amazon/sp-api/docs/register-as-a-public-developer",
+    "https://developer.amazonservices.com/amazon-selling-partner-plugin",
+    "https://developer-docs.amazon/sp-api/reference/welcome-to-api-references",
+    "https://developer-docs.amazon/sp-api/docs/onboarding-step-6-set-up-the-authorization-workflow",
+    "https://sell.amazon.com/blog/announcements/amazons-selling-partner-plugin-ads-mcp",
+    "https://developer-docs.amazon/sp-api/docs/self-authorization.md",
+    "https://developer-docs.amazon/sp-api/docs/onboarding-step-8-call-the-sp-api-in-production"
+  ],
+  "pass_name": "pass1",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session"
+  },
+  "errors": []
+}

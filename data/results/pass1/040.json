@@ -1,0 +1,157 @@
+{
+  "id": 40,
+  "app": "SendGrid",
+  "category": "Marketing, Ads, Email and Social",
+  "hint": "sendgrid.com",
+  "docs_url": "https://www.twilio.com/docs/sendgrid/api-reference",
+  "one_liner": {
+    "value": "Twilio's email delivery API for transactional and marketing email",
+    "evidence": [
+      {
+        "url": "https://www.twilio.com/docs/sendgrid/api-reference",
+        "quote": "The SendGrid v3 Web API provides a REST interface to send email at scale",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY",
+      "BASIC"
+    ],
+    "evidence": [
+      {
+        "url": "https://www.twilio.com/docs/sendgrid/for-developers/sending-email/authentication",
+        "quote": "Twilio SendGrid supports API keys delivered via Bearer token or Basic authentication",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_TRIAL",
+    "evidence": [
+      {
+        "url": "https://www.twilio.com/en-us/products/email-api/pricing",
+        "quote": "Start sending with a free SendGrid Email API trial",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://www.twilio.com/docs/sendgrid/api-reference",
+        "quote": "The SendGrid v3 Web API provides a REST interface to send email at scale",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://www.twilio.com/docs/sendgrid/api-reference",
+        "quote": "send transactional emails, create marketing campaigns, manage your contacts, and monitor the health of your email statistics.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.5,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://www.twilio.com/en-us/products/email-api/pricing",
+        "quote": "Event webhook: 1",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY_WITH_CAVEATS",
+    "evidence": [
+      {
+        "url": "https://www.twilio.com/en-us/products/email-api/pricing",
+        "quote": "Start sending with a free SendGrid Email API trial",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.65,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "Free use is a trial; ongoing sending needs a paid plan.",
+    "evidence": [
+      {
+        "url": "https://www.twilio.com/docs/sendgrid/onboarding/email-api/build-and-test-your-application",
+        "quote": "Twilio SendGrid offers three paid plans",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.6,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "SENDGRID",
+    "name": "SendGrid",
+    "tools": 364,
+    "triggers": 0,
+    "auth": [
+      "API_KEY"
+    ],
+    "managed_app": null,
+    "url": "https://docs.composio.dev/toolkits/sendgrid.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
+    "https://www.twilio.com/en-us/products/email-api/pricing",
+    "https://www.twilio.com/docs/sendgrid/api-reference",
+    "https://www.twilio.com/docs/sendgrid/for-developers/sending-email/authentication",
+    "https://www.twilio.com/docs/sendgrid/api-reference/api-keys",
+    "https://www.twilio.com/docs/sendgrid/ui/account-and-settings/api-keys",
+    "https://www.twilio.com/docs/sendgrid/api-reference/api-keys/create-api-keys",
+    "https://www.twilio.com/docs/sendgrid/onboarding/email-api/build-and-test-your-application"
+  ],
+  "pass_name": "pass1",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session"
+  },
+  "errors": []
+}

@@ -1,0 +1,43 @@
+{
+ "round0": {
+  "grounding": {
+   "access": [
+    "ungrounded"
+   ],
+   "official_mcp": [
+    "ungrounded"
+   ],
+   "webhooks": [
+    "ungrounded"
+   ],
+   "buildability": [
+    "ungrounded"
+   ]
+  },
+  "rules": {
+   "access": [
+    "low_confidence"
+   ],
+   "official_mcp": [
+    "low_confidence"
+   ],
+   "buildability": [
+    "low_confidence"
+   ]
+  }
+ },
+ "todo": {
+  "access": [
+   "ungrounded",
+   "low_confidence"
+  ],
+  "official_mcp": [
+   "ungrounded",
+   "low_confidence"
+  ],
+  "buildability": [
+   "ungrounded",
+   "low_confidence"
+  ]
+ }
+}
