@@ -88,7 +88,8 @@ code,.mono{font-family:var(--mono);font-size:.86em;letter-spacing:0}
 .findings li.plain{display:block}
 .findings .fig{font-family:var(--display);font-variation-settings:"wdth" 72;font-weight:800;font-size:30px;line-height:1;letter-spacing:-.01em;white-space:nowrap}
 .findings li.plain{padding-top:20px;color:var(--ink-3);font-size:14px}
-.findings .fig.word{font-size:17px;line-height:1.1;white-space:normal}
+.findings .fig.word{grid-column:1/-1;font-size:19px;line-height:1.15;white-space:normal}
+.findings .fig.word+span{grid-column:1/-1}
 .matrix-wrap{position:relative}
 .matrix{display:grid;grid-template-columns:minmax(92px,auto) repeat(10,minmax(0,1fr));gap:4px;align-items:stretch}
 .matrix .cat{font-size:12.5px;line-height:1.15;color:var(--ink-2);display:flex;align-items:center;padding-right:8px}
@@ -223,7 +224,7 @@ pre{background:var(--band);color:var(--band-ink);padding:14px 16px;border-radius
   .filters .count{margin-left:0;width:100%}
   .findings li{grid-template-columns:72px 1fr;gap:4px 14px}
   .findings .fig{font-size:26px}
-  .findings .fig.word{font-size:15px}
+  .findings .fig.word{font-size:17px}
 }
 @media (prefers-reduced-motion: reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
