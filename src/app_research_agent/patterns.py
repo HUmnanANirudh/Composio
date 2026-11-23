@@ -104,39 +104,60 @@ def compute(recs: list[AppRecord]) -> dict:
     ]
 
     self_serve_total = access["SELF_SERVE_FREE"] + access["SELF_SERVE_TRIAL"]
-    top_block = blockers.most_common(1)[0] if blockers else ("-", 0)
     oauth = auth_any["OAUTH2"]
     static = sum(1 for r in recs if set(r.auth_methods.value or []) & {"API_KEY", "BEARER_TOKEN"})
     gated = n - self_serve_total
-    easiest = [c["category"] for c in cats[:2]]
-    hardest = [c["category"] for c in cats[-2:]][::-1]
+    both = sum(
+        1
+        for r in recs
+        if "OAUTH2" in (r.auth_methods.value or [])
+        and set(r.auth_methods.value or []) & {"API_KEY", "BEARER_TOKEN"}
+    )
     # Each headline: a figure the eye lands on, then the plain sentence it belongs to.
+    # A headline is only emitted when the data supports it (no "0 apps name '-'").
     headlines = [
         {
             "fig": f"{_pct(self_serve_total, n)}%",
-            "text": f"of apps ({self_serve_total} of {n}) let a developer get working credentials alone; "
-            f"{gated} {'is' if gated == 1 else 'are'} gated by a paid plan, an approval step, or sales.",
-        },
+            "text": f"of apps ({self_serve_total} of {n}) let a developer get working credentials "
+            f"alone; {gated} {'is' if gated == 1 else 'are'} gated by a paid plan, an approval "
+            "step, or sales.",
+        }
+    ]
+    lead, other = ("OAuth 2.0", "a static API key or token")
+    lead_n, other_n = oauth, static
+    if static > oauth:
+        lead, other, lead_n, other_n = other, lead, static, oauth
+    headlines.append(
         {
-            "fig": f"{_pct(oauth, n)}%",
-            "text": f"support OAuth 2.0, the dominant scheme; {static} accept a static API key or token, "
-            f"and most of those offer both.",
-        },
-        {
-            "fig": easiest[0] if easiest else "-",
-            "text": f"is the most open category ({cats[0]['self_serve_pct']}% self-serve); "
-            f"{hardest[0] if hardest else '-'} is the most gated ({cats[-1]['self_serve_pct']}%)."
-            if cats
-            else "",
-        },
-        {
-            "fig": str(top_block[1]),
-            "text": f"apps name '{top_block[0]}' as the main blocker, the most common one.",
-        },
+            "fig": f"{_pct(lead_n, n)}%",
+            "text": f"accept {lead}, the most common scheme; {_pct(other_n, n)}% accept {other}, "
+            f"and {both} {'offers' if both == 1 else 'offer'} both.",
+        }
+    )
+    if len(cats) >= 2 and cats[0]["self_serve_pct"] > cats[-1]["self_serve_pct"]:
+        headlines.append(
+            {
+                "fig": cats[0]["category"],
+                "text": f"is the most open category ({cats[0]['self_serve_pct']}% self-serve); "
+                f"{cats[-1]['category']} is the most gated "
+                f"({cats[-1]['self_serve_pct']}% self-serve).",
+            }
+        )
+    if blockers:
+        theme, count = blockers.most_common(1)[0]
+        headlines.append(
+            {
+                "fig": str(count),
+                "text": f"{'app is' if count == 1 else 'apps are'} held back by the most common "
+                f"blocker: {theme.lower()}.",
+            }
+        )
+    headlines += [
         {
             "fig": str(len(easy_wins)),
-            "text": f"easy wins: self-serve and buildable today, with no Composio toolkit yet. "
-            f"{len(outreach)} {'needs' if len(outreach) == 1 else 'need'} outreach or a partnership.",
+            "text": f"{'easy win' if len(easy_wins) == 1 else 'easy wins'}: self-serve and "
+            f"buildable today, with no Composio toolkit yet. {len(outreach)} "
+            f"{'needs' if len(outreach) == 1 else 'need'} outreach or a partnership.",
         },
         {"fig": str(mcp), "text": f"of {n} vendors already ship an official MCP server."},
     ]

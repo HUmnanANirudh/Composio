@@ -9,9 +9,12 @@ import time
 from collections import Counter, defaultdict
 
 from .apps import load_apps
+from .audit import AUDIT
+from .audit import build as audit_build
 from .config import RESULTS, ROOT, settings
 from .evaluate import GROUND_TRUTH
 from .evaluate import main as eval_main
+from .llm import chain
 from .patterns import compute
 from .pipeline import FINAL, PASS1, load
 from .schema import CLAIM_FIELDS, SCORED_FIELDS
@@ -90,11 +93,36 @@ def usage_summary() -> dict:
     return dict(agg)
 
 
+def models_used() -> dict[str, list[str]]:
+    calls: dict[str, Counter] = defaultdict(Counter)
+    for key, v in usage_summary().items():
+        model, purpose = key.split("|")
+        calls[purpose][model] += v["calls"]
+    return {p: [m for m, _ in c.most_common()] for p, c in calls.items()}
+
+
+def _audit_for_site() -> dict | None:
+    if not AUDIT.exists():
+        return None
+    a = json.loads(AUDIT.read_text())
+    reviews = [
+        {
+            "id": c["id"],
+            "field": c["field"],
+            **{k: c["review"][k] for k in ("verdict", "note", "by")},
+        }
+        for c in a["cells"]
+        if c.get("review")
+    ]
+    return {"summary": a["summary"], "reviews": reviews}
+
+
 def build() -> dict:
     apps = load_apps()
     pairs = [(load(FINAL, a), load(PASS1, a)) for a in apps]
     recs = [f for f, _ in pairs if f]
     eval_main()  # refresh eval.json
+    audit_build()  # refresh the field-level audit (keeps reviews)
     ev = json.loads((RESULTS / "eval.json").read_text())
     gt = json.loads(GROUND_TRUTH.read_text())
     bundle = {
@@ -102,12 +130,19 @@ def build() -> dict:
         "repo": REPO,
         "page": PAGES,
         "models": {
-            "extract": settings.extract_model,
-            "critic": settings.critic_model,
-            "reresearch": settings.reresearch_model,
+            "provider": "Gemini API",
+            "chains": {
+                "extract": chain(settings.extract_model),
+                "critic": chain(settings.critic_model),
+                "reresearch": chain(settings.reresearch_model),
+            },
+            # the models that actually answered, most calls first (from usage.jsonl)
+            "used": models_used(),
+            "thinking_level": settings.thinking_level,
             "critic_rounds": settings.critic_rounds,
             "search": f"composio session -> {settings.search_toolkit.upper()}_SEARCH",
         },
+        "audit": _audit_for_site(),
         "counts": {"apps": len(apps), "researched": len(recs)},
         "patterns": compute(recs) if recs else {},
         "eval": ev,
