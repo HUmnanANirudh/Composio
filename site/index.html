@@ -90,7 +90,7 @@ code,.mono{font-family:var(--mono);font-size:.86em;letter-spacing:0}
 .cell .nm{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .cell:hover,.cell:focus-visible,.cell[aria-pressed="true"]{transform:translateY(-2px);box-shadow:0 4px 10px -4px #13203066;z-index:2}
 .cell[aria-pressed="true"]{outline:2px solid var(--ink);outline-offset:1px}
-.cell.pending{background:repeating-linear-gradient(135deg,var(--rule-2) 0 4px,transparent 4px 8px);color:var(--ink-3);cursor:default}
+.cell.pending{background:transparent;box-shadow:inset 0 0 0 1px var(--rule);border:0;color:var(--ink-3);cursor:default}
 .cell.lowconf::after{content:"";position:absolute;right:4px;top:5px;width:6px;height:6px;border-radius:50%;border:1.5px solid currentColor}
 .rg-SELF_SERVE_FREE{background:var(--r-free);color:var(--r-free-ink)}
 .rg-SELF_SERVE_TRIAL{background:var(--r-trial);color:var(--r-trial-ink)}
@@ -100,7 +100,7 @@ code,.mono{font-family:var(--mono);font-size:.86em;letter-spacing:0}
 .rg-NO_PUBLIC_API{background:var(--r-none);color:var(--r-none-ink)}
 .legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin:14px 0 0;padding:0;list-style:none;font-size:13.5px;color:var(--ink-2)}
 .legend li{display:flex;align-items:center;gap:7px}
-.chip{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:20px;padding:0 5px;border-radius:3px;font:600 11px/1 var(--mono)}
+.chip{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:20px;padding:0 5px;border-radius:3px;font:600 12px/1 var(--mono)}
 .matrix-note{font-size:13px;color:var(--ink-3);margin:8px 0 0}
 .record{margin-top:16px;background:var(--sheet);border:1px solid var(--rule);border-radius:8px;padding:16px 18px;min-height:178px}
 .record h3{margin:0 0 2px;font:750 22px/1.1 var(--display);font-variation-settings:"wdth" 80}
@@ -115,7 +115,7 @@ code,.mono{font-family:var(--mono);font-size:.86em;letter-spacing:0}
 .sec > .wrap > p.intro,.sec p.intro{max-width:70ch;color:var(--ink-2);margin:0 0 22px;font-size:17px}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,40px)}
 .three{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,36px)}
-h3.h{font:700 18px/1.2 var(--body);margin:0 0 10px}
+h3.h{font:700 20px/1.2 var(--body);margin:0 0 10px}
 .small{font-size:13.5px;color:var(--ink-3)}
 /* category bars */
 .catbars{display:grid;gap:8px}
@@ -138,14 +138,14 @@ td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
 .filters select,.filters input{font:500 14.5px/1 var(--body);color:var(--ink);background:var(--sheet);border:1px solid var(--rule);border-radius:6px;padding:9px 32px 9px 10px;min-width:150px;appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--ink-3) 50%),linear-gradient(135deg,var(--ink-3) 50%,transparent 50%);background-position:calc(100% - 15px) 52%,calc(100% - 10px) 52%;background-size:5px 5px;background-repeat:no-repeat}
 .filters input{background-image:none;padding-right:10px;min-width:200px}
 .filters .count{font-size:14px;color:var(--ink-2);margin-left:auto}
-.reg{overflow-x:auto;border:1px solid var(--rule);border-radius:8px;background:var(--sheet)}
+.reg{overflow-x:auto;border:1px solid var(--rule);border-radius:8px;background:var(--sheet);padding:4px 6px}
 .reg table{min-width:1040px}
 .reg th{position:sticky;top:0;background:var(--sheet);z-index:1}
 .reg td{font-size:14px}
 .reg td.app b{display:block;font-weight:700}
 .reg td.app span{color:var(--ink-3);font-size:12.5px}
 .enum{font:500 12.5px/1.3 var(--mono)}
-.tag{display:inline-block;padding:2px 6px;border-radius:3px;font:600 11.5px/1.3 var(--mono);margin:0 3px 3px 0;background:var(--rule-2);color:var(--ink)}
+.tag{display:inline-block;padding:2px 6px;border-radius:3px;font:600 12px/1.3 var(--mono);margin:0 3px 3px 0;background:var(--rule-2);color:var(--ink)}
 .b-READY{color:var(--hit)} .b-READY_WITH_CAVEATS{color:var(--ink)} .b-NEEDS_OUTREACH{color:var(--miss)} .b-BLOCKED{color:var(--miss)}
 .conf{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
 details.ev summary{cursor:pointer;color:var(--act);font-size:13px}
@@ -158,9 +158,9 @@ details.ev blockquote{margin:6px 0 0;padding:0 0 0 10px;border-left:1px solid va
 .stn:last-child::before{right:auto;width:14px}
 .stn .dot{position:absolute;left:0;top:3px;width:19px;height:19px;border-radius:50%;background:var(--paper);border:3px solid var(--ink)}
 .stn.human .dot{border-radius:3px;background:var(--r-paid);border-color:var(--ink)}
-.stn h4{margin:0 0 4px;font:700 15.5px/1.2 var(--body)}
+.stn h3{margin:0 0 4px;font:700 16px/1.2 var(--body)}
 .stn p{margin:0;font-size:13.5px;color:var(--ink-2)}
-.stn .who{display:block;font:600 11.5px/1.4 var(--mono);color:var(--ink-3);margin-bottom:4px}
+.stn .who{display:block;font:600 12px/1.4 var(--mono);color:var(--ink-3);margin-bottom:4px}
 .humans{margin-top:28px}
 .humans li{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start}
 .humans svg{width:22px;height:22px;margin-top:1px}
@@ -170,7 +170,7 @@ details.ev blockquote{margin:6px 0 0;padding:0 0 0 10px;border-left:1px solid va
 .acc .v{font-family:var(--display);font-variation-settings:"wdth" 75;font-weight:800;font-size:clamp(40px,5vw,64px);line-height:1}
 .acc .arrow{font-size:28px;color:var(--ink-3)}
 .acc .lab{display:block;font:500 13px/1.3 var(--body);color:var(--ink-3)}
-.stampmark{display:inline-block;transform:rotate(-2.5deg);border:1.5px solid var(--stamp);color:var(--stamp);border-radius:4px;padding:2px 7px;font:700 11px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.stampmark{display:inline-block;transform:rotate(-2.5deg);border:1.5px solid var(--stamp);color:var(--stamp);border-radius:4px;padding:2px 7px;font:700 12px/1.3 var(--mono);letter-spacing:.05em;text-transform:uppercase}
 .stampmark.bad{border-color:var(--miss);color:var(--miss)}
 .stampmark.grey{border-color:var(--unscored);color:var(--unscored)}
 .struck{text-decoration:line-through;text-decoration-thickness:1.5px;text-decoration-color:var(--miss)}
@@ -295,12 +295,12 @@ pre{background:var(--band);color:var(--band-ink);padding:14px 16px;border-radius
       <h2 id="h-agent">The agent's route</h2>
       <p class="intro">A Python pipeline (<code>uv run research run</code>). Composio provides the catalog cross-check and web search, through a Platform SDK session to Exa. Groq models extract and audit the fields. Square stations are where a human had to step in.</p>
       <div class="route" id="route">
-        <div class="stn"><span class="dot"></span><span class="who">deterministic</span><h4>Composio catalog</h4><p>Match each app to Composio's public 1,841-toolkit catalog: existing toolkit, tool count, auth schemes, vendor MCP proxy.</p></div>
-        <div class="stn"><span class="dot"></span><span class="who">crawler + Composio → Exa</span><h4>Discover sources</h4><p>Crawl the official docs host and its llms.txt, follow auth, pricing and MCP links, then search with <code>EXA_SEARCH</code> through a Composio session.</p></div>
-        <div class="stn"><span class="dot"></span><span class="who" id="m-extract">gpt-oss-120b</span><h4>Extract, pass 1</h4><p>Fill a rubric of fixed enums. Every field must cite a source and a verbatim quote. The catalog is withheld so it stays independent.</p></div>
-        <div class="stn"><span class="dot"></span><span class="who">deterministic + <span id="m-critic">qwen3.8-27b</span></span><h4>Verify, four loops</h4><p>Grounding: is the quote on the page? Rules: consistency and Composio cross-checks. Critic: a second model family audits. Re-research: flagged fields only.</p></div>
-        <div class="stn human"><span class="dot"></span><span class="who">human</span><h4>Answer key</h4><p>20 apps drawn at random (2 per category, fixed seed) before any run, checked by hand against official docs.</p></div>
-        <div class="stn"><span class="dot"></span><span class="who">deterministic</span><h4>Score + patterns</h4><p>Pass 1 vs final, field by field, against the key. Patterns are plain counts over the final records.</p></div>
+        <div class="stn"><span class="dot"></span><span class="who">deterministic</span><h3>Composio catalog</h3><p>Match each app to Composio's public 1,841-toolkit catalog: existing toolkit, tool count, auth schemes, vendor MCP proxy.</p></div>
+        <div class="stn"><span class="dot"></span><span class="who">crawler + Composio → Exa</span><h3>Discover sources</h3><p>Crawl the official docs host and its llms.txt, follow auth, pricing and MCP links, then search with <code>EXA_SEARCH</code> through a Composio session.</p></div>
+        <div class="stn"><span class="dot"></span><span class="who" id="m-extract">gpt-oss-120b</span><h3>Extract, pass 1</h3><p>Fill a rubric of fixed enums. Every field must cite a source and a verbatim quote. The catalog is withheld so it stays independent.</p></div>
+        <div class="stn"><span class="dot"></span><span class="who">deterministic + <span id="m-critic">qwen3.8-27b</span></span><h3>Verify, four loops</h3><p>Grounding: is the quote on the page? Rules: consistency and Composio cross-checks. Critic: a second model family audits. Re-research: flagged fields only.</p></div>
+        <div class="stn human"><span class="dot"></span><span class="who">human</span><h3>Answer key</h3><p>20 apps drawn at random (2 per category, fixed seed) before any run, checked by hand against official docs.</p></div>
+        <div class="stn"><span class="dot"></span><span class="who">deterministic</span><h3>Score + patterns</h3><p>Pass 1 vs final, field by field, against the key. Patterns are plain counts over the final records.</p></div>
       </div>
       <div class="two humans">
         <div>
@@ -409,7 +409,7 @@ function render(d){
   const acc1 = E.pass1?.overall?.accuracy, accF = E.final?.overall?.accuracy;
   const items = (P.headlines || []).map(h => `<li><span class="fig num${/^[\d%]+$/.test(h.fig) ? "" : " word"}">${esc(h.fig)}</span><span>${esc(h.text)}</span></li>`);
   if (acc1 != null && accF != null) items.push(`<li><span class="fig num">${pct(accF)}</span><span>accuracy on the hand-checked sample after verification, up from ${pct(acc1)} on the first pass. <a href="#check">See every miss</a>.</span></li>`);
-  if (d.pending.length) items.push(`<li class="plain small">${d.pending.length} apps were still being researched when this page was built; they show as hatched cells.</li>`);
+  if (d.pending.length) items.push(`<li class="plain small">${d.pending.length} apps were still being researched when this page was built; they show as outlined, empty cells.</li>`);
   $("#findings-list").innerHTML = items.join("");
 
   // legend
