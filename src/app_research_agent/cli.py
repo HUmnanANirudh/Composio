@@ -6,7 +6,9 @@ from .apps import load_apps, select
 
 
 def main() -> None:
-    p = argparse.ArgumentParser(prog="research", description="App buildability research agent")
+    p = argparse.ArgumentParser(
+        prog="research", description="App buildability research agent"
+    )
     sub = p.add_subparsers(dest="cmd", required=True)
     ls = sub.add_parser("list", help="list apps in the research set")
     ls.add_argument("--apps", help="selection: '1-10', '3,7', 'Slack,Stripe'")

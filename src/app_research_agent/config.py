@@ -21,7 +21,9 @@ def _env(name: str, default: str | None = None) -> str | None:
 
 @dataclass
 class Settings:
-    composio_api_key: str | None = field(default_factory=lambda: _env("COMPOSIO_API_KEY"))
+    composio_api_key: str | None = field(
+        default_factory=lambda: _env("COMPOSIO_API_KEY")
+    )
     groq_api_key: str | None = field(default_factory=lambda: _env("GROQ_API_KEY"))
     extract_model: str = field(
         default_factory=lambda: _env("EXTRACT_MODEL", "openai/gpt-oss-120b")
@@ -29,12 +31,16 @@ class Settings:
     critic_model: str = field(
         default_factory=lambda: _env("CRITIC_MODEL", "moonshotai/kimi-k2-instruct")
     )
-    search_model: str = field(default_factory=lambda: _env("SEARCH_MODEL", "groq/compound-mini"))
+    search_model: str = field(
+        default_factory=lambda: _env("SEARCH_MODEL", "groq/compound-mini")
+    )
     search_backend: str = field(
         default_factory=lambda: _env("SEARCH_BACKEND", "auto")
     )  # auto | composio | groq | none
     concurrency: int = field(default_factory=lambda: int(_env("CONCURRENCY", "3")))
-    composio_user_id: str = field(default_factory=lambda: _env("COMPOSIO_USER_ID", "research-agent"))
+    composio_user_id: str = field(
+        default_factory=lambda: _env("COMPOSIO_USER_ID", "research-agent")
+    )
     max_pages: int = field(default_factory=lambda: int(_env("MAX_PAGES", "6")))
     page_chars: int = field(default_factory=lambda: int(_env("PAGE_CHARS", "3500")))
 

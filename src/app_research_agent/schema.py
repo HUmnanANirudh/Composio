@@ -24,8 +24,12 @@ class Auth(StrEnum):
 
 
 class Access(StrEnum):
-    SELF_SERVE_FREE = "SELF_SERVE_FREE"  # free account/plan or free dev account gives credentials
-    SELF_SERVE_TRIAL = "SELF_SERVE_TRIAL"  # credentials only during a free trial / sandbox
+    SELF_SERVE_FREE = (
+        "SELF_SERVE_FREE"  # free account/plan or free dev account gives credentials
+    )
+    SELF_SERVE_TRIAL = (
+        "SELF_SERVE_TRIAL"  # credentials only during a free trial / sandbox
+    )
     PAID_PLAN = "PAID_PLAN"  # API needs a paid plan or paid add-on
     APPROVAL = "APPROVAL"  # app review, admin approval, developer-access application
     PARTNERSHIP = "PARTNERSHIP"  # partner program / contact sales / enterprise-only
@@ -41,7 +45,9 @@ class Breadth(StrEnum):
 
 class Buildability(StrEnum):
     READY = "READY"  # a toolkit can be built today, self-serve
-    READY_WITH_CAVEATS = "READY_WITH_CAVEATS"  # buildable but paid tier / review / limits
+    READY_WITH_CAVEATS = (
+        "READY_WITH_CAVEATS"  # buildable but paid tier / review / limits
+    )
     NEEDS_OUTREACH = "NEEDS_OUTREACH"  # requires partnership / sales to get access
     BLOCKED = "BLOCKED"  # no usable public API
 
@@ -95,6 +101,10 @@ class ComposioCatalogEntry(BaseModel):
     auth: list[str] = Field(default_factory=list)  # raw Composio auth labels
     managed_app: str | None = None
     url: str | None = None
+    mcp_variant: str | None = (
+        None  # e.g. PYLON_MCP: Composio proxy of the vendor's remote MCP
+    )
+    mcp_variant_auth: list[str] = Field(default_factory=list)
 
 
 class AppRecord(BaseModel):
@@ -107,11 +117,15 @@ class AppRecord(BaseModel):
     one_liner: Claim = Field(default_factory=Claim)
     auth_methods: Claim = Field(default_factory=Claim)  # list[Auth]
     access: Claim = Field(default_factory=Claim)  # Access
-    api_style: Claim = Field(default_factory=Claim)  # list[REST|GRAPHQL|SOAP|SDK|CLI|NONE]
+    api_style: Claim = Field(
+        default_factory=Claim
+    )  # list[REST|GRAPHQL|SOAP|SDK|CLI|NONE]
     api_breadth: Claim = Field(default_factory=Claim)  # Breadth
     official_mcp: Claim = Field(default_factory=Claim)  # bool
     webhooks: Claim = Field(default_factory=Claim)  # bool
-    sandbox: Claim = Field(default_factory=Claim)  # bool (free sandbox / dev store / test mode)
+    sandbox: Claim = Field(
+        default_factory=Claim
+    )  # bool (free sandbox / dev store / test mode)
     buildability: Claim = Field(default_factory=Claim)  # Buildability
     main_blocker: Claim = Field(default_factory=Claim)  # str | None
 

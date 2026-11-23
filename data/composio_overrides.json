@@ -1,0 +1,23 @@
+{
+  "_comment": "Hand-reviewed name->Composio slug pins for apps where fuzzy matching was wrong or ambiguous. null = no toolkit. Reviewed 2026-11-23 against docs.composio.dev/toolkits.md and each toolkit's page.",
+  "Zoho CRM": {"toolkit": "ZOHO"},
+  "WhatsApp Business": {"toolkit": "WHATSAPP"},
+  "GoHighLevel": {"toolkit": "HIGHLEVEL_LOCATION", "mcp": "HIGHLEVEL_MCP"},
+  "MongoDB Atlas": {"toolkit": "MONGODB", "mcp": "MONGODB_MCP"},
+  "Amazon Selling Partner": {"toolkit": "AMAZON"},
+  "Threads (Meta)": {"toolkit": "THREADS", "mcp": null},
+  "Otter AI": {"toolkit": "OTTER_AI_MCP"},
+  "Mermaid CLI": {"toolkit": null, "mcp": null},
+  "Harvest": {"toolkit": "HARVEST", "mcp": null},
+  "Coda": {"toolkit": "CODA", "mcp": null},
+  "Apify": {"toolkit": "APIFY", "mcp": "APIFY_MCP"},
+  "Google Ads": {"toolkit": "GOOGLEADS", "mcp": null},
+  "Slack": {"toolkit": "SLACK", "mcp": null},
+  "Discord": {"toolkit": "DISCORDBOT", "mcp": null},
+  "Salesforce": {"toolkit": "SALESFORCE", "mcp": null},
+  "Cloudflare": {"toolkit": "CLOUDFLARE", "mcp": "CLOUDFLARE_MCP"},
+  "Pinterest": {"toolkit": "PINTEREST", "mcp": null},
+  "Snowflake": {"toolkit": "SNOWFLAKE", "mcp": null},
+  "Vercel": {"toolkit": "VERCEL", "mcp": "VERCEL_MCP"},
+  "Supabase": {"toolkit": "SUPABASE", "mcp": "SUPABASE_MCP"}
+}
