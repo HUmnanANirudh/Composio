@@ -1,0 +1,170 @@
+{
+  "id": 2,
+  "app": "HubSpot",
+  "category": "CRM and Sales",
+  "hint": "hubspot.com",
+  "docs_url": "https://developers.hubspot.com/docs/api-reference/latest/overview",
+  "one_liner": {
+    "value": "CRM platform for marketing, sales and service teams",
+    "evidence": [
+      {
+        "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server",
+        "quote": "securely interact with your HubSpot CRM data through natural conversation",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "BEARER_TOKEN",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.hubspot.com/docs/apps/legacy-apps/authentication/intro-to-auth",
+        "quote": "There are two ways to authenticate calls to HubSpot’s APIs: OAuth, and private app access tokens.",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview",
+        "quote": "static auth access tokens are used for installing in a single account at a time",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.92,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://developers.hubspot.com/docs/developer-tooling/platform/apis-by-tier",
+        "quote": "subscription tier (Free, Starter, Professional, Enterprise)",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://developers.hubspot.com/docs/developer-tooling/platform/apis-by-tier",
+        "quote": "including developer test accounts and sandboxes",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.75,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.hubspot.com/docs/api-reference/latest/overview",
+        "quote": "All endpoints in this section follow the pattern:",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://developers.hubspot.com/ai-tools/mcp",
+        "quote": "secure read and write access to your HubSpot CRM data — contacts, deals, engagements, and more",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developers.hubspot.com/ai-tools/mcp",
+        "quote": "HubSpot offers two distinct MCP (Model Context Protocol) servers",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.97,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "sandbox": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developers.hubspot.com/docs/developer-tooling/platform/apis-by-tier",
+        "quote": "including developer test accounts and sandboxes",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview",
+        "quote": "static auth access tokens are used for installing in a single account at a time",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "HUBSPOT",
+    "name": "HubSpot",
+    "tools": 355,
+    "triggers": 2,
+    "auth": [
+      "OAUTH2",
+      "API_KEY"
+    ],
+    "managed_app": "Yes",
+    "url": "https://docs.composio.dev/toolkits/hubspot.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview",
+    "https://developers.hubspot.com/docs/developer-tooling/platform/apis-by-tier",
+    "https://developers.hubspot.com/ai-tools/mcp",
+    "https://developers.hubspot.com/docs/api-reference/latest/overview",
+    "https://developers.hubspot.com/docs/apps/legacy-apps/authentication/intro-to-auth",
+    "https://developers.hubspot.com/docs/developer-tooling/platform/usage-guidelines",
+    "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server",
+    "https://www.hubspot.com/partners"
+  ],
+  "pass_name": "pass1",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session"
+  },
+  "errors": []
+}

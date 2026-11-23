@@ -1,0 +1,163 @@
+{
+  "id": 38,
+  "app": "Pinterest",
+  "category": "Marketing, Ads, Email and Social",
+  "hint": "developers.pinterest.com",
+  "docs_url": "https://developers.pinterest.com/docs/getting-started/set-up-authentication-and-authorization",
+  "one_liner": {
+    "value": "Visual discovery platform with an ads and content API",
+    "evidence": [
+      {
+        "url": "https://community.pinterest.biz/t/frequently-asked-questions-pinterest-api/2083",
+        "quote": "The Pinterest API allows any developer to build experiences and apps for creators, advertisers, merchants and users",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.pinterest.com/docs/getting-started/set-up-authentication-and-authorization",
+        "quote": "Your app redirects the user to our OAuth page.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "access": {
+    "value": "APPROVAL",
+    "evidence": [
+      {
+        "url": "https://developers.pinterest.com/docs/getting-started/connect-app",
+        "quote": "Application requests are reviewed by Pinterest.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://community.pinterest.biz/t/frequently-asked-questions-pinterest-api/2083",
+        "quote": "The Pinterest API allows any developer to build experiences and apps",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://developer.pinterest.com/usecase/ads",
+        "quote": "The Pinterest API for Ads includes a complete suite of ads management features",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": false,
+    "evidence": [
+      {
+        "url": "https://developers.pinterest.com/about-pinterest-mcp",
+        "quote": "Be the first to know when it launches.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.6,
+    "flags": []
+  },
+  "webhooks": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "sandbox": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developers.pinterest.com/docs/getting-started/connect-app",
+        "quote": "Our sandbox environment allows you to make test calls without impacting the Pinterest product environment.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY_WITH_CAVEATS",
+    "evidence": [
+      {
+        "url": "https://developers.pinterest.com/docs/key-concepts/access-tiers",
+        "quote": "Your app must already be approved for Trial access",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.75,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "Apps need Pinterest review for Trial access and a demo-video review for Standard access.",
+    "evidence": [
+      {
+        "url": "https://developers.pinterest.com/docs/key-concepts/access-tiers",
+        "quote": "Prepare a video recording of your app completing an action using the Pinterest API.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.75,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "PINTEREST",
+    "name": "Pinterest",
+    "tools": 27,
+    "triggers": 0,
+    "auth": [
+      "OAUTH2"
+    ],
+    "managed_app": "Yes",
+    "url": "https://docs.composio.dev/toolkits/pinterest.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://developers.pinterest.com/docs/getting-started/set-up-authentication-and-authorization",
+    "https://developers.pinterest.com/docs/key-concepts/access-tiers",
+    "https://developers.pinterest.com/about-pinterest-mcp",
+    "https://developer.pinterest.com/usecase/ads",
+    "https://developers.pinterest.com/docs/faqs/faqs",
+    "https://community.pinterest.biz/t/frequently-asked-questions-pinterest-api/2083",
+    "https://community.pinterest.biz/t/introducing-the-pinterest-mcp-server/51358",
+    "https://developers.pinterest.com/docs/getting-started/connect-app"
+  ],
+  "pass_name": "pass1",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session"
+  },
+  "errors": []
+}

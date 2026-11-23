@@ -1,2 +1,0 @@
-{"t": 1795465006, "model": "gemini-3.6-flash", "purpose": "extract", "in": 3605, "out": 4444}
-{"t": 1795465209, "model": "gemma-4-31b-it", "purpose": "critic", "in": 3750, "out": 3534}

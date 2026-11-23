@@ -1,0 +1,156 @@
+{
+  "id": 26,
+  "app": "Discord",
+  "category": "Communications and Messaging",
+  "hint": "discord.com",
+  "docs_url": "https://docs.discord.com/developers/reference",
+  "one_liner": {
+    "value": "Voice, video and text chat communities with a bot platform",
+    "evidence": [
+      {
+        "url": "https://docs.discord.com/developers/bots/overview",
+        "quote": "Bots are applications that connect to Discord using the Discord API.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "BEARER_TOKEN",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.discord.com/developers/reference",
+        "quote": "Using a bot token found on the Bot page within your app’s settings.",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://docs.discord.com/developers/reference",
+        "quote": "Using an OAuth2 bearer token gained through the OAuth2 API.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://docs.discord.com/developers/bots/overview",
+        "quote": "Create an application in the Discord Developer Portal.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.discord.com/developers/bots/overview",
+        "quote": "the HTTP API for REST operations",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://docs.discord.com/developers/quick-start/getting-started",
+        "quote": "Discord apps let you customize and extend Discord using a collection of APIs and interactive features.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.5,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://docs.discord.com/developers/platform/webhooks",
+        "quote": "Discord supports two distinct types of webhooks",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://docs.discord.com/developers/bots/overview",
+        "quote": "Create an application in the Discord Developer Portal.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.6,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "DISCORDBOT",
+    "name": "Discord Bot",
+    "tools": 169,
+    "triggers": 0,
+    "auth": [
+      "OAUTH2"
+    ],
+    "managed_app": "Yes",
+    "url": "https://docs.composio.dev/toolkits/discordbot.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://docs.discord.com/developers/reference",
+    "https://docs.discord.com/developers/bots/overview",
+    "https://docs.discord.com/developers/change-log",
+    "https://docs.discord.com/developers/quick-start/getting-started",
+    "https://docs.discord.com/developers/topics/oauth2.md",
+    "https://docs.discord.com/developers/discord-social-sdk/how-to/use-with-discord-apis",
+    "https://docs.discord.com/developers/topics/rate-limits.md",
+    "https://docs.discord.com/developers/platform/webhooks"
+  ],
+  "pass_name": "pass1",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session"
+  },
+  "errors": []
+}

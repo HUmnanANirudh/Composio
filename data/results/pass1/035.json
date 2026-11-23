@@ -1,0 +1,163 @@
+{
+  "id": 35,
+  "app": "Mailchimp",
+  "category": "Marketing, Ads, Email and Social",
+  "hint": "mailchimp.com/developer",
+  "docs_url": "https://mailchimp.com/developer/marketing/api-concepts/authentication",
+  "one_liner": {
+    "value": "Email marketing and automation platform",
+    "evidence": [
+      {
+        "url": "https://mailchimp.com/developer/marketing/build/get-started/create-an-account",
+        "quote": "manage audiences and campaigns, and more.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://mailchimp.com/developer/marketing/api-concepts/authentication",
+        "quote": "An API key authenticates against the account that created it.",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://mailchimp.com/developer/marketing/api-concepts/authentication",
+        "quote": "OAuth 2 authenticates against an account belonging to someone else.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://mailchimp.com/developer/marketing/build/get-started/create-an-account",
+        "quote": "Once you have an account and are logged in, you can get an API key and begin making calls to the API.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.75,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://mailchimp.com/developer/marketing/build/get-started/create-an-account",
+        "quote": "The Mailchimp Marketing API provides programmatic access to Mailchimp data and functionality",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://mailchimp.com/developer/marketing/build/get-started/create-an-account",
+        "quote": "sync email activity and campaign analytics with their database, manage audiences and campaigns, and more.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://mailchimp.com/developer/transactional/guides/how-to-use-mailchimps-transactional-messaging-mcp",
+        "quote": "The MCP server URL is https://mandrillapp.com/mcp.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://mailchimp.com/developer/marketing/api-concepts/webhooks",
+        "quote": "Webhooks are a helpful tool that you can use to collect information about audience changes in Mailchimp as they happen.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://mailchimp.com/developer/marketing/build/get-started/create-an-account",
+        "quote": "Once you have an account and are logged in, you can get an API key and begin making calls to the API.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.6,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "MAILCHIMP",
+    "name": "Mailchimp",
+    "tools": 278,
+    "triggers": 4,
+    "auth": [
+      "OAUTH2"
+    ],
+    "managed_app": "Yes",
+    "url": "https://docs.composio.dev/toolkits/mailchimp.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://mailchimp.com/developer/marketing/api-concepts/authentication",
+    "https://mailchimp.com/developer/integration-partner-program",
+    "https://mailchimp.com/developer/transactional/guides/how-to-use-mailchimps-transactional-messaging-mcp",
+    "https://mailchimp.com/developer/transactional/docs/webhooks",
+    "https://mailchimp.com/developer/marketing/api-concepts/authentication/oauth-2",
+    "https://mailchimp.com/developer/marketing/build/get-started/create-an-account",
+    "https://mailchimp.com/developer/marketing/build/ai-tools/mcp-server",
+    "https://mailchimp.com/developer/marketing/api-concepts/webhooks"
+  ],
+  "pass_name": "pass1",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session"
+  },
+  "errors": []
+}

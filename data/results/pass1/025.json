@@ -1,0 +1,156 @@
+{
+  "id": 25,
+  "app": "Pumble",
+  "category": "Communications and Messaging",
+  "hint": "pumble.com",
+  "docs_url": "https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration",
+  "one_liner": {
+    "value": "Team chat app with unlimited users and history on the free plan",
+    "evidence": [
+      {
+        "url": "https://pumble.com/mcp",
+        "quote": "• Unlimited users",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY"
+    ],
+    "evidence": [
+      {
+        "url": "https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration",
+        "quote": "This addon lets you generate an API key that allows you to send messages, reactions, and more via simple HTTP requests.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://pumble.com/integrations",
+        "quote": "You can access the API and install integrations on any Pumble subscription.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration",
+        "quote": "via simple HTTP requests",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "MODERATE",
+    "evidence": [
+      {
+        "url": "https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration",
+        "quote": "send requests and execute various actions within Pumble, including:",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://pumble.com/help/integrations/automation-workflow-integrations/how-to-use-the-pumble-mcp-server",
+        "quote": "With the Pumble Model Context Protocol (MCP) server, you can connect third-party AI agents",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://pumble.com/help/integrations/add-pumble-apps/incoming-webhooks-for-pumble",
+        "quote": "With the incoming webhooks, you can easily post messages from other apps into Pumble.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://pumble.com/integrations",
+        "quote": "You can access the API and install integrations on any Pumble subscription.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.6,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "PUMBLE",
+    "name": "Pumble",
+    "tools": 9,
+    "triggers": 0,
+    "auth": [
+      "API_KEY"
+    ],
+    "managed_app": null,
+    "url": "https://docs.composio.dev/toolkits/pumble.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration",
+    "https://pumble.com/integrations",
+    "https://pumble.com/mcp",
+    "https://pumble.com/help/integrations/add-pumble-apps/incoming-webhooks-for-pumble",
+    "https://pumble.com/learn/pumble/ai-automation-guide",
+    "https://pumble.com/help/integrations/automation-workflow-integrations/how-to-use-the-pumble-mcp-server",
+    "https://pumble.com/help/integrations/add-pumble-apps/guide-to-pumble-integrations",
+    "https://pumble.com/help/workspace-administration/pricing/pumble-free-trial"
+  ],
+  "pass_name": "pass1",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session"
+  },
+  "errors": []
+}

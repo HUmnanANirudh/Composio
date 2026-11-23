@@ -1,0 +1,41 @@
+{
+"2": {
+ "one_liner": ["CRM platform for marketing, sales and service teams", 0.9, [["S7", "securely interact with your HubSpot CRM data through natural conversation"]]],
+ "auth_methods": [["OAUTH2", "BEARER_TOKEN"], 0.92, [["S5", "There are two ways to authenticate calls to HubSpot’s APIs: OAuth, and private app access tokens."], ["S1", "static auth access tokens are used for installing in a single account at a time"]]],
+ "access": ["SELF_SERVE_FREE", 0.75, [["S2", "subscription tier (Free, Starter, Professional, Enterprise)"], ["S2", "including developer test accounts and sandboxes"]]],
+ "api_style": [["REST"], 0.9, [["S4", "All endpoints in this section follow the pattern:"]]],
+ "api_breadth": ["BROAD", 0.8, [["S3", "secure read and write access to your HubSpot CRM data — contacts, deals, engagements, and more"]]],
+ "official_mcp": [true, 0.97, [["S3", "HubSpot offers two distinct MCP (Model Context Protocol) servers"]]],
+ "webhooks": [true, 0.3, []],
+ "sandbox": [true, 0.8, [["S2", "including developer test accounts and sandboxes"]]],
+ "buildability": ["READY", 0.85, [["S1", "static auth access tokens are used for installing in a single account at a time"]]],
+ "main_blocker": [null, 0.8, []],
+ "docs_url": "https://developers.hubspot.com/docs/api-reference/latest/overview"
+},
+"3": {
+ "one_liner": ["Sales CRM built around deal pipeline management", 0.9, [["S7", "Pipedrive is a sales pipeline software that gets you organized."]]],
+ "auth_methods": [["API_KEY", "OAUTH2"], 0.95, [["S3", "The API is stateless – all requests are validated against an API token."], ["S4", "Using OAuth 2.0 is necessary for developing apps that are available in the Pipedrive Marketplace."]]],
+ "access": ["SELF_SERVE_FREE", 0.6, [["S1", "Free API access with every plan"], ["S3", "Go to the Developer Sandbox Account page to learn more and request your own sandbox account."]]],
+ "api_style": [["REST"], 0.95, [["S3", "This reference helps you implement the RESTful Pipedrive API."]]],
+ "api_breadth": ["BROAD", 0.85, [["S3", "Pipedrive's API and extension points cover the majority of our core product's functionality."]]],
+ "official_mcp": [true, 0.95, [["S2", "How the Pipedrive MCP server works"], ["S6", "You can connect the Pipedrive MCP server to ChatGPT"]]],
+ "webhooks": [true, 0.9, [["S1", "Access what you need via webhooks, API endpoints, Postman"]]],
+ "sandbox": [true, 0.85, [["S3", "request your own sandbox account"]]],
+ "buildability": ["READY", 0.85, [["S1", "Free API access with every plan"]]],
+ "main_blocker": [null, 0.7, []],
+ "docs_url": "https://developers.pipedrive.com/docs/api/v1"
+},
+"4": {
+ "one_liner": ["AI-native CRM with customizable objects and workflows", 0.85, [["S3", "lets AI assistants interact with your Attio CRM workspace"]]],
+ "auth_methods": [["API_KEY", "OAUTH2"], 0.95, [["S1", "By implementing an OAuth 2.0 flow"], ["S1", "By generating an API key for your workspace"]]],
+ "access": ["SELF_SERVE_FREE", 0.9, [["S5", "Available on all plans."], ["S2", "Start for free with plans for every stage of growth"]]],
+ "api_style": [["REST"], 0.95, [["S1", "In order to make requests to the Attio REST API, you need to generate an access token."]]],
+ "api_breadth": ["BROAD", 0.7, [["S3", "search, read, create, and update records across your CRM—people, companies, deals, tasks, and notes"]]],
+ "official_mcp": [true, 0.97, [["S3", "Attio MCP is Attio’s hosted MCP server that gives AI tools secure access to your Attio workspace."]]],
+ "webhooks": [true, 0.9, [["S4", "Get all of the webhooks in your workspace."]]],
+ "sandbox": [false, 0.3, []],
+ "buildability": ["READY", 0.9, [["S5", "Available on all plans."]]],
+ "main_blocker": [null, 0.8, []],
+ "docs_url": "https://docs.attio.com/rest-api/guides/authentication"
+}
+}

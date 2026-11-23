@@ -1,0 +1,179 @@
+{
+  "id": 34,
+  "app": "GoHighLevel",
+  "category": "Marketing, Ads, Email and Social",
+  "hint": "highlevel.stoplight.io",
+  "docs_url": "https://marketplace.gohighlevel.com/docs/Authorization/PrivateIntegrationsToken/index.html",
+  "one_liner": {
+    "value": "All-in-one CRM and marketing automation platform for agencies",
+    "evidence": [
+      {
+        "url": "https://help.gohighlevel.com/support/solutions/articles/48001060529-highlevel-api-documentation",
+        "quote": "The APIs support contacts, conversations, calendars, workflows, payments, webhooks, and more.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "BEARER_TOKEN",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://marketplace.gohighlevel.com/docs/Authorization/PrivateIntegrationsToken/index.html",
+        "quote": "Generate Private Integration tokens from your account settings",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://help.gohighlevel.com/support/solutions/articles/155000005741-how-to-setup-and-use-the-highlevel-mcp-server",
+        "quote": "connects through OAuth",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_TRIAL",
+    "evidence": [
+      {
+        "url": "https://www.gohighlevel.com/pricing",
+        "quote": "Experience it for 14 Days FREE",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://help.gohighlevel.com/support/solutions/articles/48001060529-highlevel-api-documentation",
+        "quote": "API access is available across HighLevel subscription plans.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://help.gohighlevel.com/support/solutions/articles/48001060529-highlevel-api-documentation",
+        "quote": "HighLevel provides APIs that allow developers to build custom integrations",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://help.gohighlevel.com/support/solutions/articles/48001060529-highlevel-api-documentation",
+        "quote": "The APIs support contacts, conversations, calendars, workflows, payments, webhooks, and more.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://help.gohighlevel.com/support/solutions/articles/155000005741-how-to-setup-and-use-the-highlevel-mcp-server",
+        "quote": "The HighLevel MCP Server, also called the LeadConnector MCP Server, connects through OAuth",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://help.gohighlevel.com/support/solutions/articles/48001060529-highlevel-api-documentation",
+        "quote": "The APIs support contacts, conversations, calendars, workflows, payments, webhooks, and more.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY_WITH_CAVEATS",
+    "evidence": [
+      {
+        "url": "https://help.gohighlevel.com/support/solutions/articles/48001060529-highlevel-api-documentation",
+        "quote": "certain endpoints and capabilities may require a higher-tier plan.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.75,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "Paid subscription required after the 14-day trial; some endpoints need higher-tier plans.",
+    "evidence": [
+      {
+        "url": "https://help.gohighlevel.com/support/solutions/articles/155000008488-highlevel-api-migration-guide-how-to-move-to-private-integrations",
+        "quote": "certain API endpoints require Founder Plan access.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "HIGHLEVEL_LOCATION",
+    "name": "HighLevel Location",
+    "tools": 555,
+    "triggers": 0,
+    "auth": [
+      "OAUTH2",
+      "BEARER_TOKEN"
+    ],
+    "managed_app": "No",
+    "url": "https://docs.composio.dev/toolkits/highlevel_location.md",
+    "mcp_variant": "HIGHLEVEL_MCP",
+    "mcp_variant_auth": [
+      "API_KEY"
+    ]
+  },
+  "sources": [
+    "https://help.gohighlevel.com/support/solutions/articles/48001060529-highlevel-api-documentation",
+    "https://marketplace.gohighlevel.com/docs/other/mcp/index.html",
+    "https://stoplight.io/welcome?utm_source=workspaces&amp;utm_medium=referral&amp;utm_campaign=free_workspace_banner",
+    "https://help.gohighlevel.com/support/solutions/articles/155000008488-highlevel-api-migration-guide-how-to-move-to-private-integrations",
+    "https://help.gohighlevel.com/support/solutions/articles/155000009289-what-is-the-highlevel-partner-network",
+    "https://help.gohighlevel.com/support/solutions/articles/155000005741-how-to-setup-and-use-the-highlevel-mcp-server",
+    "https://marketplace.gohighlevel.com/docs/Authorization/PrivateIntegrationsToken/index.html",
+    "https://www.gohighlevel.com/pricing"
+  ],
+  "pass_name": "pass1",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session"
+  },
+  "errors": []
+}

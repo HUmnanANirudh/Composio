@@ -1,0 +1,80 @@
+{
+"5": {
+ "one_liner": ["Open-source CRM with a schema-generated REST and GraphQL API", 0.9, [["S6", "Twenty is an open-source CRM."]]],
+ "auth_methods": [["API_KEY", "OAUTH2"], 0.9, [["S6", "auth: OAuth 2.1 or an API-key Bearer token"], ["S1", "Twenty implements OAuth 2.0 with authorization code + PKCE for user-facing apps"]]],
+ "access": ["SELF_SERVE_FREE", 0.55, [["S6", "Twenty is an open-source CRM."], ["S4", "Pick 30 days (with card) or 7 days (without card). Both include full access"]]],
+ "api_style": [["REST", "GRAPHQL"], 0.95, [["S2", "Both are available as REST and GraphQL."]]],
+ "api_breadth": ["BROAD", 0.8, [["S2", "CRUD on records: People, Companies, Opportunities, your custom objects."]]],
+ "official_mcp": [true, 0.95, [["S3", "Twenty exposes an MCP server so that AI assistants"]]],
+ "webhooks": [true, 0.3, []],
+ "sandbox": [false, 0.3, []],
+ "buildability": ["READY", 0.8, [["S2", "Your workspace-specific API documentation is available under Settings → Developers → API after creating an API key."]]],
+ "main_blocker": [null, 0.6, []],
+ "docs_url": "https://docs.twenty.com/developers/extend/api"
+},
+"6": {
+ "one_liner": ["Customizable work-management and collaboration platform", 0.8, [["S3", "Items are entries in an app."]]],
+ "auth_methods": [["OAUTH2"], 0.9, [["S1", "The Podio API uses the OAuth2 protocol for authentication."]]],
+ "access": ["SELF_SERVE_FREE", 0.9, [["S2", "The Podio API is available to use for both paid and free Podio accounts."]]],
+ "api_style": [["REST"], 0.8, [["S5", "You use the access token for all API requests"]]],
+ "api_breadth": ["BROAD", 0.85, [["S3", "Our API is split up into different areas, that each contains a subset of methods grouped by functionality."]]],
+ "official_mcp": [false, 0.5, []],
+ "webhooks": [true, 0.95, [["S4", "Webhooks allow a URL to be called when an item is created, updated or deleted in an app."]]],
+ "sandbox": [false, 0.3, []],
+ "buildability": ["READY", 0.85, [["S6", "You just have to sign in or sign up with Podio, and go to the API key tab in your settings."]]],
+ "main_blocker": [null, 0.6, []],
+ "docs_url": "https://developers.podio.com/doc"
+},
+"7": {
+ "one_liner": ["Zoho's CRM for sales pipelines, automation and analytics", 0.85, [["S6", "Perform CRUD operations on CRM module entities"]]],
+ "auth_methods": [["OAUTH2"], 0.3, []],
+ "access": ["SELF_SERVE_FREE", 0.85, [["S2", "Free Edition | 5000 credits | 5000 credits"]]],
+ "api_style": [["REST"], 0.9, [["S6", "integrate with any third party application through flexible RESTful endpoints."]]],
+ "api_breadth": ["BROAD", 0.85, [["S6", "Fetch the metadata of modules, fields, layouts, custom views, and related lists."]]],
+ "official_mcp": [true, 0.95, [["S7", "Zoho CRM provides these as pre-built MCP servers"]]],
+ "webhooks": [true, 0.8, [["S6", "Get notified whenever a data change occurs inside your CRM."]]],
+ "sandbox": [true, 0.6, [["S5", "Sandbox Development"]]],
+ "buildability": ["READY", 0.8, [["S2", "Free Edition | 5000 credits | 5000 credits"]]],
+ "main_blocker": [null, 0.6, []],
+ "docs_url": "https://www.zoho.com/crm/developer/docs/api/v8"
+},
+"8": {
+ "one_liner": ["Sales CRM with built-in calling, email and SMS", 0.85, [["S7", "Close offers a 14-day free trial with no credit card required."]]],
+ "auth_methods": [["API_KEY", "BASIC", "OAUTH2"], 0.92, [["S1", "API keys use HTTP Basic client side authentication."], ["S2", "OAuth 2.0 — Lets each user authorize your app to act on their behalf."]]],
+ "access": ["SELF_SERVE_TRIAL", 0.8, [["S7", "Close offers a 14-day free trial with no credit card required."], ["S6", "All paid plans (including Scale) are billed per user (per seat)"]]],
+ "api_style": [["REST"], 0.95, [["S2", "Close’s REST API supports everything from a simple internal script to a full product integration"]]],
+ "api_breadth": ["BROAD", 0.8, [["S2", "Close’s REST API supports everything from a simple internal script to a full product integration"]]],
+ "official_mcp": [true, 0.97, [["S3", "The MCP server URL is https://mcp.close.com/mcp"]]],
+ "webhooks": [true, 0.9, [["S4", "creating/modifying a webhook subscription"]]],
+ "sandbox": [false, 0.3, []],
+ "buildability": ["READY_WITH_CAVEATS", 0.75, [["S7", "Close offers a 14-day free trial with no credit card required."]]],
+ "main_blocker": ["No free plan: after the 14-day trial, API access needs a paid seat.", 0.7, [["S6", "All paid plans (including Scale) are billed per user (per seat)"]]],
+ "docs_url": "https://developer.close.com/integrations"
+},
+"9": {
+ "one_liner": ["CRM built for Google Workspace users", 0.85, [["S8", "the only CRM that’s a Recommended for Google Workspace app"]]],
+ "auth_methods": [["API_KEY", "OAUTH2"], 0.95, [["S1", "There are two ways to access the Copper Developer API: API keys and OAuth2.0."]]],
+ "access": ["SELF_SERVE_TRIAL", 0.45, [["S2", "Start free, no credit card required."]]],
+ "api_style": [["REST"], 0.85, [["S5", "the request parameters must be provided as JSON in the request body."]]],
+ "api_breadth": ["BROAD", 0.55, [["S1", "There are two ways to access the Copper Developer API"]]],
+ "official_mcp": [false, 0.5, [["S3", "MCP - COMING SOON"], ["S3", "Request early access to the beta, or join the waitlist"]]],
+ "webhooks": [true, 0.9, [["S4", "This example shows the notification request your endpoint will receive"]]],
+ "sandbox": [false, 0.3, []],
+ "buildability": ["READY_WITH_CAVEATS", 0.6, [["S7", "To register your application, contact us."]]],
+ "main_blocker": ["OAuth apps must be registered by contacting Copper; API keys are admin-generated.", 0.6, [["S7", "To register your application, contact us."]]],
+ "docs_url": "https://developer.copper.com/introduction/authentication.html"
+},
+"10": {
+ "one_liner": ["Deal and relationship management platform for private capital firms", 0.75, [["S2", "surface sharper relationship and pipeline insights, prepare teams for diligence"]]],
+ "auth_methods": [["API_KEY", "OAUTH2"], 0.85, [["S3", "DealCloud uses the OAuth2 Client Credentials flow to generate a bearer token"], ["S1", "Scroll down to the API Key section and click Enable."]]],
+ "access": ["PARTNERSHIP", 0.75, [["S1", "contact your organization's admin or DealCloud Customer Success Manager (CSM) for assistance."]]],
+ "api_style": [["REST"], 0.9, [["S3", "Required when accessing the Data or Schema API endpoints (api/rest/v4/data or api/rest/v4/schema)."]]],
+ "api_breadth": ["BROAD", 0.85, [["S8", "Full API Coverage | 94+ functions across 11 API categories"]]],
+ "official_mcp": [true, 0.95, [["S2", "The DealCloud MCP Server helps teams turn their DealCloud data into faster, higher-quality outcomes."]]],
+ "webhooks": [false, 0.3, []],
+ "sandbox": [false, 0.3, []],
+ "buildability": ["NEEDS_OUTREACH", 0.75, [["S1", "contact your organization's admin or DealCloud Customer Success Manager (CSM) for assistance."]]],
+ "main_blocker": ["Enterprise-only product: API access needs a DealCloud customer site and admin-granted permissions.", 0.75, [["S1", "To enable API access, ensure the intended user is assigned to a user group with the appropriate permissions."]]],
+ "docs_url": "https://api.docs.dealcloud.com/docs/apikeys"
+}
+}

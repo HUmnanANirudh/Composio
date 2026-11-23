@@ -1,0 +1,163 @@
+{
+  "id": 10,
+  "app": "DealCloud",
+  "category": "CRM and Sales",
+  "hint": "api.docs.dealcloud.com",
+  "docs_url": "https://api.docs.dealcloud.com/docs/apikeys",
+  "one_liner": {
+    "value": "Deal and relationship management platform for private capital firms",
+    "evidence": [
+      {
+        "url": "https://api.docs.dealcloud.com/mcp",
+        "quote": "surface sharper relationship and pipeline insights, prepare teams for diligence",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.75,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://api.docs.dealcloud.com/docs/token",
+        "quote": "DealCloud uses the OAuth2 Client Credentials flow to generate a bearer token",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://api.docs.dealcloud.com/docs/apikeys",
+        "quote": "Scroll down to the API Key section and click Enable.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "access": {
+    "value": "PARTNERSHIP",
+    "evidence": [
+      {
+        "url": "https://api.docs.dealcloud.com/docs/apikeys",
+        "quote": "contact your organization's admin or DealCloud Customer Success Manager (CSM) for assistance.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.75,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://api.docs.dealcloud.com/docs/token",
+        "quote": "Required when accessing the Data or Schema API endpoints (api/rest/v4/data or api/rest/v4/schema).",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://api.docs.dealcloud.com/sdk/python-1.X",
+        "quote": "Full API Coverage | 94+ functions across 11 API categories",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://api.docs.dealcloud.com/mcp",
+        "quote": "The DealCloud MCP Server helps teams turn their DealCloud data into faster, higher-quality outcomes.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "webhooks": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "buildability": {
+    "value": "NEEDS_OUTREACH",
+    "evidence": [
+      {
+        "url": "https://api.docs.dealcloud.com/docs/apikeys",
+        "quote": "contact your organization's admin or DealCloud Customer Success Manager (CSM) for assistance.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.75,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "Enterprise-only product: API access needs a DealCloud customer site and admin-granted permissions.",
+    "evidence": [
+      {
+        "url": "https://api.docs.dealcloud.com/docs/apikeys",
+        "quote": "To enable API access, ensure the intended user is assigned to a user group with the appropriate permissions.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.75,
+    "flags": []
+  },
+  "composio": {
+    "found": false,
+    "slug": null,
+    "name": null,
+    "tools": null,
+    "triggers": null,
+    "auth": [],
+    "managed_app": null,
+    "url": null,
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://api.docs.dealcloud.com/docs/apikeys",
+    "https://api.docs.dealcloud.com/mcp",
+    "https://api.docs.dealcloud.com/docs/token",
+    "https://api.docs.dealcloud.com/mcp/getting-started",
+    "https://api.docs.dealcloud.com/docs/errors",
+    "https://api.docs.dealcloud.com/mcp/connections",
+    "https://api.docs.dealcloud.com/sdk/python-1.X/configuration/authentication",
+    "https://api.docs.dealcloud.com/sdk/python-1.X"
+  ],
+  "pass_name": "pass1",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session"
+  },
+  "errors": [
+    "fetch https://api.docs.dealcloud.com: 200 too little text (JS-rendered?)"
+  ]
+}

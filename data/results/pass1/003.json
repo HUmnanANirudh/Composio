@@ -1,0 +1,183 @@
+{
+  "id": 3,
+  "app": "Pipedrive",
+  "category": "CRM and Sales",
+  "hint": "pipedrive.com",
+  "docs_url": "https://developers.pipedrive.com/docs/api/v1",
+  "one_liner": {
+    "value": "Sales CRM built around deal pipeline management",
+    "evidence": [
+      {
+        "url": "https://github.com/pipedrive/client-nodejs",
+        "quote": "Pipedrive is a sales pipeline software that gets you organized.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.pipedrive.com/docs/api/v1",
+        "quote": "The API is stateless – all requests are validated against an API token.",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://developers.pipedrive.com/docs/api/v1/Oauth",
+        "quote": "Using OAuth 2.0 is necessary for developing apps that are available in the Pipedrive Marketplace.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://www.pipedrive.com/en/features/crm-api",
+        "quote": "Free API access with every plan",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://developers.pipedrive.com/docs/api/v1",
+        "quote": "Go to the Developer Sandbox Account page to learn more and request your own sandbox account.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.6,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.pipedrive.com/docs/api/v1",
+        "quote": "This reference helps you implement the RESTful Pipedrive API.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://developers.pipedrive.com/docs/api/v1",
+        "quote": "Pipedrive's API and extension points cover the majority of our core product's functionality.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://www.pipedrive.com/en/features/mcp-server",
+        "quote": "How the Pipedrive MCP server works",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://support.pipedrive.com/en/article/mcp-chatgpt",
+        "quote": "You can connect the Pipedrive MCP server to ChatGPT",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://www.pipedrive.com/en/features/crm-api",
+        "quote": "Access what you need via webhooks, API endpoints, Postman",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "sandbox": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developers.pipedrive.com/docs/api/v1",
+        "quote": "request your own sandbox account",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://www.pipedrive.com/en/features/crm-api",
+        "quote": "Free API access with every plan",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "PIPEDRIVE",
+    "name": "Pipedrive",
+    "tools": 407,
+    "triggers": 3,
+    "auth": [
+      "OAUTH2",
+      "API_KEY"
+    ],
+    "managed_app": "No",
+    "url": "https://docs.composio.dev/toolkits/pipedrive.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://www.pipedrive.com/en/features/crm-api",
+    "https://www.pipedrive.com/en/features/mcp-server",
+    "https://developers.pipedrive.com/docs/api/v1",
+    "https://developers.pipedrive.com/docs/api/v1/Oauth",
+    "https://www.pipedrive.com/en/pricing",
+    "https://support.pipedrive.com/en/article/mcp-chatgpt",
+    "https://github.com/pipedrive/client-nodejs",
+    "https://support.pipedrive.com/en/article/mcp-claude"
+  ],
+  "pass_name": "pass1",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session"
+  },
+  "errors": []
+}

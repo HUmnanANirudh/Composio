@@ -1,0 +1,172 @@
+{
+  "id": 11,
+  "app": "Zendesk",
+  "category": "Support and Helpdesk",
+  "hint": "zendesk.com",
+  "docs_url": "https://developer.zendesk.com/api-reference/introduction/security-and-auth",
+  "one_liner": {
+    "value": "Customer service and ticketing platform",
+    "evidence": [
+      {
+        "url": "https://developer.zendesk.com/documentation/api-basics/getting-started/getting-a-trial-or-sponsored-account-for-development",
+        "quote": "You can try out the Zendesk platform with a free, 14-day trial account.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY",
+      "BASIC",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://support.zendesk.com/hc/en-us/articles/4408831452954-How-can-I-authenticate-API-requests",
+        "quote": "use basic authentication with your email address and password, your email address and an API token, or an OAuth access token.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.92,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_TRIAL",
+    "evidence": [
+      {
+        "url": "https://developer.zendesk.com/documentation/api-basics/getting-started/getting-a-trial-or-sponsored-account-for-development",
+        "quote": "You can try out the Zendesk platform with a free, 14-day trial account.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://developer.zendesk.com/api-reference/introduction/security-and-auth",
+        "quote": "The Zendesk API supports OAuth authorization flows.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://support.zendesk.com/hc/en-us/articles/11485591370650-Announcing-Zendesk-Bridge",
+        "quote": "access more than 400 Zendesk tools",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://support.zendesk.com/hc/en-us/articles/11485591370650-Announcing-Zendesk-Bridge",
+        "quote": "you can connect external AI agents to Zendesk through supported integrations or a bring-your-own-agent configuration",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.6,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developer.zendesk.com/documentation/webhooks/anatomy-of-a-webhook-request.md",
+        "quote": "A webhook that's subscribed to one or more Zendesk events always sends requests",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "sandbox": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developer.zendesk.com/documentation/api-basics/getting-started/getting-a-trial-or-sponsored-account-for-development",
+        "quote": "Zendesk sponsors an instance for up to 5 agents that you can use for developing, demoing, and troubleshooting",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY_WITH_CAVEATS",
+    "evidence": [
+      {
+        "url": "https://developer.zendesk.com/api-reference/introduction/security-and-auth",
+        "quote": "you must use global OAuth access tokens to authenticate Zendesk API requests",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.75,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "No free plan: development runs on a 14-day trial or a partner-sponsored account; multi-customer apps need global OAuth.",
+    "evidence": [
+      {
+        "url": "https://developer.zendesk.com/documentation/api-basics/getting-started/getting-a-trial-or-sponsored-account-for-development",
+        "quote": "You can try out the Zendesk platform with a free, 14-day trial account.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "ZENDESK",
+    "name": "Zendesk",
+    "tools": 484,
+    "triggers": 2,
+    "auth": [
+      "OAUTH2"
+    ],
+    "managed_app": "Yes",
+    "url": "https://docs.composio.dev/toolkits/zendesk.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://developer.zendesk.com/documentation/authentication/oauth-vs-api-tokens",
+    "https://developer.zendesk.com/documentation/api-basics/getting-started/getting-a-trial-or-sponsored-account-for-development",
+    "https://support.zendesk.com/hc/en-us/articles/11485591370650-Announcing-Zendesk-Bridge",
+    "https://developer.zendesk.com/documentation/webhooks/anatomy-of-a-webhook-request.md",
+    "https://support.zendesk.com/hc/en-us/articles/4408831452954-How-can-I-authenticate-API-requests",
+    "https://developer.zendesk.com/api-reference/introduction/security-and-auth",
+    "https://www.zendesk.com/in/blog/product-news/zendesk-bridge",
+    "https://developer.zendesk.com/documentation/authentication/using-oauth-to-authenticate-zendesk-api-requests-in-a-web-app.md"
+  ],
+  "pass_name": "pass1",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session"
+  },
+  "errors": []
+}

@@ -1,0 +1,160 @@
+{
+  "id": 36,
+  "app": "Klaviyo",
+  "category": "Marketing, Ads, Email and Social",
+  "hint": "developers.klaviyo.com",
+  "docs_url": "https://developers.klaviyo.com/en/docs/authenticate_",
+  "one_liner": {
+    "value": "Marketing automation for email, SMS and customer data",
+    "evidence": [
+      {
+        "url": "https://www.klaviyo.com/solutions/ai/klaviyo-mcp-server",
+        "quote": "The Klaviyo MCP server connects compatible AI agents to account data and tools for reporting, customer analysis, and campaign creation.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.klaviyo.com/en/docs/authenticate_",
+        "quote": "Klaviyo provides 3 methods of authentication including private key authentication and OAuth",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://www.klaviyo.com/pricing",
+        "quote": "Klaviyo free plan",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.klaviyo.com/en/reference/webhooks/llms.txt",
+        "quote": "The Webhooks endpoints in the Klaviyo REST API",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://www.klaviyo.com/solutions/ai/klaviyo-mcp-server",
+        "quote": "campaigns, flows, profiles, and orders",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developers.klaviyo.com/en/docs/connect_to_the_klaviyo_mcp_server",
+        "quote": "Remote MCP server URL: https://mcp.klaviyo.com/mcp",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.97,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developers.klaviyo.com/en/reference/webhooks/llms.txt",
+        "quote": "Create Webhook",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://www.klaviyo.com/pricing",
+        "quote": "Klaviyo free plan",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.6,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "KLAVIYO",
+    "name": "Klaviyo",
+    "tools": 233,
+    "triggers": 0,
+    "auth": [
+      "API_KEY",
+      "OAUTH2"
+    ],
+    "managed_app": "No",
+    "url": "https://docs.composio.dev/toolkits/klaviyo.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://developers.klaviyo.com/en/docs/set_up_oauth",
+    "https://www.klaviyo.com/pricing",
+    "https://www.klaviyo.com/solutions/ai/klaviyo-mcp-server",
+    "https://developers.klaviyo.com/en/reference/webhooks/llms.txt",
+    "https://developers.klaviyo.com/en/docs/connect_to_the_klaviyo_mcp_server",
+    "https://developers.klaviyo.com/en/reference/api-keys-beta/llms.txt",
+    "https://developers.klaviyo.com/en/docs/authenticate_",
+    "https://help.klaviyo.com/hc/en-us/articles/52833598880923"
+  ],
+  "pass_name": "pass1",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session"
+  },
+  "errors": [
+    "fetch https://developers.klaviyo.com/en/reference/api%5Foverview: 404 too little text (JS-rendered?)"
+  ]
+}
