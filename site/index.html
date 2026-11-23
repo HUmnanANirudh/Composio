@@ -298,7 +298,7 @@ pre{background:var(--band);color:var(--band-ink);padding:14px 16px;border-radius
         <div class="stn"><span class="dot"></span><span class="who">deterministic</span><h3>Composio catalog</h3><p>Match each app to Composio's public 1,841-toolkit catalog: existing toolkit, tool count, auth schemes, vendor MCP proxy.</p></div>
         <div class="stn"><span class="dot"></span><span class="who">crawler + Composio → Exa</span><h3>Discover sources</h3><p>Crawl the official docs host and its llms.txt, follow auth, pricing and MCP links, then search with <code>EXA_SEARCH</code> through a Composio session.</p></div>
         <div class="stn"><span class="dot"></span><span class="who" id="m-extract">gpt-oss-120b</span><h3>Extract, pass 1</h3><p>Fill a rubric of fixed enums. Every field must cite a source and a verbatim quote. The catalog is withheld so it stays independent.</p></div>
-        <div class="stn"><span class="dot"></span><span class="who">deterministic + <span id="m-critic">qwen3.8-27b</span></span><h3>Verify, four loops</h3><p>Grounding: is the quote on the page? Rules: consistency and Composio cross-checks. Critic: a second model family audits. Re-research: flagged fields only.</p></div>
+        <div class="stn"><span class="dot"></span><span class="who">deterministic + <span id="m-critic">qwen3.8-27b</span> + <span id="m-rr">gpt-oss-20b</span></span><h3>Verify, four loops</h3><p>Grounding: is the quote on the page? Rules: consistency and Composio cross-checks. Critic: a second model family audits pass 1. Re-research: new sources for flagged fields only, then grounding and rules again.</p></div>
         <div class="stn human"><span class="dot"></span><span class="who">human</span><h3>Answer key</h3><p>20 apps drawn at random (2 per category, fixed seed) before any run, checked by hand against official docs.</p></div>
         <div class="stn"><span class="dot"></span><span class="who">deterministic</span><h3>Score + patterns</h3><p>Pass 1 vs final, field by field, against the key. Patterns are plain counts over the final records.</p></div>
       </div>
@@ -315,7 +315,7 @@ pre{background:var(--band);color:var(--band-ink);padding:14px 16px;border-radius
         <div>
           <h3 class="h">What it cost</h3>
           <table id="usage-table"></table>
-          <p class="small" style="margin-top:10px">Groq free tier (8K tokens per minute per model): the agent paces itself with a token budget and pauses cleanly at daily caps, then resumes.</p>
+          <p class="small" style="margin-top:10px">All on Groq's free tier: 8K tokens per minute and 200K per day for each model. The agent paces itself with a token budget and spreads work across three models so each daily quota is used. At a daily cap it pauses cleanly, and the next run resumes where it stopped.</p>
         </div>
       </div>
     </div>
@@ -361,7 +361,7 @@ uv run research build-site          # this page's data</pre>
         <div>
           <h2>Where it fell short</h2>
           <ul id="limits">
-            <li>Groq's free tier caps throughput; a full run spans hours and pauses at daily limits.</li>
+            <li>Groq's free tier (200K tokens per day per model) spreads a full run over about three days, and re-research runs on the smaller gpt-oss-20b to fit the budget.</li>
             <li>JavaScript-rendered docs (e.g. GoHighLevel's Stoplight portal) return almost no text to a plain fetch.</li>
             <li>“Access” is the hardest field: pricing pages rarely say plainly whether the API is on the free plan.</li>
             <li>The answer key covers 20 of 100 apps; the other 80 rely on the loops and confidence alone.</li>
@@ -404,6 +404,7 @@ function render(d){
   $("#foot").textContent = `Data generated ${d.generated}. Extraction ${d.models.extract}; critic ${d.models.critic}; search ${d.models.search}. Apps are named for research purposes; no affiliation with any vendor, including Composio.`;
   $("#m-extract").textContent = d.models.extract.replace("openai/","");
   $("#m-critic").textContent = d.models.critic.replace("qwen/","");
+  if (d.models.reresearch) $("#m-rr").textContent = d.models.reresearch.replace("openai/","");
 
   // findings
   const acc1 = E.pass1?.overall?.accuracy, accF = E.final?.overall?.accuracy;

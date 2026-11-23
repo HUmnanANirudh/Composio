@@ -1,0 +1,165 @@
+{
+  "id": 6,
+  "app": "Podio",
+  "category": "CRM and Sales",
+  "hint": "podio.com",
+  "docs_url": "https://developers.podio.com",
+  "one_liner": {
+    "value": "Integrate with Podio to build tools and applications on top of Podio",
+    "evidence": [
+      {
+        "url": "https://developers.podio.com",
+        "quote": "The Podio API lets you integrate with other services and build tools and applications on top of Podio",
+        "grounded": null,
+        "match_score": null
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "BASIC",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.podio.com/authentication",
+        "quote": "The Podio API uses the OAuth2 protocol for authentication",
+        "grounded": null,
+        "match_score": null
+      },
+      {
+        "url": "https://developers.podio.com/authentication",
+        "quote": "Username & password flow... It requires the user's username and password",
+        "grounded": null,
+        "match_score": null
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://developers.podio.com/api-key",
+        "quote": "It's easy to get one or more API keys for accessing your Podio data. You just have to sign in or sign up",
+        "grounded": null,
+        "match_score": null
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://developers.podio.com/doc",
+        "quote": "Our API is split up into different areas, that each contains a subset of methods grouped by functionality",
+        "grounded": null,
+        "match_score": null
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://developers.podio.com/doc",
+        "quote": "Core Areas... Applications, Comments, Contacts, Files, Hooks, Items, OAuth authorization, Status, Tasks",
+        "grounded": null,
+        "match_score": null
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.2,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developers.podio.com/examples/webhooks",
+        "quote": "Webhooks provide a way to build event‑driven apps, because you can be notified about changes in Podio",
+        "grounded": null,
+        "match_score": null
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "sandbox": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://developers.podio.com/api-key",
+        "quote": "Generating API keys to Podio... sign in or sign up with Podio",
+        "grounded": null,
+        "match_score": null
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://developers.podio.com/api-key",
+        "quote": "It's easy to get one or more API keys for accessing your Podio data",
+        "grounded": null,
+        "match_score": null
+      },
+      {
+        "url": "https://developers.podio.com/authentication",
+        "quote": "The Podio API uses the OAuth2 protocol for authentication",
+        "grounded": null,
+        "match_score": null
+      }
+    ],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 1.0,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "PODIO",
+    "name": "Podio",
+    "tools": 143,
+    "triggers": 0,
+    "auth": [
+      "OAUTH2"
+    ],
+    "managed_app": "No",
+    "url": "https://docs.composio.dev/toolkits/podio.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://developers.podio.com",
+    "https://developers.podio.com/api-key",
+    "https://developers.podio.com/authentication",
+    "https://developers.podio.com/index/limits",
+    "https://developers.podio.com/examples/webhooks",
+    "https://developers.podio.com/doc"
+  ],
+  "pass_name": "pass1",
+  "verification": {},
+  "errors": []
+}

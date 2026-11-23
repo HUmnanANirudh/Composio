@@ -101,6 +101,8 @@ def build() -> dict:
         "models": {
             "extract": settings.extract_model,
             "critic": settings.critic_model,
+            "reresearch": settings.reresearch_model,
+            "critic_rounds": settings.critic_rounds,
             "search": f"composio session -> {settings.search_toolkit.upper()}_SEARCH",
         },
         "counts": {"apps": len(apps), "researched": len(recs)},
