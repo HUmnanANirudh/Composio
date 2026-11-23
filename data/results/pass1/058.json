@@ -1,0 +1,149 @@
+{
+  "id": 58,
+  "app": "Sherlock",
+  "category": "Data, SEO and Scraping",
+  "hint": "github.com/sherlock-project/sherlock",
+  "docs_url": "https://github.com/sherlock-project/sherlock",
+  "one_liner": {
+    "value": "Open-source CLI that finds a username across 400+ social networks",
+    "evidence": [
+      {
+        "url": "https://github.com/sherlock-project/sherlock",
+        "quote": "Hunt down social media accounts by username across 400+ social networks",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "NONE"
+    ],
+    "evidence": [
+      {
+        "url": "https://github.com/sherlock-project/sherlock",
+        "quote": "To search for only one user:",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "access": {
+    "value": "NO_PUBLIC_API",
+    "evidence": [
+      {
+        "url": "https://github.com/sherlock-project/sherlock",
+        "quote": "pipx install sherlock-project",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "CLI"
+    ],
+    "evidence": [
+      {
+        "url": "https://github.com/sherlock-project/sherlock",
+        "quote": "$ sherlock --help",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "NARROW",
+    "evidence": [
+      {
+        "url": "https://github.com/sherlock-project/sherlock",
+        "quote": "To search for more than one user:",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.5,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.6,
+    "flags": []
+  },
+  "webhooks": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.5,
+    "flags": []
+  },
+  "buildability": {
+    "value": "BLOCKED",
+    "evidence": [
+      {
+        "url": "https://github.com/sherlock-project/sherlock",
+        "quote": "pipx install sherlock-project",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "No hosted API: Sherlock is a local open-source CLI, so a toolkit would have to run it itself.",
+    "evidence": [
+      {
+        "url": "https://github.com/sherlock-project/sherlock",
+        "quote": "Accounts found will be stored in an individual text file",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "composio": {
+    "found": false,
+    "slug": null,
+    "name": null,
+    "tools": null,
+    "triggers": null,
+    "auth": [],
+    "managed_app": null,
+    "url": null,
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://github.com/sherlock-project/sherlock",
+    "https://docs.sherlocklabs.dev/explore/mcp",
+    "https://docs.cloudferro.com/en/latest/sherlock/Sherlock-authentication-API-keys-on-CloudFerro-Cloud.html",
+    "https://docs.sherlocklabs.dev/get-started/getting-started",
+    "https://support.sherlock.im/knowledge_base/item/292200",
+    "https://www.cloudferro.com/blog/how-to-use-cloudferro-ai-hub-sherlock",
+    "https://docs.aleph-alpha.com/phariaai-dev-guide/latest/pharia-data/configuring-workflows.html",
+    "https://docs.cloudferro.com/en/latest/sherlock/Package-installation-and-examples-of-Sherlock-AI-code-on-CloudFerro-Cloud.html"
+  ],
+  "pass_name": "pass1",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session"
+  },
+  "errors": [
+    "fetch https://app.sherlock.sh/reference: 200 too little text (JS-rendered?)"
+  ]
+}

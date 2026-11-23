@@ -1,0 +1,156 @@
+{
+  "id": 59,
+  "app": "Waterfall.io",
+  "category": "Data, SEO and Scraping",
+  "hint": "waterfall.io (contact/company intel)",
+  "docs_url": "https://docs.waterfall.io/v1/overview",
+  "one_liner": {
+    "value": "B2B contact and company data enrichment API aggregating 30+ vendors",
+    "evidence": [
+      {
+        "url": "https://docs.waterfall.io/v1/overview",
+        "quote": "Waterfall brings together 30+ data vendors through one B2B data API.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.waterfall.io/v1/authentication",
+        "quote": "Authenticate data and account API requests with your Waterfall API key in the\nx-api-key header.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "access": {
+    "value": "APPROVAL",
+    "evidence": [
+      {
+        "url": "https://docs.waterfall.io/v1/book-demo",
+        "quote": "API access is available by approval.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.waterfall.io/v1/introduction",
+        "quote": "The Waterfall API is available at\nhttps://api.waterfall.io.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "MODERATE",
+    "evidence": [
+      {
+        "url": "https://docs.waterfall.io/v1/introduction",
+        "quote": "The guidance below separates search, enrichment, verification, and employment checks.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.75,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.5,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://docs.waterfall.io/v1/overview",
+        "quote": "or provide a webhook_url to receive it.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "buildability": {
+    "value": "NEEDS_OUTREACH",
+    "evidence": [
+      {
+        "url": "https://docs.waterfall.io/v1/authentication",
+        "quote": "Contact the team for API access and pricing.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.75,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "API keys are issued only after Waterfall reviews an access request; pricing is by contact.",
+    "evidence": [
+      {
+        "url": "https://docs.waterfall.io/v1/book-demo",
+        "quote": "A member of our team reviews every access request.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "composio": {
+    "found": false,
+    "slug": null,
+    "name": null,
+    "tools": null,
+    "triggers": null,
+    "auth": [],
+    "managed_app": null,
+    "url": null,
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://docs.waterfall.io/v1/authentication",
+    "https://docs.waterfall.io/v1/faq",
+    "https://www.waterfall.io",
+    "https://docs.waterfall.io/v1/webhook-jwks",
+    "https://docs.waterfall.io/v1/book-demo",
+    "https://docs.waterfall.io/v1/overview",
+    "https://docs.waterfall.io/v1/api-keys-list",
+    "https://docs.waterfall.io/v1/introduction"
+  ],
+  "pass_name": "pass1",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session"
+  },
+  "errors": [
+    "fetch https://github.com/Waterfall-io/api-skills/blob/master/skills/waterfall-direct-api/SKILL.md: 503 too little text (JS-rendered?)"
+  ]
+}

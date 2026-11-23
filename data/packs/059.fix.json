@@ -1,0 +1,16 @@
+{
+ "sources": [
+  {
+   "sid": "R1",
+   "url": "https://docs.waterfall.io/v1/about-waterfall",
+   "official": true,
+   "excerpt": "Growth and revenue teams, developers, and AI agents use Waterfall to find people at target accounts, enrich contact and company records, find emails and phone numbers, verify email addresses, and check job changes. Build these capabilities into your prospecting, recruitment, CRM, or marketing workflows and products.\nWhy we bring together multiple data providers\nNo single provider has every contact or field you need. We combine providers to improve coverage and quality while keeping costs under control. Our team adds and removes providers as their performance changes. We manage the provider connections. Your team maintains one Waterfall integration and one set of agreed rates. Changes to the provider mix do not change those rates; your total cost depends on the services and options you use and your request volume.\nWho Waterfall is for\nTeams we have worked with\nWaterfall.io\u2019s current and past customers include Ramp, Gorgias, Zapier, Lightfield, JOIN, awork, Coverflex, Netic, 360Learning, Rippling, and ClickUp.\nHow we approach data quality\nWe verify every email we find in real time, just before delivering the enrichment result. Profiles are typically refreshed in under 14 days, with r"
+  }
+ ],
+ "errors": [],
+ "todo": {
+  "official_mcp": [
+   "ungrounded"
+  ]
+ }
+}

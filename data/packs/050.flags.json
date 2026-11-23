@@ -1,0 +1,18 @@
+{
+ "round0": {
+  "grounding": {
+   "main_blocker": [
+    "ungrounded"
+   ]
+  },
+  "rules": {
+   "access": [
+    "low_confidence"
+   ],
+   "official_mcp": [
+    "low_confidence"
+   ]
+  }
+ },
+ "todo": {}
+}

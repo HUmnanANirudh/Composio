@@ -1,0 +1,154 @@
+{
+  "id": 52,
+  "app": "SE Ranking",
+  "category": "Data, SEO and Scraping",
+  "hint": "seranking.com/api",
+  "docs_url": "https://seranking.com/api/data/getting-started",
+  "one_liner": {
+    "value": "SEO platform with rank tracking, audits and an SEO data API",
+    "evidence": [
+      {
+        "url": "https://seranking.com/api.html",
+        "quote": "SEO API: Automate your SEO workflows",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY"
+    ],
+    "evidence": [
+      {
+        "url": "https://seranking.com/api/data/getting-started",
+        "quote": "Include an Authorization header in your request, with the value Token YOUR_API_KEY.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_TRIAL",
+    "evidence": [
+      {
+        "url": "https://seranking.com/api-pricing.html",
+        "quote": "14-day trial to test every API endpoint",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.75,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://seranking.com/api/project/getting-started",
+        "quote": "All API method invocations are HTTP GET/POST/PUT/DELETE requests",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://seranking.com/api/how-to-get-api",
+        "quote": "pulling large volumes of raw SEO and marketing data (e.g., AI Search, keywords, backlinks, domain data)",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://seranking.com/api/integrations/mcp",
+        "quote": "The Model Context Protocol (MCP) server provides a standardized interface",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.97,
+    "flags": []
+  },
+  "webhooks": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY_WITH_CAVEATS",
+    "evidence": [
+      {
+        "url": "https://seranking.com/api/how-to-get-api",
+        "quote": "Data API requests draw on your credit balance, while Project API requests use your subscription limits.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "After the 14-day trial, API use draws on paid credits or a subscription.",
+    "evidence": [
+      {
+        "url": "https://seranking.com/api-pricing.html",
+        "quote": "14-day trial to test every API endpoint",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.65,
+    "flags": []
+  },
+  "composio": {
+    "found": false,
+    "slug": null,
+    "name": null,
+    "tools": null,
+    "triggers": null,
+    "auth": [],
+    "managed_app": null,
+    "url": null,
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://seranking.com/api/how-to-get-api",
+    "https://seranking.com/api/integrations/mcp",
+    "https://seranking.com/api/data/getting-started",
+    "https://seranking.com/api-pricing.html",
+    "https://seranking.com/api/integrations",
+    "https://seranking.com/api/project/getting-started",
+    "https://seranking.com/api.html",
+    "https://seranking.com/mcp.html"
+  ],
+  "pass_name": "pass1",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session"
+  },
+  "errors": []
+}

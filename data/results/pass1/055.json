@@ -1,0 +1,167 @@
+{
+  "id": 55,
+  "app": "Apify",
+  "category": "Data, SEO and Scraping",
+  "hint": "docs.apify.com",
+  "docs_url": "https://docs.apify.com/api/v2",
+  "one_liner": {
+    "value": "Platform and marketplace for web scraping and automation Actors",
+    "evidence": [
+      {
+        "url": "https://apify.com/pricing/creator-plan",
+        "quote": "Use the benefits of this plan to explore, experiment, and deploy your own Actors.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY",
+      "OAUTH2"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.apify.com/integrations/integrate",
+        "quote": "*OAuth 2.0* - Use OAuth 2.0 to allow users to authorize your integration without sharing their credentials.",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://docs.apify.com/integrations/integrate",
+        "quote": "*API token* - Apify user generates personal API token from Apify account settings page.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://apify.com/pricing",
+        "quote": "No credit card required.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.apify.com/integrations/api",
+        "quote": "the REST API works with any HTTP client",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://docs.apify.com/api/v2",
+        "quote": "[Actor runs](https://docs.apify.com/api/v2/actors-actor-runs.md)",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://docs.apify.com/mcp",
+        "quote": "Add `https://mcp.apify.com` to your MCP client.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.97,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://docs.apify.com/sdk/python/docs/concepts/webhooks.md",
+        "quote": "[Webhooks](https://docs.apify.com/platform/integrations/webhooks) allow you to configure the Apify platform to perform an action when a certain event occurs.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://apify.com/pricing",
+        "quote": "No credit card required.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.7,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "APIFY",
+    "name": "Apify",
+    "tools": 185,
+    "triggers": 0,
+    "auth": [
+      "API_KEY"
+    ],
+    "managed_app": null,
+    "url": "https://docs.composio.dev/toolkits/apify.md",
+    "mcp_variant": "APIFY_MCP",
+    "mcp_variant_auth": [
+      "DCR_OAUTH"
+    ]
+  },
+  "sources": [
+    "https://docs.apify.com/api/v2",
+    "https://apify.com/pricing",
+    "https://docs.apify.com/sdk/python/docs/concepts/webhooks.md",
+    "https://docs.apify.com/integrations/api",
+    "https://apify.com/pricing/creator-plan",
+    "https://docs.apify.com/mcp",
+    "https://docs.apify.com/account/two-factor-authentication.md",
+    "https://docs.apify.com/integrations/integrate"
+  ],
+  "pass_name": "pass1",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session"
+  },
+  "errors": [
+    "fetch https://mcp.apify.com: 200 too little text (JS-rendered?)"
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "id": 51,
+  "app": "DataForSEO",
+  "category": "Data, SEO and Scraping",
+  "hint": "docs.dataforseo.com",
+  "docs_url": "https://docs.dataforseo.com/v3/auth",
+  "one_liner": {
+    "value": "Pay-as-you-go SEO data APIs (SERP, keywords, backlinks)",
+    "evidence": [
+      {
+        "url": "https://dataforseo.com/model-context-protocol",
+        "quote": "It enables seamless access to structured SEO and marketing data",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "BASIC"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.dataforseo.com/v3/auth",
+        "quote": "DataForSEO is using the Basic Authentication",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.95,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://docs.dataforseo.com/v3/auth",
+        "quote": "Create a free account with DataForSEO, then go to the API Access tab in the account dashboard",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.55,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.dataforseo.com/v3/auth",
+        "quote": "Postman app, REST API platforms, and all major frameworks",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://dataforseo.com/update/pricing-update-in-dataforseo-apis",
+        "quote": "Backlinks API: +20% for all endpoints",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://dataforseo.com/help-center/setting-up-the-official-dataforseo-mcp-server-simple-guide",
+        "quote": "using the official DataForSEO MCP server",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.97,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "sandbox": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://dataforseo.com/dev-starter-kit",
+        "quote": "Sandbox The same API with dummy data — practise without spending.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://docs.dataforseo.com/v3/auth",
+        "quote": "Create a free account with DataForSEO",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": "Real data calls draw on a prepaid balance ($50 minimum top-up).",
+    "evidence": [
+      {
+        "url": "https://dataforseo.com/pricing",
+        "quote": "$50 minimum top-up",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.6,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "DATAFORSEO",
+    "name": "DataForSEO",
+    "tools": 354,
+    "triggers": 0,
+    "auth": [
+      "BASIC"
+    ],
+    "managed_app": null,
+    "url": "https://docs.composio.dev/toolkits/dataforseo.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://docs.dataforseo.com/v3/auth",
+    "https://dataforseo.com/pricing",
+    "https://dataforseo.com/model-context-protocol",
+    "https://dataforseo.com/dev-starter-kit",
+    "https://github.com/dataforseo/mcp-server-typescript",
+    "https://dataforseo.com/help-center/how-to-authenticate-with-dataforseo-google-search-serp-api-api-key-setup-and-code-examples",
+    "https://dataforseo.com/update/pricing-update-in-dataforseo-apis",
+    "https://dataforseo.com/help-center/setting-up-the-official-dataforseo-mcp-server-simple-guide"
+  ],
+  "pass_name": "pass1",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session"
+  },
+  "errors": []
+}

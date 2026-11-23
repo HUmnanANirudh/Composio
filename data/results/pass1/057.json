@@ -1,0 +1,156 @@
+{
+  "id": 57,
+  "app": "Bright Data",
+  "category": "Data, SEO and Scraping",
+  "hint": "brightdata.com",
+  "docs_url": "https://docs.brightdata.com/api-reference/authentication",
+  "one_liner": {
+    "value": "Web data platform: proxies, scraper APIs and datasets",
+    "evidence": [
+      {
+        "url": "https://brightdata.com/partners/faq",
+        "quote": "Web Unlocker, Browser API, SERP API, Scraper APIs, Datasets",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "auth_methods": {
+    "value": [
+      "API_KEY",
+      "BASIC"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.brightdata.com/api-reference/authentication",
+        "quote": "API Access - Authenticate and interact with the Bright Data platform using an API key/token.",
+        "grounded": true,
+        "match_score": 100.0
+      },
+      {
+        "url": "https://docs.brightdata.com/api-reference/authentication",
+        "quote": "Native Access - Authenticate and interact with the Bright Data platform using proxy protocol username and password.",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "access": {
+    "value": "SELF_SERVE_FREE",
+    "evidence": [
+      {
+        "url": "https://docs.brightdata.com/quickstart",
+        "quote": "New accounts get 5,000 free credits every month, no credit card required",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "api_style": {
+    "value": [
+      "REST"
+    ],
+    "evidence": [
+      {
+        "url": "https://docs.brightdata.com/api-reference/rest-api/serp/serp-api.md",
+        "quote": "url = \"https://api.brightdata.com/request\"",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.9,
+    "flags": []
+  },
+  "api_breadth": {
+    "value": "BROAD",
+    "evidence": [
+      {
+        "url": "https://brightdata.com/partners/faq",
+        "quote": "the full Bright Data product portfolio including Web Unlocker, Browser API, SERP API, Scraper APIs, Datasets",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.8,
+    "flags": []
+  },
+  "official_mcp": {
+    "value": true,
+    "evidence": [
+      {
+        "url": "https://brightdata.com/ai/mcp-server",
+        "quote": "Bright Data’s Bright Data MCP solves web access for LLMs and AI agents",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.97,
+    "flags": []
+  },
+  "webhooks": {
+    "value": true,
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "sandbox": {
+    "value": false,
+    "evidence": [],
+    "confidence": 0.3,
+    "flags": []
+  },
+  "buildability": {
+    "value": "READY",
+    "evidence": [
+      {
+        "url": "https://docs.brightdata.com/quickstart",
+        "quote": "New accounts get 5,000 free credits every month, no credit card required",
+        "grounded": true,
+        "match_score": 100.0
+      }
+    ],
+    "confidence": 0.85,
+    "flags": []
+  },
+  "main_blocker": {
+    "value": null,
+    "evidence": [],
+    "confidence": 0.6,
+    "flags": []
+  },
+  "composio": {
+    "found": true,
+    "slug": "BRIGHTDATA",
+    "name": "Bright Data",
+    "tools": 167,
+    "triggers": 0,
+    "auth": [
+      "API_KEY"
+    ],
+    "managed_app": null,
+    "url": "https://docs.composio.dev/toolkits/brightdata.md",
+    "mcp_variant": null,
+    "mcp_variant_auth": []
+  },
+  "sources": [
+    "https://docs.brightdata.com/api-reference/authentication",
+    "https://brightdata.com/partners/faq",
+    "https://brightdata.com/ai/mcp-server",
+    "https://docs.brightdata.com/api-reference/rest-api/serp/serp-api.md",
+    "https://docs.brightdata.com/products/mcp-server/remote/oauth",
+    "https://docs.brightdata.com/products/mcp-server/overview",
+    "https://docs.brightdata.com/quickstart",
+    "https://docs.brightdata.com/general/account/billing-and-pricing/faqs"
+  ],
+  "pass_name": "pass1",
+  "verification": {
+    "extractor": "Claude (claude-opus-5-5), reading source packs in a Claude Code session"
+  },
+  "errors": []
+}
