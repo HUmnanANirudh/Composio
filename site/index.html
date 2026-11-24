@@ -15,7 +15,7 @@
   --paper:#f3f4f1; --sheet:#fbfbf9; --ink:#132030; --ink-2:#3d4a59; --ink-3:#5b6775;
   --rule:#cfd3cf; --rule-2:#e3e5e1; --band:#132030; --band-ink:#f3f4f1; --band-ink-2:#b9c2cc;
   --act:#1d4ed8; --act-ink:#ffffff; --act-soft:#e4ebfd;
-  /* entry-regime legend: used for regime and nothing else */
+  /* access legend: used for access type and nothing else */
   --r-free:#8fd0a4; --r-trial:#c9e39d; --r-paid:#f0cf6e; --r-approval:#f3a774; --r-partner:#c6a3e0; --r-none:#4b515a;
   --r-free-ink:#0f2a19; --r-trial-ink:#23300c; --r-paid-ink:#352806; --r-approval-ink:#3a1906; --r-partner-ink:#26103a; --r-none-ink:#f2f3f4;
   --hit:#1f6b3f; --miss:#a2311f; --unscored:#5b6775;
@@ -61,7 +61,7 @@ code,.mono{font-family:var(--mono);font-size:.86em;letter-spacing:0}
 .mast .bar nav{display:flex;flex-wrap:wrap;gap:4px 18px}
 .mast .bar a{color:var(--band-ink);text-decoration:none}
 .mast .bar a:hover{text-decoration:underline}
-.mast .ed{font-family:var(--mono);font-size:12.5px;color:var(--band-ink-2)}
+.mast .ed{font-size:13px;color:var(--band-ink-2)}
 .mast .head{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(28px,5vw,80px);align-items:end;padding:clamp(40px,5.5vw,76px) 0 clamp(40px,5vw,64px)}
 .mast h1{font-family:var(--display);font-variation-settings:"wdth" 68;font-weight:800;font-size:clamp(44px,6.6vw,92px);line-height:.9;letter-spacing:-.02em;margin:0;text-wrap:balance}
 .mast h1 span{display:block}
@@ -93,11 +93,10 @@ code,.mono{font-family:var(--mono);font-size:.86em;letter-spacing:0}
 .matrix-wrap{position:relative}
 .matrix{display:grid;grid-template-columns:minmax(92px,auto) repeat(10,minmax(0,1fr));gap:4px;align-items:stretch}
 .matrix .cat{font-size:12.5px;line-height:1.15;color:var(--ink-2);display:flex;align-items:center;padding-right:8px}
-.cell{appearance:none;border:0;margin:0;padding:5px 4px 4px;min-height:46px;border-radius:3px;display:flex;flex-direction:column;justify-content:space-between;text-align:left;cursor:pointer;font:500 10.5px/1.1 var(--body);overflow:hidden;position:relative;transition:transform .18s cubic-bezier(.2,.8,.2,1),box-shadow .18s}
+.cell{appearance:none;border:0;margin:0;padding:5px 4px 4px;min-height:46px;border-radius:3px;display:flex;flex-direction:column;justify-content:space-between;text-align:left;cursor:pointer;font:500 10.5px/1.1 var(--body);overflow:hidden;position:relative}
 .cell .code{font:600 11px/1 var(--mono);opacity:.9}
 .cell .nm{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.cell:hover,.cell:focus-visible,.cell[aria-pressed="true"]{transform:translateY(-2px);box-shadow:0 4px 10px -4px #13203066;z-index:2}
-.cell[aria-pressed="true"]{outline:2px solid var(--ink);outline-offset:1px}
+.cell:hover,.cell:focus-visible,.cell[aria-pressed="true"]{outline:2px solid var(--ink);outline-offset:1px;z-index:2}
 .cell.pending{background:transparent;box-shadow:inset 0 0 0 1px var(--rule);border:0;color:var(--ink-3);cursor:default}
 .cell.lowconf::after{content:"";position:absolute;right:4px;top:5px;width:6px;height:6px;border-radius:50%;border:1.5px solid currentColor}
 .rg-SELF_SERVE_FREE{background:var(--r-free);color:var(--r-free-ink)}
@@ -175,7 +174,7 @@ details.ev summary{white-space:nowrap}
 .conf{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
 details.ev summary{cursor:pointer;color:var(--act);font-size:13px}
 details.ev blockquote{margin:6px 0 0;padding:0 0 0 10px;border-left:1px solid var(--rule);font-size:13px;color:var(--ink-2)}
-.reg tr.flagged td.app b::after{content:"flagged";display:block;margin-top:3px;font:600 11px/1.3 var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--miss)}
+.reg tr.flagged td.app b::after{content:"Flagged";display:block;margin-top:2px;font:600 12px/1.3 var(--body);color:var(--miss)}
 /* route */
 .route{display:grid;grid-template-columns:repeat(6,1fr);gap:0;position:relative;margin:0}
 .stn{position:relative;padding:42px 28px 0 0}
@@ -185,7 +184,7 @@ details.ev blockquote{margin:6px 0 0;padding:0 0 0 10px;border-left:1px solid va
 .stn.human .dot{border-radius:3px;background:var(--r-paid);border-color:var(--ink)}
 .stn h3{margin:0 0 8px;font:700 16px/1.25 var(--body)}
 .stn p{margin:0;font-size:14px;line-height:1.55;color:var(--ink-2)}
-.stn .who{display:block;font:600 12px/1.4 var(--mono);color:var(--ink-3);margin-bottom:6px}
+.stn .who{display:block;font:500 12.5px/1.4 var(--body);color:var(--ink-3);margin-bottom:6px}
 .humans{margin-top:clamp(60px,7vw,96px)}
 .humans li{display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:start;padding:14px 0}
 .humans li{grid-template-columns:22px 1fr}
@@ -196,7 +195,7 @@ details.ev blockquote{margin:6px 0 0;padding:0 0 0 10px;border-left:1px solid va
 .acc .v{font-family:var(--display);font-variation-settings:"wdth" 75;font-weight:800;font-size:clamp(40px,5vw,64px);line-height:1}
 .acc .arrow{font-size:28px;color:var(--ink-3)}
 .acc .lab{display:block;font:500 13px/1.3 var(--body);color:var(--ink-3);margin-top:8px}
-.stampmark{display:inline-block;transform:rotate(-2.5deg);border:1.5px solid var(--stamp);color:var(--stamp);border-radius:4px;padding:2px 7px;font:700 12px/1.3 var(--mono);letter-spacing:.05em;text-transform:uppercase}
+.stampmark{display:inline-block;border:1px solid var(--stamp);color:var(--stamp);border-radius:4px;padding:1px 6px;font:600 12px/1.4 var(--body)}
 .stampmark.bad{border-color:var(--miss);color:var(--miss)}
 .stampmark.grey{border-color:var(--unscored);color:var(--unscored)}
 .struck{text-decoration:line-through;text-decoration-thickness:1.5px;text-decoration-color:var(--miss)}
@@ -250,13 +249,13 @@ pre{background:var(--band);color:var(--band-ink);padding:14px 16px;border-radius
     <div class="bar">
       <span class="ed" id="edition">Edition 2026-11</span>
       <nav aria-label="Sections">
-        <a href="#findings">Findings</a><a href="#patterns">Patterns</a><a href="#register">Register</a><a href="#agent">The agent</a><a href="#check">Document check</a><a href="#run">Run it</a>
+        <a href="#findings">Findings</a><a href="#patterns">Patterns</a><a href="#register">All apps</a><a href="#agent">The agent</a><a href="#check">Accuracy</a><a href="#run">Run it</a>
       </nav>
     </div>
     <div class="head">
     <h1><span>Entry requirements</span><span>for 100 APIs</span></h1>
     <div>
-    <p class="sub">Which SaaS apps can an AI-agent toolkit be built for today, and what stands at the border: <b>auth method, whether a developer can get credentials alone, what the API covers, whether an MCP server exists</b>. Compiled by a research agent, with every field cited to a vendor page and checked against a hand-verified random sample.</p>
+    <p class="sub">Which SaaS apps can an AI-agent toolkit be built for today? For each app: <b>auth method, whether a developer can get credentials alone, what the API covers, whether an MCP server exists</b>. Compiled by a research agent, with every field cited to a vendor page and checked against a hand-verified random sample.</p>
     <div class="runline">
       <a class="btn" id="run-trigger" href="https://github.com/HUmnanANirudh/Composio/actions/workflows/research.yml"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg>Run the agent on any app</a>
       <a class="btn ghost" href="https://github.com/HUmnanANirudh/Composio">Source and README</a>
@@ -274,10 +273,10 @@ pre{background:var(--band);color:var(--band-ink);padding:14px 16px;border-radius
       <ol class="findings" id="findings-list"><li class="loading">Loading findings…</li></ol>
     </div>
     <div class="matrix-wrap">
-      <h2>Entry regime, app by app</h2>
-      <div class="matrix" id="matrix" role="group" aria-label="Entry regime of each app, grouped by category"></div>
+      <h2>Access, app by app</h2>
+      <div class="matrix" id="matrix" role="group" aria-label="Access type of each app, grouped by category"></div>
       <ul class="legend" id="legend"></ul>
-      <p class="matrix-note">Point at or tab to a cell to read its entry record; select it to find it in the register. A ring marks a regime the agent holds with low confidence.</p>
+      <p class="matrix-note">Point at or tab to a cell to see the app’s record; select it to find the app in the table below. A ring marks an access type held with low confidence.</p>
       <div class="record" id="record" aria-live="polite"></div>
     </div>
   </section>
@@ -285,10 +284,10 @@ pre{background:var(--band);color:var(--band-ink);padding:14px 16px;border-radius
   <section class="sec" id="patterns" aria-labelledby="h-patterns">
     <div class="wrap">
       <h2 id="h-patterns">Patterns across the set</h2>
-      <p class="intro">Counts over the final records; nothing here is model-written. Each bar shares the regime legend above.</p>
+      <p class="intro">Counts over the final records; nothing here is model-written. Bars use the access legend above.</p>
       <div class="two">
         <div>
-          <h3 class="h">Who lets you in alone, by category</h3>
+          <h3 class="h">Self-serve access by category</h3>
           <div class="catbars" id="catbars"></div>
           <p class="small note">Percentage = apps where credentials are self-serve (free or trial).</p>
         </div>
@@ -308,25 +307,25 @@ pre{background:var(--band);color:var(--band-ink);padding:14px 16px;border-radius
 
   <section class="sec" id="register" aria-labelledby="h-register">
     <div class="wrap">
-      <h2 id="h-register">The register</h2>
+      <h2 id="h-register">All 100 apps</h2>
       <p class="intro">All 100 records, grouped by category; the table scrolls on its own. Open <em>evidence</em> on a row to see the quotes; a stamp means the verifier found the quote on the cited page.</p>
       <div class="filters" role="search">
         <label>Category<select id="f-cat"><option value="">All categories</option></select></label>
-        <label>Entry regime<select id="f-access"><option value="">All regimes</option></select></label>
+        <label>Access<select id="f-access"><option value="">Any access</option></select></label>
         <label>Buildability<select id="f-build"><option value="">Any</option></select></label>
         <label>Search<input id="f-q" type="search" placeholder="App name or blocker"></label>
         <span class="count num" id="f-count" aria-live="polite"></span>
       </div>
       <div class="reg scroll" tabindex="0" role="region" aria-label="All records, scrollable"><table id="reg-table"><thead><tr>
-        <th scope="col">App</th><th scope="col">Auth</th><th scope="col">Entry regime</th><th scope="col">API</th><th scope="col">MCP</th><th scope="col">Composio toolkit</th><th scope="col">Buildable?</th><th scope="col">Main blocker</th><th scope="col">Evidence</th>
+        <th scope="col">App</th><th scope="col">Auth</th><th scope="col">Access</th><th scope="col">API</th><th scope="col">MCP</th><th scope="col">Composio toolkit</th><th scope="col">Buildable?</th><th scope="col">Main blocker</th><th scope="col">Evidence</th>
       </tr></thead><tbody id="reg-body"></tbody></table></div>
     </div>
   </section>
 
   <section class="sec" id="agent" aria-labelledby="h-agent">
     <div class="wrap">
-      <h2 id="h-agent">The agent's route</h2>
-      <p class="intro">A Python pipeline gathers the sources and checks every answer. Composio provides the catalog cross-check and web search, through a Platform SDK session to Exa. The reading step for these 100 records was done by Claude in a Claude Code session, from the same source packs an LLM would get. LLM API free tiers could not finish an unattended run (details under “Where it fell short”). Square stations are where a human had to step in.</p>
+      <h2 id="h-agent">How the agent works</h2>
+      <p class="intro">A Python pipeline gathers the sources and checks every answer. Composio provides the catalog cross-check and web search, through a Platform SDK session to Exa. The reading step for these 100 records was done by Claude in a Claude Code session, from the same source packs an LLM would get. LLM API free tiers could not finish an unattended run (details under “Where it fell short”). Square markers are where a human had to step in.</p>
       <div class="route" id="route">
         <div class="stn"><span class="dot"></span><span class="who">deterministic</span><h3>Composio catalog</h3><p>Match each app to Composio's public 1,841-toolkit catalog: existing toolkit, tool count, auth schemes, vendor MCP proxy.</p></div>
         <div class="stn"><span class="dot"></span><span class="who">crawler + Composio → Exa</span><h3>Discover sources</h3><p>Crawl the official docs host and its llms.txt, follow auth, pricing and MCP links, then search with <code>EXA_SEARCH</code> through a Composio session.</p></div>
@@ -347,7 +346,7 @@ pre{background:var(--band);color:var(--band-ink);padding:14px 16px;border-radius
           </ul>
         </div>
         <div>
-          <h3 class="h">What the run read</h3>
+          <h3 class="h">Run totals</h3>
           <table id="usage-table"></table>
           <p class="small note">No LLM API spend for this dataset: extraction ran in-session. The automated path (<code>research run</code>, Gemini with a model fallback chain) is built and tested, and the GitHub Actions trigger uses it.</p>
         </div>
@@ -357,7 +356,7 @@ pre{background:var(--band);color:var(--band-ink);padding:14px 16px;border-radius
 
   <section class="sec" id="check" aria-labelledby="h-check">
     <div class="wrap">
-      <h2 id="h-check">Document check: is it right?</h2>
+      <h2 id="h-check">Accuracy</h2>
       <p class="intro" id="check-intro">Scored against the hand-checked sample. Pass 1 is the extractor alone; final is after the verification loops.</p>
       <div class="verdict">
         <div>
@@ -365,7 +364,7 @@ pre{background:var(--band);color:var(--band-ink);padding:14px 16px;border-radius
           <table id="field-table"></table>
           <h3 class="h stack">What each loop caught on pass 1</h3>
           <table id="loop-table"></table>
-          <h3 class="h stack">Does confidence mean anything?</h3>
+          <h3 class="h stack">Confidence vs. accuracy</h3>
           <table id="calib-table"></table>
         </div>
         <div>
@@ -423,7 +422,7 @@ const REG = {
   NO_PUBLIC_API:{code:"X",label:"No hosted API"},
 };
 const BUILD = {READY:"Ready",READY_WITH_CAVEATS:"Ready, with caveats",NEEDS_OUTREACH:"Needs outreach",BLOCKED:"Blocked"};
-const FIELD_LABEL = {auth_methods:"Auth methods",access:"Entry regime",api_style:"API style",api_breadth:"API breadth",official_mcp:"Official MCP",buildability:"Buildability"};
+const FIELD_LABEL = {auth_methods:"Auth methods",access:"Access",api_style:"API style",api_breadth:"API breadth",official_mcp:"Official MCP",buildability:"Buildability"};
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const fmt = v => v === null || v === undefined ? "—" : Array.isArray(v) ? (v.length ? v.join(", ") : "—") : typeof v === "boolean" ? (v ? "yes" : "no") : String(v);
@@ -521,11 +520,11 @@ function showRecord(a){
   const f = a.fields, reg = REG[f.access.value] || {label:"unknown"};
   const ev = [f.access, f.auth_methods].flatMap(c => c.evidence).find(e => e.grounded) || f.access.evidence[0];
   $("#record").innerHTML = `<h3>${esc(a.app)}</h3><div class="meta">${esc(a.category)} · ${esc(f.one_liner.value || "")}</div>
-  <dl><dt>Entry regime</dt><dd><span class="chip rg-${f.access.value}">${reg.code||"?"}</span> ${reg.label} <span class="conf">conf ${f.access.confidence}</span></dd>
+  <dl><dt>Access</dt><dd><span class="chip rg-${f.access.value}">${reg.code||"?"}</span> ${reg.label} <span class="conf">conf ${f.access.confidence}</span></dd>
   <dt>Auth</dt><dd class="enum">${esc(fmt(f.auth_methods.value))}</dd>
   <dt>Buildable</dt><dd>${BUILD[f.buildability.value] || "—"}${f.main_blocker.value ? ` · ${esc(f.main_blocker.value)}` : ""}</dd>
   <dt>Composio</dt><dd>${a.composio.slug ? `<span class="mono">${esc(a.composio.slug)}</span> · ${a.composio.tools} tools` : "no toolkit yet"}${f.official_mcp.value ? " · vendor MCP: yes" : ""}</dd></dl>
-  ${ev ? `<p class="q">“${esc(ev.quote.slice(0,180))}” <a href="${esc(ev.url)}">${esc(host(ev.url))}</a> ${ev.grounded ? '<span class="stampmark">on page</span>' : '<span class="stampmark grey">not re-found</span>'}</p>` : ""}`;
+  ${ev ? `<p class="q">“${esc(ev.quote.slice(0,180))}” <a href="${esc(ev.url)}">${esc(host(ev.url))}</a> ${ev.grounded ? '<span class="stampmark">On page</span>' : '<span class="stampmark grey">Not re-found</span>'}</p>` : ""}`;
 }
 
 function filter(){
@@ -547,7 +546,7 @@ function filter(){
       <td>${a.composio.slug ? `<a class="mono" href="${esc(a.composio.url)}">${esc(a.composio.slug)}</a><br><span class="conf">${a.composio.tools} tools</span>` : '<span class="small">none</span>'}</td>
       <td class="b-${f.buildability.value}">${BUILD[f.buildability.value] || "—"}</td>
       <td>${esc(f.main_blocker.value || "—")}</td>
-      <td><details class="ev"><summary>${evs.filter(e=>e.grounded).length}/${evs.length} on page</summary>${evs.map(e => `<blockquote><b>${FIELD_LABEL[e.k]}</b>: “${esc(e.quote.slice(0,200))}” <a href="${esc(e.url)}">${esc(host(e.url))}</a> ${e.grounded ? '<span class="stampmark">on page</span>' : '<span class="stampmark grey">not re-found</span>'}</blockquote>`).join("")}${a.docs_url ? `<blockquote>Docs: <a href="${esc(a.docs_url)}">${esc(host(a.docs_url))}</a></blockquote>` : ""}</details></td>
+      <td><details class="ev"><summary>${evs.filter(e=>e.grounded).length}/${evs.length} on page</summary>${evs.map(e => `<blockquote><b>${FIELD_LABEL[e.k]}</b>: “${esc(e.quote.slice(0,200))}” <a href="${esc(e.url)}">${esc(host(e.url))}</a> ${e.grounded ? '<span class="stampmark">On page</span>' : '<span class="stampmark grey">Not re-found</span>'}</blockquote>`).join("")}${a.docs_url ? `<blockquote>Docs: <a href="${esc(a.docs_url)}">${esc(host(a.docs_url))}</a></blockquote>` : ""}</details></td>
     </tr>`;
   };
   $("#reg-body").innerHTML = cats.map(c => {
@@ -578,17 +577,17 @@ function renderCheck(d, byId){
 
   const gtBy = Object.fromEntries((d.ground_truth?.apps||[]).map(a => [a.id, a]));
   const misses = fin.rows.filter(r => r.status === "miss");
-  const VERDICT = {agent_wrong:["agent wrong","bad"],key_wrong:["key wrong",""],ambiguous:["ambiguous","grey"],agent_correct:["agent right",""]};
+  const VERDICT = {agent_wrong:["Agent wrong","bad"],key_wrong:["Key wrong",""],ambiguous:["Ambiguous","grey"],agent_correct:["Agent right",""]};
   const rv = Object.fromEntries((d.audit?.reviews || []).map(x => [x.id+"|"+x.field, x]));
   $("#miss-table").innerHTML = `<thead><tr><th>App · field</th><th>Agent said</th><th>Answer key and review</th></tr></thead><tbody>` + (misses.map(r => {
     const g = gtBy[r.id], ev = g?.evidence?.[r.field], v = rv[r.id+"|"+r.field], vb = v && VERDICT[v.verdict];
     return `<tr class="missrow"><td><b>${esc(r.app)}</b><br>${FIELD_LABEL[r.field]} <span class="conf">conf ${r.confidence}</span></td><td><span class="struck">${esc(fmt(r.agent))}</span></td><td>${esc(truthText(r.truth))}${r.accept && r.accept.length ? `<br><span class="small">also accepted: ${esc(r.accept.join(", "))}</span>` : ""}${ev ? `<br><a class="small" href="${esc(ev.url)}">${esc(host(ev.url))}</a>` : ""}${vb ? `<span class="verdict-note"><span class="stampmark ${vb[1]}">${vb[0]}</span> ${esc(v.note)}</span>` : `<span class="verdict-note small">Review pending.</span>`}</td></tr>`;
-  }).join("") || `<tr><td colspan="3"><span class="stampmark">no misses</span></td></tr>`) + `</tbody>`;
+  }).join("") || `<tr><td colspan="3"><span class="stampmark">No misses</span></td></tr>`) + `</tbody>`;
 
   const p1map = Object.fromEntries(p1.rows.map(r => [r.id+"|"+r.field, r]));
   const fixed = fin.rows.filter(r => r.status === "hit" && p1map[r.id+"|"+r.field]?.status === "miss");
   const broke = fin.rows.filter(r => r.status === "miss" && p1map[r.id+"|"+r.field]?.status === "hit");
-  $("#fixed-table").innerHTML = `<thead><tr><th>App · field</th><th>Pass 1</th><th>Final</th></tr></thead><tbody>` + fixed.map(r => `<tr><td><b>${esc(r.app)}</b> · ${FIELD_LABEL[r.field]}</td><td><span class="struck">${esc(fmt(p1map[r.id+"|"+r.field].agent))}</span></td><td>${esc(fmt(r.agent))} <span class="stampmark">fixed</span></td></tr>`).join("") + broke.map(r => `<tr><td><b>${esc(r.app)}</b> · ${FIELD_LABEL[r.field]}</td><td>${esc(fmt(p1map[r.id+"|"+r.field].agent))}</td><td><span class="struck">${esc(fmt(r.agent))}</span> <span class="stampmark bad">broken by loop</span></td></tr>`).join("") + (fixed.length + broke.length ? "" : `<tr><td colspan="3">No field changed outcome.</td></tr>`) + `</tbody>`;
+  $("#fixed-table").innerHTML = `<thead><tr><th>App · field</th><th>Pass 1</th><th>Final</th></tr></thead><tbody>` + fixed.map(r => `<tr><td><b>${esc(r.app)}</b> · ${FIELD_LABEL[r.field]}</td><td><span class="struck">${esc(fmt(p1map[r.id+"|"+r.field].agent))}</span></td><td>${esc(fmt(r.agent))} <span class="stampmark">Fixed</span></td></tr>`).join("") + broke.map(r => `<tr><td><b>${esc(r.app)}</b> · ${FIELD_LABEL[r.field]}</td><td>${esc(fmt(p1map[r.id+"|"+r.field].agent))}</td><td><span class="struck">${esc(fmt(r.agent))}</span> <span class="stampmark bad">Broken by loop</span></td></tr>`).join("") + (fixed.length + broke.length ? "" : `<tr><td colspan="3">No field changed outcome.</td></tr>`) + `</tbody>`;
 
   const rev = d.ground_truth?.about?.revisions || [];
   $("#key-revisions").innerHTML = `<h3 class="h">When the answer key was wrong</h3>` + (rev.map(r => `<p><b>${esc(r.app)}</b>: ${esc(r.why)}</p>`).join("") || "<p>No revisions.</p>") + `<p class="small" style="margin:0">Key method: ${esc(d.ground_truth?.about?.sampling || "")} ${esc(d.ground_truth?.about?.checked_by || "")}</p>`;

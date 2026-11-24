@@ -28,7 +28,7 @@ Regime is never carried by color alone. Every cell and chip also prints its lett
 
 ## Marks (states are marks, not just hues)
 
-- **Stamp** (`.stampmark`): a slightly rotated outlined label. "On page" means the verifier re-found the quote on the cited page; "fixed" means a verification loop corrected a field.
+- **Stamp** (`.stampmark`): a small outlined label in sentence case. "On page" means the verifier re-found the quote on the cited page; "fixed" means a verification loop corrected a field.
 - **Struck value** (`.struck`): a wrong answer, struck through in `--miss`.
 - **Ring** on a matrix cell: the regime is held with low confidence (< 0.5).
 - **Square station** in the route: a human checkpoint. Round stations are automated. The same square marks each item under "Where a human was needed".
