@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-23 22:08 UTC",
+ "generated": "2026-11-24 05:57 UTC",
  "repo": "https://github.com/HUmnanANirudh/Composio",
  "page": "https://humnananirudh.github.io/Composio/",
  "extraction": {
@@ -22,13 +22,6 @@
     "gemini-flash-latest",
     "gemini-3.5-flash-lite"
    ],
-   "critic": [
-    "gemma-4-31b-it",
-    "gemini-3.8-flash",
-    "gemini-3.6-flash",
-    "gemini-4-hydrogen",
-    "gemini-3.5-flash-lite"
-   ],
    "reresearch": [
     "gemini-3.6-flash",
     "gemini-4-hydrogen",
@@ -39,7 +32,6 @@
   },
   "used": {},
   "thinking_level": "medium",
-  "critic_rounds": 3,
   "search": "composio session -> EXA_SEARCH"
  },
  "audit": {

@@ -38,9 +38,7 @@ def load(d: Path, app: App) -> AppRecord | None:
 STOP = threading.Event()  # set when a daily quota runs out; remaining apps are skipped
 
 
-def run_one(
-    app: App, force: bool = False, use_critic: bool = True, verify_only: bool = False
-) -> str:
+def run_one(app: App, force: bool = False, verify_only: bool = False) -> str:
     if STOP.is_set():
         return f"{app.app}: skipped (daily quota reached)"
     try:
@@ -53,7 +51,7 @@ def run_one(
         else:
             sources, _ = gather(app)  # served from cache: same sources pass 1 saw
         if force or verify_only or load(FINAL, app) is None:
-            final = verify(app, rec, sources, use_critic=use_critic)
+            final = verify(app, rec, sources)
             save(final, FINAL)
             n = len(final.verification.get("changes", []))
             return f"{app.app}: done ({n} field(s) changed by verification)"
@@ -78,7 +76,7 @@ def run(apps: list[App], **kw) -> None:
     apps = sorted(apps, key=lambda a: a.id not in key)
     console.print(
         f"Researching {len(apps)} app(s) | search={settings.resolved_search_backend()} "
-        f"extract={settings.extract_model} critic={settings.critic_model}"
+        f"extract={settings.extract_model}"
     )
     with ThreadPoolExecutor(max_workers=settings.concurrency) as ex:
         futs = {ex.submit(run_one, a, **kw): a for a in apps}

@@ -41,14 +41,6 @@ class Settings:
             "gemini-3.5-flash-lite",
         )
     )
-    # the critic leads with Gemma (a different model family from the Gemini extractor)
-    critic_model: str = field(
-        default_factory=lambda: _env(
-            "CRITIC_MODEL",
-            "gemma-4-31b-it,gemini-3.8-flash,gemini-3.6-flash,gemini-4-hydrogen,"
-            "gemini-3.5-flash-lite",
-        )
-    )
     reresearch_model: str = field(
         default_factory=lambda: _env(
             "RERESEARCH_MODEL",
@@ -57,7 +49,6 @@ class Settings:
         )
     )
     thinking_level: str = field(default_factory=lambda: _env("THINKING_LEVEL", "medium"))
-    critic_rounds: int = field(default_factory=lambda: int(_env("CRITIC_ROUNDS", "3")))
     search_backend: str = field(
         default_factory=lambda: _env("SEARCH_BACKEND", "auto")
     )  # auto | composio | none

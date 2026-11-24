@@ -8,13 +8,9 @@ on:
         description: "Apps from data/apps.csv: names ('Slack,Stripe'), ids ('3,7') or ranges ('1-10')"
         required: true
         default: "Attio"
-      critic:
-        description: "Run the critic-model verification loop"
-        type: boolean
-        default: true
 
 concurrency:
-  group: llm-quota # shares one Gemini key with the scheduled checkpoint run
+  group: llm-quota # one run at a time on the shared Gemini key
   cancel-in-progress: false
 
 jobs:
@@ -30,7 +26,7 @@ jobs:
           COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
-          uv run research run --apps "${{ inputs.apps }}" --force ${{ inputs.critic && ' ' || '--no-critic' }}
+          uv run research run --apps "${{ inputs.apps }}" --force
       - name: Write job summary
         run: uv run research show --apps "${{ inputs.apps }}" --md >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v4

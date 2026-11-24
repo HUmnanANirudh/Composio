@@ -17,9 +17,7 @@ def main() -> None:
     with_apps(sub.add_parser("list", help="list apps in the research set"))
     r = with_apps(sub.add_parser("run", help="research apps: pass 1 + verification loops"))
     r.add_argument("--force", action="store_true", help="ignore caches and redo from scratch")
-    r.add_argument("--no-critic", action="store_true", help="skip the critic-model loop")
-    v = with_apps(sub.add_parser("verify", help="re-run verification on existing pass-1 records"))
-    v.add_argument("--no-critic", action="store_true")
+    with_apps(sub.add_parser("verify", help="re-run verification on existing pass-1 records"))
     with_apps(sub.add_parser("catalog", help="show Composio catalog match per app"))
     sh = with_apps(sub.add_parser("show", help="print final records"))
     sh.add_argument("--md", action="store_true", help="markdown table (for CI job summaries)")
@@ -55,11 +53,11 @@ def main() -> None:
     elif args.cmd == "run":
         from .pipeline import run
 
-        run(apps, force=args.force, use_critic=not args.no_critic)
+        run(apps, force=args.force)
     elif args.cmd == "verify":
         from .pipeline import run
 
-        run(apps, verify_only=True, use_critic=not args.no_critic)
+        run(apps, verify_only=True)
     elif args.cmd == "show":
         show(apps, args.md)
     elif args.cmd == "connect-search":

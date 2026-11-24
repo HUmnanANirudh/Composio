@@ -1,6 +1,6 @@
 """Gemini wrapper: JSON-only generateContent calls over a per-role model fallback chain.
 
-* Each role (extract / critic / re-research) names a chain of models, newest first
+* Each role (extract / re-research) names a chain of models, newest first
   (see config.py). A call tries the first model that is still available.
 * 429 with a quota of 0, or a used-up daily quota: that model is retired for the run and
   the next one in the chain takes over.

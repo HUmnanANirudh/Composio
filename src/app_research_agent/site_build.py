@@ -62,7 +62,7 @@ def loop_stats(recs) -> dict:
     by_field = defaultdict(Counter)
     for r in recs:
         for rnd in r.verification.get("rounds", [])[:1]:  # round 0 = verdict on pass 1
-            for loop in ("grounding", "rules", "critic"):
+            for loop in ("grounding", "rules"):
                 for f in rnd.get(loop) or {}:
                     flagged[loop] += 1
                     by_field[loop][f] += 1
@@ -157,13 +157,11 @@ def build() -> dict:
             "provider": "Gemini API (automated path; not used for this dataset)",
             "chains": {
                 "extract": chain(settings.extract_model),
-                "critic": chain(settings.critic_model),
                 "reresearch": chain(settings.reresearch_model),
             },
             # the models that actually answered, most calls first (from usage.jsonl)
             "used": models_used(),
             "thinking_level": settings.thinking_level,
-            "critic_rounds": settings.critic_rounds,
             "search": f"composio session -> {settings.search_toolkit.upper()}_SEARCH",
         },
         "audit": _audit_for_site(),

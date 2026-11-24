@@ -2,9 +2,8 @@
 
 Loop 1  grounding      deterministic: is each quote really on the cited page?
 Loop 2  rules          deterministic: internal consistency + Composio catalog cross-check
-Loop 3  critic         a *different* LLM audits each field against the sources
-Loop 4  re-research    flagged fields get targeted searches and are re-extracted,
-                       then loops 1-3 run again (up to MAX_ROUNDS)
+Loop 3  re-research    flagged fields get targeted searches and are re-extracted,
+                       then loops 1-2 run again (up to MAX_ROUNDS)
 
 Every flag and every change is logged in record.verification so the case
 study can show exactly what each loop caught.
@@ -20,7 +19,7 @@ from . import web
 from .apps import App
 from .catalog import composio_auth_as_enum
 from .config import settings
-from .llm import DailyLimitError, LLMError, chat_json
+from .llm import chat_json
 from .research import RUBRIC, Source, claims_from_json, format_sources, gather
 from .schema import SCORED_FIELDS, AppRecord, Claim
 
@@ -133,53 +132,6 @@ def rule_checks(rec: AppRecord, sources: list[Source]) -> dict[str, list[str]]:
 
 # --------------------------------------------------------------------------- loop 3
 
-CRITIC = """\
-You are a skeptical reviewer auditing another analyst's research on a SaaS API.
-For each field, decide using ONLY the sources (and the field definitions below):
-  "ok"            the value is supported by the sources
-  "wrong"         the sources contradict it (give the corrected value)
-  "unsupported"   the sources neither confirm nor contradict it
-Be strict about access: a free developer/sandbox account is SELF_SERVE_FREE even if production
-needs app review; "contact sales for API access" is PARTNERSHIP.
-
-Field definitions:
-{rubric}
-
-Return JSON: {{"fields": {{"<field>": {{"verdict": "ok|wrong|unsupported", "corrected": <value or null>,
-"reason": "<= 25 words"}}, ...}}}}
-"""
-
-
-def critic(rec: AppRecord, sources: list[Source]) -> tuple[dict[str, list[str]], dict]:
-    record = {f: getattr(rec, f).value for f in SCORED_FIELDS}
-    user = (
-        f"App: {rec.app} ({rec.category})\nAnalyst's answers: {record}\n\n"
-        f"SOURCES:\n{format_sources(sources)}"
-    )
-    data = chat_json(
-        settings.critic_model,
-        CRITIC.format(rubric=RUBRIC.split("Field definitions")[1]),
-        user,
-        purpose="critic",
-    )
-    flags: dict[str, list[str]] = {}
-    for f, v in (data.get("fields") or {}).items():
-        if (
-            f in SCORED_FIELDS
-            and isinstance(v, dict)
-            and v.get("verdict") in ("wrong", "unsupported")
-        ):
-            note = f"critic_{v['verdict']}"
-            if v.get("corrected") is not None:
-                note += f":{v['corrected']}"
-            flags.setdefault(f, []).append(
-                note + (f" ({v.get('reason')})" if v.get("reason") else "")
-            )
-    return flags, data
-
-
-# --------------------------------------------------------------------------- loop 4
-
 FIELD_QUERIES = {
     "auth_methods": [
         "{app} API authentication documentation",
@@ -273,23 +225,15 @@ def finalize_confidence(rec: AppRecord, flags: dict[str, list[str]]) -> None:
         c.flags = flags.get(f, [])
 
 
-def verify(app: App, rec: AppRecord, sources: list[Source], use_critic: bool = True) -> AppRecord:
+def verify(app: App, rec: AppRecord, sources: list[Source]) -> AppRecord:
     rec = rec.model_copy(deep=True)
     rec.pass_name = "final"
     rounds = []
     for rnd in range(MAX_ROUNDS + 1):
         g = ground(rec, sources)
         r = rule_checks(rec, sources)
-        c: dict[str, list[str]] = {}
-        if use_critic and rnd < settings.critic_rounds:
-            try:
-                c, _ = critic(rec, sources)
-            except DailyLimitError:
-                raise
-            except LLMError as e:
-                rec.errors.append(f"critic round {rnd}: {e}")
-        flags = merge_flags(g, r, c)
-        rounds.append({"round": rnd, "grounding": g, "rules": r, "critic": c})
+        flags = merge_flags(g, r)
+        rounds.append({"round": rnd, "grounding": g, "rules": r})
         todo = _actionable(flags)
         if not todo or rnd == MAX_ROUNDS:
             break
