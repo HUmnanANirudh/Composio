@@ -45,4 +45,4 @@ The reviewer opens the live link from a submission, likely on a laptop, possibly
 
 ## Accessibility & Inclusion
 
-WCAG 2.2 AA text contrast in light and dark modes; keyboard-operable filters; tables usable at 390px width.
+WCAG 2.2 AA text contrast (the page is light only); keyboard-operable filters; tables usable at 390px width.

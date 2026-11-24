@@ -10,7 +10,6 @@ The case study is set as an **entry-requirements reference manual**. API access 
 | `--sheet` | `#fbfbf9` | `#141d29` | raised sheets: record card, tables, callouts |
 | `--ink` | `#132030` | `#e8ecf0` | text, rules at strength |
 | `--ink-2` / `--ink-3` | `#3d4a59` / `#5b6775` | `#b9c3cd` / `#97a2ae` | secondary / tertiary text |
-| `--band` | `#132030` | `#070b11` | masthead and closing band; the overscroll ground |
 | `--act` | `#1d4ed8` | `#8db0ff` | **the one reserved accent**: actions and links only |
 
 ## Regime legend (fixed; used for entry regime and nothing else)
@@ -48,5 +47,6 @@ Regime is never carried by color alone. Every cell and chip also prints its lett
 - Every section head after the first viewport sits under a 2px ink chapter rule, the manual's chapter break. No kicker labels or section numbers.
 - Spacing is in three steps: between sections (88–144px), between blocks inside a section (40–76px), and inside a block (12–24px). Space above a heading is always larger than the space below it.
 - Rows breathe: findings rows have 17px vertical padding, table cells 11–14px, list rows 11px.
-- The page closes on the dark band that matches the masthead: "Run it yourself" and "Where it fell short".
+- Light only. The masthead and the close ("Run it yourself", "Where it fell short") are raised `--sheet` bands with a rule, not dark bands.
+- Say each thing once: agent links and the data date live in one place each, and caveats appear only where they apply.
 - Below 980px everything stacks, and the route turns vertical. Below 640px the matrix drops app names and keeps codes, with category labels spanning each row.
