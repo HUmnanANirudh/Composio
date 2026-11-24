@@ -24,8 +24,7 @@ Every field cites a vendor page and a verbatim quote, and accuracy is measured a
 apps.csv ──► 1 Composio catalog ──► 2 discover ──► 3 extract (pass 1) ──► 4 verify ──► final ──► score / patterns / site
              (public toolkit list)   crawl + Exa     Claude in-session,      grounding
                                     via Composio     or Gemini (automated)   rules + Composio x-check
-                                                     cited JSON              critic (automated path only)
-                                                                             targeted re-research
+                                                     cited JSON              targeted re-research
 ```
 
 1. **Composio catalog** (`catalog.py`). Matches each app to Composio's public catalog of 1,841 toolkits at `docs.composio.dev/toolkits.md`; no key is needed. It records the existing toolkit, its tool count and its auth schemes, plus any `*_MCP` proxy, which is evidence the vendor runs its own MCP server. Twenty ambiguous name matches are pinned by hand in `data/composio_overrides.json`.
@@ -34,7 +33,6 @@ apps.csv ──► 1 Composio catalog ──► 2 discover ──► 3 extract (
 4. **Verify** (`verify.py`):
    - **Grounding (deterministic).** Fuzzy-finds each quote on its cached page and flags fields with no grounded evidence.
    - **Rules (deterministic).** Checks that access and buildability are consistent with each other, and compares auth against Composio's catalog. It also flags "no official MCP" when Composio proxies the vendor's own MCP server.
-   - **Critic** (automated path only). A second model family (Gemma 4, `gemma-4-31b-it`) audits each field against the sources.
    - **Re-research.** Only flagged scored fields get new targeted searches (`data/packs/NNN.fix.md`, sources R1…) and are answered again (`data/manual/fix-*.json`); then grounding and rules run again. In this dataset 14 apps were re-researched and 1 field changed (Datadog access: free → trial). Every flag and change is logged in `record.verification`.
 5. **Score** (`evaluate.py`). Compares pass 1 and final against `data/ground_truth.json`: 20 apps, 2 per category, drawn with a fixed seed **before any agent run**, each truth value with a URL and a quote.
 6. **Patterns** (`patterns.py`). Plain counts over the final records, with no LLM involved, so every headline is traceable.
@@ -75,39 +73,13 @@ uv run research build-site                   # site/data.json, results.csv, llms
 uv run pytest
 ```
 
-`--apps` accepts names (`Slack,Stripe`), ids (`3,7`) or ranges (`1-10`). `--force` ignores caches; `--no-critic` skips the critic loop.
+`--apps` accepts names (`Slack,Stripe`), ids (`3,7`) or ranges (`1-10`). `--force` ignores caches.
 
-**Models and quota.** The LLM steps run on the Gemini API (`generateContent`, JSON mode, `thinkingLevel: medium`). Each role has a fallback chain of models, newest first, set in `config.py` and overridable in `.env`:
+**Automated path.** `research run` sends the same rubric to the Gemini API (JSON mode). Each role has a newest-first fallback chain of models (`config.py`, overridable in `.env`). When one model runs out of quota or is overloaded, the next takes over, and a run that runs out entirely resumes where it stopped. Token use per call is logged to `data/results/usage.jsonl`.
 
-| Role | Chain |
-|---|---|
-| Extract | `gemini-4-hydrogen` → `gemini-3.8-flash` → `gemini-3.6-flash` → `gemini-flash-latest` → `gemini-3.5-flash-lite` |
-| Critic | `gemma-4-31b-it` → `gemini-3.8-flash` → `gemini-3.6-flash` → `gemini-4-hydrogen` → `gemini-3.5-flash-lite` |
-| Re-research | `gemini-3.6-flash` → `gemini-4-hydrogen` → `gemini-3.8-flash` → `gemini-flash-latest` → `gemini-3.5-flash-lite` |
+**GitHub Actions.** Set the `GEMINI_API_KEY` and `COMPOSIO_API_KEY` repo secrets (and connect Exa once with `connect-search`). *Run research agent* (manual) researches any app on demand: the job summary prints the cited record, and the JSON is uploaded as an artifact. Pushes to `main` redeploy the case study to Pages.
 
-`gemini-4-hydrogen` is the model Google's docs name as the default general-purpose model.
-
-When a model runs out of quota, the next one takes over:
-
-- **Quota used up, or capped at 0** (as the Pro-class models are on a free-tier key): the model is retired for the run.
-- **Per-minute limit:** the call waits the server's `retryDelay`.
-- **Overloaded (503):** the call backs off, then the model is skipped for a few minutes.
-
-The run pauses only when every model in a chain is out of quota, and the next invocation resumes where it stopped. Token use per call, with the model that actually answered, is logged to `data/results/usage.jsonl`.
-
-**GitHub Actions.** Set the `GEMINI_API_KEY` and `COMPOSIO_API_KEY` repo secrets (and connect Exa once with `connect-search`). Two workflows use them:
-
-- *Run research agent* (manual): research any app on demand. The job summary prints the cited record, and the JSON is uploaded as an artifact.
-- *Research checkpoint* (`research-daily.yml`; its 3-hourly cron is paused now that the dataset is complete, manual dispatch still works): resumes the full run with no one at the keyboard. Each run:
-  - picks up where the last one stopped, with the 20 answer-key apps first;
-  - works until every model in a chain is out of quota, or the time budget runs out;
-  - re-scores, then rebuilds the site bundle;
-  - commits only `data/results/` and `site/`, and only after the tests pass;
-  - redeploys Pages.
-
-  Both workflows share one concurrency group, so only one of them spends the Gemini quota at a time.
-
-**Checkpoints.** Every record and cache file is written to a temp file and then renamed into place. A run killed mid-app loses only that app's work, never a saved file. Network errors, 429s and 5xx responses are not cached, so the next run fetches those pages again. In CI, the page and search cache persists between runs (`actions/cache`), so the verifier checks quotes against the same text the extractor saw.
+**Checkpoints.** Every record and cache file is written to a temp file and then renamed into place, so a run killed mid-app loses only that app's work. Network errors, 429s and 5xx responses are not cached, so the next run fetches those pages again.
 
 ## Layout
 
