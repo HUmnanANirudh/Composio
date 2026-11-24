@@ -83,10 +83,10 @@ code,.mono{font-family:var(--mono);font-size:.86em;letter-spacing:0}
 .sec > .wrap > h2{border-top:2px solid var(--ink);padding-top:clamp(18px,2vw,24px);margin-bottom:16px}
 .provisional{display:block;font:500 13.5px/1.45 var(--body);color:var(--ink-3);letter-spacing:0;margin-top:8px}
 .findings{list-style:none;margin:0;padding:0;counter-reset:f}
-.findings li{display:grid;grid-template-columns:104px 1fr;gap:4px 20px;align-items:baseline;padding:17px 0;border-top:1px solid var(--rule);font-size:16.5px;line-height:1.5}
+.findings li{display:grid;grid-template-columns:116px 1fr;gap:4px 20px;align-items:baseline;padding:17px 0;border-top:1px solid var(--rule);font-size:16.5px;line-height:1.5}
 .findings li:first-child{border-top:0;padding-top:2px}
 .findings li.plain{display:block}
-.findings .fig{font-family:var(--display);font-variation-settings:"wdth" 72;font-weight:800;font-size:30px;line-height:1;letter-spacing:-.01em;white-space:nowrap}
+.findings .fig{font-family:var(--display);font-variation-settings:"wdth" 72;font-weight:800;font-size:38px;line-height:.9;letter-spacing:-.015em;white-space:nowrap}
 .findings li.plain{padding-top:20px;color:var(--ink-3);font-size:14px}
 .findings .fig.word{grid-column:1/-1;font-size:19px;line-height:1.15;white-space:normal}
 .findings .fig.word+span{grid-column:1/-1}
@@ -138,7 +138,7 @@ h3.h{font:700 19px/1.25 var(--body);margin:0 0 16px}
 table{border-collapse:collapse;width:100%;font-size:14.5px}
 th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--rule-2);vertical-align:top}
 th{font-weight:700;color:var(--ink-2);font-size:13px;border-bottom:1px solid var(--rule)}
-td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 .bar-inline{display:inline-block;height:8px;border-radius:2px;background:var(--ink-2);vertical-align:middle;margin-left:8px}
 .list-tight{list-style:none;margin:0;padding:0}
 .list-tight li{padding:11px 0;border-top:1px solid var(--rule-2);font-size:14.5px;line-height:1.5}
@@ -150,18 +150,32 @@ td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
 .filters input{background-image:none;padding-right:10px;min-width:200px}
 .filters .count{font-size:14px;color:var(--ink-2);margin-left:auto}
 .reg{overflow-x:auto;border:1px solid var(--rule);border-radius:8px;background:var(--sheet);padding:6px 8px}
-#reg-table{min-width:1040px}
+#reg-table{min-width:1080px}
+#miss-table,#fixed-table{min-width:560px}
 .reg th{position:sticky;top:0;background:var(--sheet);z-index:1}
-.reg td{font-size:14px;padding-top:14px;padding-bottom:14px}
+.reg td{font-size:14px;padding-top:12px;padding-bottom:12px}
 .reg td.app b{display:block;font-weight:700}
-.reg td.app span{color:var(--ink-3);font-size:12.5px}
+.reg.scroll{max-height:min(78vh,860px);overflow:auto;padding:0;scrollbar-color:var(--rule) transparent;scrollbar-width:thin}
+.reg.scroll thead th{top:0;z-index:3;box-shadow:inset 0 -1px 0 var(--rule)}
+.reg.scroll thead th:first-child{left:0;z-index:4}
+.reg.scroll th:first-child,.reg.scroll td:first-child{padding-left:18px}
+.reg.scroll th:last-child,.reg.scroll td:last-child{padding-right:18px}
+.reg.scroll td.app{position:sticky;left:0;background:var(--sheet);z-index:1;min-width:150px}
+.reg tr.grp th{position:static;padding:26px 0 8px;border-bottom:2px solid var(--ink);background:var(--sheet);color:var(--ink);font-size:inherit}
+.reg tr.grp:first-child th{padding-top:14px}
+.reg tr.grp th > span{position:sticky;left:18px;display:inline-flex;align-items:baseline;gap:10px;font-family:var(--display);font-variation-settings:"wdth" 78;font-weight:750;font-size:17px;letter-spacing:-.005em}
+.reg tr.grp th small{font:500 12.5px/1 var(--mono);color:var(--ink-3)}
+td.rgm{white-space:nowrap}
+td.rgm .conf{margin-left:26px}
+.reg td[class^="b-"]{white-space:nowrap}
+details.ev summary{white-space:nowrap}
 .enum{font:500 12.5px/1.3 var(--mono)}
 .tag{display:inline-block;padding:2px 6px;border-radius:3px;font:600 12px/1.3 var(--mono);margin:0 3px 3px 0;background:var(--rule-2);color:var(--ink)}
 .b-READY{color:var(--hit)} .b-READY_WITH_CAVEATS{color:var(--ink)} .b-NEEDS_OUTREACH{color:var(--miss)} .b-BLOCKED{color:var(--miss)}
 .conf{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
 details.ev summary{cursor:pointer;color:var(--act);font-size:13px}
 details.ev blockquote{margin:6px 0 0;padding:0 0 0 10px;border-left:1px solid var(--rule);font-size:13px;color:var(--ink-2)}
-.reg tr.flagged td.app b::after{content:" · flagged";font-weight:500;color:var(--miss);font-size:12px}
+.reg tr.flagged td.app b::after{content:"flagged";display:block;margin-top:3px;font:600 11px/1.3 var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--miss)}
 /* route */
 .route{display:grid;grid-template-columns:repeat(6,1fr);gap:0;position:relative;margin:0}
 .stn{position:relative;padding:42px 28px 0 0}
@@ -174,7 +188,8 @@ details.ev blockquote{margin:6px 0 0;padding:0 0 0 10px;border-left:1px solid va
 .stn .who{display:block;font:600 12px/1.4 var(--mono);color:var(--ink-3);margin-bottom:6px}
 .humans{margin-top:clamp(60px,7vw,96px)}
 .humans li{display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:start;padding:14px 0}
-.humans svg{width:22px;height:22px;margin-top:1px}
+.humans li{grid-template-columns:22px 1fr}
+.hmark{display:block;width:15px;height:15px;margin-top:4px;border-radius:3px;background:var(--r-paid);border:3px solid var(--ink)}
 /* document check */
 .verdict{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(36px,5vw,80px);align-items:start}
 .acc{display:flex;align-items:baseline;gap:20px;flex-wrap:wrap;margin:0 0 32px}
@@ -205,8 +220,8 @@ pre{background:var(--band);color:var(--band-ink);padding:14px 16px;border-radius
 .loading{padding:40px 0;color:var(--ink-3)}
 @media (max-width: 980px){
   .mast .head{grid-template-columns:1fr}
-  .lead,.verdict,.two,.close .grid{grid-template-columns:1fr}
-  .three{grid-template-columns:1fr}
+  .lead,.verdict,.two,.close .grid{grid-template-columns:minmax(0,1fr)}
+  .three{grid-template-columns:minmax(0,1fr)}
   .route{grid-template-columns:1fr}
   .stn{padding:0 0 28px 40px}
   .stn::before{left:8px;right:auto;top:0;bottom:0;width:3px;height:auto}
@@ -222,8 +237,8 @@ pre{background:var(--band);color:var(--band-ink);padding:14px 16px;border-radius
   .catbar{grid-template-columns:1fr 40px}
   .catbar .label{grid-column:1/-1}
   .filters .count{margin-left:0;width:100%}
-  .findings li{grid-template-columns:72px 1fr;gap:4px 14px}
-  .findings .fig{font-size:26px}
+  .findings li{grid-template-columns:84px 1fr;gap:4px 14px}
+  .findings .fig{font-size:30px}
   .findings .fig.word{font-size:17px}
 }
 @media (prefers-reduced-motion: reduce){*{transition:none!important;scroll-behavior:auto!important}}
@@ -294,7 +309,7 @@ pre{background:var(--band);color:var(--band-ink);padding:14px 16px;border-radius
   <section class="sec" id="register" aria-labelledby="h-register">
     <div class="wrap">
       <h2 id="h-register">The register</h2>
-      <p class="intro">All 100 records. Open <em>evidence</em> on a row to see the quotes; a stamp means the verifier found the quote on the cited page.</p>
+      <p class="intro">All 100 records, grouped by category; the table scrolls on its own. Open <em>evidence</em> on a row to see the quotes; a stamp means the verifier found the quote on the cited page.</p>
       <div class="filters" role="search">
         <label>Category<select id="f-cat"><option value="">All categories</option></select></label>
         <label>Entry regime<select id="f-access"><option value="">All regimes</option></select></label>
@@ -302,7 +317,7 @@ pre{background:var(--band);color:var(--band-ink);padding:14px 16px;border-radius
         <label>Search<input id="f-q" type="search" placeholder="App name or blocker"></label>
         <span class="count num" id="f-count" aria-live="polite"></span>
       </div>
-      <div class="reg"><table id="reg-table"><thead><tr>
+      <div class="reg scroll" tabindex="0" role="region" aria-label="All records, scrollable"><table id="reg-table"><thead><tr>
         <th scope="col">App</th><th scope="col">Auth</th><th scope="col">Entry regime</th><th scope="col">API</th><th scope="col">MCP</th><th scope="col">Composio toolkit</th><th scope="col">Buildable?</th><th scope="col">Main blocker</th><th scope="col">Evidence</th>
       </tr></thead><tbody id="reg-body"></tbody></table></div>
     </div>
@@ -324,11 +339,11 @@ pre{background:var(--band);color:var(--band-ink);padding:14px 16px;border-radius
         <div>
           <h3 class="h">Where a human was needed</h3>
           <ul class="list-tight" id="humans">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/></svg><span><b>Catalog matching.</b> Fuzzy name matching mapped 80 of 100 apps cleanly; 20 ambiguous ones (Zoho CRM → <code>ZOHO</code>, GoHighLevel → <code>HIGHLEVEL_LOCATION</code>, Mermaid CLI → none) are pinned in a reviewed override file.</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/></svg><span><b>Search credentials.</b> Composio's built-in search toolkit is retired (HTTP 410), so a human created an Exa key; <code>research connect-search</code> registers it on the agent's Composio user. Without it the agent prints a Connect Link and runs crawler-only.</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/></svg><span><b>The answer key.</b> 20 apps × 6 fields read from vendor docs, with URLs and quotes. Contested fields are left unscored rather than guessed.</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/></svg><span><b>The reading step.</b> Groq’s daily caps and Gemini’s free-tier limits stopped the unattended LLM run, so the user chose to have Claude read the source packs in-session. The pipeline still gathered every source and re-checked every quote.</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/></svg><span><b>Reviewing misses.</b> Each miss is read against its source and given a verdict (agent wrong, key wrong, or ambiguous) in <code>data/audit.json</code>, one record per app and field. The key was wrong three times (Clay, SendGrid auth, Harvest MCP); each correction is logged with its source.</span></li>
+            <li><span class="hmark" aria-hidden="true"></span><span><b>Catalog matching.</b> Fuzzy name matching mapped 80 of 100 apps cleanly; 20 ambiguous ones (Zoho CRM → <code>ZOHO</code>, GoHighLevel → <code>HIGHLEVEL_LOCATION</code>, Mermaid CLI → none) are pinned in a reviewed override file.</span></li>
+            <li><span class="hmark" aria-hidden="true"></span><span><b>Search credentials.</b> Composio's built-in search toolkit is retired (HTTP 410), so a human created an Exa key; <code>research connect-search</code> registers it on the agent's Composio user. Without it the agent prints a Connect Link and runs crawler-only.</span></li>
+            <li><span class="hmark" aria-hidden="true"></span><span><b>The answer key.</b> 20 apps × 6 fields read from vendor docs, with URLs and quotes. Contested fields are left unscored rather than guessed.</span></li>
+            <li><span class="hmark" aria-hidden="true"></span><span><b>The reading step.</b> Groq’s daily caps and Gemini’s free-tier limits stopped the unattended LLM run, so the user chose to have Claude read the source packs in-session. The pipeline still gathered every source and re-checked every quote.</span></li>
+            <li><span class="hmark" aria-hidden="true"></span><span><b>Reviewing misses.</b> Each miss is read against its source and given a verdict (agent wrong, key wrong, or ambiguous) in <code>data/audit.json</code>, one record per app and field. The key was wrong three times (Clay, SendGrid auth, Harvest MCP); each correction is logged with its source.</span></li>
           </ul>
         </div>
         <div>
@@ -517,15 +532,16 @@ function filter(){
   const c = $("#f-cat").value, ac = $("#f-access").value, b = $("#f-build").value, q = $("#f-q").value.trim().toLowerCase();
   const rows = window._apps.filter(a => (!c || a.category === c) && (!ac || a.fields.access.value === ac) && (!b || a.fields.buildability.value === b) && (!q || (a.app + " " + (a.fields.main_blocker.value||"") + " " + (a.fields.one_liner.value||"")).toLowerCase().includes(q)));
   $("#f-count").textContent = `${rows.length} of ${window._apps.length} apps`;
-  $("#reg-body").innerHTML = rows.sort((x,y)=>x.id-y.id).map(a => {
+  const cats = [...new Set(window._apps.map(a => a.category))];
+  const row = a => {
     const f = a.fields, reg = REG[f.access.value] || {code:"?",label:"unknown"};
     // flagged = a scored field still carries a hard verifier flag (soft "maybe"/low-confidence notes excluded)
     const flagged = SCORED.some(k => (f[k]?.flags || []).some(x => !x.startsWith("maybe_") && x !== "low_confidence"));
     const evs = ["auth_methods","access","official_mcp"].flatMap(k => f[k].evidence.slice(0,1).map(e => ({k,...e})));
     return `<tr class="${flagged ? "flagged" : ""}">
-      <td class="app"><b>${esc(a.app)}</b><span>${esc(a.category)}</span></td>
+      <td class="app"><b>${esc(a.app)}</b></td>
       <td>${(f.auth_methods.value||[]).map(x=>`<span class="tag">${esc(x)}</span>`).join("") || "—"}</td>
-      <td><span class="chip rg-${f.access.value}">${reg.code}</span> ${reg.label}<br><span class="conf">conf ${f.access.confidence}</span></td>
+      <td class="rgm"><span class="chip rg-${f.access.value}">${reg.code}</span> ${reg.label}<br><span class="conf">conf ${f.access.confidence}</span></td>
       <td class="enum">${esc(fmt(f.api_style.value))}<br><span class="conf">${esc(fmt(f.api_breadth.value)).toLowerCase()}</span></td>
       <td>${f.official_mcp.value ? "yes" : "no"}</td>
       <td>${a.composio.slug ? `<a class="mono" href="${esc(a.composio.url)}">${esc(a.composio.slug)}</a><br><span class="conf">${a.composio.tools} tools</span>` : '<span class="small">none</span>'}</td>
@@ -533,6 +549,10 @@ function filter(){
       <td>${esc(f.main_blocker.value || "—")}</td>
       <td><details class="ev"><summary>${evs.filter(e=>e.grounded).length}/${evs.length} on page</summary>${evs.map(e => `<blockquote><b>${FIELD_LABEL[e.k]}</b>: “${esc(e.quote.slice(0,200))}” <a href="${esc(e.url)}">${esc(host(e.url))}</a> ${e.grounded ? '<span class="stampmark">on page</span>' : '<span class="stampmark grey">not re-found</span>'}</blockquote>`).join("")}${a.docs_url ? `<blockquote>Docs: <a href="${esc(a.docs_url)}">${esc(host(a.docs_url))}</a></blockquote>` : ""}</details></td>
     </tr>`;
+  };
+  $("#reg-body").innerHTML = cats.map(c => {
+    const g = rows.filter(a => a.category === c).sort((x,y) => x.id - y.id);
+    return g.length ? `<tr class="grp"><th colspan="9" scope="rowgroup"><span>${esc(c)} <small>${g.length}</small></span></th></tr>` + g.map(row).join("") : "";
   }).join("") || `<tr><td colspan="9">No app matches these filters. <a href="#register" onclick="document.querySelectorAll('.filters select').forEach(s=>s.value='');document.getElementById('f-q').value='';filter();return false">Clear filters</a></td></tr>`;
 }
 
@@ -553,8 +573,8 @@ function renderCheck(d, byId){
     <tr><td>Grounding: scored field with no quote re-found on its page</td><td class="n">${scoredFlags(L.flags_by_field?.grounding)}</td></tr>
     <tr><td>Rules: consistency, Composio cross-check</td><td class="n">${scoredFlags(L.flags_by_field?.rules)}</td></tr>
     <tr><td>Re-research: apps given new sources for flagged fields</td><td class="n">${d.extraction?.reresearch_apps ?? 0}</td></tr>
-    <tr><td><b>Re-research changed</b></td><td class="n"><b>${L.fields_changed||0}</b> fields in ${L.apps_changed||0} apps</td></tr></tbody>`;
-  $("#calib-table").innerHTML = `<thead><tr><th>Final confidence</th><th class="n">Checks</th><th class="n">Correct</th></tr></thead><tbody>` + (fin.calibration||[]).sort((a,b)=>a.bucket<b.bucket?-1:1).map(c => `<tr><td>${esc(c.bucket)}</td><td class="n">${c.total}</td><td class="n">${pct(c.accuracy)}</td></tr>`).join("") + `</tbody>`;
+    <tr><td><b>Re-research changed</b></td><td class="n"><b>${L.fields_changed||0}</b> field${L.fields_changed===1?"":"s"} in ${L.apps_changed||0} app${L.apps_changed===1?"":"s"}</td></tr></tbody>`;
+  $("#calib-table").innerHTML = `<thead><tr><th>Final confidence</th><th class="n">Checks</th><th class="n">Correct</th></tr></thead><tbody>` + (fin.calibration||[]).sort((a,b)=>["high","medium","low"].findIndex(k=>a.bucket.startsWith(k))-["high","medium","low"].findIndex(k=>b.bucket.startsWith(k))).map(c => `<tr><td>${esc(c.bucket)}</td><td class="n">${c.total}</td><td class="n">${pct(c.accuracy)}</td></tr>`).join("") + `</tbody>`;
 
   const gtBy = Object.fromEntries((d.ground_truth?.apps||[]).map(a => [a.id, a]));
   const misses = fin.rows.filter(r => r.status === "miss");

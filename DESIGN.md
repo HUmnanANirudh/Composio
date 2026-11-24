@@ -31,7 +31,7 @@ Regime is never carried by color alone. Every cell and chip also prints its lett
 - **Stamp** (`.stampmark`): a slightly rotated outlined label. "On page" means the verifier re-found the quote on the cited page; "fixed" means a verification loop corrected a field.
 - **Struck value** (`.struck`): a wrong answer, struck through in `--miss`.
 - **Ring** on a matrix cell: the regime is held with low confidence (< 0.5).
-- **Square station** in the route: a human checkpoint. Round stations are automated.
+- **Square station** in the route: a human checkpoint. Round stations are automated. The same square marks each item under "Where a human was needed".
 
 ## Type
 
@@ -44,6 +44,7 @@ Regime is never carried by color alone. Every cell and chip also prints its lett
 - One content width (1240px max) with a gutter of `clamp(16px, 4vw, 40px)` on both sides.
 - First viewport: compact two-column masthead, then findings (figure + sentence rows on one left edge) beside the 100-cell regime matrix and its record card.
 - Dense passages (register, miss tables) alternate with reading passages (findings, route).
+- The register is one viewport tall (`max-height: min(78vh, 860px)`) and scrolls on its own, with a sticky header row and app column. Rows sit under category subheads (display face, 2px ink rule), so the category isn't repeated on every row.
 - Every section head after the first viewport sits under a 2px ink chapter rule, the manual's chapter break. No kicker labels or section numbers.
 - Spacing is in three steps: between sections (88–144px), between blocks inside a section (40–76px), and inside a block (12–24px). Space above a heading is always larger than the space below it.
 - Rows breathe: findings rows have 17px vertical padding, table cells 11–14px, list rows 11px.
