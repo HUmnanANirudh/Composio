@@ -6,8 +6,8 @@ The case study is set as an **entry-requirements reference manual**. API access 
 
 | Token | Light | Dark | Role |
 |---|---|---|---|
-| `--paper` | `#f3f4f1` | `#0f1620` | page ground (cool paper, not cream) |
-| `--sheet` | `#fbfbf9` | `#141d29` | raised sheets: record card, tables, callouts |
+| `--paper` | `#faf9f6` | — | page ground (off-white) |
+| `--sheet` | `#ffffff` | — | raised sheets: record card, tables, callouts |
 | `--ink` | `#132030` | `#e8ecf0` | text, rules at strength |
 | `--ink-2` / `--ink-3` | `#3d4a59` / `#5b6775` | `#b9c3cd` / `#97a2ae` | secondary / tertiary text |
 | `--act` | `#1d4ed8` | `#8db0ff` | **the one reserved accent**: actions and links only |
