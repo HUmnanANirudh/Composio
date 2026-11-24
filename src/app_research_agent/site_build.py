@@ -192,7 +192,28 @@ def build() -> dict:
     (SITE / "data.json").write_text(json.dumps(bundle, indent=1, default=str))
     (SITE / "results.csv").write_text(_csv(bundle["apps"]))
     (SITE / "llms.txt").write_text(_llms(bundle))
+    (ROOT / "submission.html").write_text(standalone((SITE / "index.html").read_text(), bundle))
     return bundle
+
+
+FETCH = 'fetch("data.json").then(r => r.json())'
+
+
+def standalone(html: str, bundle: dict) -> str:
+    """The case study as one file: data embedded, data-file links pointing at the live site."""
+    assert FETCH in html, "index.html no longer loads data.json the expected way"
+    data = json.dumps(bundle, separators=(",", ":"), default=str).replace("</", "<\\/")
+    html = html.replace(
+        FETCH, 'Promise.resolve(JSON.parse(document.getElementById("bundle").textContent))'
+    )
+    html = html.replace(
+        "<script>", f'<script id="bundle" type="application/json">{data}</script>\n<script>', 1
+    )
+    for f in ("llms.txt", "data.json", "results.csv"):
+        html = html.replace(f'href="{f}"', f'href="{PAGES}{f}"')
+    return html.replace(
+        '<a href="#run">Run it</a>', f'<a href="#run">Run it</a><a href="{PAGES}">Live site</a>', 1
+    )
 
 
 def _csv(rows: list[dict]) -> str:

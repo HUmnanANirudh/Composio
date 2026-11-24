@@ -5,6 +5,7 @@ A research agent that profiles 100 SaaS apps for AI-agent toolkit buildability: 
 - **Case study:** https://humnananirudh.github.io/Composio/
 - **Run it from GitHub:** Actions → *Run research agent* → *Run workflow* → type an app name
 - **For agents:** [`llms.txt`](site/llms.txt), [`data.json`](site/data.json), [`results.csv`](site/results.csv)
+- **Single-file copy:** [`submission.html`](submission.html) — the case study with its data embedded; opens offline, data-file links go to the live site. Rebuilt by `research build-site`.
 
 ## Results
 
