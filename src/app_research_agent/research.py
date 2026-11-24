@@ -163,7 +163,7 @@ def crawl_candidates(app: App, pages: list[web.Page], per_topic: int = 2) -> lis
     # round-robin: every topic's best link before any topic's second, so one topic
     # (e.g. two OAuth pages) can't use up the page budget
     picked: list[str] = []
-    for rank in range(per_topic):
+    for _ in range(per_topic):
         for topic in ranked:
             fresh = [u for u in topic if u not in picked]
             if fresh:

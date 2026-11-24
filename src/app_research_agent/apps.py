@@ -22,11 +22,6 @@ class App:
             return "https://" + tok.rstrip("/.)")
         return None
 
-    @property
-    def domain(self) -> str | None:
-        u = self.hint_url
-        return u.split("/")[2] if u else None
-
 
 def load_apps(path: Path | None = None) -> list[App]:
     path = path or DATA / "apps.csv"

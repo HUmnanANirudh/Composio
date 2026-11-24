@@ -138,7 +138,7 @@ def lookup(app: App) -> ComposioCatalogEntry:
     return entry
 
 
-# Composio auth label -> our Auth enum value
+# Composio auth label -> our auth_methods enum value (see research.RUBRIC)
 COMPOSIO_AUTH_MAP = {
     "OAUTH2": "OAUTH2",
     "OAUTH1": "OTHER",

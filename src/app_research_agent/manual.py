@@ -56,7 +56,7 @@ def _load_sources(items: list[dict]) -> list[Source]:
     return out
 
 
-def _render(app: App, rec_composio: dict, sources: list[dict], title: str) -> str:
+def _render(app: App, sources: list[dict], title: str) -> str:
     head = f"## {app.id:03d} {app.app} ({app.category}) hint={app.hint} {title}\n"
     parts = [head]
     for s in sources:
@@ -80,7 +80,7 @@ def pack_one(app: App, refresh: bool = False) -> str:
         "errors": errors,
     }
     atomic_write(PACKS / f"{app.id:03d}.json", json.dumps(data, indent=1))
-    atomic_write(PACKS / f"{app.id:03d}.md", _render(app, data["composio"], data["sources"], ""))
+    atomic_write(PACKS / f"{app.id:03d}.md", _render(app, data["sources"], ""))
     return f"{app.app}: {len(sources)} sources" + (f", {len(errors)} errors" if errors else "")
 
 
@@ -157,7 +157,7 @@ def ingest(apps: list[App]) -> None:
         prev = {f: getattr(rec, f).value for f in todo}
         atomic_write(
             PACKS / f"{app.id:03d}.fix.md",
-            _render(app, pk["composio"], fix["sources"], f"FIX {list(todo)}")
+            _render(app, fix["sources"], f"FIX {list(todo)}")
             + f"\nFLAGS:\n{notes}\nPREVIOUS: {json.dumps(prev)}\n",
         )
         print(f"{app.app}: flagged {sorted(todo)} -> {len(fresh)} new sources")

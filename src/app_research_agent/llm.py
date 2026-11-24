@@ -65,12 +65,6 @@ def chain(spec: str) -> list[str]:
     return [m.strip() for m in spec.split(",") if m.strip()]
 
 
-def first_model(spec: str) -> str:
-    """The model a role would use right now (for display)."""
-    live = [m for m in chain(spec) if m not in _retired]
-    return (live or chain(spec))[0]
-
-
 def client() -> httpx.Client:
     global _client
     if _client is None:

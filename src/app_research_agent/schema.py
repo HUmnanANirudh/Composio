@@ -7,44 +7,9 @@ really appears on the page; a claim without grounded evidence is downgraded.
 
 from __future__ import annotations
 
-from enum import StrEnum
 from typing import Any
 
 from pydantic import BaseModel, Field
-
-
-class Auth(StrEnum):
-    OAUTH2 = "OAUTH2"
-    API_KEY = "API_KEY"
-    BEARER_TOKEN = "BEARER_TOKEN"  # personal access / static bearer token
-    BASIC = "BASIC"
-    JWT = "JWT"  # signed JWT / service account / client-credentials style
-    OTHER = "OTHER"  # HMAC signing, session tokens, mTLS, ...
-    NONE = "NONE"  # no auth (public API, local CLI)
-
-
-class Access(StrEnum):
-    SELF_SERVE_FREE = "SELF_SERVE_FREE"  # free account/plan or free dev account gives credentials
-    SELF_SERVE_TRIAL = "SELF_SERVE_TRIAL"  # credentials only during a free trial / sandbox
-    PAID_PLAN = "PAID_PLAN"  # API needs a paid plan or paid add-on
-    APPROVAL = "APPROVAL"  # app review, admin approval, developer-access application
-    PARTNERSHIP = "PARTNERSHIP"  # partner program / contact sales / enterprise-only
-    NO_PUBLIC_API = "NO_PUBLIC_API"
-
-
-class Breadth(StrEnum):
-    BROAD = "BROAD"  # most of the product is reachable (dozens+ resources)
-    MODERATE = "MODERATE"  # core objects only
-    NARROW = "NARROW"  # a handful of endpoints
-    NONE = "NONE"
-
-
-class Buildability(StrEnum):
-    READY = "READY"  # a toolkit can be built today, self-serve
-    READY_WITH_CAVEATS = "READY_WITH_CAVEATS"  # buildable but paid tier / review / limits
-    NEEDS_OUTREACH = "NEEDS_OUTREACH"  # requires partnership / sales to get access
-    BLOCKED = "BLOCKED"  # no usable public API
-
 
 CLAIM_FIELDS = (
     "one_liner",
@@ -107,14 +72,14 @@ class AppRecord(BaseModel):
     docs_url: str | None = None
 
     one_liner: Claim = Field(default_factory=Claim)
-    auth_methods: Claim = Field(default_factory=Claim)  # list[Auth]
-    access: Claim = Field(default_factory=Claim)  # Access
+    auth_methods: Claim = Field(default_factory=Claim)  # enum values: research.RUBRIC
+    access: Claim = Field(default_factory=Claim)
     api_style: Claim = Field(default_factory=Claim)  # list[REST|GRAPHQL|SOAP|SDK|CLI|NONE]
-    api_breadth: Claim = Field(default_factory=Claim)  # Breadth
+    api_breadth: Claim = Field(default_factory=Claim)
     official_mcp: Claim = Field(default_factory=Claim)  # bool
     webhooks: Claim = Field(default_factory=Claim)  # bool
     sandbox: Claim = Field(default_factory=Claim)  # bool (free sandbox / dev store / test mode)
-    buildability: Claim = Field(default_factory=Claim)  # Buildability
+    buildability: Claim = Field(default_factory=Claim)
     main_blocker: Claim = Field(default_factory=Claim)  # str | None
 
     composio: ComposioCatalogEntry = Field(default_factory=ComposioCatalogEntry)
